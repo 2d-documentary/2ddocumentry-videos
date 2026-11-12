@@ -1,0 +1,61 @@
+name: remix-episode
+# Re-makes the music/SFX mix from an earlier render run's narration (same timeline, no new TTS),
+# pushes a listenable preview to the audio-previews branch, and optionally re-publishes the video with the new mix
+# using that run's already-rendered frame chunks (no frame re-render).
+on:
+  workflow_dispatch:
+    inputs:
+      run_id: { description: 'render-episode run id whose voice + frames to reuse', required: true }
+      publish: { description: 'also mux with the frames and publish a release (true/false)', default: 'false' }
+      music_db: { description: 'music level relative to narration, dB', default: '-7' }
+      episode: { description: 'episode folder', default: 'egypt' }
+permissions:
+  contents: write
+  actions: read
+env:
+  EP: ${{ github.event.inputs.episode || 'egypt' }}
+  CHUNKS: 12
+jobs:
+  remix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q scipy numpy
+      - uses: actions/download-artifact@v4
+        with: { name: audio, path: build/audio, run-id: "${{ github.event.inputs.run_id }}", github-token: "${{ secrets.GITHUB_TOKEN }}" }
+      - name: New music + SFX mix, loudness -15 LUFS
+        env: { MUSIC_DB: "${{ github.event.inputs.music_db }}" }
+        run: |
+          mkdir -p build/$EP
+          cp $(find build/audio -name voice.wav | head -1) build/$EP/voice.wav
+          cp $(find build/audio -name timeline.json | head -1) build/$EP/timeline.json
+          python engine/audio.py episodes/$EP build/$EP
+          ffmpeg -y -v error -i build/$EP/mix_raw.wav -af loudnorm=I=-15:TP=-1.5:LRA=11 -ar 48000 -c:a aac -b:a 192k build/$EP/mix.m4a
+          ffmpeg -y -v error -i build/$EP/mix.m4a -c:a libmp3lame -b:a 128k build/$EP/full_mix.mp3
+          ffmpeg -y -v error -i build/$EP/mix.m4a -t 120 -c:a libmp3lame -b:a 160k build/$EP/first_2min.mp3
+          ffmpeg -y -v error -i build/$EP/music.wav -af loudnorm=I=-20 -t 120 -c:a libmp3lame -b:a 128k build/$EP/music_only_2min.mp3
+      - name: Push preview to audio-previews branch
+        run: |
+          mkdir -p /tmp/prev && cp build/$EP/full_mix.mp3 build/$EP/first_2min.mp3 build/$EP/music_only_2min.mp3 /tmp/prev/
+          cd /tmp/prev && git init -q -b audio-previews && git add . && git -c user.name=render-bot -c user.email=render-bot@users.noreply.github.com commit -qm "audio preview from run ${{ github.event.inputs.run_id }}"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" audio-previews
+      - uses: actions/download-artifact@v4
+        if: github.event.inputs.publish == 'true'
+        with: { pattern: 'chunk-*', path: build/dl, run-id: "${{ github.event.inputs.run_id }}", github-token: "${{ secrets.GITHUB_TOKEN }}" }
+      - name: Mux with existing frames + publish release
+        if: github.event.inputs.publish == 'true'
+        env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: |
+          for i in $(seq 0 $((CHUNKS-1))); do echo "file '$PWD/build/dl/chunk-$i/chunk_$i.mp4'"; done > build/list.txt
+          ffmpeg -y -v error -f concat -safe 0 -i build/list.txt -i build/$EP/mix.m4a -map 0:v -map 1:a -c:v copy -c:a copy -shortest -movflags +faststart build/$EP.mp4
+          ls -lh build/$EP.mp4
+          ffmpeg -y -v error -ss 120 -i build/$EP.mp4 -frames:v 1 -vf scale=960:-2 renders/$EP-thumb.jpg
+          TAG=$EP-$(date +%Y%m%d-%H%M)
+          gh release create "$TAG" build/$EP.mp4 --title "$EP episode $TAG" --notes "Frames from run ${{ github.event.inputs.run_id }}, new mix (music ${{ github.event.inputs.music_db }} dB vs narration) from run ${{ github.run_id }}." --target ${{ github.sha }}
+          echo "https://github.com/${{ github.repository }}/releases/download/$TAG/$EP.mp4" > renders/$EP-latest.txt
+          git config user.name "render-bot"; git config user.email "render-bot@users.noreply.github.com"
+          git add renders/$EP-latest.txt renders/$EP-thumb.jpg
+          git commit -m "render: $EP ($TAG) [skip ci]" && git pull -q --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }}
