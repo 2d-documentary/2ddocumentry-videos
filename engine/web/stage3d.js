@@ -130,9 +130,9 @@ const GLYPH = {
 };
 const GTALL = ['owl', 'reed', 'chick', 'ankh', 'seated'], GFLAT = ['viper', 'water', 'bread', 'arm', 'eye', 'basket'];
 function drawGlyph(ctx, kind, x, y, w, h, col) { const g = GLYPH[kind]; const M = ([u, v]) => [x + u * w, y + v * h]; const lw = clamp(Math.min(w, h) * .07, .9, 2.4);
-  const strokeAll = (dx, dy, c2, lw2) => { ctx.strokeStyle = c2; ctx.lineWidth = lw2; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.beginPath(); for (const pl of (g.p || [])) pl.forEach((q, i) => { const m = M(q); i ? ctx.lineTo(m[0] + dx, m[1] + dy) : ctx.moveTo(m[0] + dx, m[1] + dy); }); if (g.c) { const [cx, cy, rr] = g.c; ctx.moveTo(x + (cx + rr) * w + dx, y + cy * h + dy); ctx.ellipse(x + cx * w + dx, y + cy * h + dy, rr * w, rr * h, 0, 0, 7); } ctx.stroke(); };
+  const strokeAll = (dx, dy, c2, lw2) => { ctx.strokeStyle = c2; ctx.lineWidth = lw2; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.beginPath(); for (const pl of (g.p || [])) pl.forEach((q, i) => { const m = M(q); i ? ctx.lineTo(m[0] + dx, m[1] + dy) : ctx.moveTo(m[0] + dx, m[1] + dy); }); if (g.c) { const [cx, cy, rr] = g.c; ctx.moveTo(x + (cx + rr) * w + dx, y + cy * h + dy); ctx.ellipse(x + cx * w + dx, y + cy * h + dy, Math.abs(rr * w), Math.abs(rr * h), 0, 0, 7); } ctx.stroke(); };
   strokeAll(lw * .7, lw * .7, shade(col, 1.18), lw * .8); strokeAll(0, 0, shade(col, .45), lw);
-  if (g.d) { ctx.fillStyle = shade(col, .45); ctx.beginPath(); ctx.ellipse(x + g.d[0] * w, y + g.d[1] * h, g.d[2] * w, g.d[2] * h, 0, 0, 7); ctx.fill(); } }
+  if (g.d) { ctx.fillStyle = shade(col, .45); ctx.beginPath(); ctx.ellipse(x + g.d[0] * w, y + g.d[1] * h, Math.abs(g.d[2] * w), Math.abs(g.d[2] * h), 0, 0, 7); ctx.fill(); } }
 // one quadrat cell: a tall sign, or two flat signs stacked, or a flat sign over two small tall ones
 function quadrat(ctx, r, x, y, w, h, col) { const t = r();
   if (t < .4) drawGlyph(ctx, GTALL[Math.floor(r() * GTALL.length)], x + w * .12, y + h * .05, w * .76, h * .9, col);
