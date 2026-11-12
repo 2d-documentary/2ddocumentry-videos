@@ -1,0 +1,37 @@
+{
+  "project": "ripper",
+  "title": "Jack the Ripper: The Autumn of Terror",
+  "assets": [
+    {
+      "id": "osm_whitechapel",
+      "scene": 0,
+      "category": "maps",
+      "description": "OpenStreetMap streets of Whitechapel/Spitalfields (modern layout)",
+      "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28way%5B%22highway%22~%22%5E%28primary%7Csecondary%7Ctertiary%7Cresidential%7Cunclassified%7Cservice%7Cpedestrian%7Cliving_street%7Cfootway%29%24%22%5D%2851.5055%2C-0.0890%2C51.5255%2C-0.0510%29%3Bway%5B%22railway%22%3D%22rail%22%5D%2851.5055%2C-0.0890%2C51.5255%2C-0.0510%29%3B%29%3Bout%20geom%3B",
+      "raw": true,
+      "license": "ODbL",
+      "attribution": "© OpenStreetMap contributors",
+      "authenticity": "authentic",
+      "file": "archives/maps/osm_whitechapel.json",
+      "resolved_url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28way%5B%22highway%22~%22%5E%28primary%7Csecondary%7Ctertiary%7Cresidential%7Cunclassified%7Cservice%7Cpedestrian%7Cliving_street%7Cfootway%29%24%22%5D%2851.5055%2C-0.0890%2C51.5255%2C-0.0510%29%3Bway%5B%22railway%22%3D%22rail%22%5D%2851.5055%2C-0.0890%2C51.5255%2C-0.0510%29%3B%29%3Bout%20geom%3B",
+      "bytes": 5343572,
+      "page": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3B%28way%5B%22highway%22~%22%5E%28primary%7Csecondary%7Ctertiary%7Cresidential%7Cunclassified%7Cservice%7Cpedestrian%7Cliving_street%7Cfootway%29%24%22%5D%2851.5055%2C-0.0890%2C51.5255%2C-0.0510%29%3Bway%5B%22railway%22%3D%22rail%22%5D%2851.5055%2C-0.0890%2C51.5255%2C-0.0510%29%3B%29%3Bout%20geom%3B",
+      "status": "downloaded"
+    },
+    {
+      "id": "annie_wedding",
+      "scene": 20,
+      "category": "historical-photos",
+      "description": "Annie and John Chapman, wedding portrait, 1869",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Annie_Chapman_and_her_husband_in_1869.jpg",
+      "authenticity": "authentic",
+      "file": "archives/historical-photos/annie_wedding_annie-and-john-chapman-wedding-portrait-.jpg",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Annie_Chapman_and_her_husband_in_1869.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 93034,
+      "license": "Public domain",
+      "attribution": "Unknown author Unknown author, https://construindovictoria.wordpress.com/tag/annie-chapman/",
+      "page": "https://commons.wikimedia.org/wiki/File:Annie_Chapman_and_her_husband_in_1869.jpg",
+      "status": "downloaded"
+    }
+  ]
+}
