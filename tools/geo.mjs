@@ -16,7 +16,8 @@ function clip(ring) {   // Sutherland-Hodgman against the lon/lat box
   return out;
 }
 const rings = [];
-for (const poly of land.geometry.coordinates) for (const r of poly) { const c = clip(r); if (c.length > 3) rings.push(c.map(([x, y]) => [Math.round(x * 100) / 100, Math.round(y * 100) / 100])); }
+const geoms = land.features ? land.features.map((f) => f.geometry) : [land.geometry];
+for (const gm of geoms) for (const poly of (gm.type === 'Polygon' ? [gm.coordinates] : gm.coordinates)) for (const r of poly) { const c = clip(r); if (c.length > 3) rings.push(c.map(([x, y]) => [Math.round(x * 100) / 100, Math.round(y * 100) / 100])); }
 fs.mkdirSync('assets/geo', { recursive: true });
 fs.writeFileSync('assets/geo/med_land.json', JSON.stringify({ bbox: B, rings }));
 console.log('rings', rings.length, 'points', rings.reduce((a, r) => a + r.length, 0));
