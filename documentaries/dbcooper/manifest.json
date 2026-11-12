@@ -1,30 +1,345 @@
 {
-  "project": "dbcooper",
-  "title": "D.B. Cooper: The Man Who Vanished",
-  "assets": [
-    {"id": "ticket", "scene": 3, "category": "documents", "description": "Dan Cooper's actual Flight 305 ticket (FBI photo)", "source_page": "https://commons.wikimedia.org/wiki/File:July_2016_D.B._Cooper_Plane_Ticket_(28379315406).jpg", "authenticity": "authentic"},
-    {"id": "money", "scene": 9, "category": "historical-photos", "description": "Ransom $20 bills found at Tena Bar in 1980 (FBI)", "url": "https://www.fbi.gov/image-repository/cooper-money.jpg/@@images/image/high", "license": "Public domain (FBI)", "attribution": "Federal Bureau of Investigation", "authenticity": "authentic"},
-    {"id": "money_c", "scene": 9, "category": "historical-photos", "description": "Ransom bills found in 1980 (Commons copy)", "source_page": "https://commons.wikimedia.org/wiki/File:Money_stolen_by_D._B._Cooper.jpg", "authenticity": "authentic"},
-    {"id": "sketch_color", "scene": 2, "category": "historical-photos", "description": "FBI composite sketch B (1973)", "source_page": "https://commons.wikimedia.org/wiki/File:CompositeB-FBI-1973.jpg", "authenticity": "authentic"},
-    {"id": "sketch_a", "scene": 2, "category": "historical-photos", "description": "FBI composite sketch A (Nov 1971)", "source_page": "https://commons.wikimedia.org/wiki/File:D.B._Cooper_FBI_Composite_A.jpg", "authenticity": "authentic"},
-    {"id": "sketch_c", "scene": 11, "category": "historical-photos", "description": "FBI composite sketch", "source_page": "https://commons.wikimedia.org/wiki/File:DBCooper.jpg", "authenticity": "authentic"},
-    {"id": "sketches_fbi", "scene": 11, "category": "historical-photos", "description": "FBI sketches pair", "url": "https://www.fbi.gov/image-repository/cooper-sketches.jpeg/@@images/image/high", "license": "Public domain (FBI)", "attribution": "Federal Bureau of Investigation", "authenticity": "authentic"},
-    {"id": "wanted", "scene": 13, "category": "documents", "description": "FBI wanted poster", "source_page": "https://commons.wikimedia.org/wiki/File:DB_Cooper_Wanted_Poster.jpg", "authenticity": "authentic"},
-    {"id": "tie", "scene": 2, "category": "artefacts", "description": "Cooper's black J.C. Penney clip-on tie (FBI evidence)", "url": "https://www.fbi.gov/image-repository/black-tie.jpg/@@images/image/large", "license": "Public domain (FBI)", "attribution": "Federal Bureau of Investigation", "authenticity": "authentic"},
-    {"id": "chute_bag", "scene": 9, "category": "artefacts", "description": "Canvas bag of one of Cooper's parachutes (FBI)", "url": "https://www.fbi.gov/image-repository/parachute-bag.jpg/@@images/image/high", "license": "Public domain (FBI)", "attribution": "Federal Bureau of Investigation", "authenticity": "authentic"},
-    {"id": "chute", "scene": 9, "category": "artefacts", "description": "Parachute left behind by Cooper (FBI)", "url": "https://www.fbi.gov/image-repository/parachute.jpg/@@images/image/high", "license": "Public domain (FBI)", "attribution": "Federal Bureau of Investigation", "authenticity": "authentic"},
-    {"id": "plane", "scene": 2, "category": "historical-photos", "description": "Northwest Orient Boeing 727, Washington National, 1970", "source_page": "https://commons.wikimedia.org/wiki/File:Northwest_Orient_727_(6961699414).jpg", "authenticity": "authentic"},
-    {"id": "n467us", "scene": 2, "category": "historical-photos", "description": "N467US, the hijacked aircraft, in 1972", "source_page": "https://commons.wikimedia.org/wiki/File:Northwest_Airlines_Boeing_727-51_N467US.jpg", "authenticity": "authentic"},
-    {"id": "plane_pd", "scene": 2, "category": "historical-photos", "description": "Northwest Orient 727 at Fort Lauderdale, 1970", "source_page": "https://commons.wikimedia.org/wiki/File:Northwest_Orient_Airlines_Boeing_727-251_N274US_at_Fort_Lauderdale_Int'l_Airport,_31_January_1970.jpg", "authenticity": "authentic"},
-    {"id": "airstair", "scene": 10, "category": "historical-photos", "description": "Northwest 727 with its aft airstair lowered, 1975", "source_page": "https://commons.wikimedia.org/wiki/File:Northwest_Boeing_727_airstair_(1975).jpg", "authenticity": "authentic"},
-    {"id": "crew", "scene": 10, "category": "historical-photos", "description": "Flight 305 crew at Reno after the hijacking, 25 Nov 1971", "source_page": "https://commons.wikimedia.org/wiki/File:Crew_of_Northwest_Airlines_Flight_305_after_D._B._Cooper_hijacking.jpg", "authenticity": "authentic"},
-    {"id": "vane", "scene": 20, "category": "historical-photos", "description": "The 'Cooper vane' on a 727", "source_page": "https://commons.wikimedia.org/wiki/File:Db_Cooper_Vane.JPG", "authenticity": "authentic"},
-    {"id": "fbidocs", "scene": 12, "category": "documents", "description": "Excerpts from the FBI Cooper file (FOIA)", "source_page": "https://commons.wikimedia.org/wiki/File:GrudgeCombo2.jpg", "authenticity": "authentic"},
-    {"id": "f106", "scene": 10, "category": "historical-photos", "description": "F-106 Delta Dart interceptor, 1970", "source_page": "https://commons.wikimedia.org/wiki/File:101st_Fighter-Interceptor_Squadron_F-106_Delta_Dart_57-2605.jpg", "authenticity": "authentic"},
-    {"id": "sr71", "scene": 15, "category": "historical-photos", "description": "SR-71 Blackbird", "source_page": "https://commons.wikimedia.org/wiki/File:Lockheed_SR-71_Blackbird.jpg", "authenticity": "authentic"},
-    {"id": "seafirst", "scene": 9, "category": "historical-photos", "description": "Seattle-First National Bank interior, c. 1970", "source_page": "https://commons.wikimedia.org/wiki/File:Seattle-First_National_Bank_interior,_circa_1970.jpg", "authenticity": "authentic"},
-    {"id": "bill20", "scene": 3, "category": "historical-photos", "description": "US $20 Federal Reserve note (1969-era design)", "commons_search": "Series 1969 twenty dollar bill obverse", "authenticity": "authentic"},
-    {"id": "bourbon", "scene": 4, "category": "historical-photos", "description": "Glass of bourbon", "commons_search": "bourbon whiskey glass", "authenticity": "authentic"},
-    {"id": "vault1", "scene": 12, "category": "documents", "description": "FBI NORJAK file, Part 01 (The Vault)", "url": "https://vault.fbi.gov/D-B-Cooper%20/D.B.%20Cooper%20Part%2001/at_download/file", "pdf_pages": [1, 2, 3, 5, 8], "license": "Public domain (FBI)", "attribution": "Federal Bureau of Investigation, The Vault", "authenticity": "authentic"}
-  ]
+ "project": "dbcooper",
+ "title": "D.B. Cooper: The Man Who Vanished",
+ "assets": [
+  {
+   "id": "ticket",
+   "scene": 3,
+   "category": "documents",
+   "description": "Dan Cooper's actual Flight 305 ticket (FBI photo)",
+   "source_page": "https://commons.wikimedia.org/wiki/File:July_2016_D.B._Cooper_Plane_Ticket_(28379315406).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "money",
+   "scene": 9,
+   "category": "historical-photos",
+   "description": "Ransom $20 bills found at Tena Bar in 1980 (FBI)",
+   "url": "https://www.fbi.gov/image-repository/cooper-money.jpg/@@images/image/high",
+   "license": "Public domain (FBI)",
+   "attribution": "Federal Bureau of Investigation",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "money_c",
+   "scene": 9,
+   "category": "historical-photos",
+   "description": "Ransom bills found in 1980 (Commons copy)",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Money_stolen_by_D._B._Cooper.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sketch_color",
+   "scene": 2,
+   "category": "historical-photos",
+   "description": "FBI composite sketch B (1973)",
+   "source_page": "https://commons.wikimedia.org/wiki/File:CompositeB-FBI-1973.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sketch_a",
+   "scene": 2,
+   "category": "historical-photos",
+   "description": "FBI composite sketch A (Nov 1971)",
+   "source_page": "https://commons.wikimedia.org/wiki/File:D.B._Cooper_FBI_Composite_A.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sketch_c",
+   "scene": 11,
+   "category": "historical-photos",
+   "description": "FBI composite sketch",
+   "source_page": "https://commons.wikimedia.org/wiki/File:DBCooper.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sketches_fbi",
+   "scene": 11,
+   "category": "historical-photos",
+   "description": "FBI sketches pair",
+   "url": "https://www.fbi.gov/image-repository/cooper-sketches.jpeg/@@images/image/high",
+   "license": "Public domain (FBI)",
+   "attribution": "Federal Bureau of Investigation",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "wanted",
+   "scene": 13,
+   "category": "documents",
+   "description": "FBI wanted poster",
+   "source_page": "https://commons.wikimedia.org/wiki/File:DB_Cooper_Wanted_Poster.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "tie",
+   "scene": 2,
+   "category": "artefacts",
+   "description": "Cooper's black J.C. Penney clip-on tie (FBI evidence)",
+   "url": "https://www.fbi.gov/image-repository/black-tie.jpg/@@images/image/large",
+   "license": "Public domain (FBI)",
+   "attribution": "Federal Bureau of Investigation",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "chute_bag",
+   "scene": 9,
+   "category": "artefacts",
+   "description": "Canvas bag of one of Cooper's parachutes (FBI)",
+   "url": "https://www.fbi.gov/image-repository/parachute-bag.jpg/@@images/image/high",
+   "license": "Public domain (FBI)",
+   "attribution": "Federal Bureau of Investigation",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "chute",
+   "scene": 9,
+   "category": "artefacts",
+   "description": "Parachute left behind by Cooper (FBI)",
+   "url": "https://www.fbi.gov/image-repository/parachute.jpg/@@images/image/high",
+   "license": "Public domain (FBI)",
+   "attribution": "Federal Bureau of Investigation",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "plane",
+   "scene": 2,
+   "category": "historical-photos",
+   "description": "Northwest Orient Boeing 727, Washington National, 1970",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Northwest_Orient_727_(6961699414).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "n467us",
+   "scene": 2,
+   "category": "historical-photos",
+   "description": "N467US, the hijacked aircraft, in 1972",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Northwest_Airlines_Boeing_727-51_N467US.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "plane_pd",
+   "scene": 2,
+   "category": "historical-photos",
+   "description": "Northwest Orient 727 at Fort Lauderdale, 1970",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Northwest_Orient_Airlines_Boeing_727-251_N274US_at_Fort_Lauderdale_Int'l_Airport,_31_January_1970.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "airstair",
+   "scene": 10,
+   "category": "historical-photos",
+   "description": "Northwest 727 with its aft airstair lowered, 1975",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Northwest_Boeing_727_airstair_(1975).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "crew",
+   "scene": 10,
+   "category": "historical-photos",
+   "description": "Flight 305 crew at Reno after the hijacking, 25 Nov 1971",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Crew_of_Northwest_Airlines_Flight_305_after_D._B._Cooper_hijacking.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "vane",
+   "scene": 20,
+   "category": "historical-photos",
+   "description": "The 'Cooper vane' on a 727",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Db_Cooper_Vane.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "fbidocs",
+   "scene": 12,
+   "category": "documents",
+   "description": "Excerpts from the FBI Cooper file (FOIA)",
+   "source_page": "https://commons.wikimedia.org/wiki/File:GrudgeCombo2.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f106",
+   "scene": 10,
+   "category": "historical-photos",
+   "description": "F-106 Delta Dart interceptor, 1970",
+   "source_page": "https://commons.wikimedia.org/wiki/File:101st_Fighter-Interceptor_Squadron_F-106_Delta_Dart_57-2605.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sr71",
+   "scene": 15,
+   "category": "historical-photos",
+   "description": "SR-71 Blackbird",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Lockheed_SR-71_Blackbird.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "seafirst",
+   "scene": 9,
+   "category": "historical-photos",
+   "description": "Seattle-First National Bank interior, c. 1970",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Seattle-First_National_Bank_interior,_circa_1970.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "vault1",
+   "scene": 12,
+   "category": "documents",
+   "description": "FBI NORJAK file, Part 01 (The Vault)",
+   "url": "https://vault.fbi.gov/D-B-Cooper%20/D.B.%20Cooper%20Part%2001/at_download/file",
+   "pdf_pages": [
+    1,
+    2,
+    3,
+    5,
+    8
+   ],
+   "license": "Public domain (FBI)",
+   "attribution": "Federal Bureau of Investigation, The Vault",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bill20",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "US $20 Federal Reserve note",
+   "commons_search": "United States twenty dollar bill obverse",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bill20b",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "US $20 bill",
+   "commons_search": "US $20 bill series 1969",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cashstack",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Stack of US dollar bills",
+   "commons_search": "stack of twenty dollar bills",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bourbon",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Glass of bourbon whiskey",
+   "commons_search": "glass of bourbon whiskey",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "forest",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Pacific Northwest forest in fog",
+   "commons_search": "Gifford Pinchot National Forest fog",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "columbia",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Columbia River near Vancouver, Washington",
+   "commons_search": "Columbia River Vancouver Washington",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "merwin",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Lake Merwin, Washington",
+   "commons_search": "Lake Merwin",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cockpit",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Boeing 727 cockpit",
+   "commons_search": "Boeing 727 cockpit",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "seatac72",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Seattle-Tacoma airport, 1972",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Northwest_Airlines_B-747_N603US_1N.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "rackstraw",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Robert Rackstraw, military ID photo 1970",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Robert_Rackstraw_military_id_photo_1970.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "mccoy",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Richard McCoy Jr.",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Richard_McCoy,_Jr..jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "security",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Airport security screening, 1970s",
+   "commons_search": "airport security checkpoint 1970s x-ray",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "puget",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Puget Sound from the air",
+   "commons_search": "Puget Sound aerial Tacoma",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "reno",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Reno, Nevada at night",
+   "commons_search": "Reno Nevada night 1970s",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "microfilm",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Microfilm reader",
+   "commons_search": "microfilm reader",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "soldiers",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "US Army soldiers searching woods",
+   "commons_search": "Fort Lewis soldiers 1972",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "briefcase",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Vintage attach\u00e9 case",
+   "commons_search": "vintage attache case briefcase",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "rain",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Rain at night",
+   "commons_search": "rain at night streetlight",
+   "authenticity": "authentic"
+  }
+ ]
 }

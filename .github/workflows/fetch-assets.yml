@@ -12,7 +12,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: fetch-assets-${{ github.event.inputs.project || github.sha }}
+  group: fetch-assets
   cancel-in-progress: false
 jobs:
   fetch:

@@ -9,21 +9,39 @@
   }
  },
  "spoken": {
-  "1971.": "nineteen seventy-one.",
   "1971": "nineteen seventy-one",
-  "18E,": "eighteen E,",
+  "18E": "eighteen E",
   "$200,000": "two hundred thousand dollars",
   "727": "seven twenty-seven",
-  "FBI": "F.B.I.",
+  "FBI": "F.B.I",
   "800": "eight hundred",
-  "66": "sixty-six"
+  "66": "sixty-six",
+  "1972": "nineteen seventy-two",
+  "1973": "nineteen seventy-three",
+  "1974": "nineteen seventy-four",
+  "1978": "nineteen seventy-eight",
+  "1979": "nineteen seventy-nine",
+  "1980": "nineteen eighty",
+  "2008": "two thousand eight",
+  "2016": "twenty sixteen",
+  "2019": "twenty nineteen",
+  "2024": "twenty twenty-four",
+  "305": "three oh five",
+  "F-106": "F one oh six",
+  "SR-71": "S R seventy-one",
+  "NORJAK": "Nor-jack",
+  "10th": "tenth",
+  "McChord": "McCord",
+  "Mucklow": "Mucklow",
+  "Ariel": "Ariel",
+  "727's": "seven twenty-seven's",
+  "24th": "twenty-fourth"
  },
  "lines": [
   {
    "id": "L001",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "gap_before": 0.6,
@@ -33,7 +51,6 @@
    "id": "L002",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "text": "A quiet man in a dark suit and a black clip-on tie walks up to the Northwest Orient counter in Portland, Oregon."
@@ -42,7 +59,6 @@
    "id": "L003",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "text": "He pays cash for a one-way ticket to Seattle. A thirty-minute hop. The name he gives? Dan Cooper."
@@ -51,7 +67,6 @@
    "id": "L004",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "text": "He takes seat 18E, the very last row, and orders a bourbon and soda."
@@ -60,7 +75,6 @@
    "id": "L005",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "text": "Just after three p.m., he slips a note to a flight attendant. She assumes it's his phone number, and pockets it."
@@ -69,7 +83,6 @@
    "id": "L006",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "gap_before": 0.25,
@@ -79,7 +92,6 @@
    "id": "L007",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "gap_before": 0.3,
@@ -89,7 +101,6 @@
    "id": "L008",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "text": "He cracks open the case. Wires. Red sticks."
@@ -98,7 +109,6 @@
    "id": "L009",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "text": "His demands: $200,000 in twenty-dollar bills. And four parachutes."
@@ -107,7 +117,6 @@
    "id": "L010",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "gap_before": 0.3,
@@ -117,7 +126,6 @@
    "id": "L011",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "gap_before": 0.45,
@@ -127,7 +135,6 @@
    "id": "L012",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "gap_before": 0.35,
@@ -137,7 +144,6 @@
    "id": "L013",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "text": "And still, nobody knows who this man really was."
@@ -146,12 +152,459 @@
    "id": "L014",
    "speaker": "NARRATOR",
    "parts": [
-    "test",
     "full"
    ],
    "gap_before": 0.3,
    "text": "Even the name the whole world remembers him by is wrong."
+  },
+  {
+   "id": "L015",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "His ticket said Dan Cooper. But early on, agents questioned a Portland man named D.B. Cooper, who had nothing to do with it, and a reporter on deadline ran with those initials.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L016",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The wire services picked it up. And a mistake became a legend."
+  },
+  {
+   "id": "L017",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "So let's go back to row eighteen.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L018",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Schaffner rushes the note to the cockpit. The captain, William Scott, radios the airline, and the airline's president makes a fast decision: give the man whatever he wants."
+  },
+  {
+   "id": "L019",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Another flight attendant, Tina Mucklow, takes the seat beside him. For the next few hours, she is his messenger to the cockpit."
+  },
+  {
+   "id": "L020",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "And Cooper? Calm. Polite. He even seems to know the area, pointing out Tacoma below, and noting that McChord Air Force Base is only twenty minutes from the airport."
+  },
+  {
+   "id": "L021",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "As the jet circles Puget Sound for about two hours, the ground below goes into overdrive.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L022",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Seattle First National Bank gathers ten thousand unmarked twenty-dollar bills. The FBI photographs every single one, recording the serial numbers on microfilm."
+  },
+  {
+   "id": "L023",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The parachutes come from a local skydiving school, and a stunt pilot named Norman Hayden."
+  },
+  {
+   "id": "L024",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Cooper had turned down military parachutes. He wanted civilian ones, with ripcords he could pull himself. A small detail. A smart one."
+  },
+  {
+   "id": "L025",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Just before six, Flight 305 lands in Seattle. Cooper orders every window shade pulled down, to keep police snipers guessing. The money and the parachutes are brought aboard.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L026",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "In exchange, all thirty-five other passengers walk off the plane. Most of them never realized they had been hijacked."
+  },
+  {
+   "id": "L027",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Then he gives the crew his flight plan.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L028",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Mexico City. The slowest speed possible without stalling. Landing gear down. Wing flaps at fifteen degrees. No higher than ten thousand feet. Cabin unpressurized."
+  },
+  {
+   "id": "L029",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "And one more thing: the rear airstair down. The airline said taking off like that was unsafe, so he agreed to lower it himself, once they were in the air."
+  },
+  {
+   "id": "L030",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Here's the key. The Boeing 727 had something almost no other airliner had: a staircase that opens under the tail. And it could be opened in flight. He knew that.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L031",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "At about seven forty p.m., the jet takes off into a cold, rainy night. Two F-106 fighter jets shadow it from a distance.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L032",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Cooper sends Tina Mucklow to the cockpit and tells her to stay there. She is the last person to see him."
+  },
+  {
+   "id": "L033",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Around eight o'clock, a warning light comes on in the cockpit. The airstair is open.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L034",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "At eight thirteen, the crew feels a sudden jolt. The tail pitches up. And then... nothing."
+  },
+  {
+   "id": "L035",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "They keep flying, all the way to Reno, Nevada, landing at eleven oh two p.m., with the stairs still hanging down.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L036",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Agents rush the cabin. It's empty. No Cooper. No money. Just two of the four parachutes, his clip-on tie, and eight cigarette butts."
+  },
+  {
+   "id": "L037",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "What followed was one of the longest investigations in FBI history. Codename: NORJAK. Northwest hijacking.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L038",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Agents calculated a likely jump zone near the small town of Ariel, Washington, close to Lake Merwin. Thick forest, steep hills, and in November, freezing rain."
+  },
+  {
+   "id": "L039",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Soldiers from Fort Lewis combed the woods for weeks. The Air Force even sent an SR-71 spy plane to photograph the flight path. It found nothing."
+  },
+  {
+   "id": "L040",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Within five years, the FBI had looked at more than 800 suspects."
+  },
+  {
+   "id": "L041",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "And meanwhile, America had a new problem. Copycats.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L042",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "In 1972 alone, there were thirty-one hijackings in American airspace. Fifteen of those hijackers demanded parachutes."
+  },
+  {
+   "id": "L043",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Five months after Cooper, a former Green Beret named Richard McCoy hijacked a United jet, collected half a million dollars, and parachuted out over Utah. He was arrested two days later."
+  },
+  {
+   "id": "L044",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "So the rules changed. Every Boeing 727 was fitted with a simple spring-loaded latch that stops the rear stairs from opening in flight. It is still called the Cooper vane.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L045",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "And from 1973, airlines had to search every passenger and every bag. That airport security line you stand in? You can partly thank Dan Cooper."
+  },
+  {
+   "id": "L046",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "For years, the trail went cold. Then, the forest started giving things back.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L047",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "In 1978, a deer hunter found a placard from a 727's rear airstair, about thirteen miles east of Castle Rock, Washington. Right under the flight path."
+  },
+  {
+   "id": "L048",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Then, on February 10th, 1980, an eight-year-old boy named Brian Ingram was on a family outing at Tena Bar, on the Columbia River.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L049",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Raking the sand for a campfire, he dug up three bundles of rotting twenty-dollar bills. Five thousand eight hundred dollars."
+  },
+  {
+   "id": "L050",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The serial numbers matched. This was Cooper's money.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L051",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "It was the biggest break in the case. And the most confusing one."
+  },
+  {
+   "id": "L052",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Tena Bar is miles from the jump zone. So how did the money get there? Washed down a river? Moved by dredging? Buried on purpose? Nobody has ever agreed."
+  },
+  {
+   "id": "L053",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Brian was later allowed to keep some of the bills. In 2008, he sold fifteen of them at auction for about thirty-seven thousand dollars. Not a bad return on a twenty."
+  },
+  {
+   "id": "L054",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "And the tie? Decades later, a team of researchers found something odd on it: tiny particles of titanium, and rare earth metals.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L055",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "In 1971, that kind of titanium was used in only a few places, like aerospace and chemical plants. Was Cooper an engineer? A plant worker? The tie can't say."
+  },
+  {
+   "id": "L056",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "So who was he? Over the decades, a few names keep coming back.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L057",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Richard McCoy, the copycat. Same method, same plane. But the FBI ruled him out. Wrong age, wrong eyes, and he didn't match the crew's descriptions. He was killed in a shootout with agents in 1974."
+  },
+  {
+   "id": "L058",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Robert Rackstraw, a Vietnam veteran and pilot with a criminal record. Investigators cleared him in 1979, but some researchers still insist it was him. He died in 2019."
+  },
+  {
+   "id": "L059",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Sheridan Peterson, a former smokejumper and Boeing technical editor. But a DNA comparison using the tie did not point to him."
+  },
+  {
+   "id": "L060",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Then, in 2024, a twist. McCoy's own children went public, saying their late father was Cooper, after a YouTuber found an old parachute rig on family property in North Carolina. The family says the FBI took it. The FBI has never publicly confirmed a thing.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L061",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Officially, the FBI suspended its active investigation in July 2016. But the files keep coming. Batch after batch of pages, released to the public, right up to today.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L062",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Many agents believe the simplest answer. He didn't survive. A night jump, in a business suit, in freezing rain, over thick forest.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L063",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "But if he died, where is he? No body. No parachute. No briefcase. In fifty-five years, not one trace of the man himself has ever turned up."
+  },
+  {
+   "id": "L064",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Maybe he hit the trees and was never found. Or maybe he walked out of that forest, buried his money, and went home for Thanksgiving.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L065",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The only certain thing is this. On a rainy night in 1971, a man in a J.C. Penney clip-on tie stepped off the back of a jet with $200,000, and stepped straight into history.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L066",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "His real name is still out there. Somewhere.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L067",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "This was Ink and Antiquity. If you have a theory, leave it in the comments. And subscribe, because history has plenty more mysteries like this one.",
+   "gap_before": 0.6
   }
  ],
- "tail": 4.2
+ "tail": 3.0
 }

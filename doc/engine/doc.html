@@ -15,16 +15,18 @@ html,body{margin:0;background:#000} canvas{display:block}
 <script>
 const ep = new URLSearchParams(location.search).get('ep');
 const EPDIR = `../../documentaries/${ep}/`;
+const ASSETS = new URLSearchParams(location.search).get('assets');
 const s = document.createElement('script'); s.src = EPDIR + 'scenes.js'; document.body.appendChild(s);
 window.READY = (async () => {
   await new Promise(r => s.onload = r);
   const fams = ['60px Bebas', '60px Playfair', '700 60px Playfair', 'italic 60px PlayfairI', '60px SpecialElite', '600 60px Caveat', '500 60px Oswald', '60px CourierPrime'];
   await Promise.all(fams.map(f => document.fonts.load(f)));
-  await loadImages(Object.fromEntries(Object.entries(EP.images).map(([k, v]) => [k, EPDIR + 'assets/' + v])));
+  await loadImages(Object.fromEntries(Object.entries(EP.images).map(([k, v]) => [k, (ASSETS ? `../../documentaries/${ASSETS}/` : EPDIR) + 'assets/' + v])));
   return true;
 })();
 window.loadTimeline = (tl) => { setTimeline(tl); EP.scenes(); buildShots(); return SHOTS.map(s => [s.start, s.end, s.name || '']); };
 window.sfxCues = () => CUES.slice().sort((a, b) => a.t - b.t);
-const ctx = document.getElementById('c').getContext('2d');
+const cv = document.getElementById('c'); cv.width = W; cv.height = H;
+const ctx = cv.getContext('2d');
 window.frameJPEG = (t, q = 0.9) => { renderAt(ctx, t); return document.getElementById('c').toDataURL('image/jpeg', q); };
 </script></body></html>

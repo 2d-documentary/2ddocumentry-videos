@@ -1,0 +1,97 @@
+{
+ "title": "D.B. Cooper in 60 seconds",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.14,
+   "lang": "a",
+   "desc": "Documentary narrator: confident, brisk, dry wit, suspense on the reveals"
+  }
+ },
+ "spoken": {
+  "1971": "nineteen seventy-one",
+  "18E": "eighteen E",
+  "$200,000": "two hundred thousand dollars",
+  "727": "seven twenty-seven",
+  "FBI": "F.B.I",
+  "800": "eight hundred",
+  "66": "sixty-six",
+  "1972": "nineteen seventy-two",
+  "1973": "nineteen seventy-three",
+  "1974": "nineteen seventy-four",
+  "1978": "nineteen seventy-eight",
+  "1979": "nineteen seventy-nine",
+  "1980": "nineteen eighty",
+  "2008": "two thousand eight",
+  "2016": "twenty sixteen",
+  "2019": "twenty nineteen",
+  "2024": "twenty twenty-four",
+  "305": "three oh five",
+  "F-106": "F one oh six",
+  "SR-71": "S R seventy-one",
+  "NORJAK": "Nor-jack",
+  "10th": "tenth",
+  "McChord": "McCord",
+  "Mucklow": "Mucklow",
+  "Ariel": "Ariel",
+  "727's": "seven twenty-seven's",
+  "24th": "twenty-fourth"
+ },
+ "tail": 2.6,
+ "lines": [
+  {
+   "id": "S01",
+   "speaker": "NARRATOR",
+   "gap_before": 0.35,
+   "text": "In 1971, a man in a business suit hijacked a plane with nothing but a briefcase and a note."
+  },
+  {
+   "id": "S02",
+   "speaker": "NARRATOR",
+   "text": "Miss, I have a bomb."
+  },
+  {
+   "id": "S03",
+   "speaker": "NARRATOR",
+   "text": "He demanded $200,000 and four parachutes. And he got them."
+  },
+  {
+   "id": "S04",
+   "speaker": "NARRATOR",
+   "text": "Most of the passengers never even knew they had been hijacked."
+  },
+  {
+   "id": "S05",
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "Then, over the dark forests of Washington, he lowered the rear stairs of a Boeing 727, and jumped into the night."
+  },
+  {
+   "id": "S06",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "The FBI hunted him for forty-five years. Spy planes. Soldiers in the woods. More than 800 suspects."
+  },
+  {
+   "id": "S07",
+   "speaker": "NARRATOR",
+   "text": "In 1980, an eight-year-old boy dug up some of the money, rotting in the sand by a river."
+  },
+  {
+   "id": "S08",
+   "speaker": "NARRATOR",
+   "text": "But the man himself? Never found. Not a body. Not even his name."
+  },
+  {
+   "id": "S09",
+   "speaker": "NARRATOR",
+   "text": "Because even D.B. Cooper was a reporter's mistake."
+  },
+  {
+   "id": "S10",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "So who was he, and did he survive? The full story is on Ink and Antiquity."
+  }
+ ]
+}

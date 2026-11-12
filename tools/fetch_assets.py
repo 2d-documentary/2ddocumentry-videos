@@ -265,11 +265,12 @@ def resolve_archive(page, wanted_file=None, category=""):
 
 def resolve_commons_search(q):
     api = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=5"
-           "&gsrsearch=" + urllib.parse.quote(q + " filetype:bitmap"))
+           "&gsrsearch=" + urllib.parse.quote(q))
     pages = sorted(get_json(api).get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99))
     if not pages:
         raise FetchError("Commons search found nothing")
-    return resolve_commons("https://commons.wikimedia.org/wiki/" + urllib.parse.quote(pages[0]["title"].replace(" ", "_")))
+    pages = [p for p in pages if re.search(r"\.(jpe?g|png|tiff?)$", p["title"], re.I)] or pages
+    return resolve_commons("https://commons.wikimedia.org/wiki/" + urllib.parse.quote(pages[0]["title"].replace(" ", "_"), safe=":"))
 
 
 def resolve(asset):
