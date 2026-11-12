@@ -51,7 +51,7 @@ def main():
         n = int(tl["duration"] * a.fps); i0 = a.from_frame; i1 = n if a.to_frame < 0 else min(n, a.to_frame)
         cmd = ["ffmpeg", "-y", "-v", "error", "-f", "image2pipe", "-c:v", "mjpeg", "-framerate", str(a.fps), "-i", "-"]
         if a.audio: cmd += ["-i", a.audio, "-c:a", "aac", "-b:a", "192k", "-shortest"]
-        cmd += ["-c:v", "libx264", "-preset", "veryfast", "-crf", a.crf, "-pix_fmt", "yuv420p", "-movflags", "+faststart", a.out]
+        cmd += ["-c:v", "libx264", "-preset", "veryfast", "-crf", a.crf, "-maxrate", "10M", "-bufsize", "20M", "-pix_fmt", "yuv420p", "-movflags", "+faststart", a.out]
         ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
         t0 = time.time()
         for i in range(i0, i1):

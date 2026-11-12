@@ -1,7 +1,7 @@
 name: render-doc
 # Renders an INK AND ANTIQUITY documentary on GitHub: Kokoro TTS -> SFX cues -> quiet score + mix ->
 # 8 parallel frame chunks -> concat -> publish. Triggered by pushing documentaries/<project>/render.json:
-#   {"part": "test" | "full", "music_level": 0.20, "crf": 20}
+#   {"part": "full", "music_level": 0.20, "crf": 20, "size": "1920x1080", "assets": "<project whose assets to use>"}
 # Output: branch render-<project> (mp4 under 95 MB) and a GitHub release for every render.
 on:
   push:
@@ -13,13 +13,15 @@ on:
 permissions:
   contents: write
 env:
-  CHUNKS: 8
+  CHUNKS: 12
 jobs:
   setup:
     runs-on: ubuntu-latest
     outputs:
       project: ${{ steps.p.outputs.project }}
       part: ${{ steps.p.outputs.part }}
+      size: ${{ steps.p.outputs.size }}
+      assets: ${{ steps.p.outputs.assets }}
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
@@ -28,17 +30,20 @@ jobs:
           P="${{ github.event.inputs.project }}"
           [ -n "$P" ] || P=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E '^documentaries/[^/]+/render\.json$' | cut -d/ -f2 | head -1)
           echo "project=$P" >> $GITHUB_OUTPUT
-          echo "part=$(python3 -c "import json;print(json.load(open('documentaries/$P/render.json')).get('part','full'))")" >> $GITHUB_OUTPUT
+          R="documentaries/$P/render.json"
+          echo "part=$(python3 -c "import json;print(json.load(open('$R')).get('part','full'))")" >> $GITHUB_OUTPUT
+          echo "size=$(python3 -c "import json;print(json.load(open('$R')).get('size','1920x1080'))")" >> $GITHUB_OUTPUT
+          echo "assets=$(python3 -c "import json;print(json.load(open('$R')).get('assets','$P'))")" >> $GITHUB_OUTPUT
           echo "project $P"
   audio:
     needs: setup
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    env: { P: "${{ needs.setup.outputs.project }}", PART: "${{ needs.setup.outputs.part }}", PYTHONUNBUFFERED: '1' }
+    env: { P: "${{ needs.setup.outputs.project }}", PART: "${{ needs.setup.outputs.part }}", SIZE: "${{ needs.setup.outputs.size }}", AP: "${{ needs.setup.outputs.assets }}", PYTHONUNBUFFERED: '1' }
     steps:
       - uses: actions/checkout@v4
       - name: Assets
-        run: git clone -q --depth 1 -b assets-$P https://github.com/${{ github.repository }} documentaries/$P/assets || echo "no assets branch yet"
+        run: git clone -q --depth 1 -b assets-$AP https://github.com/${{ github.repository }} documentaries/$AP/assets || echo "no assets branch yet"
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - name: Install Kokoro-82M (free TTS), Playwright, ffmpeg
@@ -51,7 +56,7 @@ jobs:
         run: python doc/tools/tts.py documentaries/$P build/$P $PART
       - name: SFX cues + score + mix
         run: |
-          python doc/tools/render.py documentaries/$P build/$P/timeline.json build/$P/x.mp4 --cues-only
+          python doc/tools/render.py documentaries/$P build/$P/timeline.json build/$P/x.mp4 --cues-only --size $SIZE --assets $AP
           export MUSIC_LEVEL=$(python3 -c "import json;print(json.load(open('documentaries/$P/render.json')).get('music_level',0.2))")
           python doc/tools/audio_doc.py documentaries/$P build/$P
           ffmpeg -y -v error -i build/$P/mix_raw.wav -af loudnorm=I=-15:TP=-1.5:LRA=11 -ar 48000 -c:a aac -b:a 192k build/$P/mix.m4a
@@ -63,12 +68,12 @@ jobs:
     timeout-minutes: 120
     strategy:
       fail-fast: false
-      matrix: { chunk: [0, 1, 2, 3, 4, 5, 6, 7] }
-    env: { P: "${{ needs.setup.outputs.project }}", PYTHONUNBUFFERED: '1' }
+      matrix: { chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }
+    env: { P: "${{ needs.setup.outputs.project }}", SIZE: "${{ needs.setup.outputs.size }}", AP: "${{ needs.setup.outputs.assets }}", PYTHONUNBUFFERED: '1' }
     steps:
       - uses: actions/checkout@v4
       - name: Assets
-        run: git clone -q --depth 1 -b assets-$P https://github.com/${{ github.repository }} documentaries/$P/assets || echo "no assets branch yet"
+        run: git clone -q --depth 1 -b assets-$AP https://github.com/${{ github.repository }} documentaries/$AP/assets || echo "no assets branch yet"
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - uses: actions/download-artifact@v4
@@ -85,7 +90,7 @@ jobs:
           N=$(python -c "import json;print(int(json.load(open('$TL'))['duration']*30))")
           A=$(( N * ${{ matrix.chunk }} / CHUNKS )); B=$(( N * (${{ matrix.chunk }} + 1) / CHUNKS ))
           echo "frames $A..$B of $N"
-          python doc/tools/render.py documentaries/$P "$TL" build/chunk_${{ matrix.chunk }}.mp4 --from-frame $A --to-frame $B --crf $CRF
+          python doc/tools/render.py documentaries/$P "$TL" build/chunk_${{ matrix.chunk }}.mp4 --from-frame $A --to-frame $B --crf $CRF --size $SIZE --assets $AP
       - uses: actions/upload-artifact@v4
         with: { name: "chunk-${{ matrix.chunk }}", path: "build/chunk_${{ matrix.chunk }}.mp4" }
   publish:
@@ -110,9 +115,7 @@ jobs:
           TAG=$P-$PART-$(date +%Y%m%d-%H%M)
           gh release create "$TAG" build/$P-$PART.mp4 --title "$P ($PART) $TAG" --notes "INK AND ANTIQUITY render, run ${{ github.run_id }}, commit ${{ github.sha }}." --target ${{ github.sha }}
           mkdir -p /tmp/r && cd /tmp/r && git init -q -b render-$P
-          SZ=$(stat -c %s $GITHUB_WORKSPACE/build/$P-$PART.mp4)
-          if [ $SZ -lt 95000000 ]; then cp $GITHUB_WORKSPACE/build/$P-$PART.mp4 .; else
-            ffmpeg -y -v error -i $GITHUB_WORKSPACE/build/$P-$PART.mp4 -vf scale=1280:-2 -c:v libx264 -preset veryfast -crf 28 -c:a copy -movflags +faststart $P-$PART-720p.mp4; fi
+          SZ=$(stat -c %s $GITHUB_WORKSPACE/build/$P-$PART.mp4); [ $SZ -lt 95000000 ] && cp $GITHUB_WORKSPACE/build/$P-$PART.mp4 . || true
           echo "https://github.com/${{ github.repository }}/releases/download/$TAG/$P-$PART.mp4" > LATEST.txt
           git add -A && git -c user.name=render-bot -c user.email=render-bot@users.noreply.github.com commit -qm "render $TAG"
           git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" render-$P

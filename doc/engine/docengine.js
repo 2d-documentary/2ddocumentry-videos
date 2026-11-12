@@ -1,4 +1,4 @@
-// docengine.js — INK AND ANTIQUITY archival documentary engine (canvas 2D, deterministic per frame)
+// docengine.js — UNFILED FILMS archival documentary engine (canvas 2D, deterministic per frame)
 // Archival photos + editorial motion graphics: Ken Burns, paper, typewriter, red-pen annotations, maps, counters.
 'use strict';
 const _Q = new URLSearchParams(location.search);
@@ -270,7 +270,7 @@ function renderAt(ctx, t) {
   ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.filter = 'none'; ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
   ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
   ctx.save(); sh.draw(ctx, t, t - sh.start, sh); ctx.restore();
-  if (window.EP && EP.captions) captions(ctx, t);
+  if (typeof EP !== 'undefined' && EP.captions) captions(ctx, t);
   // camera shake on demand handled inside shots; global finish
   grain(ctx, t, .07); vignette(ctx, .5);
   // gentle flicker
