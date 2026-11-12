@@ -150,7 +150,7 @@ print("music level vs voice (dB):", round(20 * np.log10(np.sqrt(np.mean(music[sp
 def drum(kind):
     if kind == 'doum': return doum(1.)
     if kind == 'tek': return tek(1.)
-    if kind == 'taiko': return taiko()
+    if kind == 'taiko': return taiko()[:int(1.2 * SR)]   # old SFX recipes expect 1.2 s
     return tek(.4)
 # ---- sound effects at word cues
 def sfx(name):
