@@ -127,7 +127,7 @@ function driftPaint(c, St, f, col) { // opaque sand drift with a soft irregular 
   const r = rng(Math.round(f.pts[0][0] * 13 + f.pts[0][1] * 7)); const P = f.pts.map(p => St.P(p)); const cx = P.reduce((a, q) => a + q[0], 0) / P.length, cy = P.reduce((a, q) => a + q[1], 0) / P.length;
   const E = []; for (let i = 0; i < P.length; i++) { const a = P[i], b = P[(i + 1) % P.length]; const L = Math.hypot(b[0] - a[0], b[1] - a[1]); const m = Math.max(3, Math.round(L / 18)); const ph = r() * 6; for (let j = 0; j < m; j++) { const t = j / m, nx = -(b[1] - a[1]) / L, ny = (b[0] - a[0]) / L, bump = Math.sin(t * Math.PI * 2 + ph) * Math.min(6, L * .04); E.push([a[0] + (b[0] - a[0]) * t + nx * bump, a[1] + (b[1] - a[1]) * t + ny * bump]); } }
   const sm = spline(E, true, 3); c.restore(); c.save();
-  c.globalAlpha = .75; c.fillStyle = '#DEC392'; c.beginPath(); sm.forEach((q, i) => i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1])); c.closePath(); c.fill();
+  c.globalAlpha = .9; c.fillStyle = '#EAD4A6'; c.beginPath(); sm.forEach((q, i) => i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1])); c.closePath(); c.fill();
   c.globalAlpha = 1; c.save(); c.clip(); c.strokeStyle = 'rgba(156,116,72,.35)'; c.lineWidth = 3; c.beginPath(); sm.filter(q => q[1] > cy).forEach((q, i) => i ? c.lineTo(q[0], q[1] - 2) : c.moveTo(q[0], q[1] - 2)); c.stroke();
   const ys = sm.map(q => q[1]), y0 = Math.min(...ys), y1 = Math.max(...ys), xs = sm.map(q => q[0]), x0 = Math.min(...xs), x1 = Math.max(...xs);
   c.strokeStyle = 'rgba(160,120,72,.4)'; c.lineWidth = 1.6; for (let i = 1; i <= 2; i++) { const yy = y0 + (y1 - y0) * i / 3; c.beginPath(); c.moveTo(x0 + (x1 - x0) * .15, yy + 3); c.quadraticCurveTo((x0 + x1) / 2, yy - 4, x1 - (x1 - x0) * .15, yy + 2); c.stroke(); } c.restore(); }
@@ -139,6 +139,10 @@ function egHut(S, x, y, w, d, h, col, seed) { // mud-brick house: door with fram
   S.sprite([x + w * .15, y - .6, 0], (c, px, py, k) => { jarSprite(c, px, py, .8 * k, '#A9603A', (seed | 0) % 4); poly(c, [[px + .5 * k, py], [px + 1.3 * k, py], [px + 1.2 * k, py - .35 * k], [px + .6 * k, py - .35 * k]], '#C9A05A', true, 1.6); c.strokeStyle = '#8A6A3A'; c.lineWidth = 1.2; for (let i = 1; i < 4; i++) { c.beginPath(); c.moveTo(px + (.5 + i * .2) * k, py); c.lineTo(px + (.6 + i * .17) * k, py - .35 * k); c.stroke(); } poly(c, [[px - 1.2 * k, py], [px - .4 * k, py], [px - .5 * k, py - .25 * k], [px - 1.1 * k, py - .25 * k]], '#9C8C78', true, 1.6); });   // jar, basket, quern stone
   S.quad([x + w * .5, y - 2.3, 2.3], [x + w + .2, y - 2.3, 2.3], [x + w + .2, y, 2.5], [x + w * .5, y, 2.5], '#B89A5A', { twoSided: true, paint: (c, St, f) => { for (let k = 0; k < 14; k++) { const a = St.uv(f, k / 14, 0), b = St.uv(f, k / 14, 1); c.strokeStyle = '#7A6436'; c.lineWidth = 1.2; c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.stroke(); } } });
 }
+function lyingDrum(ctx, cx, cy, rx, col) { // a column drum lying on its side: cylindrical shading, end face, contact shadow
+  const ry = rx * .38; ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.32)'; ctx.beginPath(); ctx.ellipse(cx + rx * .35, cy + ry * .7, rx * 1.35, ry * .5, 0, 0, 7); ctx.fill(); ctx.restore();
+  blob(ctx, g => { g.moveTo(cx - rx, cy - ry * 2); g.lineTo(cx + rx * .6, cy - ry * 2); g.ellipse(cx + rx * .6, cy - ry, ry * .5, ry, 0, -Math.PI / 2, Math.PI / 2); g.lineTo(cx - rx, cy); g.closePath(); }, col, { lw: 4, shade: g => { g.fillStyle = shade(col, 1.12); g.fillRect(cx - rx, cy - ry * 2, rx * 1.7, ry * .55); g.fillStyle = shade(col, .78); g.fillRect(cx - rx, cy - ry * .55, rx * 1.7, ry * .55); g.strokeStyle = shade(col, .66); g.lineWidth = 2; for (const k of [.3, .55]) { g.beginPath(); g.moveTo(cx - rx, cy - ry * 2 * (1 - k)); g.lineTo(cx + rx * .6, cy - ry * 2 * (1 - k)); g.stroke(); } } });
+  blob(ctx, g => g.ellipse(cx - rx, cy - ry, ry * .5, ry, 0, 0, 7), shade(col, .95), { lw: 4, shade: g => { g.strokeStyle = shade(col, .7); g.lineWidth = 2; g.beginPath(); g.ellipse(cx - rx, cy - ry, ry * .3, ry * .62, 0, 0, 7); g.stroke(); } }); }
 function drumFragment(ctx, cx, cy, rx, col) { // broken column drum lying on its side, jagged break on top
   ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.3)'; ctx.beginPath(); ctx.ellipse(cx + rx * .3, cy + 6, rx * 1.3, rx * .22, 0, 0, 7); ctx.fill(); ctx.restore();
   blob(ctx, g => { g.moveTo(cx - rx, cy); g.lineTo(cx - rx, cy - rx * .55); g.lineTo(cx - rx * .4, cy - rx * .75); g.lineTo(cx - rx * .1, cy - rx * .5); g.lineTo(cx + rx * .35, cy - rx * .8); g.lineTo(cx + rx * .7, cy - rx * .45); g.lineTo(cx + rx, cy - rx * .6); g.lineTo(cx + rx, cy); g.closePath(); }, col, { lw: 4, shade: g => { g.fillStyle = shade(col, .8); g.fillRect(cx - rx, cy - rx * .25, rx * 2, rx * .25); g.strokeStyle = shade(col, .65); g.lineWidth = 2; for (const u of [-.5, 0, .5]) { g.beginPath(); g.moveTo(cx + u * rx, cy - rx * .6); g.lineTo(cx + u * rx, cy); g.stroke(); } } }); }
@@ -345,7 +349,7 @@ SETS.luxor = (ctx, o = {}) => { // Luxor Temple: the first pylon (Kadesh reliefs
   S.groundDetail(ctx, { col: '#D8BC8B', seed: 6, count: 600, far: 300, avoid: p => p[0] > -30 && p[0] < 24 && p[1] > -47.5 && p[1] < 0 });
   S.render(ctx);
   ctx.save(); ctx.fillStyle = 'rgba(110,60,30,.24)'; ctx.beginPath(); ctx.moveTo(0, 820); ctx.lineTo(260, 820); ctx.lineTo(900, 1080); ctx.lineTo(0, 1080); ctx.closePath(); ctx.fill(); ctx.restore();   // shadow of an off-screen column
-  rubble(ctx, 300, 1600, 820, 1075, 52, 10); drumFragment(ctx, 1460, 1050, 130, '#CDAE7C');
+  rubble(ctx, 300, 1600, 820, 1075, 52, 10); lyingDrum(ctx, 1460, 1040, 120, '#CFAE7C'); rubble(ctx, 60, 900, 900, 1075, 57, 7);
   reeds(ctx, 1700, 1940, 1090, 230, 7, '#5E7A3A');
   brushTexture(ctx, .2); warmGrade(ctx);
 };
@@ -391,7 +395,7 @@ SETS.village = (ctx, o = {}) => { // Deir el-Medina: a narrow street of whitewas
       const [W, Hh] = fdim(f); const a0 = St.uv(f, .5, 1), a1 = St.uv(f, .5, 1 - .5 / Hh); const g0 = c.createLinearGradient(a0[0], a0[1], a1[0], a1[1]); g0.addColorStop(0, 'rgba(80,40,20,.5)'); g0.addColorStop(1, 'rgba(80,40,20,0)'); c.fillStyle = g0; c.fillRect(-50, -50, 2100, 1200);   // roofline shadow
       const r2 = rng(i * 7 + (s > 0)); for (let m = 0; m < 3; m++) { const u = .1 + r2() * .8, v = .1 + r2() * .6; const P = spline(Array.from({ length: 11 }, (_, j) => { const a = j / 11 * 6.283; return St.uv(f, u + Math.cos(a) * (.03 + r2() * .04), v + Math.sin(a) * (.05 + r2() * .06)); }), true, 3); c.save(); c.globalAlpha = .35; poly(c, P, m % 2 ? shade(cc, 1.08) : shade(cc, .9)); c.restore(); }   // faint plaster stains
       } });
-    if (i % 2 === 0 && i < 4) S.sprite([s < 0 ? x + sx + .1 : x - .1, y + 4, h - .9], (c, px, py, kk) => { const w = .33 * kk, hh = .3 * kk; c.strokeStyle = '#5A4030'; c.lineWidth = 2; c.beginPath(); c.moveTo(px, py - .5 * kk); c.lineTo(px, py); c.stroke(); poly(c, [[px - w, py], [px + w, py], [px + w * .8, py + hh], [px - w * .8, py + hh]], '#C29A52', true, 2.2); for (let f2 = 0; f2 < 5; f2++) { c.fillStyle = ['#C0453A', '#E3C25A', '#3F8A5A'][f2 % 3]; c.beginPath(); c.arc(px - w * .6 + f2 * w * .3, py - w * .12, w * .17, 0, 7); c.fill(); } c.fillStyle = '#A88040'; c.beginPath(); c.ellipse(px, py, w, w * .2, 0, 0, 7); c.fill(); inkLine(c, Array.from({ length: 17 }, (_, j) => [px + Math.cos(j / 16 * 6.283) * w, py + Math.sin(j / 16 * 6.283) * w * .2]), 2, { closed: true }); c.strokeStyle = '#8A6A32'; c.lineWidth = 1.4; for (let k = 1; k < 4; k++) { c.beginPath(); c.moveTo(px - w * (1 - k * .05), py + hh * k / 4); c.lineTo(px + w * (1 - k * .05), py + hh * k / 4); c.stroke(); } for (let k = -2; k <= 2; k++) { c.beginPath(); c.moveTo(px + k * w * .35, py); c.lineTo(px + k * w * .3, py + hh); c.stroke(); } });   // woven basket hung from a beam
+    if (i % 2 === 0 && i < 4) S.sprite([s < 0 ? x + sx + .1 : x - .1, y + 4, h - .9], (c, px, py, kk) => { const w = .33 * kk, hh = .3 * kk; c.strokeStyle = '#4A3424'; c.lineWidth = 3; c.beginPath(); c.moveTo(px - w * .7, py); c.lineTo(px, py - 1.1 * kk); c.lineTo(px + w * .7, py); c.stroke(); poly(c, [[px - w, py], [px + w, py], [px + w * .8, py + hh], [px - w * .8, py + hh]], '#C29A52', true, 2.2); for (let f2 = 0; f2 < 5; f2++) { c.fillStyle = ['#C0453A', '#E3C25A', '#3F8A5A'][f2 % 3]; c.beginPath(); c.arc(px - w * .6 + f2 * w * .3, py - w * .12, w * .17, 0, 7); c.fill(); } c.fillStyle = '#A88040'; c.beginPath(); c.ellipse(px, py, w, w * .2, 0, 0, 7); c.fill(); inkLine(c, Array.from({ length: 17 }, (_, j) => [px + Math.cos(j / 16 * 6.283) * w, py + Math.sin(j / 16 * 6.283) * w * .2]), 2, { closed: true }); c.strokeStyle = '#8A6A32'; c.lineWidth = 1.4; for (let k = 1; k < 4; k++) { c.beginPath(); c.moveTo(px - w * (1 - k * .05), py + hh * k / 4); c.lineTo(px + w * (1 - k * .05), py + hh * k / 4); c.stroke(); } for (let k = -2; k <= 2; k++) { c.beginPath(); c.moveTo(px + k * w * .35, py); c.lineTo(px + k * w * .3, py + hh); c.stroke(); } });   // woven basket hung from a beam
     // parapet + palm-rib canopy on some roofs
     const t = .3, ph = .55; S.box(x, y, h, sx, t, ph, col, { shadow: false, bias: -1 }); S.box(s < 0 ? x + sx - t : x, y + t, h, t, sy - t, ph, col, { shadow: false, bias: -1 });
     if ((i + (s > 0)) % 2 === 0) { const cx0 = s < 0 ? x + sx - 3.6 : x + .4; for (const [px, py] of [[cx0, y + 1], [cx0 + 3, y + 1], [cx0, y + 5], [cx0 + 3, y + 5]]) S.box(px, py, h, .16, .16, 1.9, '#7A5634', { shadow: false });
@@ -410,27 +414,26 @@ SETS.village = (ctx, o = {}) => { // Deir el-Medina: a narrow street of whitewas
   brushTexture(ctx, .22); warmGrade(ctx);
 };
 
-SETS.nile = (ctx, o = {}) => { // the Nile at Thebes at dusk: sun on the West Bank hills, feluccas, mirrored reflections
+SETS.nile = (ctx, o = {}) => { // the Nile at Thebes at dusk: flat posterised sky bands, inked far bank, cel-banded water with inked ripples
   const H = 520;
-  const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#3D4F86'); g.addColorStop(.55, '#C9878A'); g.addColorStop(.85, '#F2B07A'); g.addColorStop(1, '#FBD9A0'); ctx.fillStyle = g; ctx.fillRect(0, 0, 1920, H + 10);
-  const sx = 1240, sy = H - 120; ctx.save(); const sun = ctx.createRadialGradient(sx, sy, 40, sx, sy, 380); sun.addColorStop(0, 'rgba(255,236,190,.9)'); sun.addColorStop(.3, 'rgba(255,205,150,.45)'); sun.addColorStop(1, 'rgba(255,190,140,0)'); ctx.fillStyle = sun; ctx.fillRect(0, 0, 1920, H); ctx.restore();
+  const bands = [[0, '#40528A'], [.3, '#6E6290'], [.52, '#B07C8E'], [.72, '#E2A07E'], [.88, '#F6C48C']]; const r0 = rng(12);
+  for (const [t, c] of bands) { const y = t * H; ctx.fillStyle = c; ctx.beginPath(); ctx.moveTo(0, H + 10); ctx.lineTo(0, y); for (let x = 0; x <= 1920; x += 160) ctx.quadraticCurveTo(x + 80, y + (r0() - .5) * 18, x + 160, y + (r0() - .5) * 8); ctx.lineTo(1920, H + 10); ctx.closePath(); ctx.fill(); }
+  const sx = 1240, sy = H - 120;
+  for (const [rr, c] of [[170, 'rgba(255,214,160,.35)'], [110, 'rgba(255,226,180,.45)']]) { ctx.fillStyle = c; ctx.beginPath(); ctx.arc(sx, sy, rr, 0, 7); ctx.fill(); }
   ctx.beginPath(); ctx.arc(sx, sy, 62, 0, 7); ctx.fillStyle = '#FFE9B8'; ctx.fill(); inkLine(ctx, Array.from({ length: 33 }, (_, i) => [sx + Math.cos(i / 32 * 6.283) * 62, sy + Math.sin(i / 32 * 6.283) * 62]), 3, { closed: true, col: '#E79A5E' });
-  clouds(ctx, [[400, 220, 100, 3], [1000, 160, 80, 8], [1500, 300, 220, 4, 'streak'], [700, 360, 260, 6, 'streak']], '#F6C9A6', '#B9787E');
-  ridge(ctx, H - 10, 150, '#7E5A6A', 3, { cliffs: true, ink: 2, inkCol: '#4A3442' });
-  ridge(ctx, H, 26, '#5E4A52', 8, { ink: 2, inkCol: '#3A2A36' });
-  for (let x = -20; x < 1940; x += 55 + (x * 7 % 50)) datePalm(ctx, x, H + 6, 80 + (x % 70), x % 13, { leaf: '#6A6474', dates: false, ink: '#3A2E3A', trunk: ['#7A6670', '#5A4A56'] });
-  // temple columns on the far bank, catching the last light
-  for (let i = 0; i < 7; i++) { const x = 340 + i * 26; ctx.fillStyle = '#9C6E62'; ctx.fillRect(x, H - 70, 14, 76); poly(ctx, [[x - 6, H - 70], [x + 20, H - 70], [x + 16, H - 82], [x - 2, H - 82]], '#9C6E62', '#3A2A36', 2); inkLine(ctx, [[x, H + 6], [x, H - 70]], 2, { col: '#3A2A36' }); }
-  poly(ctx, [[326, H - 82], [530, H - 82], [530, H - 92], [326, H - 92]], '#8E6258', '#3A2A36', 2);
-  // water + sliced mirror of everything above the bank
-  const w = ctx.createLinearGradient(0, H, 0, 1080); w.addColorStop(0, '#D49A7C'); w.addColorStop(.35, '#8E6A84'); w.addColorStop(1, '#384872');
-  const mir = tmpCanvas(1920, H + 10); const m = mir.getContext('2d'); m.drawImage(ctx.canvas, 0, 0);
-  ctx.fillStyle = w; ctx.fillRect(0, H, 1920, 1080 - H);
-  ctx.save(); ctx.globalAlpha = .42; const r = rng(4); for (let yy = 0; yy < 1080 - H; yy += 6) { const src = H + 4 - yy * .9; if (src < 0) break; const off = (r() - .5) * (4 + yy * .05); ctx.drawImage(mir, 0, src - 6, 1920, 6, off, H + yy, 1920, 6); } ctx.restore(); freeCanvas(mir);
-  ctx.save(); ctx.globalCompositeOperation = 'multiply'; ctx.fillStyle = w; ctx.globalAlpha = .45; ctx.fillRect(0, H, 1920, 1080 - H); ctx.restore();
-  for (let i = 0; i < 120; i++) { const y = H + 8 + Math.pow(r(), 1.5) * 560, x = sx + (r() - .5) * (60 + (y - H) * .8); ctx.fillStyle = `rgba(255,224,176,${.3 + r() * .45})`; ctx.fillRect(x, y, 10 + r() * 60 * (y - H) / 460, 2 + (y - H) / 220); }
-  for (let i = 0; i < 70; i++) { const y = H + 14 + r() * 560, x = r() * 1920, l = 20 + (y - H) * .12; ctx.strokeStyle = 'rgba(30,30,60,.35)'; ctx.lineWidth = 1.5 + (y - H) / 300; ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + l / 2, y - 3, x + l, y); ctx.stroke(); }
-  inkLine(ctx, [[0, H + 5], [1920, H + 5]], 2.5, { col: '#3A2A36' });
+  clouds(ctx, [[400, 220, 100, 3], [1000, 160, 80, 8], [1500, 300, 220, 4, 'streak'], [700, 360, 260, 6, 'streak']], '#F6C9A6', '#C98A86');
+  ridge(ctx, H - 10, 150, '#7E5A6A', 3, { cliffs: true, ink: 3, inkCol: '#3A2A36' });
+  ridge(ctx, H, 26, '#5E4A52', 8, { ink: 3, inkCol: '#2E2230' });
+  for (let x = -20; x < 1940; x += 55 + (x * 7 % 50)) datePalm(ctx, x, H + 6, 80 + (x % 70), x % 13, { leaf: '#6A6474', dates: false, ink: '#2E2230', trunk: ['#7A6670', '#5A4A56'], lw: 3 });
+  for (let i = 0; i < 7; i++) { const x = 340 + i * 26; poly(ctx, [[x, H + 6], [x + 14, H + 6], [x + 14, H - 70], [x, H - 70]], i % 2 ? '#9C6E62' : '#B07C68', '#2E2230', 3); poly(ctx, [[x - 6, H - 70], [x + 20, H - 70], [x + 16, H - 82], [x - 2, H - 82]], '#9C6E62', '#2E2230', 3); }
+  poly(ctx, [[326, H - 82], [530, H - 82], [530, H - 92], [326, H - 92]], '#8E6258', '#2E2230', 3);
+  // water: flat cel bands, a stylised reflection column under the sun, inked ripple strokes
+  const wb = [[0, '#C8907E'], [.12, '#9A7088'], [.32, '#6E6488'], [.6, '#4A5480'], [.85, '#384872']]; const r = rng(4);
+  for (const [t, c] of wb) { const y = H + t * (1080 - H); ctx.fillStyle = c; ctx.fillRect(0, y, 1920, 1080 - y); }
+  ctx.fillStyle = 'rgba(60,40,60,.35)'; ctx.beginPath(); ctx.moveTo(0, H); ctx.lineTo(1920, H); ctx.lineTo(1920, H + 40); for (let x = 1920; x >= 0; x -= 60) ctx.lineTo(x, H + 30 + Math.sin(x * .05) * 10); ctx.closePath(); ctx.fill();   // flat reflection of the bank
+  for (let i = 0; i < 26; i++) { const y = H + 20 + i * 20 + i * i * .6, w = 40 + i * 9 + r() * 30; ctx.fillStyle = i % 3 ? '#FBD9A0' : '#FFE9B8'; ctx.beginPath(); ctx.roundRect(sx - w / 2 + (r() - .5) * 30, y, w, 4 + i * .35, 3); ctx.fill(); }   // sun glitter column
+  for (let i = 0; i < 46; i++) { const y = H + 30 + Math.pow(r(), 1.3) * 540, x = r() * 1920, l = 26 + (y - H) * .14; inkLine(ctx, [[x, y], [x + l / 2, y - 3 - (y - H) * .006], [x + l, y]], 1.6 + (y - H) / 280, { col: '#2A2848' }); }
+  inkLine(ctx, [[0, H + 5], [1920, H + 5]], 3, { col: '#2E2230' });
   feluccaSprite(ctx, 1500, 600, 12, { crew: false }); feluccaSprite(ctx, 700, 760, 30);
   reeds(ctx, -10, 560, 1085, 260, 3, '#4E6234'); datePalm(ctx, 1770, 1090, 760, 9, { leaf: '#4E5440', lean: -.12, trunk: ['#8A6A5A', '#4A3640'], ink: '#221A22', dateCol: ['#8A4A32', '#6E3A2A'] }); reeds(ctx, 1450, 1930, 1085, 200, 7, '#4E6234');
   brushTexture(ctx, .2); warmGrade(ctx, .6);
