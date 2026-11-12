@@ -20,6 +20,462 @@
    "description": "Annie and John Chapman, wedding portrait, 1869",
    "source_page": "https://commons.wikimedia.org/wiki/File:Annie_Chapman_and_her_husband_in_1869.jpg",
    "authenticity": "authentic"
+  },
+  {
+   "id": "hanbury",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "29 Hanbury Street.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:29_Hanbury_Street.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "hanbury1888",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Hanbury.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Hanbury.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "berner",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Berner.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Berner.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dorset",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Dorset-street-1902.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Dorset-street-1902.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dutfield",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Dutfield's Yard (Berner Street, Whitechapel).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Dutfield%27s_Yard_(Berner_Street,_Whitechapel).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "iln_suspect",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "JacktheRipper1888.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:JacktheRipper1888.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "iln_suspect_crop",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "JacktheRipper1888 (cropped and rotated).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:JacktheRipper1888_(cropped_and_rotated).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "puck",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "JacktheRipperPuck.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:JacktheRipperPuck.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "slum_child",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "JacktheRipperWhitechapelcirca1890.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:JacktheRipperWhitechapelcirca1890.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "nemesis",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "John Tenniel - Punch - The Nemesis of Neglect.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:John_Tenniel_-_Punch_-_The_Nemesis_of_Neglect.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "eddowes_sketch",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Kate Eddowes.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Kate_Eddowes.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ipn_oct20",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "The Illustrated Police News - 20 October 1888 - Jack the Ripper.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_Police_News_-_20_October_1888_-_Jack_the_Ripper.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "warren_wall",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "The Illustrated Police News - 20 October 1888 - Sir Charles Warren viewing handwriting on wall.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_Police_News_-_20_October_1888_-_Sir_Charles_Warren_viewing_handwriting_on_wall.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ipn_nov3",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "The Illustrated Police News - 3 November 1888 - Jack the Ripper.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_Police_News_-_3_November_1888_-_Jack_the_Ripper.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dearboss1",
+   "scene": 0,
+   "category": "documents",
+   "description": "DearBossletterJacktheRipper.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:DearBossletterJacktheRipper.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dearboss2",
+   "scene": 0,
+   "category": "documents",
+   "description": "Dear Boss pt2.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Dear_Boss_pt2.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "fromhell",
+   "scene": 0,
+   "category": "documents",
+   "description": "FromHellLetter.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:FromHellLetter.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "saucy_front",
+   "scene": 0,
+   "category": "documents",
+   "description": "Saucy Jack front.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Saucy_Jack_front.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "saucy_back",
+   "scene": 0,
+   "category": "documents",
+   "description": "Saucy jacky back.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Saucy_jacky_back.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "druitt",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Druitt2.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Druitt2.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "tumblety",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Francis Tumblety - Post Dispatch.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Francis_Tumblety_-_Post_Dispatch.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "klosowski",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Klosowski.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Klosowski.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ostrog",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Michael Ostrogg.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Michael_Ostrogg.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "maybrick",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Mr James Maybrick.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Mr_James_Maybrick.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sickert",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Walter Sickert photo by George Charles Beresford 1911 (1).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Walter_Sickert_photo_by_George_Charles_Beresford_1911_(1).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "iln_police",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "The Illustrated London News - September 22nd, 1888 - Sketches with the Police at the East End.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_London_News_-_September_22nd,_1888_-_Sketches_with_the_Police_at_the_East_End.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "penny_eddowes",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "The Penny Illustrated Paper - October 13, 1888 - Catherine Eddowes.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Penny_Illustrated_Paper_-_October_13,_1888_-_Catherine_Eddowes.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "millers_court",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "13 Miller's Court Spitalfields Jack the Estripador 1888 Photographed Circa 1900.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:13_Miller%27s_Court_Spitalfields_Jack_the_Estripador_1888_Photographed_Circa_1900.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "millers13",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Miller's Court No.13.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Miller%27s_Court_No.13.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "blindman",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "Blind-man's buff - Punch (22 September 1888), 139 - BL.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Blind-man%27s_buff_-_Punch_(22_September_1888),_139_-_BL.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bloodhounds",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Drawing of the Whitechapel bloodhouse trial.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Drawing_of_the_Whitechapel_bloodhouse_trial.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ipn_chapman",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "IllustratedPoliceNewsSeptember1888AnnieChapmanJacktheRippera.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:IllustratedPoliceNewsSeptember1888AnnieChapmanJacktheRippera.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "macnaghten",
+   "scene": 0,
+   "category": "documents",
+   "description": "Macnaghten memorandum.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Macnaghten_memorandum.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "mitre_corner",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Mitre Square Corner.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Mitre_Square_Corner.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "police_notice",
+   "scene": 0,
+   "category": "documents",
+   "description": "Police Notice to the Occupier (Whitechapel murders), 30th September 1888.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Police_Notice_to_the_Occupier_(Whitechapel_murders),_30th_September_1888.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bucks_row",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Polly Nichols' place of murder.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Polly_Nichols%27_place_of_murder.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "map1894",
+   "scene": 0,
+   "category": "maps",
+   "description": "Goulston Street.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Goulston_Street.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "map1894b",
+   "scene": 0,
+   "category": "maps",
+   "description": "Whitechapel murders.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Whitechapel_murders.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "graffito",
+   "scene": 0,
+   "category": "documents",
+   "description": "The Juwes are the men that.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Juwes_are_the_men_that.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "graffito_warren",
+   "scene": 0,
+   "category": "documents",
+   "description": "Juives.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Juives.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "lusk",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "George Lusk, President of the Whitechapel Vigilance Committee.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:George_Lusk,_President_of_the_Whitechapel_Vigilance_Committee.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "homeless",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "The Illustrated London News - October 13, 1888 - Homeless.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_London_News_-_October_13,_1888_-_Homeless.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "vigilance",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "The Illustrated London News - October 13, 1888 - With the Vigilance Committee in the East End.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_London_News_-_October_13,_1888_-_With_the_Vigilance_Committee_in_the_East_End.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "vig_box",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "Vigilancecommittee.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Vigilancecommittee.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "kelly_sketch",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "The Illustrated Police News - 17 November 1888 - Mary Jane Kelly.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_Police_News_-_17_November_1888_-_Mary_Jane_Kelly.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "abberline",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Frederick Abberline.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Frederick_Abberline.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "leman_detectives",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Leman Street detectives.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Leman_Street_detectives.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ipn_nichols",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "The Illustrated Police News - 8 September 1888 - Mary Ann Nichols.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_Police_News_-_8_September_1888_-_Mary_Ann_Nichols.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ipn_stride_eddowes",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "The Illustrated Police News - 6 October 1888 - Elizabeth Stride & Catherine Eddowes.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_Police_News_-_6_October_1888_-_Elizabeth_Stride_%26_Catherine_Eddowes.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "slum1868",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "111418-25-History-Poverty-Victorian-England-London-768x989.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:111418-25-History-Poverty-Victorian-England-London-768x989.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "lawende",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "J. Lawende Jack the Ripper Eyewitness 1899.png",
+   "source_page": "https://commons.wikimedia.org/wiki/File:J._Lawende_Jack_the_Ripper_Eyewitness_1899.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "univers",
+   "scene": 0,
+   "category": "newspapers",
+   "description": "L'Univers Illustr\u00e9 - 20 octobre 1888 - Les meurtres de Londres - Le quartier de Whitechapel.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:L%27Univers_Illustr%C3%A9_-_20_octobre_1888_-_Les_meurtres_de_Londres_-_Le_quartier_de_Whitechapel.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "warren",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Charles Warren Commissioner of Police 1886 portrait",
+   "commons_search": "Charles Warren Commissioner of Police 1886 portrait",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "gaslamp",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "gas lamp street night fog London",
+   "commons_search": "gas lamp street night fog London",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "christchurch",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Christ Church Spitalfields 19th century engraving",
+   "commons_search": "Christ Church Spitalfields 19th century engraving",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "thames1880",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "River Thames London 1880s photograph",
+   "commons_search": "River Thames London 1880s photograph",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "colney",
+   "scene": 0,
+   "category": "historical-photos",
+   "description": "Colney Hatch Lunatic Asylum",
+   "commons_search": "Colney Hatch Lunatic Asylum",
+   "authenticity": "authentic"
   }
  ]
 }
