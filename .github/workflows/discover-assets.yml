@@ -1,0 +1,31 @@
+name: discover-assets
+# Searches Wikimedia Commons and listed pages for candidate archival material and makes numbered
+# contact sheets. Output goes to the branch discover-<project>.
+on:
+  push:
+    branches: [main]
+    paths: ['documentaries/*/discover.json']
+permissions:
+  contents: write
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install -q pillow
+      - name: Discover
+        env: { PYTHONUNBUFFERED: '1' }
+        run: |
+          git config --global user.name "asset-bot"; git config --global user.email "asset-bot@users.noreply.github.com"
+          REMOTE="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          for P in $(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E '^documentaries/[^/]+/discover\.json$' | cut -d/ -f2 | sort -u); do
+            [ -f "documentaries/$P/discover.json" ] || continue
+            O=/tmp/disc-$P; rm -rf $O; mkdir -p $O
+            python tools/discover.py documentaries/$P $O
+            cd $O && git init -q -b discover-$P && git add -A && git commit -qm "discover: $P (run ${{ github.run_id }})"
+            git push -qf "$REMOTE" HEAD:discover-$P; cd - >/dev/null
+          done
