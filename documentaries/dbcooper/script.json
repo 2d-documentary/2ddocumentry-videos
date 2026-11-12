@@ -1,0 +1,157 @@
+{
+ "title": "D.B. Cooper: The Man Who Vanished",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.14,
+   "lang": "a",
+   "desc": "Documentary narrator: confident, brisk, dry wit, suspense on the reveals"
+  }
+ },
+ "spoken": {
+  "1971.": "nineteen seventy-one.",
+  "1971": "nineteen seventy-one",
+  "18E,": "eighteen E,",
+  "$200,000": "two hundred thousand dollars",
+  "727": "seven twenty-seven",
+  "FBI": "F.B.I.",
+  "800": "eight hundred",
+  "66": "sixty-six"
+ },
+ "lines": [
+  {
+   "id": "L001",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "gap_before": 0.6,
+   "text": "November 24th, 1971. The day before Thanksgiving."
+  },
+  {
+   "id": "L002",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "text": "A quiet man in a dark suit and a black clip-on tie walks up to the Northwest Orient counter in Portland, Oregon."
+  },
+  {
+   "id": "L003",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "text": "He pays cash for a one-way ticket to Seattle. A thirty-minute hop. The name he gives? Dan Cooper."
+  },
+  {
+   "id": "L004",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "text": "He takes seat 18E, the very last row, and orders a bourbon and soda."
+  },
+  {
+   "id": "L005",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "text": "Just after three p.m., he slips a note to a flight attendant. She assumes it's his phone number, and pockets it."
+  },
+  {
+   "id": "L006",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "gap_before": 0.25,
+   "text": "It is not his phone number."
+  },
+  {
+   "id": "L007",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "gap_before": 0.3,
+   "text": "Miss, I have a bomb in my briefcase. I want you to sit by me."
+  },
+  {
+   "id": "L008",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "text": "He cracks open the case. Wires. Red sticks."
+  },
+  {
+   "id": "L009",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "text": "His demands: $200,000 in twenty-dollar bills. And four parachutes."
+  },
+  {
+   "id": "L010",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "gap_before": 0.3,
+   "text": "Five hours later, somewhere over the black forests of southwest Washington, he lowers the rear stairs of a Boeing 727, and steps out into the night."
+  },
+  {
+   "id": "L011",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "gap_before": 0.45,
+   "text": "He was never seen again."
+  },
+  {
+   "id": "L012",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "gap_before": 0.35,
+   "text": "Fifty-five years. More than 800 suspects. 66 volumes of FBI files."
+  },
+  {
+   "id": "L013",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "text": "And still, nobody knows who this man really was."
+  },
+  {
+   "id": "L014",
+   "speaker": "NARRATOR",
+   "parts": [
+    "test",
+    "full"
+   ],
+   "gap_before": 0.3,
+   "text": "Even the name the whole world remembers him by is wrong."
+  }
+ ],
+ "tail": 4.2
+}

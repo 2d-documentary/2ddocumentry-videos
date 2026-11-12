@@ -43,7 +43,7 @@ def category(cat, depth=1, seen=None, maxn=60):
     seen.add(cat)
     files = commons_files({"action": "query", "generator": "categorymembers", "gcmtitle": "Category:" + cat,
                            "gcmtype": "file", "gcmlimit": 50, "prop": "imageinfo",
-                           "iiprop": "url|size|mime|extmetadata", "iiurlwidth": 400, "_max": maxn})
+                           "iiprop": "url|size|mime|extmetadata", "iiurlwidth": 330, "_max": maxn})
     if depth > 0:
         subs = get_json(API + urllib.parse.urlencode({"action": "query", "list": "categorymembers",
                         "cmtitle": "Category:" + cat, "cmtype": "subcat", "cmlimit": 50}))
@@ -55,7 +55,7 @@ def category(cat, depth=1, seen=None, maxn=60):
 def search(q, maxn):
     return commons_files({"action": "query", "generator": "search", "gsrsearch": q, "gsrnamespace": 6,
                           "gsrlimit": min(maxn, 50), "prop": "imageinfo", "iiprop": "url|size|mime|extmetadata",
-                          "iiurlwidth": 400})
+                          "iiurlwidth": 330})
 
 
 def scrape(url):
