@@ -1,0 +1,538 @@
+{
+ "title": "Jack the Ripper: The Autumn of Terror",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Documentary narrator: serious, brisk, suspenseful, respectful"
+  }
+ },
+ "spoken": {
+  "1888": "eighteen eighty-eight",
+  "1869": "eighteen sixty-nine",
+  "1891": "eighteen ninety-one",
+  "1894": "eighteen ninety-four",
+  "1919": "nineteen nineteen",
+  "2014": "twenty fourteen",
+  "2024": "twenty twenty-four",
+  "2025": "twenty twenty-five",
+  "3:40": "three forty",
+  "2:55": "two fifty-five",
+  "31st": "thirty-first",
+  "8th": "eighth",
+  "27th": "twenty-seventh",
+  "30th": "thirtieth",
+  "16th": "sixteenth",
+  "9th": "ninth",
+  "29": "twenty-nine",
+  "13": "thirteen",
+  "1": "one",
+  "a.m": "A.M"
+ },
+ "tail": 3.0,
+ "lines": [
+  {
+   "id": "L001",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "London. The autumn of 1888.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L002",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "In the space of ten weeks, five women are murdered in the crowded streets of Whitechapel, in London's East End."
+  },
+  {
+   "id": "L003",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The killer strikes in the dark, and vanishes before dawn."
+  },
+  {
+   "id": "L004",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Then someone writes to the press, claiming to be the murderer, and signs with a name the world will never forget.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L005",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Jack the Ripper.",
+   "gap_before": 0.35
+  },
+  {
+   "id": "L006",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "More than a hundred and thirty years later, we still don't know who he was.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L007",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Hundreds of suspects. A police force in chaos. Half a human kidney in a box. And a DNA test that only made things more complicated."
+  },
+  {
+   "id": "L008",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "But this story isn't only about a killer. It's about five women whose names deserve to be remembered.",
+   "gap_before": 0.35
+  },
+  {
+   "id": "L009",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "This is the case of Jack the Ripper.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L010",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "To understand the murders, you have to see Whitechapel.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L011",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "By 1888, around eighty thousand people were packed into this one district."
+  },
+  {
+   "id": "L012",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Every night, about eighty-five hundred of them slept in two hundred and thirty-three common lodging houses."
+  },
+  {
+   "id": "L013",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Fourpence bought you a bed. With only twopence, you could sleep sitting up, slumped over a rope stretched across the room."
+  },
+  {
+   "id": "L014",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "More than half of the children born in the East End died before the age of five."
+  },
+  {
+   "id": "L015",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The streets were dark, the police were stretched thin, and for women with nowhere else to go, the night was dangerous."
+  },
+  {
+   "id": "L016",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Friday, August 31st. Around 3:40 in the morning, a carter walking to work finds a woman lying in a street called Buck's Row.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L017",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Her name is Mary Ann Nichols. Friends called her Polly. She was forty-three, and a mother of five."
+  },
+  {
+   "id": "L017B",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Hours earlier, she had been turned away from a lodging house because she didn't have fourpence for a bed. She told them she'd be back soon with the money."
+  },
+  {
+   "id": "L018",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Eight days later, on Saturday, September 8th, around six a.m., a second woman is found in the backyard of 29 Hanbury Street.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L019",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Annie Chapman. Forty-seven years old. A coachman's wife who once lived a settled life in the west of London, until the death of her daughter and the end of her marriage."
+  },
+  {
+   "id": "L020",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "This is a real photograph of Annie, taken on her wedding day in 1869.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L021",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Panic spreads. Newspapers whisper about a man called Leather Apron. A local bootmaker, John Pizer, is arrested, and quickly cleared.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L022",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Scotland Yard sends one of its best detectives, Inspector Frederick Abberline, a man who knows these streets well."
+  },
+  {
+   "id": "L023",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Local businessmen form the Whitechapel Vigilance Committee, and start patrolling the streets at night."
+  },
+  {
+   "id": "L024",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Then, on September 27th, a letter arrives at the Central News Agency. It's written in red ink, and it begins: Dear Boss.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L025",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The writer jokes about the murders and promises more. And it is signed: Jack the Ripper. It's the first time that name appears anywhere."
+  },
+  {
+   "id": "L026",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Three days later comes the most terrifying night of all.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L027",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Around 1 a.m. on Sunday, September 30th, Elizabeth Stride is found in Dutfield's Yard, off Berner Street. She was forty-four, and born in Sweden.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L027B",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The man who found her arrived with his pony and cart. He may have interrupted the killer."
+  },
+  {
+   "id": "L028",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Less than an hour later, less than a mile away, Catherine Eddowes is found in Mitre Square, inside the City of London. She was forty-six."
+  },
+  {
+   "id": "L028B",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Incredibly, until about one o'clock that night, Catherine had been sitting in a police cell at Bishopsgate, held for being drunk."
+  },
+  {
+   "id": "L029",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Two murders in one night. The press calls it the double event."
+  },
+  {
+   "id": "L029B",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Near Mitre Square, a witness saw a woman, possibly Catherine, talking with a man of about thirty, with a fair moustache. It was one of the best descriptions police ever got. It led nowhere."
+  },
+  {
+   "id": "L030",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "At 2:55 a.m., a constable finds a piece of Catherine's bloodied apron in a doorway on Goulston Street. Above it, a message is written in chalk.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L031",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "In clumsy spelling, it seems to blame the local Jewish community. Police Commissioner Sir Charles Warren, fearing riots, orders it washed away before dawn."
+  },
+  {
+   "id": "L032",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "A possible clue, erased by the police themselves.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L033",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The next day, a postcard arrives. It mentions a double event, in what looks like the same handwriting as the Dear Boss letter.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L034",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "And on October 16th, George Lusk, head of the Vigilance Committee, receives a small parcel. Inside is a letter, and half of a human kidney.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L035",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The letter begins with two words: From Hell.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L036",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Police and newspapers received hundreds of letters like these. Most were hoaxes. A senior detective later named a journalist as the real author of the Dear Boss letter.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L037",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "If he was right, the most famous name in crime history was invented to sell newspapers."
+  },
+  {
+   "id": "L038",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Friday, November 9th. Her landlord sends an assistant to collect unpaid rent from a tiny room at 13 Miller's Court, off Dorset Street. Inside is Mary Jane Kelly. She was about twenty-five, the youngest of the five, and the only one killed indoors.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L039",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "It was the most brutal of all the murders. We won't show it. Some things don't belong on a screen.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L040",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "The day before, Sir Charles Warren had resigned as Commissioner of Police.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "L041",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "And then, as suddenly as they began, the five canonical murders stopped."
+  },
+  {
+   "id": "L042",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Other women were killed in Whitechapel over the next few years. Police kept them in one file, the Whitechapel murders, with eleven names. But most experts link only five to the Ripper."
+  },
+  {
+   "id": "L043",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "So who was he? In 1894, Assistant Chief Constable Melville Macnaghten wrote a private memo naming three suspects.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L044",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Montague John Druitt, a thirty-one-year-old barrister and teacher, found drowned in the Thames at the end of December 1888. But the day after the first murder, he was playing cricket in Dorset."
+  },
+  {
+   "id": "L045",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Michael Ostrog, a con man with dozens of aliases. Researchers later found he was in a French prison at the time."
+  },
+  {
+   "id": "L046",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "And Aaron Kosminski, a Polish Jewish barber in Whitechapel, sent to an asylum in 1891, where he lived until 1919. Two senior officers, Robert Anderson and Donald Swanson, believed he was the man."
+  },
+  {
+   "id": "L047",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Others have been named too. Francis Tumblety, an American quack doctor who fled England in late 1888. George Chapman, a Whitechapel barber who later poisoned three women, and reportedly Inspector Abberline's favourite suspect.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L048",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Even the painter Walter Sickert, though he was most likely in France during most of the murders. And the diary of a Liverpool merchant, James Maybrick, which most experts believe is a forgery."
+  },
+  {
+   "id": "L049",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Then, in 2014, author Russell Edwards announced that DNA from a shawl, said to come from Catherine Eddowes' murder scene, pointed to Kosminski.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L050",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Case closed? Not quite. There's no solid proof the shawl was ever in Mitre Square. The type of DNA used can be shared by many people. And in 2024, the journal that published the study issued an expression of concern."
+  },
+  {
+   "id": "L051",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Even so, in 2025, a descendant of Catherine Eddowes joined calls for a new inquest, to finally name the killer in court."
+  },
+  {
+   "id": "L052",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "So we are left with what we know. Five women. Ten weeks. A name that may have been invented by a journalist. And a killer who walked out of the London fog, and into legend.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L053",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Their names were Mary Ann Nichols, Annie Chapman, Elizabeth Stride, Catherine Eddowes, and Mary Jane Kelly.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L054",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "Remember them. Not him.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L055",
+   "speaker": "NARRATOR",
+   "parts": [
+    "full"
+   ],
+   "text": "This was Unfiled Films. Who do you think he was? Tell us in the comments, and subscribe for more of history's darkest mysteries.",
+   "gap_before": 0.8
+  }
+ ]
+}

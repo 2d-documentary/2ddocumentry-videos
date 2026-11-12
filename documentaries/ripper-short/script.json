@@ -1,0 +1,82 @@
+{
+ "title": "Jack the Ripper in 60 seconds",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Documentary narrator: serious, brisk, suspenseful, respectful"
+  }
+ },
+ "spoken": {
+  "1888": "eighteen eighty-eight",
+  "1869": "eighteen sixty-nine",
+  "1891": "eighteen ninety-one",
+  "1894": "eighteen ninety-four",
+  "1919": "nineteen nineteen",
+  "2014": "twenty fourteen",
+  "2024": "twenty twenty-four",
+  "2025": "twenty twenty-five",
+  "3:40": "three forty",
+  "2:55": "two fifty-five",
+  "31st": "thirty-first",
+  "8th": "eighth",
+  "27th": "twenty-seventh",
+  "30th": "thirtieth",
+  "16th": "sixteenth",
+  "9th": "ninth",
+  "29": "twenty-nine",
+  "13": "thirteen",
+  "1": "one",
+  "a.m": "A.M"
+ },
+ "tail": 2.6,
+ "lines": [
+  {
+   "id": "S01",
+   "speaker": "NARRATOR",
+   "gap_before": 0.35,
+   "text": "London, 1888. In just ten weeks, five women are murdered in the dark streets of Whitechapel."
+  },
+  {
+   "id": "S02",
+   "speaker": "NARRATOR",
+   "text": "Then a letter arrives at a news agency, written in red ink. It's signed: Jack the Ripper."
+  },
+  {
+   "id": "S03",
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "In one night, two women are killed. Police find a chalk message on a wall, and wash it away before dawn."
+  },
+  {
+   "id": "S04",
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "A man opens a parcel. Inside is a letter that begins From Hell, and half of a human kidney."
+  },
+  {
+   "id": "S05",
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "Hundreds of suspects. A barber. A lawyer found drowned in the Thames. Even a famous painter."
+  },
+  {
+   "id": "S06",
+   "speaker": "NARRATOR",
+   "text": "In 2014, a DNA test named a suspect. Scientists still argue about it."
+  },
+  {
+   "id": "S07",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "More than a hundred and thirty years later, the killer has never been identified. But we do know the names of the women he took."
+  },
+  {
+   "id": "S08",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "Their full story is on Unfiled Films."
+  }
+ ]
+}
