@@ -1,0 +1,36 @@
+function scenes() {
+  shot(['A01', 'Ek'], (ctx, t, lt) => { darkBG(ctx, t, '#2A1A06', '#000'); noteRain(ctx, t, 0, 26); shade(ctx, .35);
+    if (t > T('A01', 'karodon')) rsText(ctx, 'KARODON', CX, 640, { size: 190, glow: 'rgba(255,190,60,.7)' });
+    if (t > T('A01', 'khaali')) brReceipt(ctx, CX, 1080, .95, t, { empty: prog(t, T('A01', 'khaali'), T('A01', 'khaali') + .2), rot: -.04 }); fadeIn(ctx, t, 0, .3); }, { lead: .3, name: 'a-hook' });
+  cue(T('A01', 'karodon'), 'cash', .9); cue(T('A01', 'khaali'), 'stamp', .9);
+  shot(['A02', '1991'], (ctx, t, lt) => { gridBG(ctx, t, '#0A1F3A'); timeStamp(ctx, '1991', 120, 380, t, T('A02', '1991'), { size: 110 });
+    bankIcon(ctx, 280, 820, .8, 'BANK A'); bankIcon(ctx, 800, 820, .8, 'BANK B'); flowArrow(ctx, [740, 1020], [340, 1020], prog(t, T('A02', 'loan'), T('A02', 'loan') + .6), HM.gold, 'LOAN');
+    if (t > T('A02', 'dino')) pill(ctx, 'KUCH DIN KE LIYE', CX, 1260, { align: 'center', bg: '#333', size: 46 }); }, { name: 'a-rf' });
+  cue(T('A02', 'loan'), 'whoosh', .5);
+  shot(['A03', 'Girvi'], (ctx, t, lt) => { darkBG(ctx, t, '#1B140E', '#050302'); text(ctx, 'GIRVI: GOVT. SECURITIES', CX, 380, { font: F.bebas, size: 80, color: '#9EC9FF', align: 'center' });
+    if (t > T('A03', 'nahi')) bigX(ctx, CX, 470, 50, prog(t, T('A03', 'nahi'), T('A03', 'nahi') + .4)); if (t > T('A03', 'rasid')) brReceipt(ctx, CX, 860, .9, t, {});
+    punch(ctx, 'BR', CX, 1300, t, T('A03', 'BR.'), { font: F.bebas, size: 200, color: HM.gold }); }, { name: 'a-br' });
+  cue(T('A03', 'rasid'), 'paper', .7); cue(T('A03', 'BR.'), 'impact', .7);
+  shot(['A04', 'Aur'], (ctx, t, lt) => { gridBG(ctx, t, '#0A1F3A'); bankIcon(ctx, 200, 520, .6, ''); bankIcon(ctx, 880, 520, .6, ''); hmFigure(ctx, CX, 1050, 1, { glow: t > T('A04', 'Harshad') ? 'rgba(255,195,77,.7)' : null, col: t > T('A04', 'Harshad') ? '#1B2230' : '#0B0F18' });
+    if (t > T('A04', 'broker')) pill(ctx, 'BROKER', CX, 680, { align: 'center', bg: '#333', size: 50 }); if (t > T('A04', 'Harshad')) pill(ctx, 'HARSHAD MEHTA', CX, 1300, { align: 'center', bg: HM.blood, size: 56 });
+    text(ctx, 'ILLUSTRATION', CX, 1390, { font: F.mono, size: 20, color: 'rgba(255,255,255,.45)', align: 'center' }); }, { name: 'a-him' });
+  cue(T('A04', 'Harshad'), 'impact', .8);
+  shot(['A05', 'Aarop'], (ctx, t, lt) => { gridBG(ctx, t, '#0A1F3A'); kicker(ctx, 'AAROP', 120, 330, t, T('A05', 'Aarop'), { color: HM.blood }); bankIcon(ctx, CX, 600, .8, 'BANK');
+    if (t > T('A05', 'jagah')) bigX(ctx, 300, 900, 50, prog(t, T('A05', 'jagah'), T('A05', 'jagah') + .4)); flowArrow(ctx, [CX, 800], [CX, 1080], prog(t, T('A05', 'account'), T('A05', 'account') + .5), HM.gold);
+    popIn(ctx, t, T('A05', 'account'), CX, 1200, (g) => { g.fillStyle = '#111'; g.fillRect(-300, -80, 600, 160); g.strokeStyle = HM.gold; g.lineWidth = 5; g.strokeRect(-300, -80, 600, 160); text(g, 'HARSHAD KA ACCOUNT', 0, 22, { font: F.bebas, size: 70, color: HM.gold, align: 'center' }); }); }, { name: 'a-divert' });
+  cue(T('A05', 'account'), 'whoosh', .6);
+  shot(['A06', 'Phir'], (ctx, t, lt) => { darkBG(ctx, t, '#1A0E0A', '#000'); bankIcon(ctx, 280, 520, .6, 'BANK OF KARAD', '#DCE3EC', { size: 30 }); bankIcon(ctx, 800, 520, .6, 'METROPOLITAN CO-OP', '#DCE3EC', { size: 30 });
+    brReceipt(ctx, CX, 1050, .95, t, { sec: '— — — — —', empty: prog(t, T('A06', 'nahi'), T('A06', 'nahi') + .2) }); }, { name: 'a-empty' });
+  cue(T('A06', 'nahi'), 'stamp', .9);
+  shot(['A07', 'Matlab'], (ctx, t, lt) => { yellowBG(ctx); tiffin(ctx, CX, 950, 1.1, 'PANEER', 1); punch(ctx, 'KHAALI TIFFIN', CX, 380, t, T('A07', 'Matlab'), { font: F.bebas, size: 130, color: '#111' });
+    if (t > T('A07', 'andar')) punch(ctx, 'ANDAR: KUCH NAHI', CX, 1300, t, T('A07', 'andar'), { font: F.bebas, size: 110, color: HM.blood }); capBand(ctx); }, { name: 'a-joke' });
+  cue(T('A07', 'andar'), 'ding', .8);
+  shot(['A08', 'Isi'], (ctx, t, lt) => { darkBG(ctx, t, '#06130C', '#000'); text(ctx, 'SENSEX', 120, 380, { font: F.osw, size: 44, color: 'rgba(255,255,255,.75)', weight: 600, ls: 10 });
+    lineChart(ctx, 120, 460, 840, 760, [[0, .05], [.2, .1], [.4, .18], [.6, .32], [.8, .6], [1, .95]], prog(t, T('A08', 'Sensex'), T('A08', 'chaar') + .2));
+    if (t > T('A08', 'chaar')) stamp(ctx, 'LAGBHAG 4X', CX, 1000, t, T('A08', 'chaar'), { size: 120, color: HM.gold }); }, { name: 'a-chart' });
+  cue(T('A08', 'chaar'), 'stamp', .8);
+  shot(['A09', 'Phir'], (ctx, t, lt) => { pBG(ctx, 'sbi_mumbai', lt, { grade: 'night', tint: 'navy', tintAmt: .5, shade: .3 }); phoneRing(ctx, CX, 560, .9, t);
+    if (t > T('A09', '500')) rsText(ctx, '500 CRORE', CX, 980, { size: 160, glow: 'rgba(255,190,60,.7)' }); punch(ctx, 'KAHAN HAIN?', CX, 1180, t, T('A09', 'kahan'), { font: F.bebas, size: 150, color: HM.blood }); cred(ctx, 'sbi_mumbai'); }, { name: 'a-sbi' });
+  cue(T('A09', '500'), 'cash', .8); cue(T('A09', 'kahan'), 'hit', .8);
+  ctaShot('A10', 'KHAALI RASID', 'POORI KAHANI EDUANIMHUB PAR'); finish();
+}
