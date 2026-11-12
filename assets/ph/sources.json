@@ -1,0 +1,21 @@
+{
+ "marble": "marble_01",
+ "travertine": "beige_wall_001",
+ "stoneblocks": "castle_brick_01",
+ "romanbrick": "red_brick_03",
+ "paving": "cobblestone_floor_04",
+ "marblefloor": "marble_tiles",
+ "rooftiles": "roof_tiles_14",
+ "plaster": "painted_plaster_wall",
+ "grass": "aerial_grass_rock",
+ "mud": "brown_mud_leaves_01",
+ "rock": "rock_face",
+ "wood": "weathered_brown_planks",
+ "thatch": "thatch_roof_angled",
+ "sand": "coast_sand_01",
+ "gravel": "gravel_road",
+ "sky_day": "kloofendal_48d_partly_cloudy_puresky",
+ "sky_golden": "kloppenheim_06",
+ "sky_dusk": "kloppenheim_02",
+ "sky_overcast": "kloofendal_overcast_puresky"
+}
