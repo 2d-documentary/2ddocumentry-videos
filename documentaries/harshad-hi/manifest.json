@@ -1,0 +1,209 @@
+{
+ "project": "harshad-hi",
+ "title": "Harshad Mehta (Hindi)",
+ "assets": [
+  {
+   "id": "bse_tower",
+   "category": "historical-photos",
+   "description": "BSE - Bombay Stock Exchange Building.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:BSE_-_Bombay_Stock_Exchange_Building.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bse_tall",
+   "category": "historical-photos",
+   "description": "Bombay Stock Exchange, Mumbai.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Bombay_Stock_Exchange,_Mumbai.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bse_ticker",
+   "category": "historical-photos",
+   "description": "BSE building at Dalal Street.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:BSE_building_at_Dalal_Street.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bull_bse",
+   "category": "historical-photos",
+   "description": "Statue of Bull in front of BSE Mumbai.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Statue_of_Bull_in_front_of_BSE_Mumbai.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bull_kg",
+   "category": "historical-photos",
+   "description": "'BULL OF DALAL STREET' at Kala Ghoda Festival..JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:%27BULL_OF_DALAL_STREET%27_at_Kala_Ghoda_Festival..JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dalal_sign",
+   "category": "historical-photos",
+   "description": "Dalal Street sign.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Dalal_Street_sign.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bse_screen",
+   "category": "historical-photos",
+   "description": "NDTV Profit's Screen at BSE.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:NDTV_Profit%27s_Screen_at_BSE.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sbi_mumbai",
+   "category": "historical-photos",
+   "description": "State Bank of India Mumbai Main Branch.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:State_Bank_of_India_Mumbai_Main_Branch.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sbi_hq",
+   "category": "historical-photos",
+   "description": "SBI-headquarters.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SBI-headquarters.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "note10",
+   "category": "historical-photos",
+   "description": "Rupees 2.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Rupees_2.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "notes_fan",
+   "category": "historical-photos",
+   "description": "Stack of indian rupee.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Stack_of_indian_rupee.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "worli_sea",
+   "category": "historical-photos",
+   "description": "\"Worli Curvy\" Sea face.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:%22Worli_Curvy%22_Sea_face.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "worli_bw",
+   "category": "historical-photos",
+   "description": "Worli Sea Face Towards Bandra.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Worli_Sea_Face_Towards_Bandra.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "worli_sky",
+   "category": "historical-photos",
+   "description": "Mumbai-Worli.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Mumbai-Worli.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "nse",
+   "category": "historical-photos",
+   "description": "National Stock Exchange of India in August 2006.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:National_Stock_Exchange_of_India_in_August_2006.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "nse2",
+   "category": "historical-photos",
+   "description": "National Stock Exchange NSE India.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:National_Stock_Exchange_NSE_India.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sebi",
+   "category": "historical-photos",
+   "description": "SEBI Bhavan.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SEBI_Bhavan.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "rao_tv",
+   "category": "historical-photos",
+   "description": "Prime Minister P. V. Narasimha Rao's address to the nation given in July, 1991.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Prime_Minister_P._V._Narasimha_Rao%27s_address_to_the_nation_given_in_July,_1991.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "rao_fort",
+   "category": "historical-photos",
+   "description": "PM P. V. Narasimha Rao give speech on Independence Day on Red Fort 1995.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:PM_P._V._Narasimha_Rao_give_speech_on_Independence_Day_on_Red_Fort_1995.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "jethmalani",
+   "category": "historical-photos",
+   "description": "Ram Jethmalani (cropped).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Ram_Jethmalani_(cropped).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sucheta",
+   "category": "historical-photos",
+   "description": "Sucheta Dalal in 2019.png",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Sucheta_Dalal_in_2019.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "lexus",
+   "category": "historical-photos",
+   "description": "1990 Lexus LS400 Sedan.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:1990_Lexus_LS400_Sedan.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "lexus2",
+   "category": "historical-photos",
+   "description": "Lexus E-UCF11L LS400 C (22022010332).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Lexus_E-UCF11L_LS400_C_(22022010332).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "lexus_cabin",
+   "category": "historical-photos",
+   "description": "Lexus LS400 cabin.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Lexus_LS400_cabin.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "highcourt",
+   "category": "historical-photos",
+   "description": "Bombay High Court (1).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Bombay_High_Court_(1).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "highcourt_old",
+   "category": "historical-photos",
+   "description": "High Court of Judicature, Bombay.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:High_Court_of_Judicature,_Bombay.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "parliament",
+   "category": "historical-photos",
+   "description": "Sansad Bhavan IMG 2152.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Sansad_Bhavan_IMG_2152.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "supremecourt",
+   "category": "historical-photos",
+   "description": "Supreme Court of India, inside buildings 01 (cropped).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Supreme_Court_of_India,_inside_buildings_01_(cropped).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "rbi_museum",
+   "category": "historical-photos",
+   "description": "RBI Museum.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:RBI_Museum.jpg",
+   "authenticity": "authentic"
+  }
+ ]
+}

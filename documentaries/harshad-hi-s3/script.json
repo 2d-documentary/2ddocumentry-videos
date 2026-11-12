@@ -1,0 +1,73 @@
+{
+ "title": "Big Bull Ki Lexus",
+ "voices": {
+  "NARRATOR": {
+   "voice": "hm_omega",
+   "speed": 1.05,
+   "lang": "h",
+   "desc": "Hindi male narrator, natural Hinglish"
+  }
+ },
+ "tail": 2.4,
+ "lines": [
+  {
+   "id": "C01",
+   "speaker": "NARRATOR",
+   "text": "Ek cement company ka share. 200 rupaye se 9,000 ke paas. Kuch hi mahino mein.",
+   "say": "एक सीमेंट कंपनी का शेयर। दो सौ रुपये से नौ हज़ार के पास। कुछ ही महीनों में।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "C02",
+   "speaker": "NARRATOR",
+   "text": "Cement wahi tha. Factory wahi thi. Bas daam aasman mein.",
+   "say": "सीमेंट वही था। फ़ैक्ट्री वही थी। बस दाम आसमान में।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "C03",
+   "speaker": "NARRATOR",
+   "text": "Ye kamaal tha Harshad Mehta ka. Dalal Street ka Big Bull.",
+   "say": "ये कमाल था हर्षद मेहता का। दलाल स्ट्रीट का बिग बुल।"
+  },
+  {
+   "id": "C04",
+   "speaker": "NARRATOR",
+   "text": "Worli mein samundar ke saamne penthouse. Garage mein Toyota Lexus.",
+   "say": "वर्ली में समुंदर के सामने पेंटहाउस। गैराज में टोयोटा लेक्सस।"
+  },
+  {
+   "id": "C05",
+   "speaker": "NARRATOR",
+   "text": "Log Lexus dekhne aate the. Harshad ko nahi, car ko.",
+   "say": "लोग लेक्सस देखने आते थे। हर्षद को नहीं, कार को।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "C06",
+   "speaker": "NARRATOR",
+   "text": "Wo jo share kharidta, poora desh wahi kharidta.",
+   "say": "वो जो शेयर ख़रीदता, पूरा देश वही ख़रीदता।"
+  },
+  {
+   "id": "C07",
+   "speaker": "NARRATOR",
+   "text": "Par April 1992 mein ek report chhapi. Aur pata chala, ye paisa bankon ka tha.",
+   "say": "पर अप्रैल उन्नीस सौ बानवे में एक रिपोर्ट छपी। और पता चला, ये पैसा बैंकों का था।"
+  },
+  {
+   "id": "C08",
+   "speaker": "NARRATOR",
+   "text": "Bazaar gira. Aur laakhon investors ki poonji doob gayi.",
+   "say": "बाज़ार गिरा। और लाखों इन्वेस्टर्स की पूँजी डूब गई।",
+   "gap_before": 0.4
+  },
+  {
+   "id": "C09",
+   "speaker": "NARRATOR",
+   "text": "Poori kahani Eduanimhub par.",
+   "say": "पूरी कहानी एडु एनिम हब पर।",
+   "gap_before": 0.4
+  }
+ ]
+}

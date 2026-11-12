@@ -1,0 +1,77 @@
+{
+ "title": "Ek Crore Ka Suitcase",
+ "voices": {
+  "NARRATOR": {
+   "voice": "hm_omega",
+   "speed": 1.05,
+   "lang": "h",
+   "desc": "Hindi male narrator, natural Hinglish"
+  }
+ },
+ "tail": 2.4,
+ "lines": [
+  {
+   "id": "B01",
+   "speaker": "NARRATOR",
+   "text": "Kya ek crore rupaye ek suitcase mein aa sakte hain? 1993 mein ye poore desh ka sawaal tha.",
+   "say": "क्या एक करोड़ रुपये एक सूटकेस में आ सकते हैं? उन्नीस सौ तिरानवे में ये पूरे देश का सवाल था।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "B02",
+   "speaker": "NARRATOR",
+   "text": "Big Bull Harshad Mehta, scam ke aaropon mein arrest hokar, bail pe bahar tha.",
+   "say": "बिग बुल हर्षद मेहता, स्कैम के आरोपों में अरेस्ट होकर, बेल पे बाहर था।"
+  },
+  {
+   "id": "B03",
+   "speaker": "NARRATOR",
+   "text": "June 1993. Usne press conference bulayi. Saath mein vakeel Ram Jethmalani.",
+   "say": "जून उन्नीस सौ तिरानवे। उसने प्रेस कॉन्फ़्रेंस बुलाई। साथ में वकील राम जेठमलानी।"
+  },
+  {
+   "id": "B04",
+   "speaker": "NARRATOR",
+   "text": "Aur daava kiya ki usne Prime Minister Narasimha Rao ko ek crore rupaye diye the.",
+   "say": "और दावा किया कि उसने प्राइम मिनिस्टर नरसिम्हा राव को एक करोड़ रुपये दिए थे।"
+  },
+  {
+   "id": "B05",
+   "speaker": "NARRATOR",
+   "text": "Saboot ke taur pe, ek suitcase dikhaya.",
+   "say": "सबूत के तौर पे, एक सूटकेस दिखाया।"
+  },
+  {
+   "id": "B06",
+   "speaker": "NARRATOR",
+   "text": "TV, akhbaar, Parliament. Har jagah bas ek hi baat.",
+   "say": "टी वी, अख़बार, पार्लियामेंट। हर जगह बस एक ही बात।"
+  },
+  {
+   "id": "B07",
+   "speaker": "NARRATOR",
+   "text": "Narasimha Rao ne is aarop se saaf inkaar kiya.",
+   "say": "नरसिम्हा राव ने इस आरोप से साफ़ इनकार किया।"
+  },
+  {
+   "id": "B08",
+   "speaker": "NARRATOR",
+   "text": "Aur CBI ki jaanch mein bhi iska koi pakka saboot nahi mila.",
+   "say": "और सी बी आई की जाँच में भी इसका कोई पक्का सबूत नहीं मिला।"
+  },
+  {
+   "id": "B09",
+   "speaker": "NARRATOR",
+   "text": "Sach kya tha? Behas aaj tak chalti hai.",
+   "say": "सच क्या था? बहस आज तक चलती है।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "B10",
+   "speaker": "NARRATOR",
+   "text": "Poori kahani Eduanimhub par.",
+   "say": "पूरी कहानी एडु एनिम हब पर।",
+   "gap_before": 0.4
+  }
+ ]
+}

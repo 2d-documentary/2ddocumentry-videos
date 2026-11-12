@@ -1,0 +1,648 @@
+{
+ "title": "Harshad Mehta: Big Bull ka sach",
+ "voices": {
+  "NARRATOR": {
+   "voice": "hm_omega",
+   "speed": 1.05,
+   "lang": "h",
+   "desc": "Hindi male narrator, natural Hinglish"
+  }
+ },
+ "tail": 3.0,
+ "lines": [
+  {
+   "id": "H001",
+   "speaker": "NARRATOR",
+   "text": "April 1992. Mumbai mein ek stockbroker ko State Bank of India ka bulawa aaya.",
+   "say": "अप्रैल उन्नीस सौ बानवे। मुंबई में एक स्टॉकब्रोकर को स्टेट बैंक ऑफ़ इंडिया का बुलावा आया।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H002",
+   "speaker": "NARRATOR",
+   "text": "Sawaal sirf ek tha. Hamare 500 crore rupaye kahan hain?",
+   "say": "सवाल सिर्फ़ एक था। हमारे पाँच सौ करोड़ रुपये कहाँ हैं?"
+  },
+  {
+   "id": "H003",
+   "speaker": "NARRATOR",
+   "text": "Ye wahi aadmi tha jise poora desh Big Bull kehta tha.",
+   "say": "ये वही आदमी था जिसे पूरा देश बिग बुल कहता था।"
+  },
+  {
+   "id": "H004",
+   "speaker": "NARRATOR",
+   "text": "Lexus car, samundar ke saamne penthouse, aur Dalal Street uski mutthi mein.",
+   "say": "लेक्सस कार, समुंदर के सामने पेंटहाउस, और दलाल स्ट्रीट उसकी मुट्ठी में।"
+  },
+  {
+   "id": "H005",
+   "speaker": "NARRATOR",
+   "text": "Uska naam tha Harshad Mehta.",
+   "say": "उसका नाम था हर्षद मेहता।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H006",
+   "speaker": "NARRATOR",
+   "text": "Aur ye 500 crore wala number yaad rakhiye. Kahani isse kahin badi nikalne wali hai.",
+   "say": "और ये पाँच सौ करोड़ वाला नंबर याद रखिए। कहानी इससे कहीं बड़ी निकलने वाली है।"
+  },
+  {
+   "id": "H007",
+   "speaker": "NARRATOR",
+   "text": "Chapter ek. Hosiery se Dalal Street tak.",
+   "say": "चैप्टर एक। होज़री से दलाल स्ट्रीट तक।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H008",
+   "speaker": "NARRATOR",
+   "text": "Harshad ka janam 29 July 1954 ko Gujarat mein hua.",
+   "say": "हर्षद का जन्म उनतीस जुलाई उन्नीस सौ चौवन को गुजरात में हुआ।"
+  },
+  {
+   "id": "H009",
+   "speaker": "NARRATOR",
+   "text": "Bachpan Mumbai aur Raipur mein beeta. Ghar mein paisa kam tha, sapne zyada.",
+   "say": "बचपन मुंबई और रायपुर में बीता। घर में पैसा कम था, सपने ज़्यादा।"
+  },
+  {
+   "id": "H010",
+   "speaker": "NARRATOR",
+   "text": "Graduation ke baad usne kya kya nahi kiya. Hosiery bechi, cement becha, diamonds sort kiye.",
+   "say": "ग्रेजुएशन के बाद उसने क्या क्या नहीं किया। होज़री बेची, सीमेंट बेचा, डायमंड्स सॉर्ट किए।"
+  },
+  {
+   "id": "H011",
+   "speaker": "NARRATOR",
+   "text": "Resume dekh ke lagta tha, ye aadmi kuch bhi bech sakta hai.",
+   "say": "रिज़्यूमे देख के लगता था, ये आदमी कुछ भी बेच सकता है।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H012",
+   "speaker": "NARRATOR",
+   "text": "Aur aage chalke, usne sach mein bech diya. Poore desh ko ek sapna.",
+   "say": "और आगे चलके, उसने सच में बेच दिया। पूरे देश को एक सपना।"
+  },
+  {
+   "id": "H013",
+   "speaker": "NARRATOR",
+   "text": "Phir New India Assurance mein naukri lagi. Wahin pehli baar share market ka chaska laga.",
+   "say": "फिर न्यू इंडिया अश्योरेंस में नौकरी लगी। वहीं पहली बार शेयर मार्केट का चस्का लगा।"
+  },
+  {
+   "id": "H014",
+   "speaker": "NARRATOR",
+   "text": "Naukri chhodi, aur Bombay Stock Exchange ke floor pe jobber ban gaya.",
+   "say": "नौकरी छोड़ी, और बॉम्बे स्टॉक एक्सचेंज के फ़्लोर पे जॉबर बन गया।"
+  },
+  {
+   "id": "H015",
+   "speaker": "NARRATOR",
+   "text": "Jobber matlab, floor ka sabse chhota khiladi. Jis pe sab chillaate hain.",
+   "say": "जॉबर मतलब, फ़्लोर का सबसे छोटा खिलाड़ी। जिस पे सब चिल्लाते हैं।"
+  },
+  {
+   "id": "H016",
+   "speaker": "NARRATOR",
+   "text": "Par Harshad seekh raha tha. Numbers, logon ka dar, aur logon ka laalach.",
+   "say": "पर हर्षद सीख रहा था। नंबर्स, लोगों का डर, और लोगों का लालच।"
+  },
+  {
+   "id": "H017",
+   "speaker": "NARRATOR",
+   "text": "Kuch saal mein usne apni company khol li. Naam rakha Growmore.",
+   "say": "कुछ साल में उसने अपनी कंपनी खोल ली। नाम रखा ग्रोमोर।"
+  },
+  {
+   "id": "H018",
+   "speaker": "NARRATOR",
+   "text": "Naam se hi saaf tha. Plan chhota nahi tha.",
+   "say": "नाम से ही साफ़ था। प्लान छोटा नहीं था।"
+  },
+  {
+   "id": "H019",
+   "speaker": "NARRATOR",
+   "text": "Growmore ke office mein ek ladka bhi kaam karta tha. Ye naam yaad rakhiye. Ketan Parekh.",
+   "say": "ग्रोमोर के ऑफ़िस में एक लड़का भी काम करता था। ये नाम याद रखिए। केतन पारेख।"
+  },
+  {
+   "id": "H020",
+   "speaker": "NARRATOR",
+   "text": "Chapter do. Big Bull.",
+   "say": "चैप्टर दो। बिग बुल।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H021",
+   "speaker": "NARRATOR",
+   "text": "1991. India ka bazaar khul raha tha. Har taraf naye sapne, naya paisa.",
+   "say": "उन्नीस सौ इक्यानवे। इंडिया का बाज़ार खुल रहा था। हर तरफ़ नए सपने, नया पैसा।"
+  },
+  {
+   "id": "H022",
+   "speaker": "NARRATOR",
+   "text": "Aur Harshad ne share kharidne shuru kiye. Chhote mote nahi. Bahut bade.",
+   "say": "और हर्षद ने शेयर ख़रीदने शुरू किए। छोटे मोटे नहीं। बहुत बड़े।"
+  },
+  {
+   "id": "H023",
+   "speaker": "NARRATOR",
+   "text": "Uska favourite tha ACC. Ek cement company.",
+   "say": "उसका फ़ेवरेट था ए सी सी। एक सीमेंट कंपनी।"
+  },
+  {
+   "id": "H024",
+   "speaker": "NARRATOR",
+   "text": "Jo share lagbhag 200 rupaye ka tha, wo kuch hi mahino mein 9,000 ke paas pahunch gaya.",
+   "say": "जो शेयर लगभग दो सौ रुपये का था, वो कुछ ही महीनों में नौ हज़ार के पास पहुँच गया।"
+  },
+  {
+   "id": "H025",
+   "speaker": "NARRATOR",
+   "text": "Cement wahi tha. Factory wahi thi. Bas daam aasman mein.",
+   "say": "सीमेंट वही था। फ़ैक्ट्री वही थी। बस दाम आसमान में।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H026",
+   "speaker": "NARRATOR",
+   "text": "Sensex April 1991 mein lagbhag 1,200 par tha.",
+   "say": "सेंसेक्स अप्रैल उन्नीस सौ इक्यानवे में लगभग बारह सौ पर था।"
+  },
+  {
+   "id": "H027",
+   "speaker": "NARRATOR",
+   "text": "April 1992 tak wo 4,467 ho gaya. Ek saal mein lagbhag chaar guna.",
+   "say": "अप्रैल उन्नीस सौ बानवे तक वो चार हज़ार चार सौ सड़सठ हो गया। एक साल में लगभग चार गुना।"
+  },
+  {
+   "id": "H028",
+   "speaker": "NARRATOR",
+   "text": "Media ne use naam diya, Big Bull. Kuch ne kaha, stock market ka Amitabh Bachchan.",
+   "say": "मीडिया ने उसे नाम दिया, बिग बुल। कुछ ने कहा, स्टॉक मार्केट का अमिताभ बच्चन।"
+  },
+  {
+   "id": "H029",
+   "speaker": "NARRATOR",
+   "text": "Worli mein samundar ke saamne, lagbhag 15,000 square feet ka ghar.",
+   "say": "वर्ली में समुंदर के सामने, लगभग पंद्रह हज़ार स्क्वेयर फ़ीट का घर।"
+  },
+  {
+   "id": "H030",
+   "speaker": "NARRATOR",
+   "text": "Andar swimming pool. Aur terrace pe mini golf.",
+   "say": "अंदर स्विमिंग पूल। और टैरेस पे मिनी गोल्फ़।"
+  },
+  {
+   "id": "H031",
+   "speaker": "NARRATOR",
+   "text": "Aur garage mein Toyota Lexus. Us zamane ke India mein, jaise koi spaceship.",
+   "say": "और गैराज में टोयोटा लेक्सस। उस ज़माने के इंडिया में, जैसे कोई स्पेसशिप।"
+  },
+  {
+   "id": "H032",
+   "speaker": "NARRATOR",
+   "text": "Log Lexus dekhne aate the. Harshad ko nahi, car ko.",
+   "say": "लोग लेक्सस देखने आते थे। हर्षद को नहीं, कार को।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H033",
+   "speaker": "NARRATOR",
+   "text": "Chhote investors ke liye wo bhagwan ban gaya tha. Wo jo kharidta, log bhi wahi kharidte.",
+   "say": "छोटे इन्वेस्टर्स के लिए वो भगवान बन गया था। वो जो ख़रीदता, लोग भी वही ख़रीदते।"
+  },
+  {
+   "id": "H034",
+   "speaker": "NARRATOR",
+   "text": "Par ek sawaal kisi ne nahi poocha. Itna paisa aa kahan se raha tha?",
+   "say": "पर एक सवाल किसी ने नहीं पूछा। इतना पैसा आ कहाँ से रहा था?"
+  },
+  {
+   "id": "H035",
+   "speaker": "NARRATOR",
+   "text": "Chapter teen. Khaali rasid ka khel.",
+   "say": "चैप्टर तीन। ख़ाली रसीद का खेल।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H036",
+   "speaker": "NARRATOR",
+   "text": "Ye samajhna zaroori hai. Aur ghabraiye mat, ye bilkul simple hai.",
+   "say": "ये समझना ज़रूरी है। और घबराइए मत, ये बिल्कुल सिंपल है।"
+  },
+  {
+   "id": "H037",
+   "speaker": "NARRATOR",
+   "text": "Us waqt banks ko kabhi kabhi kuch dino ke liye paise ki zaroorat padti thi.",
+   "say": "उस वक़्त बैंक्स को कभी कभी कुछ दिनों के लिए पैसे की ज़रूरत पड़ती थी।"
+  },
+  {
+   "id": "H038",
+   "speaker": "NARRATOR",
+   "text": "To ek bank, doosre bank ke paas government securities girvi rakh ke loan leta tha.",
+   "say": "तो एक बैंक, दूसरे बैंक के पास गवर्नमेंट सिक्योरिटीज़ गिरवी रख के लोन लेता था।"
+  },
+  {
+   "id": "H039",
+   "speaker": "NARRATOR",
+   "text": "Lagbhag pandrah din ke liye. Ise kehte the ready forward deal.",
+   "say": "लगभग पंद्रह दिन के लिए। इसे कहते थे रेडी फ़ॉरवर्ड डील।"
+  },
+  {
+   "id": "H040",
+   "speaker": "NARRATOR",
+   "text": "Bilkul sunar ki dukaan jaisa. Zevar rakho, paisa lo, baad mein wapas chhuda lo.",
+   "say": "बिल्कुल सुनार की दुकान जैसा। ज़ेवर रखो, पैसा लो, बाद में वापस छुड़ा लो।"
+  },
+  {
+   "id": "H041",
+   "speaker": "NARRATOR",
+   "text": "Par asli securities idhar udhar nahi jaati thi. Unki jagah ek rasid di jaati thi.",
+   "say": "पर असली सिक्योरिटीज़ इधर उधर नहीं जाती थीं। उनकी जगह एक रसीद दी जाती थी।"
+  },
+  {
+   "id": "H042",
+   "speaker": "NARRATOR",
+   "text": "Ise kehte the BR. Bank Receipt.",
+   "say": "इसे कहते थे बी आर। बैंक रिसीट।"
+  },
+  {
+   "id": "H043",
+   "speaker": "NARRATOR",
+   "text": "Aur do banks ke beech ye deal karwata tha ek broker. Andaza lagaiye kaun?",
+   "say": "और दो बैंक्स के बीच ये डील करवाता था एक ब्रोकर। अंदाज़ा लगाइए कौन?"
+  },
+  {
+   "id": "H044",
+   "speaker": "NARRATOR",
+   "text": "Bilkul. Harshad Mehta.",
+   "say": "बिल्कुल। हर्षद मेहता।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H045",
+   "speaker": "NARRATOR",
+   "text": "Aarop ye hai ki paisa doosre bank jaane ki jagah, seedha Harshad ke account mein jaata tha.",
+   "say": "आरोप ये है कि पैसा दूसरे बैंक जाने की जगह, सीधा हर्षद के अकाउंट में जाता था।"
+  },
+  {
+   "id": "H046",
+   "speaker": "NARRATOR",
+   "text": "Aur wahan se seedha share market mein. Daam upar, munafa jeb mein, aur paisa wapas.",
+   "say": "और वहाँ से सीधा शेयर मार्केट में। दाम ऊपर, मुनाफ़ा जेब में, और पैसा वापस।"
+  },
+  {
+   "id": "H047",
+   "speaker": "NARRATOR",
+   "text": "Par jab paisa kam pada, to kahani aur khatarnak ho gayi.",
+   "say": "पर जब पैसा कम पड़ा, तो कहानी और ख़तरनाक हो गई।"
+  },
+  {
+   "id": "H048",
+   "speaker": "NARRATOR",
+   "text": "Do chhote banks, Bank of Karad aur Metropolitan Co-operative Bank, fees lekar BR jaari karte the.",
+   "say": "दो छोटे बैंक, बैंक ऑफ़ कराड और मेट्रोपॉलिटन को-ऑपरेटिव बैंक, फ़ीस लेकर बी आर जारी करते थे।"
+  },
+  {
+   "id": "H049",
+   "speaker": "NARRATOR",
+   "text": "Aisi BR, jiske peeche koi security thi hi nahi.",
+   "say": "ऐसी बी आर, जिसके पीछे कोई सिक्योरिटी थी ही नहीं।"
+  },
+  {
+   "id": "H050",
+   "speaker": "NARRATOR",
+   "text": "Matlab khaali tiffin. Upar likha paneer, andar kuch nahi.",
+   "say": "मतलब ख़ाली टिफ़िन। ऊपर लिखा पनीर, अंदर कुछ नहीं।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H051",
+   "speaker": "NARRATOR",
+   "text": "Aur bade bade banks ye khaali rasid lekar karodon rupaye de rahe the.",
+   "say": "और बड़े बड़े बैंक ये ख़ाली रसीद लेकर करोड़ों रुपये दे रहे थे।"
+  },
+  {
+   "id": "H052",
+   "speaker": "NARRATOR",
+   "text": "Koi check karne wala nahi tha? Tha. Bas kisi ne check nahi kiya.",
+   "say": "कोई चेक करने वाला नहीं था? था। बस किसी ने चेक नहीं किया।"
+  },
+  {
+   "id": "H053",
+   "speaker": "NARRATOR",
+   "text": "Chapter chaar. Bhanda phoota.",
+   "say": "चैप्टर चार। भांडा फूटा।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H054",
+   "speaker": "NARRATOR",
+   "text": "April 1992. State Bank of India ke audit mein hisaab mel nahi kha raha tha.",
+   "say": "अप्रैल उन्नीस सौ बानवे। स्टेट बैंक ऑफ़ इंडिया के ऑडिट में हिसाब मेल नहीं खा रहा था।"
+  },
+  {
+   "id": "H055",
+   "speaker": "NARRATOR",
+   "text": "Bank ke paas BR thi. Par securities gayab. Aur 500 crore Harshad ke paas.",
+   "say": "बैंक के पास बी आर थी। पर सिक्योरिटीज़ ग़ायब। और पाँच सौ करोड़ हर्षद के पास।"
+  },
+  {
+   "id": "H056",
+   "speaker": "NARRATOR",
+   "text": "Yahi wo bulawa tha, jisse humne kahani shuru ki thi.",
+   "say": "यही वो बुलावा था, जिससे हमने कहानी शुरू की थी।"
+  },
+  {
+   "id": "H057",
+   "speaker": "NARRATOR",
+   "text": "Ye baat pahunchi ek journalist tak. Times of India ki Sucheta Dalal.",
+   "say": "ये बात पहुँची एक जर्नलिस्ट तक। टाइम्स ऑफ़ इंडिया की सुचेता दलाल।"
+  },
+  {
+   "id": "H058",
+   "speaker": "NARRATOR",
+   "text": "23 April 1992 ko unki report chhapi. Aur khel palat gaya.",
+   "say": "तेईस अप्रैल उन्नीस सौ बानवे को उनकी रिपोर्ट छपी। और खेल पलट गया।"
+  },
+  {
+   "id": "H059",
+   "speaker": "NARRATOR",
+   "text": "Banks ne apna paisa wapas maangna shuru kiya. Aur bazaar mein panic.",
+   "say": "बैंक्स ने अपना पैसा वापस माँगना शुरू किया। और बाज़ार में पैनिक।"
+  },
+  {
+   "id": "H060",
+   "speaker": "NARRATOR",
+   "text": "Sensex 4,467 se girte girte, August tak lagbhag 2,500 par aa gaya.",
+   "say": "सेंसेक्स चार हज़ार चार सौ सड़सठ से गिरते गिरते, अगस्त तक लगभग पच्चीस सौ पर आ गया।"
+  },
+  {
+   "id": "H061",
+   "speaker": "NARRATOR",
+   "text": "Laakhon chhote investors ki jama poonji doob gayi.",
+   "say": "लाखों छोटे इन्वेस्टर्स की जमा पूँजी डूब गई।",
+   "gap_before": 0.4
+  },
+  {
+   "id": "H062",
+   "speaker": "NARRATOR",
+   "text": "Jo log Big Bull ke peeche chal rahe the, wahi sabse zyada toote.",
+   "say": "जो लोग बिग बुल के पीछे चल रहे थे, वही सबसे ज़्यादा टूटे।"
+  },
+  {
+   "id": "H063",
+   "speaker": "NARRATOR",
+   "text": "RBI ne ek committee banayi. Janakiraman Committee.",
+   "say": "आर बी आई ने एक कमेटी बनाई। जानकीरमन कमेटी।",
+   "gap_before": 0.5
+  },
+  {
+   "id": "H064",
+   "speaker": "NARRATOR",
+   "text": "Aur yaad hai wo 500 crore? Committee ne poore scam ka size bataya, lagbhag 4,024 crore.",
+   "say": "और याद है वो पाँच सौ करोड़? कमेटी ने पूरे स्कैम का साइज़ बताया, लगभग चार हज़ार चौबीस करोड़।"
+  },
+  {
+   "id": "H065",
+   "speaker": "NARRATOR",
+   "text": "Aur ye sirf ek aadmi ki kahani nahi thi.",
+   "say": "और ये सिर्फ़ एक आदमी की कहानी नहीं थी।"
+  },
+  {
+   "id": "H066",
+   "speaker": "NARRATOR",
+   "text": "Kai brokers aur bank officers ke naam bhi saamne aaye.",
+   "say": "कई ब्रोकर्स और बैंक ऑफ़िसर्स के नाम भी सामने आए।"
+  },
+  {
+   "id": "H067",
+   "speaker": "NARRATOR",
+   "text": "Bank of Karad aur Metropolitan Co-operative Bank, dono ko band karna pada.",
+   "say": "बैंक ऑफ़ कराड और मेट्रोपॉलिटन को-ऑपरेटिव बैंक, दोनों को बंद करना पड़ा।"
+  },
+  {
+   "id": "H068",
+   "speaker": "NARRATOR",
+   "text": "In banks ka naam pehle kisi ne nahi suna tha. Ab sabne suna. Galat wajah se.",
+   "say": "इन बैंक्स का नाम पहले किसी ने नहीं सुना था। अब सबने सुना। ग़लत वजह से।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H069",
+   "speaker": "NARRATOR",
+   "text": "Chapter paanch. Arrest aur ek suitcase.",
+   "say": "चैप्टर पाँच। अरेस्ट और एक सूटकेस।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H070",
+   "speaker": "NARRATOR",
+   "text": "9 November 1992. CBI ne Harshad aur uske bhaiyon Ashwin aur Sudhir ko arrest kiya.",
+   "say": "नौ नवंबर उन्नीस सौ बानवे। सी बी आई ने हर्षद और उसके भाइयों अश्विन और सुधीर को अरेस्ट किया।"
+  },
+  {
+   "id": "H071",
+   "speaker": "NARRATOR",
+   "text": "Aarop tha, jaali transfer forms se lagbhag 90 companies ke 27 lakh shares hadapne ka.",
+   "say": "आरोप था, जाली ट्रांसफ़र फ़ॉर्म्स से लगभग नब्बे कंपनियों के सत्ताईस लाख शेयर हड़पने का।"
+  },
+  {
+   "id": "H072",
+   "speaker": "NARRATOR",
+   "text": "Uske khilaaf 70 se zyada criminal case aur 600 se zyada civil case darj hue.",
+   "say": "उसके ख़िलाफ़ सत्तर से ज़्यादा क्रिमिनल केस और छह सौ से ज़्यादा सिविल केस दर्ज हुए।"
+  },
+  {
+   "id": "H073",
+   "speaker": "NARRATOR",
+   "text": "Lagbhag teen mahine baad use bail mil gayi.",
+   "say": "लगभग तीन महीने बाद उसे बेल मिल गई।"
+  },
+  {
+   "id": "H074",
+   "speaker": "NARRATOR",
+   "text": "Aur phir June 1993 mein, usne ek press conference bulayi. Saath mein the vakeel Ram Jethmalani.",
+   "say": "और फिर जून उन्नीस सौ तिरानवे में, उसने एक प्रेस कॉन्फ़्रेंस बुलाई। साथ में थे वकील राम जेठमलानी।"
+  },
+  {
+   "id": "H075",
+   "speaker": "NARRATOR",
+   "text": "Harshad ne daava kiya ki usne Prime Minister Narasimha Rao ko ek crore rupaye diye the.",
+   "say": "हर्षद ने दावा किया कि उसने प्राइम मिनिस्टर नरसिम्हा राव को एक करोड़ रुपये दिए थे।"
+  },
+  {
+   "id": "H076",
+   "speaker": "NARRATOR",
+   "text": "Party donation ke naam pe. Aur saboot ke taur pe, ek suitcase dikhaya.",
+   "say": "पार्टी डोनेशन के नाम पे। और सबूत के तौर पे, एक सूटकेस दिखाया।"
+  },
+  {
+   "id": "H077",
+   "speaker": "NARRATOR",
+   "text": "Achanak poora desh ek hi sawaal pooch raha tha. Kya ek crore ek suitcase mein aata hai?",
+   "say": "अचानक पूरा देश एक ही सवाल पूछ रहा था। क्या एक करोड़ एक सूटकेस में आता है?",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H078",
+   "speaker": "NARRATOR",
+   "text": "Narasimha Rao ne is aarop se saaf inkaar kiya.",
+   "say": "नरसिम्हा राव ने इस आरोप से साफ़ इनकार किया।"
+  },
+  {
+   "id": "H079",
+   "speaker": "NARRATOR",
+   "text": "Aur CBI ki jaanch mein bhi iska koi pakka saboot nahi mila.",
+   "say": "और सी बी आई की जाँच में भी इसका कोई पक्का सबूत नहीं मिला।"
+  },
+  {
+   "id": "H080",
+   "speaker": "NARRATOR",
+   "text": "Kuch ke liye Harshad sach bol raha tha. Kuch ke liye ye bas dhyaan bhatkaane ki chaal thi.",
+   "say": "कुछ के लिए हर्षद सच बोल रहा था। कुछ के लिए ये बस ध्यान भटकाने की चाल थी।"
+  },
+  {
+   "id": "H081",
+   "speaker": "NARRATOR",
+   "text": "Chapter chhah. Big Bull ka ant.",
+   "say": "चैप्टर छह। बिग बुल का अंत।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H082",
+   "speaker": "NARRATOR",
+   "text": "Bail ke baad Harshad ne comeback ki koshish ki. Market tips, naye plans.",
+   "say": "बेल के बाद हर्षद ने कमबैक की कोशिश की। मार्केट टिप्स, नए प्लान्स।"
+  },
+  {
+   "id": "H083",
+   "speaker": "NARRATOR",
+   "text": "Par is baar bazaar ne uski baat pe bharosa nahi kiya.",
+   "say": "पर इस बार बाज़ार ने उसकी बात पे भरोसा नहीं किया।"
+  },
+  {
+   "id": "H084",
+   "speaker": "NARRATOR",
+   "text": "SEBI ne use stock market se hamesha ke liye ban kar diya.",
+   "say": "सेबी ने उसे स्टॉक मार्केट से हमेशा के लिए बैन कर दिया।"
+  },
+  {
+   "id": "H085",
+   "speaker": "NARRATOR",
+   "text": "1999 mein ek case mein court ne use doshi maana. Paanch saal ki saza.",
+   "say": "उन्नीस सौ निन्यानवे में एक केस में कोर्ट ने उसे दोषी माना। पाँच साल की सज़ा।"
+  },
+  {
+   "id": "H086",
+   "speaker": "NARRATOR",
+   "text": "Baaki darjanon case abhi chal hi rahe the.",
+   "say": "बाक़ी दर्जनों केस अभी चल ही रहे थे।"
+  },
+  {
+   "id": "H087",
+   "speaker": "NARRATOR",
+   "text": "31 December 2001. Thane jail mein custody ke dauraan, raat ko use seene mein dard utha.",
+   "say": "इकत्तीस दिसंबर दो हज़ार एक। ठाणे जेल में कस्टडी के दौरान, रात को उसे सीने में दर्द उठा।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H088",
+   "speaker": "NARRATOR",
+   "text": "Hospital le jaaya gaya. Par heart attack se uski maut ho gayi. Umar sirf 47 saal.",
+   "say": "हॉस्पिटल ले जाया गया। पर हार्ट अटैक से उसकी मौत हो गई। उम्र सिर्फ़ सैंतालीस साल।"
+  },
+  {
+   "id": "H089",
+   "speaker": "NARRATOR",
+   "text": "Jab wo gaya, tab bhi uske khilaaf kai case chal rahe the.",
+   "say": "जब वो गया, तब भी उसके ख़िलाफ़ कई केस चल रहे थे।"
+  },
+  {
+   "id": "H090",
+   "speaker": "NARRATOR",
+   "text": "Chapter saat. Wo scam jisne bazaar badal diya.",
+   "say": "चैप्टर सात। वो स्कैम जिसने बाज़ार बदल दिया।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H091",
+   "speaker": "NARRATOR",
+   "text": "Is scam ke baad SEBI ko asli taaqat mili. Kanoon bana, rules sakht hue.",
+   "say": "इस स्कैम के बाद सेबी को असली ताक़त मिली। क़ानून बना, रूल्स सख़्त हुए।"
+  },
+  {
+   "id": "H092",
+   "speaker": "NARRATOR",
+   "text": "Bank Receipt wala system poori tarah badla gaya.",
+   "say": "बैंक रिसीट वाला सिस्टम पूरी तरह बदला गया।"
+  },
+  {
+   "id": "H093",
+   "speaker": "NARRATOR",
+   "text": "Aur 1994 mein NSE ne screen pe trading shuru ki. Chillaate jobbers ki jagah computer.",
+   "say": "और उन्नीस सौ चौरानवे में एन एस ई ने स्क्रीन पे ट्रेडिंग शुरू की। चिल्लाते जॉबर्स की जगह कंप्यूटर।"
+  },
+  {
+   "id": "H094",
+   "speaker": "NARRATOR",
+   "text": "Floor ka shor dheere dheere khatam hua. Ab paisa chupchaap screen pe bhaagta hai.",
+   "say": "फ़्लोर का शोर धीरे धीरे ख़त्म हुआ। अब पैसा चुपचाप स्क्रीन पे भागता है।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H095",
+   "speaker": "NARRATOR",
+   "text": "Aur yaad hai Growmore wala ladka, Ketan Parekh?",
+   "say": "और याद है ग्रोमोर वाला लड़का, केतन पारेख?"
+  },
+  {
+   "id": "H096",
+   "speaker": "NARRATOR",
+   "text": "2001 mein uska naam bhi ek bade market scam mein aaya.",
+   "say": "दो हज़ार एक में उसका नाम भी एक बड़े मार्केट स्कैम में आया।"
+  },
+  {
+   "id": "H097",
+   "speaker": "NARRATOR",
+   "text": "Par wo kahani phir kabhi.",
+   "say": "पर वो कहानी फिर कभी।"
+  },
+  {
+   "id": "H098",
+   "speaker": "NARRATOR",
+   "text": "To Harshad Mehta kaun tha? Kuch ke liye hero, jisne aam aadmi ko share market dikhaya.",
+   "say": "तो हर्षद मेहता कौन था? कुछ के लिए हीरो, जिसने आम आदमी को शेयर मार्केट दिखाया।",
+   "gap_before": 0.5
+  },
+  {
+   "id": "H099",
+   "speaker": "NARRATOR",
+   "text": "Kuch ke liye villain, jisne bank ka paisa daav pe lagaya.",
+   "say": "कुछ के लिए विलेन, जिसने बैंक का पैसा दाँव पे लगाया।"
+  },
+  {
+   "id": "H100",
+   "speaker": "NARRATOR",
+   "text": "Par ek baat pakki hai. Uske baad Dalal Street pehle jaisi nahi rahi.",
+   "say": "पर एक बात पक्की है। उसके बाद दलाल स्ट्रीट पहले जैसी नहीं रही।"
+  },
+  {
+   "id": "H101",
+   "speaker": "NARRATOR",
+   "text": "Aapko kya lagta hai? Harshad mastermind tha, ya ek bade system ka sirf chehra?",
+   "say": "आपको क्या लगता है? हर्षद मास्टरमाइंड था, या एक बड़े सिस्टम का सिर्फ़ चेहरा?",
+   "gap_before": 0.5
+  },
+  {
+   "id": "H102",
+   "speaker": "NARRATOR",
+   "text": "Comment mein bataiye. Aur aisi aur kahaniyon ke liye Eduanimhub ko subscribe kar lijiye.",
+   "say": "कमेंट में बताइए। और ऐसी और कहानियों के लिए एडु एनिम हब को सब्सक्राइब कर लीजिए।"
+  }
+ ]
+}

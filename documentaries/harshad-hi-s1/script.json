@@ -1,0 +1,77 @@
+{
+ "title": "Khaali Rasid",
+ "voices": {
+  "NARRATOR": {
+   "voice": "hm_omega",
+   "speed": 1.05,
+   "lang": "h",
+   "desc": "Hindi male narrator, natural Hinglish"
+  }
+ },
+ "tail": 2.4,
+ "lines": [
+  {
+   "id": "A01",
+   "speaker": "NARRATOR",
+   "text": "Ek aadmi ne banks se karodon rupaye liye. Badle mein di sirf ek khaali rasid.",
+   "say": "एक आदमी ने बैंकों से करोड़ों रुपये लिए। बदले में दी सिर्फ़ एक ख़ाली रसीद।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "A02",
+   "speaker": "NARRATOR",
+   "text": "1991 mein banks ek doosre ko kuch dino ka loan dete the.",
+   "say": "उन्नीस सौ इक्यानवे में बैंक्स एक दूसरे को कुछ दिनों का लोन देते थे।"
+  },
+  {
+   "id": "A03",
+   "speaker": "NARRATOR",
+   "text": "Girvi mein government securities. Par securities nahi chalti thi, ek rasid chalti thi. BR.",
+   "say": "गिरवी में गवर्नमेंट सिक्योरिटीज़। पर सिक्योरिटीज़ नहीं चलती थीं, एक रसीद चलती थी। बी आर।"
+  },
+  {
+   "id": "A04",
+   "speaker": "NARRATOR",
+   "text": "Aur beech mein broker tha, Harshad Mehta.",
+   "say": "और बीच में ब्रोकर था, हर्षद मेहता।"
+  },
+  {
+   "id": "A05",
+   "speaker": "NARRATOR",
+   "text": "Aarop ye hai ki paisa doosre bank ki jagah, uske account mein jaata tha.",
+   "say": "आरोप ये है कि पैसा दूसरे बैंक की जगह, उसके अकाउंट में जाता था।"
+  },
+  {
+   "id": "A06",
+   "speaker": "NARRATOR",
+   "text": "Phir do chhote banks aisi BR dene lage, jiske peeche kuch tha hi nahi.",
+   "say": "फिर दो छोटे बैंक ऐसी बी आर देने लगे, जिसके पीछे कुछ था ही नहीं।"
+  },
+  {
+   "id": "A07",
+   "speaker": "NARRATOR",
+   "text": "Matlab khaali tiffin. Upar likha paneer, andar kuch nahi.",
+   "say": "मतलब ख़ाली टिफ़िन। ऊपर लिखा पनीर, अंदर कुछ नहीं।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "A08",
+   "speaker": "NARRATOR",
+   "text": "Isi paise se shares kharide gaye. Aur Sensex ek saal mein lagbhag chaar guna.",
+   "say": "इसी पैसे से शेयर्स ख़रीदे गए। और सेंसेक्स एक साल में लगभग चार गुना।"
+  },
+  {
+   "id": "A09",
+   "speaker": "NARRATOR",
+   "text": "Phir ek din State Bank ne poocha. Hamare 500 crore kahan hain?",
+   "say": "फिर एक दिन स्टेट बैंक ने पूछा। हमारे पाँच सौ करोड़ कहाँ हैं?"
+  },
+  {
+   "id": "A10",
+   "speaker": "NARRATOR",
+   "text": "Poori kahani Eduanimhub par.",
+   "say": "पूरी कहानी एडु एनिम हब पर।",
+   "gap_before": 0.4
+  }
+ ]
+}
