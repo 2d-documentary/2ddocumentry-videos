@@ -1,0 +1,16 @@
+{
+ "title": "Hindi voice test",
+ "voices": {"NARRATOR": {"voice": "hm_omega", "speed": 1.05, "lang": "h", "desc": "Hindi male narrator"}},
+ "tail": 1.5,
+ "lines": [
+  {"id": "H01", "speaker": "NARRATOR", "gap_before": 0.3,
+   "text": "Ek pustakalay mein baitha ek naujawan, internet ka sabse bada kaala bazaar chala raha tha.",
+   "say": "एक पुस्तकालय में बैठा एक नौजवान, इंटरनेट का सबसे बड़ा काला बाज़ार चला रहा था।"},
+  {"id": "H02", "speaker": "NARRATOR",
+   "text": "Aur use pakadne ke liye, FBI ne ek nakli jhagda rachaya.",
+   "say": "और उसे पकड़ने के लिए, एफ़ बी आई ने एक नकली झगड़ा रचाया।"},
+  {"id": "H03", "speaker": "NARRATOR", "gap_before": 0.4,
+   "text": "Poori kahani Unfiled Films par.",
+   "say": "पूरी कहानी अनफ़ाइल्ड फ़िल्म्स पर।"}
+ ]
+}

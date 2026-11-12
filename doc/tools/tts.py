@@ -30,11 +30,15 @@ def speakable(text):
 def synth(line):
     v = script["voices"][line["speaker"]]
     audio, toks, off = [], [], 0.0
-    for r in pipe(v["lang"])(speakable(line["text"]), voice=v["voice"], speed=v.get("speed", 1.0)):
+    # optional "say": what the voice actually speaks (e.g. Devanagari Hindi), while "text" stays the on-screen/caption words
+    # (Roman-script Hindi). Timings then fall back to proportional word spacing over "text".
+    spoken_text = line["say"] if line.get("say") else speakable(line["text"])
+    for r in pipe(v["lang"])(spoken_text, voice=v["voice"], speed=v.get("speed", 1.0)):
         a = r.audio.detach().cpu().numpy() if hasattr(r.audio, "detach") else np.asarray(r.audio)
         for t in (getattr(r, 'tokens', None) or []):
             if getattr(t, 'start_ts', None) is not None and getattr(t, 'end_ts', None) is not None and norm(t.text): toks.append((norm(t.text), off + t.start_ts, off + t.end_ts))
         audio.append(a); off += len(a) / SR
+    if line.get("say"): toks = []
     return np.concatenate(audio) if audio else np.zeros(1), toks
 
 def align(words, toks, dur):
