@@ -129,3 +129,32 @@ const dossier = (from, key, name, rows, verdict, o = {}) => {
 // $20 note cropped from the Commons sheet of US banknotes (public domain)
 function rainBills(ctx, t, t0, n, o) { if (IMG.bill20c) moneyRain(ctx, t, t0, 'bill20c', [8, 155, 298, 126], n, o); }
 
+
+// memorial card: portrait (optionally cropped region of an image) or silhouette, name, years, one line
+function memorialCard(ctx, cx, cy, o, p) {
+  if (p <= 0) return; const w = o.w || 300, h = o.h || 470, sc = lerp(.9, 1, E.out(clamp(p)));
+  ctx.save(); ctx.globalAlpha = clamp(p * 2); ctx.translate(cx, cy); ctx.scale(sc, sc);
+  ctx.shadowColor = 'rgba(0,0,0,.6)'; ctx.shadowBlur = 30; ctx.fillStyle = '#EFE6D2'; ctx.fillRect(-w / 2, -h / 2, w, h); ctx.shadowColor = 'transparent';
+  ctx.drawImage(paperTex('#EFE6D2', 71, w, h), -w / 2, -h / 2);
+  const pw = w - 40, ph = pw * 1.15, px = -pw / 2, py = -h / 2 + 20;
+  ctx.save(); ctx.beginPath(); ctx.ellipse(0, py + ph / 2, pw / 2, ph / 2, 0, 0, 7); ctx.clip(); ctx.fillStyle = '#2A2622'; ctx.fillRect(px, py, pw, ph);
+  const im = o.key && IMG[o.key];
+  if (im) { const c = o.crop || [0, 0, im.width, im.height]; const s = Math.max(pw / c[2], ph / c[3]); ctx.filter = 'grayscale(1) sepia(.45) contrast(1.05)';
+    ctx.drawImage(im, c[0], c[1], c[2], c[3], -c[2] * s / 2, py + ph / 2 - c[3] * s / 2, c[2] * s, c[3] * s); ctx.filter = 'none'; }
+  else { ctx.fillStyle = '#4A433C'; ctx.beginPath(); ctx.arc(0, py + ph * .42, pw * .2, 0, 7); ctx.fill(); ctx.beginPath(); ctx.ellipse(0, py + ph * .95, pw * .38, ph * .32, 0, Math.PI, 0); ctx.fill(); }
+  ctx.restore();
+  ctx.strokeStyle = '#8A6A3A'; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(0, py + ph / 2, pw / 2, ph / 2, 0, 0, 7); ctx.stroke();
+  let ns = o.nameSize || 34; ctx.font = `700 ${ns}px ${F.play}`; while (ctx.measureText(o.name).width > w - 24 && ns > 16) { ns -= 1; ctx.font = `700 ${ns}px ${F.play}`; }
+  text(ctx, o.name, 0, h / 2 - 95, { font: F.play, size: ns, color: PAL.ink, align: 'center', weight: 700 });
+  text(ctx, o.years || '', 0, h / 2 - 58, { font: F.osw, size: 24, color: PAL.red, align: 'center', weight: 600, ls: 3 });
+  if (o.line) text(ctx, o.line, 0, h / 2 - 26, { font: F.playI, size: 22, color: 'rgba(23,20,15,.75)', align: 'center' });
+  if (o.source !== undefined) text(ctx, o.source, 0, h / 2 - 6, { font: F.mono, size: 13, color: 'rgba(23,20,15,.5)', align: 'center' });
+  ctx.restore();
+}
+// clock-time stamp (e.g. "3:40 AM") in a boxed label
+function timeStamp(ctx, s, x, y, t, t0, o = {}) {
+  const p = E.out(prog(t, t0, t0 + .3)); if (p <= 0) return;
+  ctx.save(); ctx.globalAlpha = p; ctx.font = `${o.size || 90}px ${F.bebas}`; const w = ctx.measureText(s).width;
+  ctx.fillStyle = o.bg || 'rgba(10,8,8,.82)'; ctx.fillRect(x - 24, y - (o.size || 90) * .85, w + 48, (o.size || 90) * 1.05);
+  ctx.fillStyle = o.color || PAL.cream; ctx.fillText(s, x, y); ctx.restore();
+}

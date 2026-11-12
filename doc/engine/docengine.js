@@ -475,7 +475,7 @@ function timelineBar(ctx, y, years, from, to, t, t0, o = {}) {
   years.forEach(([yr, label, ty], i) => { const x = lerp(x0, x1, (yr - from) / (to - from)); if (t < (ty ?? t0 + .2 + i * .15)) return;
     const q = E.back(prog(t, ty ?? t0 + .2 + i * .15, (ty ?? t0 + .2 + i * .15) + .3));
     ctx.fillStyle = o.dot || PAL.red2; ctx.beginPath(); ctx.arc(x, y, 12 * Math.max(0, q), 0, 7); ctx.fill();
-    text(ctx, String(yr), x, y - 34, { font: F.bebas, size: 54, color: PAL.cream, align: 'center', alpha: q });
+    text(ctx, o.fmt ? o.fmt(yr) : String(yr), x, y - 34, { font: F.bebas, size: 54, color: PAL.cream, align: 'center', alpha: q });
     if (label) text(ctx, label, x, y + 56, { font: F.osw, size: 26, color: 'rgba(244,236,220,.75)', align: 'center', weight: 500, alpha: q }); });
   ctx.restore();
 }
@@ -507,4 +507,36 @@ function captions(ctx, t) {
     ctx.lineWidth = 14; ctx.strokeStyle = 'rgba(0,0,0,.85)'; ctx.lineJoin = 'round'; ctx.strokeText(s, x, y);
     ctx.fillStyle = on && t < (g.words[i + 1]?.s ?? g.e) ? '#FFD23F' : (on ? '#FFFFFF' : 'rgba(255,255,255,.55)'); ctx.fillText(s, x, y); x += widths[i] + sp; });
   ctx.restore();
+}
+
+// ---------- Victorian atmosphere: drifting fog, gaslight glow
+function fog(ctx, t, amt = .5, tint = '210,200,180') {
+  ctx.save(); ctx.globalCompositeOperation = 'screen';
+  for (let i = 0; i < 7; i++) {
+    const sp = 18 + hash(i) * 30, r = Math.max(W, H) * (.35 + hash(i + 4) * .35);
+    const x = ((hash(i + 1) * W + t * sp) % (W + 2 * r)) - r, y = H * (.25 + hash(i + 2) * .7) + Math.sin(t * .2 + i) * 40;
+    const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, `rgba(${tint},${amt * .22})`); g.addColorStop(1, `rgba(${tint},0)`);
+    ctx.fillStyle = g; ctx.fillRect(x - r, y - r, 2 * r, 2 * r);
+  }
+  ctx.restore();
+}
+function gasGlow(ctx, x, y, t, r = 260, a = .55) {
+  const fl = .9 + .1 * Math.sin(t * 13 + x) * Math.sin(t * 7.3 + y);
+  ctx.save(); ctx.globalCompositeOperation = 'screen';
+  const g = ctx.createRadialGradient(x, y, 0, x, y, r * fl); g.addColorStop(0, `rgba(255,200,120,${a * fl})`); g.addColorStop(.25, `rgba(255,160,70,${a * .45 * fl})`); g.addColorStop(1, 'rgba(255,140,50,0)');
+  ctx.fillStyle = g; ctx.fillRect(x - r * 1.1, y - r * 1.1, r * 2.2, r * 2.2); ctx.restore();
+}
+// streets from OSM-derived data: G = {ways: [[lon,lat],...], rail: [...]} ; theme night|paper
+function drawStreets(ctx, G, v, o = {}) {
+  const pr = geoProj(v), night = (v.theme || 'night') === 'night';
+  ctx.save(); ctx.fillStyle = night ? '#0B0D12' : '#E6DAC0'; ctx.fillRect(0, 0, W, H);
+  if (!night) { ctx.globalAlpha = .6; ctx.drawImage(paperTex(PAL.paper, 61), 0, 0); ctx.globalAlpha = 1; }
+  const prog_ = o.reveal ?? 1;
+  ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  (G.rail || []).forEach(w => { ctx.strokeStyle = night ? 'rgba(120,120,140,.35)' : 'rgba(60,50,40,.35)'; ctx.lineWidth = 3; ctx.setLineDash([10, 8]); geoPath(ctx, w, pr); ctx.stroke(); });
+  ctx.setLineDash([]);
+  G.ways.forEach((w, i) => { if (hash(i * 1.37) > prog_) return; const major = w.length > 2 && w.r < 3;
+    ctx.strokeStyle = night ? (major ? 'rgba(255,190,120,.55)' : 'rgba(210,190,160,.3)') : (major ? 'rgba(40,32,24,.75)' : 'rgba(40,32,24,.4)');
+    ctx.lineWidth = (major ? 6 : 2.6) * Math.sqrt(v.k / 50000); geoPath(ctx, w.p || w, pr); ctx.stroke(); });
+  ctx.restore(); return pr;
 }
