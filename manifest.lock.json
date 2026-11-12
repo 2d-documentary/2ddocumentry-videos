@@ -1,0 +1,61 @@
+{
+  "project": "_selftest",
+  "title": "Pipeline self-test 2 (temporary)",
+  "assets": [
+    {
+      "id": "t1_commons",
+      "scene": 1,
+      "category": "paintings",
+      "description": "Commons test",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
+      "file": "archives/paintings/t1_commons_commons-test.jpg",
+      "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/3840px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "bytes": 9227843,
+      "license": "Public domain",
+      "attribution": "Leonardo da Vinci, Cropped and relevelled from File:Mona Lisa, by Leonardo da Vinci, from C2RMF.jpg . Originally C2RMF: Galerie de tableaux en très haute définition : image page",
+      "page": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "t2_loc",
+      "scene": 2,
+      "category": "historical-photos",
+      "description": "LoC test",
+      "source_page": "https://www.loc.gov/pictures/item/2017762891/",
+      "status": "failed",
+      "error": "no downloadable image on this loc.gov page"
+    },
+    {
+      "id": "t3_chronam",
+      "scene": 3,
+      "category": "newspapers",
+      "description": "Chronicling America test",
+      "source_page": "https://chroniclingamerica.loc.gov/lccn/sn83030214/1912-04-16/ed-1/seq-1/",
+      "status": "failed",
+      "error": "HTTP 429"
+    },
+    {
+      "id": "t4_archive",
+      "scene": 4,
+      "category": "footage",
+      "description": "Internet Archive test",
+      "source_page": "https://archive.org/details/Popeye_forPresident",
+      "file": "archives/footage/t4_archive_internet-archive-test.jpg",
+      "resolved_url": "https://dn721604.ca.archive.org/0/items/Popeye_forPresident/__ia_thumb.jpg",
+      "bytes": 9003,
+      "license": "http://creativecommons.org/licenses/publicdomain/",
+      "attribution": "Paramount Pictures, Internet Archive",
+      "page": "https://archive.org/details/Popeye_forPresident",
+      "status": "downloaded"
+    },
+    {
+      "id": "t5_bad",
+      "scene": 5,
+      "category": "documents",
+      "description": "Deliberately broken link",
+      "source_page": "https://commons.wikimedia.org/wiki/File:This_file_does_not_exist_inkantiquity.jpg",
+      "status": "failed",
+      "error": "file not found on Commons"
+    }
+  ]
+}
