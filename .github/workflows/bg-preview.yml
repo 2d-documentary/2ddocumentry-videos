@@ -1,0 +1,26 @@
+name: bg-preview
+# Renders the Egypt background board (stills only) so art review happens without rendering in the chat session.
+on:
+  push:
+    branches: [egypt-episode]
+    paths: ['engine/web/**', 'engine/tools/**', '.github/workflows/bg-preview.yml']
+  workflow_dispatch:
+jobs:
+  board:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: |
+          pip install -q playwright pillow
+          test -x /usr/bin/google-chrome || (python -m playwright install --with-deps chromium && sudo ln -sf $(ls -d ~/.cache/ms-playwright/chromium-*/chrome-linux/chrome | head -1) /usr/bin/google-chrome)
+          python engine/tools/shotbg.py . "engine/web/egboard.html?sets=giza,construction,luxor,village,nile,mapLabelled,giza%2Bgizachars,luxor%2Bluxorchars" out/board.png out/full
+          python engine/tools/shotbg.py . "engine/web/egboard.html?sets=throne,deirelbahari,amarna,tomb,kadesh,abusimbel,alexandria,sea,title" out/board2.png out/full
+          python - <<'PY'
+          from PIL import Image; import glob, os
+          for f in glob.glob('out/full/*.jpg'): Image.open(f).convert('RGB').resize((1280, 720)).save(f, quality=82)
+          PY
+      - uses: actions/upload-artifact@v4
+        with: { name: bg-board, path: out }

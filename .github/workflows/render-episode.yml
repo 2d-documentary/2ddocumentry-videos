@@ -1,9 +1,6 @@
 name: render-episode
 # Renders a full 16:9 episode on GitHub Actions: Kokoro TTS + procedural music/SFX, chunked frame render, concat, publish.
 on:
-  push:
-    branches: [egypt-episode]
-    paths: ['episodes/**', 'engine/**', '.github/workflows/render-episode.yml']
   workflow_dispatch:
     inputs:
       episode: { description: 'episode folder', default: 'egypt' }
