@@ -1,0 +1,19 @@
+# Copies the downloadable Rome film into the branch "rome-video" as <100 MB parts (git-fetchable, no artifact zip).
+name: Rome film to branch
+on:
+  push:
+    paths: ['film/videobranch.trigger']
+permissions: { contents: write, actions: read }
+jobs:
+  parts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { name: video-small, path: src, run-id: 43178744109, github-token: '${{ secrets.GITHUB_TOKEN }}' }
+      - run: |
+          mkdir repo && cd repo && git init -q -b rome-video && mkdir parts
+          split -b 90m -d -a 2 ../src/Roman_Empire_History.mp4 parts/Roman_Empire_History.mp4.part
+          sha256sum ../src/Roman_Empire_History.mp4 | cut -d' ' -f1 > parts/sha256.txt; ls -la parts
+          git config user.name "github-actions"; git config user.email "github-actions@users.noreply.github.com"
+          git add parts && git commit -qm "Rome film (1080p) in parts [skip ci]"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" rome-video
