@@ -12,7 +12,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with: { name: video, path: src, run-id: 43161907042, github-token: '${{ secrets.GITHUB_TOKEN }}' }
       - run: |
-          ffmpeg -loglevel error -i src/Roman_Empire_History_1080p.mp4 -c:v libx264 -preset medium -crf 24 -maxrate 4M -bufsize 8M -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart Roman_Empire_History.mp4
+          ffmpeg -loglevel error -i src/Roman_Empire_History_1080p.mp4 -c:v libx264 -preset medium -crf 19 -maxrate 10M -bufsize 20M -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart Roman_Empire_History.mp4
           ls -la Roman_Empire_History.mp4
       - uses: actions/upload-artifact@v4
         with: { name: video-small, path: Roman_Empire_History.mp4, retention-days: 30, compression-level: 0 }
