@@ -31,7 +31,8 @@ jobs:
             P="${{ github.event.inputs.project }}"
           else
             P=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} 2>/dev/null \
-                | grep -E '^documentaries/[^/]+/manifest\.json$' | cut -d/ -f2 | grep -v '^_template$' | sort -u | tr '\n' ' ')
+                | grep -E '^documentaries/[^/]+/manifest\.json$' | cut -d/ -f2 | grep -v '^_template$' | sort -u \
+                | while read d; do [ -f "documentaries/$d/manifest.json" ] && echo "$d"; done | tr '\n' ' ')
           fi
           echo "projects=$P" >> "$GITHUB_OUTPUT"; echo "projects: $P"
       - name: Fetch

@@ -1,6 +1,0 @@
-{"project":"_selftest","title":"Pipeline self-test 3 (temporary)","assets":[
-{"id":"t1_commons","scene":1,"category":"paintings","description":"Commons test","source_page":"https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg"},
-{"id":"t2_loc","scene":2,"category":"historical-photos","description":"LoC test","source_page":"https://www.loc.gov/pictures/item/2017762891/"},
-{"id":"t3_chronam","scene":3,"category":"newspapers","description":"Chronicling America test","source_page":"https://chroniclingamerica.loc.gov/lccn/sn83030214/1912-04-16/ed-1/seq-1/"},
-{"id":"t4_archive","scene":4,"category":"footage","description":"Internet Archive test","source_page":"https://archive.org/details/Popeye_forPresident"},
-{"id":"t5_bad","scene":5,"category":"documents","description":"Deliberately broken link","source_page":"https://commons.wikimedia.org/wiki/File:This_file_does_not_exist_inkantiquity.jpg"}]}

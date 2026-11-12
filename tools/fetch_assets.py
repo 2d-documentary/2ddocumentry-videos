@@ -468,6 +468,10 @@ def main():
             continue
         try:
             got = fetch_one(a, store)
+            # source changed and the file name/extension moved: drop the stale copy
+            for stale in (prev.get("file"),):
+                if stale and stale != got["file"] and os.path.exists(os.path.join(store, stale)):
+                    os.remove(os.path.join(store, stale))
             results.append({**a, **got, "status": "downloaded"})
             print(f"+ {a['id']} -> {got['file']} ({got['bytes'] // 1024} KB)")
         except Exception as e:  # keep going, report at the end
