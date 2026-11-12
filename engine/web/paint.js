@@ -67,8 +67,7 @@ function clouds(ctx, list, tint = '#FFFBF2', shadow = '#EFE6DC') {
       g.fillStyle = shadow; g.beginPath(); g.ellipse(cx + bw * .05, cy + bh * .5, bw * 1.05, bh * 1.2, 0, 0, 7); g.fill();               // underside
       for (const [x, y, rr] of lobes) { g.beginPath(); g.arc(x + rr * .22, y + rr * .5, rr * .92, 0, 7); g.fill(); }                    // each lobe's own shaded belly
       g.fillStyle = tint; for (const [x, y, rr] of lobes) { g.beginPath(); g.arc(x - rr * .12, y - rr * .12, rr * .82, 0, 7); g.fill(); } // lit tops cut the shadow into lobe-shaped crescents
-      for (const [x, y, rr] of lobes) { const hl = g.createRadialGradient(x - rr * .35, y - rr * .4, 0, x - rr * .35, y - rr * .4, rr * 1.1); hl.addColorStop(0, 'rgba(255,255,255,.5)'); hl.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = hl; g.fillRect(x - rr * 2, y - rr * 2, rr * 4, rr * 4); }
-      const mid = g.createLinearGradient(0, cy - s, 0, cy + bh); mid.addColorStop(0, 'rgba(255,255,255,0)'); mid.addColorStop(1, 'rgba(170,160,170,.12)'); g.fillStyle = mid; g.fillRect(cx - s * 3, cy - s * 2, s * 6, s * 3); } });
+     } });
   }
 }
 // ---------- terrain layers with atmospheric fade ----------

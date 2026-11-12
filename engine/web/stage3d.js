@@ -92,7 +92,7 @@ class Stage {
       if (!f.o.ground && Math.abs(it.n[2]) < .3 && Math.min(...f.pts.map(p => p[2])) <= (this.gz || 0) + .3) { // contact band where the wall meets the ground
         ctx.save(); ctx.beginPath(); pts.forEach((q, i) => i ? ctx.lineTo(q[0], q[1]) : ctx.moveTo(q[0], q[1])); ctx.closePath(); ctx.clip(); const zmin = Math.min(...f.pts.map(p => p[2])); const bot = f.pts.map((p, i) => [p, pts[i]]).filter(([p]) => p[2] <= zmin + .01).map(([, q]) => q);
         if (bot.length >= 2) { ctx.strokeStyle = 'rgba(70,35,15,.38)'; ctx.lineWidth = 16; ctx.beginPath(); ctx.moveTo(bot[0][0], bot[0][1]); ctx.lineTo(bot[1][0], bot[1][1]); ctx.stroke(); } ctx.restore(); }
-      if (!f.o.noInk) { const d = Math.min(...pts.map(q => q[2] || 1e9)); const w = (f.o.pyr ? 4.2 : clamp(this.cam.f / d * (f.o.inkK || .12) * 1.4, f.o.inkMin || 3, 5)) * (1 - haze * 1.2); inkLine(ctx, pts.map(q => [q[0], q[1]]), w, { closed: true, wob: f.o.pyr ? .3 : undefined, col: haze > .05 ? mix(BG_INK, '#8A7460', haze * 2) : undefined }); }
+      if (!f.o.noInk) { const d = Math.min(...pts.map(q => q[2] || 1e9)); const w = (f.o.pyr ? 4.6 : clamp(this.cam.f / d * (f.o.inkK || .12) * 1.4, f.o.inkMin || 3.6, 5.2)) * (1 - haze * .5); inkLine(ctx, pts.map(q => [q[0], q[1]]), w, { closed: true, wob: f.o.pyr ? .3 : undefined, col: haze > .05 ? mix(BG_INK, '#8A7460', haze * 2) : undefined }); }
     }
     drawShadows();
   }

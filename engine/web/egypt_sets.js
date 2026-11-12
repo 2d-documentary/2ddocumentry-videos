@@ -6,7 +6,7 @@ const LIME = '#D8BE8C', LIME2 = '#CBA874', SANDST = '#D9B27A', MUD = '#B88E62', 
 function sphinxSprite(ctx, x, y, k, o = {}) { // the Great Sphinx in profile (head to the left), units = metres: 73 m long, 20 m high
   const T = (px, py) => [x + px * k, y + py * k];
   const path = (g, pts) => { pts.forEach((p, i) => { if (p.length === 2) { const q = T(...p); i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); } else { const c = T(p[0], p[1]), q = T(p[2], p[3]); g.quadraticCurveTo(c[0], c[1], q[0], q[1]); } }); };
-  const body = '#C99D66', lw = Math.max(3, .22 * k), k_ = k;
+  const body = '#C99D66', lw = Math.max(4.2, .26 * k), k_ = k;
   const strata = (g, x0, x1, y0, y1, dark) => { for (let s2 = y0; s2 < y1; s2 += 1.15) { const a2 = T(x0, s2); g.fillStyle = `rgba(110,72,38,${dark ? .28 : .16})`; g.fillRect(a2[0], a2[1], (x1 - x0) * k, .42 * k); } };
   // body: neck/chest, shoulder bulge, dipping spine, raised rump; the silhouette steps with the strata on the curved ends
   const stair = (pts, step = 1.5) => { const out = [pts[0]]; for (let i = 1; i < pts.length; i++) { const [x0, y0] = out[out.length - 1], [x1, y1] = pts[i]; const k0 = Math.floor(y0 / step), k1 = Math.floor(y1 / step); if (Math.abs(y1 - y0) > .4 && k0 !== k1) { const ym = Math.max(k0, k1) * step; out.push([x0, ym], [x1, ym]); } out.push([x1, y1]); } return out; };
@@ -139,15 +139,25 @@ function egHut(S, x, y, w, d, h, col, seed) { // mud-brick house: door with fram
   S.sprite([x + w * .15, y - .6, 0], (c, px, py, k) => { jarSprite(c, px, py, .8 * k, '#A9603A', (seed | 0) % 4); poly(c, [[px + .5 * k, py], [px + 1.3 * k, py], [px + 1.2 * k, py - .35 * k], [px + .6 * k, py - .35 * k]], '#C9A05A', true, 1.6); c.strokeStyle = '#8A6A3A'; c.lineWidth = 1.2; for (let i = 1; i < 4; i++) { c.beginPath(); c.moveTo(px + (.5 + i * .2) * k, py); c.lineTo(px + (.6 + i * .17) * k, py - .35 * k); c.stroke(); } poly(c, [[px - 1.2 * k, py], [px - .4 * k, py], [px - .5 * k, py - .25 * k], [px - 1.1 * k, py - .25 * k]], '#9C8C78', true, 1.6); });   // jar, basket, quern stone
   S.quad([x + w * .5, y - 2.3, 2.3], [x + w + .2, y - 2.3, 2.3], [x + w + .2, y, 2.5], [x + w * .5, y, 2.5], '#B89A5A', { twoSided: true, paint: (c, St, f) => { for (let k = 0; k < 14; k++) { const a = St.uv(f, k / 14, 0), b = St.uv(f, k / 14, 1); c.strokeStyle = '#7A6436'; c.lineWidth = 1.2; c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.stroke(); } } });
 }
-function rubble(ctx, x0, x1, y0, y1, seed, n) { const r = rng(seed); const P = []; for (let i = 0; i < n; i++) { const y = y0 + Math.pow(r(), .7) * (y1 - y0), sz = 8 + (y - y0) / (y1 - y0) * 26 * (.5 + r()); P.push([x0 + r() * (x1 - x0), y, sz, r()]); } P.sort((a, b) => a[1] - b[1]);
-  for (const [x, y, sz, t] of P) { ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.3)'; ctx.beginPath(); ctx.ellipse(x + sz * .3, y + 2, sz * 1.1, sz * .3, 0, 0, 7); ctx.fill(); ctx.restore(); const col = t > .5 ? '#C9A874' : '#B8956A'; const pts = [[x - sz, y], [x - sz * .8, y - sz * .6], [x - sz * .1, y - sz * .9], [x + sz * .8, y - sz * .55], [x + sz, y]]; poly(ctx, pts, shade(col, .9)); poly(ctx, [[x - sz * .8, y - sz * .6], [x - sz * .1, y - sz * .9], [x + sz * .8, y - sz * .55], [x, y - sz * .35]], shade(col, 1.1)); inkLine(ctx, pts, clamp(sz * .12, 1.6, 3.2), { closed: true }); } }
-function stoneBlock(ctx, x, y, w, h, d, col, seed) { // screen-space foreground block: lit top, front with chisel striations, shaded side, quarry mark
+function drumFragment(ctx, cx, cy, rx, col) { // broken column drum lying on its side, jagged break on top
+  ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.3)'; ctx.beginPath(); ctx.ellipse(cx + rx * .3, cy + 6, rx * 1.3, rx * .22, 0, 0, 7); ctx.fill(); ctx.restore();
+  blob(ctx, g => { g.moveTo(cx - rx, cy); g.lineTo(cx - rx, cy - rx * .55); g.lineTo(cx - rx * .4, cy - rx * .75); g.lineTo(cx - rx * .1, cy - rx * .5); g.lineTo(cx + rx * .35, cy - rx * .8); g.lineTo(cx + rx * .7, cy - rx * .45); g.lineTo(cx + rx, cy - rx * .6); g.lineTo(cx + rx, cy); g.closePath(); }, col, { lw: 4, shade: g => { g.fillStyle = shade(col, .8); g.fillRect(cx - rx, cy - rx * .25, rx * 2, rx * .25); g.strokeStyle = shade(col, .65); g.lineWidth = 2; for (const u of [-.5, 0, .5]) { g.beginPath(); g.moveTo(cx + u * rx, cy - rx * .6); g.lineTo(cx + u * rx, cy); g.stroke(); } } }); }
+function wovenBasket(ctx, x, y, r, fruit) { ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.3)'; ctx.beginPath(); ctx.ellipse(x + 8, y + 3, r * 1.2, r * .25, 0, 0, 7); ctx.fill(); ctx.restore();
+  for (let i = 0; i < 6; i++) { ctx.fillStyle = fruit[i % fruit.length]; ctx.beginPath(); ctx.arc(x - r * .6 + i * r * .24, y - r * .82 - (i % 2) * r * .12, r * .2, 0, 7); ctx.fill(); }
+  blob(ctx, g => { g.moveTo(x - r, y - r * .8); g.lineTo(x + r, y - r * .8); g.lineTo(x + r * .75, y); g.lineTo(x - r * .75, y); g.closePath(); }, '#C29A52', { lw: 3.2, shade: g => { g.strokeStyle = '#8A6A32'; g.lineWidth = 2; for (let k = 1; k < 4; k++) { g.beginPath(); g.moveTo(x - r, y - r * .8 + k * r * .2); g.lineTo(x + r, y - r * .8 + k * r * .2); g.stroke(); } } });
+  ctx.fillStyle = '#A88040'; ctx.beginPath(); ctx.ellipse(x, y - r * .8, r, r * .16, 0, 0, 7); ctx.fill(); inkLine(ctx, Array.from({ length: 17 }, (_, j) => [x + Math.cos(j / 16 * 6.283) * r, y - r * .8 + Math.sin(j / 16 * 6.283) * r * .16]), 2.4, { closed: true }); }
+function rubble(ctx, x0, x1, y0, y1, seed, n) { const r = rng(seed); const C = [0, 1, 2].map(() => [x0 + r() * (x1 - x0), y0 + (.3 + r() * .7) * (y1 - y0)]); const P = [];
+  for (let i = 0; i < Math.ceil(n / 2); i++) { const c = C[i % 3]; const y = clamp(c[1] + (r() - .5) * 60, y0, y1), x = c[0] + (r() - .5) * 220, sz = (6 + (y - y0) / (y1 - y0) * 22) * (.5 + r() * 1.1); P.push([x, y, sz, r(), r() * 6.28, 4 + Math.floor(r() * 4)]); } P.sort((a, b) => a[1] - b[1]);
+  for (const [x, y, sz, t, rot, nv] of P) { ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.26)'; ctx.beginPath(); ctx.ellipse(x + sz * (.2 + t * .4), y + 2, sz * (.8 + t * .6), sz * .25, 0, 0, 7); ctx.fill(); ctx.restore();
+    const col = ['#C9A874', '#B8956A', '#D2B688', '#AE8A60'][Math.floor(t * 4)]; const pts = []; for (let k = 0; k < nv; k++) { const a = rot + k / nv * Math.PI * 2, rr = sz * (.6 + rng(Math.round(x * 7 + k))() * .55); pts.push([x + Math.cos(a) * rr, Math.min(y, y - sz * .45 + Math.sin(a) * rr * .55)]); }
+    poly(ctx, pts, shade(col, .88)); const topPts = pts.filter(q => q[1] < y - sz * .4); if (topPts.length > 2) poly(ctx, topPts, shade(col, 1.1)); inkLine(ctx, pts, clamp(sz * .13, 1.8, 3.4), { closed: true }); } }
+function stoneBlock(ctx, x, y, w, h, d, col, seed, mark = false) { // screen-space foreground block: lit top, front with chisel striations, shaded side, quarry mark
   const top = [[x - w / 2, y - h], [x + w / 2, y - h], [x + w / 2 + d * .6, y - h - d * .45], [x - w / 2 + d * .6, y - h - d * .45]], front = [[x - w / 2, y], [x + w / 2, y], [x + w / 2, y - h], [x - w / 2, y - h]], side = [[x + w / 2, y], [x + w / 2 + d * .6, y - d * .45], [x + w / 2 + d * .6, y - h - d * .45], [x + w / 2, y - h]];
   ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.32)'; ctx.beginPath(); ctx.ellipse(x + w * .15, y + 4, w * .7, 16, 0, 0, 7); ctx.fill(); ctx.restore();
   poly(ctx, side, shade(col, .72)); poly(ctx, front, shade(col, .9)); poly(ctx, top, shade(col, 1.1));
   const r = rng(seed); ctx.strokeStyle = shade(col, .7); ctx.lineWidth = 2; for (let i = 0; i < 3; i++) { const u = .2 + i * .28 + r() * .05; ctx.beginPath(); ctx.moveTo(x - w / 2 + w * u, y - h + 8); ctx.lineTo(x - w / 2 + w * (u + .06), y - 8); ctx.stroke(); }
   ctx.fillStyle = shade(col, .78); ctx.beginPath(); ctx.moveTo(x + w * .2, y - h); ctx.lineTo(x + w * .35, y - h); ctx.lineTo(x + w * .3, y - h + 12); ctx.fill();
-  ctx.strokeStyle = '#A8442E'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x - w * .25, y - h * .65); ctx.lineTo(x - w * .25, y - h * .3); ctx.moveTo(x - w * .32, y - h * .48); ctx.lineTo(x - w * .12, y - h * .48); ctx.stroke();
+  if (mark) { ctx.strokeStyle = '#A8442E'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x - w * .25, y - h * .65); ctx.lineTo(x - w * .25, y - h * .3); ctx.moveTo(x - w * .32, y - h * .48); ctx.lineTo(x - w * .12, y - h * .48); ctx.stroke(); }
   inkLine(ctx, [front[0], front[1], side[1], side[2], top[3], front[3]], 3, { closed: true });
 }
 // Egyptian figure for crowds: skin, white kilt, black hair; poses
@@ -242,12 +252,12 @@ SETS.giza = (ctx, o = {}) => { // Giza from the Sphinx Temple court: the Sphinx 
   S.sprite([-28.4, 0, 0], (c, x, y, k) => { c.save(); c.fillStyle = 'rgba(90,48,22,.32)'; c.beginPath(); c.moveTo(x - 20 * k, y); c.lineTo(x + 57 * k, y); c.lineTo(x + 70 * k, y + 2.6 * k); c.lineTo(x - 8 * k, y + 2.6 * k); c.closePath(); c.fill(); c.restore(); sphinxSprite(c, x, y, k); const a = [x - 22 * k, y], b = [x + 57 * k, y]; c.fillStyle = 'rgba(70,35,15,.45)'; c.fillRect(a[0], a[1] - .9 * k, b[0] - a[0], .9 * k); });
   S.castShadow([[-21, 0], [-6, 12], [5, 14.5], [40, 12], [56, 4], [57, 0]].map(([u, h]) => [-28.4 + u, 1, h]).concat([[-6, 1, 0]]), { poly: true });
   // Khafre's valley temple: massive red-granite-cased walls (left) and the ruined Sphinx Temple (right front)
-  S.box(-96, -40, 0, 40, 46, 9, '#A8665A', { tex: 'blocks', course: 3, blockW: 6.5, seed: 81, granite: true, paint: (c, St, f, col) => { const n = St.normal(f.pts); if (n[1] < -.9) { const [W] = fdim(f); poly(c, uvRect(St, f, .62, 0, .62 + 4 / W, .62), '#2B1F19', true, 2.4); poly(c, uvRect(St, f, .62 + 1.5 / W, 0, .62 + 2.5 / W, .62), '#A8665A', true, 2); } } });   // red-granite casing, square-pillar doorway
+  S.box(-96, -40, 0, 40, 46, 9, '#B58C66', { tex: 'blocks', course: 3, blockW: 6.5, seed: 81, granite: true, paint: (c, St, f, col) => { const n = St.normal(f.pts); if (n[1] < -.9) { const [W] = fdim(f); poly(c, uvRect(St, f, .62, 0, .62 + 4 / W, .62), '#2B1F19', true, 2.4); poly(c, uvRect(St, f, .62 + 1.5 / W, 0, .62 + 2.5 / W, .62), '#A8665A', true, 2); } } });   // red-granite casing, square-pillar doorway
   S.box(40, -60, 0, 30, 22, 3.4, '#C9A470', { tex: 'blocks', course: 1.15, blockW: 2.6, seed: 82 }); S.box(-30, -66, 0, 14, 5, 1.8, '#C9A470', { tex: 'blocks', course: .9, blockW: 2, seed: 83 });
   // the paved court the viewer stands in, sand drifting over its slabs
   S.box(-40, -119.5, 0, 80, 30, .45, '#D4B382', { floor: true, layer: 0, topTex: 'paving', slab: .7, top: '#D8BA88', shadow: false });
   const drift = (pts, layer = 3) => S.face(pts.map(([x, y]) => [x, y, .46]), '#E2C896', { ground: true, layer, noInk: true, paint: driftPaint, noFill: true });
-  drift([[-9, -104], [-5, -103], [-6, -100], [-10, -100.5]]); drift([[6, -110], [9, -108], [8, -105], [5, -106.5]]); drift([[-12, -108], [-8, -109], [-7, -106], [-11, -104.6], [-14, -105.5]]); drift([[9, -104], [14, -105], [16, -101], [11, -100.5]]); drift([[-2, -98], [3, -99], [6, -96], [0, -94.5], [-4, -95.5]]);
+  drift([[-9, -104], [-5, -103], [-6, -100], [-10, -100.5]]); drift([[6, -110], [9, -108], [8, -105], [5, -106.5]]); drift([[-12, -108], [-8, -109], [-7, -106], [-11, -104.6], [-14, -105.5]]); drift([[9, -104], [14, -105], [16, -101], [11, -100.5]]); drift([[-2, -98], [3, -99], [6, -96], [0, -94.5], [-4, -95.5]]); drift([[-5, -111.5], [-1, -112.2], [4, -111], [5.5, -108], [2, -106], [-3, -105.4], [-5.5, -107.5]]);
   // court props: fallen relief block, broken statue base, column drums, offering table with faience, potsherds
   S.box(-9.6, -110.5, .45, 3.4, 1.4, 1.25, '#CFAE7C', { tex: 'reliefs', registers: 1, seed: 61 }); S.box(-6.6, -109, .45, 1.1, .9, .55, '#C9A470', { tex: 'blocks', course: .3, blockW: .6 });
   S.box(-3.8, -102, .45, 1.6, 1.2, .9, '#CDB08A', { tex: 'blocks', course: .3, blockW: .5, seed: 63 }); S.sprite([-3, -101.6, 1.35], (c, px, py, k) => { poly(c, [[px - .5 * k, py], [px - .45 * k, py - .45 * k], [px - .1 * k, py - .5 * k], [px + .05 * k, py - .2 * k], [px + .4 * k, py - .25 * k], [px + .5 * k, py]], '#CDB08A', true, 2); });   // statue base with broken feet
@@ -259,8 +269,8 @@ SETS.giza = (ctx, o = {}) => { // Giza from the Sphinx Temple court: the Sphinx 
   ctx.fillStyle = vgrad(ctx, H, 1080, '#E4CA98', '#D0AF79'); ctx.fillRect(0, H, 1920, 1080 - H);
   S.groundDetail(ctx, { col: '#DCC08C', seed: 7, count: 700, far: 700, avoid: p => p[1] < -89.5 });
   S.render(ctx);
-  ctx.save(); ctx.fillStyle = 'rgba(100,55,25,.22)'; ctx.beginPath(); ctx.moveTo(1920, 760); ctx.lineTo(1640, 760); ctx.lineTo(1000, 1080); ctx.lineTo(1920, 1080); ctx.closePath(); ctx.fill(); ctx.restore();   // shadow from an off-screen pylon
-  rubble(ctx, 380, 1500, 860, 1075, 41, 18); stoneBlock(ctx, 230, 1070, 300, 110, 70, '#C9A874', 8); jarSprite(ctx, 1800, 1090, 150, '#B5653A', 0);
+  ctx.save(); ctx.fillStyle = 'rgba(100,55,25,.22)'; ctx.beginPath(); ctx.moveTo(1920, 700); ctx.lineTo(1560, 700); ctx.lineTo(1000, 1080); ctx.lineTo(1920, 1080); ctx.closePath(); ctx.fill(); ctx.restore();   // shadow from an off-screen pylon
+  rubble(ctx, 380, 1500, 880, 1075, 41, 9); stoneBlock(ctx, 230, 1070, 300, 110, 70, '#C9A874', 8); jarSprite(ctx, 1800, 1090, 150, '#B5653A', 0);
   { const cx = 640, cy = 1040; ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.3)'; ctx.beginPath(); ctx.ellipse(cx + 40, cy + 6, 170, 26, 0, 0, 7); ctx.fill(); ctx.restore(); blob(ctx, g => { g.ellipse(cx, cy - 50, 140, 50, 0, 0, 7); g.rect(cx - 140, cy - 50, 280, 50); g.moveTo(cx + 140, cy); g.ellipse(cx, cy, 140, 50, 0, 0, Math.PI); }, '#CFAE7C', { lw: 3.5, shade: g => { g.fillStyle = '#DCC08E'; g.beginPath(); g.ellipse(cx, cy - 50, 140, 50, 0, 0, 7); g.fill(); g.strokeStyle = 'rgba(110,75,40,.5)'; g.lineWidth = 2; g.beginPath(); g.ellipse(cx, cy - 50, 90, 32, 0, 0, 7); g.stroke(); } }); }   // a fallen column drum
   brushTexture(ctx, .2); warmGrade(ctx);
 };
@@ -297,8 +307,8 @@ SETS.construction = (ctx, o = {}) => { // Khufu's pyramid rising: smooth casing 
   ctx.fillStyle = vgrad(ctx, H, 1080, '#E2C896', '#CCAA74'); ctx.fillRect(0, H, 1920, 1080 - H); S.groundDetail(ctx, { col: '#D9BA86', seed: 3, count: 900, far: 500 });
   S.render(ctx);
   jarSprite(ctx, 110, 1088, 170, '#A9603A', 3); jarSprite(ctx, 215, 1086, 120, '#C99A6A', 2);
-  stoneBlock(ctx, 980, 1050, 260, 120, 70, '#C9AC7E', 5); stoneBlock(ctx, 1230, 1065, 150, 80, 45, '#BFA070', 6); stoneBlock(ctx, 1160, 975, 120, 70, 40, '#C9AC7E', 7);
-  jarSprite(ctx, 1640, 1088, 150, '#9E5A34', 1); rubble(ctx, 700, 1900, 820, 1075, 61, 14);
+  stoneBlock(ctx, 980, 1050, 260, 120, 70, '#C9AC7E', 5, true); stoneBlock(ctx, 1230, 1065, 150, 80, 45, '#BFA070', 6); stoneBlock(ctx, 1160, 975, 120, 70, 40, '#C9AC7E', 7, true);
+  jarSprite(ctx, 1640, 1088, 150, '#9E5A34', 1); rubble(ctx, 700, 1900, 840, 1075, 61, 7);
   { for (let i = 0; i < 3; i++) { const x = 1430 + i * 60, y = 1040; ctx.strokeStyle = '#4A3420'; ctx.lineWidth = 12; ctx.beginPath(); ctx.ellipse(x, y, 48, 16, 0, 0, 7); ctx.stroke(); ctx.strokeStyle = '#B08A52'; ctx.lineWidth = 8; ctx.stroke(); } }   // rope coils
   brushTexture(ctx, .2); warmGrade(ctx);
 };
@@ -335,7 +345,7 @@ SETS.luxor = (ctx, o = {}) => { // Luxor Temple: the first pylon (Kadesh reliefs
   S.groundDetail(ctx, { col: '#D8BC8B', seed: 6, count: 600, far: 300, avoid: p => p[0] > -30 && p[0] < 24 && p[1] > -47.5 && p[1] < 0 });
   S.render(ctx);
   ctx.save(); ctx.fillStyle = 'rgba(110,60,30,.24)'; ctx.beginPath(); ctx.moveTo(0, 820); ctx.lineTo(260, 820); ctx.lineTo(900, 1080); ctx.lineTo(0, 1080); ctx.closePath(); ctx.fill(); ctx.restore();   // shadow of an off-screen column
-  rubble(ctx, 300, 1700, 800, 1075, 52, 22); stoneBlock(ctx, 1450, 1070, 280, 100, 60, '#CDAE7C', 9);
+  rubble(ctx, 300, 1600, 820, 1075, 52, 10); drumFragment(ctx, 1460, 1050, 130, '#CDAE7C');
   reeds(ctx, 1700, 1940, 1090, 230, 7, '#5E7A3A');
   brushTexture(ctx, .2); warmGrade(ctx);
 };
@@ -381,7 +391,7 @@ SETS.village = (ctx, o = {}) => { // Deir el-Medina: a narrow street of whitewas
       const [W, Hh] = fdim(f); const a0 = St.uv(f, .5, 1), a1 = St.uv(f, .5, 1 - .5 / Hh); const g0 = c.createLinearGradient(a0[0], a0[1], a1[0], a1[1]); g0.addColorStop(0, 'rgba(80,40,20,.5)'); g0.addColorStop(1, 'rgba(80,40,20,0)'); c.fillStyle = g0; c.fillRect(-50, -50, 2100, 1200);   // roofline shadow
       const r2 = rng(i * 7 + (s > 0)); for (let m = 0; m < 3; m++) { const u = .1 + r2() * .8, v = .1 + r2() * .6; const P = spline(Array.from({ length: 11 }, (_, j) => { const a = j / 11 * 6.283; return St.uv(f, u + Math.cos(a) * (.03 + r2() * .04), v + Math.sin(a) * (.05 + r2() * .06)); }), true, 3); c.save(); c.globalAlpha = .35; poly(c, P, m % 2 ? shade(cc, 1.08) : shade(cc, .9)); c.restore(); }   // faint plaster stains
       } });
-    if (i % 2 === 0 && i < 4) S.sprite([s < 0 ? x + sx + .1 : x - .1, y + 4, h - .9], (c, px, py, kk) => { const w = .33 * kk, hh = .3 * kk; c.strokeStyle = '#5A4030'; c.lineWidth = 2; c.beginPath(); c.moveTo(px, py - .5 * kk); c.lineTo(px, py); c.stroke(); poly(c, [[px - w, py], [px + w, py], [px + w * .8, py + hh], [px - w * .8, py + hh]], '#C29A52', true, 2.2); c.strokeStyle = '#8A6A32'; c.lineWidth = 1.4; for (let k = 1; k < 4; k++) { c.beginPath(); c.moveTo(px - w * (1 - k * .05), py + hh * k / 4); c.lineTo(px + w * (1 - k * .05), py + hh * k / 4); c.stroke(); } for (let k = -2; k <= 2; k++) { c.beginPath(); c.moveTo(px + k * w * .35, py); c.lineTo(px + k * w * .3, py + hh); c.stroke(); } });   // woven basket hung from a beam
+    if (i % 2 === 0 && i < 4) S.sprite([s < 0 ? x + sx + .1 : x - .1, y + 4, h - .9], (c, px, py, kk) => { const w = .33 * kk, hh = .3 * kk; c.strokeStyle = '#5A4030'; c.lineWidth = 2; c.beginPath(); c.moveTo(px, py - .5 * kk); c.lineTo(px, py); c.stroke(); poly(c, [[px - w, py], [px + w, py], [px + w * .8, py + hh], [px - w * .8, py + hh]], '#C29A52', true, 2.2); for (let f2 = 0; f2 < 5; f2++) { c.fillStyle = ['#C0453A', '#E3C25A', '#3F8A5A'][f2 % 3]; c.beginPath(); c.arc(px - w * .6 + f2 * w * .3, py - w * .12, w * .17, 0, 7); c.fill(); } c.fillStyle = '#A88040'; c.beginPath(); c.ellipse(px, py, w, w * .2, 0, 0, 7); c.fill(); inkLine(c, Array.from({ length: 17 }, (_, j) => [px + Math.cos(j / 16 * 6.283) * w, py + Math.sin(j / 16 * 6.283) * w * .2]), 2, { closed: true }); c.strokeStyle = '#8A6A32'; c.lineWidth = 1.4; for (let k = 1; k < 4; k++) { c.beginPath(); c.moveTo(px - w * (1 - k * .05), py + hh * k / 4); c.lineTo(px + w * (1 - k * .05), py + hh * k / 4); c.stroke(); } for (let k = -2; k <= 2; k++) { c.beginPath(); c.moveTo(px + k * w * .35, py); c.lineTo(px + k * w * .3, py + hh); c.stroke(); } });   // woven basket hung from a beam
     // parapet + palm-rib canopy on some roofs
     const t = .3, ph = .55; S.box(x, y, h, sx, t, ph, col, { shadow: false, bias: -1 }); S.box(s < 0 ? x + sx - t : x, y + t, h, t, sy - t, ph, col, { shadow: false, bias: -1 });
     if ((i + (s > 0)) % 2 === 0) { const cx0 = s < 0 ? x + sx - 3.6 : x + .4; for (const [px, py] of [[cx0, y + 1], [cx0 + 3, y + 1], [cx0, y + 5], [cx0 + 3, y + 5]]) S.box(px, py, h, .16, .16, 1.9, '#7A5634', { shadow: false });
@@ -395,7 +405,8 @@ SETS.village = (ctx, o = {}) => { // Deir el-Medina: a narrow street of whitewas
   for (const [x, y, sd, pose] of [[-1, 12, 3, 'carry'], [1.2, 20, 5, 'stand'], [-.6, 30, 8, 'stand']]) S.sprite([x, y, 0], (c, px, py, k) => egPerson(c, px, py, 1.7 * k, { seed: sd, pose, flip: x > 0 }));
   S.groundDetail(ctx, { col: '#C2A076', seed: 9, count: 150, far: 60, tufts: false });
   S.render(ctx);
-  jarSprite(ctx, 95, 1092, 190, '#B06238', 1); stoneBlock(ctx, 1770, 1080, 240, 90, 50, '#B9956A', 11); jarSprite(ctx, 1700, 1000, 110, '#8E6A50', 2);
+  jarSprite(ctx, 95, 1092, 190, '#B06238', 1); ctx.save(); ctx.fillStyle = 'rgba(70,35,15,.22)'; ctx.beginPath(); ctx.moveTo(1545, 330); ctx.lineTo(1920, 230); ctx.lineTo(1920, 430); ctx.lineTo(1545, 480); ctx.closePath(); ctx.fill(); ctx.restore();   // awning shadow on the right wall
+  stoneBlock(ctx, 1770, 1080, 240, 90, 50, '#B9956A', 11); wovenBasket(ctx, 1640, 1060, 70, ['#C0453A', '#E3C25A', '#3F8A5A']);
   brushTexture(ctx, .22); warmGrade(ctx);
 };
 
