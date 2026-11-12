@@ -1,6 +1,6 @@
 # Asset report: D.B. Cooper: The Man Who Vanished
 
-**22 downloaded, 2 need attention** (of 24)
+**39 downloaded, 1 need attention** (of 40)
 
 ## Download these by hand
 
@@ -8,8 +8,7 @@ Open each link, download the highest-resolution version, and send it back with i
 
 | ID | Scene | What | Link | Why it failed |
 |---|---|---|---|---|
-| bill20 | 3 | US $20 Federal Reserve note (1969-era design) |  | Commons search found nothing |
-| bourbon | 4 | Glass of bourbon |  | not a Commons File: page |
+| briefcase | 0 | Vintage attaché case |  | Commons search found nothing |
 
 ## In the store
 
@@ -37,3 +36,20 @@ Open each link, download the highest-resolution version, and send it back with i
 | sr71 | 15 | `archives/historical-photos/sr71_sr-71-blackbird.jpg` | Public domain | authentic |
 | seafirst | 9 | `archives/historical-photos/seafirst_seattle-first-national-bank-interior-c-1.jpg` | CC BY 4.0 | authentic |
 | vault1 | 12 | `archives/documents/vault1_fbi-norjak-file-part-01-the-vault.pdf` | Public domain (FBI) | authentic |
+| bill20 | 0 | `archives/historical-photos/bill20_us-20-federal-reserve-note.pdf` | Public domain | authentic |
+| bill20b | 0 | `archives/historical-photos/bill20b_us-20-bill.pdf` | Public domain | authentic |
+| cashstack | 0 | `archives/historical-photos/cashstack_stack-of-us-dollar-bills.pdf` | Public domain | authentic |
+| bourbon | 0 | `archives/historical-photos/bourbon_glass-of-bourbon-whiskey.jpg` | CC BY-SA 2.0 | authentic |
+| forest | 0 | `archives/historical-photos/forest_pacific-northwest-forest-in-fog.jpg` | Public domain | authentic |
+| columbia | 0 | `archives/historical-photos/columbia_columbia-river-near-vancouver-washington.jpg` | Public domain | authentic |
+| merwin | 0 | `archives/historical-photos/merwin_lake-merwin-washington.jpg` | Public domain | authentic |
+| cockpit | 0 | `archives/historical-photos/cockpit_boeing-727-cockpit.jpg` | CC BY-SA 2.0 | authentic |
+| seatac72 | 0 | `archives/historical-photos/seatac72_seattle-tacoma-airport-1972.jpg` | CC BY-SA 3.0 | authentic |
+| rackstraw | 0 | `archives/historical-photos/rackstraw_robert-rackstraw-military-id-photo-1970.jpg` | Public domain | authentic |
+| mccoy | 0 | `archives/historical-photos/mccoy_richard-mccoy-jr.jpg` | Public domain | authentic |
+| security | 0 | `archives/historical-photos/security_airport-security-screening-1970s.pdf` | Public domain | authentic |
+| puget | 0 | `archives/historical-photos/puget_puget-sound-from-the-air.jpg` | Public domain | authentic |
+| reno | 0 | `archives/historical-photos/reno_reno-nevada-at-night.jpg` | CC BY-SA 2.0 | authentic |
+| microfilm | 0 | `archives/historical-photos/microfilm_microfilm-reader.jpg` | CC BY 4.0 | authentic |
+| soldiers | 0 | `archives/historical-photos/soldiers_us-army-soldiers-searching-woods.pdf` | Public domain | authentic |
+| rain | 0 | `archives/historical-photos/rain_rain-at-night.jpg` | CC BY-SA 4.0 | authentic |
