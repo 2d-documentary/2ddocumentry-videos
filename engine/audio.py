@@ -143,7 +143,7 @@ ve = np.convolve(np.abs(voice), np.ones(int(.06 * SR)) / int(.06 * SR), 'same');
 speech = ve > .25
 music *= (1 - .11 * ve)
 v_rms = np.sqrt(np.mean(voice[speech] ** 2)); m_rms = np.sqrt(np.mean(music[speech] ** 2)) + 1e-9
-MUSIC_DB = float(os.environ.get("MUSIC_DB", "-7"))
+MUSIC_DB = float(os.environ.get("MUSIC_DB", "-13"))
 music *= v_rms * 10 ** (MUSIC_DB / 20) / m_rms
 print("music level vs voice (dB):", round(20 * np.log10(np.sqrt(np.mean(music[speech] ** 2)) / v_rms), 1))
 
@@ -195,7 +195,7 @@ for line in script["lines"]:
         if x.size < 20: continue
         x = x / (np.max(np.abs(x)) + 1e-9) * .5; i = int(at * SR); fx[i:i + len(x)] += x[:len(fx) - i]
 fx = lp(fx[:N], 9000)
-fx *= v_rms * 10 ** (-9 / 20) / (np.sqrt(np.mean(fx[np.abs(fx) > 1e-4] ** 2)) + 1e-9)   # effects ~9 dB under the voice, no harsh top end
+fx *= v_rms * 10 ** (float(os.environ.get('SFX_DB', '-12')) / 20) / (np.sqrt(np.mean(fx[np.abs(fx) > 1e-4] ** 2)) + 1e-9)   # effects ~9 dB under the voice, no harsh top end
 mix = voice * 1.0 + music + fx
 mix = mix / (np.max(np.abs(mix)) + 1e-9) * .89
 wavfile.write(os.path.join(out, "music.wav"), SR, music.astype(np.float32)); wavfile.write(os.path.join(out, "sfx.wav"), SR, fx.astype(np.float32))

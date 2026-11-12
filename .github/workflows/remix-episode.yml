@@ -7,7 +7,7 @@ on:
     inputs:
       run_id: { description: 'render-episode run id whose voice + frames to reuse', required: true }
       publish: { description: 'also mux with the frames and publish a release (true/false)', default: 'false' }
-      music_db: { description: 'music level relative to narration, dB', default: '-7' }
+      music_db: { description: 'music level relative to narration, dB', default: '-13' }
       episode: { description: 'episode folder', default: 'egypt' }
 permissions:
   contents: write
