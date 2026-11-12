@@ -1,4 +1,4 @@
-# Credits: Pipeline self-test 2 (temporary)
+# Credits: Pipeline self-test 3 (temporary)
 
 Archival material used in this video:
 

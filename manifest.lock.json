@@ -1,6 +1,6 @@
 {
   "project": "_selftest",
-  "title": "Pipeline self-test 2 (temporary)",
+  "title": "Pipeline self-test 3 (temporary)",
   "assets": [
     {
       "id": "t1_commons",
@@ -23,7 +23,7 @@
       "description": "LoC test",
       "source_page": "https://www.loc.gov/pictures/item/2017762891/",
       "status": "failed",
-      "error": "no downloadable image on this loc.gov page"
+      "error": "HTTP 429"
     },
     {
       "id": "t3_chronam",
@@ -40,9 +40,9 @@
       "category": "footage",
       "description": "Internet Archive test",
       "source_page": "https://archive.org/details/Popeye_forPresident",
-      "file": "archives/footage/t4_archive_internet-archive-test.jpg",
-      "resolved_url": "https://dn721604.ca.archive.org/0/items/Popeye_forPresident/__ia_thumb.jpg",
-      "bytes": 9003,
+      "file": "archives/footage/t4_archive_internet-archive-test.mp4",
+      "resolved_url": "https://dn801208.us.archive.org/0/items/Popeye_forPresident/Popeye_forPresident_512kb.mp4",
+      "bytes": 26989036,
       "license": "http://creativecommons.org/licenses/publicdomain/",
       "attribution": "Paramount Pictures, Internet Archive",
       "page": "https://archive.org/details/Popeye_forPresident",
