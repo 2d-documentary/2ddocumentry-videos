@@ -5,6 +5,8 @@ on:
     branches: [egypt-episode]
     paths: ['engine/web/**', 'engine/tools/**', '.github/workflows/bg-preview.yml']
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   board:
     runs-on: ubuntu-latest
@@ -22,5 +24,10 @@ jobs:
           from PIL import Image; import glob, os
           for f in glob.glob('out/full/*.jpg'): Image.open(f).convert('RGB').resize((1280, 720)).save(f, quality=82)
           PY
-      - uses: actions/upload-artifact@v4
-        with: { name: bg-board, path: out }
+      - name: Publish preview images to the bg-previews branch (artifacts can't be downloaded from the chat sandbox)
+        run: |
+          cd out && git init -q && git checkout -q -b bg-previews
+          python -c "from PIL import Image; [Image.open(f).convert('RGB').save(f[:-4]+'.jpg',quality=85) for f in ['board.png','board2.png']]" && rm -f board.png board2.png
+          git config user.name render-bot; git config user.email render-bot@users.noreply.github.com
+          git add -A && git commit -q -m "previews for ${{ github.sha }}"
+          git push -f -q "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" bg-previews
