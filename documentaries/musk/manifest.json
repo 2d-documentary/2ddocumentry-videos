@@ -412,16 +412,16 @@
   {
    "id": "ift1_vid",
    "category": "footage",
-   "description": "Starship Test Flight!.webm",
-   "source_page": "https://commons.wikimedia.org/wiki/File:Starship_Test_Flight!.webm",
+   "description": "Starship IFT-1, NASA WB-57 camera",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_0.webm",
    "frames": 14,
    "authenticity": "authentic"
   },
   {
    "id": "britannica",
    "category": "historical-photos",
-   "description": "Encyclopaedia Britannica volumes",
-   "commons_search": "Encyclopaedia Britannica volumes",
+   "description": "Encyclopaedia Britannica volumes bookshelf",
+   "commons_search": "Encyclopaedia Britannica volumes bookshelf",
    "authenticity": "authentic"
   },
   {
@@ -520,6 +520,21 @@
    "category": "historical-photos",
    "description": "R-36 missile",
    "commons_search": "R-36 missile",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bill100",
+   "category": "historical-photos",
+   "description": "US 100 dollar bill obverse",
+   "commons_search": "United States one hundred dollar bill obverse series 2009",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ift1_vid2",
+   "category": "footage",
+   "description": "Starship IFT-1 NASA WB-57 cam 4",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_4.webm",
+   "frames": 14,
    "authenticity": "authentic"
   }
  ]
