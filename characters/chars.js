@@ -202,9 +202,11 @@ function character(c, o = {}) {
   if (c.blush !== false) head += `<ellipse cx="${v * 26 + (side ? 18 : 26)}" cy="12" rx="7" ry="4" fill="#E9A5A0" opacity=".55"/>` + (side ? '' : `<ellipse cx="${v * 26 - 26}" cy="12" rx="7" ry="4" fill="#E9A5A0" opacity=".55"/>`);
   if (c.earring && !(side)) head += `<circle cx="47" cy="14" r="6" fill="none" stroke="#E0B33C" stroke-width="3"/>`;
   const bigBeard = c.beard && (c.beard.type === 'full' || c.beard.type === 'black');
-  if (!c.hideEyes) head += face(ex, v, { noMouth: bigBeard });
+  if (!c.hideEyes) head += face(ex, v, { noMouth: bigBeard || o.mouthOpen });
   head += beard(c, v);
-  if (bigBeard || c.hideEyes) head += face(ex === 'neutral' && c.hideEyes ? 'smug' : ex, v, { mouthOnly: true, mouthY: c.beard?.type === 'black' ? 24 : 22 });
+  const openMouth = (my) => { const mx = v > 0.8 ? v * 26 + 8 : v * 26 * 1.05; return `<path d="${ell(mx, my + 3, 8, o.mouthOpen === 2 ? 10 : 6.5)}" fill="#6b2a2a" stroke="${INK}" stroke-width="2.8"/><path d="${ell(mx, my + 6.5, 5, 2.2)}" fill="#d9706a"/>`; };
+  if (o.mouthOpen) head += openMouth(bigBeard ? (c.beard?.type === 'black' ? 24 : 22) : 20);
+  else if (bigBeard || c.hideEyes) head += face(ex === 'neutral' && c.hideEyes ? 'smug' : ex, v, { mouthOnly: true, mouthY: c.beard?.type === 'black' ? 24 : 22 });
   head += hairFront(c, v) + hat(c, v);
   if (c.collar === 'ruff') mid += Array.from({ length: 14 }, (_, i) => { const a = (i / 14) * Math.PI * 2; return cel(circ(Math.cos(a) * 30 * ws, -138 + Math.sin(a) * 8, 8), '#F4F1E8', { w: 2 }); }).join('');
   if (c.collar === 'golilla') mid += cel(ell(0, -138, 36 * ws, 8), '#E9E3D3');

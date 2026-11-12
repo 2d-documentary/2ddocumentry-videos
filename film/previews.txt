@@ -1,0 +1,11 @@
+# name:query (one per line)
+01_tiber_aerial:place=tiber&cam=aerial&wait=6000
+02_tiber_low:place=tiber&cam=low&cast=romulus,remus&dist=7&wait=6000
+03_forum_wide:place=forum&cam=wide&era=republic&wait=6000
+04_forum_street:place=forum&cam=street&era=republic&cast=citizen,senator&wait=6000
+05_senate:place=senate&cam=entrance&cast=senator,citizen2&dist=7&wait=6000
+06_rome117_aerial:place=imperialRome&cam=aerial&wait=8000
+07_rome117_street:place=imperialRome&cam=street&cast=citizen,citizen2&dist=8&wait=8000
+08_carthage_wide:place=carthage&cam=wide&wait=8000
+09_carthage_sea:place=carthage&cam=sea&wait=8000
+10_forum_ruins:place=forum&cam=wide&era=ruins&mood=golden&wait=6000
