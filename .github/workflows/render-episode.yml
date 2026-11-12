@@ -73,6 +73,7 @@ jobs:
           M=$(find build/dl/audio -name mix.m4a | head -1)
           ffmpeg -y -v error -f concat -safe 0 -i build/list.txt -i "$M" -map 0:v -map 1:a -c:v copy -c:a copy -shortest -movflags +faststart build/$EP.mp4
           ls -lh build/$EP.mp4
+          mkdir -p renders
           ffmpeg -y -v error -ss 120 -i build/$EP.mp4 -frames:v 1 -vf scale=960:-2 renders/$EP-thumb.jpg
       - name: Publish (release asset; MP4 is larger than GitHub's 100 MB file limit)
         env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
