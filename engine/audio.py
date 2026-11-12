@@ -32,49 +32,101 @@ def drum(kind):
     if kind == 'tek': return bp(noise(.12), 1800, 6000) * env(int(.12 * SR), .001, .04, 5) * .6
     if kind == 'taiko': n = int(1.2 * SR); t = np.arange(n) / SR; return 1.6 * np.sin(2 * np.pi * (55 + 40 * np.exp(-t * 10)) * t) * np.exp(-t * 3.5) + .3 * lp(noise(1.2), 300) * np.exp(-t * 8)
     if kind == 'shaker': return hp(noise(.06), 5000) * env(int(.06 * SR), .002, .02, 4) * .35
-HIJAZ = [0, 1, 4, 5, 7, 8, 10]   # D Hijaz-flavoured scale degrees
-def note(root, deg, octv=0): s = HIJAZ[deg % 7] + 12 * (deg // 7 + octv); return root * 2 ** (s / 12)
+# ---- score: warm, cinematic and soft. Chord progressions, detuned pads, harp/flute/bell leads, gentle frame drums,
+#      a presence dip (1.2-4 kHz) so the music never fights the narration, and a small hall reverb. No raw saws, no hiss.
+from scipy.signal import fftconvolve
+def sinp(f, n, ph=0.): return np.sin(2 * np.pi * f * np.arange(n) / SR + ph)
+def tri(f, n): x = (f * np.arange(n) / SR) % 1; return 4 * np.abs(x - .5) - 1
+def adsr(n, a=.01, r=.3):
+    e = np.ones(n); ia = max(1, min(n, int(a * SR))); ir = max(1, min(n - ia, int(r * SR)))
+    e[:ia] = np.linspace(0, 1, ia) ** 1.5
+    if ir > 0: e[n - ir:] *= np.linspace(1, 0, ir) ** 1.5
+    return e
+def harp(f, dur, pizz=False):
+    n = int(dur * SR); t = np.arange(n) / SR; k_ = 6 if not pizz else 4
+    x = sum(np.sin(2 * np.pi * k * f * t) * np.exp(-t * ((5 if pizz else 2.2) + k * 1.3)) / k ** 1.6 for k in range(1, k_ + 1))
+    return x * np.minimum(1, t / .003)
+def bell(f, dur):
+    n = int(dur * SR); t = np.arange(n) / SR
+    return (np.sin(2 * np.pi * f * t) * np.exp(-t * 1.6) + .35 * np.sin(2 * np.pi * f * 2.76 * t) * np.exp(-t * 3.5) + .12 * np.sin(2 * np.pi * f * 5.4 * t) * np.exp(-t * 6)) * np.minimum(1, t / .002)
+def flute(f, dur):
+    n = int(dur * SR); t = np.arange(n) / SR; vib = 1 + .004 * np.sin(2 * np.pi * 5 * t) * np.minimum(1, t / .4)
+    ph = 2 * np.pi * np.cumsum(f * vib) / SR
+    return (np.sin(ph) + .22 * np.sin(2 * ph) + .06 * np.sin(3 * ph)) * adsr(n, .09, min(.35, dur * .4)) + lp(rng.uniform(-1, 1, n), 2500) * adsr(n, .03, .1) * .015
+def horn(f, dur):
+    n = int(dur * SR); x = sum(tri(f * (1 + d), n) for d in (-.003, 0, .003)) / 3
+    return lp(x, 900) * adsr(n, .18, min(.5, dur * .5))
+def pad_tone(f, n): return lp(sum(tri(f * (1 + d), n) for d in (-.005, -.0015, .002, .0055)) / 4, 1400)
+def doum(g=1.):
+    n = int(.5 * SR); t = np.arange(n) / SR
+    return (np.sin(2 * np.pi * np.cumsum(62 + 45 * np.exp(-t * 25)) / SR) * np.exp(-t * 6.5) + .08 * lp(rng.uniform(-1, 1, n), 300) * np.exp(-t * 25)) * g
+def tek(g=1.):
+    n = int(.09 * SR); t = np.arange(n) / SR
+    return (bp(rng.uniform(-1, 1, n), 700, 3200) * np.exp(-t * 55) * .35 + .25 * np.sin(2 * np.pi * 410 * t) * np.exp(-t * 60)) * g
+def taiko():
+    n = int(1.3 * SR); t = np.arange(n) / SR
+    return np.sin(2 * np.pi * np.cumsum(48 + 30 * np.exp(-t * 12)) / SR) * np.exp(-t * 3.2) * 1.3 + .12 * lp(rng.uniform(-1, 1, n), 200) * np.exp(-t * 10)
+_irn = int(2.4 * SR); _t = np.arange(_irn) / SR
+IR = lp(rng.uniform(-1, 1, _irn), 4500) * np.exp(-_t * 2.6); IR[:int(.012 * SR)] = 0; IR /= np.sqrt(np.sum(IR ** 2))
 
-MOODS = {   # tempo, drum density, melody instrument, pad, energy, root
-  'bright': (112, 2, 'pluck', 1, .9, 146.8), 'flow': (98, 1, 'harp', 1, .7, 146.8), 'regal': (92, 3, 'brass', 1, .9, 130.8),
-  'grand': (110, 2, 'pluck', 1, 1., 146.8), 'drone': (70, 0, None, 1, .5, 110.0), 'gallop': (126, 4, 'pluck', 0, 1., 146.8),
-  'elegant': (100, 1, 'flute', 1, .7, 164.8), 'shimmer': (96, 1, 'flute', 1, .7, 174.6), 'musicbox': (88, 0, 'box', 1, .6, 196.0),
-  'creepy': (92, 1, 'pizz', 0, .7, 110.0), 'war': (118, 4, 'brass', 1, 1., 123.5), 'ominous': (78, 1, 'brass', 1, .7, 98.0),
-  'lyre': (108, 2, 'harp', 1, .8, 164.8), 'sultry': (94, 1, 'flute', 1, .8, 146.8), 'theme': (112, 2, 'pluck', 1, 1., 146.8)}
+PROG = {'minor': [(0, 'm'), (-4, 'M'), (-2, 'M'), (0, 'm')], 'hijaz': [(0, 'm'), (5, 'm'), (-4, 'M'), (-5, 'M')],
+        'phryg': [(0, 'M'), (1, 'M'), (0, 'M'), (-2, 'm')], 'dark': [(0, 'm'), (1, 'M'), (0, 'm'), (-4, 'M')], 'major': [(0, 'M'), (5, 'M'), (7, 'M'), (0, 'M')]}
+MOODS = {   # bpm, percussion level 0-3, lead, key (Hz), progression, cue gain
+  'bright': (100, 2, 'harp', 146.83, 'hijaz', 1.), 'flow': (88, 1, 'harp', 146.83, 'minor', .9), 'regal': (84, 3, 'horn', 130.81, 'phryg', 1.),
+  'grand': (96, 2, 'harp', 146.83, 'phryg', 1.), 'drone': (64, 0, None, 110.0, 'dark', .8), 'gallop': (116, 3, 'harp', 146.83, 'hijaz', 1.),
+  'elegant': (90, 1, 'flute', 164.81, 'minor', .9), 'shimmer': (90, 1, 'bell', 174.61, 'minor', .9), 'musicbox': (78, 0, 'bell', 196.0, 'minor', .85),
+  'creepy': (86, 1, 'pizz', 110.0, 'dark', .9), 'war': (108, 3, 'horn', 123.47, 'dark', 1.), 'ominous': (70, 1, 'horn', 98.0, 'dark', .85),
+  'lyre': (98, 2, 'harp', 164.81, 'major', .95), 'sultry': (82, 1, 'flute', 146.83, 'hijaz', .9), 'theme': (100, 2, 'harp', 146.83, 'hijaz', 1.)}
 SCENE_MOOD = {'S01': 'bright', 'S02': 'flow', 'S03': 'regal', 'S04': 'grand', 'S05': 'drone', 'S06': 'gallop', 'S07': 'elegant', 'S08': 'shimmer',
               'S09': 'musicbox', 'S10': 'creepy', 'S11': 'war', 'S12': 'ominous', 'S13': 'lyre', 'S14': 'sultry', 'S15': 'theme'}
+SCALE = {'m': [0, 2, 3, 5, 7, 8, 10], 'M': [0, 2, 4, 5, 7, 9, 11]}
 
 def scene_music(mood, dur, seed):
-    bpm, dens, inst, pad, energy, root = MOODS[mood]; r = np.random.default_rng(seed); n = int(dur * SR); o = np.zeros(n + SR * 2)
-    beat = 60 / bpm; step = beat / 2
+    bpm, perc, lead, key, prog, gain = MOODS[mood]; r = np.random.default_rng(seed)
+    n = int(dur * SR); o = np.zeros(n + SR * 3); beat = 60 / bpm; e8 = beat / 2; bar = 4 * beat; seg = 2 * bar
     def add(x, at=0., g=1.):
-        i = int(at * SR); j = min(len(o), i + len(x));
-        if i < len(o) and j > i: o[i:j] += x[:j - i] * g
-    # drone / pad: root + fifth, slowly breathing
-    if pad:
-        t = np.arange(n) / SR; lfo = .75 + .25 * np.sin(2 * np.pi * t / 7)
-        d = (tone(root / 2, dur, 'saw') + .7 * tone(root * .75, dur, 'saw') + .5 * tone(root, dur, 'saw', vib=.003)) * lfo
-        add(lp(d, 900 if mood not in ('drone', 'ominous') else 500) * .16)
-    if mood in ('drone', 'ominous'): add(lp(noise(dur), 600) * (.5 + .5 * np.sin(2 * np.pi * np.arange(n) / SR / 5)) * .05)   # wind
-    # percussion
-    pats = {0: [], 1: [('doum', 0), ('tek', 3)], 2: [('doum', 0), ('tek', 2), ('tek', 3), ('doum', 4), ('tek', 6)], 3: [('taiko', 0), ('tek', 4)], 4: [('doum', 0), ('tek', 1), ('doum', 2), ('tek', 3), ('doum', 4), ('tek', 5), ('tek', 6), ('tek', 7)]}
-    bar = 8 * step; nb = int(dur / bar) + 1
-    for b in range(nb):
-        for k, s in pats[dens]: add(drum(k), b * bar + s * step, .55 * energy)
-        if dens >= 2 or mood == 'shimmer': [add(drum('shaker'), b * bar + s * step / 2, .5) for s in range(16)]
-    # melody: a motif repeated with variation (call-and-response), rests between phrases
-    deg = 4; motif = [r.integers(-2, 3) for _ in range(6)]
-    for b in range(nb):
-        if inst is None or (b % 4 == 3): continue
-        for i in range(6 if b % 2 == 0 else 4):
-            if r.random() < .25: continue
-            deg = int(np.clip(deg + motif[i % 6] + (r.integers(-1, 2) if b % 2 else 0), 0, 11)); f = note(root, deg, 1); at = b * bar + i * step * (1.33 if inst in ('flute', 'brass') else 1); L = step * (2.6 if inst in ('flute', 'brass') else 1.8)
-            if inst in ('pluck', 'harp', 'box', 'pizz'): x = pluck(f * (2 if inst in ('harp', 'box') else 1), L, .9 if inst == 'box' else .5) * (.5 if inst == 'pizz' else .38)
-            elif inst == 'flute': x = (tone(f * 2, L, 'sine', vib=.006) + .2 * tone(f * 4, L, 'sine')) * env(int(L * SR), .06, L * .8, 1.5) * .16 + lp(noise(L), 3000) * env(int(L * SR), .02, .1) * .02
-            elif inst == 'brass': x = lp(tone(f, L, 'saw', vib=.004) + .5 * tone(f * 1.5, L, 'saw'), 1800) * env(int(L * SR), .05, L * .7, 1.5) * .14
-            add(x, at)
-    o = o[:n]; fade = int(.8 * SR); o[:fade] *= np.linspace(0, 1, fade); o[-fade:] *= np.linspace(1, 0, fade)
-    return o
+        i = int(at * SR); j = min(len(o), i + len(x))
+        if 0 <= i < len(o) and j > i: o[i:j] += x[:j - i] * g
+    chords = PROG[prog]; nseg = int(dur / seg) + 1
+    for si in range(nseg):
+        root, q = chords[si % 4]; t0 = si * seg; L = seg + .7; m = int(L * SR)
+        third = 3 if q == 'm' else 4; fr = key * 2 ** (root / 12)
+        tones = [fr, fr * 2 ** (third / 12), fr * 2 ** (7 / 12), fr * 2]
+        add(sum(pad_tone(f, m) for f in tones) * adsr(m, .7, .7) * .1, t0)                      # pad
+        if perc or mood in ('drone', 'ominous'):                                                     # soft bass
+            for b in range(8 if perc >= 2 else 4):
+                st = t0 + b * (beat if perc >= 2 else 2 * beat); bl = beat * (.9 if perc >= 2 else 1.8); k = int(bl * SR)
+                add((sinp(fr / 2, k) + .25 * sinp(fr, k)) * adsr(k, .02, bl * .6) * .22, st)
+        # lead
+        sc = [fr * 2 ** (s / 12) for s in SCALE[q]]
+        if lead in ('harp', 'pizz'):
+            pat = [0, 2, 1, 2, 3, 2, 1, 2]
+            for b in range(16):
+                if r.random() < (.18 if perc >= 2 else .35): continue
+                f = tones[pat[b % 8]] * 2; add(harp(f, 1.6, lead == 'pizz'), t0 + b * e8, .16 if lead == 'harp' else .2)
+        elif lead == 'bell':
+            for b in range(8):
+                if r.random() < .3: continue
+                f = tones[[0, 2, 3, 1][b % 4]] * 4; add(bell(f, 2.2), t0 + b * beat, .07)
+        elif lead in ('flute', 'horn') and si % 4 != 3:
+            deg = int(r.integers(2, 5)); at = t0
+            for k in range(int(r.integers(3, 6))):
+                L2 = beat * float(r.choice([1, 1.5, 2, 3])); deg = int(np.clip(deg + r.choice([-2, -1, -1, 1, 1, 2]), 0, 9))
+                f = sc[deg % 7] * 2 ** (deg // 7) * (2 if lead == 'flute' else 1)
+                add(flute(f, L2 * .95) if lead == 'flute' else horn(f, L2 * .95), at, .1 if lead == 'flute' else .14); at += L2
+                if at > t0 + seg - beat: break
+    if perc:                                                                                        # frame drums (maqsum-ish)
+        pats = {1: [('d', 0), ('t', 4)], 2: [('d', 0), ('t', 1), ('t', 3), ('d', 4), ('t', 6)], 3: [('d', 0), ('t', 1), ('t', 3), ('d', 4), ('t', 6)]}
+        for b in range(int(dur / bar) + 1):
+            for k, s in pats[perc]: add(doum(.5) if k == 'd' else tek(.5), b * bar + s * e8)
+            if perc == 3 and b % 2 == 0: add(taiko(), b * bar, .35)
+    if mood in ('drone', 'ominous'): add(lp(rng.uniform(-1, 1, n), 400) * (.5 + .5 * np.sin(2 * np.pi * np.arange(n) / SR / 6)) * .025)   # soft wind
+    o = o[:n]
+    o = hp(o, 40) ; o = o - .35 * bp(o, 1200, 4000); o = lp(o, 8000)                             # clean low end, presence dip, no fizz
+    wet = fftconvolve(o, IR)[:n]; o = o + .28 * wet * (np.sqrt(np.mean(o ** 2)) / (np.sqrt(np.mean(wet ** 2)) + 1e-9))
+    o = o / (np.sqrt(np.mean(o ** 2)) + 1e-9) * gain                                                # equal loudness per cue
+    fade = int(1.2 * SR); o[:fade] *= np.linspace(0, 1, fade); o[-fade:] *= np.linspace(1, 0, fade)
+    return np.tanh(o * .5) / .5
 
 # ---- music track: one cue per scene, crossfaded
 music = np.zeros(N + SR * 3)
@@ -83,14 +135,23 @@ for l in tl["lines"]:
     sc = next(s for s in script["lines"] if s["id"] == l["id"])["scene"]; first.setdefault(sc, l["start"])
 order = sorted(first.items(), key=lambda kv: kv[1])
 for i, (sc, st) in enumerate(order):
-    s0 = max(0, st - .8); s1 = order[i + 1][1] + .8 if i + 1 < len(order) else T
-    m = scene_music(SCENE_MOOD.get(sc, 'theme'), s1 - s0, i + 3); a = int(s0 * SR); music[a:a + len(m)] += m
+    s0 = max(0, st - 1.2); s1 = order[i + 1][1] + 1.2 if i + 1 < len(order) else T
+    m = scene_music(SCENE_MOOD.get(sc, 'theme'), s1 - s0, i + 3); a = int(s0 * SR); music[a:a + len(m)] += m[:len(music) - a]
 music = music[:N]
-# duck under the voice (sidechain from a smoothed voice envelope)
-ve = np.convolve(np.abs(voice), np.ones(int(.06 * SR)) / int(.06 * SR), 'same'); ve = np.convolve(ve, np.ones(int(.25 * SR)) / int(.25 * SR), 'same'); ve = np.clip(ve / (np.percentile(ve, 95) + 1e-9), 0, 1)
-music *= (1 - .55 * ve)
-music *= 10 ** (-17 / 20) / (np.sqrt(np.mean(music ** 2)) + 1e-9) * .25   # music bed well under the voice
+# level: music sits 7 dB under the narration (measured where someone is speaking), with only a gentle 1 dB ride.
+ve = np.convolve(np.abs(voice), np.ones(int(.06 * SR)) / int(.06 * SR), 'same'); ve = np.convolve(ve, np.ones(int(.3 * SR)) / int(.3 * SR), 'same'); ve = np.clip(ve / (np.percentile(ve, 95) + 1e-9), 0, 1)
+speech = ve > .25
+music *= (1 - .11 * ve)
+v_rms = np.sqrt(np.mean(voice[speech] ** 2)); m_rms = np.sqrt(np.mean(music[speech] ** 2)) + 1e-9
+MUSIC_DB = float(os.environ.get("MUSIC_DB", "-7"))
+music *= v_rms * 10 ** (MUSIC_DB / 20) / m_rms
+print("music level vs voice (dB):", round(20 * np.log10(np.sqrt(np.mean(music[speech] ** 2)) / v_rms), 1))
 
+def drum(kind):
+    if kind == 'doum': return doum(1.)
+    if kind == 'tek': return tek(1.)
+    if kind == 'taiko': return taiko()
+    return tek(.4)
 # ---- sound effects at word cues
 def sfx(name):
     if name == 'whoosh': x = noise(.7); return bp(x, 300, 3000) * np.sin(np.linspace(0, np.pi, len(x))) ** 2 * .6
@@ -133,7 +194,8 @@ for line in script["lines"]:
         x = np.asarray(sfx(name), dtype=float)
         if x.size < 20: continue
         x = x / (np.max(np.abs(x)) + 1e-9) * .5; i = int(at * SR); fx[i:i + len(x)] += x[:len(fx) - i]
-fx = fx[:N] * .55
+fx = lp(fx[:N], 9000)
+fx *= v_rms * 10 ** (-9 / 20) / (np.sqrt(np.mean(fx[np.abs(fx) > 1e-4] ** 2)) + 1e-9)   # effects ~9 dB under the voice, no harsh top end
 mix = voice * 1.0 + music + fx
 mix = mix / (np.max(np.abs(mix)) + 1e-9) * .89
 wavfile.write(os.path.join(out, "music.wav"), SR, music.astype(np.float32)); wavfile.write(os.path.join(out, "sfx.wav"), SR, fx.astype(np.float32))
