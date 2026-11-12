@@ -40,5 +40,7 @@ const ROME = {
   constantine: { id: 'R16', name: 'Constantine', role: 'Founded Constantinople, 330 AD', body: '#5B2A6E', shape: 'robe', legs: '#e0d6c4', skin: '#EBCBAE', boots: '#3a2a1a', hair: { type: 'fringe', col: '#4A3424' }, hat: { type: 'diadem' }, expr: 'neutral', prop: 'eaglescepter', handR: [42, -96], details: D.purple },
   odoacer: { id: 'R17', name: 'Odoacer', role: 'Germanic commander, 476 AD', body: '#5A4A3A', legs: '#6a5a4a', skin: '#EBCBAE', boots: '#3a2a1a', cape: '#3A5A3A', hair: { type: 'longhair', col: '#B07A3A' }, beard: { mous: true, col: '#B07A3A' }, expr: 'smug', prop: 'sword', details: D.chainmail },
   augustulus: { id: 'R18', name: 'Romulus Augustulus', role: 'Last western emperor, 476 AD', body: '#5B2A6E', shape: 'robe', legs: '#e0d6c4', skin: '#F4DCC6', boots: '#3a2a1a', hair: { type: 'cap', col: '#6A4A2E' }, hat: { type: 'diadem' }, expr: 'worry' === 'worry' ? 'confused' : 'neutral', details: D.purple },
+  // background crowd (not speaking roles)
+  legionary: { id: 'R19', name: 'Legionary', role: 'Crowd: Roman soldier', body: '#8a2a22', legs: '#d8b894', skin: '#E2BC96', boots: '#5a3a1e', hat: { type: 'galea', col: '#AEB4BA', plume: '#B3261E' }, expr: 'bored', prop: 'scutum', handR: [44, -80], details: D.chainmail },
 };
 module.exports = { ROME };

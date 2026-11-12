@@ -103,7 +103,7 @@ function sprite(path) {
 export class Actor {
   constructor(id, { x = 0, y = 0, z = 0, scale = 1, expr = 'neutral', view = 'f', flip = false, dir = 'sprites/' } = {}) {
     this.id = id; this.dir = dir; this.expr = expr; this.view = view; this.mouth = 0; this.flip = flip;
-    const [vx, vy, vw, vh] = META.viewBox, k = 1 / META.unitsPerMetre * scale;
+    const [vx, vy, vw, vh] = (META.special && META.special[id] && META.special[id].viewBox) || META.viewBox, k = 1 / META.unitsPerMetre * scale;
     this.w = vw * k; this.h = vh * k;
     const g = new THREE.PlaneGeometry(this.w, this.h); g.translate((vx + vw / 2) * k, -(vy + vh / 2) * k, 0);
     this.mat = new THREE.MeshStandardMaterial({ map: sprite(this.path()), alphaTest: 0.5, transparent: false, roughness: 1, metalness: 0, side: THREE.DoubleSide });

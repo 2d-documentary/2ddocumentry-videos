@@ -76,6 +76,32 @@ export async function forum({ era = 'republic', mood = 'day' } = {}) {
   const road = new THREE.Mesh(new THREE.PlaneGeometry(260, 10).rotateX(-Math.PI / 2), MAT.paving); road.position.set(0, 0.03, 40); road.receiveShadow = true; scene.add(road);
   const b = new Batch(), R = ruins ? 0.7 : 0;
   const r2 = (() => { let s = 99; return () => ((s = (s * 16807) % 2147483647) / 2147483647); })();
+  if (era === 'kings') {   // 6th century BC: same valley, gravel square, Etruscan-style royal house, round shrine of Vesta, first Senate house
+    pave.material = pbr('gravel', { size: 3, tint: 0xd8c8a8 }); road.material = pave.material;
+    temple(b, { x: -195, z: 0, ry: Math.PI / 2, w: 40, l: 56, podium: 6, colH: 13, cols: 6, order: 'tuscan', mat: MAT.plaster, podMat: MAT.blocks });
+    // Regia (royal residence): stone base, plastered walls, Tuscan portico, terracotta roof
+    const rg = M4(62, 0, -6, -Math.PI / 2), A = (g, m, m4) => b.add(g, m, new THREE.Matrix4().multiplyMatrices(rg, m4));
+    A(new THREE.BoxGeometry(34, 1.4, 22), MAT.blocks, M4(0, 0.7, 0)); A(new THREE.BoxGeometry(30, 8, 16), MAT.plasterRed, M4(0, 5.4, -2));
+    for (let i = 0; i < 6; i++) { const p = new THREE.Vector3(-13 + i * 5.2, 1.4, 8.5).applyMatrix4(rg); column(b, MAT.plaster, p.x, p.y, p.z, 6.5, 0.38, 'tuscan'); }
+    { const p = new THREE.Vector3(0, 9.4, 0).applyMatrix4(rg); gableRoof(b, MAT.roof, p.x, p.y, p.z, 11, 32, 0.3, -Math.PI / 2 + Math.PI / 2); }
+    stairs(b, MAT.blocks, ...new THREE.Vector3(0, 0, 13).applyMatrix4(rg).toArray(), 12, 4, 0.35, 0.5, -Math.PI / 2);
+    // round shrine of Vesta: stone drum, thatched cone
+    b.add(new THREE.CylinderGeometry(6, 6.4, 1.2, 32), MAT.blocks, M4(74, 0.6, 30)); b.add(new THREE.CylinderGeometry(5, 5, 5, 32), MAT.plaster, M4(74, 3.7, 30)); b.add(new THREE.ConeGeometry(6.6, 5, 32, 1, true), MAT.thatch, M4(74, 8.6, 30));
+    curia(b, { x: -60, z: -48, w: 16, l: 22, h: 12, mat: MAT.blocks });
+    for (let i = 0; i < 40; i++) {
+      const a = r2() * Math.PI * 2, d = 90 + r2() * 260, x = Math.cos(a) * d, z = Math.sin(a) * d * 0.8;
+      if (Math.hypot(x + 190, z) < 70) continue;
+      if (r2() < 0.4) hut(b, { x, z, r: 2.4 + r2(), ry: r2() * 6 });
+      else { const H = 3.2 + r2() * 1.5, w = 8 + r2() * 6, d2 = 6 + r2() * 4, ry = Math.round(a / (Math.PI / 2)) * Math.PI / 2;
+        b.add(new THREE.BoxGeometry(w, 0.8, d2), MAT.blocks, M4(x, 0.4, z, ry)); b.add(new THREE.BoxGeometry(w - 0.4, H, d2 - 0.4), r2() < 0.5 ? MAT.plaster : MAT.mud, M4(x, 0.8 + H / 2, z, ry));
+        gableRoof(b, r2() < 0.6 ? MAT.roof : MAT.thatch, x, 0.8 + H, z, d2 / 2, w, 0.35, ry + Math.PI / 2, 0.4); }
+    }
+    for (const [x0, z0, x1, z1] of [[-120, -30, -120, 30], [100, -30, 100, 30]]) fence(b, x0, z0, x1, z1, 1.6);
+    b.build();
+    trees('oak', Array.from({ length: 30 }, () => [(r2() - 0.5) * 600, 120 + r2() * 200, 0.9 + r2() * 0.4]), (x, z) => pal(x, z));
+    trees('cypress', Array.from({ length: 10 }, (_, i) => [-140 + i * 28, -95, 1]), () => 0);
+    return { ground, cams: { wide: { pos: [120, 26, 30], look: [-60, 8, 0], fov: 42 }, street: { pos: [10, 1.7, 14], look: [62, 6, -6], fov: 44 }, regia: { pos: [42, 1.0, 6], look: [62, 8, -6], fov: 48 }, aerial: { pos: [200, 140, 200], look: [-20, 0, 0], fov: 40 } } };
+  }
   // west end: Temple of Saturn (Ionic, high podium) and Temple of Concord, Tabularium on the Capitoline slope
   temple(b, { x: -92, z: 22, ry: Math.PI / 2, w: 22, l: 40, podium: 8, colH: 12, cols: 6, order: 'ionic', mat: MAT.marbleW, podMat: MAT.trav, ruin: ruins ? 0.35 : 0, rnd: r2 });
   temple(b, { x: -98, z: -18, ry: Math.PI / 2, w: 24, l: 30, podium: 4, colH: 13, cols: 6, order: 'corinthian', ruin: ruins ? 0.9 : 0, rnd: r2 });
