@@ -57,13 +57,13 @@ function cloudLobes(cx, cy, s, seed) { const r = rng(seed); const lobes = []; co
   if (r() > .4) lobes.push([cx + (r() - .5) * s * .6, cy - s * (tall + .2), s * (.32 + r() * .15)]);
   const bw = s * wide * .5 + s * .25, bh = s * (.2 + r() * .08); return { lobes, bw, bh }; }
 function cloudShape(cx, cy, s, seed) { const { lobes, bw, bh } = cloudLobes(cx, cy, s, seed); return g => { for (const [x, y, rr] of lobes) { g.moveTo(x + rr, y); g.arc(x, y, rr, 0, Math.PI * 2); } g.moveTo(cx + bw, cy); g.ellipse(cx, cy, bw, bh, 0, 0, Math.PI * 2); }; }
-function clouds(ctx, list, tint = '#FFFBF2', shadow = '#E9E0D8') {
+function clouds(ctx, list, tint = '#FFFBF2', shadow = '#EFE6DC') {
   for (const [cx, cy, s, seed, type] of list) {
     const r = rng(seed);
     if (type === 'streak') { ctx.save(); for (let i = 0; i < 3; i++) { const x = cx + (r() - .5) * s * 1.2, y = cy + (i - 1) * s * .09 + (r() - .5) * s * .05, w = s * (1 + r() * 1.1), h = s * (.035 + r() * .03); ctx.globalAlpha = .38 + r() * .2; ctx.fillStyle = i === 1 ? tint : mix(tint, shadow, .4);
         ctx.beginPath(); ctx.moveTo(x - w, y); ctx.quadraticCurveTo(x - w * .3, y - h * 2.2, x + w * .2, y - h); ctx.quadraticCurveTo(x + w * .7, y - h * .4, x + w, y + h * .2); ctx.quadraticCurveTo(x + w * .2, y + h * 1.4, x - w * .4, y + h); ctx.quadraticCurveTo(x - w * .8, y + h * .6, x - w, y); ctx.fill(); } ctx.restore(); continue; }
     const { lobes, bw, bh } = cloudLobes(cx, cy, s, seed);
-    blob(ctx, cloudShape(cx, cy, s, seed), tint, { lw: 1, ink: '#B9A99E', alpha: .95, shade: g => {
+    blob(ctx, cloudShape(cx, cy, s, seed), tint, { lw: 0, alpha: .95, shade: g => {
       g.fillStyle = shadow; g.beginPath(); g.ellipse(cx + bw * .05, cy + bh * .5, bw * 1.05, bh * 1.2, 0, 0, 7); g.fill();               // underside
       for (const [x, y, rr] of lobes) { g.beginPath(); g.arc(x + rr * .22, y + rr * .5, rr * .92, 0, 7); g.fill(); }                    // each lobe's own shaded belly
       g.fillStyle = tint; for (const [x, y, rr] of lobes) { g.beginPath(); g.arc(x - rr * .12, y - rr * .12, rr * .82, 0, 7); g.fill(); } // lit tops cut the shadow into lobe-shaped crescents

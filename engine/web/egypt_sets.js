@@ -6,7 +6,7 @@ const LIME = '#D8BE8C', LIME2 = '#CBA874', SANDST = '#D9B27A', MUD = '#B88E62', 
 function sphinxSprite(ctx, x, y, k, o = {}) { // the Great Sphinx in profile (head to the left), units = metres: 73 m long, 20 m high
   const T = (px, py) => [x + px * k, y + py * k];
   const path = (g, pts) => { pts.forEach((p, i) => { if (p.length === 2) { const q = T(...p); i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); } else { const c = T(p[0], p[1]), q = T(p[2], p[3]); g.quadraticCurveTo(c[0], c[1], q[0], q[1]); } }); };
-  const body = '#C2884F', lw = Math.max(2.4, .19 * k), k_ = k;
+  const body = '#C99D66', lw = Math.max(3, .22 * k), k_ = k;
   const strata = (g, x0, x1, y0, y1, dark) => { for (let s2 = y0; s2 < y1; s2 += 1.15) { const a2 = T(x0, s2); g.fillStyle = `rgba(110,72,38,${dark ? .28 : .16})`; g.fillRect(a2[0], a2[1], (x1 - x0) * k, .42 * k); } };
   // body: neck/chest, shoulder bulge, dipping spine, raised rump; the silhouette steps with the strata on the curved ends
   const stair = (pts, step = 1.5) => { const out = [pts[0]]; for (let i = 1; i < pts.length; i++) { const [x0, y0] = out[out.length - 1], [x1, y1] = pts[i]; const k0 = Math.floor(y0 / step), k1 = Math.floor(y1 / step); if (Math.abs(y1 - y0) > .4 && k0 !== k1) { const ym = Math.max(k0, k1) * step; out.push([x0, ym], [x1, ym]); } out.push([x1, y1]); } return out; };
@@ -15,7 +15,7 @@ function sphinxSprite(ctx, x, y, k, o = {}) { // the Great Sphinx in profile (he
   const outline = [[-4.6, 0], ...stair([[-4.8, -3], [-5.4, -6.5], [-6.2, -9.6], [-5.2, -12], [-2.4, -13.6]]), ...top, [57.4, -2], [56, 0]];
   blob(ctx, g => path(g, outline), body, { lw, shade: g => {
     for (const off of [3.2, 6.4]) { g.strokeStyle = 'rgba(90,48,20,.28)'; g.lineWidth = .45 * k_; g.beginPath(); top.forEach((q, i) => { const m = T(q[0] - (q[0] > 50 ? off * .6 : 0), q[1] + off); i ? g.lineTo(m[0], m[1]) : g.moveTo(m[0], m[1]); }); g.stroke(); }   // two weathered strata following the back
-    g.fillStyle = 'rgba(120,70,35,.3)'; g.beginPath(); path(g, [[-5, -5], [20, -5.6], [40, -5.2], [58, -4.6], [58, 1], [-5, 1]]); g.fill();
+    g.fillStyle = 'rgba(110,62,30,.38)'; g.beginPath(); path(g, [[-5, -4.6], [20, -5.4], [40, -5], [58, -4.4], [58, 1], [-5, 1]]); g.fill();   // darker belly band
     g.fillStyle = 'rgba(255,240,205,.26)'; g.beginPath(); path(g, spline([[-1, -13.4], [4, -15.2], [10, -14.4], [9, -9], [3, -6], [-1, -8]], true, 3)); g.fill();   // lit shoulder/chest mass
     g.fillStyle = 'rgba(255,235,195,.2)'; g.beginPath(); path(g, spline([[40, -2], [40.5, -8], [44.5, -12.6], [50.5, -12.4], [54, -8.4], [53.6, -3], [48, -1.4]], true, 3)); g.fill();   // lit rounded haunch
     g.fillStyle = 'rgba(110,62,30,.28)'; g.beginPath(); path(g, spline([[12, -13.6], [24, -11.8], [34, -12.2], [36, -7], [24, -6.5], [12, -8]], true, 3)); g.fill(); } });   // shadowed belly between shoulder and haunch
@@ -127,8 +127,8 @@ function driftPaint(c, St, f, col) { // opaque sand drift with a soft irregular 
   const r = rng(Math.round(f.pts[0][0] * 13 + f.pts[0][1] * 7)); const P = f.pts.map(p => St.P(p)); const cx = P.reduce((a, q) => a + q[0], 0) / P.length, cy = P.reduce((a, q) => a + q[1], 0) / P.length;
   const E = []; for (let i = 0; i < P.length; i++) { const a = P[i], b = P[(i + 1) % P.length]; const L = Math.hypot(b[0] - a[0], b[1] - a[1]); const m = Math.max(3, Math.round(L / 18)); const ph = r() * 6; for (let j = 0; j < m; j++) { const t = j / m, nx = -(b[1] - a[1]) / L, ny = (b[0] - a[0]) / L, bump = Math.sin(t * Math.PI * 2 + ph) * Math.min(6, L * .04); E.push([a[0] + (b[0] - a[0]) * t + nx * bump, a[1] + (b[1] - a[1]) * t + ny * bump]); } }
   const sm = spline(E, true, 3); c.restore(); c.save();
-  c.fillStyle = '#E4CB98'; c.beginPath(); sm.forEach((q, i) => i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1])); c.closePath(); c.fill();
-  c.save(); c.clip(); c.strokeStyle = 'rgba(156,116,72,.45)'; c.lineWidth = 4; c.beginPath(); sm.filter(q => q[1] > cy).forEach((q, i) => i ? c.lineTo(q[0], q[1] - 2) : c.moveTo(q[0], q[1] - 2)); c.stroke();
+  c.globalAlpha = .75; c.fillStyle = '#DEC392'; c.beginPath(); sm.forEach((q, i) => i ? c.lineTo(q[0], q[1]) : c.moveTo(q[0], q[1])); c.closePath(); c.fill();
+  c.globalAlpha = 1; c.save(); c.clip(); c.strokeStyle = 'rgba(156,116,72,.35)'; c.lineWidth = 3; c.beginPath(); sm.filter(q => q[1] > cy).forEach((q, i) => i ? c.lineTo(q[0], q[1] - 2) : c.moveTo(q[0], q[1] - 2)); c.stroke();
   const ys = sm.map(q => q[1]), y0 = Math.min(...ys), y1 = Math.max(...ys), xs = sm.map(q => q[0]), x0 = Math.min(...xs), x1 = Math.max(...xs);
   c.strokeStyle = 'rgba(160,120,72,.4)'; c.lineWidth = 1.6; for (let i = 1; i <= 2; i++) { const yy = y0 + (y1 - y0) * i / 3; c.beginPath(); c.moveTo(x0 + (x1 - x0) * .15, yy + 3); c.quadraticCurveTo((x0 + x1) / 2, yy - 4, x1 - (x1 - x0) * .15, yy + 2); c.stroke(); } c.restore(); }
 function egHut(S, x, y, w, d, h, col, seed) { // mud-brick house: door with frame, grille, parapet, palm-rib awning on posts
@@ -139,6 +139,8 @@ function egHut(S, x, y, w, d, h, col, seed) { // mud-brick house: door with fram
   S.sprite([x + w * .15, y - .6, 0], (c, px, py, k) => { jarSprite(c, px, py, .8 * k, '#A9603A', (seed | 0) % 4); poly(c, [[px + .5 * k, py], [px + 1.3 * k, py], [px + 1.2 * k, py - .35 * k], [px + .6 * k, py - .35 * k]], '#C9A05A', true, 1.6); c.strokeStyle = '#8A6A3A'; c.lineWidth = 1.2; for (let i = 1; i < 4; i++) { c.beginPath(); c.moveTo(px + (.5 + i * .2) * k, py); c.lineTo(px + (.6 + i * .17) * k, py - .35 * k); c.stroke(); } poly(c, [[px - 1.2 * k, py], [px - .4 * k, py], [px - .5 * k, py - .25 * k], [px - 1.1 * k, py - .25 * k]], '#9C8C78', true, 1.6); });   // jar, basket, quern stone
   S.quad([x + w * .5, y - 2.3, 2.3], [x + w + .2, y - 2.3, 2.3], [x + w + .2, y, 2.5], [x + w * .5, y, 2.5], '#B89A5A', { twoSided: true, paint: (c, St, f) => { for (let k = 0; k < 14; k++) { const a = St.uv(f, k / 14, 0), b = St.uv(f, k / 14, 1); c.strokeStyle = '#7A6436'; c.lineWidth = 1.2; c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.stroke(); } } });
 }
+function rubble(ctx, x0, x1, y0, y1, seed, n) { const r = rng(seed); const P = []; for (let i = 0; i < n; i++) { const y = y0 + Math.pow(r(), .7) * (y1 - y0), sz = 8 + (y - y0) / (y1 - y0) * 26 * (.5 + r()); P.push([x0 + r() * (x1 - x0), y, sz, r()]); } P.sort((a, b) => a[1] - b[1]);
+  for (const [x, y, sz, t] of P) { ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.3)'; ctx.beginPath(); ctx.ellipse(x + sz * .3, y + 2, sz * 1.1, sz * .3, 0, 0, 7); ctx.fill(); ctx.restore(); const col = t > .5 ? '#C9A874' : '#B8956A'; const pts = [[x - sz, y], [x - sz * .8, y - sz * .6], [x - sz * .1, y - sz * .9], [x + sz * .8, y - sz * .55], [x + sz, y]]; poly(ctx, pts, shade(col, .9)); poly(ctx, [[x - sz * .8, y - sz * .6], [x - sz * .1, y - sz * .9], [x + sz * .8, y - sz * .55], [x, y - sz * .35]], shade(col, 1.1)); inkLine(ctx, pts, clamp(sz * .12, 1.6, 3.2), { closed: true }); } }
 function stoneBlock(ctx, x, y, w, h, d, col, seed) { // screen-space foreground block: lit top, front with chisel striations, shaded side, quarry mark
   const top = [[x - w / 2, y - h], [x + w / 2, y - h], [x + w / 2 + d * .6, y - h - d * .45], [x - w / 2 + d * .6, y - h - d * .45]], front = [[x - w / 2, y], [x + w / 2, y], [x + w / 2, y - h], [x - w / 2, y - h]], side = [[x + w / 2, y], [x + w / 2 + d * .6, y - d * .45], [x + w / 2 + d * .6, y - h - d * .45], [x + w / 2, y - h]];
   ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.32)'; ctx.beginPath(); ctx.ellipse(x + w * .15, y + 4, w * .7, 16, 0, 0, 7); ctx.fill(); ctx.restore();
@@ -237,7 +239,7 @@ SETS.giza = (ctx, o = {}) => { // Giza from the Sphinx Temple court: the Sphinx 
   S.box(-50, 30, 0, 6, 200, 1.4, '#CBA674', { tex: 'blocks', course: .7, blockW: 2.4, shadow: false });   // causeway up to Khafre
   S.box(-38, 26, 0, 92, 6, 8, '#C49E6A', { tex: 'blocks', course: 1.5, blockW: 7, seed: 3 });           // enclosure walls cut in the bedrock
   S.box(50, -16, 0, 6, 42, 8, '#C49E6A', { tex: 'blocks', course: 1.5, blockW: 7, seed: 4 });
-  S.sprite([-28.4, 0, 0], (c, x, y, k) => { sphinxSprite(c, x, y, k); const a = [x - 22 * k, y], b = [x + 57 * k, y]; c.fillStyle = 'rgba(70,35,15,.45)'; c.fillRect(a[0], a[1] - .9 * k, b[0] - a[0], .9 * k); });
+  S.sprite([-28.4, 0, 0], (c, x, y, k) => { c.save(); c.fillStyle = 'rgba(90,48,22,.32)'; c.beginPath(); c.moveTo(x - 20 * k, y); c.lineTo(x + 57 * k, y); c.lineTo(x + 70 * k, y + 2.6 * k); c.lineTo(x - 8 * k, y + 2.6 * k); c.closePath(); c.fill(); c.restore(); sphinxSprite(c, x, y, k); const a = [x - 22 * k, y], b = [x + 57 * k, y]; c.fillStyle = 'rgba(70,35,15,.45)'; c.fillRect(a[0], a[1] - .9 * k, b[0] - a[0], .9 * k); });
   S.castShadow([[-21, 0], [-6, 12], [5, 14.5], [40, 12], [56, 4], [57, 0]].map(([u, h]) => [-28.4 + u, 1, h]).concat([[-6, 1, 0]]), { poly: true });
   // Khafre's valley temple: massive red-granite-cased walls (left) and the ruined Sphinx Temple (right front)
   S.box(-96, -40, 0, 40, 46, 9, '#A8665A', { tex: 'blocks', course: 3, blockW: 6.5, seed: 81, granite: true, paint: (c, St, f, col) => { const n = St.normal(f.pts); if (n[1] < -.9) { const [W] = fdim(f); poly(c, uvRect(St, f, .62, 0, .62 + 4 / W, .62), '#2B1F19', true, 2.4); poly(c, uvRect(St, f, .62 + 1.5 / W, 0, .62 + 2.5 / W, .62), '#A8665A', true, 2); } } });   // red-granite casing, square-pillar doorway
@@ -245,7 +247,7 @@ SETS.giza = (ctx, o = {}) => { // Giza from the Sphinx Temple court: the Sphinx 
   // the paved court the viewer stands in, sand drifting over its slabs
   S.box(-40, -119.5, 0, 80, 30, .45, '#D4B382', { floor: true, layer: 0, topTex: 'paving', slab: .7, top: '#D8BA88', shadow: false });
   const drift = (pts, layer = 3) => S.face(pts.map(([x, y]) => [x, y, .46]), '#E2C896', { ground: true, layer, noInk: true, paint: driftPaint, noFill: true });
-  drift([[-9, -104], [-5, -103], [-6, -100], [-10, -100.5]]); drift([[6, -110], [9, -108], [8, -105], [5, -106.5]]); drift([[-4.5, -116.8], [-2.2, -117], [-1.6, -115.2], [-3, -113.6], [-5, -114.4]]); drift([[2.8, -116.4], [5.2, -115.8], [5.6, -113.4], [3.4, -112.8], [2.4, -114.6]]); drift([[-12, -108], [-8, -109], [-7, -106], [-11, -104.6], [-14, -105.5]]); drift([[9, -104], [14, -105], [16, -101], [11, -100.5]]); drift([[-2, -98], [3, -99], [6, -96], [0, -94.5], [-4, -95.5]]);
+  drift([[-9, -104], [-5, -103], [-6, -100], [-10, -100.5]]); drift([[6, -110], [9, -108], [8, -105], [5, -106.5]]); drift([[-12, -108], [-8, -109], [-7, -106], [-11, -104.6], [-14, -105.5]]); drift([[9, -104], [14, -105], [16, -101], [11, -100.5]]); drift([[-2, -98], [3, -99], [6, -96], [0, -94.5], [-4, -95.5]]);
   // court props: fallen relief block, broken statue base, column drums, offering table with faience, potsherds
   S.box(-9.6, -110.5, .45, 3.4, 1.4, 1.25, '#CFAE7C', { tex: 'reliefs', registers: 1, seed: 61 }); S.box(-6.6, -109, .45, 1.1, .9, .55, '#C9A470', { tex: 'blocks', course: .3, blockW: .6 });
   S.box(-3.8, -102, .45, 1.6, 1.2, .9, '#CDB08A', { tex: 'blocks', course: .3, blockW: .5, seed: 63 }); S.sprite([-3, -101.6, 1.35], (c, px, py, k) => { poly(c, [[px - .5 * k, py], [px - .45 * k, py - .45 * k], [px - .1 * k, py - .5 * k], [px + .05 * k, py - .2 * k], [px + .4 * k, py - .25 * k], [px + .5 * k, py]], '#CDB08A', true, 2); });   // statue base with broken feet
@@ -257,7 +259,9 @@ SETS.giza = (ctx, o = {}) => { // Giza from the Sphinx Temple court: the Sphinx 
   ctx.fillStyle = vgrad(ctx, H, 1080, '#E4CA98', '#D0AF79'); ctx.fillRect(0, H, 1920, 1080 - H);
   S.groundDetail(ctx, { col: '#DCC08C', seed: 7, count: 700, far: 700, avoid: p => p[1] < -89.5 });
   S.render(ctx);
-  bush(ctx, 110, 1095, 170, 4, '#6E8A40'); jarSprite(ctx, 1800, 1090, 150, '#B5653A', 0);
+  ctx.save(); ctx.fillStyle = 'rgba(100,55,25,.22)'; ctx.beginPath(); ctx.moveTo(1920, 760); ctx.lineTo(1640, 760); ctx.lineTo(1000, 1080); ctx.lineTo(1920, 1080); ctx.closePath(); ctx.fill(); ctx.restore();   // shadow from an off-screen pylon
+  rubble(ctx, 380, 1500, 860, 1075, 41, 18); stoneBlock(ctx, 230, 1070, 300, 110, 70, '#C9A874', 8); jarSprite(ctx, 1800, 1090, 150, '#B5653A', 0);
+  { const cx = 640, cy = 1040; ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.3)'; ctx.beginPath(); ctx.ellipse(cx + 40, cy + 6, 170, 26, 0, 0, 7); ctx.fill(); ctx.restore(); blob(ctx, g => { g.ellipse(cx, cy - 50, 140, 50, 0, 0, 7); g.rect(cx - 140, cy - 50, 280, 50); g.moveTo(cx + 140, cy); g.ellipse(cx, cy, 140, 50, 0, 0, Math.PI); }, '#CFAE7C', { lw: 3.5, shade: g => { g.fillStyle = '#DCC08E'; g.beginPath(); g.ellipse(cx, cy - 50, 140, 50, 0, 0, 7); g.fill(); g.strokeStyle = 'rgba(110,75,40,.5)'; g.lineWidth = 2; g.beginPath(); g.ellipse(cx, cy - 50, 90, 32, 0, 0, 7); g.stroke(); } }); }   // a fallen column drum
   brushTexture(ctx, .2); warmGrade(ctx);
 };
 
@@ -294,7 +298,7 @@ SETS.construction = (ctx, o = {}) => { // Khufu's pyramid rising: smooth casing 
   S.render(ctx);
   jarSprite(ctx, 110, 1088, 170, '#A9603A', 3); jarSprite(ctx, 215, 1086, 120, '#C99A6A', 2);
   stoneBlock(ctx, 980, 1050, 260, 120, 70, '#C9AC7E', 5); stoneBlock(ctx, 1230, 1065, 150, 80, 45, '#BFA070', 6); stoneBlock(ctx, 1160, 975, 120, 70, 40, '#C9AC7E', 7);
-  jarSprite(ctx, 1640, 1088, 150, '#9E5A34', 1); bush(ctx, 1840, 1095, 130, 31, '#6E8A40');
+  jarSprite(ctx, 1640, 1088, 150, '#9E5A34', 1); rubble(ctx, 700, 1900, 820, 1075, 61, 14);
   { for (let i = 0; i < 3; i++) { const x = 1430 + i * 60, y = 1040; ctx.strokeStyle = '#4A3420'; ctx.lineWidth = 12; ctx.beginPath(); ctx.ellipse(x, y, 48, 16, 0, 0, 7); ctx.stroke(); ctx.strokeStyle = '#B08A52'; ctx.lineWidth = 8; ctx.stroke(); } }   // rope coils
   brushTexture(ctx, .2); warmGrade(ctx);
 };
@@ -315,7 +319,7 @@ SETS.luxor = (ctx, o = {}) => { // Luxor Temple: the first pylon (Kadesh reliefs
   S.sprite([0, 1.2, 18.6], (c, px, py, k) => { for (const sx of [-1, 1]) { const W = [[0, 0], [sx * 3.6, -.5], [sx * 3.4, .25], [0, .6]].map(([a, b]) => [px + a * k, py + b * k]); poly(c, W, '#3E6EB0', true, 2); for (let i = 1; i < 4; i++) inkLine(c, [[px + sx * .5 * k, py + (i * .15) * k], [px + sx * 3.4 * k, py + (-.4 + i * .2) * k]], 1.6, { col: '#D9B24E' }); }
     c.beginPath(); c.arc(px, py + .1 * k, .55 * k, 0, 7); c.fillStyle = '#C0453A'; c.fill(); inkLine(c, Array.from({ length: 25 }, (_, i) => [px + Math.cos(i / 24 * 6.283) * .55 * k, py + .1 * k + Math.sin(i / 24 * 6.283) * .55 * k]), 2.4, { closed: true }); });
   for (const x of [-20, -15.7, 15.1, 19.4]) { S.cylinder(x + .3, -.7, 0, .35, 31, '#7A5634', { segs: 8, top: '#6A4A2C' }); S.sprite([x + .3, -.7, 31], (c, px, py, k) => { const r = rng(x * 3); const col = { '-20': '#C0453A', '-15.7': '#3E6EB0', '15.1': '#3F8A5A', '19.4': '#E3C25A' }[String(x)]; const pts = [[px, py], [px + 5 * k, py + .6 * k + r() * k], [px + 9 * k, py + 1.6 * k], [px + 4.6 * k, py + 1.9 * k], [px, py + 1.4 * k]]; poly(c, pts, col, true, 2); }); }
-  S.box(-27.5, -6, .25, 4, 4, 2.4, '#C9A06C', { tex: 'reliefs', registers: 1, seed: 71 }); obeliskAt(S, -25.5, -4, 25, GRANITE, 2.65);
+  
   for (const x of [-11, 8]) { S.box(x - 3.2, -9, .25, 6.4, 7.4, 1.6, '#C8A06C', { tex: 'blocks', course: .8, blockW: 1.6 }); S.sprite([x, -6, 1.85], (c, px, py, k) => colossusSprite(c, px, py, k)); S.castShadow([[x - 2.8, -5, 1.85], [x + 2.8, -5, 1.85], [x + 2.8, -5, 11.6], [x + 1.1, -5, 15.6], [x - 1.1, -5, 15.6], [x - 2.8, -5, 11.6]], { poly: true }); }
   for (let i = 0; i < 2; i++) for (const s2 of [-1, 1]) { const y = -24 - i * 8, x = s2 * 8.5 - 4; S.box(x - 1.3, y - 2.8, .25, 2.6, 5.6, 1.2, '#C9A36F', { tex: 'blocks', course: .6, blockW: 1.3 }); S.sprite([x, y - 1.6, 1.45], (c, px, py, k) => { c.save(); if (s2 > 0) { c.translate(px, 0); c.scale(-1, 1); c.translate(-px, 0); } smallSphinx(c, px - 2.5 * k, py, k); c.restore(); }); S.castShadow([[x - .8, y - 2.5, 1.45], [x + .8, y - 2.5, 1.45], [x + .8, y + 2.5, 1.45], [x - .8, y + 2.5, 1.45], [x, y - 1.2, 3.8], [x, y + 2.3, 3]]); }
   palmAt(S, 24, -26, 13, 3); palmAt(S, 28, -21, 10, 9, { lean: .2 }); palmAt(S, -30, -32, 12, 6);
@@ -331,7 +335,8 @@ SETS.luxor = (ctx, o = {}) => { // Luxor Temple: the first pylon (Kadesh reliefs
   S.groundDetail(ctx, { col: '#D8BC8B', seed: 6, count: 600, far: 300, avoid: p => p[0] > -30 && p[0] < 24 && p[1] > -47.5 && p[1] < 0 });
   S.render(ctx);
   ctx.save(); ctx.fillStyle = 'rgba(110,60,30,.24)'; ctx.beginPath(); ctx.moveTo(0, 820); ctx.lineTo(260, 820); ctx.lineTo(900, 1080); ctx.lineTo(0, 1080); ctx.closePath(); ctx.fill(); ctx.restore();   // shadow of an off-screen column
-  bush(ctx, 1830, 1095, 140, 2, '#6E8A40');
+  rubble(ctx, 300, 1700, 800, 1075, 52, 22); stoneBlock(ctx, 1450, 1070, 280, 100, 60, '#CDAE7C', 9);
+  reeds(ctx, 1700, 1940, 1090, 230, 7, '#5E7A3A');
   brushTexture(ctx, .2); warmGrade(ctx);
 };
 function colossusSprite(ctx, x, y, k) { // seated Ramesses II on his throne, front view (metres, 15.6 m with crown). Knees project, hands flat on the knees, shins ~35% of the height
@@ -374,7 +379,7 @@ SETS.village = (ctx, o = {}) => { // Deir el-Medina: a narrow street of whitewas
     S.box(x, y, 0, sx, sy, h, col, { tex: 'mudbrick', seed: i * 2 + (s > 0), top: shade(col, .82), paint: (c, St, f, cc) => { const n = St.normal(f.pts); if (Math.abs(n[0]) < .9 || n[0] * s > 0) return;
       doorM(c, St, f, cc, .32, 1.0, 1.95, i % 2 ? RED : '#3E6E8E'); grilleM(c, St, f, cc, .74, h - 1.2, .8, .5); if (h > 4) grilleM(c, St, f, cc, .52, h - 1.1, .5, .45);
       const [W, Hh] = fdim(f); const a0 = St.uv(f, .5, 1), a1 = St.uv(f, .5, 1 - .5 / Hh); const g0 = c.createLinearGradient(a0[0], a0[1], a1[0], a1[1]); g0.addColorStop(0, 'rgba(80,40,20,.5)'); g0.addColorStop(1, 'rgba(80,40,20,0)'); c.fillStyle = g0; c.fillRect(-50, -50, 2100, 1200);   // roofline shadow
-      const r2 = rng(i * 7 + (s > 0)); for (let m = 0; m < 3; m++) { const u = .1 + r2() * .8, v = .1 + r2() * .6; const P = spline(Array.from({ length: 11 }, (_, j) => { const a = j / 11 * 6.283; return St.uv(f, u + Math.cos(a) * (.03 + r2() * .04), v + Math.sin(a) * (.05 + r2() * .06)); }), true, 3); poly(c, P, m % 2 ? shade(cc, 1.06) : shade(cc, .93)); }   // plaster wear blotches
+      const r2 = rng(i * 7 + (s > 0)); for (let m = 0; m < 3; m++) { const u = .1 + r2() * .8, v = .1 + r2() * .6; const P = spline(Array.from({ length: 11 }, (_, j) => { const a = j / 11 * 6.283; return St.uv(f, u + Math.cos(a) * (.03 + r2() * .04), v + Math.sin(a) * (.05 + r2() * .06)); }), true, 3); c.save(); c.globalAlpha = .35; poly(c, P, m % 2 ? shade(cc, 1.08) : shade(cc, .9)); c.restore(); }   // faint plaster stains
       } });
     if (i % 2 === 0 && i < 4) S.sprite([s < 0 ? x + sx + .1 : x - .1, y + 4, h - .9], (c, px, py, kk) => { const w = .33 * kk, hh = .3 * kk; c.strokeStyle = '#5A4030'; c.lineWidth = 2; c.beginPath(); c.moveTo(px, py - .5 * kk); c.lineTo(px, py); c.stroke(); poly(c, [[px - w, py], [px + w, py], [px + w * .8, py + hh], [px - w * .8, py + hh]], '#C29A52', true, 2.2); c.strokeStyle = '#8A6A32'; c.lineWidth = 1.4; for (let k = 1; k < 4; k++) { c.beginPath(); c.moveTo(px - w * (1 - k * .05), py + hh * k / 4); c.lineTo(px + w * (1 - k * .05), py + hh * k / 4); c.stroke(); } for (let k = -2; k <= 2; k++) { c.beginPath(); c.moveTo(px + k * w * .35, py); c.lineTo(px + k * w * .3, py + hh); c.stroke(); } });   // woven basket hung from a beam
     // parapet + palm-rib canopy on some roofs
@@ -390,7 +395,7 @@ SETS.village = (ctx, o = {}) => { // Deir el-Medina: a narrow street of whitewas
   for (const [x, y, sd, pose] of [[-1, 12, 3, 'carry'], [1.2, 20, 5, 'stand'], [-.6, 30, 8, 'stand']]) S.sprite([x, y, 0], (c, px, py, k) => egPerson(c, px, py, 1.7 * k, { seed: sd, pose, flip: x > 0 }));
   S.groundDetail(ctx, { col: '#C2A076', seed: 9, count: 150, far: 60, tufts: false });
   S.render(ctx);
-  jarSprite(ctx, 95, 1092, 190, '#B06238', 1); bush(ctx, 1840, 1095, 130, 6, '#71883E');
+  jarSprite(ctx, 95, 1092, 190, '#B06238', 1); stoneBlock(ctx, 1770, 1080, 240, 90, 50, '#B9956A', 11); jarSprite(ctx, 1700, 1000, 110, '#8E6A50', 2);
   brushTexture(ctx, .22); warmGrade(ctx);
 };
 
