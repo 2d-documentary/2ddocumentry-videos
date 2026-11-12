@@ -1,0 +1,23 @@
+# Fetches Natural Earth coastlines (world-atlas) once and commits the Mediterranean cut for the map animations.
+name: Map data
+on:
+  push:
+    paths: ['tools/geo.mjs']
+  workflow_dispatch:
+permissions: { contents: write }
+jobs:
+  geo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm i --no-save world-atlas@2 topojson-client@3 && node tools/geo.mjs
+      - run: |
+          mkdir -p film/fonts && curl -sSLf -o film/fonts/Cinzel.ttf "https://github.com/google/fonts/raw/main/ofl/cinzel/Cinzel%5Bwght%5D.ttf" || true
+          curl -sSLf -o film/fonts/EBGaramond.ttf "https://github.com/google/fonts/raw/main/ofl/ebgaramond/EBGaramond%5Bwght%5D.ttf" || true
+          ls -la film/fonts assets/geo
+      - run: |
+          git config user.name "github-actions"; git config user.email "github-actions@users.noreply.github.com"
+          git add assets/geo film/fonts; git commit -qm "Map coastlines and title fonts [skip ci]" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 5; done
