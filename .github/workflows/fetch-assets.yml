@@ -36,6 +36,7 @@ jobs:
           echo "projects=$P" >> "$GITHUB_OUTPUT"; echo "projects: $P"
       - name: Fetch
         if: steps.which.outputs.projects != ''
+        env: { PYTHONUNBUFFERED: '1' }
         run: |
           git config --global user.name "asset-bot"
           git config --global user.email "asset-bot@users.noreply.github.com"

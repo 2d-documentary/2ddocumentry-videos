@@ -71,28 +71,39 @@ def _polite(host):
 def http_get(url, accept=None, limit=MAX_BYTES):
     host = urllib.parse.urlsplit(url).hostname or ""
     last = None
-    for attempt in range(4):
+    for attempt in range(3):
         _polite(host)
         req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": accept or "*/*"})
         try:
-            with urllib.request.urlopen(req, timeout=120) as r:
+            with urllib.request.urlopen(req, timeout=60) as r:
                 size = int(r.headers.get("Content-Length") or 0)
                 if size and size > limit:
                     raise FetchError(f"file too large ({size // 1048576} MB)")
-                data = r.read(limit + 1)
-                if len(data) > limit:
-                    raise FetchError("file too large (over 90 MB)")
+                chunks, got, t0 = [], 0, time.time()
+                while True:
+                    c = r.read(1 << 20)
+                    if not c:
+                        break
+                    chunks.append(c)
+                    got += len(c)
+                    if got > limit:
+                        raise FetchError("file too large (over 90 MB)")
+                    if time.time() - t0 > 300:
+                        raise FetchError("download too slow (over 5 min)")
+                data = b"".join(chunks)
                 ctype = (r.headers.get("Content-Type") or "").split(";")[0].strip().lower()
                 return data, ctype, r.geturl()
         except urllib.error.HTTPError as e:
             last = f"HTTP {e.code}"
             if e.code in (429, 500, 502, 503, 504):
-                time.sleep(int(e.headers.get("Retry-After") or 0) or 5 * (attempt + 1))
+                time.sleep(min(int(e.headers.get("Retry-After") or 0) or 10 * (attempt + 1), 60))
                 continue
             raise FetchError(last)
         except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
-            last = f"network error: {getattr(e, 'reason', e)}"
-            time.sleep(5 * (attempt + 1))
+            last = f"network error / timeout: {getattr(e, 'reason', e)}"
+            if attempt >= 1:
+                break
+            time.sleep(5)
     raise FetchError(last or "unknown error")
 
 

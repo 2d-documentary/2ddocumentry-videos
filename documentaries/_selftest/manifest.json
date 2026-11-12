@@ -1,4 +1,4 @@
-{"project":"_selftest","title":"Pipeline self-test (temporary)","assets":[
+{"project":"_selftest","title":"Pipeline self-test 2 (temporary)","assets":[
 {"id":"t1_commons","scene":1,"category":"paintings","description":"Commons test","source_page":"https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg"},
 {"id":"t2_loc","scene":2,"category":"historical-photos","description":"LoC test","source_page":"https://www.loc.gov/pictures/item/2017762891/"},
 {"id":"t3_chronam","scene":3,"category":"newspapers","description":"Chronicling America test","source_page":"https://chroniclingamerica.loc.gov/lccn/sn83030214/1912-04-16/ed-1/seq-1/"},
