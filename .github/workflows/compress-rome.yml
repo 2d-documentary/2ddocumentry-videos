@@ -1,0 +1,18 @@
+# Makes a smaller 1080p copy of the rendered Rome film (easier to download) as the artifact "video-small".
+name: Compress Rome film
+on:
+  push:
+    paths: ['film/compress.trigger']
+permissions: { contents: read, actions: read }
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+      - uses: actions/download-artifact@v4
+        with: { name: video, path: src, run-id: 43161907042, github-token: '${{ secrets.GITHUB_TOKEN }}' }
+      - run: |
+          ffmpeg -loglevel error -i src/Roman_Empire_History_1080p.mp4 -c:v libx264 -preset medium -crf 24 -maxrate 4M -bufsize 8M -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart Roman_Empire_History.mp4
+          ls -la Roman_Empire_History.mp4
+      - uses: actions/upload-artifact@v4
+        with: { name: video-small, path: Roman_Empire_History.mp4, retention-days: 30, compression-level: 0 }
