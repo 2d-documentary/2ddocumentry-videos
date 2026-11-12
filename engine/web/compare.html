@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:Poppins;font-weight:700;src:url(fonts/Poppins-Bold.ttf)}body{margin:0}</style></head>
+<body><canvas id="c" width="1920" height="1280"></canvas>
+<script src="core.js"></script><script src="chars.js"></script><script src="world.js"></script>
+<script>
+window.draw = () => {
+  const ctx = document.getElementById('c').getContext('2d'); const BW = 1920, BH = 1280;
+  ctx.fillStyle = '#F0ECE4'; ctx.fillRect(0, 0, BW, BH);
+  const panel = (i, bg1, bg2, fn) => { const x = (i % 3) * 640, y = Math.floor(i / 3) * 640; ctx.save(); ctx.beginPath(); ctx.rect(x + 8, y + 8, 624, 624); ctx.clip();
+    const g = ctx.createLinearGradient(0, y, 0, y + 400); g.addColorStop(0, bg1); g.addColorStop(1, mix(bg1, '#ffffff', .4)); ctx.fillStyle = g; ctx.fillRect(x, y, 640, 640);
+    ctx.save(); ctx.filter = 'blur(3px)'; ctx.fillStyle = mix(bg2, bg1, .5); ctx.beginPath(); ctx.moveTo(x, y + 400); ctx.quadraticCurveTo(x + 160, y + 320, x + 330, y + 380); ctx.quadraticCurveTo(x + 480, y + 330, x + 640, y + 390); ctx.lineTo(x + 640, y + 640); ctx.lineTo(x, y + 640); ctx.fill(); ctx.restore();
+    const gg = ctx.createLinearGradient(0, y + 410, 0, y + 640); gg.addColorStop(0, bg2); gg.addColorStop(1, shade(bg2, .8)); ctx.fillStyle = gg; ctx.fillRect(x, y + 410, 640, 240);
+    // outlined midground bushes: one lumpy silhouette each, shadow side, single outer outline
+    const r = rng(i + 3); for (let k = 0; k < 2; k++) { const bx = x + (k === 0 ? 70 + r() * 40 : 560 + r() * 30), byy = y + 412, bs = 30 + r() * 18; const lumps = 6;
+      const path = p => { p.moveTo(bx - bs * 1.6, byy); for (let j = 0; j <= lumps; j++) { const u = j / lumps, ax = bx - bs * 1.6 + u * bs * 3.2, ay = byy - Math.sin(u * Math.PI) * bs * (1.1 + (r() - .5) * .3); p.quadraticCurveTo(ax - bs * .3, ay - bs * .35, ax, ay); } p.quadraticCurveTo(bx + bs * 1.7, byy + 4, bx + bs * 1.6, byy + 6); p.lineTo(bx - bs * 1.6, byy + 6); p.closePath(); };
+      ctx.save(); ctx.translate(bx, byy); ctx.scale(bs / 1, bs / 1); ctx.restore();
+      ctx.save(); ctx.beginPath(); path(ctx); ctx.fillStyle = shade(bg2, .7); ctx.fill(); ctx.clip(); ctx.fillStyle = shade(bg2, .58); ctx.beginPath(); ctx.arc(bx + bs * 1.6, byy + bs * .3, bs * 1.6, 0, 7); ctx.fill(); ctx.restore();
+      ctx.beginPath(); path(ctx); ctx.lineWidth = 2.6; ctx.strokeStyle = '#2A2220'; ctx.lineJoin = 'round'; ctx.stroke(); }
+    ctx.strokeStyle = 'rgba(42,34,32,.45)'; ctx.lineWidth = 2; for (let k = 0; k < 4; k++) { const cx0 = x + r() * 640, cy0 = y + 470 + r() * 150; ctx.beginPath(); ctx.moveTo(cx0, cy0); ctx.lineTo(cx0 + 30 + r() * 40, cy0 + (r() - .5) * 20); ctx.lineTo(cx0 + 60 + r() * 40, cy0 + (r() - .5) * 30); ctx.stroke(); }
+    fn(x, y); ctx.restore(); };
+  const T = .5;
+  panel(0, '#F3D9A0', '#E8B98A', (x, y) => drawCharacter(ctx, CAST.GHERARDO, { x: x + 320, y: y + 280 + 7.65 * 150, s: 150, t: T, blink: false, eyes: 'sleepy', armL: 'behind', armR: 'chin', turn: .45 }));
+  panel(1, '#CFE3EE', '#9FB9C8', (x, y) => drawCharacter(ctx, CAST.RANIERI, { x: x + 320, y: y + 280 + 7.65 * 150, s: 150, t: T, blink: false, eyes: 'squint', mouth: 'flat', armL: 'hip', armR: 'hip', turn: -.3 }));
+  panel(2, '#8FB0C8', '#53697A', (x, y) => drawCharacter(ctx, CAST.WORKER, { x: x + 320, y: y + 280 + 7.65 * 150, s: 150, t: T, blink: false, eyes: 'angry', mouth: 'flat', armL: 'down', armR: 'hip', turn: .4 }));
+  panel(3, '#E7C9A0', '#C79A6A', (x, y) => drawCharacter(ctx, CAST.RANIERI, { x: x + 300, y: y + 615, s: 64, t: T, blink: false, armL: 'hip', armR: 'point', turn: .45 }));
+  panel(4, '#F3C58A', '#B98656', (x, y) => drawCharacter(ctx, CAST.GHERARDO, { x: x + 320, y: y + 615, s: 64, t: T, blink: false, armL: 'hip', armR: 'behind', turn: -.4 }));
+  panel(5, '#9ED8C8', '#B7905E', (x, y) => drawCharacter(ctx, CAST.WORKER, { x: x + 320, y: y + 615, s: 64, t: T, blink: false, armL: 'down', armR: 'belt', turn: .4 }));
+};
+document.fonts.load('700 30px Poppins').then(() => { window.draw(); window.DONE = true; });
+</script></body></html>

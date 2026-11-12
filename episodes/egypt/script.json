@@ -1,0 +1,2243 @@
+{
+ "title": "The Entire History of Ancient Egypt",
+ "format": "landscape-16x9",
+ "fps": 30,
+ "size": [
+  1920,
+  1080
+ ],
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.08,
+   "lang": "a",
+   "desc": "Sarcastic, witty, conversational, slightly dramatic; telling a ridiculous true story to a friend"
+  },
+  "VIZIER": {
+   "voice": "am_eric",
+   "speed": 1.15,
+   "lang": "a",
+   "desc": "Royal Advisor: permanently stressed, fast, clipped, trying to keep the kingdom running"
+  },
+  "SOLDIER": {
+   "voice": "am_adam",
+   "speed": 1.05,
+   "lang": "a",
+   "desc": "Brave, loud, earnest and slightly clueless"
+  },
+  "WORKER": {
+   "voice": "bm_daniel",
+   "speed": 0.98,
+   "lang": "b",
+   "desc": "Exhausted, dry, sarcastic, unimpressed by royal decisions"
+  },
+  "NARMER": {
+   "voice": "bm_lewis",
+   "speed": 0.98,
+   "lang": "b",
+   "desc": "Pharaoh: booming, overconfident, a little ridiculous"
+  },
+  "KHUFU": {
+   "voice": "bm_george",
+   "speed": 0.96,
+   "lang": "b",
+   "desc": "Pharaoh: grand, pompous, thinks big about everything"
+  },
+  "HATSHEPSUT": {
+   "voice": "bf_emma",
+   "speed": 1.0,
+   "lang": "b",
+   "desc": "Cool, composed, quietly lethal confidence"
+  },
+  "AKHENATEN": {
+   "voice": "am_puck",
+   "speed": 1.05,
+   "lang": "a",
+   "desc": "Dreamy evangelist, excited about the sun to a worrying degree"
+  },
+  "TUT": {
+   "voice": "am_echo",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Young, hopeful, slightly confused boy-king"
+  },
+  "RAMESSES": {
+   "voice": "am_onyx",
+   "speed": 0.95,
+   "lang": "a",
+   "desc": "Pharaoh: huge ego, deep, deadpan, never doubts himself"
+  },
+  "CLEOPATRA": {
+   "voice": "bf_isabella",
+   "speed": 1.02,
+   "lang": "b",
+   "desc": "Intelligent, confident, politically sharp, amused"
+  },
+  "CAESAR": {
+   "voice": "bm_fable",
+   "speed": 1.0,
+   "lang": "b",
+   "desc": "Smooth, calculating Roman"
+  },
+  "ANTONY": {
+   "voice": "am_liam",
+   "speed": 1.06,
+   "lang": "a",
+   "desc": "Big, cheerful, reckless optimism"
+  },
+  "OCTAVIAN": {
+   "voice": "bm_lewis",
+   "speed": 0.92,
+   "lang": "b",
+   "desc": "Cold, quiet, final"
+  }
+ },
+ "scenes": [
+  {
+   "id": "S01",
+   "title": "Cold open",
+   "sets": [
+    "giza"
+   ],
+   "direction": "Narrator starts fast and confident, like opening a story at a party; land each comparison with a tiny beat. Advisor's interruption is panicked.",
+   "music": "Bright plucky oud-and-pizzicato motif, light percussion; stops dead on the Advisor's line, restarts with the title sting.",
+   "line_ids": [
+    "L001",
+    "L002",
+    "L003",
+    "L004",
+    "L005",
+    "L006"
+   ]
+  },
+  {
+   "id": "S02",
+   "title": "The Nile: a country shaped like a hallway",
+   "sets": [
+    "nile",
+    "map"
+   ],
+   "direction": "Relaxed, conspiratorial; 'very interested in killing you' delivered deadpan. Slight smugness on the map joke.",
+   "music": "Warm flowing strings and harp over a slow frame drum; a little 'water' arpeggio during the flood.",
+   "line_ids": [
+    "L007",
+    "L008",
+    "L009",
+    "L010",
+    "L011",
+    "L012",
+    "L013",
+    "L014",
+    "L015"
+   ]
+  },
+  {
+   "id": "S03",
+   "title": "Narmer unites the Two Lands",
+   "sets": [
+    "map",
+    "throne"
+   ],
+   "direction": "Narrator gets epic for one sentence then undercuts it. Narmer booms; Soldier is sincere and slow.",
+   "music": "Big taiko hit and brass swell for 'united'; settles into a regal processional loop.",
+   "line_ids": [
+    "L016",
+    "L017",
+    "L018",
+    "L019",
+    "L020",
+    "L021",
+    "L022",
+    "L023",
+    "L024",
+    "L025",
+    "L026",
+    "L027"
+   ]
+  },
+  {
+   "id": "S04",
+   "title": "The Old Kingdom: the age of pyramids",
+   "sets": [
+    "giza",
+    "construction"
+   ],
+   "direction": "Narrator builds wonder then punctures it; Khufu grand and slow; Worker flat and tired. Pause before 'Four thousand years.'",
+   "music": "Grand but bouncy brass-and-percussion 'construction' groove; a choir 'aah' on the Great Pyramid reveal.",
+   "line_ids": [
+    "L028",
+    "L029",
+    "L030",
+    "L031",
+    "L032",
+    "L033",
+    "L034",
+    "L035",
+    "L036",
+    "L037",
+    "L038",
+    "L039",
+    "L040",
+    "L041"
+   ]
+  },
+  {
+   "id": "S05",
+   "title": "Collapse, chaos and the Middle Kingdom",
+   "sets": [
+    "village",
+    "throne"
+   ],
+   "direction": "Narrator darker and drier for the famine, then lighter for the comeback ('finally getting its life together').",
+   "music": "Music drops to a sparse low drone and dry wind for the famine; a hopeful lute theme returns with the Middle Kingdom.",
+   "line_ids": [
+    "L042",
+    "L043",
+    "L044",
+    "L045",
+    "L046",
+    "L047",
+    "L048"
+   ]
+  },
+  {
+   "id": "S06",
+   "title": "The Hyksos and the chariot",
+   "sets": [
+    "kadesh"
+   ],
+   "direction": "Brisk and military; Soldier amazed; Advisor greedy-practical.",
+   "music": "Galloping hand drums and low horns; tension builds into the New Kingdom fanfare.",
+   "line_ids": [
+    "L049",
+    "L050",
+    "L051",
+    "L052",
+    "L053"
+   ]
+  },
+  {
+   "id": "S07",
+   "title": "Hatshepsut, the woman who was king",
+   "sets": [
+    "deirelbahari",
+    "throne"
+   ],
+   "direction": "Narrator admiring with a wink; Hatshepsut calm, crisp, unbothered; Worker gets out-witted.",
+   "music": "Elegant harp and ney flute, a confident walking bass; a brief sad cello for the erasure.",
+   "line_ids": [
+    "L054",
+    "L055",
+    "L056",
+    "L057",
+    "L058",
+    "L059",
+    "L060",
+    "L061",
+    "L062",
+    "L063",
+    "L064",
+    "L065",
+    "L066",
+    "L067"
+   ]
+  },
+  {
+   "id": "S08",
+   "title": "Akhenaten installs a religious update",
+   "sets": [
+    "amarna"
+   ],
+   "direction": "Narrator amused tech-support tone; Akhenaten blissed-out; Soldier deadpan heat-stroke delivery.",
+   "music": "Shimmering synth-like drone with sistrum rattles and a sunny melody; glitchy 'undo' rewind effect at the end.",
+   "line_ids": [
+    "L068",
+    "L069",
+    "L070",
+    "L071",
+    "L072",
+    "L073",
+    "L074",
+    "L075",
+    "L076",
+    "L077",
+    "L078",
+    "L079"
+   ]
+  },
+  {
+   "id": "S09",
+   "title": "Tutankhamun: famous for being forgotten",
+   "sets": [
+    "throne",
+    "tomb"
+   ],
+   "direction": "Narrator gentle then building to the 1922 reveal; Tut innocent; Worker cynical. Big pause before 'Which is to say: nothing.'",
+   "music": "Soft music box theme for the boy king; mysterious low strings and a single bell for the forgotten tomb; triumphant swell at 1922.",
+   "line_ids": [
+    "L080",
+    "L081",
+    "L082",
+    "L083",
+    "L084",
+    "L085",
+    "L086",
+    "L087",
+    "L088"
+   ]
+  },
+  {
+   "id": "S10",
+   "title": "How to become a mummy (warning: gross)",
+   "sets": [
+    "tomb"
+   ],
+   "direction": "Narrator mock-solemn 'nature documentary' delivery, enjoying the gross bits; pause before 'So be nice.'",
+   "music": "Creepy-cute low bassoon and pizzicato; wet squelch sound effects; a gong on the weighing of the heart.",
+   "line_ids": [
+    "L089",
+    "L090",
+    "L091",
+    "L092",
+    "L093",
+    "L094",
+    "L095",
+    "L096",
+    "L097"
+   ]
+  },
+  {
+   "id": "S11",
+   "title": "Ramesses the Great (and very sure of it)",
+   "sets": [
+    "luxor",
+    "kadesh",
+    "abusimbel"
+   ],
+   "direction": "Narrator mock-epic war-movie voice for Kadesh, then deadpan for propaganda; Ramesses deep and absolutely unbothered; Soldier panicking.",
+   "music": "Heavy war drums and brass for Kadesh; triumphant bombastic march for Abu Simbel; drops to a bassoon for 'home decoration'.",
+   "line_ids": [
+    "L098",
+    "L099",
+    "L100",
+    "L101",
+    "L102",
+    "L103",
+    "L104",
+    "L105",
+    "L106",
+    "L107",
+    "L108",
+    "L109",
+    "L110",
+    "L111",
+    "L112",
+    "L113",
+    "L114",
+    "L115"
+   ]
+  },
+  {
+   "id": "S12",
+   "title": "Collapse, sea raiders and the first strike",
+   "sets": [
+    "sea",
+    "village"
+   ],
+   "direction": "Narrator serious for the collapse, then delighted by the strike. The workers' recorded words 'We are hungry' read plainly, quoted from the papyrus. Advisor begging.",
+   "music": "Ominous low brass and storm-wind for the Sea Peoples; a jaunty 'protest' clapping rhythm for the strike; a slow fading theme for centuries of new rulers.",
+   "line_ids": [
+    "L116",
+    "L117",
+    "L118",
+    "L119",
+    "L120",
+    "L121",
+    "L122",
+    "L123",
+    "L124"
+   ]
+  },
+  {
+   "id": "S13",
+   "title": "Alexander, the Ptolemies and a very big lighthouse",
+   "sets": [
+    "alexandria",
+    "map"
+   ],
+   "direction": "Narrator breezy travel-show tone; dry on 'very modestly'; gossip tone for the Ptolemy family.",
+   "music": "Bright Greek-flavoured lyre and frame drum; a sly clarinet for the sibling-marriage line.",
+   "line_ids": [
+    "L125",
+    "L126",
+    "L127",
+    "L128",
+    "L129",
+    "L130",
+    "L131"
+   ]
+  },
+  {
+   "id": "S14",
+   "title": "Cleopatra and the end of the pharaohs",
+   "sets": [
+    "throne",
+    "alexandria",
+    "sea"
+   ],
+   "direction": "Narrator sharp and fast-paced like a political thriller; Cleopatra cool and razor-witty; Caesar smooth; Antony overconfident; Octavian icy. Drop all jokes and slow down for the deaths.",
+   "music": "Sultry strings and ney for Cleopatra; war drums for Actium; then a single sustained low note under the ending, resolving softly.",
+   "line_ids": [
+    "L132",
+    "L133",
+    "L134",
+    "L135",
+    "L136",
+    "L137",
+    "L138",
+    "L139",
+    "L140",
+    "L141",
+    "L142",
+    "L143",
+    "L144",
+    "L145",
+    "L146",
+    "L147"
+   ]
+  },
+  {
+   "id": "S15",
+   "title": "Outro",
+   "sets": [
+    "giza"
+   ],
+   "direction": "Warm, a little proud, fast recap rhythm; Khufu smug; Advisor finally relaxed.",
+   "music": "Main theme returns full, upbeat; ends on the opening oud motif and a final drum hit.",
+   "line_ids": [
+    "L148",
+    "L149",
+    "L150",
+    "L151",
+    "L152",
+    "L153"
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": "L001",
+   "scene": "S01",
+   "speaker": "NARRATOR",
+   "text": "Ancient Egypt lasted for about three thousand years.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [
+    "three",
+    "thousand"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L002",
+   "scene": "S01",
+   "speaker": "NARRATOR",
+   "text": "The Romans are ancient history to us. Ancient Egypt was ancient history to the Romans.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L003",
+   "scene": "S01",
+   "speaker": "NARRATOR",
+   "text": "Cleopatra, the last pharaoh, lived closer in time to the Moon landing than to the building of the Great Pyramid.",
+   "gap_before": 0.45,
+   "sfx": [
+    [
+     "Moon",
+     "whoosh"
+    ]
+   ],
+   "red": [],
+   "gold": [
+    "Moon"
+   ]
+  },
+  {
+   "id": "L004",
+   "scene": "S01",
+   "speaker": "NARRATOR",
+   "text": "So today we're covering all of it. Three thousand years, in fifteen minutes. What could possibly go wrong?",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L005",
+   "scene": "S01",
+   "speaker": "VIZIER",
+   "text": "Everything. Everything could go wrong.",
+   "gap_before": 0.5,
+   "sfx": [
+    [
+     "Everything.",
+     "recordscratch"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L006",
+   "scene": "S01",
+   "speaker": "NARRATOR",
+   "text": "Thank you, royal advisor. Let's begin.",
+   "gap_before": 0.5,
+   "sfx": [
+    [
+     "begin.",
+     "sting"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L007",
+   "scene": "S02",
+   "speaker": "NARRATOR",
+   "text": "First, the setting. Egypt is mostly desert. Very hot, very dry, and very interested in killing you.",
+   "gap_before": 0.6,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L008",
+   "scene": "S02",
+   "speaker": "NARRATOR",
+   "text": "But running straight through it is the Nile, one of the longest rivers on Earth, and basically Egypt's life-support machine.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": [
+    "Nile,"
+   ]
+  },
+  {
+   "id": "L009",
+   "scene": "S02",
+   "speaker": "NARRATOR",
+   "text": "Every summer the Nile flooded and left behind thick, black, fertile mud. Crops grew in it like the soil had something to prove.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "flooded,",
+     "water"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L010",
+   "scene": "S02",
+   "speaker": "NARRATOR",
+   "text": "Egyptians even named their country Kemet, the Black Land, after that mud. The desert was Deshret, the Red Land.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [
+    "Red"
+   ],
+   "gold": [
+    "Kemet,"
+   ]
+  },
+  {
+   "id": "L011",
+   "scene": "S02",
+   "speaker": "WORKER",
+   "text": "So we live on a thin green strip of mud, surrounded by an ocean of sand. Great. We live in a hallway.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L012",
+   "scene": "S02",
+   "speaker": "NARRATOR",
+   "text": "Exactly. A very long hallway. With crocodiles.",
+   "gap_before": 0.25,
+   "sfx": [
+    [
+     "crocodiles.",
+     "chomp"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L013",
+   "scene": "S02",
+   "speaker": "NARRATOR",
+   "text": "And for a long time, that hallway was split into two kingdoms: Upper Egypt in the south, and Lower Egypt in the north.",
+   "gap_before": 0.45,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L014",
+   "scene": "S02",
+   "speaker": "SOLDIER",
+   "text": "Wait. Upper Egypt is at the bottom?",
+   "gap_before": 0.35,
+   "sfx": [
+    [
+     "bottom?",
+     "boing"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L015",
+   "scene": "S02",
+   "speaker": "NARRATOR",
+   "text": "The Nile flows north, so up means upstream. Please don't write in.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L016",
+   "scene": "S03",
+   "speaker": "NARRATOR",
+   "text": "Then, around 3100 BC, a king from the south called Narmer decided that two kingdoms was one kingdom too many.",
+   "gap_before": 0.6,
+   "sfx": [],
+   "red": [
+    "3100"
+   ],
+   "gold": [
+    "Narmer"
+   ]
+  },
+  {
+   "id": "L017",
+   "scene": "S03",
+   "speaker": "NARRATOR",
+   "text": "He conquered the north and united Upper and Lower Egypt into a single country.",
+   "gap_before": 0.2,
+   "sfx": [
+    [
+     "united",
+     "drumhit"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L018",
+   "scene": "S03",
+   "speaker": "NARMER",
+   "text": "From now on, there is one Egypt. And it has one king. Guess who.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L019",
+   "scene": "S03",
+   "speaker": "SOLDIER",
+   "text": "Is it... you, sir?",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L020",
+   "scene": "S03",
+   "speaker": "NARMER",
+   "text": "It is me.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L021",
+   "scene": "S03",
+   "speaker": "SOLDIER",
+   "text": "Long live... you, sir!",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L022",
+   "scene": "S03",
+   "speaker": "NARRATOR",
+   "text": "Historians still argue about exactly how it happened, because that's what historians do for fun.",
+   "gap_before": 0.45,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L023",
+   "scene": "S03",
+   "speaker": "NARRATOR",
+   "text": "Later kings wore a double crown: the red crown of the north wrapped around the white crown of the south. Basically, a royal ice-cream cone.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "ice-cream",
+     "pop"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L024",
+   "scene": "S03",
+   "speaker": "NARRATOR",
+   "text": "These rulers would eventually be called pharaohs: the link between people and the gods, responsible for keeping the whole universe in order.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": [
+    "pharaohs,"
+   ]
+  },
+  {
+   "id": "L025",
+   "scene": "S03",
+   "speaker": "VIZIER",
+   "text": "No pressure.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L026",
+   "scene": "S03",
+   "speaker": "NARRATOR",
+   "text": "That order was called Ma'at: balance, justice, harmony. Keeping it was the pharaoh's job. If things went badly, that was very much his problem.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": [
+    "Ma'at:"
+   ]
+  },
+  {
+   "id": "L027",
+   "scene": "S03",
+   "speaker": "NARMER",
+   "text": "Things will not go badly. I am excellent at universe.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L028",
+   "scene": "S04",
+   "speaker": "NARRATOR",
+   "text": "With Egypt united, things got ambitious. This is the Old Kingdom, the Age of the Pyramids.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L029",
+   "scene": "S04",
+   "speaker": "NARRATOR",
+   "text": "Around 2650 BC, the pharaoh Djoser and his architect Imhotep built a step pyramid at Saqqara, stacked like a wedding cake for the afterlife.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [
+    "2650"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L030",
+   "scene": "S04",
+   "speaker": "NARRATOR",
+   "text": "Then came Khufu, a man who apparently looked at the desert and thought: what this place really needs is the biggest building in the world.",
+   "gap_before": 0.45,
+   "sfx": [],
+   "red": [],
+   "gold": [
+    "Khufu,"
+   ]
+  },
+  {
+   "id": "L031",
+   "scene": "S04",
+   "speaker": "KHUFU",
+   "text": "I want it tall. I want it pointy. I want people talking about it for thousands of years.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L032",
+   "scene": "S04",
+   "speaker": "VIZIER",
+   "text": "Your Majesty, that is a lot of rock.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L033",
+   "scene": "S04",
+   "speaker": "KHUFU",
+   "text": "Then get a lot of people.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L034",
+   "scene": "S04",
+   "speaker": "NARRATOR",
+   "text": "The result was the Great Pyramid of Giza, finished around 2560 BC: about a hundred and forty-six metres tall, roughly two point three million stone blocks, and the tallest human-made structure on Earth for nearly four thousand years.",
+   "gap_before": 0.5,
+   "sfx": [
+    [
+     "Great",
+     "choir"
+    ]
+   ],
+   "red": [
+    "2560"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L035",
+   "scene": "S04",
+   "speaker": "NARRATOR",
+   "text": "Four thousand years. Most modern buildings struggle to survive a slightly damp winter.",
+   "gap_before": 0.6,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L036",
+   "scene": "S04",
+   "speaker": "NARRATOR",
+   "text": "And no, it wasn't built by aliens. It probably wasn't built by slaves either.",
+   "gap_before": 0.4,
+   "sfx": [
+    [
+     "aliens.",
+     "ufo"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L037",
+   "scene": "S04",
+   "speaker": "NARRATOR",
+   "text": "Archaeologists found the workers' town nearby, with bakeries, breweries, and workers' tombs right beside the pyramids. The builders were skilled crews, often paid in bread and beer.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L038",
+   "scene": "S04",
+   "speaker": "WORKER",
+   "text": "Bread and beer. Two point three million blocks. And they call it a tomb. I'm the one who's dying here.",
+   "gap_before": 0.4,
+   "sfx": [
+    [
+     "dying",
+     "thud"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L039",
+   "scene": "S04",
+   "speaker": "VIZIER",
+   "text": "Think of the view.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L040",
+   "scene": "S04",
+   "speaker": "WORKER",
+   "text": "I'm under the view.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L041",
+   "scene": "S04",
+   "speaker": "NARRATOR",
+   "text": "Khufu's son Khafre built the second pyramid, and probably the Great Sphinx, carved straight out of the bedrock. Most experts think the face is Khafre's. The Sphinx, wisely, isn't saying.",
+   "gap_before": 0.45,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L042",
+   "scene": "S05",
+   "speaker": "NARRATOR",
+   "text": "But building mountains is expensive. Royal power weakened, local governors got stronger, and around 2200 BC the Nile floods started to fail.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [
+    "2200"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L043",
+   "scene": "S05",
+   "speaker": "NARRATOR",
+   "text": "No floods meant no crops, and no crops meant people suddenly had a lot of questions about how divine the pharaoh really was.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L044",
+   "scene": "S05",
+   "speaker": "WORKER",
+   "text": "Remember when we had food? Good times.",
+   "gap_before": 0.4,
+   "sfx": [
+    [
+     "food?",
+     "stomach"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L045",
+   "scene": "S05",
+   "speaker": "SOLDIER",
+   "text": "Who's in charge now?",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L046",
+   "scene": "S05",
+   "speaker": "VIZIER",
+   "text": "Several people. Which means nobody.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L047",
+   "scene": "S05",
+   "speaker": "NARRATOR",
+   "text": "Historians call this the First Intermediate Period. Eventually, around 2050 BC, a family from Thebes put Egypt back together: the Middle Kingdom.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [
+    "2050"
+   ],
+   "gold": [
+    "Middle",
+    "Kingdom."
+   ]
+  },
+  {
+   "id": "L048",
+   "scene": "S05",
+   "speaker": "NARRATOR",
+   "text": "Its kings spent less on giant tombs and more on irrigation, trade, fortresses and literature. Egypt, finally getting its life together. And it worked. For a while.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "while.",
+     "uhoh"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L049",
+   "scene": "S06",
+   "speaker": "NARRATOR",
+   "text": "Around 1650 BC, outsiders known as the Hyksos took control of northern Egypt, bringing military technology Egypt hadn't really used before: horse-drawn war chariots and powerful composite bows.",
+   "gap_before": 0.6,
+   "sfx": [
+    [
+     "chariots",
+     "horses"
+    ]
+   ],
+   "red": [
+    "1650"
+   ],
+   "gold": [
+    "Hyksos"
+   ]
+  },
+  {
+   "id": "L050",
+   "scene": "S06",
+   "speaker": "SOLDIER",
+   "text": "Sir, they have horses. And wheels. On the same thing!",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L051",
+   "scene": "S06",
+   "speaker": "VIZIER",
+   "text": "Write that down. We want those.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L052",
+   "scene": "S06",
+   "speaker": "NARRATOR",
+   "text": "The Egyptians learned fast. Rulers from Thebes adopted the chariot, fought back, and around 1550 BC a king called Ahmose drove the Hyksos out.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [
+    "1550"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L053",
+   "scene": "S06",
+   "speaker": "NARRATOR",
+   "text": "That kicked off the New Kingdom: Egypt's imperial age. Bigger armies, bigger temples, and much, much bigger egos.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "New",
+     "fanfare"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L054",
+   "scene": "S07",
+   "speaker": "NARRATOR",
+   "text": "Starting with Hatshepsut. When her husband, Thutmose the Second, died around 1479 BC, the heir was her stepson, Thutmose the Third. A small child.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [
+    "1479"
+   ],
+   "gold": [
+    "Hatshepsut."
+   ]
+  },
+  {
+   "id": "L055",
+   "scene": "S07",
+   "speaker": "NARRATOR",
+   "text": "So Hatshepsut ruled for him, as regent. Then, a few years later, she just... became pharaoh herself.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "pharaoh",
+     "sting"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L056",
+   "scene": "S07",
+   "speaker": "HATSHEPSUT",
+   "text": "I've been running the country anyway. I'm simply updating the paperwork.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L057",
+   "scene": "S07",
+   "speaker": "VIZIER",
+   "text": "But Your Majesty, a woman ruling as full pharaoh is extremely unusual.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L058",
+   "scene": "S07",
+   "speaker": "HATSHEPSUT",
+   "text": "Then I suppose it's less unusual now. Fetch my beard.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L059",
+   "scene": "S07",
+   "speaker": "VIZIER",
+   "text": "Your... beard.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L060",
+   "scene": "S07",
+   "speaker": "NARRATOR",
+   "text": "Her statues often showed her with a king's ceremonial false beard. Which sounds strange, until you learn the male pharaohs' beards were fake too.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L061",
+   "scene": "S07",
+   "speaker": "NARRATOR",
+   "text": "And she was good at it: about twenty years of peace and prosperity, a famous trading expedition to the land of Punt, and a stunning temple at Deir el-Bahari.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L062",
+   "scene": "S07",
+   "speaker": "SOLDIER",
+   "text": "The ships are back from Punt! Gold, ivory, incense trees, and, um, monkeys.",
+   "gap_before": 0.35,
+   "sfx": [
+    [
+     "monkeys.",
+     "monkey"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L063",
+   "scene": "S07",
+   "speaker": "HATSHEPSUT",
+   "text": "Put the trees in the temple. Put the monkeys anywhere but my throne.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L064",
+   "scene": "S07",
+   "speaker": "NARRATOR",
+   "text": "Years after her death, Thutmose the Third, who became a brilliant warrior king, had many of her images and names chiselled off the monuments. Historians still debate why.",
+   "gap_before": 0.45,
+   "sfx": [
+    [
+     "chiselled",
+     "chisel"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L065",
+   "scene": "S07",
+   "speaker": "WORKER",
+   "text": "Imagine doing all that work and getting deleted from history.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L066",
+   "scene": "S07",
+   "speaker": "NARRATOR",
+   "text": "Says the man whose name nobody wrote down.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L067",
+   "scene": "S07",
+   "speaker": "WORKER",
+   "text": "Fair.",
+   "gap_before": 0.5,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L068",
+   "scene": "S08",
+   "speaker": "NARRATOR",
+   "text": "About a century later, Egypt got its strangest pharaoh: Amenhotep the Fourth.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L069",
+   "scene": "S08",
+   "speaker": "NARRATOR",
+   "text": "Egypt had hundreds of gods, including a hippo goddess who protected childbirth. Then this pharaoh decided the whole religious system needed a software update.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "update.",
+     "chime"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L070",
+   "scene": "S08",
+   "speaker": "AKHENATEN",
+   "text": "Big announcement. We're focusing on one god now. The Aten. The sun disc.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L071",
+   "scene": "S08",
+   "speaker": "VIZIER",
+   "text": "Just... the sun?",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L072",
+   "scene": "S08",
+   "speaker": "AKHENATEN",
+   "text": "The sun. Have you seen it? It's incredible.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L073",
+   "scene": "S08",
+   "speaker": "NARRATOR",
+   "text": "He renamed himself Akhenaten, cut support for the powerful temples of Amun, and built a brand-new capital in the middle of nowhere, a place we now call Amarna.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": [
+    "Akhenaten,"
+   ]
+  },
+  {
+   "id": "L074",
+   "scene": "S08",
+   "speaker": "NARRATOR",
+   "text": "Its temples were open to the sky so the sun could shine straight in. Very spiritual. Also very, very hot.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L075",
+   "scene": "S08",
+   "speaker": "SOLDIER",
+   "text": "Sir, the priests of Amun are angry.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L076",
+   "scene": "S08",
+   "speaker": "AKHENATEN",
+   "text": "Have they tried standing in the sunlight?",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L077",
+   "scene": "S08",
+   "speaker": "SOLDIER",
+   "text": "Sir, it's forty-five degrees. That's why they're angry.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L078",
+   "scene": "S08",
+   "speaker": "NARRATOR",
+   "text": "Art changed too: the royal family appeared in a strange new relaxed style, with long faces, the king playing with his children.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L079",
+   "scene": "S08",
+   "speaker": "NARRATOR",
+   "text": "Unfortunately, not everyone agreed to install the update. And after Akhenaten died, around 1336 BC, Egypt quietly pressed undo.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "undo.",
+     "rewind"
+    ]
+   ],
+   "red": [
+    "1336"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L080",
+   "scene": "S09",
+   "speaker": "NARRATOR",
+   "text": "The undo button was a nine-year-old boy called Tutankhaten, probably Akhenaten's son. Early in his reign he became Tutankhamun, bringing back the old god Amun. A rebrand, but for an entire religion.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [],
+   "gold": [
+    "Tutankhamun,"
+   ]
+  },
+  {
+   "id": "L081",
+   "scene": "S09",
+   "speaker": "TUT",
+   "text": "So I just change one word, and everyone's happy again?",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L082",
+   "scene": "S09",
+   "speaker": "VIZIER",
+   "text": "Everyone except the sun, Your Majesty.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L083",
+   "scene": "S09",
+   "speaker": "NARRATOR",
+   "text": "The court left Amarna, the old temples reopened, and then Tutankhamun died at about nineteen, around 1323 BC. Nobody's sure how: illness, an infected broken leg, maybe a chariot accident.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [
+    "1323"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L084",
+   "scene": "S09",
+   "speaker": "NARRATOR",
+   "text": "So why is he the most famous pharaoh of all? Because of what happened next. Which is to say: nothing. For three thousand years.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L085",
+   "scene": "S09",
+   "speaker": "NARRATOR",
+   "text": "Almost every royal tomb in the Valley of the Kings was robbed in ancient times. But Tutankhamun's small tomb got buried under rubble and forgotten.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L086",
+   "scene": "S09",
+   "speaker": "NARRATOR",
+   "text": "Until 1922, when the archaeologist Howard Carter found it nearly intact, with more than five thousand objects inside: golden shrines, chariots, jewellery, and the famous golden mask.",
+   "gap_before": 0.45,
+   "sfx": [
+    [
+     "1922,",
+     "reveal"
+    ]
+   ],
+   "red": [
+    "1922,"
+   ],
+   "gold": [
+    "golden"
+   ]
+  },
+  {
+   "id": "L087",
+   "scene": "S09",
+   "speaker": "WORKER",
+   "text": "So the secret to fame is: die young, and get lost for three thousand years.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L088",
+   "scene": "S09",
+   "speaker": "NARRATOR",
+   "text": "Yes. Please do not try this at home.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L089",
+   "scene": "S10",
+   "speaker": "NARRATOR",
+   "text": "Speaking of dying: how did Egyptians get ready for the afterlife? Warning, this part is gross.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L090",
+   "scene": "S10",
+   "speaker": "NARRATOR",
+   "text": "You needed your body in the afterlife, so embalmers made a mummy, in a process that could take about seventy days.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [
+    "seventy"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L091",
+   "scene": "S10",
+   "speaker": "NARRATOR",
+   "text": "First, they pulled the brain out through the nose with a long hook, and threw it away. Then most organs came out through a cut in the side, into special jars.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "hook,",
+     "squelch"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L092",
+   "scene": "S10",
+   "speaker": "WORKER",
+   "text": "They threw away the brain?",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L093",
+   "scene": "S10",
+   "speaker": "VIZIER",
+   "text": "They kept the heart. They believed you think with your heart.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L094",
+   "scene": "S10",
+   "speaker": "WORKER",
+   "text": "That explains a lot of pharaohs.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L095",
+   "scene": "S10",
+   "speaker": "NARRATOR",
+   "text": "The body was dried with a natural salt called natron, then wrapped in layer after layer of linen, with protective amulets tucked between.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L096",
+   "scene": "S10",
+   "speaker": "NARRATOR",
+   "text": "In the afterlife, your heart was weighed against the feather of Ma'at. A heart heavy with wrongdoing was eaten by a monster that was part crocodile, part lion, and part hippo.",
+   "gap_before": 0.35,
+   "sfx": [
+    [
+     "feather",
+     "gong"
+    ],
+    [
+     "eaten",
+     "chomp"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L097",
+   "scene": "S10",
+   "speaker": "NARRATOR",
+   "text": "So be nice. Apparently, it's checked.",
+   "gap_before": 0.6,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L098",
+   "scene": "S11",
+   "speaker": "NARRATOR",
+   "text": "A few decades later came the pharaoh who became the very definition of a pharaoh: Ramesses the Second, Ramesses the Great. Mostly because he told everyone he was great. On every wall available.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [],
+   "gold": [
+    "Great."
+   ]
+  },
+  {
+   "id": "L099",
+   "scene": "S11",
+   "speaker": "RAMESSES",
+   "text": "Put my name on that temple.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L100",
+   "scene": "S11",
+   "speaker": "VIZIER",
+   "text": "Your Majesty, that temple was built by a different king.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L101",
+   "scene": "S11",
+   "speaker": "RAMESSES",
+   "text": "Then put my name on it bigger.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "bigger.",
+     "chisel"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L102",
+   "scene": "S11",
+   "speaker": "NARRATOR",
+   "text": "Ramesses became king around 1279 BC. Five years later he marched north to fight the Hittite Empire at the city of Kadesh, in what is now Syria, in one of the biggest chariot battles ever fought.",
+   "gap_before": 0.45,
+   "sfx": [
+    [
+     "chariot",
+     "horses"
+    ]
+   ],
+   "red": [
+    "1279"
+   ],
+   "gold": [
+    "Kadesh,"
+   ]
+  },
+  {
+   "id": "L103",
+   "scene": "S11",
+   "speaker": "NARRATOR",
+   "text": "And he walked straight into a Hittite ambush. His army was strung out, one division was smashed, and for a moment it looked like a disaster.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "ambush.",
+     "clash"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L104",
+   "scene": "S11",
+   "speaker": "SOLDIER",
+   "text": "Sir! The Hittites are behind us! And in front of us! And kind of everywhere!",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L105",
+   "scene": "S11",
+   "speaker": "RAMESSES",
+   "text": "Excellent. Then we can attack in any direction.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L106",
+   "scene": "S11",
+   "speaker": "NARRATOR",
+   "text": "Ramesses fought his way out, reinforcements arrived just in time, and in the end neither side really won. Kadesh stayed Hittite.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L107",
+   "scene": "S11",
+   "speaker": "NARRATOR",
+   "text": "So naturally, Ramesses went home and covered temple walls with the story of how he had personally won the whole battle.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L108",
+   "scene": "S11",
+   "speaker": "SOLDIER",
+   "text": "Sir, didn't we sort of... not win?",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L109",
+   "scene": "S11",
+   "speaker": "RAMESSES",
+   "text": "Carve faster.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "faster.",
+     "chisel"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L110",
+   "scene": "S11",
+   "speaker": "NARRATOR",
+   "text": "Historians call this propaganda. Ramesses called it home decoration.",
+   "gap_before": 0.5,
+   "sfx": [
+    [
+     "decoration.",
+     "ding"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L111",
+   "scene": "S11",
+   "speaker": "NARRATOR",
+   "text": "About sixteen years later, Egypt and the Hittites signed one of the earliest peace treaties that still survives. A replica hangs at the United Nations.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L112",
+   "scene": "S11",
+   "speaker": "NARRATOR",
+   "text": "And Ramesses kept going: sixty-six years on the throne, more than a hundred children, and Abu Simbel, with four twenty-metre statues of himself carved out of a mountain.",
+   "gap_before": 0.35,
+   "sfx": [
+    [
+     "Abu",
+     "choir"
+    ]
+   ],
+   "red": [
+    "sixty-six"
+   ],
+   "gold": [
+    "hundred"
+   ]
+  },
+  {
+   "id": "L113",
+   "scene": "S11",
+   "speaker": "WORKER",
+   "text": "A hundred children. Who's carving all those birthday cards?",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L114",
+   "scene": "S11",
+   "speaker": "RAMESSES",
+   "text": "Name them all after me. It saves time.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L115",
+   "scene": "S11",
+   "speaker": "NARRATOR",
+   "text": "Most Egyptians had never known another pharaoh. Ramesses wasn't just the king. He was the weather.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L116",
+   "scene": "S12",
+   "speaker": "NARRATOR",
+   "text": "But after Ramesses, the good times started running out. Around 1200 BC the whole eastern Mediterranean slid into the Late Bronze Age Collapse. Empires fell, cities burned, trade fell apart.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [
+    "1200"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L117",
+   "scene": "S12",
+   "speaker": "NARRATOR",
+   "text": "Egypt was attacked by mysterious raiders known as the Sea Peoples. Ramesses the Third defeated them, but the victory was expensive.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "Sea",
+     "waves"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L118",
+   "scene": "S12",
+   "speaker": "SOLDIER",
+   "text": "We won!",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L119",
+   "scene": "S12",
+   "speaker": "VIZIER",
+   "text": "We also spent everything.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L120",
+   "scene": "S12",
+   "speaker": "NARRATOR",
+   "text": "So expensive that around 1157 BC, the government failed to deliver food rations to the royal tomb builders of Deir el-Medina. So the workers put down their tools, walked off the job, and sat down behind a temple.",
+   "gap_before": 0.35,
+   "sfx": [
+    [
+     "tools,",
+     "clatter"
+    ]
+   ],
+   "red": [
+    "1157"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L121",
+   "scene": "S12",
+   "speaker": "NARRATOR",
+   "text": "It's the earliest recorded strike in history. A scribe wrote it all down on papyrus, including the workers' words to the officials: We are hungry.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": [
+    "strike"
+   ]
+  },
+  {
+   "id": "L122",
+   "scene": "S12",
+   "speaker": "WORKER",
+   "text": "Finally! Someone wrote down my feelings!",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L123",
+   "scene": "S12",
+   "speaker": "VIZIER",
+   "text": "Pay them. Pay them now. Please.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L124",
+   "scene": "S12",
+   "speaker": "NARRATOR",
+   "text": "They got their grain eventually. But over the next centuries Egypt was ruled by Libyans, Nubians, Assyrian invaders, and then Persians. It just kept getting new management.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L125",
+   "scene": "S13",
+   "speaker": "NARRATOR",
+   "text": "In 332 BC, Alexander the Great showed up. Egyptians were tired of Persian rule, so they more or less welcomed him. He was declared pharaoh, founded a city on the coast and, very modestly, named it Alexandria.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [
+    "332"
+   ],
+   "gold": [
+    "Alexander"
+   ]
+  },
+  {
+   "id": "L126",
+   "scene": "S13",
+   "speaker": "NARRATOR",
+   "text": "When he died young, his generals split his empire. One of them, Ptolemy, took Egypt and started a Greek royal family that ruled for nearly three hundred years.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L127",
+   "scene": "S13",
+   "speaker": "NARRATOR",
+   "text": "Alexandria became one of the greatest cities in the world, with a gigantic lighthouse called the Pharos and a famous library stuffed with scrolls.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "Pharos",
+     "choir"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L128",
+   "scene": "S13",
+   "speaker": "SOLDIER",
+   "text": "So the pharaohs are Greek now?",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L129",
+   "scene": "S13",
+   "speaker": "VIZIER",
+   "text": "Greek pharaohs, Egyptian crowns, Greek paperwork. Keep up.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L130",
+   "scene": "S13",
+   "speaker": "NARRATOR",
+   "text": "It's also the era of the Rosetta Stone: a decree from 196 BC carved in hieroglyphs, in a later Egyptian script called Demotic, and in Greek. Two thousand years later, it helped scholars finally crack hieroglyphs.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [
+    "196"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L131",
+   "scene": "S13",
+   "speaker": "NARRATOR",
+   "text": "Meanwhile, the Ptolemies had a family tradition of marrying their siblings, murdering their siblings, and occasionally both.",
+   "gap_before": 0.4,
+   "sfx": [
+    [
+     "both.",
+     "uhoh"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L132",
+   "scene": "S14",
+   "speaker": "NARRATOR",
+   "text": "Which brings us to the last active ruler of ancient Egypt: Cleopatra the Seventh.",
+   "gap_before": 0.7,
+   "sfx": [],
+   "red": [],
+   "gold": [
+    "Cleopatra"
+   ]
+  },
+  {
+   "id": "L133",
+   "scene": "S14",
+   "speaker": "NARRATOR",
+   "text": "Cleopatra had a problem. Rome was getting stronger, Egypt was getting weaker, and her political situation was about as stable as a chair with three legs.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L134",
+   "scene": "S14",
+   "speaker": "NARRATOR",
+   "text": "Luckily, she was brilliant. She spoke many languages, and was reportedly the first Ptolemy to learn Egyptian.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L135",
+   "scene": "S14",
+   "speaker": "CLEOPATRA",
+   "text": "Three centuries in Egypt, and my family never learned the language. Like tourists who refuse to learn the word for thank you.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L136",
+   "scene": "S14",
+   "speaker": "CLEOPATRA",
+   "text": "Rome wants our grain, our gold, and our obedience. They can have one. Possibly.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L137",
+   "scene": "S14",
+   "speaker": "NARRATOR",
+   "text": "In 48 BC, Julius Caesar arrived in Alexandria, in the middle of Cleopatra's power struggle with her own brother. She allied with Caesar, won back her throne, and they had a son, Caesarion.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [
+    "48"
+   ],
+   "gold": [
+    "Caesar"
+   ]
+  },
+  {
+   "id": "L138",
+   "scene": "S14",
+   "speaker": "CAESAR",
+   "text": "So, I help you, and Rome gains a very rich friend.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L139",
+   "scene": "S14",
+   "speaker": "CLEOPATRA",
+   "text": "And Egypt gains a very large army. Everybody wins. Mostly me.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L140",
+   "scene": "S14",
+   "speaker": "NARRATOR",
+   "text": "Then, in 44 BC, Caesar was assassinated in Rome, and Cleopatra needed a new Roman partner: Mark Antony, one of Rome's most powerful generals. They became allies, then partners, and had three children.",
+   "gap_before": 0.4,
+   "sfx": [
+    [
+     "assassinated",
+     "stab"
+    ]
+   ],
+   "red": [
+    "44"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L141",
+   "scene": "S14",
+   "speaker": "ANTONY",
+   "text": "You, me, and the whole eastern half of the Roman world. What could go wrong?",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L142",
+   "scene": "S14",
+   "speaker": "VIZIER",
+   "text": "He said it. He actually said it.",
+   "gap_before": 0.4,
+   "sfx": [
+    [
+     "said",
+     "recordscratch"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L143",
+   "scene": "S14",
+   "speaker": "NARRATOR",
+   "text": "What went wrong was Octavian, Caesar's adopted heir, who wanted Rome for himself and convinced the Romans that Antony had gone completely Egyptian.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L144",
+   "scene": "S14",
+   "speaker": "NARRATOR",
+   "text": "In 31 BC they met in a huge naval battle at Actium, off the coast of Greece. Octavian's fleet won. Antony and Cleopatra fell back to Alexandria, and a year later Octavian's army arrived.",
+   "gap_before": 0.4,
+   "sfx": [
+    [
+     "Actium,",
+     "clash"
+    ]
+   ],
+   "red": [
+    "31"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L145",
+   "scene": "S14",
+   "speaker": "OCTAVIAN",
+   "text": "Egypt now belongs to Rome.",
+   "gap_before": 0.5,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L146",
+   "scene": "S14",
+   "speaker": "NARRATOR",
+   "text": "Antony took his own life. Soon after, rather than be paraded through Rome as a prisoner, Cleopatra did the same. Ancient writers said it was the bite of a cobra, though historians still aren't sure.",
+   "gap_before": 0.6,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L147",
+   "scene": "S14",
+   "speaker": "NARRATOR",
+   "text": "In 30 BC, Egypt became a province of Rome. After three thousand years, the age of the pharaohs was over.",
+   "gap_before": 0.5,
+   "sfx": [
+    [
+     "over.",
+     "bell"
+    ]
+   ],
+   "red": [
+    "30"
+   ],
+   "gold": []
+  },
+  {
+   "id": "L148",
+   "scene": "S15",
+   "speaker": "NARRATOR",
+   "text": "So, the recap. The Egyptians united a kingdom, built mountains by hand, staged the first recorded strike, signed one of the earliest surviving peace treaties, and kept one civilisation going for three thousand years.",
+   "gap_before": 0.9,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L149",
+   "scene": "S15",
+   "speaker": "NARRATOR",
+   "text": "The pharaohs are long gone. But the pyramids are still standing, the Sphinx is still staring, and we're still talking about them. Exactly like Khufu wanted.",
+   "gap_before": 0.35,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L150",
+   "scene": "S15",
+   "speaker": "KHUFU",
+   "text": "Told you.",
+   "gap_before": 0.4,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L151",
+   "scene": "S15",
+   "speaker": "VIZIER",
+   "text": "Yes, Your Majesty. You were right.",
+   "gap_before": 0.3,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L152",
+   "scene": "S15",
+   "speaker": "KHUFU",
+   "text": "Write that down. On a pyramid.",
+   "gap_before": 0.3,
+   "sfx": [
+    [
+     "pyramid.",
+     "sting"
+    ]
+   ],
+   "red": [],
+   "gold": []
+  },
+  {
+   "id": "L153",
+   "scene": "S15",
+   "speaker": "NARRATOR",
+   "text": "And that's the entire history of ancient Egypt. Thanks for watching.",
+   "gap_before": 0.6,
+   "sfx": [],
+   "red": [],
+   "gold": []
+  }
+ ]
+}

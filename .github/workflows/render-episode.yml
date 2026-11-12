@@ -1,0 +1,88 @@
+name: render-episode
+# Renders a full 16:9 episode on GitHub Actions: Kokoro TTS + procedural music/SFX, chunked frame render, concat, publish.
+on:
+  push:
+    branches: [egypt-episode]
+    paths: ['episodes/**', 'engine/**', '.github/workflows/render-episode.yml']
+  workflow_dispatch:
+    inputs:
+      episode: { description: 'episode folder', default: 'egypt' }
+permissions:
+  contents: write
+env:
+  EP: ${{ github.event.inputs.episode || 'egypt' }}
+  CHUNKS: 12
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Install Kokoro-82M (free TTS) + deps
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng ffmpeg
+          pip install -q "kokoro>=0.9.4" soundfile scipy numpy
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Narration (tts.py)
+        run: python engine/tts.py episodes/$EP build/$EP
+      - name: Music + SFX + mix (audio.py), loudness -15 LUFS
+        run: |
+          python engine/audio.py episodes/$EP build/$EP
+          ffmpeg -y -v error -i build/$EP/mix_raw.wav -af loudnorm=I=-15:TP=-1.5:LRA=11 -ar 48000 -c:a aac -b:a 192k build/$EP/mix.m4a
+          python -c "import json;print('duration',json.load(open('build/$EP/timeline.json'))['duration'])"
+      - uses: actions/upload-artifact@v4
+        with: { name: audio, path: "build/${{ env.EP }}/timeline.json\nbuild/${{ env.EP }}/mix.m4a\nbuild/${{ env.EP }}/voice.wav" }
+  frames:
+    needs: audio
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix: { chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - uses: actions/download-artifact@v4
+        with: { name: audio, path: build/audio }
+      - name: Install Playwright + ffmpeg
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install -q playwright
+          test -x /usr/bin/google-chrome || (python -m playwright install --with-deps chromium && sudo ln -sf $(ls -d ~/.cache/ms-playwright/chromium-*/chrome-linux/chrome | head -1) /usr/bin/google-chrome)
+      - name: Render chunk ${{ matrix.chunk }}
+        run: |
+          TL=$(ls build/audio/*/timeline.json build/audio/timeline.json 2>/dev/null | head -1)
+          N=$(python -c "import json;print(int(json.load(open('$TL'))['duration']*30))")
+          A=$(( N * ${{ matrix.chunk }} / CHUNKS )); B=$(( N * (${{ matrix.chunk }} + 1) / CHUNKS ))
+          echo "frames $A..$B of $N"
+          python engine/render.py episodes/$EP "$TL" build/chunk_${{ matrix.chunk }}.mp4 --page episode.html --size 1920x1080 --from-frame $A --to-frame $B --crf 21
+      - uses: actions/upload-artifact@v4
+        with: { name: "chunk-${{ matrix.chunk }}", path: "build/chunk_${{ matrix.chunk }}.mp4" }
+  publish:
+    needs: frames
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { path: build/dl }
+      - name: Concat chunks + mux audio
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          for i in $(seq 0 $((CHUNKS-1))); do echo "file '$PWD/build/dl/chunk-$i/chunk_$i.mp4'"; done > build/list.txt
+          M=$(find build/dl/audio -name mix.m4a | head -1)
+          ffmpeg -y -v error -f concat -safe 0 -i build/list.txt -i "$M" -map 0:v -map 1:a -c:v copy -c:a copy -shortest -movflags +faststart build/$EP.mp4
+          ls -lh build/$EP.mp4
+          ffmpeg -y -v error -ss 120 -i build/$EP.mp4 -frames:v 1 -vf scale=960:-2 renders/$EP-thumb.jpg
+      - name: Publish (release asset; MP4 is larger than GitHub's 100 MB file limit)
+        env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: |
+          TAG=$EP-$(date +%Y%m%d-%H%M)
+          gh release create "$TAG" build/$EP.mp4 --title "$EP episode render $TAG" --notes "Rendered by GitHub Actions run ${{ github.run_id }} (commit ${{ github.sha }})." --target ${{ github.sha }}
+          echo "https://github.com/${{ github.repository }}/releases/download/$TAG/$EP.mp4" > renders/$EP-latest.txt
+          git config user.name "render-bot"; git config user.email "render-bot@users.noreply.github.com"
+          git add renders/$EP-latest.txt renders/$EP-thumb.jpg
+          git commit -m "render: $EP ($TAG) [skip ci]" && git push origin HEAD:${{ github.ref_name }}

@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:Poppins;font-weight:700;src:url(fonts/Poppins-Bold.ttf)}body{margin:0}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script src="core.js"></script><script src="chars.js"></script><script src="world.js"></script>
+<script>
+window.draw = () => {
+  const ctx = document.getElementById('c').getContext('2d');
+  const g = ctx.createLinearGradient(0,0,0,H); g.addColorStop(0,'#EFE8D9'); g.addColorStop(1,'#D9CEB7'); ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+  const label = (t, x, y, sz=34, c='#3a3026') => { ctx.font=`700 ${sz}px Poppins`; ctx.fillStyle=c; ctx.textAlign='center'; ctx.fillText(t, x, y); };
+  label('CAST — The Tower That Couldn\'t Stand Up Straight', 660, 70, 36, '#5a4a38');
+  ctx.fillStyle='#C9A77A'; ctx.fillRect(0,860,1330,220); ctx.fillStyle='rgba(0,0,0,.06)'; ctx.fillRect(0,860,1330,6);
+  const main = [[CAST.RANIERI,{armL:'hip',armR:'hip',turn:.45},'CONSUL RANIERI','Pisan official · stout · red chaperon'],
+                [CAST.GHERARDO,{armL:'hip',armR:'tool',turn:-.4},'MASTRO GHERARDO','master mason · leather apron'],
+                [CAST.WORKER,{armL:'down',armR:'belt',turn:.4},'WORKER','labourer · cloth headband']];
+  main.forEach(([ch,o,n,d],i)=>{ const x=230+i*430; drawCharacter(ctx,ch,{...o,x,y:930,s:80,t:.5,blink:false}); label(n,x,1000,30); label(d,x,1040,22,'#7a6a58'); });
+  // expression close-ups
+  ctx.fillStyle='rgba(255,255,255,.35)'; ctx.fillRect(1330,110,560,920); label('EXPRESSIONS', 1610, 160, 30, '#5a4a38');
+  const ex = [[CAST.RANIERI,'squint','flat','skeptical'],[CAST.RANIERI,'shock','open','shocked'],[CAST.GHERARDO,'worried','wobbly','nervous',true],[CAST.GHERARDO,'smug','smirk','smug'],[CAST.WORKER,'shock','open','surprised'],[CAST.WORKER,'proud','smile','proud']];
+  ex.forEach(([ch,e,m,l,sw],i)=>{ const cx=1470+(i%2)*280, cy=330+Math.floor(i/2)*290;
+    ctx.save(); ctx.beginPath(); ctx.roundRect(cx-125,cy-130,250,240,20); ctx.fillStyle='#E7DFCD'; ctx.fill(); ctx.clip();
+    drawCharacter(ctx,ch,{x:cx,y:cy+7.65*52+5,s:52,eyes:e,mouth:m,t:.4,blink:false,sweat:sw,armL:'down',armR:'down',shadow:false,turn:(i%2?-.4:.4)}); ctx.restore();
+    ctx.lineWidth=3; ctx.strokeStyle='#9a8a74'; ctx.beginPath(); ctx.roundRect(cx-125,cy-130,250,240,20); ctx.stroke(); label(l,cx,cy+140,24); });
+  
+};
+document.fonts.load('700 30px Poppins').then(()=>{ window.draw(); window.DONE = true; });
+</script></body></html>

@@ -1,0 +1,26 @@
+{
+  "title": "The Tower That Couldn't Stand Up Straight",
+  "format": "short-9x16",
+  "fps": 30,
+  "size": [1080, 1920],
+  "voices": {
+    "NARRATOR": { "voice": "am_michael", "speed": 1.2, "lang": "a" },
+    "RANIERI": { "voice": "bm_george", "speed": 1.05, "lang": "b" },
+    "GHERARDO": { "voice": "am_puck", "speed": 0.95, "lang": "a" }
+  },
+  "lines": [
+    { "id": "L1", "speaker": "NARRATOR", "text": "In 1173, Pisa started building the most beautiful bell tower in Italy.", "red": ["1173"], "gold": ["beautiful"] },
+    { "id": "L2", "speaker": "NARRATOR", "text": "Five years and three floors later, it was already leaning.", "red": ["leaning"] },
+    { "id": "L3", "speaker": "RANIERI", "text": "Is it supposed to do that?", "gap_before": 0.15 },
+    { "id": "L4", "speaker": "GHERARDO", "text": "Uh... yes?", "gap_before": 0.3 },
+    { "id": "L5", "speaker": "NARRATOR", "text": "They'd built it on soft clay. Basically, a marble tower on pudding.", "gap_before": 0.2, "red": ["clay"], "gold": ["pudding"] },
+    { "id": "L6", "speaker": "NARRATOR", "text": "So Pisa did the logical thing, and spent almost a century fighting its neighbours instead.", "red": ["century"], "tiny": ["instead"] },
+    { "id": "L7", "speaker": "NARRATOR", "text": "Which accidentally saved it, because the soil finally had time to settle.", "gold": ["saved"] },
+    { "id": "L8", "speaker": "NARRATOR", "text": "Later builders made the new floors taller on one side to fix the tilt.", "red": ["taller"] },
+    { "id": "L9", "speaker": "NARRATOR", "text": "So now it doesn't just lean. It's a banana.", "gap_before": 0.2, "gold": ["banana"] }
+  ],
+  "sources": [
+    "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa",
+    "https://www.newworldencyclopedia.org/entry/Leaning_Tower_of_Pisa"
+  ]
+}

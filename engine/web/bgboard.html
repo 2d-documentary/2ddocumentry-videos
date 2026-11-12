@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:Poppins;font-weight:700;src:url(fonts/Poppins-Bold.ttf)}body{margin:0}</style></head>
+<body><canvas id="c" width="1920" height="720"></canvas>
+<script src="core.js"></script><script src="chars.js"></script><script src="world.js"></script><script src="bg.js"></script>
+<script>
+const q = new URLSearchParams(location.search);
+window.draw = async () => {
+  await loadGeo();
+  const out = document.getElementById('c').getContext('2d');
+  const names = ['piazza', 'towerBase', 'street', 'walls', 'map', 'piazzaChars'];
+  window.FULL = {};
+  for (let i = 0; i < names.length; i++) {
+    const c = document.createElement('canvas'); c.width = 1920; c.height = 1080; const ctx = c.getContext('2d');
+    if (names[i] === 'piazzaChars') { SCENES.piazza(ctx, 0, { lean: .08 }); drawCharacter(ctx, CAST.RANIERI, { x: 620, y: 1060, s: 70, t: .5, blink: false, eyes: 'squint', mouth: 'flat', armL: 'hip', armR: 'point' }); drawCharacter(ctx, CAST.GHERARDO, { x: 1080, y: 1070, s: 66, t: .5, blink: false, eyes: 'worried', mouth: 'wobbly', armL: 'palmUp', armR: 'palmUp', sweat: true }); }
+    else SCENES[names[i]](ctx, 0);
+    FULL[names[i]] = c.toDataURL('image/jpeg', .9);
+    out.drawImage(c, (i % 3) * 640, Math.floor(i / 3) * 360, 640, 360);
+  }
+};
+document.fonts.load('700 30px Poppins').then(() => window.draw()).then(() => { window.DONE = true; });
+</script></body></html>

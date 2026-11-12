@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:Poppins;font-weight:700;src:url(fonts/Poppins-Bold.ttf)}body{margin:0}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script src="core.js"></script><script src="chars.js"></script>
+<script>
+window.draw = () => { const ctx = document.getElementById('c').getContext('2d'); ctx.fillStyle = '#EFE6D2'; ctx.fillRect(0, 0, 1920, 1080);
+  const L = ['NARMER','KHUFU','HATSHEPSUT','AKHENATEN','TUT','RAMESSES','CLEOPATRA','VIZIER','SOLDIER','WORKER_EG','CAESAR','ANTONY','OCTAVIAN'];
+  L.forEach((k, i) => { const x = 110 + (i % 7) * 280, y = i < 7 ? 500 : 1000; drawCharacter(ctx, CAST[k], { x, y, s: 52, t: .5, blink: false, armL: k === 'SOLDIER' ? 'down' : 'hip', armR: ['SOLDIER','NARMER','TUT'].includes(k) ? 'tool' : 'down' }); ctx.font = '700 24px Poppins'; ctx.fillStyle = '#3a3026'; ctx.textAlign = 'center'; ctx.fillText(CAST[k].name, x, y + 40); });
+  window.DONE = true; };
+document.fonts.load('700 30px Poppins').then(draw);
+</script></body></html>
