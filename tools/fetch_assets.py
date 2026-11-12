@@ -156,55 +156,84 @@ def resolve_chronam(page):
     if not m:
         raise FetchError("need a newspaper PAGE url (…/ed-1/seq-1/)")
     base = "https://chroniclingamerica.loc.gov" + m.group(1)
+    lccn, date, ed, seq = re.search(r"/lccn/([^/]+)/([^/]+)/(ed-\d+)/seq-(\d+)", m.group(1)).groups()
     return {"url": base + ".jp2", "fallback": base + ".pdf", "ocr_url": base + "/ocr.txt",
+            # Chronicling America is moving to www.loc.gov; this is the same page there
+            "then": f"https://www.loc.gov/resource/{lccn}/{date}/{ed}/?sp={seq}",
             "license": "No known restrictions (Chronicling America, Library of Congress)",
             "attribution": "Library of Congress, Chronicling America"}
 
 
 def resolve_loc(page):
     p = urllib.parse.urlsplit(page)
+    path = p.path
+    m = re.match(r"/pictures/(?:item|collection/[^/]+/item)/([^/]+)", path)
+    if m:  # legacy Prints & Photographs urls -> current item page
+        path = f"/item/{m.group(1)}/"
     q = urllib.parse.parse_qs(p.query)
     q["fo"] = ["json"]
-    api = urllib.parse.urlunsplit((p.scheme, p.netloc, p.path, urllib.parse.urlencode(q, doseq=True), ""))
+    api = urllib.parse.urlunsplit(("https", "www.loc.gov", path, urllib.parse.urlencode(q, doseq=True), ""))
     j = get_json(api)
     item = j.get("item", {}) or {}
-    best = None
-    for res in j.get("resources", []) or []:
-        for group in res.get("files", []) or []:
-            for f in group if isinstance(group, list) else [group]:
-                mt = (f.get("mimetype") or "").lower()
-                if not (mt.startswith("image/") or mt == "application/pdf"):
-                    continue
-                size = f.get("size") or 0
-                if size and size > MAX_BYTES:
-                    continue
-                rank = (mt in ("image/jpeg", "image/png"), mt.startswith("image/"),
-                        (f.get("width") or 0) * (f.get("height") or 0), -size)
-                if best is None or rank > best[0]:
-                    best = (rank, f["url"])
-    if not best:
-        imgs = [u for u in (item.get("image_url") or j.get("image_url") or []) if isinstance(u, str)]
-        if not imgs:
-            raise FetchError("no downloadable image on this loc.gov page")
-        best = (None, imgs[-1].split("#")[0])
-    url = best[1]
-    if url.startswith("//"):
-        url = "https:" + url
+
+    # Collect every media url in the response, then rank: biggest usable image first.
+    found = {}
+
+    def walk(o, ctx=None):
+        if isinstance(o, dict):
+            if isinstance(o.get("url"), str):
+                walk_url(o["url"], o)
+            for v in o.values():
+                walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                walk(v)
+        elif isinstance(o, str):
+            walk_url(o, None)
+
+    def walk_url(u, meta):
+        u = ("https:" + u) if u.startswith("//") else u
+        if not re.match(r"https?://", u):
+            return
+        base = u.split("#")[0]
+        if not re.search(r"\.(jpe?g|png|gif|tiff?|jp2|pdf)$", base, re.I) or "/service/" not in base and "tile.loc.gov" not in base:
+            return
+        w = 0
+        mw = re.search(r"#.*w=(\d+)", u)
+        if meta and meta.get("width"):
+            w = int(meta.get("width") or 0)
+        elif mw:
+            w = int(mw.group(1))
+        size = int((meta or {}).get("size") or 0)
+        if size > MAX_BYTES:
+            return
+        ext = base.rsplit(".", 1)[-1].lower()
+        # LoC file suffixes: t=thumb, r=reference, v=larger jpeg, u=master tiff
+        hint = {"t": 0, "r": 1, "v": 2, "u": 3}.get(re.sub(r"\.[a-z0-9]+$", "", base)[-1:], 1)
+        score = (ext in ("tif", "tiff", "jp2"), w or hint * 1000, ext == "jpg" or ext == "jpeg")
+        if base not in found or score > found[base]:
+            found[base] = score
+
+    walk(j.get("resources", []))
+    walk(item)
+    if not found:
+        raise FetchError("no downloadable image on this loc.gov page")
+    ranked = [u for u, _ in sorted(found.items(), key=lambda kv: kv[1], reverse=True)]
     rights = item.get("rights_advisory") or item.get("rights") or j.get("rights") or ""
     if isinstance(rights, list):
         rights = " ".join(map(str, rights))
     creator = item.get("contributor_names") or item.get("creators") or []
     if isinstance(creator, list):
         creator = "; ".join(c if isinstance(c, str) else c.get("title", "") for c in creator[:3])
-    out = {"url": url, "license": strip_tags(str(rights))[:300] or None,
+    out = {"url": ranked[0], "alts": ranked[1:4], "license": strip_tags(str(rights))[:300] or None,
            "attribution": ", ".join(x for x in [strip_tags(str(creator)), "Library of Congress"] if x)}
-    ocr = [r.get("fulltext_file") for r in j.get("resources", []) or [] if r.get("fulltext_file")]
+    ocr = [r.get("fulltext_file") for r in j.get("resources", []) or [] if isinstance(r, dict) and r.get("fulltext_file")]
     if ocr:
         out["ocr_url"] = ocr[0]
     return out
 
 
-def resolve_archive(page, wanted_file=None):
+def resolve_archive(page, wanted_file=None, category=""):
     m = re.search(r"archive\.org/(?:details|download)/([^/?#]+)(?:/([^?#]+))?", page)
     if not m:
         raise FetchError("not an archive.org item url")
@@ -216,11 +245,17 @@ def resolve_archive(page, wanted_file=None):
     if path_file:
         chosen = urllib.parse.unquote(path_file)
     else:
-        ok = [f for f in files if re.search(r"\.(jpe?g|png|tiff?|jp2|pdf|mp4)$", f.get("name", ""), re.I)
-              and f.get("source") == "original" and int(f.get("size") or 0) <= MAX_BYTES]
+        size = lambda f: int(f.get("size") or 0)
+        fits = [f for f in files if 0 < size(f) <= MAX_BYTES and not re.search(r"(_thumb|__ia_thumb|_itemimage)\.", f.get("name", ""))]
+        if category in ("footage", "audio"):
+            pat = r"\.(mp4|webm|ogv)$" if category == "footage" else r"\.(mp3|ogg|wav|flac)$"
+            ok = [f for f in fits if re.search(pat, f.get("name", ""), re.I)]
+        else:
+            ok = [f for f in fits if re.search(r"\.(jpe?g|png|tiff?|jp2|pdf)$", f.get("name", ""), re.I)
+                  and f.get("source") == "original"]
         if not ok:
-            raise FetchError("no single media file under 90 MB; name the file in the manifest 'file' field")
-        chosen = max(ok, key=lambda f: int(f.get("size") or 0))["name"]
+            raise FetchError("no suitable file under 90 MB in this item; name the exact file in the manifest 'file' field")
+        chosen = max(ok, key=size)["name"]
     md = meta.get("metadata", {})
     lic = md.get("licenseurl") or md.get("rights") or None
     return {"url": f"https://archive.org/download/{ident}/{urllib.parse.quote(chosen)}",
@@ -240,7 +275,7 @@ def resolve(asset):
     if host.endswith("loc.gov") and not re.search(r"\.(jpe?g|png|tiff?|jp2|pdf|gif)$", page, re.I):
         return resolve_loc(page)
     if host.endswith("archive.org"):
-        return resolve_archive(page, asset.get("file"))
+        return resolve_archive(page, asset.get("file"), asset.get("category", ""))
     return {"url": page}
 
 
@@ -310,14 +345,38 @@ def preview(data, path):
 
 def fetch_one(asset, store):
     r = resolve(asset)
-    url, data, ctype = r["url"], None, ""
-    try:
-        data, ctype, url = http_get(url)
-    except FetchError:
-        if not r.get("fallback"):
-            raise
-        url = r["fallback"]
-        data, ctype, url = http_get(url)
+    cands = [r["url"]] + list(r.get("alts") or []) + ([r["fallback"]] if r.get("fallback") else [])
+    data, ctype, url, err = None, "", r["url"], None
+    html_page = None
+    for c in cands:
+        try:
+            d, t, u = http_get(c)
+        except FetchError as e:
+            err = e
+            if "HTTP 429" in str(e):
+                break  # rate-limited: trying more urls on the same host only makes it worse
+            continue
+        if is_media(t, d):
+            data, ctype, url = d, t, u
+            break
+        html_page = html_page or (d, t, u)
+        err = FetchError(f"link returned a web page, not a file ('{t}')")
+    if data is None and r.get("then") and "HTTP 429" not in str(err):
+        r2 = resolve_loc(r["then"])
+        r = {**r, **{k: v for k, v in r2.items() if v}}
+        for c in [r2["url"]] + list(r2.get("alts") or []):
+            try:
+                d, t, u = http_get(c)
+            except FetchError as e:
+                err = e
+                continue
+            if is_media(t, d):
+                data, ctype, url = d, t, u
+                break
+    if data is None and html_page:
+        data, ctype, url = html_page
+    if data is None:
+        raise err
     if not is_media(ctype, data):
         if ctype.startswith("text/html"):
             img = og_image(data, url)
