@@ -1,0 +1,674 @@
+{
+ "voices": {
+  "NARRATOR": "am_michael",
+  "CITIZEN": "am_puck",
+  "CITIZEN2": "am_eric",
+  "SENATOR": "bm_george",
+  "GENERAL": "am_onyx",
+  "ROMULUS": "am_fenrir",
+  "REMUS": "am_liam",
+  "CAESAR": "bm_lewis",
+  "AUGUSTUS": "bm_daniel",
+  "FEMALE": "af_heart"
+ },
+ "scenes": [
+  {
+   "scene": 1,
+   "title": "A small city with a big ego",
+   "plan": [
+    "00:00",
+    "01:00"
+   ],
+   "onscreen": "753 BC — THE LEGENDARY FOUNDING OF ROME",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "Imagine a tiny settlement beside a river in ancient Italy. No skyscrapers, no highways, no shopping malls. Just farms, huts, animals, and people trying to survive."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "But this little settlement had a very big dream. It wanted to rule the world. And somehow, it actually got pretty close."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "According to Roman legend, Rome was founded by twin brothers, Romulus and Remus, who were supposedly raised by a wolf."
+    },
+    {
+     "who": "ROMULUS",
+     "text": "This land is perfect. We shall build a great city here."
+    },
+    {
+     "who": "REMUS",
+     "text": "Great. And who exactly is going to pay for it?"
+    },
+    {
+     "who": "ROMULUS",
+     "text": "We shall figure that out later."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "That was the beginning of Rome's legendary founding story. Their argument eventually turned violent, and Romulus became the sole founder in the traditional legend. The traditional founding date is 753 BC, although the story itself is not confirmed history."
+    }
+   ]
+  },
+  {
+   "scene": 2,
+   "title": "The kings who thought they owned everything",
+   "plan": [
+    "01:00",
+    "02:05"
+   ],
+   "onscreen": "509 BC — THE ROMAN REPUBLIC",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "Rome initially had kings. But eventually, the Romans became tired of monarchy. Especially when their last king, Tarquinius Superbus, became notorious for his harsh and arrogant rule."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "He thinks he owns the entire city."
+    },
+    {
+     "who": "SENATOR",
+     "text": "He is the king. Technically, he does own quite a lot of it."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Well, technically, I hate this government."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Traditionally, in 509 BC, the Romans overthrew their monarchy and established a Republic."
+    },
+    {
+     "who": "SENATOR",
+     "text": "From now on, Rome will be governed by elected officials and the Senate!"
+    },
+    {
+     "who": "CITIZEN",
+     "text": "So ordinary people finally get power?"
+    },
+    {
+     "who": "SENATOR",
+     "text": "Let's not get too excited."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The Republic introduced political institutions, elected magistrates, and a powerful Senate. But wealthy families still held enormous influence. In other words, Rome had invented a new political system, but the rich had somehow found the VIP entrance."
+    }
+   ]
+  },
+  {
+   "scene": 3,
+   "title": "Rome discovers expansion",
+   "plan": [
+    "02:05",
+    "03:10"
+   ],
+   "onscreen": "ROME EXPANDS ACROSS ITALY",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "Rome was no longer satisfied with being just another city. It wanted land, resources, influence, and security. And the Romans quickly discovered that military expansion could provide all four."
+    },
+    {
+     "who": "GENERAL",
+     "text": "Soldiers! We march at sunrise!"
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Again? Didn't we just finish a war?"
+    },
+    {
+     "who": "GENERAL",
+     "text": "Rome must expand!"
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Does Rome know about peaceful hobbies?"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Through wars, alliances, and political arrangements, Rome gradually established dominance across the Italian peninsula. Its military became increasingly organized and experienced."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Think of it like a small business that keeps opening new branches. Except Rome's expansion strategy involved legions, swords, and occasionally making the neighboring business disappear."
+    }
+   ]
+  },
+  {
+   "scene": 4,
+   "title": "Rome versus Carthage",
+   "plan": [
+    "03:10",
+    "05:00"
+   ],
+   "onscreen": "264–146 BC — THE PUNIC WARS",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "But Rome's ambitions soon brought it into conflict with another powerful civilization: Carthage."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Carthage was a wealthy trading power in North Africa. It had a powerful navy, extensive trade networks, and enormous influence across the Mediterranean."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Both civilizations wanted control of important territories and trade routes. Neither was particularly interested in sharing."
+    },
+    {
+     "who": "GENERAL",
+     "text": "Carthage controls the sea. We must challenge them."
+    },
+    {
+     "who": "SENATOR",
+     "text": "Then build a navy."
+    },
+    {
+     "who": "GENERAL",
+     "text": "We are famous for our armies, not our ships!"
+    },
+    {
+     "who": "SENATOR",
+     "text": "Then become famous for ships."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The First Punic War began in 264 BC. Rome had to rapidly develop its naval capabilities to compete with Carthage."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The Second Punic War brought one of history's most famous commanders into the picture: Hannibal."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "His army, including war elephants, crossed the Alps and invaded Italy."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Are those elephants?"
+    },
+    {
+     "who": "GENERAL",
+     "text": "Yes."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Why does the enemy have elephants?"
+    },
+    {
+     "who": "GENERAL",
+     "text": "Because apparently, normal armies weren't stressful enough."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Hannibal won several major victories, including the devastating Battle of Cannae in 216 BC. But Rome refused to surrender."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Eventually, Roman general Scipio Africanus defeated Hannibal at the Battle of Zama in 202 BC."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The Third Punic War ended with the destruction of Carthage in 146 BC."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Rome had defeated its greatest Mediterranean rival. Its path toward becoming a superpower was now wide open."
+    }
+   ]
+  },
+  {
+   "scene": 5,
+   "title": "Julius Caesar enters the chat",
+   "plan": [
+    "05:00",
+    "06:10"
+   ],
+   "onscreen": "49 BC — CAESAR CROSSES THE RUBICON",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "By the first century BC, Rome had become a vast republic with enormous wealth and military power. But success brought political competition, corruption, and ambitious leaders."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "One of those leaders was Julius Caesar."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "He became famous through his military campaigns in Gaul, expanding Roman control and gaining enormous popularity among his soldiers."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Have you heard about Caesar?"
+    },
+    {
+     "who": "CITIZEN2",
+     "text": "Of course. He's practically more famous than the Senate."
+    },
+    {
+     "who": "SENATOR",
+     "text": "That is exactly the problem."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Caesar's growing power frightened many senators. In 49 BC, he crossed the Rubicon River with his army, triggering a civil war."
+    },
+    {
+     "who": "GENERAL",
+     "text": "Once we cross, there is no turning back."
+    },
+    {
+     "who": "CAESAR",
+     "text": "Then let us cross."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Caesar defeated his rivals and became dictator. To his supporters, he was a brilliant leader. To his enemies, he was becoming dangerously powerful."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "So he's basically the boss now?"
+    },
+    {
+     "who": "SENATOR",
+     "text": "An extremely powerful boss who has stopped asking for permission."
+    }
+   ]
+  },
+  {
+   "scene": 6,
+   "title": "The Ides of March",
+   "plan": [
+    "06:10",
+    "06:55"
+   ],
+   "onscreen": "15 MARCH 44 BC — THE ASSASSINATION OF CAESAR",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "On March fifteenth, 44 BC, a group of senators assassinated Julius Caesar inside the Senate meeting place."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The conspirators claimed they were defending the Republic. But their actions plunged Rome into another struggle for power."
+    },
+    {
+     "who": "CAESAR",
+     "text": "What is this meeting about?"
+    },
+    {
+     "who": "SENATOR",
+     "text": "Just a few political concerns."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Caesar's death did not restore the Republic. It made the political crisis even worse."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "So they removed the most powerful man in Rome to save the Republic?"
+    },
+    {
+     "who": "CITIZEN2",
+     "text": "Yes."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "And did it work?"
+    },
+    {
+     "who": "CITIZEN2",
+     "text": "Not exactly."
+    }
+   ]
+  },
+  {
+   "scene": 7,
+   "title": "Augustus: the first emperor",
+   "plan": [
+    "06:55",
+    "07:55"
+   ],
+   "onscreen": "27 BC — AUGUSTUS BECOMES EMPEROR",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "After Caesar's assassination, another power struggle began. His adopted heir, Octavian, eventually defeated his rivals, including Mark Antony and Cleopatra."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "In 27 BC, Octavian received the title Augustus. He became the first Roman emperor, although he carefully preserved the appearance of traditional Republican institutions."
+    },
+    {
+     "who": "AUGUSTUS",
+     "text": "Rome needs stability."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Does that mean fewer civil wars?"
+    },
+    {
+     "who": "AUGUSTUS",
+     "text": "That is the plan."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Excellent. Can we also have lower taxes?"
+    },
+    {
+     "who": "AUGUSTUS",
+     "text": "Let's not ruin the moment."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Augustus began a long period of relative stability known as the Pax Romana, or Roman Peace."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Rome was entering a new era. The Republic had effectively become an empire."
+    }
+   ]
+  },
+  {
+   "scene": 8,
+   "title": "Rome at its greatest",
+   "plan": [
+    "07:55",
+    "09:05"
+   ],
+   "onscreen": "117 AD — ROME AT ITS GREATEST TERRITORIAL EXTENT",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "Over the following centuries, Rome grew into an enormous empire. At its greatest territorial extent, under Emperor Trajan around 117 AD, Roman territory stretched across three continents."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Roman roads connected distant provinces. Aqueducts carried fresh water. Public baths became social centers. Cities were filled with markets, temples, and impressive architecture."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The Colosseum, completed under Emperor Titus in 80 AD, became one of the most famous entertainment venues in the ancient world."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "So what do people do for entertainment?"
+    },
+    {
+     "who": "CITIZEN2",
+     "text": "Watch gladiators fight."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Anything less dangerous?"
+    },
+    {
+     "who": "CITIZEN2",
+     "text": "Yes. You can watch the gladiators from a safer seat."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Rome was wealthy, powerful, and technologically impressive for its time. But maintaining such a massive empire required enormous resources, strong leadership, and constant military attention."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "An empire can look unstoppable from the outside. But sometimes the biggest problems are already inside."
+    }
+   ]
+  },
+  {
+   "scene": 9,
+   "title": "The emperors get weird",
+   "plan": [
+    "09:05",
+    "10:00"
+   ],
+   "onscreen": "POWER CAN BE A VERY STRANGE THING",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "Of course, not every Roman emperor was a brilliant administrator. Some became famous for their unusual personalities and controversial behavior."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Caligula and Nero are among the most infamous emperors in Roman history. Ancient accounts describe outrageous behavior, although historians warn that some stories may have been exaggerated by hostile writers."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Is the emperor making another strange decision?"
+    },
+    {
+     "who": "SENATOR",
+     "text": "Yes."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Should we stop him?"
+    },
+    {
+     "who": "SENATOR",
+     "text": "Would you like to remain employed?"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Being emperor meant enormous power. But it also meant that the entire empire could suffer when leadership became unstable."
+    }
+   ]
+  },
+  {
+   "scene": 10,
+   "title": "The empire starts breaking",
+   "plan": [
+    "10:00",
+    "11:05"
+   ],
+   "onscreen": "235–284 AD — CRISIS OF THE THIRD CENTURY",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "By the third century AD, Rome was facing a major crisis. Emperors came and went. Civil wars weakened the government. Economic problems affected trade and daily life. Enemies threatened the borders."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Between 235 and 284 AD, the empire experienced a period of intense instability known as the Crisis of the Third Century."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Who is our emperor today?"
+    },
+    {
+     "who": "CITIZEN2",
+     "text": "I think it's the fourth one this year."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "Should I learn his name?"
+    },
+    {
+     "who": "CITIZEN2",
+     "text": "Don't get attached."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Rome needed major reforms. And one emperor decided that the empire was simply too large for one person to manage."
+    }
+   ]
+  },
+  {
+   "scene": 11,
+   "title": "Two emperors, two problems",
+   "plan": [
+    "11:05",
+    "12:10"
+   ],
+   "onscreen": "EAST AND WEST — TWO ADMINISTRATIONS",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "Emperor Diocletian introduced major reforms and established a system of shared imperial rule called the Tetrarchy, involving multiple emperors."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Later, Constantine became a dominant ruler and founded Constantinople as a new imperial capital in the east."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Over time, the Roman Empire developed increasingly separate eastern and western administrations."
+    },
+    {
+     "who": "GENERAL",
+     "text": "The empire is enormous. We need better management."
+    },
+    {
+     "who": "SENATOR",
+     "text": "Perhaps we should divide the responsibilities."
+    },
+    {
+     "who": "GENERAL",
+     "text": "Excellent. Two administrations."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "So now there are twice as many people to complain about?"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The eastern empire remained wealthy and powerful. The western empire, however, faced growing military and political pressures."
+    }
+   ]
+  },
+  {
+   "scene": 12,
+   "title": "The fall of the Western Roman Empire",
+   "plan": [
+    "12:10",
+    "13:30"
+   ],
+   "onscreen": "476 AD — FALL OF THE WESTERN ROMAN EMPIRE",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "During the fifth century, the Western Roman Empire became increasingly difficult to defend."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Germanic groups entered and settled within Roman territories. Political instability and military pressure weakened imperial authority."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "In 410 AD, the Visigoths sacked Rome. In 455 AD, the Vandals attacked the city."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "And in 476 AD, a Germanic military leader named Odoacer deposed the young western emperor, Romulus Augustulus."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "This date is traditionally used to mark the fall of the Western Roman Empire."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "So... is Rome finished?"
+    },
+    {
+     "who": "SENATOR",
+     "text": "The western emperor is gone."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "That sounds pretty final."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "But here is something many people forget."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "The Eastern Roman Empire continued to survive for nearly another thousand years. Its capital was Constantinople, and its people continued to identify themselves as Romans."
+    }
+   ]
+  },
+  {
+   "scene": 13,
+   "title": "Rome never really disappeared",
+   "plan": [
+    "13:30",
+    "14:25"
+   ],
+   "onscreen": "1453 — FALL OF CONSTANTINOPLE",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "The Eastern Roman Empire continued for centuries, preserving Roman political traditions, laws, culture, and identity."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Constantinople finally fell to the Ottoman Empire in 1453."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "But Rome's influence never truly disappeared."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Roman engineering influenced later architecture. Roman law shaped legal traditions. Latin developed into languages such as Italian, French, Spanish, Portuguese, and Romanian."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Roman roads, buildings, literature, and political ideas continued to influence civilizations long after the empire itself was gone."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "So we built roads, cities, laws, and monuments... and people still remember us?"
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Exactly. Not bad for a settlement that started beside a river."
+    }
+   ]
+  },
+  {
+   "scene": 14,
+   "title": "The final comedy ending",
+   "plan": [
+    "14:25",
+    "15:00"
+   ],
+   "onscreen": "ROME — BUILT TO RULE. REMEMBERED FOREVER.",
+   "lines": [
+    {
+     "who": "NARRATOR",
+     "text": "From a small settlement beside the Tiber to one of the most influential civilizations in history, Rome experienced kings, republics, dictators, emperors, wars, victories, disasters, and enough political drama to fill several thousand television seasons."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "So... what happened to Rome in the end?"
+    },
+    {
+     "who": "SENATOR",
+     "text": "It became history."
+    },
+    {
+     "who": "CITIZEN",
+     "text": "At least we left a legacy."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "And that is how a small city beside a river became one of the most famous civilizations in human history."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Rome may have fallen, but its influence is still all around us."
+    },
+    {
+     "who": "NARRATOR",
+     "text": "Because sometimes, an empire ends... but its story never does."
+    }
+   ]
+  }
+ ]
+}
