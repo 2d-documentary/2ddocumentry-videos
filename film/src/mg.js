@@ -40,15 +40,15 @@ const CITY = { Rome: [12.48, 41.89], Carthage: [10.32, 36.85], Constantinople: [
 const VIEW = { italy: { c: [12.6, 41.6], h: 11.5 }, med: { c: [17.5, 40.5], h: 30 } };
 const STAGES = {
   italy_500: { year: -500, view: 'italy', layers: [{ col: RED, polys: [ROME_500] }], labels: [['ROME', 12.2, 42.6, 1]], cities: ['Rome'] },
-  italy_264: { year: -264, view: 'italy', layers: [{ col: RED, polys: [ITALY] }], labels: [['ROMAN REPUBLIC', 14.4, 41.4, 1.2]], cities: ['Rome'] },
+  italy_264: { year: -264, view: 'italy', layers: [{ col: RED, polys: [ITALY] }], labels: [['ROMAN REPUBLIC', 15.6, 40.2, 1.1]], cities: ['Rome'] },
   264: { year: -264, view: 'med', layers: [{ col: RED, polys: [ITALY] }, { col: PURPLE, polys: [AFR_CARTH, W_SICILY, SARD_CORS, S_SPAIN, BALEARIC] }], labels: [['ROME', 14.6, 42.4, 1], ['CARTHAGE', 5.5, 33.2, 1]], cities: ['Rome', 'Carthage'], clash: [13.6, 37.6] },
-  146: { year: -146, view: 'med', layers: [{ col: RED, polys: [ITALY, SICILY, SARD_CORS, CISALPINE, HISP_146, AFRICA_146, GREECE_146, ILLYRIA] }], labels: [['ROMAN REPUBLIC', 12, 46.6, 1]], cities: ['Rome', 'Carthage'] },
+  146: { year: -146, view: 'med', layers: [{ col: RED, polys: [ITALY, SICILY, SARD_CORS, CISALPINE, HISP_146, AFRICA_146, GREECE_146, ILLYRIA] }], labels: [['ROMAN REPUBLIC', 15.0, 45.4, 1]], cities: ['Rome', 'Carthage'] },
   117: { year: 117, view: 'med', layers: [{ col: RED, polys: EMPIRE_117 }], labels: [['ROMAN EMPIRE', 22, 44.2, 1.4]], cities: ['Rome', 'Alexandria', 'Antioch', 'Byzantium'] },
   crisis: { year: 270, yearText: '260–274 AD', view: 'med', layers: [{ col: RED, polys: EMPIRE_260 }, { col: ORANGE, polys: [GALLIC], atop: true }, { col: GREEN, polys: [PALMYRA], atop: true }],
-    labels: [['GALLIC EMPIRE', -1.5, 46.8, 0.9], ['ROMAN EMPIRE', 18, 43.2, 0.9], ['PALMYRENE EMPIRE', 36, 31.5, 0.9]], cities: ['Rome', 'Palmyra', 'Augusta Treverorum'], cracks: true },
-  eastwest: { year: 395, view: 'med', layers: [{ col: RED, polys: EMPIRE_395 }, { col: PURPLE, polys: [EAST], atop: true }], labels: [['WESTERN EMPIRE', 4, 45.4, 1], ['EASTERN EMPIRE', 30, 38.8, 1]], cities: ['Rome', 'Constantinople', 'Ravenna'], divide: true },
+    labels: [['GALLIC EMPIRE', -3.5, 43.6, 0.9], ['ROMAN EMPIRE', 18, 43.2, 0.9], ['PALMYRENE EMPIRE', 36, 31.5, 0.9]], cities: ['Rome', 'Palmyra'], cracks: true },
+  eastwest: { year: 395, view: 'med', layers: [{ col: RED, polys: EMPIRE_395 }, { col: PURPLE, polys: [EAST], atop: true }], labels: [['WESTERN EMPIRE', 0.5, 43.2, 1], ['EASTERN EMPIRE', 30, 38.8, 1]], cities: ['Rome', 'Constantinople', 'Ravenna'], divide: true },
   476: { year: 476, view: 'med', layers: [{ col: RED, polys: EMPIRE_395 }, { col: PURPLE, polys: [EAST], atop: true }, { col: GREY, polys: [WEST], atop: true, hatch: true }],
-    labels: [['EASTERN ROMAN EMPIRE', 30, 38.8, 1], ['VISIGOTHS', -4, 41.0, 0.75], ['FRANKS', 2.5, 48.8, 0.75], ['VANDALS', 6, 34.6, 0.75], ["ODOACER'S ITALY", 11.8, 44.9, 0.75]], cities: ['Constantinople', 'Ravenna', 'Rome'] },
+    labels: [['EASTERN ROMAN EMPIRE', 30, 38.8, 1], ['VISIGOTHS', -4, 41.0, 0.75], ['FRANKS', 4.5, 46.6, 0.75], ['VANDALS', 6, 34.6, 0.75], ["ODOACER'S ITALY", 15.2, 40.0, 0.75]], cities: ['Constantinople', 'Ravenna'] },
 };
 
 let LAND = null;

@@ -207,7 +207,7 @@ CUT = {
   S([1], 'countryside:overcast', cam(at('countryside', 'road', 0, 0.5, 5), at('countryside', 'road', 0, 2.0, 0), f0=40), [A('odoacer', at('countryside', 'road', 0), 'f', expr='smug')] + [A('legionary', at('countryside', 'road', -3 + (i % 4) * 2, 0, -3 - (i // 4) * 2), 'q') for i in range(8)]),
   S([2], 'forum:imperial:dusk', named('wide', 'wide', 44, 38), fx={'smoke': 1}),
   S([3], 'ravenna', cam([0, 1.8, 10], [0, 2.0, -14], [0, 1.6, 0], [0, 2.0, -14], 46, 40), [A('augustulus', at('ravenna', 'throne', 0.9), 'f', expr='confused', scale=0.86), A('odoacer', at('ravenna', 'throne', -1.2, 0, 2), 'q', expr='smug')], title='476 AD — FALL OF THE WESTERN ROMAN EMPIRE'),
-  S([4], 'ravenna', cam([0, 3, -6], [0, 8, -21], [0, 2.6, -10], [0, 8, -21], 40, 36), fx={'banner': 1}),
+  S([4], 'ravenna', cam([0, 2.2, 6], [0, 6, -21], [0, 2.0, -1], [0, 6.5, -21], 46, 40), fx={'banner': 1}),
   S([5], 'ravenna', cam(at('ravenna', 'corner', 1.6, 1.6, 2.6), at('ravenna', 'corner', -0.9, 1.5, 0), f0=36), [A('citizen', at('ravenna', 'corner', -0.9), 'q', expr='confused'), A('senator', at('ravenna', 'corner', 0.9), 'q', flip=True, expr='bored')]),
   S([6], 'ravenna', cam(at('ravenna', 'corner', 0.9, 1.5, 2.4), at('ravenna', 'corner', 0.9, 1.5, 0), f0=34), [A('senator', at('ravenna', 'corner', 0.9), 'f', expr='bored')]),
   S([7], 'ravenna', cam(at('ravenna', 'corner', -0.9, 1.5, 2.6), at('ravenna', 'corner', -0.9, 1.5, 0), at('ravenna', 'corner', -0.9, 1.5, 1.8), at('ravenna', 'corner', -0.9, 1.52, 0), 34, 28), [A('citizen', at('ravenna', 'corner', -0.9), 'f', expr='shocked')], post=0.5),
