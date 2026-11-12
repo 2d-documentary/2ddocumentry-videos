@@ -6,7 +6,7 @@ const LIME = '#D8BE8C', LIME2 = '#CBA874', SANDST = '#D9B27A', MUD = '#B88E62', 
 function sphinxSprite(ctx, x, y, k, o = {}) { // the Great Sphinx in profile (head to the left), units = metres: 73 m long, 20 m high
   const T = (px, py) => [x + px * k, y + py * k];
   const path = (g, pts) => { pts.forEach((p, i) => { if (p.length === 2) { const q = T(...p); i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); } else { const c = T(p[0], p[1]), q = T(p[2], p[3]); g.quadraticCurveTo(c[0], c[1], q[0], q[1]); } }); };
-  const body = '#CFA670', lw = Math.max(2, .17 * k), k_ = k;
+  const body = '#C2884F', lw = Math.max(2.4, .19 * k), k_ = k;
   const strata = (g, x0, x1, y0, y1, dark) => { for (let s2 = y0; s2 < y1; s2 += 1.15) { const a2 = T(x0, s2); g.fillStyle = `rgba(110,72,38,${dark ? .28 : .16})`; g.fillRect(a2[0], a2[1], (x1 - x0) * k, .42 * k); } };
   // body: neck/chest, shoulder bulge, dipping spine, raised rump; the silhouette steps with the strata on the curved ends
   const stair = (pts, step = 1.5) => { const out = [pts[0]]; for (let i = 1; i < pts.length; i++) { const [x0, y0] = out[out.length - 1], [x1, y1] = pts[i]; const k0 = Math.floor(y0 / step), k1 = Math.floor(y1 / step); if (Math.abs(y1 - y0) > .4 && k0 !== k1) { const ym = Math.max(k0, k1) * step; out.push([x0, ym], [x1, ym]); } out.push([x1, y1]); } return out; };
@@ -14,13 +14,13 @@ function sphinxSprite(ctx, x, y, k, o = {}) { // the Great Sphinx in profile (he
   const top = spline([[-2.4, -13.6], [1.5, -15.2], [6.5, -15.6], [11, -14.6], [18, -12.6], [26, -12.2], [33, -12.8], [39, -14.4], [44, -15], [49.5, -14], [53.8, -11.4], [56.4, -8], [57.4, -4.4]], false, 4);
   const outline = [[-4.6, 0], ...stair([[-4.8, -3], [-5.4, -6.5], [-6.2, -9.6], [-5.2, -12], [-2.4, -13.6]]), ...top, [57.4, -2], [56, 0]];
   blob(ctx, g => path(g, outline), body, { lw, shade: g => {
-    for (const yy of [-11.2, -8.4, -5.8, -3.2]) { const a2 = T(-8, yy), b2 = T(60, yy); g.fillStyle = 'rgba(95,55,25,.38)'; g.fillRect(a2[0], a2[1], b2[0] - a2[0], .5 * k_); g.fillStyle = 'rgba(255,238,200,.3)'; g.fillRect(a2[0], a2[1] - .35 * k_, b2[0] - a2[0], .25 * k_); }   // a few horizontal rock strata
+    for (const off of [3.2, 6.4]) { g.strokeStyle = 'rgba(90,48,20,.28)'; g.lineWidth = .45 * k_; g.beginPath(); top.forEach((q, i) => { const m = T(q[0] - (q[0] > 50 ? off * .6 : 0), q[1] + off); i ? g.lineTo(m[0], m[1]) : g.moveTo(m[0], m[1]); }); g.stroke(); }   // two weathered strata following the back
     g.fillStyle = 'rgba(120,70,35,.3)'; g.beginPath(); path(g, [[-5, -5], [20, -5.6], [40, -5.2], [58, -4.6], [58, 1], [-5, 1]]); g.fill();
     g.fillStyle = 'rgba(255,240,205,.26)'; g.beginPath(); path(g, spline([[-1, -13.4], [4, -15.2], [10, -14.4], [9, -9], [3, -6], [-1, -8]], true, 3)); g.fill();   // lit shoulder/chest mass
-    g.fillStyle = 'rgba(115,66,32,.32)'; g.beginPath(); path(g, spline([[38.5, -.5], [38.2, -6], [41.5, -11.5], [47, -12.4], [52, -9.6], [53.4, -4], [50, -.5]], true, 3)); g.fill();   // haunch mass in shadow tone
+    g.fillStyle = 'rgba(255,235,195,.2)'; g.beginPath(); path(g, spline([[40, -2], [40.5, -8], [44.5, -12.6], [50.5, -12.4], [54, -8.4], [53.6, -3], [48, -1.4]], true, 3)); g.fill();   // lit rounded haunch
     g.fillStyle = 'rgba(110,62,30,.28)'; g.beginPath(); path(g, spline([[12, -13.6], [24, -11.8], [34, -12.2], [36, -7], [24, -6.5], [12, -8]], true, 3)); g.fill(); } });   // shadowed belly between shoulder and haunch
   inkLine(ctx, [T(1, -12.8), T(5, -10.5), T(6.2, -7), T(5, -3.4)], lw * .7);                                         // shoulder blade
-  inkLine(ctx, spline([[38.5, -.5], [38.2, -6], [41.5, -11.5], [47, -12.4], [52, -9.6], [53.4, -4]], false, 4).map(q => T(...q)), lw * .85);   // haunch + folded hind leg
+  inkLine(ctx, spline([[39.6, -1.2], [40, -6], [42.6, -10.4]], false, 4).map(q => T(...q)), lw * .7);   // front edge of the haunch
   inkLine(ctx, spline([[11, -14.2], [10.5, -9], [8, -5.2]], false, 4).map(q => T(...q)), lw * .7);   // back of the shoulder
   blob(ctx, g => path(g, spline([[33.5, 0], [33.8, -1.5], [40, -1.9], [46, -1.2], [46.5, 0]], true, 3)), shade(body, 1.02), { lw: lw * .8 });   // hind paw
   for (let t2 = 0; t2 < 3; t2++) inkLine(ctx, [T(34.2 + t2 * .9, -.1), T(34.5 + t2 * .9, -1.3)], Math.max(1, .09 * k));
@@ -70,6 +70,7 @@ function jarSprite(ctx, x, y, k, col = '#B5653A', type = 0) { // 0 storage jar, 
     [[-.04, 0], [-.2, -.25], [-.27, -.55], [-.2, -.78], [-.09, -.86], [-.09, -1], [.09, -1], [.09, -.86], [.2, -.78], [.27, -.55], [.2, -.25], [.04, 0]],
     [[-.2, 0], [-.4, -.12], [-.42, -.32], [-.26, -.46], [-.24, -.52], [.24, -.52], [.26, -.46], [.42, -.32], [.4, -.12], [.2, 0]],
     [[-.1, -.18], [-.2, -.45], [-.2, -.9], [-.13, -1.2], [-.15, -1.26], [.15, -1.26], [.13, -1.2], [.2, -.9], [.2, -.45], [.1, -.18]]][type % 4];
+  ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.38)'; ctx.beginPath(); ctx.ellipse(x + .08 * k, y, .42 * k, .08 * k, 0, 0, 7); ctx.fill(); ctx.restore();   // contact shadow
   if (type % 4 === 3) { poly(ctx, [T(-.16, 0), T(.16, 0), T(.11, -.2), T(-.11, -.2)], '#7A5634', true, Math.max(1.4, .035 * k)); }
   blob(ctx, g => shapes.forEach((p, i) => { const q = T(...p); i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); }), col, { lw: Math.max(1.6, .04 * k), shade: g => { g.fillStyle = shade(col, .74); g.beginPath(); g.ellipse(x + .22 * k, y - .5 * k, .2 * k, .7 * k, 0, 0, 7); g.fill(); g.fillStyle = shade(col, 1.18); g.beginPath(); g.ellipse(x - .14 * k, y - .62 * k, .05 * k, .16 * k, 0, 0, 7); g.fill();
     g.strokeStyle = shade(col, .6); g.lineWidth = Math.max(1, .015 * k); const a = T(-.35, -.5), b = T(.35, -.5); g.beginPath(); g.moveTo(a[0], a[1]); g.quadraticCurveTo(x, a[1] + .06 * k, b[0], b[1]); g.stroke(); if (type % 4 === 2) { g.strokeStyle = '#2F5FA8'; g.lineWidth = .05 * k; g.beginPath(); g.moveTo(...T(-.38, -.3)); g.quadraticCurveTo(x, y - .24 * k, ...T(.38, -.3)); g.stroke(); } } });
@@ -86,7 +87,7 @@ function sledgeSprite(ctx, x, y, k) { // limestone block on a wooden sledge, rop
 }
 function obeliskAt(S, x, y, h, col = '#C98C6A', z = 0) { // red-granite obelisk with gilded pyramidion
   const b = h * .09, t = h * .062; h += z; const bot = [[x - b / 2, y - b / 2, z], [x + b / 2, y - b / 2, z], [x + b / 2, y + b / 2, z], [x - b / 2, y + b / 2, z]], top = bot.map(p => [x + (p[0] - x) * t / b, y + (p[1] - y) * t / b, h]);
-  for (let i = 0; i < 4; i++) S.quad(bot[i], bot[(i + 1) % 4], top[(i + 1) % 4], top[i], col, { tex: 'reliefs', registers: 1, seed: 3 + i });
+  for (let i = 0; i < 4; i++) S.quad(bot[i], bot[(i + 1) % 4], top[(i + 1) % 4], top[i], col, { granite: true, paint: (c, St, f, cc) => { glyphColumns(c, St, f, cc, .3, .7, .06, .94, 3 + i); const a = St.uv(f, .03, 0), b2 = St.uv(f, .03, 1); c.strokeStyle = 'rgba(255,225,205,.6)'; c.lineWidth = 3; c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b2[0], b2[1]); c.stroke(); } });
   const apex = [x, y, h + t * 1.1]; for (let i = 0; i < 4; i++) S.face([top[i], top[(i + 1) % 4], apex, apex], '#D9B24E', {});
   S.castShadow([...bot, apex]);
 }
@@ -137,6 +138,15 @@ function egHut(S, x, y, w, d, h, col, seed) { // mud-brick house: door with fram
   for (let i = 0; i < Math.floor(w / .6); i++) S.sprite([x + .3 + i * .6, y - .05, h + .45], (c, px, py, k) => { c.fillStyle = '#7A5634'; c.beginPath(); c.ellipse(px, py, .09 * k, .08 * k, 0, 0, 7); c.fill(); });   // palm-rib roof ends
   S.sprite([x + w * .15, y - .6, 0], (c, px, py, k) => { jarSprite(c, px, py, .8 * k, '#A9603A', (seed | 0) % 4); poly(c, [[px + .5 * k, py], [px + 1.3 * k, py], [px + 1.2 * k, py - .35 * k], [px + .6 * k, py - .35 * k]], '#C9A05A', true, 1.6); c.strokeStyle = '#8A6A3A'; c.lineWidth = 1.2; for (let i = 1; i < 4; i++) { c.beginPath(); c.moveTo(px + (.5 + i * .2) * k, py); c.lineTo(px + (.6 + i * .17) * k, py - .35 * k); c.stroke(); } poly(c, [[px - 1.2 * k, py], [px - .4 * k, py], [px - .5 * k, py - .25 * k], [px - 1.1 * k, py - .25 * k]], '#9C8C78', true, 1.6); });   // jar, basket, quern stone
   S.quad([x + w * .5, y - 2.3, 2.3], [x + w + .2, y - 2.3, 2.3], [x + w + .2, y, 2.5], [x + w * .5, y, 2.5], '#B89A5A', { twoSided: true, paint: (c, St, f) => { for (let k = 0; k < 14; k++) { const a = St.uv(f, k / 14, 0), b = St.uv(f, k / 14, 1); c.strokeStyle = '#7A6436'; c.lineWidth = 1.2; c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.stroke(); } } });
+}
+function stoneBlock(ctx, x, y, w, h, d, col, seed) { // screen-space foreground block: lit top, front with chisel striations, shaded side, quarry mark
+  const top = [[x - w / 2, y - h], [x + w / 2, y - h], [x + w / 2 + d * .6, y - h - d * .45], [x - w / 2 + d * .6, y - h - d * .45]], front = [[x - w / 2, y], [x + w / 2, y], [x + w / 2, y - h], [x - w / 2, y - h]], side = [[x + w / 2, y], [x + w / 2 + d * .6, y - d * .45], [x + w / 2 + d * .6, y - h - d * .45], [x + w / 2, y - h]];
+  ctx.save(); ctx.fillStyle = 'rgba(60,30,14,.32)'; ctx.beginPath(); ctx.ellipse(x + w * .15, y + 4, w * .7, 16, 0, 0, 7); ctx.fill(); ctx.restore();
+  poly(ctx, side, shade(col, .72)); poly(ctx, front, shade(col, .9)); poly(ctx, top, shade(col, 1.1));
+  const r = rng(seed); ctx.strokeStyle = shade(col, .7); ctx.lineWidth = 2; for (let i = 0; i < 3; i++) { const u = .2 + i * .28 + r() * .05; ctx.beginPath(); ctx.moveTo(x - w / 2 + w * u, y - h + 8); ctx.lineTo(x - w / 2 + w * (u + .06), y - 8); ctx.stroke(); }
+  ctx.fillStyle = shade(col, .78); ctx.beginPath(); ctx.moveTo(x + w * .2, y - h); ctx.lineTo(x + w * .35, y - h); ctx.lineTo(x + w * .3, y - h + 12); ctx.fill();
+  ctx.strokeStyle = '#A8442E'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x - w * .25, y - h * .65); ctx.lineTo(x - w * .25, y - h * .3); ctx.moveTo(x - w * .32, y - h * .48); ctx.lineTo(x - w * .12, y - h * .48); ctx.stroke();
+  inkLine(ctx, [front[0], front[1], side[1], side[2], top[3], front[3]], 3, { closed: true });
 }
 // Egyptian figure for crowds: skin, white kilt, black hair; poses
 function egPerson(ctx, x, y, h, o = {}) { const r = rng(o.seed || 1); const s = h / 100; ctx.save(); ctx.translate(x, y); if (o.flip) ctx.scale(-1, 1); ctx.scale(s, s);
@@ -203,10 +213,10 @@ function smallSphinx(ctx, x, y, k) { // human-headed avenue sphinx facing left, 
   const T = (px, py) => [x + px * k, y - py * k]; const P = pts => pts.map(p => T(...p)); const st = '#CDA672', lw = Math.max(1.6, .14 * k);
   const path = (g, pts) => pts.forEach((p, i) => { const q = T(...p); i ? g.lineTo(q[0], q[1]) : g.moveTo(q[0], q[1]); });
   blob(ctx, g => { path(g, spline([[0, 0], [0, .35], [1.3, .45], [1.6, 1.1], [2.2, 1.55], [3.4, 1.45], [4.4, 1.5], [5, 1.1], [5.1, .3], [4.9, 0]], true, 4)); }, st, { lw, shade: g => { for (let v = .3; v < 1.6; v += .32) { const a = T(0, v); g.fillStyle = 'rgba(100,60,28,.3)'; g.fillRect(a[0], a[1], 5.2 * k, .08 * k); } g.fillStyle = 'rgba(110,65,32,.3)'; g.beginPath(); path(g, [[0, .55], [5.2, .5], [5.2, 0], [0, 0]]); g.fill(); } });
-  inkLine(ctx, spline([[3.6, .25], [3.75, .9], [4.25, 1.2], [4.8, .95]], false, 4).map(q => T(...q)), lw * .7); inkLine(ctx, spline([[2.2, 1.3], [2.5, .9], [2.4, .35]], false, 4).map(q => T(...q)), lw * .6);   // haunch + shoulder
+  inkLine(ctx, spline([[2.2, 1.3], [2.5, .9], [2.4, .35]], false, 4).map(q => T(...q)), lw * .6);   // haunch + shoulder
   inkLine(ctx, P([[0, .2], [1.6, .22]]), lw * .5); for (const tx of [.08, .22, .36]) inkLine(ctx, P([[tx, 0], [tx + .02, .14]]), lw * .45);   // two parallel forelegs + toes
-  blob(ctx, g => path(g, [[1.15, .85], [.95, 1.85], [1.2, 2.45], [1.85, 2.5], [2.25, 2.05], [2.35, .85], [1.95, .8], [1.85, 1.45], [1.45, 1.35], [1.5, .85]]), '#C9A06A', { lw, shade: g => { for (let v = 1.2; v < 2.35; v += .14) { const a = T(1, v); g.fillStyle = 'rgba(100,66,34,.4)'; g.fillRect(a[0], a[1], 1.2 * k, .05 * k); } } });   // nemes
-  blob(ctx, g => path(g, spline([[1.0, 2.0], [1.02, 1.55], [1.2, 1.32], [1.55, 1.38], [1.6, 1.75], [1.55, 2.1], [1.25, 2.15]], true, 3)), '#D8B67F', { lw: lw * .7 });   // face in profile
+  blob(ctx, g => path(g, [[1.15, .85], [.95, 1.85], [1.2, 2.45], [1.85, 2.5], [2.25, 2.05], [2.35, .85], [1.95, .8], [1.85, 1.45], [1.45, 1.35], [1.5, .85]]), '#C9A06A', { lw, shade: g => { for (let v = .9; v < 2.5; v += .2) { const a = T(.9, v); g.fillStyle = 'rgba(46,80,140,.55)'; g.fillRect(a[0], a[1], 1.6 * k, .09 * k); } } });   // nemes
+  blob(ctx, g => path(g, spline([[.92, 2.05], [.9, 1.55], [1.15, 1.25], [1.6, 1.3], [1.7, 1.75], [1.6, 2.15], [1.2, 2.2]], true, 3)), '#E0BE86', { lw: lw * .7 }); { const e = T(1.12, 1.84); ctx.fillStyle = '#2A1E16'; ctx.beginPath(); ctx.ellipse(e[0], e[1], .09 * k, .05 * k, 0, 0, 7); ctx.fill(); }   // face in profile
   inkLine(ctx, P([[1.12, 1.82], [1.3, 1.84]]), lw * .55); inkLine(ctx, P([[1.0, 1.62], [.92, 1.55], [1.02, 1.5]]), lw * .45); inkLine(ctx, P([[1.08, 1.42], [1.22, 1.43]]), lw * .45);
 }
 // ---------- sets ----------
@@ -267,11 +277,11 @@ SETS.construction = (ctx, o = {}) => { // Khufu's pyramid rising: smooth casing 
     const b2 = [P[1][0], P[1][1] + (P[2][1] - P[1][1]) * t2]; const n = 6 + Math.floor(r() * 4); for (let i = 1; i < 40; i++) { const u = (i + (j % 2) * .5) / 40; if (u > 1) continue; const q0 = [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u], q1 = [q0[0], q0[1] + (b2[1] - b[1])]; c.lineWidth = .8; c.beginPath(); c.moveTo(q0[0], q0[1]); c.lineTo(q1[0], q1[1]); c.stroke(); if (r() < .04) { c.fillStyle = shade(col, 1.15); c.fillRect(q0[0], q0[1], 6, 3); } } } } });
   for (let i = 0; i < 4; i++) { const u = .18 + i * .2, p = [rx + rw / 2, y0 + (y1 - y0) * u, z1 * u + .2]; S.sprite(p, (c, x, y, k) => { sledgeSprite(c, x, y, k * 1.1); for (let m = 0; m < 7; m++) egPerson(c, x - (2.4 + m * .95) * k * 1.1, y + m * .05 * k, 1.75 * k, { pose: 'pull', seed: m + i * 7 }); egPerson(c, x + 1.6 * k, y, 1.75 * k, { pose: 'stand', seed: i + 40 }); }); S.props[S.props.length - 1].bias = -6; }
   // quarry: stepped cut faces at the left, with blocks still attached
-  for (let j = 0; j < 4; j++) S.box(-60 - j * 6, -150 + j * 7, 0, 30, 8, 8 - j * 1.8, '#CDB083', { tex: 'blocks', course: 1, blockW: 2, seed: 20 + j, shadow: j === 0 });
+  for (let j = 0; j < 4; j++) S.box(-60 - j * 6, -150 + j * 7, 0, 30, 8, 8 - j * 1.8, '#C4A574', { tex: 'blocks', course: 1, blockW: 2, seed: 20 + j, shadow: j === 0 });
   // workers' huts with palm-rib awnings
   for (const [x, y, w] of [[48, -228, 7], [58, -222, 6], [50, -212, 7]]) egHut(S, x, y, w, 5, 2.8, x === 58 ? WASH : OCHRE, x);
   // foreground work yard: blocks waiting on rollers, a crew dragging a sledge across, rope coils
-  for (const [x, y, sz] of [[38, -246, 1.4], [40.6, -247, 1.2], [39, -244.4, 1.1], [58, -250, 1.5]]) S.box(x, y, 0, sz * 1.5, sz, sz, '#E0CFA4', { tex: 'blocks', course: sz, blockW: sz * 1.5 });
+  for (const [x, y, sz] of [[38, -246, 1.4], [40.6, -247, 1.2], [39, -244.4, 1.1], [58, -250, 1.5]]) S.box(x, y, 0, sz * 1.5, sz, sz, '#CDB286', { tex: 'blocks', course: sz / 2, blockW: sz * .75, seed: Math.round(x * 3) });
   S.sprite([30, -244, 0], (c, x, y, k) => { for (let i = 0; i < 3; i++) { c.strokeStyle = '#4A3420'; c.lineWidth = .16 * k + 2; c.beginPath(); c.ellipse(x + i * .9 * k, y - .12 * k, .45 * k, .16 * k, 0, 0, 7); c.stroke(); c.strokeStyle = '#B08A52'; c.lineWidth = .16 * k; c.stroke(); } });   // rope coils
   S.sprite([40, -230, 0], (c, x, y, k) => { poly(c, [[x - .5 * k, y - .45 * k], [x + .5 * k, y - .45 * k], [x + .55 * k, y], [x - .55 * k, y]], '#E3D6B6', true, 2); egPerson(c, x, y - .2 * k, 1.2 * k, { seed: 30, pose: 'stand' }); poly(c, [[x + .1 * k, y - 1.0 * k], [x + .6 * k, y - 1.05 * k], [x + .62 * k, y - .9 * k], [x + .12 * k, y - .85 * k]], '#F1EADB', true, 1.5); });   // a scribe tallying blocks
   S.sprite([34, -228, 0], (c, x, y, k) => { egPerson(c, x, y, 1.8 * k, { seed: 9, pose: 'stand' }); inkLine(c, [[x + .35 * k, y], [x + .45 * k, y - 2.1 * k]], 3, { col: '#6E4A2C' }); });   // overseer with his staff
@@ -283,13 +293,16 @@ SETS.construction = (ctx, o = {}) => { // Khufu's pyramid rising: smooth casing 
   ctx.fillStyle = vgrad(ctx, H, 1080, '#E2C896', '#CCAA74'); ctx.fillRect(0, H, 1920, 1080 - H); S.groundDetail(ctx, { col: '#D9BA86', seed: 3, count: 900, far: 500 });
   S.render(ctx);
   jarSprite(ctx, 110, 1088, 170, '#A9603A', 3); jarSprite(ctx, 215, 1086, 120, '#C99A6A', 2);
+  stoneBlock(ctx, 980, 1050, 260, 120, 70, '#C9AC7E', 5); stoneBlock(ctx, 1230, 1065, 150, 80, 45, '#BFA070', 6); stoneBlock(ctx, 1160, 975, 120, 70, 40, '#C9AC7E', 7);
+  jarSprite(ctx, 1640, 1088, 150, '#9E5A34', 1); bush(ctx, 1840, 1095, 130, 31, '#6E8A40');
+  { for (let i = 0; i < 3; i++) { const x = 1430 + i * 60, y = 1040; ctx.strokeStyle = '#4A3420'; ctx.lineWidth = 12; ctx.beginPath(); ctx.ellipse(x, y, 48, 16, 0, 0, 7); ctx.stroke(); ctx.strokeStyle = '#B08A52'; ctx.lineWidth = 8; ctx.stroke(); } }   // rope coils
   brushTexture(ctx, .2); warmGrade(ctx);
 };
 
 SETS.luxor = (ctx, o = {}) => { // Luxor Temple: the first pylon (Kadesh reliefs), flagpole niches, seated colossi, the surviving obelisk on its pedestal, the sphinx avenue
   const H = 470;
   skyGradient(ctx, H + 30, '#78ABD2', '#CFE1E1', '#F5E2BB'); clouds(ctx, [[200, 130, 60, 52], [1760, 120, 95, 33], [960, 50, 260, 12, 'streak'], [1500, 300, 200, 14, 'streak']]);
-  const S = new Stage({ x: -5, y: -48, z: 1.8, yaw: 0, f: 1050, hy: H, cx: 960 }, [-.55, -.6, .6]); S.gz = .25;
+  const S = new Stage({ x: -5, y: -48, z: 1.8, yaw: 0, f: 1050, hy: H, cx: 960 }, [-.7, .2, .62]); S.gz = .25;
   const Wd = 65, D = 15, Hp = 24;
   const tower = (x0, seed, scene) => { const t = S.battered(x0, 0, 0, Wd / 2 - 4, D, Hp, 2.2, SANDST, { tex: 'plaster', seed, paint: (c, St, f, col) => { const n = St.normal(f.pts); if (n[1] > -.9) return;
       const [W] = fdim(f); for (const uc of seed === 2 ? [.45, .6] : [.4, .55]) { poly(c, uvRect(St, f, uc - 1.1 / W, 0, uc + 1.1 / W, .97), shade(col, .74), true, inkW(St, f)); poly(c, uvRect(St, f, uc - 1.1 / W, 0, uc - .5 / W, .97), shade(col, .62)); }
@@ -308,14 +321,16 @@ SETS.luxor = (ctx, o = {}) => { // Luxor Temple: the first pylon (Kadesh reliefs
   palmAt(S, 24, -26, 13, 3); palmAt(S, 28, -21, 10, 9, { lean: .2 }); palmAt(S, -30, -32, 12, 6);
   S.box(-30, -47.5, 0, 54, 47, .25, '#D2B484', { floor: true, layer: 0, topTex: 'paving', slab: .7, top: '#D6BA8A', seed: 51, shadow: false });
   const drift = pts => S.face(pts.map(([x, y]) => [x, y, .26]), '#E0C594', { ground: true, layer: 3, noInk: true, paint: driftPaint, noFill: true });
-  drift([[-30, -40], [-18, -37], [-20, -30], [-30, -26]]); drift([[24, -40], [13, -36], [15, -28], [24, -25]]); drift([[-5.6, -46.2], [-5.0, -44.8], [-4.2, -44.6], [-3.8, -45.6], [-4.2, -46.4]]); drift([[-10, -46], [-8, -45], [-9, -43], [-11, -44]]); drift([[-1, -30], [2, -31.5], [4, -29.5], [1, -28]]);
+  drift([[-30, -40], [-18, -37], [-20, -30], [-30, -26]]); drift([[24, -40], [13, -36], [15, -28], [24, -25]]); drift([[-10, -46], [-8, -45], [-9, -43], [-11, -44]]); drift([[-1, -30], [2, -31.5], [4, -29.5], [1, -28]]);
   // foreground pieces: fallen relief block, column drums, a broken offering table
   S.box(-11, -41.5, .25, 3, 1.4, 1.25, '#CFAE7C', { tex: 'reliefs', registers: 1, seed: 72 }); S.box(-8.4, -40, .25, 1.1, .8, .5, '#C9A470', { tex: 'blocks', course: .25, blockW: .5 });
   for (const [x, y, r] of [[-.5, -41, .55], [1.2, -39.6, .48], [.2, -38, .4]]) S.cylinder(x, y, .25, r, r * 1.05, '#CDAA76', { segs: 16, top: '#D9BC8C' });
+  S.box(5.5, -42, .25, 1.8, 1.1, .9, '#CFAE7C', { tex: 'blocks', course: .45, blockW: .9, seed: 77 }); S.box(7.6, -43.4, .25, 1.1, .8, .6, '#C9A470', { tex: 'blocks', course: .3, blockW: .55, seed: 78 });
   S.sprite([-6.6, -40.5, .25], (c, px, py, k) => { jarSprite(c, px, py, .7 * k, '#9E5A34', 3); jarSprite(c, px + .5 * k, py, .5 * k, '#C0453A', 1); });
   ctx.fillStyle = vgrad(ctx, H, 1080, '#E0C594', '#C9A773'); ctx.fillRect(0, H, 1920, 1080 - H);
   S.groundDetail(ctx, { col: '#D8BC8B', seed: 6, count: 600, far: 300, avoid: p => p[0] > -30 && p[0] < 24 && p[1] > -47.5 && p[1] < 0 });
   S.render(ctx);
+  ctx.save(); ctx.fillStyle = 'rgba(110,60,30,.24)'; ctx.beginPath(); ctx.moveTo(0, 820); ctx.lineTo(260, 820); ctx.lineTo(900, 1080); ctx.lineTo(0, 1080); ctx.closePath(); ctx.fill(); ctx.restore();   // shadow of an off-screen column
   bush(ctx, 1830, 1095, 140, 2, '#6E8A40');
   brushTexture(ctx, .2); warmGrade(ctx);
 };
@@ -361,14 +376,14 @@ SETS.village = (ctx, o = {}) => { // Deir el-Medina: a narrow street of whitewas
       const [W, Hh] = fdim(f); const a0 = St.uv(f, .5, 1), a1 = St.uv(f, .5, 1 - .5 / Hh); const g0 = c.createLinearGradient(a0[0], a0[1], a1[0], a1[1]); g0.addColorStop(0, 'rgba(80,40,20,.5)'); g0.addColorStop(1, 'rgba(80,40,20,0)'); c.fillStyle = g0; c.fillRect(-50, -50, 2100, 1200);   // roofline shadow
       const r2 = rng(i * 7 + (s > 0)); for (let m = 0; m < 3; m++) { const u = .1 + r2() * .8, v = .1 + r2() * .6; const P = spline(Array.from({ length: 11 }, (_, j) => { const a = j / 11 * 6.283; return St.uv(f, u + Math.cos(a) * (.03 + r2() * .04), v + Math.sin(a) * (.05 + r2() * .06)); }), true, 3); poly(c, P, m % 2 ? shade(cc, 1.06) : shade(cc, .93)); }   // plaster wear blotches
       } });
-    if (i % 2 === 0 && i < 4) S.sprite([s < 0 ? x + sx + .1 : x - .1, y + 4, h - .9], (c, px, py, kk) => { const w = .55 * kk, hh = .5 * kk; c.strokeStyle = '#5A4030'; c.lineWidth = 2; c.beginPath(); c.moveTo(px, py - .5 * kk); c.lineTo(px, py); c.stroke(); poly(c, [[px - w, py], [px + w, py], [px + w * .8, py + hh], [px - w * .8, py + hh]], '#C29A52', true, 2.2); c.strokeStyle = '#8A6A32'; c.lineWidth = 1.4; for (let k = 1; k < 4; k++) { c.beginPath(); c.moveTo(px - w * (1 - k * .05), py + hh * k / 4); c.lineTo(px + w * (1 - k * .05), py + hh * k / 4); c.stroke(); } for (let k = -2; k <= 2; k++) { c.beginPath(); c.moveTo(px + k * w * .35, py); c.lineTo(px + k * w * .3, py + hh); c.stroke(); } });   // woven basket hung from a beam
+    if (i % 2 === 0 && i < 4) S.sprite([s < 0 ? x + sx + .1 : x - .1, y + 4, h - .9], (c, px, py, kk) => { const w = .33 * kk, hh = .3 * kk; c.strokeStyle = '#5A4030'; c.lineWidth = 2; c.beginPath(); c.moveTo(px, py - .5 * kk); c.lineTo(px, py); c.stroke(); poly(c, [[px - w, py], [px + w, py], [px + w * .8, py + hh], [px - w * .8, py + hh]], '#C29A52', true, 2.2); c.strokeStyle = '#8A6A32'; c.lineWidth = 1.4; for (let k = 1; k < 4; k++) { c.beginPath(); c.moveTo(px - w * (1 - k * .05), py + hh * k / 4); c.lineTo(px + w * (1 - k * .05), py + hh * k / 4); c.stroke(); } for (let k = -2; k <= 2; k++) { c.beginPath(); c.moveTo(px + k * w * .35, py); c.lineTo(px + k * w * .3, py + hh); c.stroke(); } });   // woven basket hung from a beam
     // parapet + palm-rib canopy on some roofs
     const t = .3, ph = .55; S.box(x, y, h, sx, t, ph, col, { shadow: false, bias: -1 }); S.box(s < 0 ? x + sx - t : x, y + t, h, t, sy - t, ph, col, { shadow: false, bias: -1 });
     if ((i + (s > 0)) % 2 === 0) { const cx0 = s < 0 ? x + sx - 3.6 : x + .4; for (const [px, py] of [[cx0, y + 1], [cx0 + 3, y + 1], [cx0, y + 5], [cx0 + 3, y + 5]]) S.box(px, py, h, .16, .16, 1.9, '#7A5634', { shadow: false });
       S.quad([cx0 - .3, y + .7, h + 1.9], [cx0 + 3.5, y + .7, h + 1.9], [cx0 + 3.5, y + 5.5, h + 1.9], [cx0 - .3, y + 5.5, h + 1.9], '#B89A5A', { twoSided: true, paint: (c, St, f) => { for (let k = 0; k < 18; k++) { const a = St.uv(f, k / 18, 0), b = St.uv(f, k / 18, 1); c.strokeStyle = '#7A6436'; c.lineWidth = 1.2; c.beginPath(); c.moveTo(a[0], a[1]); c.lineTo(b[0], b[1]); c.stroke(); } } }); }
     // outside stair up to the roof on alternate houses
     if (i % 3 === 1) for (let k = 0; k < 6; k++) S.box(s < 0 ? x + sx : x - .9, y + sy - 1 - k * .55, 0, .9, .55, h * (k + 1) / 6.5, shade(col, .95), { shadow: false, inkK: .07 });
-    if (i % 3 === 0) S.sprite([s * 2.1, y + 2, 0], (c, px, py, kk) => { jarSprite(c, px, py, .9 * kk, i % 2 ? '#A35E36' : '#B86C40', i % 4); });
+    if (i % 3 === 0) S.sprite([s * 2.1, y + 2, 0], (c, px, py, kk) => { const ty = (i + (s > 0 ? 1 : 0) * 2) % 4; jarSprite(c, px, py, (.75 + (ty % 2) * .3) * kk, ['#A35E36', '#B86C40', '#8E6A50', '#C9A06A'][ty], ty); });
   }
   // laundry lines strung across the street
   for (const y of [6, 23]) S.sprite([0, y, 4.2], (c, px, py, k) => { const a = S.P([-2.6, y, 4.3]), b = S.P([2.6, y, 4.3]); c.strokeStyle = '#4A3A2A'; c.lineWidth = 1.5; c.beginPath(); c.moveTo(a[0], a[1]); c.quadraticCurveTo((a[0] + b[0]) / 2, a[1] + .5 * k, b[0], b[1]); c.stroke(); const r = rng(y); for (let i = 1; i < 6; i++) { const t = i / 6, qx = a[0] + (b[0] - a[0]) * t, qy = a[1] + (b[1] - a[1]) * t + Math.sin(t * Math.PI) * .45 * k; poly(c, [[qx - .3 * k, qy], [qx + .3 * k, qy], [qx + .28 * k, qy + (.6 + r() * .5) * k], [qx - .3 * k, qy + (.6 + r() * .5) * k]], ['#F1EADB', '#C0453A', '#3E6E8E', '#E3C25A'][i % 4], true, 1.5); } });

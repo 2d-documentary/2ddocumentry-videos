@@ -57,13 +57,13 @@ function cloudLobes(cx, cy, s, seed) { const r = rng(seed); const lobes = []; co
   if (r() > .4) lobes.push([cx + (r() - .5) * s * .6, cy - s * (tall + .2), s * (.32 + r() * .15)]);
   const bw = s * wide * .5 + s * .25, bh = s * (.2 + r() * .08); return { lobes, bw, bh }; }
 function cloudShape(cx, cy, s, seed) { const { lobes, bw, bh } = cloudLobes(cx, cy, s, seed); return g => { for (const [x, y, rr] of lobes) { g.moveTo(x + rr, y); g.arc(x, y, rr, 0, Math.PI * 2); } g.moveTo(cx + bw, cy); g.ellipse(cx, cy, bw, bh, 0, 0, Math.PI * 2); }; }
-function clouds(ctx, list, tint = '#FFFBF2', shadow = '#D9D4D0') {
+function clouds(ctx, list, tint = '#FFFBF2', shadow = '#E9E0D8') {
   for (const [cx, cy, s, seed, type] of list) {
     const r = rng(seed);
     if (type === 'streak') { ctx.save(); for (let i = 0; i < 3; i++) { const x = cx + (r() - .5) * s * 1.2, y = cy + (i - 1) * s * .09 + (r() - .5) * s * .05, w = s * (1 + r() * 1.1), h = s * (.035 + r() * .03); ctx.globalAlpha = .38 + r() * .2; ctx.fillStyle = i === 1 ? tint : mix(tint, shadow, .4);
         ctx.beginPath(); ctx.moveTo(x - w, y); ctx.quadraticCurveTo(x - w * .3, y - h * 2.2, x + w * .2, y - h); ctx.quadraticCurveTo(x + w * .7, y - h * .4, x + w, y + h * .2); ctx.quadraticCurveTo(x + w * .2, y + h * 1.4, x - w * .4, y + h); ctx.quadraticCurveTo(x - w * .8, y + h * .6, x - w, y); ctx.fill(); } ctx.restore(); continue; }
     const { lobes, bw, bh } = cloudLobes(cx, cy, s, seed);
-    blob(ctx, cloudShape(cx, cy, s, seed), tint, { lw: 1.6, ink: '#8E8488', alpha: .95, shade: g => {
+    blob(ctx, cloudShape(cx, cy, s, seed), tint, { lw: 1, ink: '#B9A99E', alpha: .95, shade: g => {
       g.fillStyle = shadow; g.beginPath(); g.ellipse(cx + bw * .05, cy + bh * .5, bw * 1.05, bh * 1.2, 0, 0, 7); g.fill();               // underside
       for (const [x, y, rr] of lobes) { g.beginPath(); g.arc(x + rr * .22, y + rr * .5, rr * .92, 0, 7); g.fill(); }                    // each lobe's own shaded belly
       g.fillStyle = tint; for (const [x, y, rr] of lobes) { g.beginPath(); g.arc(x - rr * .12, y - rr * .12, rr * .82, 0, 7); g.fill(); } // lit tops cut the shadow into lobe-shaped crescents
@@ -113,7 +113,7 @@ function datePalm(ctx, x, y, h, seed = 1, o = {}) {
   for (const f of fr) inkLine(ctx, Array.from({ length: 9 }, (_, i) => f.B(i / 8 * .96)), Math.max(1.2, h * .005), { col: shade(leaf, .45) });
   // hanging date clusters: many small drooping ovals under the crown
   if (o.dates !== false && h > 60) for (const sd of [-1, 1, .3]) { const cx = tx + sd * h * .06, cy = ty + h * .05; inkLine(ctx, [[tx, ty], [cx, cy]], Math.max(1, h * .004), { col: '#8A5A2A' });
-    for (let i = 0; i < 26; i++) { const a = r() * Math.PI, rr = r() * h * .045; const px = cx + Math.cos(a) * rr * .8, py = cy + Math.sin(a) * rr * 1.4; ctx.fillStyle = r() > .5 ? (o.dateCol || ['#C0602A'])[0] : (o.dateCol || [0, '#9E4422'])[1]; ctx.beginPath(); ctx.ellipse(px, py, h * .008, h * .012, 0, 0, 7); ctx.fill(); } }
+    for (let i = 0; i < 26; i++) { const a = r() * Math.PI, rr = r() * h * .045; const px = cx + Math.cos(a) * rr * .8, py = cy + Math.sin(a) * rr * 1.4; ctx.fillStyle = r() > .5 ? (o.dateCol || ['#9A5A34'])[0] : (o.dateCol || [0, '#7A4228'])[1]; ctx.beginPath(); ctx.ellipse(px, py, h * .008, h * .012, 0, 0, 7); ctx.fill(); } }
 }
 function reeds(ctx, x0, x1, y, h, seed = 2, col = '#6E8A3C') {
   const r = rng(seed); for (let x = x0; x < x1; x += 4 + r() * 8) { const hh = h * (.5 + r() * .6), a = (r() - .5) * .35; ctx.strokeStyle = shade(col, .8 + r() * .4); ctx.lineWidth = 2 + r() * 2; ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + a * hh * .5, y - hh * .6, x + a * hh, y - hh); ctx.stroke();
