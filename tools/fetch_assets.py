@@ -370,7 +370,7 @@ def fetch_one(asset, store):
             if "HTTP 429" in str(e):
                 break  # rate-limited: trying more urls on the same host only makes it worse
             continue
-        if is_media(t, d):
+        if is_media(t, d) or asset.get("raw"):
             data, ctype, url = d, t, u
             break
         html_page = html_page or (d, t, u)
@@ -391,6 +391,11 @@ def fetch_one(asset, store):
         data, ctype, url = html_page
     if data is None:
         raise err
+    if asset.get("raw"):
+        folder = FOLDERS.get(asset.get("category", ""), "archives/misc"); os.makedirs(os.path.join(store, folder), exist_ok=True)
+        rel = f"{folder}/{asset.get('filename') or asset['id'] + '.json'}"
+        open(os.path.join(store, rel), "wb").write(data)
+        return {"file": rel, "resolved_url": url, "bytes": len(data), "license": asset.get("license"), "attribution": asset.get("attribution"), "page": asset.get("source_page") or url}
     if not is_media(ctype, data):
         if ctype.startswith("text/html"):
             img = og_image(data, url)
