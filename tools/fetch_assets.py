@@ -263,7 +263,18 @@ def resolve_archive(page, wanted_file=None, category=""):
             "attribution": ", ".join(x for x in [strip_tags(str(md.get("creator") or "")), "Internet Archive"] if x)}
 
 
+def resolve_commons_search(q):
+    api = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=5"
+           "&gsrsearch=" + urllib.parse.quote(q + " filetype:bitmap"))
+    pages = sorted(get_json(api).get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99))
+    if not pages:
+        raise FetchError("Commons search found nothing")
+    return resolve_commons("https://commons.wikimedia.org/wiki/" + urllib.parse.quote(pages[0]["title"].replace(" ", "_")))
+
+
 def resolve(asset):
+    if asset.get("commons_search") and not (asset.get("url") or asset.get("source_page")):
+        return resolve_commons_search(asset["commons_search"])
     page = asset.get("url") or asset.get("source_page")
     if not page:
         raise FetchError("no url or source_page in manifest")
@@ -401,6 +412,13 @@ def fetch_one(asset, store):
     os.makedirs(os.path.join(store, folder), exist_ok=True)
     with open(os.path.join(store, rel), "wb") as fh:
         fh.write(data)
+    if ext == ".pdf" and asset.get("pdf_pages"):
+        import subprocess, tempfile
+        with tempfile.TemporaryDirectory() as td:
+            pdf = os.path.join(td, "doc.pdf"); open(pdf, "wb").write(data)
+            for pg in asset["pdf_pages"]:
+                subprocess.run(["pdftoppm", "-jpeg", "-r", "130", "-f", str(pg), "-l", str(pg), "-singlefile", pdf,
+                                os.path.join(store, folder, f"{asset['id']}_p{pg}")], check=False)
     if ctype.startswith("image/") or ext in (".jpg", ".png"):
         os.makedirs(os.path.join(store, "_previews"), exist_ok=True)
         preview(data, os.path.join(store, "_previews", asset["id"] + ".jpg"))
