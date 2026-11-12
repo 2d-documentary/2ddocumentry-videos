@@ -427,6 +427,8 @@ def fetch_one(asset, store):
             for pg in asset["pdf_pages"]:
                 subprocess.run(["pdftoppm", "-jpeg", "-r", "130", "-f", str(pg), "-l", str(pg), "-singlefile", pdf,
                                 os.path.join(store, folder, f"{asset['id']}_p{pg}")], check=False)
+    if asset.get("frames") and ext in (".webm", ".mp4", ".ogv"):
+        extract_frames(os.path.join(store, rel), asset["frames"], os.path.join(store, folder), asset["id"])
     if ctype.startswith("image/") or ext in (".jpg", ".png"):
         os.makedirs(os.path.join(store, "_previews"), exist_ok=True)
         preview(data, os.path.join(store, "_previews", asset["id"] + ".jpg"))
@@ -442,6 +444,22 @@ def fetch_one(asset, store):
             "license": asset.get("license") or r.get("license"),
             "attribution": asset.get("attribution") or r.get("attribution"),
             "page": r.get("page") or asset.get("source_page") or asset.get("url")}
+
+
+def extract_frames(video, frames, folder, aid):
+    """Still frames from a video asset: `frames` is a list of seconds, or a count of evenly spaced frames.
+    Writes <folder>/<aid>_f<N>.jpg (N = index)."""
+    import subprocess
+    if isinstance(frames, int):
+        try:
+            dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", video],
+                                       capture_output=True, text=True).stdout.strip())
+        except ValueError:
+            dur = 0
+        frames = [round(dur * (i + .5) / frames, 2) for i in range(frames)] if dur else []
+    for i, t in enumerate(frames):
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-i", video, "-frames:v", "1", "-q:v", "2",
+                        os.path.join(folder, f"{aid}_f{i}.jpg")], check=False)
 
 
 # ---------------------------------------------------------------- main

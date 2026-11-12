@@ -1,0 +1,107 @@
+{
+ "title": "Elon Musk in 60 seconds",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Documentary narrator: brisk, witty, engaging"
+  }
+ },
+ "spoken": {
+  "2008": "two thousand eight",
+  "2026": "twenty twenty-six",
+  "1971": "nineteen seventy-one",
+  "28th": "twenty-eighth",
+  "1995": "nineteen ninety-five",
+  "PhD": "P H D",
+  "1999": "nineteen ninety-nine",
+  "307": "three hundred and seven",
+  "22": "twenty-two",
+  "F1": "F one",
+  "X.com": "X dot com",
+  "2000": "two thousand",
+  "CEO": "C E O",
+  "2002": "two thousand two",
+  "180": "a hundred and eighty",
+  "1": "one",
+  "2006": "two thousand six",
+  "2007": "two thousand seven",
+  "2004": "two thousand four",
+  "1.6": "one point six",
+  "2010": "twenty ten",
+  "2012": "twenty twelve",
+  "21st": "twenty-first",
+  "2015": "twenty fifteen",
+  "9": "nine",
+  "2018": "twenty eighteen",
+  "2020": "twenty twenty",
+  "420": "four twenty",
+  "20": "twenty",
+  "20,000": "twenty thousand",
+  "2019": "twenty nineteen",
+  "Æ": "Ash",
+  "A-12": "A twelve",
+  "2021": "twenty twenty-one",
+  "2022": "twenty twenty-two",
+  "44": "forty-four",
+  "2023": "twenty twenty-three",
+  "2025": "twenty twenty-five",
+  "DOGE": "doge",
+  "2024": "twenty twenty-four",
+  "xAI": "X A I",
+  "AI": "A I",
+  "12th": "twelfth",
+  "75": "seventy-five",
+  "2": "two",
+  "1.1": "one point one",
+  "a.m": "A M",
+  "YMCA": "Y M C A",
+  "Zip2": "Zip two"
+ },
+ "tail": 2.6,
+ "lines": [
+  {
+   "id": "S01",
+   "speaker": "NARRATOR",
+   "text": "In 2008, Elon Musk had three failed rockets, and money for one last try.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "S02",
+   "speaker": "NARRATOR",
+   "text": "Tesla was running out of cash. His marriage was over."
+  },
+  {
+   "id": "S03",
+   "speaker": "NARRATOR",
+   "text": "Then rocket number four reached orbit. NASA called with a 1.6 billion dollar contract. And on Christmas Eve, Tesla was saved."
+  },
+  {
+   "id": "S04",
+   "speaker": "NARRATOR",
+   "text": "After that? Rockets that land themselves. A car in space. And an armored Cybertruck window that smashed on stage. Twice."
+  },
+  {
+   "id": "S05",
+   "speaker": "NARRATOR",
+   "text": "He bought Twitter for 44 billion dollars, and renamed it X."
+  },
+  {
+   "id": "S06",
+   "speaker": "NARRATOR",
+   "text": "And in 2026, SpaceX's record stock market debut made him the first trillionaire in history."
+  },
+  {
+   "id": "S07",
+   "speaker": "NARRATOR",
+   "text": "Not bad for a kid who sold his first space game for five hundred dollars."
+  },
+  {
+   "id": "S08",
+   "speaker": "NARRATOR",
+   "text": "His full story is on Unfiled Films.",
+   "gap_before": 0.4
+  }
+ ]
+}

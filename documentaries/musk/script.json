@@ -1,0 +1,473 @@
+{
+ "title": "Elon Musk: The Man Who Bet Everything",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Documentary narrator: brisk, witty, engaging"
+  }
+ },
+ "spoken": {
+  "2008": "two thousand eight",
+  "2026": "twenty twenty-six",
+  "1971": "nineteen seventy-one",
+  "28th": "twenty-eighth",
+  "1995": "nineteen ninety-five",
+  "PhD": "P H D",
+  "1999": "nineteen ninety-nine",
+  "307": "three hundred and seven",
+  "22": "twenty-two",
+  "F1": "F one",
+  "X.com": "X dot com",
+  "2000": "two thousand",
+  "CEO": "C E O",
+  "2002": "two thousand two",
+  "180": "a hundred and eighty",
+  "1": "one",
+  "2006": "two thousand six",
+  "2007": "two thousand seven",
+  "2004": "two thousand four",
+  "1.6": "one point six",
+  "2010": "twenty ten",
+  "2012": "twenty twelve",
+  "21st": "twenty-first",
+  "2015": "twenty fifteen",
+  "9": "nine",
+  "2018": "twenty eighteen",
+  "2020": "twenty twenty",
+  "420": "four twenty",
+  "20": "twenty",
+  "20,000": "twenty thousand",
+  "2019": "twenty nineteen",
+  "Æ": "Ash",
+  "A-12": "A twelve",
+  "2021": "twenty twenty-one",
+  "2022": "twenty twenty-two",
+  "44": "forty-four",
+  "2023": "twenty twenty-three",
+  "2025": "twenty twenty-five",
+  "DOGE": "doge",
+  "2024": "twenty twenty-four",
+  "xAI": "X A I",
+  "AI": "A I",
+  "12th": "twelfth",
+  "75": "seventy-five",
+  "2": "two",
+  "1.1": "one point one",
+  "a.m": "A M",
+  "YMCA": "Y M C A",
+  "Zip2": "Zip two"
+ },
+ "tail": 3.0,
+ "lines": [
+  {
+   "id": "M001",
+   "speaker": "NARRATOR",
+   "text": "In 2008, this man had three failed rockets, a car company running out of cash, and money for maybe one more try."
+  },
+  {
+   "id": "M002",
+   "speaker": "NARRATOR",
+   "text": "In 2026, he became the first trillionaire in human history."
+  },
+  {
+   "id": "M003",
+   "speaker": "NARRATOR",
+   "text": "That's not a typo. A trillion. With a T."
+  },
+  {
+   "id": "M004",
+   "speaker": "NARRATOR",
+   "text": "His name is Elon Musk. Some people call him a genius. Some call him a walking meme. Honestly? Probably both."
+  },
+  {
+   "id": "M005",
+   "speaker": "NARRATOR",
+   "text": "But the wildest part of his story isn't the money. It's how close he came to losing all of it. Hold that thought. We'll get there."
+  },
+  {
+   "id": "M006",
+   "speaker": "NARRATOR",
+   "text": "This is the story of Elon Musk.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "M007",
+   "speaker": "NARRATOR",
+   "text": "Pretoria, South Africa. June 28th, 1971. Elon Reeve Musk is born.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "M008",
+   "speaker": "NARRATOR",
+   "text": "As a kid, he reads everything. When he runs out of books, he reads the encyclopedia. For fun."
+  },
+  {
+   "id": "M009",
+   "speaker": "NARRATOR",
+   "text": "At school he's small, nerdy and badly bullied. One attack puts him in hospital."
+  },
+  {
+   "id": "M010",
+   "speaker": "NARRATOR",
+   "text": "So he escapes into computers. At twelve, he writes a space shooter game called Blastar, and sells it to a magazine for five hundred dollars."
+  },
+  {
+   "id": "M011",
+   "speaker": "NARRATOR",
+   "text": "Twelve years old, and already selling space stuff. Some things never change."
+  },
+  {
+   "id": "M012",
+   "speaker": "NARRATOR",
+   "text": "At seventeen, he leaves for Canada with very little money. Later he moves to the United States and studies physics and economics."
+  },
+  {
+   "id": "M013",
+   "speaker": "NARRATOR",
+   "text": "In 1995, he starts a PhD at Stanford. He lasts two days."
+  },
+  {
+   "id": "M014",
+   "speaker": "NARRATOR",
+   "text": "Two days. Some people take longer than that to return a pair of shoes."
+  },
+  {
+   "id": "M015",
+   "speaker": "NARRATOR",
+   "text": "Because the internet is exploding, and Elon wants in."
+  },
+  {
+   "id": "M016",
+   "speaker": "NARRATOR",
+   "text": "With his brother Kimbal, he starts Zip2, an online city guide with maps, built for newspapers.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "M017",
+   "speaker": "NARRATOR",
+   "text": "Money is so tight, Elon sleeps in the office and showers at the local YMCA."
+  },
+  {
+   "id": "M018",
+   "speaker": "NARRATOR",
+   "text": "Then in 1999, computer giant Compaq buys Zip2 for 307 million dollars. Elon's share is 22 million. He's twenty-seven."
+  },
+  {
+   "id": "M019",
+   "speaker": "NARRATOR",
+   "text": "So naturally, he buys a million-dollar McLaren F1 supercar. A few months later, he crashes it. It wasn't insured."
+  },
+  {
+   "id": "M020",
+   "speaker": "NARRATOR",
+   "text": "Lesson one from Elon Musk: go fast. Lesson two: maybe get insurance."
+  },
+  {
+   "id": "M021",
+   "speaker": "NARRATOR",
+   "text": "His next idea is bigger: X.com, an online bank. It merges with a rival startup and turns into a little thing called PayPal."
+  },
+  {
+   "id": "M022",
+   "speaker": "NARRATOR",
+   "text": "In 2000, while he's on a plane to Australia, the board quietly replaces him as CEO."
+  },
+  {
+   "id": "M023",
+   "speaker": "NARRATOR",
+   "text": "Still, in 2002, eBay buys PayPal for one point five billion dollars. Elon walks away with around 180 million."
+  },
+  {
+   "id": "M024",
+   "speaker": "NARRATOR",
+   "text": "Most people would retire to a beach. Elon decides to build rockets."
+  },
+  {
+   "id": "M025",
+   "speaker": "NARRATOR",
+   "text": "Why rockets? Because he wants humans to live on Mars. And when he checks the price of a rocket, the answer is: a lot.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "M026",
+   "speaker": "NARRATOR",
+   "text": "So he flies to Russia to buy old missiles. The meetings go badly. It turns out, can I get a discount on your missiles, is a tough opening line."
+  },
+  {
+   "id": "M027",
+   "speaker": "NARRATOR",
+   "text": "On the flight home, he decides to build his own. In 2002, he founds SpaceX."
+  },
+  {
+   "id": "M028",
+   "speaker": "NARRATOR",
+   "text": "Experts give it almost no chance. Because rocket science is, well, rocket science."
+  },
+  {
+   "id": "M029",
+   "speaker": "NARRATOR",
+   "text": "Falcon 1, flight one. 2006. It crashes."
+  },
+  {
+   "id": "M030",
+   "speaker": "NARRATOR",
+   "text": "Flight two. 2007. It fails."
+  },
+  {
+   "id": "M031",
+   "speaker": "NARRATOR",
+   "text": "Flight three. August 2008. It fails again."
+  },
+  {
+   "id": "M032",
+   "speaker": "NARRATOR",
+   "text": "And now, SpaceX has money for one more launch. Maybe."
+  },
+  {
+   "id": "M033",
+   "speaker": "NARRATOR",
+   "text": "Meanwhile, his other big bet is also on fire. Back in 2004, Elon put millions into a small electric car startup called Tesla.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "M034",
+   "speaker": "NARRATOR",
+   "text": "Its first car, the Roadster, is fast and beautiful, and costs far more to build than anyone planned."
+  },
+  {
+   "id": "M035",
+   "speaker": "NARRATOR",
+   "text": "Then the 2008 financial crisis hits. Tesla is running out of cash. Elon takes over as CEO and pours in almost everything he has left."
+  },
+  {
+   "id": "M036",
+   "speaker": "NARRATOR",
+   "text": "That same year, his marriage ends. He later called 2008 the worst year of his life."
+  },
+  {
+   "id": "M037",
+   "speaker": "NARRATOR",
+   "text": "Remember when I said he came close to losing everything? This is the moment.",
+   "gap_before": 0.4
+  },
+  {
+   "id": "M038",
+   "speaker": "NARRATOR",
+   "text": "September 28th, 2008. Falcon 1, flight four. The last shot.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "M039",
+   "speaker": "NARRATOR",
+   "text": "And this time, it reaches orbit. The first privately developed liquid fuel rocket ever to do it."
+  },
+  {
+   "id": "M040",
+   "speaker": "NARRATOR",
+   "text": "Then, days before Christmas, NASA gives SpaceX a 1.6 billion dollar contract to fly cargo to the space station."
+  },
+  {
+   "id": "M041",
+   "speaker": "NARRATOR",
+   "text": "Elon's reaction? Three words. I love NASA."
+  },
+  {
+   "id": "M042",
+   "speaker": "NARRATOR",
+   "text": "And on Christmas Eve, at the last possible moment, Tesla's emergency funding comes through."
+  },
+  {
+   "id": "M043",
+   "speaker": "NARRATOR",
+   "text": "Two companies, both saved in the same week. Santa was clearly a fan."
+  },
+  {
+   "id": "M044",
+   "speaker": "NARRATOR",
+   "text": "From here, things move fast. In 2010, Tesla goes public. In 2012, SpaceX's Dragon becomes the first commercial spacecraft to visit the International Space Station.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "M045",
+   "speaker": "NARRATOR",
+   "text": "Then Tesla's Model S arrives, and suddenly electric cars are cool."
+  },
+  {
+   "id": "M046",
+   "speaker": "NARRATOR",
+   "text": "December 21st, 2015. A Falcon 9 booster flies to space, comes back, and lands standing up. A rocket that parks itself."
+  },
+  {
+   "id": "M047",
+   "speaker": "NARRATOR",
+   "text": "In 2018, the Falcon Heavy launches with a strange payload: Elon's own cherry red Tesla Roadster, with a dummy astronaut called Starman in the driver's seat."
+  },
+  {
+   "id": "M048",
+   "speaker": "NARRATOR",
+   "text": "On the car's screen, two words: Don't Panic. It's still out there, circling the Sun. The most expensive way ever to avoid traffic."
+  },
+  {
+   "id": "M049",
+   "speaker": "NARRATOR",
+   "text": "And in 2020, SpaceX becomes the first private company to fly astronauts to the space station."
+  },
+  {
+   "id": "M050",
+   "speaker": "NARRATOR",
+   "text": "But Elon's biggest launches aren't always rockets. Sometimes, they're tweets.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "M051",
+   "speaker": "NARRATOR",
+   "text": "In 2018, he tweets that he might take Tesla private at 420 dollars a share. Funding secured."
+  },
+  {
+   "id": "M052",
+   "speaker": "NARRATOR",
+   "text": "It wasn't. Regulators fined him and Tesla 20 million dollars each, and he had to step down as chairman."
+  },
+  {
+   "id": "M053",
+   "speaker": "NARRATOR",
+   "text": "The most expensive tweet in history. At least, until later."
+  },
+  {
+   "id": "M054",
+   "speaker": "NARRATOR",
+   "text": "Then his tunnel company sells 20,000 flamethrowers. Officially named: Not a Flamethrower."
+  },
+  {
+   "id": "M055",
+   "speaker": "NARRATOR",
+   "text": "In 2019, he unveils the Cybertruck, with unbreakable armor glass. His designer throws a metal ball at it. The window smashes. On stage. Twice."
+  },
+  {
+   "id": "M056",
+   "speaker": "NARRATOR",
+   "text": "Elon's verdict? Room for improvement."
+  },
+  {
+   "id": "M057",
+   "speaker": "NARRATOR",
+   "text": "In 2020, his son is born. The name? X Æ A-12. Yes, really."
+  },
+  {
+   "id": "M058",
+   "speaker": "NARRATOR",
+   "text": "And in January 2021, he becomes the richest person on Earth for the first time."
+  },
+  {
+   "id": "M059",
+   "speaker": "NARRATOR",
+   "text": "Which brings us to the most expensive impulse buy in history.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "M060",
+   "speaker": "NARRATOR",
+   "text": "In 2022, Elon offers 44 billion dollars for Twitter. Then he tries to back out. Then he buys it anyway."
+  },
+  {
+   "id": "M061",
+   "speaker": "NARRATOR",
+   "text": "Just before the deal closes, he walks into Twitter headquarters carrying a sink. His caption: let that sink in."
+  },
+  {
+   "id": "M062",
+   "speaker": "NARRATOR",
+   "text": "He fires most of the staff, sells the blue check marks, and in 2023 renames the whole thing: X."
+  },
+  {
+   "id": "M063",
+   "speaker": "NARRATOR",
+   "text": "Goodbye, blue bird. Hello, letter X. His favourite letter, in case you hadn't noticed."
+  },
+  {
+   "id": "M064",
+   "speaker": "NARRATOR",
+   "text": "In 2025, he goes to Washington to lead a government cost-cutting team called DOGE. It makes him a hero to some and a villain to others. A few months later, he's out."
+  },
+  {
+   "id": "M065",
+   "speaker": "NARRATOR",
+   "text": "Meanwhile in Texas, SpaceX is building the biggest rocket ever made: Starship.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "M066",
+   "speaker": "NARRATOR",
+   "text": "Its first flight, in 2023, ends in an explosion. SpaceX calls it a rapid unscheduled disassembly."
+  },
+  {
+   "id": "M067",
+   "speaker": "NARRATOR",
+   "text": "Which is engineer language for: it blew up."
+  },
+  {
+   "id": "M068",
+   "speaker": "NARRATOR",
+   "text": "But in October 2024, the giant booster flies back to its launch tower, and the tower catches it with two metal arms. Fans call them the chopsticks."
+  },
+  {
+   "id": "M069",
+   "speaker": "NARRATOR",
+   "text": "Catching a skyscraper-sized rocket with chopsticks. Most of us can't even catch noodles."
+  },
+  {
+   "id": "M070",
+   "speaker": "NARRATOR",
+   "text": "Then 2026 goes into overdrive. In February, SpaceX merges with Elon's AI company, xAI."
+  },
+  {
+   "id": "M071",
+   "speaker": "NARRATOR",
+   "text": "On June 12th, SpaceX goes public. It raises 75 billion dollars, the biggest stock market debut in history."
+  },
+  {
+   "id": "M072",
+   "speaker": "NARRATOR",
+   "text": "By the end of day one, SpaceX is worth more than 2 trillion dollars. And Forbes says Elon is now worth about 1.1 trillion."
+  },
+  {
+   "id": "M073",
+   "speaker": "NARRATOR",
+   "text": "Remember that guy with three failed rockets? Yeah. Him."
+  },
+  {
+   "id": "M074",
+   "speaker": "NARRATOR",
+   "text": "In September, Starship reaches orbit for the first time. Next up: catch both halves of the rocket. Then the Moon. Then Mars."
+  },
+  {
+   "id": "M075",
+   "speaker": "NARRATOR",
+   "text": "So who is Elon Musk, really?",
+   "gap_before": 0.6
+  },
+  {
+   "id": "M076",
+   "speaker": "NARRATOR",
+   "text": "A kid who sold a space game for five hundred dollars. A man who bet everything and nearly lost it all. A billionaire who posts like a teenager at 2 a.m."
+  },
+  {
+   "id": "M077",
+   "speaker": "NARRATOR",
+   "text": "Love him or hate him, he changed how we drive, how rockets fly, and how the internet argues."
+  },
+  {
+   "id": "M078",
+   "speaker": "NARRATOR",
+   "text": "And if your plan ever feels too crazy, remember: this whole story started with a guy trying to buy missiles from Russia."
+  },
+  {
+   "id": "M079",
+   "speaker": "NARRATOR",
+   "text": "This was Unfiled Films. Is Elon Musk a genius, or just incredibly lucky? Tell us in the comments, and subscribe for more stories like this.",
+   "gap_before": 0.6
+  }
+ ]
+}

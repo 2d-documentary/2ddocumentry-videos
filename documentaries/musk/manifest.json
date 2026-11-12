@@ -1,0 +1,526 @@
+{
+ "project": "musk",
+ "title": "Elon Musk: The Man Who Bet Everything",
+ "assets": [
+  {
+   "id": "p_royal",
+   "category": "historical-photos",
+   "description": "Elon Musk, Royal Society portrait 2018",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_Royal_Society.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_2015",
+   "category": "historical-photos",
+   "description": "Elon Musk 2015",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_2015.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_2008",
+   "category": "historical-photos",
+   "description": "Elon Musk 2008",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_2008b",
+   "category": "historical-photos",
+   "description": "Elon Musk laughing, 2008",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_(3018710552).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_2008c",
+   "category": "historical-photos",
+   "description": "Elon Musk, 2008 Web 2.0 Summit",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_(3017880199).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_2006",
+   "category": "historical-photos",
+   "description": "Elon Musk at MSC 2006",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_at_MSC_2006.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_griffin",
+   "category": "historical-photos",
+   "description": "NASA Administrator Michael Griffin meets Elon Musk, 2005",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Michael_Griffin_Meets_with_Elon_Musk.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_obama",
+   "category": "historical-photos",
+   "description": "Elon Musk gives tour for President Obama, 2010",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_gives_tour_for_President_Barack_Obama.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_bolden",
+   "category": "historical-photos",
+   "description": "Charles Bolden congratulates Elon Musk after Dragon, 2012",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Charles_Bolden_congratulates_SpaceX_CEO_and_Chief_Designer_Elon_Musk_in_front_of_the_historic_Dragon_capsule.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_dragon2",
+   "category": "historical-photos",
+   "description": "Dragon V2 unveiling, Elon Musk 2014",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Dragon_V2_unveiling,_Elon_Musk_(KSC-2014-2727).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_fh_press",
+   "category": "historical-photos",
+   "description": "Elon Musk at SpaceX press conference",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_and_Hans_Koenigsmann_at_the_SpaceX_CRS-8_post-launch_press_conference_(26223624532)_(cropped).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_laugh",
+   "category": "historical-photos",
+   "description": "Elon Musk laughing 2023",
+   "source_page": "https://commons.wikimedia.org/wiki/File:UK_Government_hosts_AI_Summit_at_Bletchley_Park_(53302927869).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_f9r",
+   "category": "historical-photos",
+   "description": "Elon Musk overlooking the remains of F9R",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_overlooking_the_remains_of_F9R_(36411051713).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_starship",
+   "category": "historical-photos",
+   "description": "Elon and the Starship, 2020",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_%26_The_Starship_(50710186528).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_starship2",
+   "category": "historical-photos",
+   "description": "Elon and Starship SN9",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_%26_Starship_SN9.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_franz",
+   "category": "historical-photos",
+   "description": "Franz von Holzhausen and Elon Musk",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Franz_von_Holzhausen_and_Elon_Musk.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_twitter",
+   "category": "historical-photos",
+   "description": "Elon Musk on stage, 2022",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Meet_the_new_boss..._Same_as_the_News_boss..._The_Elon_Musk_Twitter_Interview_at_TED_2022_(52004185747).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_doge",
+   "category": "historical-photos",
+   "description": "Elon Musk in DOGE cap, Oval Office 2025",
+   "source_page": "https://commons.wikimedia.org/wiki/File:P20250530MR-1015_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk_(cropped).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_ted",
+   "category": "historical-photos",
+   "description": "Elon Musk at TED 2017",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_at_TED_2017.jpeg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_model3",
+   "category": "historical-photos",
+   "description": "Elon Musk presenting the first Model 3 cars",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_Presenting_the_First_Tesla_Model_3_Cars.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_battery",
+   "category": "historical-photos",
+   "description": "Elon Musk at Tesla Battery Day 2020",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_at_the_Tesla_ASM_and_Battery_Day.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_boring",
+   "category": "historical-photos",
+   "description": "Elon Musk in the Boring tunnel 2018",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_Accelerates_the_Boring_(45716125474).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_neuralink",
+   "category": "historical-photos",
+   "description": "Elon Musk unveiling Neuralink 2019",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_unveiling_Neuralink.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_roadster08",
+   "category": "historical-photos",
+   "description": "First production Tesla Roadster, 2008",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Tesla_has_landed_-_Flickr_-_jurvetson.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_tesla07",
+   "category": "historical-photos",
+   "description": "Elon Musk at SpaceX factory",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_4670874048_7c12d5503a_o.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f1_flight4",
+   "category": "historical-photos",
+   "description": "Falcon 1 Flight 4 launch, 28 Sep 2008",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Falcon_1_Flight_4_launch.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f1_omelek",
+   "category": "historical-photos",
+   "description": "Falcon 1 over Omelek Island",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Falcon_1_Flight_5_rises_over_Omelek_Island.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f1_2009",
+   "category": "historical-photos",
+   "description": "Falcon 1 launch, Omelek",
+   "source_page": "https://commons.wikimedia.org/wiki/File:2009_Falcon_1_launches_from_Omelek_Island_(cropped).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f9_lz1",
+   "category": "historical-photos",
+   "description": "Falcon 9 first stage at LZ-1, Dec 2015",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Falcon_9_first_stage_at_LZ-1(two).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f9_night",
+   "category": "historical-photos",
+   "description": "Falcon 9 first stage after landing, 21 Dec 2015",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Falcon_9_Flight_20_OG2_first_stage_post-landing_(23273082823).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f9_trail",
+   "category": "historical-photos",
+   "description": "ORBCOMM-2 launch and landing, long exposure",
+   "source_page": "https://commons.wikimedia.org/wiki/File:ORBCOMM-2_(23660653516).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "roadster_space",
+   "category": "historical-photos",
+   "description": "Elon Musk's Tesla Roadster with Earth",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40143096241).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "roadster_space2",
+   "category": "historical-photos",
+   "description": "Starman in the Roadster",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40110298232).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "roadster_orbit",
+   "category": "historical-photos",
+   "description": "Tesla Roadster orbit diagram",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Tesla_Roadster_orbit.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dragon_iss",
+   "category": "historical-photos",
+   "description": "Dragon capsule at the ISS, 2012",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Dragon_Capsule_ISS_Docking.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dragon_post",
+   "category": "historical-photos",
+   "description": "Post-flight Dragon capsule 2012",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Post-flight_Dragon_capsule.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "demo2",
+   "category": "historical-photos",
+   "description": "SpaceX Demo-2 launch, May 2020",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Demo-2_Launch_(NHQ202005300110).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "demo2b",
+   "category": "historical-photos",
+   "description": "SpaceX Demo-2 launch",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Demo-2_Launch_(NHQ202005300109).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "starship_ift5",
+   "category": "historical-photos",
+   "description": "Starship during IFT-5, Oct 2024",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_during_IFT-5.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "starship_pad",
+   "category": "historical-photos",
+   "description": "Starship before IFT-5",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_before_IFT-5.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "starship_ift2",
+   "category": "historical-photos",
+   "description": "Starship IFT-2 ascent",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Starship-IFT2-ascent.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "starship_iss",
+   "category": "historical-photos",
+   "description": "Starship 6 launch seen from the ISS",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Launch_of_SpaceX_Starship_6_rocket_seen_from_the_International_Space_Station_(iss072e220161,_cropped).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "starship_11",
+   "category": "historical-photos",
+   "description": "Starship flight test 11 liftoff",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Starship_lifted_off_from_Starbase_during_flight_test_11.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ship39",
+   "category": "historical-photos",
+   "description": "Ship 39 in Megabay 2, Starbase",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Ship_39_in_Megabay_2,_Boca_Chica_TX.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "mars",
+   "category": "historical-photos",
+   "description": "Mars, accurate colour",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Mars_accurate_colour.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cybertruck",
+   "category": "historical-photos",
+   "description": "Production Tesla Cybertruck, Denver 2023",
+   "source_page": "https://commons.wikimedia.org/wiki/File:2023_production-level_Tesla_Cybertruck_on_display_in_Denver,_Colorado.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "mclaren",
+   "category": "historical-photos",
+   "description": "1995 McLaren F1",
+   "source_page": "https://commons.wikimedia.org/wiki/File:1995_McLaren_F1_(19638003335).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "boring_tunnel",
+   "category": "historical-photos",
+   "description": "Boring Company tunnel",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Tunnel_of_love_(32489303638).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "blastar",
+   "category": "documents",
+   "description": "Blastar source code, 1984",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Blastar_source_code.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "twitter_hq",
+   "category": "historical-photos",
+   "description": "Twitter headquarters, San Francisco",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Twitter_headquarters_building.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "twitter_hq2",
+   "category": "historical-photos",
+   "description": "Twitter headquarters 2022",
+   "source_page": "https://commons.wikimedia.org/wiki/File:TwitterHeadquarters2022.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "x_hq",
+   "category": "historical-photos",
+   "description": "X headquarters, debadged, 2024",
+   "source_page": "https://commons.wikimedia.org/wiki/File:X_(Twitter)_Headquarters,_San_Francisco_-_Debadged.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "paypal_hq",
+   "category": "historical-photos",
+   "description": "eBay / PayPal headquarters San Jose",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Ebay-PayPal_San_Jose.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "stanford",
+   "category": "historical-photos",
+   "description": "Stanford University Main Quad arch",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SE_Arch_Stanford_University_Main_Quad.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "nasdaq",
+   "category": "historical-photos",
+   "description": "Nasdaq MarketSite, Times Square",
+   "source_page": "https://commons.wikimedia.org/wiki/File:NASDAQ_Market_Site_201506.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "nasdaq26",
+   "category": "historical-photos",
+   "description": "Nasdaq tower, May 2026",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Nasdaq_Tower_May_2026.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "networth",
+   "category": "documents",
+   "description": "Elon Musk net worth 2019-2026 chart",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musks_Verm%C3%B6gen_2019%E2%80%932026.svg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "catch_vid",
+   "category": "footage",
+   "description": "SpaceX Starship integrated flight test -5 - launch and catch - 13 October 2",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_integrated_flight_test_-5_-_launch_and_catch_-_13_October_2024.webm",
+   "frames": 14,
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ift1_vid",
+   "category": "footage",
+   "description": "Starship Test Flight!.webm",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Starship_Test_Flight!.webm",
+   "frames": 14,
+   "authenticity": "authentic"
+  },
+  {
+   "id": "britannica",
+   "category": "historical-photos",
+   "description": "Encyclopaedia Britannica volumes",
+   "commons_search": "Encyclopaedia Britannica volumes",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "redsquare",
+   "category": "historical-photos",
+   "description": "Red Square Moscow winter",
+   "commons_search": "Red Square Moscow winter",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dnepr",
+   "category": "historical-photos",
+   "description": "Dnepr rocket launch",
+   "commons_search": "Dnepr rocket launch",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "lehman",
+   "category": "historical-photos",
+   "description": "Lehman Brothers headquarters 2008",
+   "commons_search": "Lehman Brothers headquarters 2008",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "pretoria",
+   "category": "historical-photos",
+   "description": "Union Buildings Pretoria",
+   "commons_search": "Union Buildings Pretoria",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "kingston",
+   "category": "historical-photos",
+   "description": "Kingston Ontario Queen's University",
+   "commons_search": "Kingston Ontario Queen's University",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "upenn",
+   "category": "historical-photos",
+   "description": "University of Pennsylvania College Hall",
+   "commons_search": "University of Pennsylvania College Hall",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "modelS",
+   "category": "historical-photos",
+   "description": "Tesla Model S red 2013",
+   "commons_search": "Tesla Model S red 2013",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "falconheavy",
+   "category": "historical-photos",
+   "description": "Falcon Heavy Demo Mission launch",
+   "commons_search": "Falcon Heavy Demo Mission launch",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "fh_boosters",
+   "category": "historical-photos",
+   "description": "Falcon Heavy side boosters landing",
+   "commons_search": "Falcon Heavy side boosters landing",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sink",
+   "category": "historical-photos",
+   "description": "kitchen sink stainless steel",
+   "commons_search": "kitchen sink stainless steel",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "compaq",
+   "category": "historical-photos",
+   "description": "Compaq computer 1990s",
+   "commons_search": "Compaq computer 1990s",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ymca",
+   "category": "historical-photos",
+   "description": "YMCA building sign",
+   "commons_search": "YMCA building sign",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "starlink_train",
+   "category": "historical-photos",
+   "description": "Starlink satellites train sky",
+   "commons_search": "Starlink satellites train sky",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ussr_missile",
+   "category": "historical-photos",
+   "description": "R-36 missile",
+   "commons_search": "R-36 missile",
+   "authenticity": "authentic"
+  }
+ ]
+}
