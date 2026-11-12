@@ -1,15 +1,6 @@
 # Asset report: Elon Musk: The Man Who Bet Everything
 
-**75 downloaded, 2 need attention** (of 77)
-
-## Download these by hand
-
-Open each link, download the highest-resolution version, and send it back with its ID.
-
-| ID | Scene | What | Link | Why it failed |
-|---|---|---|---|---|
-| britannica |  | Encyclopaedia Britannica volumes bookshelf |  | Commons search found no photos (only documents) |
-| bill100 |  | US 100 dollar bill obverse |  | Commons search found no photos (only documents) |
+**76 downloaded, 0 need attention** (of 76)
 
 ## In the store
 
@@ -88,5 +79,6 @@ Open each link, download the highest-resolution version, and send it back with i
 | ymca |  | `archives/historical-photos/ymca_ymca-building-sign.jpg` | CC0 | authentic |
 | starlink_train |  | `archives/historical-photos/starlink_train_starlink-satellites-train-sky.jpg` | CC0 | authentic |
 | ussr_missile |  | `archives/historical-photos/ussr_missile_r-36-missile.jpg` | Public domain | authentic |
+| bill100 |  | `archives/historical-photos/bill100_us-100-dollar-bill-obverse.jpg` | Public domain | authentic |
 | ift1_vid2 |  | `archives/footage/ift1_vid2_starship-ift-1-nasa-wb-57-cam-4.webm` | Public domain | authentic |
 | f9_arc |  | `archives/historical-photos/f9_arc_falcon-9-launch-and-landing-long-exposur.jpg` | Public domain | authentic |

@@ -831,15 +831,6 @@
       "status": "downloaded"
     },
     {
-      "id": "britannica",
-      "category": "historical-photos",
-      "description": "Encyclopaedia Britannica volumes bookshelf",
-      "commons_search": "Encyclopaedia Britannica volumes bookshelf",
-      "authenticity": "authentic",
-      "status": "failed",
-      "error": "Commons search found no photos (only documents)"
-    },
-    {
       "id": "redsquare",
       "category": "historical-photos",
       "description": "Red Square Moscow winter",
@@ -1039,10 +1030,15 @@
       "id": "bill100",
       "category": "historical-photos",
       "description": "US 100 dollar bill obverse",
-      "commons_search": "United States one hundred dollar bill obverse series 2009",
       "authenticity": "authentic",
-      "status": "failed",
-      "error": "Commons search found no photos (only documents)"
+      "source_page": "https://commons.wikimedia.org/wiki/File:Obverse_of_the_series_2009_$100_Federal_Reserve_Note.jpg",
+      "file": "archives/historical-photos/bill100_us-100-dollar-bill-obverse.jpg",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Obverse_of_the_series_2009_%24100_Federal_Reserve_Note.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 124513,
+      "license": "Public domain",
+      "attribution": "Bureau of Engraving and Printing, http://www.newmoney.gov/newmoney/files/100_Materials/100_GlossyFront_EN_WEB031210.pdf",
+      "page": "https://commons.wikimedia.org/wiki/File:Obverse_of_the_series_2009_$100_Federal_Reserve_Note.jpg",
+      "status": "downloaded"
     },
     {
       "id": "ift1_vid2",

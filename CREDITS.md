@@ -2,6 +2,7 @@
 
 Archival material used in this video:
 
+- US 100 dollar bill obverse | Bureau of Engraving and Printing, http://www.newmoney.gov/newmoney/files/100_Materials/100_GlossyFront_EN_WEB031210.pdf | Public domain | https://commons.wikimedia.org/wiki/File:Obverse_of_the_series_2009_$100_Federal_Reserve_Note.jpg
 - Blastar source code, 1984 | Elon Musk, Ashlee Vance: Elon Musk – How the Billionaire CEO of SpaceX and Tesla is Shaping our Future (2015), page 368. / PC and Office Technology, December 1984. | Public domain | https://commons.wikimedia.org/wiki/File:Blastar_source_code.png
 - Boring Company tunnel | Steve Jurvetson from Menlo Park, USA, tunnel of love | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Tunnel_of_love_(32489303638).jpg
 - SpaceX Starship integrated flight test -5 - launch and catch - 13 October 2 | Anne Toal, YouTube : https://www.youtube.com/watch?v=jawCFgILjP4 – View/save archived versions on archive.org | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:SpaceX_Starship_integrated_flight_test_-5_-_launch_and_catch_-_13_October_2024.webm
