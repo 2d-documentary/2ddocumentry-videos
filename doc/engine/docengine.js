@@ -474,7 +474,7 @@ function timelineBar(ctx, y, years, from, to, t, t0, o = {}) {
   ctx.save(); ctx.strokeStyle = o.color || 'rgba(244,236,220,.6)'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(lerp(x0, x1, p), y); ctx.stroke();
   years.forEach(([yr, label, ty], i) => { const x = lerp(x0, x1, (yr - from) / (to - from)); if (t < (ty ?? t0 + .2 + i * .15)) return;
     const q = E.back(prog(t, ty ?? t0 + .2 + i * .15, (ty ?? t0 + .2 + i * .15) + .3));
-    ctx.fillStyle = o.dot || PAL.red2; ctx.beginPath(); ctx.arc(x, y, 12 * q, 0, 7); ctx.fill();
+    ctx.fillStyle = o.dot || PAL.red2; ctx.beginPath(); ctx.arc(x, y, 12 * Math.max(0, q), 0, 7); ctx.fill();
     text(ctx, String(yr), x, y - 34, { font: F.bebas, size: 54, color: PAL.cream, align: 'center', alpha: q });
     if (label) text(ctx, label, x, y + 56, { font: F.osw, size: 26, color: 'rgba(244,236,220,.75)', align: 'center', weight: 500, alpha: q }); });
   ctx.restore();

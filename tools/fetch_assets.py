@@ -264,12 +264,14 @@ def resolve_archive(page, wanted_file=None, category=""):
 
 
 def resolve_commons_search(q):
-    api = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=5"
+    api = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&generator=search&gsrnamespace=6&gsrlimit=25"
            "&gsrsearch=" + urllib.parse.quote(q))
     pages = sorted(get_json(api).get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99))
     if not pages:
         raise FetchError("Commons search found nothing")
-    pages = [p for p in pages if re.search(r"\.(jpe?g|png|tiff?)$", p["title"], re.I)] or pages
+    pages = [p for p in pages if re.search(r"\.(jpe?g|png|tiff?)$", p["title"], re.I)]
+    if not pages:
+        raise FetchError("Commons search found no photos (only documents)")
     return resolve_commons("https://commons.wikimedia.org/wiki/" + urllib.parse.quote(pages[0]["title"].replace(" ", "_"), safe=":"))
 
 
@@ -453,7 +455,7 @@ def main():
     results = []
     for a in manifest["assets"]:
         prev = old.get(a["id"], {})
-        same_source = all(prev.get(k) == a.get(k) for k in ("url", "source_page", "file"))
+        same_source = all(prev.get(k) == a.get(k) for k in ("url", "source_page", "file", "commons_search"))
         if prev.get("status") == "downloaded" and same_source and os.path.exists(os.path.join(store, prev.get("file", ""))):
             results.append({**a, **{k: prev[k] for k in ("status", "file", "resolved_url", "bytes", "license", "attribution", "page") if k in prev}})
             print(f"= {a['id']} already in store")

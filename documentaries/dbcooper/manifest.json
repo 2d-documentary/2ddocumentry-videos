@@ -202,15 +202,7 @@
    "scene": 0,
    "category": "historical-photos",
    "description": "US $20 Federal Reserve note",
-   "commons_search": "United States twenty dollar bill obverse",
-   "authenticity": "authentic"
-  },
-  {
-   "id": "bill20b",
-   "scene": 0,
-   "category": "historical-photos",
-   "description": "US $20 bill",
-   "commons_search": "US $20 bill series 1969",
+   "commons_search": "United States twenty-dollar bill",
    "authenticity": "authentic"
   },
   {
@@ -218,7 +210,7 @@
    "scene": 0,
    "category": "historical-photos",
    "description": "Stack of US dollar bills",
-   "commons_search": "stack of twenty dollar bills",
+   "commons_search": "stack of United States dollar banknotes",
    "authenticity": "authentic"
   },
   {
@@ -235,22 +227,6 @@
    "category": "historical-photos",
    "description": "Pacific Northwest forest in fog",
    "commons_search": "Gifford Pinchot National Forest fog",
-   "authenticity": "authentic"
-  },
-  {
-   "id": "columbia",
-   "scene": 0,
-   "category": "historical-photos",
-   "description": "Columbia River near Vancouver, Washington",
-   "commons_search": "Columbia River Vancouver Washington",
-   "authenticity": "authentic"
-  },
-  {
-   "id": "merwin",
-   "scene": 0,
-   "category": "historical-photos",
-   "description": "Lake Merwin, Washington",
-   "commons_search": "Lake Merwin",
    "authenticity": "authentic"
   },
   {
@@ -290,7 +266,7 @@
    "scene": 0,
    "category": "historical-photos",
    "description": "Airport security screening, 1970s",
-   "commons_search": "airport security checkpoint 1970s x-ray",
+   "commons_search": "airport security screening passengers 1970s",
    "authenticity": "authentic"
   },
   {
@@ -310,35 +286,19 @@
    "authenticity": "authentic"
   },
   {
-   "id": "microfilm",
+   "id": "columbia",
    "scene": 0,
    "category": "historical-photos",
-   "description": "Microfilm reader",
-   "commons_search": "microfilm reader",
+   "description": "Columbia River near Ridgefield, Washington",
+   "commons_search": "Columbia River Ridgefield Washington",
    "authenticity": "authentic"
   },
   {
-   "id": "soldiers",
+   "id": "bill20c",
    "scene": 0,
    "category": "historical-photos",
-   "description": "US Army soldiers searching woods",
-   "commons_search": "Fort Lewis soldiers 1972",
-   "authenticity": "authentic"
-  },
-  {
-   "id": "briefcase",
-   "scene": 0,
-   "category": "historical-photos",
-   "description": "Vintage attach\u00e9 case",
-   "commons_search": "vintage attache case briefcase",
-   "authenticity": "authentic"
-  },
-  {
-   "id": "rain",
-   "scene": 0,
-   "category": "historical-photos",
-   "description": "Rain at night",
-   "commons_search": "rain at night streetlight",
+   "description": "US twenty dollar note",
+   "commons_search": "20 USD note obverse",
    "authenticity": "authentic"
   }
  ]

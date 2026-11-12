@@ -21,7 +21,13 @@ window.READY = (async () => {
   await new Promise(r => s.onload = r);
   const fams = ['60px Bebas', '60px Playfair', '700 60px Playfair', 'italic 60px PlayfairI', '60px SpecialElite', '600 60px Caveat', '500 60px Oswald', '60px CourierPrime'];
   await Promise.all(fams.map(f => document.fonts.load(f)));
-  await loadImages(Object.fromEntries(Object.entries(EP.images).map(([k, v]) => [k, (ASSETS ? `../../documentaries/${ASSETS}/` : EPDIR) + 'assets/' + v])));
+  const ABASE = (ASSETS ? `../../documentaries/${ASSETS}/` : EPDIR) + 'assets/';
+  let imgs = Object.assign({}, EP.images || {});
+  try { const lock = await (await fetch(ABASE + 'manifest.lock.json')).json();
+    lock.assets.forEach(a => { if (a.status === 'downloaded' && /\.(jpe?g|png|gif|webp)$/i.test(a.file) && !imgs[a.id]) imgs[a.id] = a.file;
+      if (a.status === 'downloaded') EP.credit = Object.assign(EP.credit || {}, { [a.id]: [a.attribution, a.license].filter(Boolean).join(' · ') }); });
+  } catch (e) { console.warn('no manifest.lock.json'); }
+  await loadImages(Object.fromEntries(Object.entries(imgs).map(([k, v]) => [k, ABASE + v])));
   return true;
 })();
 window.loadTimeline = (tl) => { setTimeline(tl); EP.scenes(); buildShots(); return SHOTS.map(s => [s.start, s.end, s.name || '']); };
