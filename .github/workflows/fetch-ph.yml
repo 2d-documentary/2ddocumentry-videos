@@ -1,0 +1,17 @@
+# Downloads Poly Haven (CC0) textures and sky photos listed in assets/ph_list.json into assets/ph/.
+name: Fetch Poly Haven textures
+on:
+  push:
+    paths: ['assets/ph_list.json']
+  workflow_dispatch:
+permissions: { contents: write }
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 tools/fetch_ph.py
+      - run: |
+          git config user.name "github-actions"; git config user.email "github-actions@users.noreply.github.com"
+          git add assets/ph; git commit -qm "Poly Haven textures [skip ci]" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done

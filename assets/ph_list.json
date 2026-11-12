@@ -1,0 +1,22 @@
+{"textures": [
+ ["marble", ["marble_01", "white_marble", "marble"], "1k", ["diff", "nor", "rough"]],
+ ["travertine", ["travertine", "beige_wall_001", "limestone"], "1k", ["diff", "nor", "rough"]],
+ ["stoneblocks", ["castle_brick_01", "stone_brick_wall_001", "medieval_blocks_02", "stone brick"], "1k", ["diff", "nor", "rough"]],
+ ["romanbrick", ["red_brick_03", "brick_wall_001", "red brick"], "1k", ["diff", "nor", "rough"]],
+ ["paving", ["cobblestone_floor_04", "cobblestone_floor_08", "cobblestone"], "2k", ["diff", "nor", "rough"]],
+ ["marblefloor", ["marble_tiles", "floor_tiles_06", "tiles"], "1k", ["diff", "nor", "rough"]],
+ ["rooftiles", ["roof_tiles_14", "clay_roof_tiles", "roof tiles"], "1k", ["diff", "nor", "rough"]],
+ ["plaster", ["painted_plaster_wall", "plastered_wall_04", "plaster"], "1k", ["diff", "nor", "rough"]],
+ ["grass", ["aerial_grass_rock", "forrest_ground_01", "grass"], "2k", ["diff", "nor", "rough"]],
+ ["mud", ["brown_mud_leaves_01", "dirt_floor", "mud"], "1k", ["diff", "nor", "rough"]],
+ ["rock", ["rock_face", "rocky_terrain_02", "rock"], "1k", ["diff", "nor", "rough"]],
+ ["wood", ["weathered_brown_planks", "brown_planks_05", "planks"], "1k", ["diff", "nor", "rough"]],
+ ["thatch", ["thatch_roof_angled", "thatch"], "1k", ["diff", "nor", "rough"]],
+ ["sand", ["coast_sand_01", "sand"], "1k", ["diff", "nor", "rough"]],
+ ["gravel", ["gravel_road", "rocky_trail", "gravel"], "1k", ["diff", "nor", "rough"]]
+], "skies": [
+ ["day", ["kloofendal_48d_partly_cloudy_puresky", "kloofendal_43d_clear_puresky", "puresky"]],
+ ["golden", ["kloppenheim_06", "spruit_sunrise", "sunrise"]],
+ ["dusk", ["kloppenheim_02", "dikhololo_sunset", "sunset"]],
+ ["overcast", ["kloofendal_overcast_puresky", "overcast"]]
+]}
