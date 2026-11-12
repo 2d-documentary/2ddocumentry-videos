@@ -418,13 +418,6 @@
    "authenticity": "authentic"
   },
   {
-   "id": "britannica",
-   "category": "historical-photos",
-   "description": "Encyclopaedia Britannica volumes bookshelf",
-   "commons_search": "Encyclopaedia Britannica volumes bookshelf",
-   "authenticity": "authentic"
-  },
-  {
    "id": "redsquare",
    "category": "historical-photos",
    "description": "Red Square Moscow winter",
@@ -526,8 +519,8 @@
    "id": "bill100",
    "category": "historical-photos",
    "description": "US 100 dollar bill obverse",
-   "commons_search": "United States one hundred dollar bill obverse series 2009",
-   "authenticity": "authentic"
+   "authenticity": "authentic",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Obverse_of_the_series_2009_$100_Federal_Reserve_Note.jpg"
   },
   {
    "id": "ift1_vid2",
