@@ -1,0 +1,3 @@
+02_tiber_low 23.7s {"calls":58,"tris":232582}
+06_rome117_aerial 24.9s {"calls":12,"tris":754538}
+10_forum_ruins 23.6s {"calls":35,"tris":293524}
