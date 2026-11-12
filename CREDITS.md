@@ -4,7 +4,6 @@ Archival material used in this video:
 
 - Blastar source code, 1984 | Elon Musk, Ashlee Vance: Elon Musk – How the Billionaire CEO of SpaceX and Tesla is Shaping our Future (2015), page 368. / PC and Office Technology, December 1984. | Public domain | https://commons.wikimedia.org/wiki/File:Blastar_source_code.png
 - Boring Company tunnel | Steve Jurvetson from Menlo Park, USA, tunnel of love | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Tunnel_of_love_(32489303638).jpg
-- Encyclopaedia Britannica volumes | Chisholm, Hugh, 1866-1924, https://www.flickr.com/photos/internetarchivebookimages/14591968167/ Source book page: https://archive.org/stream/encyclopdiabri20chisrich/encyclopdiabri20chisrich#page/n220/mode/1up | No restrictions | https://commons.wikimedia.org/wiki/File:The_encyclop%C3%A6dia_britannica;_a_dictionary_of_arts,_sciences,_literature_and_general_information_(1910)_(14591968167).jpg
 - SpaceX Starship integrated flight test -5 - launch and catch - 13 October 2 | Anne Toal, YouTube : https://www.youtube.com/watch?v=jawCFgILjP4 – View/save archived versions on archive.org | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:SpaceX_Starship_integrated_flight_test_-5_-_launch_and_catch_-_13_October_2024.webm
 - Compaq computer 1990s | Demache at English Wikipedia, Transferred from en.wikipedia to Commons by Liftarn using CommonsHelper . | Public domain | https://commons.wikimedia.org/wiki/File:Compaq_Deskpro_6333(crop).jpg
 - Production Tesla Cybertruck, Denver 2023 | N2e, Own work | CC0 | https://commons.wikimedia.org/wiki/File:2023_production-level_Tesla_Cybertruck_on_display_in_Denver,_Colorado.jpg
@@ -21,7 +20,8 @@ Archival material used in this video:
 - ORBCOMM-2 launch and landing, long exposure | SpaceX Photos, ORBCOMM-2 | CC0 | https://commons.wikimedia.org/wiki/File:ORBCOMM-2_(23660653516).jpg
 - Falcon Heavy Demo Mission launch | SpaceX, Falcon Heavy Demo Mission | CC0 | https://commons.wikimedia.org/wiki/File:Falcon_Heavy_Demo_Mission_(40126461851).jpg
 - Falcon Heavy side boosters landing | SpaceX, Falcon Heavy Demo Mission | CC0 | https://commons.wikimedia.org/wiki/File:Falcon_Heavy_Side_Boosters_landing_on_LZ1_and_LZ2_-_2018_(25254688767).jpg
-- Starship Test Flight!.webm | adimifus, YouTube : Starship Test Flight! – View/save archived versions on archive.org | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Starship_Test_Flight!.webm
+- Starship IFT-1, NASA WB-57 camera | NASA, YouTube : [RAW] SpaceX Starship IFT-1 NASA WB-57 Cam 0 – View/save archived versions on archive.org | Public domain | https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_0.webm
+- Starship IFT-1 NASA WB-57 cam 4 | NASA, YouTube : [RAW] SpaceX Starship IFT-1 NASA WB-57 Cam 4 – View/save archived versions on archive.org | Public domain | https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_4.webm
 - Kingston Ontario Queen's University | Unknown photographer, Queen's University Journal, 21 December 1899, https://archive.org/details/queensjournal27/page/n105/mode/1up | Public domain | https://commons.wikimedia.org/wiki/File:Photograph_of_Queen%27s_University_-_1899_-_Queen%27s_University_Journal.jpg
 - Lehman Brothers headquarters 2008 | David Shankbone, Own work | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Lehman_Brothers_Times_Square_by_David_Shankbone.jpg
 - Mars, accurate colour | Sturm 1, Own work - NASA | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Mars_accurate_colour.png

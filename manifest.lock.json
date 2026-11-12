@@ -818,31 +818,26 @@
     {
       "id": "ift1_vid",
       "category": "footage",
-      "description": "Starship Test Flight!.webm",
-      "source_page": "https://commons.wikimedia.org/wiki/File:Starship_Test_Flight!.webm",
+      "description": "Starship IFT-1, NASA WB-57 camera",
+      "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_0.webm",
       "frames": 14,
       "authenticity": "authentic",
-      "file": "archives/footage/ift1_vid_starship-test-flight-webm.jpg",
-      "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Starship_Test_Flight%21.webm/3840px--Starship_Test_Flight%21.webm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo",
-      "bytes": 57412,
-      "license": "CC BY 3.0",
-      "attribution": "adimifus, YouTube : Starship Test Flight! – View/save archived versions on archive.org",
-      "page": "https://commons.wikimedia.org/wiki/File:Starship_Test_Flight!.webm",
+      "file": "archives/footage/ift1_vid_starship-ift-1-nasa-wb-57-camera.webm",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/SpaceX_Starship_IFT-1_NASA_WB-57_Cam_0.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 22047067,
+      "license": "Public domain",
+      "attribution": "NASA, YouTube : [RAW] SpaceX Starship IFT-1 NASA WB-57 Cam 0 – View/save archived versions on archive.org",
+      "page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_0.webm",
       "status": "downloaded"
     },
     {
       "id": "britannica",
       "category": "historical-photos",
-      "description": "Encyclopaedia Britannica volumes",
-      "commons_search": "Encyclopaedia Britannica volumes",
+      "description": "Encyclopaedia Britannica volumes bookshelf",
+      "commons_search": "Encyclopaedia Britannica volumes bookshelf",
       "authenticity": "authentic",
-      "file": "archives/historical-photos/britannica_encyclopaedia-britannica-volumes.jpg",
-      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/The_encyclop%C3%A6dia_britannica%3B_a_dictionary_of_arts%2C_sciences%2C_literature_and_general_information_%281910%29_%2814591968167%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-      "bytes": 695196,
-      "license": "No restrictions",
-      "attribution": "Chisholm, Hugh, 1866-1924, https://www.flickr.com/photos/internetarchivebookimages/14591968167/ Source book page: https://archive.org/stream/encyclopdiabri20chisrich/encyclopdiabri20chisrich#page/n220/mode/1up",
-      "page": "https://commons.wikimedia.org/wiki/File:The_encyclop%C3%A6dia_britannica;_a_dictionary_of_arts,_sciences,_literature_and_general_information_(1910)_(14591968167).jpg",
-      "status": "downloaded"
+      "status": "failed",
+      "error": "Commons search found no photos (only documents)"
     },
     {
       "id": "redsquare",
@@ -1038,6 +1033,30 @@
       "license": "Public domain",
       "attribution": "Unknown author Unknown author, http://www.dodmedia.osd.mil/DVIC_View/Still_Search.cfm",
       "page": "https://commons.wikimedia.org/wiki/File:SS-9_Scarp_R36.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "bill100",
+      "category": "historical-photos",
+      "description": "US 100 dollar bill obverse",
+      "commons_search": "United States one hundred dollar bill obverse series 2009",
+      "authenticity": "authentic",
+      "status": "failed",
+      "error": "Commons search found no photos (only documents)"
+    },
+    {
+      "id": "ift1_vid2",
+      "category": "footage",
+      "description": "Starship IFT-1 NASA WB-57 cam 4",
+      "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_4.webm",
+      "frames": 14,
+      "authenticity": "authentic",
+      "file": "archives/footage/ift1_vid2_starship-ift-1-nasa-wb-57-cam-4.webm",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/SpaceX_Starship_IFT-1_NASA_WB-57_Cam_4.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 26455477,
+      "license": "Public domain",
+      "attribution": "NASA, YouTube : [RAW] SpaceX Starship IFT-1 NASA WB-57 Cam 4 – View/save archived versions on archive.org",
+      "page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_4.webm",
       "status": "downloaded"
     }
   ]
