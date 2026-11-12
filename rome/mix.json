@@ -1,0 +1,636 @@
+{
+"fps": 24,
+"total": 771.73,
+"lines": [
+{
+"t": 2.5,
+"file": "s01_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 14.368,
+"file": "s01_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 22.378,
+"file": "s01_02_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 30.891,
+"file": "s01_03_romulus",
+"who": "ROMULUS"
+},
+{
+"t": 34.058,
+"file": "s01_04_remus",
+"who": "REMUS"
+},
+{
+"t": 36.815,
+"file": "s01_05_romulus",
+"who": "ROMULUS"
+},
+{
+"t": 38.878,
+"file": "s01_06_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 59.592,
+"file": "s02_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 72.742,
+"file": "s02_01_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 74.603,
+"file": "s02_02_senator",
+"who": "SENATOR"
+},
+{
+"t": 78.606,
+"file": "s02_03_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 80.792,
+"file": "s02_04_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 88.336,
+"file": "s02_05_senator",
+"who": "SENATOR"
+},
+{
+"t": 93.103,
+"file": "s02_06_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 95.363,
+"file": "s02_07_senator",
+"who": "SENATOR"
+},
+{
+"t": 97.805,
+"file": "s02_08_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 117.667,
+"file": "s03_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 131.578,
+"file": "s03_01_general",
+"who": "GENERAL"
+},
+{
+"t": 133.781,
+"file": "s03_02_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 135.679,
+"file": "s03_03_general",
+"who": "GENERAL"
+},
+{
+"t": 137.365,
+"file": "s03_04_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 139.742,
+"file": "s03_05_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 152.953,
+"file": "s03_06_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 166.871,
+"file": "s04_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 173.427,
+"file": "s04_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 184.285,
+"file": "s04_02_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 192.881,
+"file": "s04_03_general",
+"who": "GENERAL"
+},
+{
+"t": 196.007,
+"file": "s04_04_senator",
+"who": "SENATOR"
+},
+{
+"t": 197.914,
+"file": "s04_05_general",
+"who": "GENERAL"
+},
+{
+"t": 200.45,
+"file": "s04_06_senator",
+"who": "SENATOR"
+},
+{
+"t": 203.206,
+"file": "s04_07_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 212.675,
+"file": "s04_08_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 218.79,
+"file": "s04_09_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 223.802,
+"file": "s04_10_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 225.114,
+"file": "s04_11_general",
+"who": "GENERAL"
+},
+{
+"t": 225.973,
+"file": "s04_12_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 227.756,
+"file": "s04_13_general",
+"who": "GENERAL"
+},
+{
+"t": 231.171,
+"file": "s04_14_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 241.039,
+"file": "s04_15_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 249.104,
+"file": "s04_16_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 255.54,
+"file": "s04_17_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 265.078,
+"file": "s05_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 278.04,
+"file": "s05_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 280.802,
+"file": "s05_02_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 290.446,
+"file": "s05_03_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 291.836,
+"file": "s05_04_citizen2",
+"who": "CITIZEN2"
+},
+{
+"t": 294.689,
+"file": "s05_05_senator",
+"who": "SENATOR"
+},
+{
+"t": 297.053,
+"file": "s05_06_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 306.681,
+"file": "s05_07_general",
+"who": "GENERAL"
+},
+{
+"t": 309.176,
+"file": "s05_08_caesar",
+"who": "CAESAR"
+},
+{
+"t": 311.132,
+"file": "s05_09_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 321.318,
+"file": "s05_10_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 323.077,
+"file": "s05_11_senator",
+"who": "SENATOR"
+},
+{
+"t": 328.893,
+"file": "s06_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 337.429,
+"file": "s06_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 344.856,
+"file": "s06_02_caesar",
+"who": "CAESAR"
+},
+{
+"t": 346.815,
+"file": "s06_03_senator",
+"who": "SENATOR"
+},
+{
+"t": 349.399,
+"file": "s06_04_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 355.398,
+"file": "s06_05_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 359.135,
+"file": "s06_06_citizen2",
+"who": "CITIZEN2"
+},
+{
+"t": 360.103,
+"file": "s06_07_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 361.232,
+"file": "s06_08_citizen2",
+"who": "CITIZEN2"
+},
+{
+"t": 364.331,
+"file": "s07_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 376.477,
+"file": "s07_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 389.18,
+"file": "s07_02_augustus",
+"who": "AUGUSTUS"
+},
+{
+"t": 391.086,
+"file": "s07_03_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 392.961,
+"file": "s07_04_augustus",
+"who": "AUGUSTUS"
+},
+{
+"t": 394.602,
+"file": "s07_05_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 396.924,
+"file": "s07_06_augustus",
+"who": "AUGUSTUS"
+},
+{
+"t": 399.248,
+"file": "s07_07_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 406.153,
+"file": "s07_08_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 413.628,
+"file": "s08_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 428.531,
+"file": "s08_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 441.279,
+"file": "s08_02_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 450.399,
+"file": "s08_03_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 452.518,
+"file": "s08_04_citizen2",
+"who": "CITIZEN2"
+},
+{
+"t": 454.215,
+"file": "s08_05_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 455.729,
+"file": "s08_06_citizen2",
+"who": "CITIZEN2"
+},
+{
+"t": 459.012,
+"file": "s08_07_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 472.91,
+"file": "s08_08_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 482.046,
+"file": "s09_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 492.18,
+"file": "s09_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 506.34,
+"file": "s09_02_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 508.943,
+"file": "s09_03_senator",
+"who": "SENATOR"
+},
+{
+"t": 509.918,
+"file": "s09_04_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 511.104,
+"file": "s09_05_senator",
+"who": "SENATOR"
+},
+{
+"t": 513.935,
+"file": "s09_06_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 524.408,
+"file": "s10_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 538.976,
+"file": "s10_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 550.309,
+"file": "s10_02_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 551.651,
+"file": "s10_03_citizen2",
+"who": "CITIZEN2"
+},
+{
+"t": 553.874,
+"file": "s10_04_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 555.159,
+"file": "s10_05_citizen2",
+"who": "CITIZEN2"
+},
+{
+"t": 556.929,
+"file": "s10_06_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 566.978,
+"file": "s11_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 577.532,
+"file": "s11_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 585.749,
+"file": "s11_02_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 592.977,
+"file": "s11_03_general",
+"who": "GENERAL"
+},
+{
+"t": 596.204,
+"file": "s11_04_senator",
+"who": "SENATOR"
+},
+{
+"t": 599.481,
+"file": "s11_05_general",
+"who": "GENERAL"
+},
+{
+"t": 601.698,
+"file": "s11_06_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 604.945,
+"file": "s11_07_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 615.839,
+"file": "s12_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 622.203,
+"file": "s12_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 631.999,
+"file": "s12_02_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 640.42,
+"file": "s12_03_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 650.237,
+"file": "s12_04_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 655.603,
+"file": "s12_05_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 657.072,
+"file": "s12_06_senator",
+"who": "SENATOR"
+},
+{
+"t": 659.481,
+"file": "s12_07_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 661.418,
+"file": "s12_08_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 664.228,
+"file": "s12_09_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 678.662,
+"file": "s13_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 687.529,
+"file": "s13_01_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 693.306,
+"file": "s13_02_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 696.536,
+"file": "s13_03_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 709.658,
+"file": "s13_04_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 719.342,
+"file": "s13_05_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 724.009,
+"file": "s13_06_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 730.354,
+"file": "s14_00_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 748.666,
+"file": "s14_01_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 750.535,
+"file": "s14_02_senator",
+"who": "SENATOR"
+},
+{
+"t": 752.283,
+"file": "s14_03_citizen",
+"who": "CITIZEN"
+},
+{
+"t": 753.811,
+"file": "s14_04_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 760.692,
+"file": "s14_05_narrator",
+"who": "NARRATOR"
+},
+{
+"t": 764.784,
+"file": "s14_06_narrator",
+"who": "NARRATOR"
+}
+]
+}

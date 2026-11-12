@@ -38,6 +38,7 @@ export const M4 = (x = 0, y = 0, z = 0, ry = 0, sx = 1, sy = 1, sz = 1, rx = 0, 
   new THREE.Matrix4().compose(new THREE.Vector3(x, y, z), new THREE.Quaternion().setFromEuler(new THREE.Euler(rx, ry, rz, 'YXZ')), new THREE.Vector3(sx, sy, sz));
 
 // ------------------------------------------------------------------ materials (shared)
+const FLAT = {};
 export const MAT = {
   get marble() { return pbr('marble', { size: 3 }); },
   get marbleW() { return pbr('marble', { size: 3, tint: 0xf4efe6 }); },
@@ -54,9 +55,13 @@ export const MAT = {
   get wood() { return pbr('wood', { size: 2 }); },
   get thatch() { return pbr('thatch', { size: 2.5 }); },
   get mud() { return pbr('mud', { size: 3, tint: 0xd0b090 }); },
-  get bronze() { return flat(0x8a6a3a, 0.35, 0.85); },
-  get gold() { return flat(0xd4a84a, 0.3, 1.0); },
-  get dark() { return flat(0x1a1410, 0.9); },
+  get bronze() { return FLAT.bronze ||= flat(0x8a6a3a, 0.35, 0.85); },
+  get gold() { return FLAT.gold ||= flat(0xd4a84a, 0.3, 1.0); },
+  get dark() { return FLAT.dark ||= flat(0x1a1410, 0.9); },
+  get terracotta() { return pbr('plaster', { size: 0.8, tint: 0xc8784a, rough: 1.2, key: 'terracotta' }); },
+  get sack() { return pbr('plaster', { size: 0.6, tint: 0xd8c098, rough: 1.4, key: 'sack' }); },
+  get leaf() { return FLAT.leaf ||= flat(0x4a6a2e, 0.85); },
+  get ember() { return FLAT.ember ||= flat(0x2a0a00, 0.9, 0, { emissive: 0xff6a20, emissiveIntensity: 2.2 }); },
 };
 
 // ------------------------------------------------------------------ shapes

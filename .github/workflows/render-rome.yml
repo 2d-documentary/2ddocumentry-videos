@@ -1,0 +1,66 @@
+# Renders THE ENTIRE HISTORY OF THE ROMAN EMPIRE at 1920x1080, 24 fps: the film is split into frame chunks that
+# render in parallel (Three.js in headless Chromium), then joined and muxed with the final soundtrack.
+name: Render Rome film
+on:
+  workflow_dispatch:
+    inputs:
+      chunk: { description: 'frames per chunk', default: '300' }
+  push:
+    paths: ['film/render.trigger']
+permissions: { contents: read }
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs: { chunks: '${{ steps.p.outputs.chunks }}', size: '${{ steps.p.outputs.size }}' }
+    steps:
+      - uses: actions/checkout@v5
+      - id: p
+        run: |
+          SIZE=${{ github.event.inputs.chunk || '300' }}
+          N=$(python3 -c "import json,math;t=json.load(open('film/timeline.json'));print(math.ceil(math.ceil(t['total']*24)/$SIZE))")
+          echo "chunks=$(python3 -c "print(list(range($N)))")" >> $GITHUB_OUTPUT; echo "size=$SIZE" >> $GITHUB_OUTPUT
+  chunk:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix: { i: '${{ fromJson(needs.plan.outputs.chunks) }}' }
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+      - run: npm i --no-save playwright@1.48.2 && npx playwright install --with-deps chromium >/dev/null
+      - name: Fonts (if not committed yet)
+        run: |
+          mkdir -p film/fonts
+          [ -s film/fonts/Cinzel.ttf ] || curl -sSLf -o film/fonts/Cinzel.ttf "https://github.com/google/fonts/raw/main/ofl/cinzel/Cinzel%5Bwght%5D.ttf" || true
+          [ -s film/fonts/EBGaramond.ttf ] || curl -sSLf -o film/fonts/EBGaramond.ttf "https://github.com/google/fonts/raw/main/ofl/ebgaramond/EBGaramond%5Bwght%5D.ttf" || true
+      - run: cd characters && node sprites.js ../film/sprites
+      - name: Render chunk ${{ matrix.i }}
+        run: |
+          S=${{ needs.plan.outputs.size }}; F0=$(( ${{ matrix.i }} * S ))
+          F1=$(python3 -c "import json,math;t=json.load(open('film/timeline.json'));print(min(math.ceil(t['total']*24), $F0 + $S))")
+          mkdir -p out; node film/render.mjs out/chunk_$(printf %03d ${{ matrix.i }}).mp4 $F0 $F1 1920 1080 2>&1 | grep -v "GPU stall"
+      - uses: actions/upload-artifact@v4
+        with: { name: 'chunk-${{ matrix.i }}', path: out/*.mp4, retention-days: 3 }
+  join:
+    needs: chunk
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+      - uses: actions/download-artifact@v4
+        with: { pattern: 'chunk-*', path: parts, merge-multiple: true }
+      - name: Join and add the soundtrack
+        run: |
+          ls parts | sort | sed "s/^/file 'parts\//; s/$/'/" > list.txt; wc -l list.txt
+          ffmpeg -loglevel error -f concat -safe 0 -i list.txt -c copy video.mp4
+          ffmpeg -loglevel error -i video.mp4 -i rome/final_mix.m4a -map 0:v -map 1:a -c:v copy -c:a copy -shortest -movflags +faststart "Roman_Empire_History_1080p.mp4"
+          ffprobe -v error -show_entries format=duration:stream=codec_name,width,height -of compact "Roman_Empire_History_1080p.mp4"
+          ffmpeg -loglevel error -ss 30 -i Roman_Empire_History_1080p.mp4 -frames:v 1 poster.jpg
+      - uses: actions/upload-artifact@v4
+        with: { name: video, path: 'Roman_Empire_History_1080p.mp4', retention-days: 30 }
+      - uses: actions/upload-artifact@v4
+        with: { name: poster, path: poster.jpg, retention-days: 30 }

@@ -1,9 +1,12 @@
 // Locations. Each returns { ground(x,z), cams: {name: {pos, look, fov}} } and keeps a fixed layout,
 // so a place looks the same every time it returns (only era, light and weather change).
 import * as THREE from 'three';
-import { scene, sky, sun, hemi, water, terrain, fbm, pbr, flat, point } from './engine.js';
+import { scene, sky, sun, hemi, water, terrain, fbm, pbr, flat, point, groundPlane } from './engine.js';
 import { Batch, M4, MAT, temple, basilica, curia, insula, hut, fence, colosseum, aqueduct, column, cornice, arcadeGeo, archRing, stairs, dome, entablature, gableRoof, pediment } from './arch.js';
 import { trees, rocks, bushes, galley } from './nature.js';
+import { stall, amphora, cart, crates, fountain, statue, planter, banner, haystack, woodpile, firepit, rubble, colossus } from './props.js';
+import { herd, elephant } from './animals.js';
+const COWS = [0x7a5a40, 0x5a3e2a, 0xc8b8a0, 0x3a2a20, 0x9a7a58];
 
 const rnd = (() => { let s = 12345; return () => ((s = (s * 16807) % 2147483647) / 2147483647); })();
 const lightFor = async (mood) => {
@@ -25,13 +28,13 @@ export async function tiber({ mood = 'day' } = {}) {
     const bank = THREE.MathUtils.smoothstep(d, 14, 60);
     return h * bank + (-2.5) * (1 - bank);
   };
-  terrain({ size: 1400, seg: 260, height: ground, mat: pbr('grass', { size: 6, tint: 0xd8dcb8 }) });
+  terrain({ size: 1400, seg: 260, height: ground, mat: pbr('grass', { size: 9, tint: 0xd8dcb8, rough: 1.6, antiTile: true, env: 0.5, vcol: true }) });
   water([1400, 1400], { color: 0x3a5a4a, pos: [0, -0.8, 0], ripple: 0.8 });
   const b = new Batch();
   const village = [];
   for (let i = 0; i < 26; i++) {
     const a = rnd() * Math.PI * 2, r = 8 + rnd() * 34, x = 22 + Math.cos(a) * r, z = -8 + Math.sin(a) * r * 0.8;
-    if (village.some(([vx, vz]) => Math.hypot(vx - x, vz - z) < 7)) continue;
+    if (village.some(([vx, vz]) => Math.hypot(vx - x, vz - z) < 7) || Math.hypot(x - 12, z + 2) < 10) continue;
     village.push([x, z]); const y = ground(x, z);
     const T = M4(0, y, 0); hut(b, { x, z, r: 2.3 + rnd() * 0.9, h: 1.9 + rnd() * 0.4, ry: rnd() * 6.28 });
   }
@@ -47,18 +50,29 @@ export async function tiber({ mood = 'day' } = {}) {
   { const p = field.geometry.attributes.position; for (let i = 0; i < p.count; i++) p.setY(i, ground(p.getX(i) + 80, p.getZ(i) + 60) + 0.12); field.position.set(80, 0, 60); field.receiveShadow = true; scene.add(field); }
   const sp = (n, x0, x1, z0, z1, s0, s1, avoid) => { const o = []; while (o.length < n) { const x = x0 + rnd() * (x1 - x0), z = z0 + rnd() * (z1 - z0); if (avoid && avoid(x, z)) continue; o.push([x, z, s0 + rnd() * (s1 - s0)]); } return o; };
   const notVillage = (x, z) => Math.hypot(x - 22, z + 8) < 50 || Math.abs(x - riverX(z)) < 16;
-  trees('pine', sp(40, -300, 300, -300, 200, 0.8, 1.3, notVillage), ground);
-  trees('cypress', sp(30, -200, 260, -260, 160, 0.8, 1.2, notVillage), ground);
-  trees('oak', sp(90, -500, 500, -500, 300, 0.8, 1.4, notVillage), ground);
-  bushes(sp(160, -200, 200, -150, 150, 0.6, 1.4, (x, z) => Math.hypot(x - 22, z + 8) < 40), ground);
+  trees('pine', sp(140, -500, 500, -500, 400, 1.2, 1.8, notVillage), ground);
+  trees('cypress', sp(90, -300, 400, -400, 300, 1.0, 1.5, notVillage), ground);
+  trees('oak', sp(420, -700, 700, -700, 600, 1.1, 1.9, notVillage), ground);
+  bushes(sp(500, -300, 300, -250, 250, 0.6, 1.6, (x, z) => Math.hypot(x - 22, z + 8) < 40), ground);
   rocks(sp(30, -150, 150, -120, 120, 0.4, 1.2, notVillage), ground);
   // smoke from a few huts
-  const smokeMat = new THREE.MeshBasicMaterial({ color: 0xd8d4cc, transparent: true, opacity: 0.18, depthWrite: false });
-  village.slice(0, 5).forEach(([x, z], i) => { for (let k = 0; k < 6; k++) { const s = new THREE.Mesh(new THREE.SphereGeometry(0.8 + k * 0.5, 10, 8), smokeMat); s.position.set(x + k * 0.6, ground(x, z) + 5 + k * 1.6, z + k * 0.3); scene.add(s); } });
+  const smoke = village.slice(0, 4).map(([x, z]) => [x, ground(x, z) + 3.5, z]).concat([[12, ground(12, -10) + 0.3, -10]]);
+  // village life: woodpiles, storage jars, hay, a cooking fire on the square, drying racks
+  const P = new Batch(), gy = (x, z) => ground(x, z) - 0.05;
+  village.forEach(([x, z], i) => { const a = i * 2.1, px = x + Math.cos(a) * 3.6, pz = z + Math.sin(a) * 3.6;
+    if (i % 3 === 0) woodpile(P, px, pz, gy(px, pz), a); else if (i % 3 === 1) { amphora(P, px, gy(px, pz), pz, 0.6); amphora(P, px + 0.55, gy(px + 0.55, pz + 0.3), pz + 0.3, 0.5, 0, 0.25); } else haystack(P, px, pz, gy(px, pz) - 0.1, 0.55); });
+  firepit(P, 12, -10, gy(12, -10));
+  for (const [x, z] of [[4, -8], [19, -6], [6, 3.5]]) { amphora(P, x, gy(x, z), z, 0.55); amphora(P, x + 0.5, gy(x + 0.5, z), z + 0.2, 0.5); }
+  for (const [x, z, ry] of [[-1, -4, 0.3], [24, 4, 1.2]]) { for (const dx of [-1.2, 1.2]) P.add(new THREE.CylinderGeometry(0.05, 0.06, 1.8, 5), MAT.wood, M4(x + dx * Math.cos(ry), gy(x, z) + 0.9, z - dx * Math.sin(ry))); P.add(new THREE.CylinderGeometry(0.03, 0.03, 2.6, 5), MAT.wood, M4(x, gy(x, z) + 1.7, z, ry, 1, 1, 1, 0, Math.PI / 2)); for (let k = 0; k < 4; k++) P.add(new THREE.BoxGeometry(0.4, 0.7, 0.03), pbr('plaster', { size: 1, tint: [0xd8c8a8, 0x9b6a3a, 0xc8b898, 0x7a5a3a][k], key: 'hide' + k }), M4(x + (k - 1.5) * 0.55 * Math.cos(ry), gy(x, z) + 1.3, z - (k - 1.5) * 0.55 * Math.sin(ry), ry)); }
+  P.build();
+  herd('sheep', Array.from({ length: 16 }, (_, i) => [-32 + (i % 4) * 6 + rnd() * 3, 32 + Math.floor(i / 4) * 6 + rnd() * 3]), ground);
+  herd('cow', [[-6, 16], [30, 16, 2.4], [40, 22, 0.4], [-12, -26]], ground, { tints: COWS });
+  herd('goat', [[2, 8], [3.5, 9.5, 2], [26, 8, 1], [34, -22], [36, -20, 2.2]], ground);
+  herd('ox', [[78, 58, 0.2], [82, 60, 0.3]], ground);
   return {
-    ground, village,
+    ground, village, smoke,
     cams: {
-      aerial: { pos: [-160, 120, 220], look: [20, 10, -10], fov: 38 },
+      aerial: { pos: [-110, 70, 150], look: [22, 10, -10], fov: 40 },
       low: { pos: [4, ground(4, 30) + 1.7, 30], look: [24, ground(24, -6) + 2, -6], fov: 42 },
       river: { pos: [-70, 4, 60], look: [20, 12, -10], fov: 40 },
     },
@@ -70,14 +84,16 @@ export async function forum({ era = 'republic', mood = 'day' } = {}) {
   await lightFor(mood);
   const ruins = era === 'ruins', ground = (x, z) => 0;
   const hill = (cx, cz, r, h) => (x, z) => h * Math.exp(-((x - cx) ** 2 + (z - cz) ** 2) / (2 * r * r));
-  const cap = hill(-190, 0, 60, 34), pal = hill(40, 150, 80, 30);
-  terrain({ size: 1600, seg: 220, height: (x, z) => Math.max(0, cap(x, z) + pal(x, z) + fbm(x / 200, z / 200, 4, 3) * 10 * THREE.MathUtils.smoothstep(Math.hypot(x, z), 160, 400)) - 0.05, mat: pbr('grass', { size: 6, tint: ruins ? 0xc8c8a0 : 0xd0c8a8 }) });
-  const pave = new THREE.Mesh(new THREE.PlaneGeometry(200, 70).rotateX(-Math.PI / 2), MAT.paving); pave.position.set(-10, 0.02, 0); pave.receiveShadow = true; scene.add(pave);
-  const road = new THREE.Mesh(new THREE.PlaneGeometry(260, 10).rotateX(-Math.PI / 2), MAT.paving); road.position.set(0, 0.03, 40); road.receiveShadow = true; scene.add(road);
+  const cap = hill(-215, 0, 42, 36), pal = hill(40, 185, 52, 30);
+  const keepFlat = (x, z) => THREE.MathUtils.smoothstep(Math.max(Math.abs(x + 10) - 125, Math.abs(z) - 72, 0), 0, 30);
+  terrain({ size: 1600, seg: 240, height: (x, z) => Math.max(0, (cap(x, z) + pal(x, z) + fbm(x / 200, z / 200, 4, 3) * 10 * THREE.MathUtils.smoothstep(Math.hypot(x, z), 180, 420)) * keepFlat(x, z)) - 0.05, mat: pbr('grass', { size: 9, tint: ruins ? 0xc8c8a0 : 0xd0c8a8, rough: 1.6, antiTile: true, env: 0.5, vcol: true }) });
+  const groundMat = pbr('paving', { size: 3.2, tint: 0xd8d0c4, rough: 1.5, env: 0.6, antiTile: true });
+  const pave = groundPlane(260, 150, groundMat, [-10, 0.02, 0]);
+  const road = groundPlane(300, 12, groundMat, [0, 0.03, 70]);
   const b = new Batch(), R = ruins ? 0.7 : 0;
   const r2 = (() => { let s = 99; return () => ((s = (s * 16807) % 2147483647) / 2147483647); })();
   if (era === 'kings') {   // 6th century BC: same valley, gravel square, Etruscan-style royal house, round shrine of Vesta, first Senate house
-    pave.material = pbr('gravel', { size: 3, tint: 0xd8c8a8 }); road.material = pave.material;
+    pave.material = pbr('gravel', { size: 3, tint: 0xd8c8a8, rough: 1.6, env: 0.5, antiTile: true }); road.material = pave.material;
     temple(b, { x: -195, z: 0, ry: Math.PI / 2, w: 40, l: 56, podium: 6, colH: 13, cols: 6, order: 'tuscan', mat: MAT.plaster, podMat: MAT.blocks });
     // Regia (royal residence): stone base, plastered walls, Tuscan portico, terracotta roof
     const rg = M4(62, 0, -6, -Math.PI / 2), A = (g, m, m4) => b.add(g, m, new THREE.Matrix4().multiplyMatrices(rg, m4));
@@ -97,10 +113,16 @@ export async function forum({ era = 'republic', mood = 'day' } = {}) {
         gableRoof(b, r2() < 0.6 ? MAT.roof : MAT.thatch, x, 0.8 + H, z, d2 / 2, w, 0.35, ry + Math.PI / 2, 0.4); }
     }
     for (const [x0, z0, x1, z1] of [[-120, -30, -120, 30], [100, -30, 100, 30]]) fence(b, x0, z0, x1, z1, 1.6);
+    // the square is also the market: stalls along both sides, carts, jars, a well
+    for (let i = 0; i < 9; i++) { stall(b, -36 + i * 7.5, 22, Math.PI, i); stall(b, -30 + i * 7.5, -22, 0, i + 3); }
+    cart(b, 22, -16, 0.4); cart(b, -48, -10, 2.0, 0, 'sacks'); crates(b, 26, -16, 0, 6, 2); crates(b, -44, 16, 0, 5, 3);
+    for (let i = 0; i < 8; i++) amphora(b, 4 + (i % 4) * 0.6, 0, 17 + Math.floor(i / 4) * 0.6, 0.8);
+    b.add(new THREE.CylinderGeometry(1.4, 1.5, 0.9, 20), MAT.blocks, M4(-2, 0.45, -12)); b.add(new THREE.CylinderGeometry(1.1, 1.1, 0.05, 20), MAT.dark, M4(-2, 0.91, -12));
     b.build();
+    herd('cow', [[-58, 30, 0.5], [-66, 34, 2.8]], () => 0, { tints: COWS }); herd('goat', [[-52, -14], [-50, -12.5, 2], [34, 14, 1.4]], () => 0); herd('ox', [[26.5, -17.6, 0.4]], () => 0);
     trees('oak', Array.from({ length: 30 }, () => [(r2() - 0.5) * 600, 120 + r2() * 200, 0.9 + r2() * 0.4]), (x, z) => pal(x, z));
     trees('cypress', Array.from({ length: 10 }, (_, i) => [-140 + i * 28, -95, 1]), () => 0);
-    return { ground, cams: { wide: { pos: [120, 26, 30], look: [-60, 8, 0], fov: 42 }, street: { pos: [10, 1.7, 14], look: [62, 6, -6], fov: 44 }, regia: { pos: [42, 1.0, 6], look: [62, 8, -6], fov: 48 }, aerial: { pos: [200, 140, 200], look: [-20, 0, 0], fov: 40 } } };
+    return { ground, cams: { wide: { pos: [118, 24, 62], look: [-60, 6, -6], fov: 44 }, street: { pos: [10, 1.7, 14], look: [62, 6, -6], fov: 44 }, regia: { pos: [42, 1.0, 6], look: [62, 8, -6], fov: 48 }, aerial: { pos: [200, 140, 200], look: [-20, 0, 0], fov: 40 } } };
   }
   // west end: Temple of Saturn (Ionic, high podium) and Temple of Concord, Tabularium on the Capitoline slope
   temple(b, { x: -92, z: 22, ry: Math.PI / 2, w: 22, l: 40, podium: 8, colH: 12, cols: 6, order: 'ionic', mat: MAT.marbleW, podMat: MAT.trav, ruin: ruins ? 0.35 : 0, rnd: r2 });
@@ -132,6 +154,18 @@ export async function forum({ era = 'republic', mood = 'day' } = {}) {
     b.add(new THREE.BoxGeometry(140, 18, 70), MAT.brick, M4(40, 35, 150));
     for (let i = 0; i < 10; i++) column(b, MAT.marbleW, -20 + i * 14, 44, 116, 12, 0.6, 'corinthian');
   } else for (let i = 0; i < 8; i++) insula(b, { x: -10 + i * 22, z: 130 + (i % 2) * 18, ry: Math.PI, w: 18, d: 14, floors: 2, mat: MAT.plaster, plaster: MAT.plasterOchre, rnd: r2 });
+  if (!ruins) {
+    // market life in the square: stall rows in front of both basilicas, statues of famous Romans, carts, jars, planters, festival banners
+    for (let i = 0; i < 10; i++) { const x = -44 + i * 6.5; if (Math.abs(x - 40) > 5) stall(b, x, 27, Math.PI, i); }
+    for (let i = 0; i < 9; i++) stall(b, -24 + i * 6.5, -22, 0, i + 2);
+    for (const x of [-30, -10, 10, 30]) statue(b, x, -12, 0, Math.PI * 0.05, x === 10 ? MAT.bronze : MAT.marbleW);
+    cart(b, 14, 70, 0.1); cart(b, -40, 66, 3.0, 0, 'sacks'); cart(b, 60, 72, 0.2);
+    crates(b, 20, 20, 0, 6, 4); crates(b, -48, -16, 0, 5, 5); crates(b, 52, -16, 0, 4, 6);
+    for (let i = 0; i < 10; i++) amphora(b, -30 + (i % 5) * 0.6, 0, -17 + Math.floor(i / 5) * 0.6, 0.85);
+    for (const [x, z] of [[-80, -6], [-80, 12], [62, 14], [62, -16], [-36, 14], [-4, -8], [26, -8]]) planter(b, x, z, 0, 1.2);
+    for (let i = 0; i < 8; i++) banner(b, -36 + i * 12, 14, -34.6, 0, i);
+    fountain(b, 96, 18, 0, 3.2);
+  } else for (let i = 0; i < 12; i++) rubble(b, -110 + (i % 6) * 36 + r2() * 10, -20 + Math.floor(i / 6) * 40 + r2() * 10, 0, 5, i);
   b.build();
   const sp = (n, f) => Array.from({ length: n }, f);
   trees('cypress', sp(18, (_, i) => [-150 + (i % 9) * 30, i < 9 ? -90 : 110, 0.9 + r2() * 0.3]), () => 0);
@@ -140,7 +174,7 @@ export async function forum({ era = 'republic', mood = 'day' } = {}) {
   return {
     ground,
     cams: {
-      wide: { pos: [120, 26, 30], look: [-60, 8, 0], fov: 42 },
+      wide: { pos: [118, 24, 62], look: [-60, 6, -6], fov: 44 },
       street: { pos: [40, 1.7, 8], look: [-60, 6, -10], fov: 44 },
       curia: { pos: [-40, 1.7, 0], look: [-60, 9, -48], fov: 45 },
       aerial: { pos: [200, 140, 200], look: [-20, 0, 0], fov: 40 },
@@ -154,7 +188,7 @@ export async function senate({ mood = 'day' } = {}) {
   const W = 18, L = 27, H = 21, b = new Batch();
   const fl = new THREE.Mesh(new THREE.PlaneGeometry(W, L).rotateX(-Math.PI / 2), MAT.floor); fl.receiveShadow = true; scene.add(fl);
   for (const sx of [-1, 1]) {
-    for (let s = 0; s < 3; s++) b.add(new THREE.BoxGeometry(1.6, 0.36 * (s + 1), L - 6), MAT.marbleW, M4(sx * (W / 2 - 0.8 - s * 1.6), 0.18 * (s + 1), 1));
+    for (let s = 0; s < 3; s++) b.add(new THREE.BoxGeometry(1.6, 0.36 * (s + 1), L - 6), MAT.marbleW, M4(sx * (W / 2 - 0.8 - (2 - s) * 1.6), 0.18 * (s + 1), 1));
     // wall: marble dado, plaster above, arched niches with statues' plinths
     b.add(new THREE.BoxGeometry(0.4, H, L), MAT.plaster, M4(sx * (W / 2 + 0.2), H / 2, 0, 0));
     b.add(new THREE.BoxGeometry(0.2, 3.2, L), MAT.marble, M4(sx * (W / 2 - 0.05), 1.6, 0));
@@ -196,10 +230,12 @@ export async function senate({ mood = 'day' } = {}) {
 export async function imperialRome({ mood = 'day' } = {}) {
   await lightFor(mood);
   const hill = (cx, cz, r, h) => (x, z) => h * Math.exp(-((x - cx) ** 2 + (z - cz) ** 2) / (2 * r * r));
-  const pal = hill(-260, -40, 110, 34), esq = hill(200, -260, 160, 26), cae = hill(60, 300, 140, 30);
-  const ground = (x, z) => Math.max(0, pal(x, z) + esq(x, z) + cae(x, z) + fbm(x / 300, z / 300, 4, 5) * 14 * THREE.MathUtils.smoothstep(Math.hypot(x, z), 250, 900));
-  terrain({ size: 3000, seg: 240, height: ground, mat: pbr('grass', { size: 8, tint: 0xd0c8a8 }) });
-  const plaza = new THREE.Mesh(new THREE.PlaneGeometry(320, 280).rotateX(-Math.PI / 2), MAT.paving); plaza.position.set(0, 0.05, 0); plaza.receiveShadow = true; scene.add(plaza);
+  const ground = (x, z) => Math.max(0, fbm(x / 400, z / 400, 5, 5) * 70 * THREE.MathUtils.smoothstep(Math.hypot(x, z), 620, 1300) - 4);
+  terrain({ size: 4000, seg: 260, height: ground, mat: pbr('grass', { size: 10, tint: 0xd0c8a8, rough: 1.6, antiTile: true, env: 0.5, vcol: true }) });
+  const pmat = pbr('paving', { size: 3.2, tint: 0xd8d0c4, rough: 1.5, env: 0.6, antiTile: true });
+  groundPlane(340, 300, pmat, [0, 0.05, 0]);
+  for (let gx = -12; gx <= 12; gx++) groundPlane(10, 1100, pmat, [gx * 42 + 21, 0.04, 0]);
+  for (let gz = -14; gz <= 14; gz++) groundPlane(1100, 9, pmat, [0, 0.04, gz * 38 + 19]);
   const b = new Batch();
   colosseum(b, { x: 0, z: 0 });
   // Temple of Venus and Rome on its platform to the west, Arch of Titus, Meta Sudans fountain
@@ -223,11 +259,22 @@ export async function imperialRome({ mood = 'day' } = {}) {
   const r2 = (() => { let s = 7; return () => ((s = (s * 16807) % 2147483647) / 2147483647); })();
   for (let gx = -12; gx <= 12; gx++) for (let gz = -12; gz <= 12; gz++) {
     const x = gx * 42 + (r2() - 0.5) * 6, z = gz * 38 + (r2() - 0.5) * 6;
-    if (Math.hypot(x / 1.2, z) < 170 || (x < -100 && x > -460 && z > -180 && z < 120) || (x > 120 && x < 320 && z < -180 && z > -340) || Math.hypot(x, z) > 560) continue;
-    const y = ground(x, z); if (y > 1.2) continue;
+    if (Math.hypot(x / 1.2, z) < 150 || (x < -100 && x > -460 && z > -180 && z < 120) || (x > 120 && x < 320 && z < -180 && z > -340) || Math.hypot(x, z) > 640) continue;
+    const y = ground(x, z); if (y > 0.5) continue;
     insula(b, { x, z, ry: (gx + gz) % 2 ? 0 : Math.PI, w: 28 + r2() * 8, d: 22 + r2() * 6, floors: 3 + Math.round(r2() * 2), mat: MAT.brick, plaster: r2() < 0.35 ? MAT.plasterOchre : r2() < 0.5 ? MAT.plaster : null, rnd: r2 });
   }
+  // street life south of the amphitheatre: market stalls, statues, the Colossus, carts, jars, planters
+  colossus(b, -112, -24, Math.PI / 2);
+  for (let i = 0; i < 16; i++) { const x = -50 + i * 7; if (Math.abs(x - 60) > 5 && Math.abs(x - 10) > 5) stall(b, x, 134, Math.PI, i); }
+  for (let i = 0; i < 8; i++) stall(b, 28 + i * 7, 94, 0, i + 2);
+  for (let i = 0; i < 10; i++) { const a = -0.5 + i * 0.12; statue(b, Math.sin(a) * 104, Math.cos(a) * 88, 0, a + Math.PI, i % 3 ? MAT.marbleW : MAT.bronze); }
+  cart(b, 96, 112, 1.2); cart(b, -30, 118, 0.3, 0, 'sacks'); cart(b, 130, 140, 1.6);
+  crates(b, 84, 126, 0, 6, 7); crates(b, -20, 128, 0, 5, 8); crates(b, 36, 102, 0, 4, 9);
+  for (let i = 0; i < 12; i++) amphora(b, 100 + (i % 6) * 0.6, 0, 100 + Math.floor(i / 6) * 0.6, 0.85);
+  for (const [x, z] of [[-10, 100], [30, 112], [90, 104], [-40, 108], [118, 118]]) planter(b, x, z, 0, 1.3);
+  for (let i = 0; i < 6; i++) fountain(b, -40 + i * 200, 180 + (i % 2) * 40, 0, 2.2);
   b.build();
+  herd('horse', [[110, 150, 0.4], [113, 151.5, 0.5]], () => 0); herd('ox', [[126, 138, 1.6]], () => 0);
   // raise insulae on hills: shift whole buildings would need per-building groups; small hills under the grid are flattened instead
   const sp = (n, f) => Array.from({ length: n }, f);
   trees('pine', sp(60, () => { let x, z; do { x = (r2() - 0.5) * 1400; z = (r2() - 0.5) * 1400; } while (Math.hypot(x, z) < 560); return [x, z, 1 + r2() * 0.5]; }), ground);
@@ -252,7 +299,7 @@ export async function carthage({ mood = 'golden' } = {}) {
     if (z > 400) return -3;                              // open sea to the south
     return 1.5 + Math.max(0, (-z - 120) * 0.12) + fbm(x / 120, z / 120, 4, 9) * 6;   // city rises north to the Byrsa hill
   };
-  terrain({ size: 2400, seg: 260, height: ground, mat: pbr('sand', { size: 5, tint: 0xe8d8b8 }) });
+  terrain({ size: 2400, seg: 260, height: ground, mat: pbr('sand', { size: 6, tint: 0xe8d8b8, rough: 1.6, antiTile: true, env: 0.5, vcol: true }) });
   water([3000, 3000], { color: 0x1a5a68, pos: [0, -0.4, 0], ripple: 0.9 });
   const b = new Batch();
   // quay walls
@@ -279,6 +326,10 @@ export async function carthage({ mood = 'golden' } = {}) {
     b.add(new THREE.BoxGeometry(w + 0.6, 0.5, d + 0.6), MAT.trav, M4(x, y + h, z));
   }
   temple(b, { x: 0, z: -700, ry: 0, w: 30, l: 44, podium: 6, colH: 13, cols: 6, order: 'ionic' });
+  // the commercial quays: jars, bales, crates, carts and cranes
+  for (let i = 0; i < 14; i++) { const z = 120 + i * 15, x = (i % 2 ? 66 : -66); crates(b, x, z, ground(x, z), 6, i); for (let k = 0; k < 6; k++) amphora(b, x + (i % 2 ? 4 : -4) + (k % 3) * 0.6, ground(x, z), z + 3 + Math.floor(k / 3) * 0.6, 0.85); }
+  for (let i = 0; i < 5; i++) { const z = 140 + i * 40, x = i % 2 ? 72 : -72; cart(b, x, z, Math.PI / 2, ground(x, z)); b.add(new THREE.CylinderGeometry(0.25, 0.3, 12, 8), MAT.wood, M4(x * 0.9, ground(x, z) + 6, z + 10, 0, 1, 1, 1, 0, (i % 2 ? 1 : -1) * 0.35)); }
+  for (let i = 0; i < 8; i++) stall(b, -40 + i * 11, -150, Math.PI, i);
   b.add(new THREE.BoxGeometry(900, 10, 14), MAT.blocks, M4(0, 4, -160));
   for (let i = 0; i < 18; i++) b.add(new THREE.BoxGeometry(10, 18, 12), MAT.blocks, M4(-440 + i * 52, 8, -160));
   b.build();

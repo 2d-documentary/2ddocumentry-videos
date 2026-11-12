@@ -3,7 +3,13 @@ import * as THREE from 'three';
 
 export const W = 1920, H = 1080;
 export let renderer, scene, camera;
-const loader = new THREE.TextureLoader();
+let pending = 0, waiters = [];
+const manager = new THREE.LoadingManager();
+manager.onStart = () => {}; 
+const loader = new THREE.TextureLoader(manager);
+const done = () => { if (--pending <= 0) { pending = 0; waiters.splice(0).forEach((f) => f()); } };
+export function ready() { return pending <= 0 ? Promise.resolve() : new Promise((r) => waiters.push(r)); }
+function load(url, onLoad) { pending++; return loader.load(url, (t) => { onLoad && onLoad(t); done(); }, undefined, () => done()); }
 const TEX = {};
 const ASSETS = '../assets/ph/';
 
@@ -25,7 +31,7 @@ export function newScene() { scene = new THREE.Scene(); return scene; }
 function tex(path, srgb) {
   const key = path + (srgb ? ':s' : '');
   if (!TEX[key]) {
-    const t = loader.load(ASSETS + path);
+    const t = load(ASSETS + path);
     t.wrapS = t.wrapT = THREE.RepeatWrapping;
     t.anisotropy = 8;
     if (srgb) t.colorSpace = THREE.SRGBColorSpace;
@@ -36,15 +42,24 @@ function tex(path, srgb) {
 
 // PBR material; texture repeats are in world metres via geometry UVs (see uvWorld), `size` = metres per tile
 const MATS = {};
-export function pbr(name, { size = 2, tint = 0xffffff, rough = 1, normal = 1, metal = 0, side = THREE.FrontSide, key } = {}) {
-  const k = key || `${name}|${size}|${tint}|${rough}|${normal}|${metal}|${side}`;
+export function pbr(name, { size = 2, tint = 0xffffff, rough = 1, normal = 1, metal = 0, side = THREE.FrontSide, key, antiTile = false, env = 1, vcol = false } = {}) {
+  const k = key || `${name}|${size}|${tint}|${rough}|${normal}|${metal}|${side}|${antiTile}|${env}|${vcol}`;
   if (MATS[k]) return MATS[k];
   const rep = 1 / size;
   const map = tex(`${name}_diff.jpg`, true).clone(); map.repeat.set(rep, rep); map.needsUpdate = true;
   const nor = tex(`${name}_nor.jpg`, false).clone(); nor.repeat.set(rep, rep); nor.needsUpdate = true;
   const rgh = tex(`${name}_rough.jpg`, false).clone(); rgh.repeat.set(rep, rep); rgh.needsUpdate = true;
   const m = new THREE.MeshStandardMaterial({ map, normalMap: nor, roughnessMap: rgh, roughness: rough, metalness: metal, color: tint, side });
-  m.normalScale.set(normal, normal);
+  m.normalScale.set(normal, normal); m.envMapIntensity = env; m.vertexColors = vcol;
+  if (antiTile) m.onBeforeCompile = (sh) => {
+    sh.fragmentShader = sh.fragmentShader.replace('#include <map_fragment>', `
+      vec4 tA = texture2D(map, vMapUv);
+      vec4 tB = texture2D(map, vMapUv * 0.271 + vec2(0.137, 0.713));
+      float nz = texture2D(map, vMapUv * 0.031 + vec2(0.41, 0.09)).g;
+      vec4 sampledDiffuseColor = mix(tA, tB, smoothstep(0.35, 0.65, nz));
+      sampledDiffuseColor.rgb *= 0.85 + 0.3 * texture2D(map, vMapUv * 0.013).r;
+      diffuseColor *= sampledDiffuseColor;`);
+  };
   MATS[k] = m; return m;
 }
 export const flat = (color, rough = 0.8, metal = 0, extra = {}) => new THREE.MeshStandardMaterial({ color, roughness: rough, metalness: metal, ...extra });
@@ -71,7 +86,7 @@ export function worldUVMesh(geo, mat, parent, { cast = true, receive = true } = 
 
 // ---------------------------------------------------------------- sky & light
 export async function sky(name, { rot = 0, intensity = 1, envIntensity = 1, fog = null, fogDensity = 0.0012 } = {}) {
-  const t = await new Promise((res) => loader.load(ASSETS + `sky_${name}.jpg`, res));
+  const t = await new Promise((res) => load(ASSETS + `sky_${name}.jpg`, res));
   t.mapping = THREE.EquirectangularReflectionMapping; t.colorSpace = THREE.SRGBColorSpace;
   const pm = new THREE.PMREMGenerator(renderer);
   const env = pm.fromEquirectangular(t).texture;
@@ -154,8 +169,18 @@ export function terrain({ size = 800, seg = 200, height = (x, z) => 0, mat, pos 
   const p = g.attributes.position;
   for (let i = 0; i < p.count; i++) p.setY(i, height(p.getX(i) + pos[0], p.getZ(i) + pos[2]));
   uvWorld(g, uvScale);
+  if (mat.vertexColors) {
+    const c = new Float32Array(p.count * 3);
+    for (let i = 0; i < p.count; i++) { const x = p.getX(i) + pos[0], z = p.getZ(i) + pos[2], n = fbm(x / 90, z / 90, 4, 11), n2 = fbm(x / 23, z / 23, 3, 5);
+      const k = 0.78 + n * 0.4 + (n2 - 0.5) * 0.12; c[i * 3] = k * (1.0 + (n - 0.5) * 0.12); c[i * 3 + 1] = k; c[i * 3 + 2] = k * (0.95 - (n - 0.5) * 0.1); }
+    g.setAttribute('color', new THREE.BufferAttribute(c, 3));
+  }
   const m = new THREE.Mesh(g, mat); m.position.set(...pos); m.receiveShadow = true; m.castShadow = false; scene.add(m);
   return m;
 }
 
+export function groundPlane(w, d, mat, pos = [0, 0, 0], ry = 0) {
+  const g = new THREE.PlaneGeometry(w, d, 4, 4); g.rotateX(-Math.PI / 2); g.rotateY(ry); g.translate(...pos); uvWorld(g, 1);
+  const m = new THREE.Mesh(g, mat); m.receiveShadow = true; scene.add(m); return m;
+}
 export function ticks(t) { scene.traverse((o) => o.userData.tick && o.userData.tick(t)); }

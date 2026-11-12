@@ -1,9 +1,12 @@
 // More locations: Italian countryside with a Roman road and camp, shipyard, sea battle, the Alps, Gaul,
 // the Rubicon, an imperial palace hall, Constantinople, Ravenna, and the historical map table.
 import * as THREE from 'three';
-import { scene, sky, sun, hemi, water, terrain, fbm, pbr, flat, point, renderer } from './engine.js';
+import { scene, sky, sun, hemi, water, terrain, fbm, pbr, flat, point, renderer, groundPlane, uvWorld } from './engine.js';
 import { Batch, M4, MAT, temple, basilica, curia, insula, hut, fence, column, cornice, arcadeGeo, archRing, stairs, dome, entablature, gableRoof, pediment } from './arch.js';
 import { trees, rocks, bushes, galley } from './nature.js';
+import { stall, amphora, cart, crates, statue, planter, banner, haystack, woodpile, firepit, vineyard, farmhouse } from './props.js';
+import { herd } from './animals.js';
+const COWS = [0x7a5a40, 0x5a3e2a, 0xc8b8a0, 0x3a2a20, 0x9a7a58];
 
 const R = (seed) => { let s = seed; return () => ((s = (s * 16807) % 2147483647) / 2147483647); };
 async function light(mood = 'day') {
@@ -22,11 +25,11 @@ const spots = (r, n, x0, x1, z0, z1, s0, s1, avoid) => { const o = []; let k = 0
 export async function countryside({ mood = 'day' } = {}) {
   await light(mood); const r = R(31);
   const ground = (x, z) => { let h = fbm(x / 260, z / 260, 5, 4) * 60 + fbm(x / 60, z / 60, 3, 8) * 4 - 18; const road = Math.abs(x - 10 * Math.sin(z / 200)); return h * THREE.MathUtils.smoothstep(road, 10, 90) + 0.0; };
-  terrain({ size: 3000, seg: 260, height: ground, mat: pbr('grass', { size: 7, tint: 0xd8d4a8 }) });
+  terrain({ size: 3000, seg: 260, height: ground, mat: pbr('grass', { size: 7, tint: 0xd8d4a8, rough: 1.6, antiTile: true, env: 0.5, vcol: true }) });
   // via: paved strip following the valley floor (straight, as Roman roads were)
   const rg = new THREE.PlaneGeometry(6, 2400, 1, 200).rotateX(-Math.PI / 2); const p = rg.attributes.position;
   for (let i = 0; i < p.count; i++) { const z = p.getZ(i); p.setX(i, p.getX(i) + 10 * Math.sin(z / 200)); p.setY(i, 0.12); }
-  const road = new THREE.Mesh(rg, MAT.paving); road.receiveShadow = true; scene.add(road);
+  uvWorld(rg, 1); const road = new THREE.Mesh(rg, pbr('paving', { size: 2.2, tint: 0xb8b0a8, rough: 1.5, env: 0.5, antiTile: true })); road.receiveShadow = true; scene.add(road);
   const b = new Batch();
   for (let z = -1100; z < 1100; z += 22) b.add(new THREE.BoxGeometry(0.4, 1.4, 0.4), MAT.trav, M4(10 * Math.sin(z / 200) + 4.2, 0.7, z));   // milestones / kerb posts
   // castra: square earth rampart + palisade, rows of leather tents, headquarters tent
@@ -41,7 +44,20 @@ export async function countryside({ mood = 'day' } = {}) {
   b.add(new THREE.BoxGeometry(12, 4, 9), pbr('wood', { size: 1.5, tint: 0x9a3a2a, key: 'redtent' }), M4(cx, 2, cz)); gableRoof(b, pbr('wood', { size: 1.5, tint: 0x9a3a2a, key: 'redtent' }), cx, 4, cz, 4.5, 12, 0.5, Math.PI / 2);
   // a fortified hill town in the distance
   for (let i = 0; i < 40; i++) { const x = -420 + r() * 120, z = 380 + r() * 100, y = ground(x, z); b.add(new THREE.BoxGeometry(8, 6, 7), MAT.plaster, M4(x, y + 2.5, z)); gableRoof(b, MAT.roof, x, y + 5.5, z, 3.5, 8, 0.3, 0, 0.3); }
+  // farms along the road: villa rustica, vineyards, hay, carts, the camp's horse lines and supply dump
+  const gy = (x, z) => ground(x, z);
+  for (const [x, z, ry] of [[-70, 70, 0.2], [80, 160, -0.4], [-90, -200, 1.2]]) { farmhouse(b, x, z, gy(x, z), ry); vineyard(b, x + 30, z + 8, 26, 22, ry, gy); for (let i = 0; i < 4; i++) haystack(b, x - 16 + i * 4, z + 14, gy(x - 16 + i * 4, z + 14) - 0.2, 0.8); }
+  for (const [z, ry] of [[-14, 0.05], [62, 3.1], [-140, 0.0]]) cart(b, 10 * Math.sin(z / 200) + 5.2, z, Math.PI / 2 + ry, 0.12);
+  for (let i = 0; i < 6; i++) crates(b, 104 + i * 4, -50, gy(104 + i * 4, -50), 5, i);
+  for (let i = 0; i < 12; i++) amphora(b, 130 + (i % 6) * 0.6, gy(130, -48), -48 + Math.floor(i / 6) * 0.6, 0.85);
+  firepit(b, 176, -50, gy(176, -50));
+  for (let i = 0; i < 4; i++) banner(b, 154 + i * 3, gy(154, -60) + 4.5, -60.5, 0, 0);
+  b.add(new THREE.BoxGeometry(14, 0.12, 0.12), MAT.wood, M4(126, gy(126, -38) + 1.3, -38));
   b.build();
+  herd('horse', Array.from({ length: 7 }, (_, i) => [120 + i * 2.0, -37, Math.PI / 2 + (i % 2) * 0.2]), gy, { tints: [0x5a3a24, 0x2a1c14, 0x8a6a4a, 0x3a2a1c] });
+  herd('cow', Array.from({ length: 9 }, (_, i) => [40 + (i % 3) * 9 + r() * 5, 10 + Math.floor(i / 3) * 10 + r() * 5]), gy, { tints: COWS });
+  herd('sheep', Array.from({ length: 22 }, (_, i) => [-70 + (i % 6) * 4 + r() * 3, -40 + Math.floor(i / 6) * 4 + r() * 3]), gy);
+  herd('goat', [[-48, 96], [-46, 98, 2], [-52, 94, 1]], gy);
   trees('cypress', Array.from({ length: 40 }, (_, i) => [10 * Math.sin((i * 50 - 1000) / 200) + (i % 2 ? 9 : -9), i * 50 - 1000, 1]), ground);
   trees('pine', spots(r, 70, -800, 800, -800, 800, 0.9, 1.4, (x, z) => Math.abs(x) < 30 || Math.hypot(x - cx, z - cz) < 90), ground);
   trees('oak', spots(r, 140, -1200, 1200, -1200, 1200, 0.9, 1.5, (x, z) => Math.abs(x) < 30 || Math.hypot(x - cx, z - cz) < 90), ground);
@@ -53,7 +69,7 @@ export async function countryside({ mood = 'day' } = {}) {
 export async function shipyard({ mood = 'day' } = {}) {
   await light(mood); const r = R(41);
   const ground = (x, z) => (z < 40 ? 1.2 + fbm(x / 200, z / 200, 3, 2) * 4 * THREE.MathUtils.smoothstep(-z, 60, 300) : 1.2 - (z - 40) * 0.12);
-  terrain({ size: 2400, seg: 200, height: ground, mat: pbr('sand', { size: 5, tint: 0xd8c8a8 }) });
+  terrain({ size: 2400, seg: 200, height: ground, mat: pbr('sand', { size: 5, tint: 0xd8c8a8, rough: 1.6, antiTile: true, env: 0.5, vcol: true }) });
   water([3000, 3000], { color: 0x23606a, pos: [0, -0.3, 0], ripple: 0.8 });
   const b = new Batch();
   for (let k = 0; k < 4; k++) {
@@ -71,7 +87,13 @@ export async function shipyard({ mood = 'day' } = {}) {
   // sheds and timber stacks
   for (let i = 0; i < 6; i++) { b.add(new THREE.BoxGeometry(14, 6, 10), MAT.wood, M4(-90 + i * 30, 3 + 1.2, -40)); gableRoof(b, MAT.roof, -90 + i * 30, 7.2, -40, 5, 14, 0.4, Math.PI / 2); }
   for (let i = 0; i < 12; i++) for (let j = 0; j < 4; j++) b.add(new THREE.CylinderGeometry(0.35, 0.35, 12, 8), MAT.wood, M4(110 + i * 0.75, 1.6 + j * 0.65, -10, 0, 1, 1, 1, Math.PI / 2, 0));
+  // yard clutter: timber, pitch jars, crates, rope coils, carts, a forge fire
+  for (let i = 0; i < 10; i++) { const x = -84 + i * 16, z = -22 + (i % 2) * 6; if (Math.abs(x + 38) < 6 && Math.abs(z - 4) < 8) continue; i % 3 ? crates(b, x, z, 1.2, 5, i) : woodpile(b, x, z, 1.2, 0.3 * i); }
+  for (let i = 0; i < 12; i++) amphora(b, -20 + (i % 6) * 0.6, 1.2, -12 + Math.floor(i / 6) * 0.6, 0.85);
+  for (let i = 0; i < 6; i++) b.add(new THREE.TorusGeometry(0.5, 0.12, 6, 16), MAT.wood, M4(-52 + i * 1.2, 1.3, -8, 0, 1, 1, 1, Math.PI / 2, 0));
+  cart(b, -70, -4, 0.3, 1.2); cart(b, 70, -28, 2.6, 1.2, 'sacks'); firepit(b, -96, -14, 1.2);
   b.build();
+  herd('ox', [[-64.8, -3.6, 0.3], [-64.8, -5.8, 0.3]], () => 1.2);
   galley({ x: 120, y: -0.2, z: 120, ry: 0.4 }); galley({ x: 40, y: -0.2, z: 180, ry: 1.0, sail: 0xe8dcc0, sailStripe: 0x9b2226 });
   trees('pine', spots(r, 50, -500, 500, -500, -80, 1, 1.4), ground);
   return { ground, cams: { wide: { pos: [-140, 40, 160], look: [0, 2, 20], fov: 42 }, ribs: { pos: [-10, 3.2, 70], look: [-20, 3, 20], fov: 46 } } };
@@ -91,12 +113,14 @@ export async function seaBattle({ mood = 'overcast' } = {}) {
 export async function alps({ mood = 'overcast' } = {}) {
   await light(mood); scene.fog.color.set(0xd0d6de); scene.fog.density = 0.0011; const r = R(61);
   const ground = (x, z) => { const ridge = Math.abs(fbm(x / 420, z / 420, 6, 3) - 0.5) * 2; let h = (1 - ridge) * 520 + fbm(x / 90, z / 90, 4, 6) * 40; const track = Math.abs(x - 30 * Math.sin(z / 90)); h = h * THREE.MathUtils.smoothstep(track, 18, 260) + 60 * (1 - THREE.MathUtils.smoothstep(track, 18, 260)); return h - 60; };
-  const snowMat = pbr('rock', { size: 12, tint: 0xd8dde4 });
+  const snowMat = pbr('rock', { size: 9, tint: 0xd0c8c0, rough: 1.3, key: 'alpsnow' }); snowMat.vertexColors = true;
+  snowMat.onBeforeCompile = (sh) => { sh.fragmentShader = sh.fragmentShader.replace('#include <color_fragment>', 'diffuseColor.rgb = mix(diffuseColor.rgb * 0.8, vec3(0.9, 0.92, 0.96), vColor.r);'); };
   const t = terrain({ size: 5000, seg: 300, height: ground, mat: snowMat });
   // snow on gentle slopes: vertex colour by slope
   const g = t.geometry, n = g.attributes.normal, c = new Float32Array(n.count * 3);
-  for (let i = 0; i < n.count; i++) { const s = THREE.MathUtils.smoothstep(n.getY(i), 0.6, 0.85); const k = 0.55 + 0.6 * s; c[i * 3] = k; c[i * 3 + 1] = k; c[i * 3 + 2] = k * 1.03; }
-  g.setAttribute('color', new THREE.BufferAttribute(c, 3)); snowMat.vertexColors = true;
+  const P = g.attributes.position;
+  for (let i = 0; i < n.count; i++) { const s = THREE.MathUtils.smoothstep(n.getY(i), 0.7, 0.9) * (0.55 + 0.45 * THREE.MathUtils.smoothstep(P.getY(i), 8, 60)) + THREE.MathUtils.smoothstep(P.getY(i), 160, 260) + 0.25 * fbm(P.getX(i) / 30, P.getZ(i) / 30, 3, 4); const k = Math.min(1, s); c[i * 3] = k; c[i * 3 + 1] = k; c[i * 3 + 2] = k; }
+  g.setAttribute('color', new THREE.BufferAttribute(c, 3));
   rocks(spots(r, 60, -200, 200, -400, 400, 1, 4), ground);
   trees('cypress', spots(r, 80, -900, 900, 300, 1200, 1, 1.6), ground);
   return { ground, cams: { wide: { pos: [-260, 160, 520], look: [0, 40, 0], fov: 40 }, track: { pos: [24, ground(24, 120) + 1.8, 120], look: [10, ground(10, 40) + 2, 40], fov: 46 } } };
@@ -112,7 +136,7 @@ export async function rubicon({ mood = 'dusk' } = {}) {
   await light(mood); const r = R(81);
   const rx = (z) => 25 * Math.sin(z / 80);
   const ground = (x, z) => { const d = Math.abs(x - rx(z)); return fbm(x / 160, z / 160, 4, 5) * 16 * THREE.MathUtils.smoothstep(d, 12, 120) - 2.2 * (1 - THREE.MathUtils.smoothstep(d, 6, 14)); };
-  terrain({ size: 2400, seg: 260, height: ground, mat: pbr('grass', { size: 6, tint: 0xc8c8a0 }) });
+  terrain({ size: 2400, seg: 260, height: ground, mat: pbr('grass', { size: 6, tint: 0xc8c8a0, rough: 1.6, antiTile: true, env: 0.5, vcol: true }) });
   water([2400, 2400], { color: 0x2a4a48, pos: [0, -0.9, 0], ripple: 0.7 });
   rocks(spots(r, 60, -60, 60, -300, 300, 0.4, 1.4, (x, z) => Math.abs(x - rx(z)) < 8), ground);
   bushes(spots(r, 200, -200, 200, -400, 400, 0.6, 1.6, (x, z) => Math.abs(x - rx(z)) < 9), ground);
@@ -155,7 +179,7 @@ export async function palace({ mood = 'golden' } = {}) {
 export async function constantinople({ mood = 'golden', late = false } = {}) {
   await light(mood); const r = R(91);
   const ground = (x, z) => (z > 260 ? -3 : 2 + fbm(x / 220, z / 220, 4, 3) * 26 * THREE.MathUtils.smoothstep(260 - z, 0, 200));
-  terrain({ size: 3600, seg: 240, height: ground, mat: pbr('grass', { size: 7, tint: 0xd0c8a0 }) });
+  terrain({ size: 3600, seg: 240, height: ground, mat: pbr('grass', { size: 7, tint: 0xd0c8a0, rough: 1.6, antiTile: true, env: 0.5, vcol: true }) });
   water([5000, 5000], { color: 0x1d5a6a, pos: [0, -0.3, 0], ripple: 1.0 });
   const b = new Batch();
   // the land walls: towers every 60 m, a lower outer wall and moat (Theodosian walls when late)

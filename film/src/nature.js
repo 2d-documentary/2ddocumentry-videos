@@ -93,11 +93,12 @@ export function galley({ x = 0, y = 0, z = 0, ry = 0, L = 36, B = 5, hullCol = 0
 }
 
 // ------------------------------------------------------------------ 2D character billboards
-const SPR = {}; const texL = new THREE.TextureLoader();
+const SPR = {}, SPRP = {}; const texL = new THREE.TextureLoader();
+export function preloadSprites(paths) { return Promise.all(paths.map((p) => { sprite(p); return SPRP[p]; })); }
 let META = { viewBox: [-170, -360, 340, 380], unitsPerMetre: 233 / 1.65 };
 export function setSpriteMeta(m) { META = m; }
 function sprite(path) {
-  if (!SPR[path]) { const t = texL.load(path); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; SPR[path] = t; }
+  if (!SPR[path]) { let done; SPRP[path] = new Promise((r) => (done = r)); const t = texL.load(path, done, undefined, done); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; SPR[path] = t; }
   return SPR[path];
 }
 export class Actor {
@@ -115,7 +116,7 @@ export class Actor {
     blob.rotation.x = -Math.PI / 2; blob.position.y = 0.02; blob.scale.set(1.3, 0.8, 1); this.root.add(blob);
     this.mesh.onBeforeRender = () => this.face();
   }
-  path() { return `${this.dir}${this.id}_${this.expr}_${this.view}_${this.mouth}.png`; }
+  path(o = {}) { const k = { ...this, ...o }; return `${k.dir}${k.id}_${k.expr}_${k.view}_${k.mouth}.png`; }
   set(o) {
     Object.assign(this, o);
     const t = sprite(this.path()); if (this.mat.map !== t) { this.mat.map = t; this.mat.emissiveMap = t; this.mesh.customDepthMaterial.map = t; this.mat.needsUpdate = true; }
