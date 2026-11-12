@@ -1,6 +1,6 @@
 # Asset report: Elon Musk: The Man Who Bet Everything
 
-**74 downloaded, 2 need attention** (of 76)
+**75 downloaded, 2 need attention** (of 77)
 
 ## Download these by hand
 
@@ -89,3 +89,4 @@ Open each link, download the highest-resolution version, and send it back with i
 | starlink_train |  | `archives/historical-photos/starlink_train_starlink-satellites-train-sky.jpg` | CC0 | authentic |
 | ussr_missile |  | `archives/historical-photos/ussr_missile_r-36-missile.jpg` | Public domain | authentic |
 | ift1_vid2 |  | `archives/footage/ift1_vid2_starship-ift-1-nasa-wb-57-cam-4.webm` | Public domain | authentic |
+| f9_arc |  | `archives/historical-photos/f9_arc_falcon-9-launch-and-landing-long-exposur.jpg` | Public domain | authentic |
