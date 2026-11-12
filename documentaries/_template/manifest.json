@@ -1,0 +1,49 @@
+{
+  "project": "_template",
+  "title": "Copy this folder to documentaries/<project-slug>/ and fill in real assets",
+  "assets": [
+    {
+      "id": "s01_paper_01",
+      "scene": 1,
+      "category": "newspapers",
+      "description": "Front page announcing the event",
+      "source_page": "https://chroniclingamerica.loc.gov/lccn/<lccn>/<yyyy-mm-dd>/ed-1/seq-1/",
+      "authenticity": "authentic",
+      "notes": "Circle the headline in red; zoom into column 3"
+    },
+    {
+      "id": "s02_portrait_01",
+      "scene": 2,
+      "category": "paintings",
+      "description": "Official portrait of the ruler",
+      "source_page": "https://commons.wikimedia.org/wiki/File:<file name>.jpg",
+      "authenticity": "authentic"
+    },
+    {
+      "id": "s03_map_01",
+      "scene": 3,
+      "category": "maps",
+      "description": "Period map of the region",
+      "source_page": "https://www.loc.gov/item/<id>/",
+      "authenticity": "authentic"
+    },
+    {
+      "id": "s04_footage_01",
+      "scene": 4,
+      "category": "footage",
+      "description": "Newsreel clip",
+      "source_page": "https://archive.org/details/<identifier>",
+      "file": "<optional: exact file name inside the item>",
+      "authenticity": "authentic"
+    },
+    {
+      "id": "s05_recon_01",
+      "scene": 5,
+      "category": "generated-assets",
+      "description": "Labelled reconstruction of the city (no archival photo exists)",
+      "manual": true,
+      "authenticity": "ai-generated",
+      "notes": "Must carry an on-screen 'Reconstruction' label"
+    }
+  ]
+}

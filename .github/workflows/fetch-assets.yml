@@ -1,0 +1,58 @@
+name: fetch-assets
+# Downloads the archival assets listed in documentaries/<project>/manifest.json
+# on GitHub's servers and keeps them on the branch assets-<project>
+# (main stays light). Re-runs only fetch what is missing or changed.
+on:
+  push:
+    branches: [main]
+    paths: ['documentaries/*/manifest.json']
+  workflow_dispatch:
+    inputs:
+      project: { description: 'documentary folder name (documentaries/<project>)', required: true }
+permissions:
+  contents: write
+concurrency:
+  group: fetch-assets-${{ github.event.inputs.project || github.sha }}
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install -q pillow
+      - name: Which projects?
+        id: which
+        run: |
+          if [ -n "${{ github.event.inputs.project }}" ]; then
+            P="${{ github.event.inputs.project }}"
+          else
+            P=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} 2>/dev/null \
+                | grep -E '^documentaries/[^/]+/manifest\.json$' | cut -d/ -f2 | grep -v '^_template$' | sort -u | tr '\n' ' ')
+          fi
+          echo "projects=$P" >> "$GITHUB_OUTPUT"; echo "projects: $P"
+      - name: Fetch
+        if: steps.which.outputs.projects != ''
+        run: |
+          git config --global user.name "asset-bot"
+          git config --global user.email "asset-bot@users.noreply.github.com"
+          REMOTE="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          for P in ${{ steps.which.outputs.projects }}; do
+            [ -f "documentaries/$P/manifest.json" ] || { echo "::error::documentaries/$P/manifest.json not found"; exit 1; }
+            BR="assets-$P"; S="/tmp/store-$P"; rm -rf "$S"
+            if git ls-remote --exit-code --heads "$REMOTE" "$BR" >/dev/null; then
+              git clone -q --depth 1 --branch "$BR" "$REMOTE" "$S"
+            else
+              mkdir -p "$S" && git -C "$S" init -q -b "$BR" && git -C "$S" remote add origin "$REMOTE"
+            fi
+            python tools/fetch_assets.py "documentaries/$P" "$S"
+            cat "$S/REPORT.md" >> "$GITHUB_STEP_SUMMARY"
+            cd "$S"
+            git add -A
+            git commit -qm "assets: $P from ${{ github.sha }} (run ${{ github.run_id }})" || echo "nothing new"
+            git push -q origin "HEAD:$BR"
+            cd - >/dev/null
+          done
