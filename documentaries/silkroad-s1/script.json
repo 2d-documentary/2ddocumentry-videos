@@ -1,0 +1,84 @@
+{
+ "title": "The FBI's Library Trick",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Documentary narrator: brisk, witty"
+  }
+ },
+ "spoken": {
+  "2013": "twenty thirteen",
+  "1st": "first",
+  "29-year-old": "twenty-nine-year-old",
+  "1.2": "one point two",
+  "1984": "nineteen eighty-four",
+  "2010": "twenty ten",
+  "2011": "twenty eleven",
+  "9.5": "nine point five",
+  "80": "eighty",
+  "2015": "twenty fifteen",
+  "DEA": "D E A",
+  "IRS": "I R S",
+  "FBI": "F B I",
+  "FBI's": "F B I's",
+  "US": "U S",
+  "144,000": "a hundred and forty-four thousand",
+  "28": "twenty-eight",
+  "800,000": "eight hundred thousand",
+  "50,000": "fifty thousand",
+  "2021": "twenty twenty-one",
+  "3": "three",
+  "21st": "twenty-first",
+  "2025": "twenty twenty-five",
+  "rossulbricht": "ross ulbricht",
+  "altoid": "altoid",
+  "Ulbricht": "Ulbricht",
+  "Ulbricht,": "Ulbricht,",
+  "2012": "twenty twelve",
+  "3.36": "three point three six",
+  "2.0": "two point oh",
+  "2.0.": "two point oh."
+ },
+ "tail": 2.4,
+ "lines": [
+  {
+   "id": "A01",
+   "speaker": "NARRATOR",
+   "text": "The FBI caught a billion-dollar dark web boss by faking a lovers' fight. In a library."
+  },
+  {
+   "id": "A02",
+   "speaker": "NARRATOR",
+   "text": "October 2013. Ross Ulbricht, the man behind the Silk Road, is working in the science fiction section of a San Francisco library."
+  },
+  {
+   "id": "A03",
+   "speaker": "NARRATOR",
+   "text": "His laptop holds everything. But if it closes, it's encrypted, and the evidence is gone."
+  },
+  {
+   "id": "A04",
+   "speaker": "NARRATOR",
+   "text": "So two agents start a loud argument right behind him. He turns around."
+  },
+  {
+   "id": "A05",
+   "speaker": "NARRATOR",
+   "text": "In that one second, another agent slides the open laptop away. Logged in. Game over."
+  },
+  {
+   "id": "A06",
+   "speaker": "NARRATOR",
+   "text": "Moral of the story: always lock your laptop.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "A07",
+   "speaker": "NARRATOR",
+   "text": "The full story is on Unfiled Films.",
+   "gap_before": 0.4
+  }
+ ]
+}

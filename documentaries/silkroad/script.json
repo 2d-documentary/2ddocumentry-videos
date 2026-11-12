@@ -1,0 +1,384 @@
+{
+ "title": "Ross Ulbricht & The Silk Road",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Documentary narrator: brisk, witty"
+  }
+ },
+ "spoken": {
+  "2013": "twenty thirteen",
+  "1st": "first",
+  "29-year-old": "twenty-nine-year-old",
+  "1.2": "one point two",
+  "1984": "nineteen eighty-four",
+  "2010": "twenty ten",
+  "2011": "twenty eleven",
+  "9.5": "nine point five",
+  "80": "eighty",
+  "2015": "twenty fifteen",
+  "DEA": "D E A",
+  "IRS": "I R S",
+  "FBI": "F B I",
+  "FBI's": "F B I's",
+  "US": "U S",
+  "144,000": "a hundred and forty-four thousand",
+  "28": "twenty-eight",
+  "800,000": "eight hundred thousand",
+  "50,000": "fifty thousand",
+  "2021": "twenty twenty-one",
+  "3": "three",
+  "21st": "twenty-first",
+  "2025": "twenty twenty-five",
+  "rossulbricht": "ross ulbricht",
+  "altoid": "altoid",
+  "Ulbricht": "Ulbricht",
+  "Ulbricht,": "Ulbricht,",
+  "2012": "twenty twelve",
+  "3.36": "three point three six",
+  "2.0": "two point oh",
+  "2.0.": "two point oh."
+ },
+ "tail": 3.0,
+ "lines": [
+  {
+   "id": "R001",
+   "speaker": "NARRATOR",
+   "text": "October 1st, 2013. San Francisco. A quiet public library."
+  },
+  {
+   "id": "R002",
+   "speaker": "NARRATOR",
+   "text": "In the science fiction section, a 29-year-old in a T-shirt is typing on his laptop."
+  },
+  {
+   "id": "R003",
+   "speaker": "NARRATOR",
+   "text": "He looks like a grad student. He is actually running the biggest black market on the internet. A site that, according to the FBI, did 1.2 billion dollars in sales."
+  },
+  {
+   "id": "R004",
+   "speaker": "NARRATOR",
+   "text": "Behind him, a man and a woman start a loud argument. He turns around, for just one second."
+  },
+  {
+   "id": "R005",
+   "speaker": "NARRATOR",
+   "text": "And that one second ends everything. But to understand why, we have to go back."
+  },
+  {
+   "id": "R006",
+   "speaker": "NARRATOR",
+   "text": "This is the story of Ross Ulbricht, and the Silk Road.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "R007",
+   "speaker": "NARRATOR",
+   "text": "Austin, Texas. Ross Ulbricht is born in 1984. Smart, friendly, and an actual Eagle Scout.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "R008",
+   "speaker": "NARRATOR",
+   "text": "He studies physics, then earns a master's degree in materials science. Crystals, mostly."
+  },
+  {
+   "id": "R009",
+   "speaker": "NARRATOR",
+   "text": "But Ross doesn't want a lab job. He wants freedom. He reads libertarian economics, and starts believing governments shouldn't control what people buy or sell."
+  },
+  {
+   "id": "R010",
+   "speaker": "NARRATOR",
+   "text": "He tries day trading. It fails. He starts a video game company. That fails too. He sells used books online. Honestly? Also not great."
+  },
+  {
+   "id": "R011",
+   "speaker": "NARRATOR",
+   "text": "So in 2010, he has a new idea. A website where anyone can buy anything, completely anonymously."
+  },
+  {
+   "id": "R012",
+   "speaker": "NARRATOR",
+   "text": "He names it Silk Road, after the ancient trade route between China and Europe.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "R013",
+   "speaker": "NARRATOR",
+   "text": "The trick is two pieces of technology. Tor hides where users are. And Bitcoin, a brand new digital currency, hides who's paying."
+  },
+  {
+   "id": "R013B",
+   "speaker": "NARRATOR",
+   "text": "Tor works like an onion. Your traffic is wrapped in layers of encryption and bounced around the world, so no one can tell where it came from."
+  },
+  {
+   "id": "R014",
+   "speaker": "NARRATOR",
+   "text": "Back then, one bitcoin was worth about a dollar. Keep that in mind."
+  },
+  {
+   "id": "R015",
+   "speaker": "NARRATOR",
+   "text": "To get the first products on the site, Ross grows magic mushrooms himself, in a cabin outside Austin."
+  },
+  {
+   "id": "R016",
+   "speaker": "NARRATOR",
+   "text": "February 2011. Silk Road goes live. It looks like a normal online shop, with listings, reviews and star ratings. Except most of the listings are illegal drugs."
+  },
+  {
+   "id": "R016B",
+   "speaker": "NARRATOR",
+   "text": "Sellers get star ratings. Buyers leave reviews. There is even customer support."
+  },
+  {
+   "id": "R016C",
+   "speaker": "NARRATOR",
+   "text": "Somewhere out there, a drug dealer is getting five stars for fast shipping and lovely packaging."
+  },
+  {
+   "id": "R017",
+   "speaker": "NARRATOR",
+   "text": "To spread the word, he posts about it on online forums, under the username altoid. Remember that name."
+  },
+  {
+   "id": "R018",
+   "speaker": "NARRATOR",
+   "text": "In June 2011, a news site publishes a story about Silk Road. Overnight, everyone knows. A US senator demands it be shut down."
+  },
+  {
+   "id": "R019",
+   "speaker": "NARRATOR",
+   "text": "Which, as free advertising goes, is pretty hard to beat."
+  },
+  {
+   "id": "R020",
+   "speaker": "NARRATOR",
+   "text": "The site explodes. Thousands of sellers. Nearly a million user accounts.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "R021",
+   "speaker": "NARRATOR",
+   "text": "Ross takes a new name: Dread Pirate Roberts. It comes from the movie The Princess Bride, where the name is passed from one pirate to the next. So nobody knows who's really behind it."
+  },
+  {
+   "id": "R022",
+   "speaker": "NARRATOR",
+   "text": "He takes a cut of every sale. By the FBI's count, the site moves 9.5 million bitcoins in sales, and earns about 80 million dollars in commissions."
+  },
+  {
+   "id": "R022B",
+   "speaker": "NARRATOR",
+   "text": "He tracks the money in detailed spreadsheets, like any good small business owner. Except this business is not small, and not legal."
+  },
+  {
+   "id": "R023",
+   "speaker": "NARRATOR",
+   "text": "And here's the strange part. The boss of this empire lives in a rented room in San Francisco, paying a thousand dollars a month in cash, under a fake name: Josh."
+  },
+  {
+   "id": "R024",
+   "speaker": "NARRATOR",
+   "text": "His roommates think he's a quiet guy who works on his computer all day. Which, to be fair, was true."
+  },
+  {
+   "id": "R025",
+   "speaker": "NARRATOR",
+   "text": "But Silk Road was not a harmless game. Prosecutors linked six overdose deaths to drugs bought on the site, and grieving parents spoke at his sentencing."
+  },
+  {
+   "id": "R026",
+   "speaker": "NARRATOR",
+   "text": "Prosecutors also said he paid to have people killed to protect the site. No one was actually harmed, and he was never convicted on those claims."
+  },
+  {
+   "id": "R027",
+   "speaker": "NARRATOR",
+   "text": "Meanwhile, the hunt is on. The FBI, the DEA, Homeland Security and the IRS are all chasing one pirate.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "R028",
+   "speaker": "NARRATOR",
+   "text": "And the breakthrough doesn't come from hackers or spy satellites. It comes from Google."
+  },
+  {
+   "id": "R029",
+   "speaker": "NARRATOR",
+   "text": "An IRS agent named Gary Alford searches for the oldest posts that mention Silk Road. And he finds altoid."
+  },
+  {
+   "id": "R030",
+   "speaker": "NARRATOR",
+   "text": "Later, altoid had posted again, asking for a programmer. And for replies, he left his email address: rossulbricht at gmail dot com."
+  },
+  {
+   "id": "R031",
+   "speaker": "NARRATOR",
+   "text": "His real name. In his email. On the internet. The Dread Pirate, ladies and gentlemen."
+  },
+  {
+   "id": "R031B",
+   "speaker": "NARRATOR",
+   "text": "It gets better. He also asked a coding question online under his real name, then changed his username to frosty. Less than a minute later. The internet remembers."
+  },
+  {
+   "id": "R032",
+   "speaker": "NARRATOR",
+   "text": "Then, in July 2013, border agents open a package from Canada. Inside: nine fake IDs. Different names. Same face. All addressed to Ross's apartment."
+  },
+  {
+   "id": "R033",
+   "speaker": "NARRATOR",
+   "text": "Homeland Security knocks on his door. Ross admits nothing. But he does mention that, hypothetically, anyone could buy fake IDs on a site called Silk Road."
+  },
+  {
+   "id": "R034",
+   "speaker": "NARRATOR",
+   "text": "Hypothetically.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "R035",
+   "speaker": "NARRATOR",
+   "text": "Now the agents have a name. But a name isn't enough. Everything is on his laptop, and if that laptop closes, it's locked and encrypted.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "R036",
+   "speaker": "NARRATOR",
+   "text": "They need to grab it while it's open, while he's logged in as the Dread Pirate."
+  },
+  {
+   "id": "R037",
+   "speaker": "NARRATOR",
+   "text": "October 1st, 2013. An undercover agent, who has secretly taken over a Silk Road staff account, starts chatting with the boss."
+  },
+  {
+   "id": "R038",
+   "speaker": "NARRATOR",
+   "text": "Ross walks into a cafe. Too crowded. So he walks next door, to the Glen Park library."
+  },
+  {
+   "id": "R039",
+   "speaker": "NARRATOR",
+   "text": "He sits down in the science fiction section, opens his laptop, and logs in."
+  },
+  {
+   "id": "R040",
+   "speaker": "NARRATOR",
+   "text": "The undercover agent asks him to check something on the site's admin page. Ross opens it."
+  },
+  {
+   "id": "R041",
+   "speaker": "NARRATOR",
+   "text": "Behind him, two FBI agents start their act: a loud lovers' fight. Ross turns to look."
+  },
+  {
+   "id": "R042",
+   "speaker": "NARRATOR",
+   "text": "In that second, another agent slides the open laptop away. Screen on. Logged in. Game over."
+  },
+  {
+   "id": "R043",
+   "speaker": "NARRATOR",
+   "text": "Lesson of the day: always lock your laptop.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "R044",
+   "speaker": "NARRATOR",
+   "text": "On it, agents find everything. Chat logs. Spreadsheets of profits. Even a personal diary describing how he started Silk Road."
+  },
+  {
+   "id": "R045",
+   "speaker": "NARRATOR",
+   "text": "He wrote down his crimes. In a diary. On the evidence."
+  },
+  {
+   "id": "R046",
+   "speaker": "NARRATOR",
+   "text": "Agents also seize about 144,000 bitcoins from his computer. Back then, about 28 million dollars. Today, worth billions."
+  },
+  {
+   "id": "R046B",
+   "speaker": "NARRATOR",
+   "text": "And Silk Road itself? Just one month later, copycats launch Silk Road 2.0. Shut down the next year. The internet, it turns out, is very good at copying."
+  },
+  {
+   "id": "R047",
+   "speaker": "NARRATOR",
+   "text": "In February 2015, a jury in New York finds him guilty on all seven counts.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "R048",
+   "speaker": "NARRATOR",
+   "text": "In May, the judge sentences him to two life sentences, plus forty years. No parole."
+  },
+  {
+   "id": "R049",
+   "speaker": "NARRATOR",
+   "text": "But this story has one more twist. Two of the federal agents investigating Silk Road were stealing bitcoin themselves.",
+   "gap_before": 0.5
+  },
+  {
+   "id": "R050",
+   "speaker": "NARRATOR",
+   "text": "A DEA agent took bitcoin from Ross while pretending to be someone else. A Secret Service agent stole over 800,000 dollars in bitcoin from the site."
+  },
+  {
+   "id": "R051",
+   "speaker": "NARRATOR",
+   "text": "Both went to prison. The investigators needed investigating."
+  },
+  {
+   "id": "R052",
+   "speaker": "NARRATOR",
+   "text": "And another hacker who tricked Silk Road out of 50,000 bitcoins hid them for almost ten years. Agents finally found them in 2021, on a tiny computer inside a popcorn tin, in a bathroom closet."
+  },
+  {
+   "id": "R053",
+   "speaker": "NARRATOR",
+   "text": "Worth more than 3 billion dollars. The most expensive popcorn in history."
+  },
+  {
+   "id": "R054",
+   "speaker": "NARRATOR",
+   "text": "Ross spends more than eleven years in prison. Supporters campaign to free him. Critics say the sentence fit the crime.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "R055",
+   "speaker": "NARRATOR",
+   "text": "Then, on January 21st, 2025, President Trump grants him a full and unconditional pardon. He walks out a free man."
+  },
+  {
+   "id": "R056",
+   "speaker": "NARRATOR",
+   "text": "Months later, he's on stage at a Bitcoin conference, in front of a cheering crowd."
+  },
+  {
+   "id": "R057",
+   "speaker": "NARRATOR",
+   "text": "So who is Ross Ulbricht? A freedom fighter, or a kingpin? People still argue about it."
+  },
+  {
+   "id": "R058",
+   "speaker": "NARRATOR",
+   "text": "But one thing is certain. The man who built the internet's most secret marketplace was caught by a Google search, a box of fake IDs, and a fake argument in a library."
+  },
+  {
+   "id": "R059",
+   "speaker": "NARRATOR",
+   "text": "This was Unfiled Films. Should he have been pardoned? Tell us in the comments, and subscribe for more stories like this.",
+   "gap_before": 0.6
+  }
+ ]
+}

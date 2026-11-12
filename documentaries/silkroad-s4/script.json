@@ -1,0 +1,84 @@
+{
+ "title": "The $3 Billion Popcorn Tin",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Documentary narrator: brisk, witty"
+  }
+ },
+ "spoken": {
+  "2013": "twenty thirteen",
+  "1st": "first",
+  "29-year-old": "twenty-nine-year-old",
+  "1.2": "one point two",
+  "1984": "nineteen eighty-four",
+  "2010": "twenty ten",
+  "2011": "twenty eleven",
+  "9.5": "nine point five",
+  "80": "eighty",
+  "2015": "twenty fifteen",
+  "DEA": "D E A",
+  "IRS": "I R S",
+  "FBI": "F B I",
+  "FBI's": "F B I's",
+  "US": "U S",
+  "144,000": "a hundred and forty-four thousand",
+  "28": "twenty-eight",
+  "800,000": "eight hundred thousand",
+  "50,000": "fifty thousand",
+  "2021": "twenty twenty-one",
+  "3": "three",
+  "21st": "twenty-first",
+  "2025": "twenty twenty-five",
+  "rossulbricht": "ross ulbricht",
+  "altoid": "altoid",
+  "Ulbricht": "Ulbricht",
+  "Ulbricht,": "Ulbricht,",
+  "2012": "twenty twelve",
+  "3.36": "three point three six",
+  "2.0": "two point oh",
+  "2.0.": "two point oh."
+ },
+ "tail": 2.4,
+ "lines": [
+  {
+   "id": "D01",
+   "speaker": "NARRATOR",
+   "text": "Agents found 3 billion dollars inside a popcorn tin."
+  },
+  {
+   "id": "D02",
+   "speaker": "NARRATOR",
+   "text": "In 2012, a hacker tricked the dark web market Silk Road into sending him more than 50,000 bitcoins."
+  },
+  {
+   "id": "D03",
+   "speaker": "NARRATOR",
+   "text": "Then he waited. For almost ten years."
+  },
+  {
+   "id": "D04",
+   "speaker": "NARRATOR",
+   "text": "In 2021, agents raided his home. They found an underground safe, and in a bathroom closet, a popcorn tin with a tiny computer hidden inside."
+  },
+  {
+   "id": "D05",
+   "speaker": "NARRATOR",
+   "text": "On it: more than 50,000 bitcoins, worth 3.36 billion dollars."
+  },
+  {
+   "id": "D06",
+   "speaker": "NARRATOR",
+   "text": "The most expensive popcorn in history.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "D07",
+   "speaker": "NARRATOR",
+   "text": "The full story is on Unfiled Films.",
+   "gap_before": 0.4
+  }
+ ]
+}

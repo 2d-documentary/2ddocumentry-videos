@@ -1,0 +1,84 @@
+{
+ "title": "Caught by Google",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Documentary narrator: brisk, witty"
+  }
+ },
+ "spoken": {
+  "2013": "twenty thirteen",
+  "1st": "first",
+  "29-year-old": "twenty-nine-year-old",
+  "1.2": "one point two",
+  "1984": "nineteen eighty-four",
+  "2010": "twenty ten",
+  "2011": "twenty eleven",
+  "9.5": "nine point five",
+  "80": "eighty",
+  "2015": "twenty fifteen",
+  "DEA": "D E A",
+  "IRS": "I R S",
+  "FBI": "F B I",
+  "FBI's": "F B I's",
+  "US": "U S",
+  "144,000": "a hundred and forty-four thousand",
+  "28": "twenty-eight",
+  "800,000": "eight hundred thousand",
+  "50,000": "fifty thousand",
+  "2021": "twenty twenty-one",
+  "3": "three",
+  "21st": "twenty-first",
+  "2025": "twenty twenty-five",
+  "rossulbricht": "ross ulbricht",
+  "altoid": "altoid",
+  "Ulbricht": "Ulbricht",
+  "Ulbricht,": "Ulbricht,",
+  "2012": "twenty twelve",
+  "3.36": "three point three six",
+  "2.0": "two point oh",
+  "2.0.": "two point oh."
+ },
+ "tail": 2.4,
+ "lines": [
+  {
+   "id": "B01",
+   "speaker": "NARRATOR",
+   "text": "The most wanted man on the dark web was caught by a Google search."
+  },
+  {
+   "id": "B02",
+   "speaker": "NARRATOR",
+   "text": "An IRS agent looked for the oldest posts about Silk Road, and found a user called altoid."
+  },
+  {
+   "id": "B03",
+   "speaker": "NARRATOR",
+   "text": "Later, altoid had asked for coding help, and left his email: rossulbricht at gmail dot com."
+  },
+  {
+   "id": "B04",
+   "speaker": "NARRATOR",
+   "text": "Then border agents found nine fake IDs, all with his face, all addressed to his apartment."
+  },
+  {
+   "id": "B05",
+   "speaker": "NARRATOR",
+   "text": "When agents asked about it, he said that, hypothetically, anyone could buy them on Silk Road."
+  },
+  {
+   "id": "B06",
+   "speaker": "NARRATOR",
+   "text": "Hypothetically.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "B07",
+   "speaker": "NARRATOR",
+   "text": "The full story is on Unfiled Films.",
+   "gap_before": 0.4
+  }
+ ]
+}

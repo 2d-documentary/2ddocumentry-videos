@@ -1,0 +1,257 @@
+{
+ "project": "silkroad",
+ "title": "Ross Ulbricht & The Silk Road",
+ "assets": [
+  {
+   "id": "ross",
+   "category": "historical-photos",
+   "description": "Ross Ulbricht by Gage Skidmore.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Ross_Ulbricht_by_Gage_Skidmore.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ross_stage",
+   "category": "historical-photos",
+   "description": "Ross Ulbricht (54558731167).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Ross_Ulbricht_(54558731167).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "ross_wave",
+   "category": "historical-photos",
+   "description": "Ross Ulbricht (54559794559).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Ross_Ulbricht_(54559794559).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "laptop_real",
+   "category": "historical-photos",
+   "description": "November 2020 Ross William Ulbricht's Laptop (50586804768).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:November_2020_Ross_William_Ulbricht%27s_Laptop_(50586804768).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "pardon_sign",
+   "category": "historical-photos",
+   "description": "Pardon Ross Ulbricht (48555579112).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Pardon_Ross_Ulbricht_(48555579112).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "freeross",
+   "category": "historical-photos",
+   "description": "Ross Ulbricht supporter interviewed (48555555202).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Ross_Ulbricht_supporter_interviewed_(48555555202).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "seized",
+   "category": "historical-photos",
+   "description": "Silk Road Seized.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Silk_Road_Seized.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "seized2",
+   "category": "historical-photos",
+   "description": "Silk Road Seized 2014.png",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Silk_Road_Seized_2014.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sales_chart",
+   "category": "historical-photos",
+   "description": "Silk Road sales D.pdf",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Silk_Road_sales_D.pdf",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "server",
+   "category": "historical-photos",
+   "description": "Silk Road backup server.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Silk_Road_backup_server.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "glenpark",
+   "category": "historical-photos",
+   "description": "Glen Park Branch Library (27459485380).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Glen_Park_Branch_Library_(27459485380).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "lib_in1",
+   "category": "historical-photos",
+   "description": "Glen Park Branch Library (27662864711).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Glen_Park_Branch_Library_(27662864711).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "lib_in2",
+   "category": "historical-photos",
+   "description": "Glen Park Branch Library (27662864811).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Glen_Park_Branch_Library_(27662864811).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "glenpark_st",
+   "category": "historical-photos",
+   "description": "Glen Park, San Francisco.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Glen_Park,_San_Francisco.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sfhouses",
+   "category": "historical-photos",
+   "description": "Nouveau Victorians on Sussex St, SF.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Nouveau_Victorians_on_Sussex_St,_SF.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cafe",
+   "category": "historical-photos",
+   "description": "Higher Grounds Coffeehouse, Glen Park, SF.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Higher_Grounds_Coffeehouse,_Glen_Park,_SF.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "austin",
+   "category": "historical-photos",
+   "description": "At Barton Creek Mall, 1992(?) Austin Skyline.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:At_Barton_Creek_Mall,_1992(%3F)_Austin_Skyline.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "pennstate",
+   "category": "historical-photos",
+   "description": "OldMain In January Penn State.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:OldMain_In_January_Penn_State.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "mushrooms",
+   "category": "historical-photos",
+   "description": "P-cubensis-young-01.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:P-cubensis-young-01.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "casascius",
+   "category": "historical-photos",
+   "description": "25 BTC Gold Casascius coin 2011 by Gage Skidmore.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:25_BTC_Gold_Casascius_coin_2011_by_Gage_Skidmore.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "coin_bill",
+   "category": "historical-photos",
+   "description": "$100 Bill with 25 BTC Gold Casascius coin on Ben Franklin's face by Gage Skidmore.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:$100_Bill_with_25_BTC_Gold_Casascius_coin_on_Ben_Franklin%27s_face_by_Gage_Skidmore.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "irs",
+   "category": "historical-photos",
+   "description": "IRS Building Constitution Avenue.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:IRS_Building_Constitution_Avenue.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "fbi",
+   "category": "historical-photos",
+   "description": "FBI Headquarters - J. Edgar Hoover Building (53840035941).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:FBI_Headquarters_-_J._Edgar_Hoover_Building_(53840035941).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "courthouse",
+   "category": "historical-photos",
+   "description": "Daniel Patrick Moynihan U.S. Courthouse, Manhattan, New York (7237347688).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Daniel_Patrick_Moynihan_U.S._Courthouse,_Manhattan,_New_York_(7237347688).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "usp",
+   "category": "historical-photos",
+   "description": "United States Penitentiary, Tucson.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:United_States_Penitentiary,_Tucson.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "prison",
+   "category": "historical-photos",
+   "description": "Prison Bars Jail Cell.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Prison_Bars_Jail_Cell.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "gainesville",
+   "category": "historical-photos",
+   "description": "Downtown Gainesville, Georgia.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Downtown_Gainesville,_Georgia.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "handcuffs",
+   "category": "historical-photos",
+   "description": "Handcuffs (Darby).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Handcuffs_(Darby).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cbp",
+   "category": "historical-photos",
+   "description": "CBP Port of Entry Inspection Station (5764596479).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:CBP_Port_of_Entry_Inspection_Station_(5764596479).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dea_badge",
+   "category": "historical-photos",
+   "description": "DEA badge C.PNG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:DEA_badge_C.PNG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "payment",
+   "category": "historical-photos",
+   "description": "Silk road payment.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Silk_road_payment.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "pardon_doc",
+   "category": "documents",
+   "description": "Pardon of Ross William Ulbricht.pdf",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Pardon_of_Ross_William_Ulbricht.pdf",
+   "pdf_pages": [
+    1
+   ],
+   "authenticity": "authentic"
+  },
+  {
+   "id": "complaint",
+   "category": "documents",
+   "description": "Complaint against Ulbricht.pdf",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Complaint_against_Ulbricht.pdf",
+   "pdf_pages": [
+    1
+   ],
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bill100",
+   "category": "historical-photos",
+   "description": "US 100 dollar bill obverse",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Obverse_of_the_series_2009_$100_Federal_Reserve_Note.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bill1",
+   "category": "historical-photos",
+   "description": "US one dollar bill obverse",
+   "commons_search": "United States one dollar bill obverse series",
+   "authenticity": "authentic"
+  }
+ ]
+}
