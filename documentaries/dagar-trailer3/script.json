@@ -1,0 +1,95 @@
+{
+ "title": "Dagar Unfiltered: channel trailer (narrated)",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Trailer narrator"
+  }
+ },
+ "tail": 2.6,
+ "spoken": {
+  "51": "fifty-one"
+ },
+ "lines": [
+  {
+   "id": "N01",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "Every story has a file."
+  },
+  {
+   "id": "N02",
+   "speaker": "NARRATOR",
+   "gap_before": 0.15,
+   "text": "They didn't show you."
+  },
+  {
+   "id": "N03",
+   "speaker": "NARRATOR",
+   "gap_before": 0.15,
+   "text": "We do."
+  },
+  {
+   "id": "N04",
+   "speaker": "NARRATOR",
+   "gap_before": 0.45,
+   "text": "Space. Science. History. War. Spies. Money. Crime. Tech. Mysteries. Power. Rockets. The internet."
+  },
+  {
+   "id": "N05",
+   "speaker": "NARRATOR",
+   "gap_before": 0.45,
+   "text": "Every country."
+  },
+  {
+   "id": "N06",
+   "speaker": "NARRATOR",
+   "gap_before": 2.3,
+   "text": "Every place."
+  },
+  {
+   "id": "N07",
+   "speaker": "NARRATOR",
+   "gap_before": 0.5,
+   "text": "Every person."
+  },
+  {
+   "id": "N08",
+   "speaker": "NARRATOR",
+   "gap_before": 0.5,
+   "text": "Both sides."
+  },
+  {
+   "id": "N09",
+   "speaker": "NARRATOR",
+   "gap_before": 0.2,
+   "text": "No filters."
+  },
+  {
+   "id": "N10",
+   "speaker": "NARRATOR",
+   "gap_before": 0.5,
+   "text": "Comment your topic."
+  },
+  {
+   "id": "N11",
+   "speaker": "NARRATOR",
+   "gap_before": 0.2,
+   "text": "The Titanic. Area 51. Black holes. Harshad Mehta. The pyramids."
+  },
+  {
+   "id": "N12",
+   "speaker": "NARRATOR",
+   "gap_before": 0.4,
+   "text": "We'll open the file, and turn it into an unfiltered case study."
+  },
+  {
+   "id": "N13",
+   "speaker": "NARRATOR",
+   "gap_before": 0.5,
+   "text": "This is Dagar Unfiltered. Follow for the next file."
+  }
+ ]
+}
