@@ -1081,6 +1081,85 @@
       "attribution": "U.S. Space Force image by Derwin Oviedo, This image was released by the United States Air Force with the ID 151222-F-YX390-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/−",
       "page": "https://commons.wikimedia.org/wiki/File:45th_Space_Wing_successfully_launches_ORBCOMM,_historically_lands_first_stage_booster_(2343201).jpeg",
       "status": "downloaded"
+    },
+    {
+      "id": "cybercab1",
+      "category": "historical-photos",
+      "description": "Tesla Cybercab",
+      "commons_search": "Tesla Cybercab",
+      "authenticity": "authentic",
+      "file": "archives/historical-photos/cybercab1_tesla-cybercab.jpg",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Tesla_Cybercab_at_Santana_Row_side_view_dllu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 39956724,
+      "license": "CC BY-SA 4.0",
+      "attribution": "Dllu, Own work",
+      "page": "https://commons.wikimedia.org/wiki/File:Tesla_Cybercab_at_Santana_Row_side_view_dllu.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "cybercab2",
+      "category": "historical-photos",
+      "description": "Cybercab robotaxi Tesla",
+      "commons_search": "Cybercab robotaxi Tesla",
+      "authenticity": "authentic",
+      "file": "archives/historical-photos/cybercab2_cybercab-robotaxi-tesla.jpg",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Tesla_Cybercab_at_Santana_Row_side_view_dllu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 39956724,
+      "license": "CC BY-SA 4.0",
+      "attribution": "Dllu, Own work",
+      "page": "https://commons.wikimedia.org/wiki/File:Tesla_Cybercab_at_Santana_Row_side_view_dllu.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "roadster2a",
+      "category": "historical-photos",
+      "description": "Tesla Roadster second generation",
+      "commons_search": "Tesla Roadster second generation",
+      "authenticity": "authentic",
+      "file": "archives/historical-photos/roadster2a_tesla-roadster-second-generation.jpg",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/15-05-23-Berlin-Sachsendamm-Tesla-RalfR-N3S_7354.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 4283527,
+      "license": "GFDL 1.2",
+      "attribution": "Ralf Roletschek, Own work",
+      "page": "https://commons.wikimedia.org/wiki/File:15-05-23-Berlin-Sachsendamm-Tesla-RalfR-N3S_7354.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "roadster2b",
+      "category": "historical-photos",
+      "description": "Tesla Roadster 2017 prototype",
+      "commons_search": "Tesla Roadster 2017 prototype",
+      "authenticity": "authentic",
+      "file": "archives/historical-photos/roadster2b_tesla-roadster-2017-prototype.jpg",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Tesla_roadster_2020_prototype_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 2580441,
+      "license": "CC BY-SA 4.0",
+      "attribution": "Smnt, Own work",
+      "page": "https://commons.wikimedia.org/wiki/File:Tesla_roadster_2020_prototype_(cropped).jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "semi",
+      "category": "historical-photos",
+      "description": "Tesla Semi truck",
+      "commons_search": "Tesla Semi truck",
+      "authenticity": "authentic",
+      "file": "archives/historical-photos/semi_tesla-semi-truck.jpg",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Tesla_Semi_Pepsi_2023-10-31-13-39-37_DSCF2583_dllu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 11264993,
+      "license": "CC BY-SA 4.0",
+      "attribution": "Dllu, Own work",
+      "page": "https://commons.wikimedia.org/wiki/File:Tesla_Semi_Pepsi_2023-10-31-13-39-37_DSCF2583_dllu.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "cybercab3",
+      "category": "historical-photos",
+      "description": "Tesla Cybercab We Robot",
+      "commons_search": "Tesla Cybercab We Robot",
+      "authenticity": "authentic",
+      "status": "failed",
+      "error": "Commons search found nothing"
     }
   ]
 }

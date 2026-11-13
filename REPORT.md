@@ -1,6 +1,14 @@
 # Asset report: Elon Musk (kinetic long)
 
-**75 downloaded, 0 need attention** (of 75)
+**80 downloaded, 1 need attention** (of 81)
+
+## Download these by hand
+
+Open each link, download the highest-resolution version, and send it back with its ID.
+
+| ID | Scene | What | Link | Why it failed |
+|---|---|---|---|---|
+| cybercab3 |  | Tesla Cybercab We Robot |  | Commons search found nothing |
 
 ## In the store
 
@@ -81,3 +89,8 @@
 | ussr_missile |  | `archives/historical-photos/ussr_missile_r-36-missile.jpg` | Public domain | authentic |
 | bill100 |  | `archives/historical-photos/bill100_us-100-dollar-bill-obverse.jpg` | Public domain | authentic |
 | f9_arc |  | `archives/historical-photos/f9_arc_falcon-9-launch-and-landing-long-exposur.jpg` | Public domain | authentic |
+| cybercab1 |  | `archives/historical-photos/cybercab1_tesla-cybercab.jpg` | CC BY-SA 4.0 | authentic |
+| cybercab2 |  | `archives/historical-photos/cybercab2_cybercab-robotaxi-tesla.jpg` | CC BY-SA 4.0 | authentic |
+| roadster2a |  | `archives/historical-photos/roadster2a_tesla-roadster-second-generation.jpg` | GFDL 1.2 | authentic |
+| roadster2b |  | `archives/historical-photos/roadster2b_tesla-roadster-2017-prototype.jpg` | CC BY-SA 4.0 | authentic |
+| semi |  | `archives/historical-photos/semi_tesla-semi-truck.jpg` | CC BY-SA 4.0 | authentic |

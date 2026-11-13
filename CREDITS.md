@@ -7,6 +7,8 @@ Archival material used in this video:
 - Boring Company tunnel | Steve Jurvetson from Menlo Park, USA, tunnel of love | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Tunnel_of_love_(32489303638).jpg
 - SpaceX Starship integrated flight test -5 - launch and catch - 13 October 2 | Anne Toal, YouTube : https://www.youtube.com/watch?v=jawCFgILjP4 – View/save archived versions on archive.org | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:SpaceX_Starship_integrated_flight_test_-5_-_launch_and_catch_-_13_October_2024.webm
 - Compaq computer 1990s | Demache at English Wikipedia, Transferred from en.wikipedia to Commons by Liftarn using CommonsHelper . | Public domain | https://commons.wikimedia.org/wiki/File:Compaq_Deskpro_6333(crop).jpg
+- Tesla Cybercab | Dllu, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesla_Cybercab_at_Santana_Row_side_view_dllu.jpg
+- Cybercab robotaxi Tesla | Dllu, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesla_Cybercab_at_Santana_Row_side_view_dllu.jpg
 - Production Tesla Cybertruck, Denver 2023 | N2e, Own work | CC0 | https://commons.wikimedia.org/wiki/File:2023_production-level_Tesla_Cybertruck_on_display_in_Denver,_Colorado.jpg
 - SpaceX Demo-2 launch, May 2020 | Joel Kowsky, https://www.flickr.com/photos/nasahqphoto/49957445607/in/photostream/ | Public domain | https://commons.wikimedia.org/wiki/File:SpaceX_Demo-2_Launch_(NHQ202005300110).jpg
 - SpaceX Demo-2 launch | Joel Kowsky, https://www.flickr.com/photos/nasahqphoto/49956662033/in/photostream/ | Public domain | https://commons.wikimedia.org/wiki/File:SpaceX_Demo-2_Launch_(NHQ202005300109).jpg
@@ -59,9 +61,12 @@ Archival material used in this video:
 - eBay / PayPal headquarters San Jose | Leon7, Own work | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Ebay-PayPal_San_Jose.jpg
 - Union Buildings Pretoria | Davinci77, Originally created and uploaded to the Afrikaans Wikipedia by Davinci77 , using the same filename. | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Uniegebou.jpg
 - Red Square Moscow winter | Vyacheslav Argenberg, Own work | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Red_Square,_winter,_Moscow,_Russia.jpg
+- Tesla Roadster second generation | Ralf Roletschek, Own work | GFDL 1.2 | https://commons.wikimedia.org/wiki/File:15-05-23-Berlin-Sachsendamm-Tesla-RalfR-N3S_7354.jpg
+- Tesla Roadster 2017 prototype | Smnt, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesla_roadster_2020_prototype_(cropped).jpg
 - Tesla Roadster orbit diagram | Philip Terry Graham, Own work ; graphics created in GIMP 2.8.20 | Public domain | https://commons.wikimedia.org/wiki/File:Tesla_Roadster_orbit.png
 - Elon Musk's Tesla Roadster with Earth | SpaceX, Falcon Heavy Demo Mission | CC0 | https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40143096241).jpg
 - Starman in the Roadster | SpaceX, Falcon Heavy Demo Mission | CC0 | https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40110298232).jpg
+- Tesla Semi truck | Dllu, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Tesla_Semi_Pepsi_2023-10-31-13-39-37_DSCF2583_dllu.jpg
 - Ship 39 in Megabay 2, Starbase | Petty Officer 1st Class Alexander Kubitza, https://www.dvidshub.net/image/9482948/sw-arsenal-freedom-tour-texas | Public domain | https://commons.wikimedia.org/wiki/File:Ship_39_in_Megabay_2,_Boca_Chica_TX.jpg
 - kitchen sink stainless steel | Havensmetal, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Custom_Stainless_Steel_Sink_by_Havens.jpg
 - Stanford University Main Quad arch | Filetime, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:SE_Arch_Stanford_University_Main_Quad.jpg
