@@ -87,3 +87,58 @@ function ocean(ctx, t) { const g = ctx.createLinearGradient(0, 0, 0, H); g.addCo
   ctx.save(); ctx.globalAlpha = .25; ctx.strokeStyle = '#fff'; for (let i = 0; i < 40; i++) { const y = H * .45 + hash(i) * H * .55, x = (hash(i * 3) * W + t * 30 * (1 + hash(i))) % W; ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 60 + hash(i) * 80, y); ctx.stroke(); } ctx.restore(); }
 function splash(ctx, x, y, t, t0) { const p = prog(t, t0, t0 + 1.2); if (p <= 0) return; ctx.save(); for (let i = 0; i < 70; i++) { const a = -Math.PI / 2 + (hash(i) - .5) * 1.6, v = 500 + hash(i * 3) * 900, tt = p * 1.2;
   const px = x + Math.cos(a) * v * tt, py = y + Math.sin(a) * v * tt + 900 * tt * tt; ctx.globalAlpha = (1 - p) * .9; ctx.fillStyle = '#EAF4FF'; ctx.beginPath(); ctx.arc(px, py, 4 + hash(i * 5) * 9, 0, 7); ctx.fill(); } ctx.restore(); boom(ctx, x, y, t, t0, 500); }
+
+// ---------------------------------------------------------------- "object" transitions (use sparingly: chapter changes, hooks)
+// portal: dive INTO a region of the outgoing picture (a door, a window, a bill) and the next scene opens from inside it.
+// fromFn(g, lt) / toFn(g, lt) draw full frames on the context they get; rect = [u0, v0, u1, v1] in screen fractions.
+function portal(ctx, lt, d, fromFn, toFn, rect, o = {}) {
+  const p = E.inOut(clamp(lt / d));
+  if (p >= 1) { toFn(ctx, lt); return; }
+  const A = offCanvas('portalA'), B = offCanvas('portalB'), ga = A.getContext('2d'), gb = B.getContext('2d');
+  [ga, gb].forEach(g => { g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.filter = 'none'; g.clearRect(0, 0, W, H); });
+  fromFn(ga, lt + (o.fromLt || 0)); toFn(gb, lt);
+  const rx = rect[0] * W, ry = rect[1] * H, rw = (rect[2] - rect[0]) * W, rh = (rect[3] - rect[1]) * H, s = lerp(1, Math.max(W / rw, H / rh), p);
+  const cx = lerp(rx + rw / 2, W / 2, p), cy = lerp(ry + rh / 2, H / 2, p);
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(s, s); ctx.translate(-(rx + rw / 2), -(ry + rh / 2));
+  if (p > .02) ctx.filter = `blur(${Math.sin(p * Math.PI) * 5}px)`; ctx.drawImage(A, 0, 0); ctx.filter = 'none';
+  ctx.beginPath(); if (o.round) ctx.ellipse(rx + rw / 2, ry + rh / 2, rw / 2, rh / 2, 0, 0, 7); else ctx.rect(rx, ry, rw, rh); ctx.clip();
+  const k = Math.max(rw / W, rh / H); ctx.drawImage(B, rx + rw / 2 - W * k / 2, ry + rh / 2 - H * k / 2, W * k, H * k);
+  ctx.restore();
+  if (p < .35) { ctx.save(); ctx.strokeStyle = `rgba(255,255,255,${(.35 - p) * 2})`; ctx.lineWidth = 3; ctx.shadowColor = '#fff'; ctx.shadowBlur = 18; ctx.strokeRect(rx, ry, rw, rh); ctx.restore(); }
+}
+// film strip unrolling from a roll, frames slide past with labels (timelines, suspects, years)
+function filmStrip(ctx, t, lt, keys, o = {}) {
+  if (!o.keepBG) { bgGrad(ctx, '#15110C', '#000', 'r'); }
+  const fw = VERT ? W * .62 : H * .62, fh = fw * .74, gap = fw * .06, sx = W / 2, n = keys.length;
+  const unroll = E.out(clamp(lt / (o.dur || 1.4))), pan = lt * (o.pan ?? 160);
+  const total = n * (fh + gap), shown = total * unroll;
+  ctx.save(); ctx.translate(sx, (VERT ? H * .18 : H * .12) - pan + (o.y0 || 0));
+  ctx.fillStyle = '#0B0B0B'; ctx.fillRect(-fw / 2 - fw * .14, 0, fw * 1.28, shown);
+  for (let y = 10; y < shown; y += fw * .07) { ctx.fillStyle = '#E8E1D0'; ctx.fillRect(-fw / 2 - fw * .1, y, fw * .05, fw * .035); ctx.fillRect(fw / 2 + fw * .05, y, fw * .05, fw * .035); }
+  keys.forEach((k, i) => { const y = i * (fh + gap) + gap; if (y + fh > shown) return; photo(ctx, k, { x: -fw / 2, y, w: fw, h: fh, zoom: 1.04, grade: o.grade || 'mood' });
+    if (o.labels && o.labels[i]) text(ctx, o.labels[i], fw / 2 - 16, y + fh - 18, { font: F.osw, size: fw * .07, color: '#FFE36B', align: 'right', weight: 600, shadow: 12 }); });
+  // the roll at the moving end
+  const ry = shown; const g = ctx.createLinearGradient(-fw * .7, 0, fw * .7, 0); g.addColorStop(0, '#111'); g.addColorStop(.5, '#3A3A3A'); g.addColorStop(1, '#111');
+  ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(-fw * .68, ry - fw * .1, fw * 1.36, fw * .2, fw * .1); ctx.fill();
+  ctx.fillStyle = 'rgba(255,255,255,.12)'; for (let i = 0; i < 9; i++) ctx.fillRect(-fw * .64 + i * fw * .16, ry - fw * .1, 3, fw * .2);
+  ctx.restore();
+}
+// paper unfolding: a tri-fold document (letter, map, poster) opens panel by panel
+function unfold(ctx, key, lt, o = {}) {
+  if (!o.keepBG) desk(ctx, lt);
+  const im = IMG[key]; const maxW = W * (o.w || .78), maxH = H * (o.h || .7); const r = im ? im.width / im.height : .7;
+  let w = maxW, h = w / r; if (h > maxH) { h = maxH; w = h * r; }
+  const x0 = W / 2 - w / 2, y0 = H / 2 - h / 2, ph = h / 3, z = 1 + lt * .03;
+  ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(z, z); ctx.rotate(-.02); ctx.translate(-W / 2, -H / 2);
+  ctx.shadowColor = 'rgba(0,0,0,.6)'; ctx.shadowBlur = 40;
+  for (let i = 0; i < 3; i++) {
+    const p = i === 1 ? 1 : E.out(clamp((lt - (i === 0 ? .1 : .45)) / .5)); const sy = Math.max(.02, p);
+    const py = i === 0 ? y0 + ph * (1 - sy) : i === 1 ? y0 + ph : y0 + 2 * ph;
+    ctx.save(); ctx.beginPath(); ctx.rect(x0, py, w, ph * sy); ctx.clip(); ctx.translate(0, py); ctx.scale(1, sy); ctx.translate(0, -(y0 + ph * i));
+    ctx.fillStyle = '#F2EEE4'; ctx.fillRect(x0, y0 + ph * i, w, ph); photo(ctx, key, { x: x0, y: y0, w, h, zoom: 1, grade: o.grade || 'color' });
+    ctx.restore(); if (p < 1) { ctx.fillStyle = `rgba(0,0,0,${.45 * (1 - p)})`; ctx.fillRect(x0, py, w, ph * sy); }
+    ctx.shadowColor = 'transparent';
+  }
+  ctx.strokeStyle = 'rgba(0,0,0,.18)'; ctx.lineWidth = 2; [1, 2].forEach(i => { ctx.beginPath(); ctx.moveTo(x0, y0 + ph * i); ctx.lineTo(x0 + w, y0 + ph * i); ctx.stroke(); });
+  ctx.restore();
+}

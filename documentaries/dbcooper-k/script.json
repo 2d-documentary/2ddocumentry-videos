@@ -1,0 +1,93 @@
+{
+ "title": "D.B. Cooper (Dagar Unfiltered Short, object transitions demo)",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Conversational narrator"
+  }
+ },
+ "spoken": {
+  "24th": "twenty-fourth",
+  "1971": "nineteen seventy-one",
+  "1980": "nineteen eighty",
+  "5,800": "fifty-eight hundred",
+  "D.B.": "D B"
+ },
+ "tail": 3.2,
+ "lines": [
+  {
+   "id": "D01",
+   "speaker": "NARRATOR",
+   "text": "November 24th, 1971. A guy in a suit buys a plane ticket with cash. Name on the ticket? Dan Cooper.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "D02",
+   "speaker": "NARRATOR",
+   "text": "He orders a bourbon, lights a cigarette, and hands the flight attendant a note.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "D03",
+   "speaker": "NARRATOR",
+   "text": "Miss, I have a bomb.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "D04",
+   "speaker": "NARRATOR",
+   "text": "His demands? Two hundred thousand dollars in cash, and four parachutes.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "D05",
+   "speaker": "NARRATOR",
+   "text": "In Seattle, he gets all of it. Then he lets every passenger go.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "D06",
+   "speaker": "NARRATOR",
+   "text": "The plane takes off again, heading for Mexico.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "D07",
+   "speaker": "NARRATOR",
+   "text": "Somewhere over the forests of Washington, he opens the back stairs. And jumps. Into the rain, in the dark, in a business suit.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "D08",
+   "speaker": "NARRATOR",
+   "text": "The FBI chased him for forty five years. Over eight hundred suspects. Zero arrests.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "D09",
+   "speaker": "NARRATOR",
+   "text": "Then in 1980, an eight year old kid digging by a river finds 5,800 dollars of the ransom money, rotting in the sand.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "D10",
+   "speaker": "NARRATOR",
+   "text": "The rest? Gone. And so is he.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "D11",
+   "speaker": "NARRATOR",
+   "text": "Even his name was a mistake. D.B. Cooper came from a reporter's mix up.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "D12",
+   "speaker": "NARRATOR",
+   "text": "So, did he die out there, or pull off the perfect crime?",
+   "gap_before": 0.3
+  }
+ ]
+}
