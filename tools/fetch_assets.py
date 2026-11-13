@@ -46,7 +46,7 @@ FOLDERS = {
 MEDIA_EXT = {
     "image/jpeg": ".jpg", "image/png": ".png", "image/gif": ".gif", "image/webp": ".webp",
     "image/tiff": ".tif", "image/jp2": ".jp2", "image/jpx": ".jp2", "image/svg+xml": ".svg",
-    "application/pdf": ".pdf", "video/mp4": ".mp4", "video/webm": ".webm",
+    "application/pdf": ".pdf", "video/mp4": ".mp4", "video/webm": ".webm", "video/ogg": ".ogv", "application/ogg": ".ogv",
     "audio/mpeg": ".mp3", "audio/ogg": ".ogg", "audio/x-wav": ".wav", "audio/wav": ".wav",
 }
 
@@ -306,7 +306,7 @@ def ext_for(ctype, url):
 
 
 def is_media(ctype, data):
-    if ctype.startswith(("image/", "video/", "audio/")) or ctype == "application/pdf":
+    if ctype.startswith(("image/", "video/", "audio/")) or ctype in ("application/pdf", "application/ogg"):
         return True
     # some servers send octet-stream; sniff magic bytes
     return (data[:3] == b"\xff\xd8\xff" or data[:4] in (b"\x89PNG", b"%PDF", b"II*\x00", b"MM\x00*")
