@@ -10,6 +10,7 @@ parts = [open(os.path.join(ep, '_header.js'), encoding='utf-8').read(), sn('edit
 if '--props' in sys.argv or '--short' in sys.argv: parts.append(sn('props.js'))
 if '--short' in sys.argv: parts.append(sn('shorts_common.js'))
 if '--kinetic' in sys.argv: parts.append(sn('kinetic.js'))  # fast-cut cinematic style (call kfinish())
+if '--ae' in sys.argv: parts.append(sn('ae.js'))  # After-Effects-like toolkit: parallax cut-outs, 3D camera, per-letter text, mattes
 parts.append(open(os.path.join(ep, '_shots.js'), encoding='utf-8').read())
 open(os.path.join(ep, 'scenes.js'), 'w', encoding='utf-8').write('\n'.join(parts))
 print('wrote', os.path.join(ep, 'scenes.js'))

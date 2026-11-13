@@ -1,0 +1,77 @@
+{
+ "title": "Elon sent his car to space (AE-style demo Short)",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Conversational narrator"
+  }
+ },
+ "spoken": {
+  "2018": "twenty eighteen"
+ },
+ "tail": 2.4,
+ "lines": [
+  {
+   "id": "A01",
+   "speaker": "NARRATOR",
+   "text": "In 2018, Elon Musk launched the most powerful rocket flying anywhere on Earth.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "A02",
+   "speaker": "NARRATOR",
+   "text": "And instead of a satellite, he put his own car on top.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "A03",
+   "speaker": "NARRATOR",
+   "text": "See, new rockets usually carry a block of concrete. Elon said that was boring.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "A04",
+   "speaker": "NARRATOR",
+   "text": "So he sent his cherry red Tesla, with a dummy in a spacesuit at the wheel.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "A05",
+   "speaker": "NARRATOR",
+   "text": "Before launch, he said he'd call it a win if it just didn't blow up the launch pad.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "A06",
+   "speaker": "NARRATOR",
+   "text": "Spoiler. It didn't.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "A07",
+   "speaker": "NARRATOR",
+   "text": "Two boosters came back and landed side by side, at the exact same time.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "A08",
+   "speaker": "NARRATOR",
+   "text": "The third one missed the ship and slammed into the ocean. Hey, two out of three.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "A09",
+   "speaker": "NARRATOR",
+   "text": "And the car? It's still out there, looping around the Sun.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "A10",
+   "speaker": "NARRATOR",
+   "text": "Honestly, the most expensive car ad in history.",
+   "gap_before": 0.25
+  }
+ ]
+}
