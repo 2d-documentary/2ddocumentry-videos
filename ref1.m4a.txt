@@ -1,0 +1,37 @@
+0.00	3.32	 This is one of the most iconic photos of all time.
+3.64	6.40	 Einstein, Bohr, Schrodinger, Heisenberg.
+6.76	9.92	 17 Nobel Prize winners in one frame.
+10.16	13.80	 They were gathered in Brussels for a week-long meeting that would rewrite physics.
+14.10	18.34	 And at that meeting, Einstein started an argument he was certain he'd win.
+18.52	19.20	 But he didn't.
+19.32	23.76	 And the idea that stuck is arguably the reason we even have AI today.
+24.00	25.82	 It came down to one question.
+26.04	29.36	 Is the universe certain, or is it just odds?
+29.36	32.04	 Einstein's worldview was built on certainty.
+32.46	34.66	 He believed that if you knew everything about a system,
+34.88	36.62	 you could predict what it would do next.
+36.88	38.70	 That's what he meant by his famous line,
+38.98	40.70	 God does not play dice.
+41.00	43.40	 But a younger physicist named Niels Bohr
+43.40	45.16	 landed on the opposite conclusion.
+45.54	47.66	 Down at the level of atoms, Bohr said,
+47.78	50.54	 there is no exact outcome waiting to be found.
+50.78	52.24	 There are only probabilities.
+52.70	54.78	 You can know the odds of what happens next,
+54.92	55.90	 and nothing more.
+56.24	58.06	 Einstein found this almost offensive,
+58.06	63.00	 so he went to war. Every morning that week, he'd show up with a new thought experiment,
+63.26	68.70	 some clever trap built to prove Bohr wrong. And every night, Bohr would stay up tearing the
+68.70	74.64	 logic apart until he had his answer ready. One by one, Einstein's traps fell. The most
+74.64	79.64	 celebrated physicist of the century couldn't land a convincing blow to Bohr's logic, and the
+79.64	85.34	 probability hypothesis won out. Probability is what enabled physicists to understand the atom,
+85.34	91.40	 And understanding the atom is what gave us the semiconductor, the chip, and the hardware AI runs on.
+91.62	93.22	 But it goes deeper than the hardware.
+93.44	97.34	 When ChatGPT writes you a sentence, it isn't reaching for the correct work.
+97.54	100.72	 It's reaching for the most probable one, again and again.
+101.10	103.52	 Einstein said God doesn't play dice.
+103.84	106.76	 A hundred years later, we built machines that do.
+106.98	110.30	 And he wasn't the only genius who bet against the idea that won.
+110.52	114.70	 We pulled together the stories of 13 of the most successful companies in technology
+114.70	116.70	 and what they almost got wrong.
+116.94	118.52	 Comment book, and we'll send it over.
