@@ -1,0 +1,28 @@
+{
+  "depth": 1,
+  "max_per_query": 25,
+  "commons_categories": ["Apollo 11", "Apollo 11 Lunar Module", "Apollo 11 mission control", "Steve Bales", "Apollo Guidance Computer", "Apollo 11 videos", "Mission Control Center (Houston)", "Apollo 11 crew"],
+  "commons_search": [
+    "Apollo 11 landing filetype:video",
+    "Apollo 11 descent 16mm filetype:video",
+    "Apollo 11 mission control filetype:video",
+    "Apollo 11 launch filetype:video",
+    "Saturn V launch filetype:video",
+    "Apollo 11 Eagle lunar module",
+    "Apollo 11 mission control 1969",
+    "Steve Bales Apollo 11",
+    "Gene Kranz Apollo 11",
+    "Charles Duke capcom Apollo 11",
+    "Apollo guidance computer DSKY",
+    "Aldrin flag Apollo 11",
+    "Neil Armstrong Apollo 11 portrait",
+    "Buzz Aldrin portrait 1969",
+    "Apollo 11 lunar surface boulders",
+    "Apollo 11 splashdown",
+    "Apollo 11 crowd watching television 1969",
+    "Apollo 11 newspaper headline",
+    "Margaret Hamilton Apollo code",
+    "Tranquility Base Apollo 11"
+  ],
+  "pages": []
+}
