@@ -1,6 +1,6 @@
 # Asset report: Apollo 11 1202
 
-**39 downloaded, 1 need attention** (of 40)
+**34 downloaded, 6 need attention** (of 40)
 
 ## Download these by hand
 
@@ -8,7 +8,12 @@ Open each link, download the highest-resolution version, and send it back with i
 
 | ID | Scene | What | Link | Why it failed |
 |---|---|---|---|---|
-| sc_final |  | AP11 FINAL APPROACH.ogv | https://commons.wikimedia.org/wiki/File:AP11_FINAL_APPROACH.ogv | unexpected content type 'application/ogg' |
+| sc_mcc |  | Apollo 11 Mission Control Center - Film Rolls (KSC-19690716-MH-NAS01-0001-Apollo 11 Mission Con | https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8e/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm.480p.vp9.webm | file not found on Commons |
+| sc_eagle |  | The Eagle Has Landed, The Flight of Apollo 11, 1969.webm | https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4a/The_Eagle_Has_Landed%2C_The_Flight_of_Apollo_11%2C_1969.webm/The_Eagle_Has_Landed%2C_The_Flight_of_Apollo_11%2C_1969.webm.480p.vp9.webm | file not found on Commons |
+| sc_launch |  | Apollo 11 launch, video of engines at 500 fps (camera E-8).ogv | https://upload.wikimedia.org/wikipedia/commons/transcoded/6/61/Apollo_11_launch%2C_video_of_engines_at_500_fps_%28camera_E-8%29.ogv/Apollo_11_launch%2C_video_of_engines_at_500_fps_%28camera_E-8%29.ogv.480p.vp9.webm | file not found on Commons |
+| sc_land |  | Historic Apollo 11 Moon Landing Footage.webm | https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3e/Historic_Apollo_11_Moon_Landing_Footage.webm/Historic_Apollo_11_Moon_Landing_Footage.webm.480p.vp9.webm | file not found on Commons |
+| sc_walk |  | Restored Apollo 11 Moonwalk - Original NASA EVA Mission Video - Walking on the Moon.webm | https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/Restored_Apollo_11_Moonwalk_-_Original_NASA_EVA_Mission_Video_-_Walking_on_the_Moon.webm/Restored_Apollo_11_Moonwalk_-_Original_NASA_EVA_Mission_Video_-_Walking_on_the_Moon.webm.480p.vp9.webm | file not found on Commons |
+| sc_intro |  | Apollo 11 Intro 720p.ogv | https://upload.wikimedia.org/wikipedia/commons/transcoded/4/46/Apollo_11_Intro_720p.ogv/Apollo_11_Intro_720p.ogv.480p.vp9.webm | file not found on Commons |
 
 ## In the store
 
@@ -47,9 +52,4 @@ Open each link, download the highest-resolution version, and send it back with i
 | celeb2 |  | `archives/historical-photos/celeb2_inflight-apollo-xi-mission-control-cente.jpg` | Public domain | authentic |
 | pano |  | `archives/historical-photos/pano_apollo-11-tranquility-base-panoramic-jsc.jpg` | Public domain | authentic |
 | tvbuzz |  | `archives/historical-photos/tvbuzz_apollo-tv-transmission-07-18-1969-s69-39.jpg` | Public domain | authentic |
-| sc_mcc |  | `archives/footage/sc_mcc_apollo-11-mission-control-center-film-ro.jpg` | Public domain | authentic |
-| sc_eagle |  | `archives/footage/sc_eagle_the-eagle-has-landed-the-flight-of-apoll.jpg` | Public domain | authentic |
-| sc_launch |  | `archives/footage/sc_launch_apollo-11-launch-video-of-engines-at-500.jpg` | Public domain | authentic |
-| sc_land |  | `archives/footage/sc_land_historic-apollo-11-moon-landing-footage-.jpg` | Public domain | authentic |
-| sc_walk |  | `archives/footage/sc_walk_restored-apollo-11-moonwalk-original-nas.jpg` | Public domain | authentic |
-| sc_intro |  | `archives/footage/sc_intro_apollo-11-intro-720p-ogv.jpg` | Public domain | authentic |
+| sc_final |  | `archives/footage/sc_final_ap11-final-approach-ogv.ogv` | Public domain | authentic |
