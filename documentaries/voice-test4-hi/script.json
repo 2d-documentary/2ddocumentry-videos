@@ -1,0 +1,1 @@
+{"title": "edge check", "lenient": true, "voices": {"V1": {"engine": "edge", "voice": "en-US-AndrewMultilingualNeural", "rate": "+5%"}}, "tail": 1, "lines": [{"id": "V101", "speaker": "V1", "text": "8 November, Diwali ki raat.", "say": "आठ नवंबर, दिवाली की रात।"}]}
