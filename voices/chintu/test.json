@@ -1,0 +1,23 @@
+{
+ "lang": "hi",
+ "seed": 7,
+ "gap": 0.28,
+ "variants": [
+  {"name": "A_normal",    "ref": "voices/chintu/ref_a.wav", "field": "say",  "exaggeration": 0.5, "cfg_weight": 0.5},
+  {"name": "B_energetic", "ref": "voices/chintu/ref_a.wav", "field": "say",  "exaggeration": 0.7, "cfg_weight": 0.3},
+  {"name": "C_ref2",      "ref": "voices/chintu/ref_b.wav", "field": "say",  "exaggeration": 0.5, "cfg_weight": 0.5},
+  {"name": "D_roman",     "ref": "voices/chintu/ref_a.wav", "field": "text", "exaggeration": 0.5, "cfg_weight": 0.5}
+ ],
+ "lines": [
+  {"text": "Doston, aaj ki kahani thodi crazy hai.",
+   "say":  "दोस्तों, आज की कहानी थोड़ी क्रेज़ी है।"},
+  {"text": "Ek aadmi ne bank se poore das crore rupaye uda liye, aur kisi ko pata bhi nahi chala.",
+   "say":  "एक आदमी ने बैंक से पूरे दस करोड़ रुपये उड़ा लिए, और किसी को पता भी नहीं चला।"},
+  {"text": "Plan ekdum simple tha. Lekin phir usne ek chhoti si galti kar di.",
+   "say":  "प्लान एकदम सिंपल था। लेकिन फिर उसने एक छोटी सी गलती कर दी।"},
+  {"text": "Aur police seedha uske ghar pahunch gayi. Socho, agar tum uski jagah hote, toh kya karte?",
+   "say":  "और पुलिस सीधा उसके घर पहुँच गई। सोचो, अगर तुम उसकी जगह होते, तो क्या करते?"},
+  {"text": "Comment mein batana, aur channel ko subscribe karna mat bhoolna.",
+   "say":  "कमेंट में बताना, और चैनल को सब्सक्राइब करना मत भूलना।"}
+ ]
+}
