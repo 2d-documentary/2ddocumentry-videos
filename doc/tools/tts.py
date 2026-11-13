@@ -96,7 +96,18 @@ def synth(line):
     # "read": "text" makes the voice read the Roman caption text (e.g. Indian-English voices reading Hinglish)
     spoken = speakable(line["text"]) if v.get("read") == "text" or not line.get("say") else line["say"]
     if v.get("engine") == "edge":
-        a, bounds = edge_synth(spoken, v)
+        try:
+            a, bounds = edge_synth(spoken, v)
+        except RuntimeError:
+            # Edge sometimes returns no audio for a whole sentence; speak it in smaller pieces and join them
+            parts = [p.strip() for p in re.split(r"(?<=[।,?!.])\s+", spoken) if p.strip()]
+            if len(parts) < 2: raise
+            chunks, bounds, off = [], [], 0.0
+            for p in parts:
+                pa, pb = edge_synth(p, v)
+                chunks.append(pa); bounds += [(x, s0 + off, e0 + off) for x, s0, e0 in pb]
+                gap = np.zeros(int(SR * .06), dtype=np.float32); chunks.append(gap); off += (len(pa) + len(gap)) / SR
+            a = np.concatenate(chunks)
         return a, ("edge", bounds)
     if v.get("engine") == "parler":
         return parler_synth(spoken, v), []
