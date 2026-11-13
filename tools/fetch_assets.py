@@ -429,6 +429,8 @@ def fetch_one(asset, store):
                                 os.path.join(store, folder, f"{asset['id']}_p{pg}")], check=False)
     if asset.get("frames") and ext in (".webm", ".mp4", ".ogv"):
         extract_frames(os.path.join(store, rel), asset["frames"], os.path.join(store, folder), asset["id"])
+    if asset.get("clips") and ext in (".webm", ".mp4", ".ogv"):
+        extract_clips(os.path.join(store, rel), asset["clips"], asset.get("clip_fps", 15), os.path.join(store, folder), asset["id"])
     if ctype.startswith("image/") or ext in (".jpg", ".png"):
         os.makedirs(os.path.join(store, "_previews"), exist_ok=True)
         preview(data, os.path.join(store, "_previews", asset["id"] + ".jpg"))
@@ -460,6 +462,16 @@ def extract_frames(video, frames, folder, aid):
     for i, t in enumerate(frames):
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-i", video, "-frames:v", "1", "-q:v", "2",
                         os.path.join(folder, f"{aid}_f{i}.jpg")], check=False)
+
+
+def extract_clips(video, clips, fps, folder, aid):
+    """Continuous footage for motion: clips = {"name": [start_s, dur_s], ...}.
+    Writes <folder>/<aid>_<name>_<i>.jpg at `fps`, max 1280 px wide (play back with clipFrame() in scenes)."""
+    import subprocess
+    for name, (st, dur) in clips.items():
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(st), "-i", video, "-t", str(dur),
+                        "-vf", f"fps={fps},scale='min(1280,iw)':-2", "-q:v", "3", "-start_number", "0",
+                        os.path.join(folder, f"{aid}_{name}_%d.jpg")], check=False)
 
 
 # ---------------------------------------------------------------- main

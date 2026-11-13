@@ -1,0 +1,241 @@
+{
+ "project": "musk-k1",
+ "assets": [
+  {
+   "id": "p_2008",
+   "category": "historical-photos",
+   "description": "Elon Musk 2008",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_2008b",
+   "category": "historical-photos",
+   "description": "Elon Musk laughing, 2008",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_(3018710552).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_2008c",
+   "category": "historical-photos",
+   "description": "Elon Musk, 2008 Web 2.0 Summit",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_(3017880199).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_2006",
+   "category": "historical-photos",
+   "description": "Elon Musk at MSC 2006",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_at_MSC_2006.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_griffin",
+   "category": "historical-photos",
+   "description": "NASA Administrator Michael Griffin meets Elon Musk, 2005",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Michael_Griffin_Meets_with_Elon_Musk.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_bolden",
+   "category": "historical-photos",
+   "description": "Charles Bolden congratulates Elon Musk after Dragon, 2012",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Charles_Bolden_congratulates_SpaceX_CEO_and_Chief_Designer_Elon_Musk_in_front_of_the_historic_Dragon_capsule.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_laugh",
+   "category": "historical-photos",
+   "description": "Elon Musk laughing 2023",
+   "source_page": "https://commons.wikimedia.org/wiki/File:UK_Government_hosts_AI_Summit_at_Bletchley_Park_(53302927869).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_royal",
+   "category": "historical-photos",
+   "description": "Elon Musk, Royal Society portrait 2018",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_Royal_Society.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_2015",
+   "category": "historical-photos",
+   "description": "Elon Musk 2015",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_2015.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_starship",
+   "category": "historical-photos",
+   "description": "Elon and the Starship, 2020",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_%26_The_Starship_(50710186528).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_tesla07",
+   "category": "historical-photos",
+   "description": "Elon Musk at SpaceX factory",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_4670874048_7c12d5503a_o.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_roadster08",
+   "category": "historical-photos",
+   "description": "First production Tesla Roadster, 2008",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Tesla_has_landed_-_Flickr_-_jurvetson.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f1_flight4",
+   "category": "historical-photos",
+   "description": "Falcon 1 Flight 4 launch, 28 Sep 2008",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Falcon_1_Flight_4_launch.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f1_omelek",
+   "category": "historical-photos",
+   "description": "Falcon 1 over Omelek Island",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Falcon_1_Flight_5_rises_over_Omelek_Island.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f1_2009",
+   "category": "historical-photos",
+   "description": "Falcon 1 launch, Omelek",
+   "source_page": "https://commons.wikimedia.org/wiki/File:2009_Falcon_1_launches_from_Omelek_Island_(cropped).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "lehman",
+   "category": "historical-photos",
+   "description": "Lehman Brothers headquarters 2008",
+   "commons_search": "Lehman Brothers headquarters 2008",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "mars",
+   "category": "historical-photos",
+   "description": "Mars, accurate colour",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Mars_accurate_colour.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bill100",
+   "category": "historical-photos",
+   "description": "US 100 dollar bill obverse",
+   "authenticity": "authentic",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Obverse_of_the_series_2009_$100_Federal_Reserve_Note.jpg"
+  },
+  {
+   "id": "nasdaq26",
+   "category": "historical-photos",
+   "description": "Nasdaq tower, May 2026",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Nasdaq_Tower_May_2026.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "dragon_iss",
+   "category": "historical-photos",
+   "description": "Dragon capsule at the ISS, 2012",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Dragon_Capsule_ISS_Docking.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "starship_ift5",
+   "category": "historical-photos",
+   "description": "Starship during IFT-5, Oct 2024",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_during_IFT-5.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f9_arc",
+   "category": "historical-photos",
+   "description": "Falcon 9 launch and landing long exposure, Dec 2015",
+   "source_page": "https://commons.wikimedia.org/wiki/File:45th_Space_Wing_successfully_launches_ORBCOMM,_historically_lands_first_stage_booster_(2343201).jpeg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_twitter",
+   "category": "historical-photos",
+   "description": "Elon Musk on stage, 2022",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Meet_the_new_boss..._Same_as_the_News_boss..._The_Elon_Musk_Twitter_Interview_at_TED_2022_(52004185747).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_ted",
+   "category": "historical-photos",
+   "description": "Elon Musk at TED 2017",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_at_TED_2017.jpeg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_model3",
+   "category": "historical-photos",
+   "description": "Elon Musk presenting the first Model 3 cars",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_Presenting_the_First_Tesla_Model_3_Cars.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "falconheavy",
+   "category": "historical-photos",
+   "description": "Falcon Heavy Demo Mission launch",
+   "commons_search": "Falcon Heavy Demo Mission launch",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "modelS",
+   "category": "historical-photos",
+   "description": "Tesla Model S red 2013",
+   "commons_search": "Tesla Model S red 2013",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_obama",
+   "category": "historical-photos",
+   "description": "Elon Musk gives tour for President Obama, 2010",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_gives_tour_for_President_Barack_Obama.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "catch_vid",
+   "category": "footage",
+   "description": "SpaceX Starship integrated flight test -5 - launch and catch - 13 October 2",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_integrated_flight_test_-5_-_launch_and_catch_-_13_October_2024.webm",
+   "authenticity": "authentic",
+   "clips": {
+    "ign": [
+     6.5,
+     2.4
+    ],
+    "rise": [
+     11.2,
+     2.6
+    ]
+   },
+   "clip_fps": 15
+  },
+  {
+   "id": "ift1_vid",
+   "category": "footage",
+   "description": "Starship IFT-1, NASA WB-57 camera",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_0.webm",
+   "authenticity": "authentic",
+   "clips": {
+    "boom": [
+     216,
+     2.2
+    ],
+    "boom2": [
+     262,
+     2.2
+    ],
+    "up": [
+     156,
+     2.4
+    ]
+   },
+   "clip_fps": 15
+  }
+ ]
+}
