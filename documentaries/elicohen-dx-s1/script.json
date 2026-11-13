@@ -1,0 +1,75 @@
+{
+ "title": "Golan ke ped (Short)",
+ "voices": {
+  "NARRATOR": {
+   "engine": "prerecorded"
+  }
+ },
+ "prerecorded": {
+  "audio": "voice/voice.m4a",
+  "timeline": "voice/timeline.json"
+ },
+ "lines": [
+  {
+   "id": "H049",
+   "speaker": "NARRATOR",
+   "text": "Golan Heights. Syria ki pahadiyan, jahan se neeche Israel ke gaon saaf dikhte the.",
+   "say": "गोलान हाइट्स। सीरिया की पहाड़ियाँ, जहाँ से नीचे इज़राइल के गाँव साफ़ दिखते थे।"
+  },
+  {
+   "id": "H050",
+   "speaker": "NARRATOR",
+   "text": "Ye military zone tha. Aam aadmi ka wahan jaana mana tha.",
+   "say": "ये मिलिट्री ज़ोन था। आम आदमी का वहाँ जाना मना था।"
+  },
+  {
+   "id": "H051",
+   "speaker": "NARRATOR",
+   "text": "Lekin Kamel aam aadmi nahi tha. Uske officer dost use khud tour karwate the.",
+   "say": "लेकिन कामेल आम आदमी नहीं था। उसके ऑफ़िसर दोस्त उसे ख़ुद टूर करवाते थे।"
+  },
+  {
+   "id": "H052",
+   "speaker": "NARRATOR",
+   "text": "Bunkers, guns, trenches. Sab kuch dikhaya gaya.",
+   "say": "बंकर्स, गन्स, ट्रेंचेज़। सब कुछ दिखाया गया।"
+  },
+  {
+   "id": "H054",
+   "speaker": "NARRATOR",
+   "text": "Kehte hain, Kamel ne officers se kaha, bechare soldiers dhoop mein jal rahe hain.",
+   "say": "कहते हैं, कामेल ने ऑफ़िसर्स से कहा, बेचारे सोल्जर्स धूप में जल रहे हैं।"
+  },
+  {
+   "id": "H055",
+   "speaker": "NARRATOR",
+   "text": "Har post ke paas eucalyptus ke ped laga do. Chhaanv milegi.",
+   "say": "हर पोस्ट के पास यूकेलिप्टस के पेड़ लगा दो। छाँव मिलेगी।"
+  },
+  {
+   "id": "H056",
+   "speaker": "NARRATOR",
+   "text": "Ped lag gaye. Aur har ped ban gaya ek nishaana.",
+   "say": "पेड़ लग गए। और हर पेड़ बन गया एक निशाना।"
+  },
+  {
+   "id": "H057",
+   "speaker": "NARRATOR",
+   "text": "Itihaas ki sabse mehengi chhaanv.",
+   "say": "इतिहास की सबसे महँगी छाँव।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H058",
+   "speaker": "NARRATOR",
+   "text": "1967 ki war mein, Israel ne Golan sirf do din mein le liya.",
+   "say": "उन्नीस सौ सड़सठ की वॉर में, इज़राइल ने गोलान सिर्फ़ दो दिन में ले लिया।"
+  },
+  {
+   "id": "H059",
+   "speaker": "NARRATOR",
+   "text": "Israel mein iska bada credit Eli Cohen ko diya jaata hai.",
+   "say": "इज़राइल में इसका बड़ा क्रेडिट एली कोहेन को दिया जाता है।"
+  }
+ ]
+}

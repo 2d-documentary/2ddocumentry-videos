@@ -12,6 +12,16 @@ os.makedirs(out, exist_ok=True)
 script = json.load(open(os.path.join(ep, "script.json")))
 PART = sys.argv[3] if len(sys.argv) > 3 else None
 if PART: script["lines"] = [l for l in script["lines"] if PART in l.get("parts", ["full"])]
+# ---------- prerecorded narration (a human voiceover already cut to the script): copy the audio + its word timeline
+# script.json: "prerecorded": {"audio": "voice/voice.m4a", "timeline": "voice/timeline.json"}
+if script.get("prerecorded"):
+    pr = script["prerecorded"]
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", os.path.join(ep, pr["audio"]), "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True, check=True).stdout
+    tl = json.load(open(os.path.join(ep, pr["timeline"]))); a = np.frombuffer(raw, np.float32)
+    a = np.concatenate([a, np.zeros(max(0, int(tl["duration"] * SR) - len(a)), np.float32)])
+    wavfile.write(os.path.join(out, "voice.wav"), SR, a)
+    json.dump(tl, open(os.path.join(out, "timeline.json"), "w"), indent=1)
+    print("prerecorded voice", tl["duration"], "s"); sys.exit(0)
 pipes = {}
 def pipe(lang):
     if lang not in pipes:

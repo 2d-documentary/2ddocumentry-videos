@@ -1,0 +1,75 @@
+{
+ "title": "Radio ka jaal (Short)",
+ "voices": {
+  "NARRATOR": {
+   "engine": "prerecorded"
+  }
+ },
+ "prerecorded": {
+  "audio": "voice/voice.m4a",
+  "timeline": "voice/timeline.json"
+ },
+ "lines": [
+  {
+   "id": "H078",
+   "speaker": "NARRATOR",
+   "text": "Teen saal tak Kamel ka radio, Damascus se Israel tak baat karta raha.",
+   "say": "तीन साल तक कामेल का रेडियो, दमिश्क से इज़राइल तक बात करता रहा।"
+  },
+  {
+   "id": "H079",
+   "speaker": "NARRATOR",
+   "text": "Aur yahi radio, uski sabse badi galti bana.",
+   "say": "और यही रेडियो, उसकी सबसे बड़ी ग़लती बना।"
+  },
+  {
+   "id": "H080",
+   "speaker": "NARRATOR",
+   "text": "Britannica ke mutabik, handlers ne usse kaha tha. Itna zyada mat bhejo, aur roz ek hi time pe mat bhejo.",
+   "say": "ब्रिटैनिका के मुताबिक़, हैंडलर्स ने उससे कहा था। इतना ज़्यादा मत भेजो, और रोज़ एक ही टाइम पे मत भेजो।"
+  },
+  {
+   "id": "H081",
+   "speaker": "NARRATOR",
+   "text": "Lekin wo bhejta raha.",
+   "say": "लेकिन वो भेजता रहा।"
+  },
+  {
+   "id": "H082",
+   "speaker": "NARRATOR",
+   "text": "Syria ne Soviet tracking equipment ka sahara liya.",
+   "say": "सीरिया ने सोवियत ट्रैकिंग इक्विपमेंट का सहारा लिया।"
+  },
+  {
+   "id": "H083",
+   "speaker": "NARRATOR",
+   "text": "Phir ek chaalaak trap. Kuch waqt ke liye, official radio transmissions band.",
+   "say": "फिर एक चालाक ट्रैप। कुछ वक़्त के लिए, ऑफ़िशियल रेडियो ट्रांसमिशंस बंद।"
+  },
+  {
+   "id": "H084",
+   "speaker": "NARRATOR",
+   "text": "Ab hawa mein jo bhi signal bachta, wo gair kanooni hota.",
+   "say": "अब हवा में जो भी सिग्नल बचता, वो ग़ैर क़ानूनी होता।"
+  },
+  {
+   "id": "H085",
+   "speaker": "NARRATOR",
+   "text": "Aur ek signal bacha. Kamel ka.",
+   "say": "और एक सिग्नल बचा। कामेल का।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H086",
+   "speaker": "NARRATOR",
+   "text": "January 1965. Security officers flat mein ghuse, aur use transmit karte hue pakad liya.",
+   "say": "जनवरी उन्नीस सौ पैंसठ। सिक्योरिटी ऑफ़िसर्स फ़्लैट में घुसे, और उसे ट्रांसमिट करते हुए पकड़ लिया।"
+  },
+  {
+   "id": "H087",
+   "speaker": "NARRATOR",
+   "text": "Teen saal ki acting, ek radio signal pe khatam.",
+   "say": "तीन साल की एक्टिंग, एक रेडियो सिग्नल पे ख़त्म।"
+  }
+ ]
+}

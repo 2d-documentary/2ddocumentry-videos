@@ -1,0 +1,747 @@
+{
+ "title": "Eli Cohen: Kya ek Israeli jaasoos Syria ka President banne wala tha? (Dagar Unfiltered)",
+ "voices": {
+  "NARRATOR": {
+   "engine": "prerecorded",
+   "desc": "Chintu's own narration, cleaned (retakes removed)"
+  }
+ },
+ "tail": 3.0,
+ "lines": [
+  {
+   "id": "H001",
+   "speaker": "NARRATOR",
+   "text": "Damascus, 1965. Ek aadmi apne flat mein baitha hai, radio pe Morse code bhej raha hai.",
+   "say": "दमिश्क, उन्नीस सौ पैंसठ। एक आदमी अपने फ़्लैट में बैठा, रेडियो पे मोर्स कोड भेज रहा है।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H002",
+   "speaker": "NARRATOR",
+   "text": "Duniya ke liye wo ek ameer Syrian businessman hai. Naam, Kamel Amin Thabet.",
+   "say": "दुनिया के लिए वो एक अमीर सीरियन बिज़नेसमैन है। नाम, कामेल अमीन थाबेत।"
+  },
+  {
+   "id": "H003",
+   "speaker": "NARRATOR",
+   "text": "Syria ke army officers uske dost hain. Bade bade log uske ghar party karne aate hain.",
+   "say": "सीरिया के आर्मी ऑफ़िसर्स उसके दोस्त हैं। बड़े बड़े लोग उसके घर पार्टी करने आते हैं।"
+  },
+  {
+   "id": "H004",
+   "speaker": "NARRATOR",
+   "text": "Lekin asal mein, wo Israel ka jaasoos hai. Asli naam, Eli Cohen.",
+   "say": "लेकिन असल में, वो इज़राइल का जासूस है। असली नाम, एली कोहेन।"
+  },
+  {
+   "id": "H005",
+   "speaker": "NARRATOR",
+   "text": "Aur kehte hain, wo itna andar tak pahunch gaya tha, ki Syria ka President banne ke kareeb tha.",
+   "say": "और कहते हैं, वो इतना अंदर तक पहुँच गया था, कि सीरिया का प्रेसिडेंट बनने के करीब था।"
+  },
+  {
+   "id": "H006",
+   "speaker": "NARRATOR",
+   "text": "Kya ye sach hai? Ya sirf ek legend?",
+   "say": "क्या ये सच है? या सिर्फ़ एक लेजेंड?",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H007",
+   "speaker": "NARRATOR",
+   "text": "Aaj dono side ke records khol ke dekhte hain.",
+   "say": "आज दोनों साइड के रिकॉर्ड्स खोल के देखते हैं।"
+  },
+  {
+   "id": "H008",
+   "speaker": "NARRATOR",
+   "text": "Aur aakhir tak rukiye. Kyunki is kahani ki ek file, poore 60 saal baad khuli.",
+   "say": "और आख़िर तक रुकिए। क्योंकि इस कहानी की एक फ़ाइल, पूरे साठ साल बाद खुली।"
+  },
+  {
+   "id": "H009",
+   "speaker": "NARRATOR",
+   "text": "Chapter one. Alexandria ka ladka.",
+   "say": "चैप्टर वन। अलेक्ज़ेंड्रिया का लड़का।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H010",
+   "speaker": "NARRATOR",
+   "text": "Eli Cohen ka janam 1924 mein, Egypt ke Alexandria shehar mein hua.",
+   "say": "एली कोहेन का जन्म उन्नीस सौ चौबीस में, इजिप्ट के अलेक्ज़ेंड्रिया शहर में हुआ।"
+  },
+  {
+   "id": "H011",
+   "speaker": "NARRATOR",
+   "text": "Parivaar Jewish tha, aur unki jadein Syria ke Aleppo shehar mein thi.",
+   "say": "परिवार ज्यूइश था, और उनकी जड़ें सीरिया के अलेप्पो शहर में थीं।"
+  },
+  {
+   "id": "H012",
+   "speaker": "NARRATOR",
+   "text": "Ghar mein Arabic boli jaati thi. Aur yahi baat aage chal ke uska sabse bada hathiyar bani.",
+   "say": "घर में अरबी बोली जाती थी। और यही बात आगे चल के उसका सबसे बड़ा हथियार बनी।"
+  },
+  {
+   "id": "H013",
+   "speaker": "NARRATOR",
+   "text": "Ladka tez tha. Kai zubaanein, tagdi memory, aur shaant dimaag.",
+   "say": "लड़का तेज़ था। कई ज़ुबानें, तगड़ी मेमोरी, और शांत दिमाग़।"
+  },
+  {
+   "id": "H014",
+   "speaker": "NARRATOR",
+   "text": "Fifties mein Egypt mein Jewish logon ke liye mahaul bigadne laga.",
+   "say": "फ़िफ़्टीज़ में इजिप्ट में ज्यूइश लोगों के लिए माहौल बिगड़ने लगा।"
+  },
+  {
+   "id": "H015",
+   "speaker": "NARRATOR",
+   "text": "Eli ka naam Zionist underground se juda, aur wo police ki nazar mein bhi aaya.",
+   "say": "एली का नाम ज़ायनिस्ट अंडरग्राउंड से जुड़ा, और वो पुलिस की नज़र में भी आया।"
+  },
+  {
+   "id": "H016",
+   "speaker": "NARRATOR",
+   "text": "1957 mein wo Israel aa gaya. Ek aam naukri, ek aam zindagi.",
+   "say": "उन्नीस सौ सत्तावन में वो इज़राइल आ गया। एक आम नौकरी, एक आम ज़िंदगी।"
+  },
+  {
+   "id": "H017",
+   "speaker": "NARRATOR",
+   "text": "1959 mein Nadia se shaadi hui. Ghar basne laga.",
+   "say": "उन्नीस सौ उनसठ में नादिया से शादी हुई। घर बसने लगा।"
+  },
+  {
+   "id": "H018",
+   "speaker": "NARRATOR",
+   "text": "Phir ek din, Israeli intelligence ka ek aadmi uske paas aaya.",
+   "say": "फिर एक दिन, इज़राइली इंटेलिजेंस का एक आदमी उसके पास आया।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H019",
+   "speaker": "NARRATOR",
+   "text": "Offer simple tha. Ek naya naam, ek nayi zindagi, aur ek dushman desh.",
+   "say": "ऑफ़र सिंपल था। एक नया नाम, एक नई ज़िंदगी, और एक दुश्मन देश।"
+  },
+  {
+   "id": "H020",
+   "speaker": "NARRATOR",
+   "text": "Us waqt Israel aur Syria ke border pe lagatar firing hoti thi.",
+   "say": "उस वक़्त इज़राइल और सीरिया के बॉर्डर पे लगातार फ़ायरिंग होती थी।"
+  },
+  {
+   "id": "H021",
+   "speaker": "NARRATOR",
+   "text": "Israel ko Damascus ke andar ek aankh chahiye thi.",
+   "say": "इज़राइल को दमिश्क के अंदर एक आँख चाहिए थी।"
+  },
+  {
+   "id": "H022",
+   "speaker": "NARRATOR",
+   "text": "Chapter two. Ek naqli aadmi ka janam.",
+   "say": "चैप्टर टू। एक नक़ली आदमी का जन्म।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H023",
+   "speaker": "NARRATOR",
+   "text": "Training mahino chali. Radio, Morse code, secret codes, aur secret letters.",
+   "say": "ट्रेनिंग महीनों चली। रेडियो, मोर्स कोड, सीक्रेट कोड्स, और सीक्रेट लेटर्स।"
+  },
+  {
+   "id": "H024",
+   "speaker": "NARRATOR",
+   "text": "Syrian lehja seekha, Quran padha, aur ek poori fake kahani yaad ki.",
+   "say": "सीरियन लहजा सीखा, क़ुरान पढ़ा, और एक पूरी फ़ेक कहानी याद की।"
+  },
+  {
+   "id": "H025",
+   "speaker": "NARRATOR",
+   "text": "Kamel Amin Thabet. Syrian parivaar, Lebanon mein janam, Argentina mein business.",
+   "say": "कामेल अमीन थाबेत। सीरियन परिवार, लेबनान में जन्म, अर्जेंटीना में बिज़नेस।"
+  },
+  {
+   "id": "H026",
+   "speaker": "NARRATOR",
+   "text": "1961 mein Eli ko Buenos Aires bheja gaya.",
+   "say": "उन्नीस सौ इकसठ में एली को ब्यूनस आयर्स भेजा गया।"
+  },
+  {
+   "id": "H027",
+   "speaker": "NARRATOR",
+   "text": "Wahan ki badi Arab community mein, Kamel ne apni pehchaan banayi.",
+   "say": "वहाँ की बड़ी अरब कम्युनिटी में, कामेल ने अपनी पहचान बनाई।"
+  },
+  {
+   "id": "H028",
+   "speaker": "NARRATOR",
+   "text": "Clubs, dinners, charity. Paisa kharch karo, dost banao.",
+   "say": "क्लब्स, डिनर्स, चैरिटी। पैसा ख़र्च करो, दोस्त बनाओ।"
+  },
+  {
+   "id": "H029",
+   "speaker": "NARRATOR",
+   "text": "Jaasoosi ka pehla rule. Jo log bolna pasand karte hain, unhe ek sunne wala chahiye.",
+   "say": "जासूसी का पहला रूल। जो लोग बोलना पसंद करते हैं, उन्हें एक सुनने वाला चाहिए।"
+  },
+  {
+   "id": "H030",
+   "speaker": "NARRATOR",
+   "text": "Aur Kamel bahut achha sunta tha.",
+   "say": "और कामेल बहुत अच्छा सुनता था।"
+  },
+  {
+   "id": "H031",
+   "speaker": "NARRATOR",
+   "text": "Israeli kahani kehti hai, yahin uski dosti Syrian embassy ke military attache se hui.",
+   "say": "इज़राइली कहानी कहती है, यहीं उसकी दोस्ती सीरियन एंबेसी के मिलिट्री अताशे से हुई।"
+  },
+  {
+   "id": "H032",
+   "speaker": "NARRATOR",
+   "text": "Naam tha Amin al-Hafiz. Aur do saal baad, yahi aadmi Syria ka President bana.",
+   "say": "नाम था अमीन अल-हाफ़िज़। और दो साल बाद, यही आदमी सीरिया का प्रेसिडेंट बना।"
+  },
+  {
+   "id": "H033",
+   "speaker": "NARRATOR",
+   "text": "Ye naam yaad rakhiye. Chapter five mein yahi sabse bada sawaal banega.",
+   "say": "ये नाम याद रखिए। चैप्टर फ़ाइव में यही सबसे बड़ा सवाल बनेगा।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H034",
+   "speaker": "NARRATOR",
+   "text": "Chapter three. Damascus ki parties.",
+   "say": "चैप्टर थ्री। दमिश्क की पार्टीज़।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H035",
+   "speaker": "NARRATOR",
+   "text": "1962 ki shuruaat. Kamel Damascus pahunchta hai.",
+   "say": "उन्नीस सौ बासठ की शुरुआत। कामेल दमिश्क पहुँचता है।"
+  },
+  {
+   "id": "H036",
+   "speaker": "NARRATOR",
+   "text": "Saaman mein kapde, gifts, aur ek chhupa hua radio transmitter.",
+   "say": "सामान में कपड़े, गिफ़्ट्स, और एक छुपा हुआ रेडियो ट्रांसमीटर।"
+  },
+  {
+   "id": "H037",
+   "speaker": "NARRATOR",
+   "text": "Wo Abu Rummaneh mein flat leta hai. Posh area, aas paas embassies.",
+   "say": "वो अबू रुम्मानेह में फ़्लैट लेता है। पॉश एरिया, आस पास एंबेसीज़।"
+  },
+  {
+   "id": "H038",
+   "speaker": "NARRATOR",
+   "text": "Aur phir shuru hoti hain parties.",
+   "say": "और फिर शुरू होती हैं पार्टीज़।"
+  },
+  {
+   "id": "H039",
+   "speaker": "NARRATOR",
+   "text": "Achha khaana, mehengi drinks, aur bade mehmaan. Officers, politicians, businessmen.",
+   "say": "अच्छा खाना, महँगी ड्रिंक्स, और बड़े मेहमान। ऑफ़िसर्स, पॉलिटिशियंस, बिज़नेसमेन।"
+  },
+  {
+   "id": "H040",
+   "speaker": "NARRATOR",
+   "text": "Do glass andar jaate, aur army ki baatein bahar aane lagti.",
+   "say": "दो ग्लास अंदर जाते, और आर्मी की बातें बाहर आने लगतीं।"
+  },
+  {
+   "id": "H041",
+   "speaker": "NARRATOR",
+   "text": "Mehmaan sochte the, Kamel bas ek achha host hai.",
+   "say": "मेहमान सोचते थे, कामेल बस एक अच्छा होस्ट है।"
+  },
+  {
+   "id": "H042",
+   "speaker": "NARRATOR",
+   "text": "Aur raat ko, host apna radio nikaalta tha.",
+   "say": "और रात को, होस्ट अपना रेडियो निकालता था।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H043",
+   "speaker": "NARRATOR",
+   "text": "Radio, secret letters, aur kabhi kabhi khud jaa kar. Wo chupke se teen baar Israel bhi gaya.",
+   "say": "रेडियो, सीक्रेट लेटर्स, और कभी कभी ख़ुद जा कर। वो चुपके से तीन बार इज़राइल भी गया।"
+  },
+  {
+   "id": "H044",
+   "speaker": "NARRATOR",
+   "text": "Phir March 1963 mein Syria mein takhtapalat hua. Ba'ath Party satta mein aayi.",
+   "say": "फिर मार्च उन्नीस सौ तिरसठ में सीरिया में तख़्तापलट हुआ। बाथ पार्टी सत्ता में आई।"
+  },
+  {
+   "id": "H045",
+   "speaker": "NARRATOR",
+   "text": "Aur Kamel ke kai jaan pehchaan wale, achanak bade padon par pahunch gaye.",
+   "say": "और कामेल के कई जान पहचान वाले, अचानक बड़े पदों पर पहुँच गए।"
+  },
+  {
+   "id": "H046",
+   "speaker": "NARRATOR",
+   "text": "Ek jaasoos ke liye, ye lottery thi.",
+   "say": "एक जासूस के लिए, ये लॉटरी थी।"
+  },
+  {
+   "id": "H047",
+   "speaker": "NARRATOR",
+   "text": "Usne Syria ka ek bada plan bhi Israel tak pahunchaya. Jordan nadi ke paani ka rukh modne ka plan.",
+   "say": "उसने सीरिया का एक बड़ा प्लान भी इज़राइल तक पहुँचाया। जॉर्डन नदी के पानी का रुख़ मोड़ने का प्लान।"
+  },
+  {
+   "id": "H048",
+   "speaker": "NARRATOR",
+   "text": "Chapter four. Golan ke ped.",
+   "say": "चैप्टर फ़ोर। गोलान के पेड़।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H049",
+   "speaker": "NARRATOR",
+   "text": "Golan Heights. Syria ki pahadiyan, jahan se neeche Israel ke gaon saaf dikhte the.",
+   "say": "गोलान हाइट्स। सीरिया की पहाड़ियाँ, जहाँ से नीचे इज़राइल के गाँव साफ़ दिखते थे।"
+  },
+  {
+   "id": "H050",
+   "speaker": "NARRATOR",
+   "text": "Ye military zone tha. Aam aadmi ka wahan jaana mana tha.",
+   "say": "ये मिलिट्री ज़ोन था। आम आदमी का वहाँ जाना मना था।"
+  },
+  {
+   "id": "H051",
+   "speaker": "NARRATOR",
+   "text": "Lekin Kamel aam aadmi nahi tha. Uske officer dost use khud tour karwate the.",
+   "say": "लेकिन कामेल आम आदमी नहीं था। उसके ऑफ़िसर दोस्त उसे ख़ुद टूर करवाते थे।"
+  },
+  {
+   "id": "H052",
+   "speaker": "NARRATOR",
+   "text": "Bunkers, guns, trenches. Sab kuch dikhaya gaya.",
+   "say": "बंकर्स, गन्स, ट्रेंचेज़। सब कुछ दिखाया गया।"
+  },
+  {
+   "id": "H053",
+   "speaker": "NARRATOR",
+   "text": "Aur yahan aati hai uski sabse famous kahani.",
+   "say": "और यहाँ आती है उसकी सबसे फ़ेमस कहानी।"
+  },
+  {
+   "id": "H054",
+   "speaker": "NARRATOR",
+   "text": "Kehte hain, Kamel ne officers se kaha, bechare soldiers dhoop mein jal rahe hain.",
+   "say": "कहते हैं, कामेल ने ऑफ़िसर्स से कहा, बेचारे सोल्जर्स धूप में जल रहे हैं।"
+  },
+  {
+   "id": "H055",
+   "speaker": "NARRATOR",
+   "text": "Har post ke paas eucalyptus ke ped laga do. Chhaanv milegi.",
+   "say": "हर पोस्ट के पास यूकेलिप्टस के पेड़ लगा दो। छाँव मिलेगी।"
+  },
+  {
+   "id": "H056",
+   "speaker": "NARRATOR",
+   "text": "Ped lag gaye. Aur har ped ban gaya ek nishaana.",
+   "say": "पेड़ लग गए। और हर पेड़ बन गया एक निशाना।"
+  },
+  {
+   "id": "H057",
+   "speaker": "NARRATOR",
+   "text": "Itihaas ki sabse mehengi chhaanv.",
+   "say": "इतिहास की सबसे महँगी छाँव।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H058",
+   "speaker": "NARRATOR",
+   "text": "1967 ki war mein, Israel ne Golan sirf do din mein le liya.",
+   "say": "उन्नीस सौ सड़सठ की वॉर में, इज़राइल ने गोलान सिर्फ़ दो दिन में ले लिया।"
+  },
+  {
+   "id": "H059",
+   "speaker": "NARRATOR",
+   "text": "Israel mein iska bada credit Eli Cohen ko diya jaata hai.",
+   "say": "इज़राइल में इसका बड़ा क्रेडिट एली कोहेन को दिया जाता है।"
+  },
+  {
+   "id": "H060",
+   "speaker": "NARRATOR",
+   "text": "Lekin kuch analysts kehte hain, uske role ko zaroorat se zyada bada bataya jaata hai.",
+   "say": "लेकिन कुछ एनालिस्ट्स कहते हैं, उसके रोल को ज़रूरत से ज़्यादा बड़ा बताया जाता है।"
+  },
+  {
+   "id": "H061",
+   "speaker": "NARRATOR",
+   "text": "Chapter five. Kya wo sach mein President ban jaata?",
+   "say": "चैप्टर फ़ाइव। क्या वो सच में प्रेसिडेंट बन जाता?",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H062",
+   "speaker": "NARRATOR",
+   "text": "Ab aate hain us claim pe, jiski wajah se aap ye video dekh rahe hain.",
+   "say": "अब आते हैं उस क्लेम पे, जिसकी वजह से आप ये वीडियो देख रहे हैं।"
+  },
+  {
+   "id": "H063",
+   "speaker": "NARRATOR",
+   "text": "Israeli side ki kahani kehti hai, President Amin al-Hafiz Kamel par bharosa karta tha.",
+   "say": "इज़राइली साइड की कहानी कहती है, प्रेसिडेंट अमीन अल-हाफ़िज़ कामेल पर भरोसा करता था।"
+  },
+  {
+   "id": "H064",
+   "speaker": "NARRATOR",
+   "text": "Britannica likhta hai, reportedly Hafiz use deputy defense minister banane ka soch raha tha.",
+   "say": "ब्रिटैनिका लिखता है, रिपोर्टेडली हाफ़िज़ उसे डिप्टी डिफ़ेंस मिनिस्टर बनाने का सोच रहा था।"
+  },
+  {
+   "id": "H065",
+   "speaker": "NARRATOR",
+   "text": "Kuch log aur aage jaate hain. Kehte hain, wo presidency ki line mein teesre number pe tha.",
+   "say": "कुछ लोग और आगे जाते हैं। कहते हैं, वो प्रेसिडेंसी की लाइन में तीसरे नंबर पे था।"
+  },
+  {
+   "id": "H066",
+   "speaker": "NARRATOR",
+   "text": "Aur internet tak pahunchte pahunchte, ye ban gaya. Almost President.",
+   "say": "और इंटरनेट तक पहुँचते पहुँचते, ये बन गया। ऑलमोस्ट प्रेसिडेंट।"
+  },
+  {
+   "id": "H067",
+   "speaker": "NARRATOR",
+   "text": "Ab Syria ki side suniye.",
+   "say": "अब सीरिया की साइड सुनिए।",
+   "gap_before": 0.4
+  },
+  {
+   "id": "H068",
+   "speaker": "NARRATOR",
+   "text": "Syrian historians kehte hain, us waqt deputy defense minister naam ka koi post tha hi nahi.",
+   "say": "सीरियन हिस्टोरियंस कहते हैं, उस वक़्त डिप्टी डिफ़ेंस मिनिस्टर नाम का कोई पोस्ट था ही नहीं।"
+  },
+  {
+   "id": "H069",
+   "speaker": "NARRATOR",
+   "text": "Unke mutabik ye post 1970 mein bana. Eli ki maut ke paanch saal baad.",
+   "say": "उनके मुताबिक़ ये पोस्ट उन्नीस सौ सत्तर में बना। एली की मौत के पाँच साल बाद।"
+  },
+  {
+   "id": "H070",
+   "speaker": "NARRATOR",
+   "text": "2001 mein ek TV interview mein, Amin al-Hafiz ne Kamel se kisi khaas dosti se inkaar kiya.",
+   "say": "दो हज़ार एक में एक टीवी इंटरव्यू में, अमीन अल-हाफ़िज़ ने कामेल से किसी ख़ास दोस्ती से इनकार किया।"
+  },
+  {
+   "id": "H071",
+   "speaker": "NARRATOR",
+   "text": "Ek Syrian report ye bhi kehti hai, ki us waqt Hafiz Buenos Aires mein tha hi nahi.",
+   "say": "एक सीरियन रिपोर्ट ये भी कहती है, कि उस वक़्त हाफ़िज़ ब्यूनस आयर्स में था ही नहीं।"
+  },
+  {
+   "id": "H072",
+   "speaker": "NARRATOR",
+   "text": "Aur jis Syrian officer ne Eli ko pakda, uske mutabik dono pehli baar arrest ke baad mile.",
+   "say": "और जिस सीरियन ऑफ़िसर ने एली को पकड़ा, उसके मुताबिक़ दोनों पहली बार अरेस्ट के बाद मिले।"
+  },
+  {
+   "id": "H073",
+   "speaker": "NARRATOR",
+   "text": "To sach kya hai?",
+   "say": "तो सच क्या है?",
+   "gap_before": 0.4
+  },
+  {
+   "id": "H074",
+   "speaker": "NARRATOR",
+   "text": "Itna saaf hai, ki uski pahunch Syria ke officers aur officials tak thi.",
+   "say": "इतना साफ़ है, कि उसकी पहुँच सीरिया के ऑफ़िसर्स और ऑफ़िशियल्स तक थी।"
+  },
+  {
+   "id": "H075",
+   "speaker": "NARRATOR",
+   "text": "Lekin President ki kursi tak? Uska koi pakka record nahi milta.",
+   "say": "लेकिन प्रेसिडेंट की कुर्सी तक? उसका कोई पक्का रिकॉर्ड नहीं मिलता।"
+  },
+  {
+   "id": "H076",
+   "speaker": "NARRATOR",
+   "text": "Matlab almost President wali baat mein, record kam hai aur legend zyada.",
+   "say": "मतलब ऑलमोस्ट प्रेसिडेंट वाली बात में, रिकॉर्ड कम है और लेजेंड ज़्यादा।"
+  },
+  {
+   "id": "H077",
+   "speaker": "NARRATOR",
+   "text": "Chapter six. Radio ka jaal.",
+   "say": "चैप्टर सिक्स। रेडियो का जाल।",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H078",
+   "speaker": "NARRATOR",
+   "text": "Teen saal tak Kamel ka radio, Damascus se Israel tak baat karta raha.",
+   "say": "तीन साल तक कामेल का रेडियो, दमिश्क से इज़राइल तक बात करता रहा।"
+  },
+  {
+   "id": "H079",
+   "speaker": "NARRATOR",
+   "text": "Aur yahi radio, uski sabse badi galti bana.",
+   "say": "और यही रेडियो, उसकी सबसे बड़ी ग़लती बना।"
+  },
+  {
+   "id": "H080",
+   "speaker": "NARRATOR",
+   "text": "Britannica ke mutabik, handlers ne usse kaha tha. Itna zyada mat bhejo, aur roz ek hi time pe mat bhejo.",
+   "say": "ब्रिटैनिका के मुताबिक़, हैंडलर्स ने उससे कहा था। इतना ज़्यादा मत भेजो, और रोज़ एक ही टाइम पे मत भेजो।"
+  },
+  {
+   "id": "H081",
+   "speaker": "NARRATOR",
+   "text": "Lekin wo bhejta raha.",
+   "say": "लेकिन वो भेजता रहा।"
+  },
+  {
+   "id": "H082",
+   "speaker": "NARRATOR",
+   "text": "Syria ne Soviet tracking equipment ka sahara liya.",
+   "say": "सीरिया ने सोवियत ट्रैकिंग इक्विपमेंट का सहारा लिया।"
+  },
+  {
+   "id": "H083",
+   "speaker": "NARRATOR",
+   "text": "Phir ek chaalaak trap. Kuch waqt ke liye, official radio transmissions band.",
+   "say": "फिर एक चालाक ट्रैप। कुछ वक़्त के लिए, ऑफ़िशियल रेडियो ट्रांसमिशंस बंद।"
+  },
+  {
+   "id": "H084",
+   "speaker": "NARRATOR",
+   "text": "Ab hawa mein jo bhi signal bachta, wo gair kanooni hota.",
+   "say": "अब हवा में जो भी सिग्नल बचता, वो ग़ैर क़ानूनी होता।"
+  },
+  {
+   "id": "H085",
+   "speaker": "NARRATOR",
+   "text": "Aur ek signal bacha. Kamel ka.",
+   "say": "और एक सिग्नल बचा। कामेल का।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H086",
+   "speaker": "NARRATOR",
+   "text": "January 1965. Security officers flat mein ghuse, aur use transmit karte hue pakad liya.",
+   "say": "जनवरी उन्नीस सौ पैंसठ। सिक्योरिटी ऑफ़िसर्स फ़्लैट में घुसे, और उसे ट्रांसमिट करते हुए पकड़ लिया।"
+  },
+  {
+   "id": "H087",
+   "speaker": "NARRATOR",
+   "text": "Teen saal ki acting, ek radio signal pe khatam.",
+   "say": "तीन साल की एक्टिंग, एक रेडियो सिग्नल पे ख़त्म।"
+  },
+  {
+   "id": "H088",
+   "speaker": "NARRATOR",
+   "text": "Aur haan, is kahani mein India ka naam bhi aata hai.",
+   "say": "और हाँ, इस कहानी में इंडिया का नाम भी आता है।"
+  },
+  {
+   "id": "H089",
+   "speaker": "NARRATOR",
+   "text": "Ek popular version kehta hai, Indian embassy ke radio mein interference se shak shuru hua.",
+   "say": "एक पॉपुलर वर्ज़न कहता है, इंडियन एंबेसी के रेडियो में इंटरफ़ेरेंस से शक शुरू हुआ।"
+  },
+  {
+   "id": "H090",
+   "speaker": "NARRATOR",
+   "text": "Lekin pakadne wale Syrian officer Said Jawish, is version ko galat bataate hain.",
+   "say": "लेकिन पकड़ने वाले सीरियन ऑफ़िसर सईद जाविश, इस वर्ज़न को ग़लत बताते हैं।"
+  },
+  {
+   "id": "H091",
+   "speaker": "NARRATOR",
+   "text": "Chapter seven. Marjeh Square.",
+   "say": "चैप्टर सेवन। मरजेह स्क्वेयर।",
+   "gap_before": 0.7
+  },
+  {
+   "id": "H092",
+   "speaker": "NARRATOR",
+   "text": "Military court ne Eli ko jaasoosi ka doshi maana, aur maut ki saza sunayi.",
+   "say": "मिलिट्री कोर्ट ने एली को जासूसी का दोषी माना, और मौत की सज़ा सुनाई।"
+  },
+  {
+   "id": "H093",
+   "speaker": "NARRATOR",
+   "text": "Duniya bhar se maafi ki appeals aayi. Pope Paul the Sixth se le kar Bertrand Russell tak.",
+   "say": "दुनिया भर से माफ़ी की अपील्स आईं। पोप पॉल द सिक्स्थ से ले कर बर्ट्रेंड रसेल तक।"
+  },
+  {
+   "id": "H094",
+   "speaker": "NARRATOR",
+   "text": "Lekin Syria ne faisla nahi badla.",
+   "say": "लेकिन सीरिया ने फ़ैसला नहीं बदला।"
+  },
+  {
+   "id": "H095",
+   "speaker": "NARRATOR",
+   "text": "15 May 1965. Eli ne Nadia ko aakhri khat likha.",
+   "say": "पंद्रह मई उन्नीस सौ पैंसठ। एली ने नादिया को आख़िरी ख़त लिखा।",
+   "gap_before": 0.4
+  },
+  {
+   "id": "H096",
+   "speaker": "NARRATOR",
+   "text": "Usne likha, ki rone mein waqt mat bitana. Aage ki zindagi ke baare mein sochna.",
+   "say": "उसने लिखा, कि रोने में वक़्त मत बिताना। आगे की ज़िंदगी के बारे में सोचना।"
+  },
+  {
+   "id": "H097",
+   "speaker": "NARRATOR",
+   "text": "18 May 1965 ko, Damascus ke Marjeh Square mein, use public mein faansi di gayi.",
+   "say": "अठारह मई उन्नीस सौ पैंसठ को, दमिश्क के मरजेह स्क्वेयर में, उसे पब्लिक में फाँसी दी गई।",
+   "gap_before": 0.5
+  },
+  {
+   "id": "H098",
+   "speaker": "NARRATOR",
+   "text": "Wo 40 saal ka tha.",
+   "say": "वो चालीस साल का था।"
+  },
+  {
+   "id": "H099",
+   "speaker": "NARRATOR",
+   "text": "Aaj tak, uski body Israel ko wapas nahi mili.",
+   "say": "आज तक, उसकी बॉडी इज़राइल को वापस नहीं मिली।"
+  },
+  {
+   "id": "H100",
+   "speaker": "NARRATOR",
+   "text": "Chapter eight. 60 saal baad.",
+   "say": "चैप्टर एट। साठ साल बाद।",
+   "gap_before": 0.7
+  },
+  {
+   "id": "H101",
+   "speaker": "NARRATOR",
+   "text": "Eli Cohen ki kahani, uski maut ke saath khatam nahi hui.",
+   "say": "एली कोहेन की कहानी, उसकी मौत के साथ ख़त्म नहीं हुई।"
+  },
+  {
+   "id": "H102",
+   "speaker": "NARRATOR",
+   "text": "2018 mein Mossad ek ghadi wapas laayi. Wahi ghadi, jo Kamel ki fake pehchaan ka hissa thi.",
+   "say": "दो हज़ार अठारह में मोसाद एक घड़ी वापस लाई। वही घड़ी, जो कामेल की फ़ेक पहचान का हिस्सा थी।"
+  },
+  {
+   "id": "H103",
+   "speaker": "NARRATOR",
+   "text": "Uski beti ke mutabik, wo ghadi online bikne ke liye lagi thi.",
+   "say": "उसकी बेटी के मुताबिक़, वो घड़ी ऑनलाइन बिकने के लिए लगी थी।"
+  },
+  {
+   "id": "H104",
+   "speaker": "NARRATOR",
+   "text": "Phir December 2024 mein, Syria mein Assad sarkar gir gayi.",
+   "say": "फिर दिसंबर दो हज़ार चौबीस में, सीरिया में असद सरकार गिर गई।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H105",
+   "speaker": "NARRATOR",
+   "text": "Aur 18 May 2025 ko, uski maut ke theek 60 saal baad, Israel ne ek announcement kiya.",
+   "say": "और अठारह मई दो हज़ार पच्चीस को, उसकी मौत के ठीक साठ साल बाद, इज़राइल ने एक अनाउंसमेंट किया।"
+  },
+  {
+   "id": "H106",
+   "speaker": "NARRATOR",
+   "text": "Syria ka Eli Cohen archive, Israel pahunch chuka tha. Kareeb 2,500 cheezein.",
+   "say": "सीरिया का एली कोहेन आर्काइव, इज़राइल पहुँच चुका था। करीब पच्चीस सौ चीज़ें।"
+  },
+  {
+   "id": "H107",
+   "speaker": "NARRATOR",
+   "text": "Documents, photos, uski will, Damascus wale flat ki chaabiyan, aur fake passports.",
+   "say": "डॉक्यूमेंट्स, फ़ोटोज़, उसकी विल, दमिश्क वाले फ़्लैट की चाबियाँ, और फ़ेक पासपोर्ट्स।"
+  },
+  {
+   "id": "H108",
+   "speaker": "NARRATOR",
+   "text": "Israel ne kaha, ye ek covert Mossad operation tha.",
+   "say": "इज़राइल ने कहा, ये एक कोवर्ट मोसाद ऑपरेशन था।"
+  },
+  {
+   "id": "H109",
+   "speaker": "NARRATOR",
+   "text": "Lekin Reuters ki ek report kehti hai, ye cheezein Syria ke naye President al-Sharaa ki manzoori se lauti.",
+   "say": "लेकिन रॉयटर्स की एक रिपोर्ट कहती है, ये चीज़ें सीरिया के नए प्रेसिडेंट अल-शरा की मंज़ूरी से लौटीं।"
+  },
+  {
+   "id": "H110",
+   "speaker": "NARRATOR",
+   "text": "Ek hi file. Aur phir se, do alag kahaniyan.",
+   "say": "एक ही फ़ाइल। और फिर से, दो अलग कहानियाँ।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H111",
+   "speaker": "NARRATOR",
+   "text": "Aur uski body? Wo abhi bhi Damascus mein kahin, ek bina naam ki kabr mein maani jaati hai.",
+   "say": "और उसकी बॉडी? वो अभी भी दमिश्क में कहीं, एक बिना नाम की क़ब्र में मानी जाती है।"
+  },
+  {
+   "id": "H112",
+   "speaker": "NARRATOR",
+   "text": "To kya ek Israeli jaasoos, Syria ka President banne wala tha?",
+   "say": "तो क्या एक इज़राइली जासूस, सीरिया का प्रेसिडेंट बनने वाला था?",
+   "gap_before": 0.6
+  },
+  {
+   "id": "H113",
+   "speaker": "NARRATOR",
+   "text": "Records kehte hain, shayad nahi.",
+   "say": "रिकॉर्ड्स कहते हैं, शायद नहीं।"
+  },
+  {
+   "id": "H114",
+   "speaker": "NARRATOR",
+   "text": "Lekin teen saal tak, dushman ki rajdhani mein, sabke saamne ek naqli zindagi jeena. Ye bhi kam nahi.",
+   "say": "लेकिन तीन साल तक, दुश्मन की राजधानी में, सबके सामने एक नक़ली ज़िंदगी जीना। ये भी कम नहीं।"
+  },
+  {
+   "id": "H115",
+   "speaker": "NARRATOR",
+   "text": "Israel ke liye wo national hero hai. Syria ke liye, ek dushman jaasoos.",
+   "say": "इज़राइल के लिए वो नेशनल हीरो है। सीरिया के लिए, एक दुश्मन जासूस।"
+  },
+  {
+   "id": "H116",
+   "speaker": "NARRATOR",
+   "text": "Kahani wahi. Nazariya alag.",
+   "say": "कहानी वही। नज़रिया अलग।"
+  },
+  {
+   "id": "H117",
+   "speaker": "NARRATOR",
+   "text": "Aapko kya lagta hai? Almost President, sach tha ya legend? Comment mein bataiye.",
+   "say": "आपको क्या लगता है? ऑलमोस्ट प्रेसिडेंट, सच था या लेजेंड? कमेंट में बताइए।",
+   "gap_before": 0.4
+  },
+  {
+   "id": "H118",
+   "speaker": "NARRATOR",
+   "text": "Aur aisi aur sachchi kahaniyon ke liye, subscribe Dagar Unfiltered.",
+   "say": "और ऐसी और सच वाली कहानियों के लिए, वेरिट्रिक्स को सब्सक्राइब कर लीजिए।"
+  }
+ ],
+ "prerecorded": {
+  "audio": "voice/voice.m4a",
+  "timeline": "voice/timeline.json"
+ }
+}
