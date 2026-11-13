@@ -15,6 +15,11 @@
 @font-face { font-family: Silkscreen; src: url(../fonts/Silkscreen-Bold.ttf); }
 @font-face { font-family: DMSerif; src: url(../fonts/DMSerifDisplay-Regular.ttf); }
 @font-face { font-family: DMSerifI; src: url(../fonts/DMSerifDisplay-Italic.ttf); }
+@font-face { font-family: RobotoCond; font-weight: 100 900; src: url(../fonts/RobotoCondensed-VF.ttf); }
+@font-face { font-family: Arimo; font-weight: 400 700; src: url(../fonts/Arimo-VF.ttf); }
+@font-face { font-family: InterTight; font-weight: 100 900; src: url(../fonts/InterTight-VF.ttf); }
+@font-face { font-family: Tinos; font-weight: 400; src: url(../fonts/Tinos-Regular.ttf); }
+@font-face { font-family: Tinos; font-weight: 700; src: url(../fonts/Tinos-Bold.ttf); }
 html,body{margin:0;background:#000} canvas{display:block}
 </style></head>
 <body><canvas id="c" width="1920" height="1080"></canvas>
@@ -26,7 +31,7 @@ const ASSETS = new URLSearchParams(location.search).get('assets');
 const s = document.createElement('script'); s.src = EPDIR + 'scenes.js'; document.body.appendChild(s);
 window.READY = (async () => {
   await new Promise(r => s.onload = r);
-  const fams = ['60px Bebas', '60px Playfair', '700 60px Playfair', 'italic 60px PlayfairI', '60px SpecialElite', '600 60px Caveat', '500 60px Oswald', '60px CourierPrime', '60px Anton', '60px ArchivoBlack', '800 60px Montserrat', '600 60px Inter', '60px Silkscreen', '60px DMSerif', '60px DMSerifI'];
+  const fams = ['60px Bebas', '60px Playfair', '700 60px Playfair', 'italic 60px PlayfairI', '60px SpecialElite', '600 60px Caveat', '500 60px Oswald', '60px CourierPrime', '60px Anton', '60px ArchivoBlack', '800 60px Montserrat', '600 60px Inter', '60px Silkscreen', '60px DMSerif', '60px DMSerifI', '700 60px RobotoCond', '400 60px Arimo', '700 60px InterTight', '400 60px Tinos', '700 60px Tinos'];
   await Promise.all(fams.map(f => document.fonts.load(f)));
   const ABASE = (ASSETS ? `../../documentaries/${ASSETS}/` : EPDIR) + 'assets/';
   let imgs = Object.assign({}, EP.images || {});
