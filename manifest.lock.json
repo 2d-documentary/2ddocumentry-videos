@@ -430,6 +430,96 @@
    "page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_Royal_Society.jpg",
    "description": "Elon Musk, Royal Society portrait 2018",
    "category": "historical-photos"
+  },
+  {
+   "id": "titanic",
+   "status": "downloaded",
+   "file": "archives/historical-photos/titanic_titanic.jpg",
+   "attribution": "Francis Godolphin Osbourne Stuart, http://www.uwants.com/viewthread.php?tid=3817223&extra=page%3D1",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:RMS_Titanic_3.jpg",
+   "description": "titanic",
+   "category": "historical-photos"
+  },
+  {
+   "id": "blackhole",
+   "status": "downloaded",
+   "file": "archives/historical-photos/blackhole_blackhole.jpg",
+   "attribution": "Event Horizon Telescope , uploader cropped and converted TIF to JPG, This media was produced by the European Southern Observatory (ESO), under the identifier eso1907a This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing .",
+   "license": "CC BY 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87_crop_max_res.jpg",
+   "description": "blackhole",
+   "category": "historical-photos"
+  },
+  {
+   "id": "pyramids",
+   "status": "downloaded",
+   "file": "archives/historical-photos/pyramids_pyramids.jpg",
+   "attribution": "Ricardo Liberato, All Gizah Pyramids",
+   "license": "CC BY-SA 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:All_Gizah_Pyramids.jpg",
+   "description": "pyramids",
+   "category": "historical-photos"
+  },
+  {
+   "id": "einstein",
+   "status": "downloaded",
+   "file": "archives/historical-photos/einstein_einstein.jpg",
+   "attribution": "Photograph by Orren Jack Turner , Princeton, N.J. Modified with Photoshop by PM_Poon and later by Dantadd ., This image is available from the United States Library of Congress 's Prints and Photographs division under the digital ID cph.3b46036 . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing .",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Albert_Einstein_Head.jpg",
+   "description": "einstein",
+   "category": "historical-photos"
+  },
+  {
+   "id": "eniac",
+   "status": "downloaded",
+   "file": "archives/historical-photos/eniac_eniac.jpg",
+   "attribution": "Unknown author Unknown author, U.S. Army Photo",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Glen_Beck_and_Betty_Snyder_program_the_ENIAC_in_building_328_at_the_Ballistic_Research_Laboratory.jpg",
+   "description": "eniac",
+   "category": "historical-photos"
+  },
+  {
+   "id": "harshad",
+   "status": "downloaded",
+   "file": "archives/historical-photos/harshad_harshad.png",
+   "attribution": "Soujanya raj, Own work",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Harshad-Mehta.png",
+   "description": "harshad",
+   "category": "historical-photos"
+  },
+  {
+   "id": "area51b",
+   "status": "downloaded",
+   "file": "archives/historical-photos/area51b_area51b.jpg",
+   "attribution": "Ken Lund from Reno, Nevada, USA, Groom Lake, Area 51, North of Las Vegas, Nevada",
+   "license": "CC BY-SA 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Groom_Lake,_Area_51,_North_of_Las_Vegas,_Nevada_(17576998524).jpg",
+   "description": "area51b",
+   "category": "historical-photos"
+  },
+  {
+   "id": "redacted",
+   "status": "downloaded",
+   "file": "archives/historical-photos/redacted_redacted.jpg",
+   "attribution": "Central Intelligence Agency (CIA), https://s3.amazonaws.com/s3.documentcloud.org/documents/359470/5-nie.pdf",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Redacted_CIA_document.jpg",
+   "description": "redacted",
+   "category": "historical-photos"
+  },
+  {
+   "id": "ufo",
+   "status": "downloaded",
+   "file": "archives/historical-photos/ufo_ufo.png",
+   "attribution": "Anonymous Unknown author, Farmer Trent's Flying Saucer. LIFE Magazine. 26 June, 1950.",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:McMinnville_UFO_1.png",
+   "description": "ufo",
+   "category": "historical-photos"
   }
  ]
 }
