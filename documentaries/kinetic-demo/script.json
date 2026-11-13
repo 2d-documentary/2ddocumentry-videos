@@ -1,10 +1,56 @@
-{"title": "Kinetic style demo: The spy who fooled Damascus", "voices": {"NARRATOR": {"engine": "silent", "cps": 22, "hold": 0.9, "per_word": 0.18}}, "tail": 3.0,
+{
+ "title": "Kinetic style demo: The spy who fooled Damascus",
+ "voices": {
+  "NARRATOR": {
+   "engine": "silent",
+   "cps": 22,
+   "hold": 0.9,
+   "per_word": 0.18
+  }
+ },
+ "tail": 3.0,
  "lines": [
-  {"id": "V01", "speaker": "NARRATOR", "gap_before": 0.6, "text": "This man fooled an entire country."},
-  {"id": "V02", "speaker": "NARRATOR", "gap_before": 0.3, "text": "In 1962, he moved to Damascus."},
-  {"id": "V03", "speaker": "NARRATOR", "gap_before": 0.3, "text": "He lived as Kamel Amin Thabet."},
-  {"id": "V04", "speaker": "NARRATOR", "gap_before": 0.3, "text": "For 3 years, the radio never stopped."},
-  {"id": "V05", "speaker": "NARRATOR", "gap_before": 0.3, "text": "In 1965, his trial made headlines."},
-  {"id": "V06", "speaker": "NARRATOR", "gap_before": 0.3, "text": "Some say he almost became president."},
-  {"id": "V07", "speaker": "NARRATOR", "gap_before": 0.4, "text": "Follow Dagar Unfiltered for the full story."}
- ]}
+  {
+   "id": "V01",
+   "speaker": "NARRATOR",
+   "gap_before": 0.6,
+   "text": "This man fooled an entire country."
+  },
+  {
+   "id": "V02",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "In 1962, he moved to Damascus."
+  },
+  {
+   "id": "V03",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "He lived as Kamel Amin Thabet."
+  },
+  {
+   "id": "V04",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "For 3 years, the radio never stopped."
+  },
+  {
+   "id": "V05",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "In 1965, his trial made headlines."
+  },
+  {
+   "id": "V06",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "Some say he almost became president."
+  },
+  {
+   "id": "V07",
+   "speaker": "NARRATOR",
+   "gap_before": 0.4,
+   "text": "Full documentary on my YouTube channel."
+  }
+ ]
+}

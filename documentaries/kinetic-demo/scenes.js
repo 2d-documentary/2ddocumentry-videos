@@ -97,7 +97,7 @@ function glassSubscribe(ctx, x, y, t, t0, o = {}) { glassButton(ctx, x, y, t, t0
 function cred(ctx, key, extra) { const c = credit(key, extra); if (c) sourceTag(ctx, c); }
 
 // ============================================================================
-// KINETIC KIT: "After Effects in canvas" for cinematic 2.5D documentary edits
+// CINEMA3D KIT: "After Effects in canvas" for cinematic 2.5D documentary edits
 // (3D cards/paper with perspective + curl, camera moves, whip/zoom/flash/glitch
 //  transitions with motion blur, grunge titles, pill tags, floating serif words,
 //  word-chunk captions, procedural sets: wood desk, newspaper, wall + spotlight,
@@ -245,7 +245,7 @@ const _TXC = {}; function mkTextCanvas(s, size, font, color, ext) { const key = 
   const m = mkCanvas(10, 10).getContext('2d'); m.font = `${size}px ${font}`; const w = Math.ceil(m.measureText(s).width) + size * .4 + ext, h = Math.ceil(size * 1.35) + ext;
   const c = mkCanvas(w, h), x = c.getContext('2d'); x.font = `${size}px ${font}`; x.textBaseline = 'middle'; x.textAlign = 'center';
   for (let e = ext; e > 0; e--) { x.fillStyle = color === KC.white ? '#6E6A64' : '#5C0A0E'; x.fillText(s, w / 2 - ext / 2 + e * .5, h / 2 + e); }
-  x.fillStyle = color; x.fillText(s, w / 2 - ext / 2, h / 2); x.globalCompositeOperation = 'destination-out'; const n = noiseTex(); for (let yy = 0; yy < h; yy += 512) for (let xx = 0; xx < w; xx += 512) { x.globalAlpha = .55; x.drawImage(n, xx - (s.length * 37) % 300, yy); }
+  x.fillStyle = color; x.fillText(s, w / 2 - ext / 2, h / 2); x.globalCompositeOperation = 'destination-out'; const n = noiseTex(); for (let yy = 0; yy < h; yy += 512) for (let xx = 0; xx < w; xx += 512) { x.globalAlpha = .32; x.drawImage(n, xx - (s.length * 37) % 300, yy); }
   x.globalCompositeOperation = 'source-atop'; x.globalAlpha = .12; x.fillStyle = '#000'; x.fillRect(0, h * .55, w, h * .45); return (_TXC[key] = c); }
 // red rounded pill tag ("1950s"); slides up with a wipe
 function pillTag(ctx, s, x, y, t, t0, o = {}) { if (t < t0) return; const p = E.back(clamp((t - t0) / .35)), size = o.size || 64; ctx.save(); ctx.font = `800 ${size}px ${F.mont}`; const w = ctx.measureText(s).width + size * .9, h = size * 1.35;
@@ -438,10 +438,10 @@ function scenes() {
         pillTag(ctx, '1965', 220, 330, t, T('V05', '1965,'), { size: 80 }); cred(ctx, 'paper65', 'Archive newspaper'); } },
     { t0: L('V06') - .1, tr: 'glitch', draw: (ctx, t, lt) => { plate(ctx, 'eli_golan', lt, { grade: 'bw', z0: 1.1, z1: 1.32, dur: 4, dark: .35, fy: .45 }); smoke(ctx, t, .25);
         grungeTitle(ctx, [{ s: 'ALMOST', color: KC.white, size: 190 }, { s: 'PRESIDENT?', color: KC.red, size: 170 }], W / 2, 560, t, T('V06', 'almost'), { rot: -.04 }); cred(ctx, 'eli_golan'); } },
-    { t0: L('V07') - .1, tr: 'zoom', draw: (ctx, t, lt) => { starfield(ctx, t, 160, 3); smoke(ctx, t, .3); brandEnd(ctx, t, L('V07') + .1, 'DAGAR UNFILTERED', { y: 760, size: 160 });
-        glassFollow(ctx, W / 2, 1160, t, L('V07') + .5, { tapAfter: 1.3 }); fadeOut(ctx, t, TL.duration, 1); } },
+    { t0: L('V07') - .1, tr: 'zoom', draw: (ctx, t, lt) => { starfield(ctx, t, 160, 3); smoke(ctx, t, .3); grungeTitle(ctx, [{ s: 'FULL DOCUMENTARY', color: KC.white, size: 96 }, { s: 'ON MY YOUTUBE CHANNEL', color: KC.white, size: 72 }], W / 2, 520, t, L('V07') + .1);
+        brandEnd(ctx, t, L('V07') + .9, 'DAGAR UNFILTERED', { y: 1000, size: 170 }); fadeOut(ctx, t, TL.duration, 1); } },
   ];
-  shot(0, (ctx, t, lt) => { seq(ctx, t, S); kCaption(ctx, t, ['V01', 'V02', 'V03', 'V04', 'V05', 'V06', 'V07'], { y: 1560, size: 50 }); }, { name: 'kinetic', lead: 0 });
+  shot(0, (ctx, t, lt) => { seq(ctx, t, S); kCaption(ctx, t, ['V01', 'V02', 'V03', 'V04', 'V05', 'V06'], { y: 1560, size: 50 }); }, { name: 'kinetic', lead: 0 });
   // no whooshes on transitions (user preference); SFX only on story beats
-  cue(L('V01') + .1, 'impact', .9); cue(T('V02', '1962,'), 'tick', .6); cue(T('V03', 'Kamel'), 'stamp', .7); cue(T('V05', 'headlines.'), 'scribble', .6); cue(T('V06', 'almost'), 'impact', .9); cue(L('V07') + 1.8, 'tick', .8);
+  cue(L('V01') + .1, 'impact', .9); cue(T('V02', '1962,'), 'tick', .6); cue(T('V03', 'Kamel'), 'stamp', .7); cue(T('V05', 'headlines.'), 'scribble', .6); cue(T('V06', 'almost'), 'impact', .9); cue(L('V07') + .9, 'impact', .7);
 }

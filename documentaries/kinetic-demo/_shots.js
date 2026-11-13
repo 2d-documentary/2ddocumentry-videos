@@ -26,10 +26,10 @@ function scenes() {
         pillTag(ctx, '1965', 220, 330, t, T('V05', '1965,'), { size: 80 }); cred(ctx, 'paper65', 'Archive newspaper'); } },
     { t0: L('V06') - .1, tr: 'glitch', draw: (ctx, t, lt) => { plate(ctx, 'eli_golan', lt, { grade: 'bw', z0: 1.1, z1: 1.32, dur: 4, dark: .35, fy: .45 }); smoke(ctx, t, .25);
         grungeTitle(ctx, [{ s: 'ALMOST', color: KC.white, size: 190 }, { s: 'PRESIDENT?', color: KC.red, size: 170 }], W / 2, 560, t, T('V06', 'almost'), { rot: -.04 }); cred(ctx, 'eli_golan'); } },
-    { t0: L('V07') - .1, tr: 'zoom', draw: (ctx, t, lt) => { starfield(ctx, t, 160, 3); smoke(ctx, t, .3); brandEnd(ctx, t, L('V07') + .1, 'DAGAR UNFILTERED', { y: 760, size: 160 });
-        glassFollow(ctx, W / 2, 1160, t, L('V07') + .5, { tapAfter: 1.3 }); fadeOut(ctx, t, TL.duration, 1); } },
+    { t0: L('V07') - .1, tr: 'zoom', draw: (ctx, t, lt) => { starfield(ctx, t, 160, 3); smoke(ctx, t, .3); grungeTitle(ctx, [{ s: 'FULL DOCUMENTARY', color: KC.white, size: 96 }, { s: 'ON MY YOUTUBE CHANNEL', color: KC.white, size: 72 }], W / 2, 520, t, L('V07') + .1);
+        brandEnd(ctx, t, L('V07') + .9, 'DAGAR UNFILTERED', { y: 1000, size: 170 }); fadeOut(ctx, t, TL.duration, 1); } },
   ];
-  shot(0, (ctx, t, lt) => { seq(ctx, t, S); kCaption(ctx, t, ['V01', 'V02', 'V03', 'V04', 'V05', 'V06', 'V07'], { y: 1560, size: 50 }); }, { name: 'kinetic', lead: 0 });
+  shot(0, (ctx, t, lt) => { seq(ctx, t, S); kCaption(ctx, t, ['V01', 'V02', 'V03', 'V04', 'V05', 'V06'], { y: 1560, size: 50 }); }, { name: 'kinetic', lead: 0 });
   // no whooshes on transitions (user preference); SFX only on story beats
-  cue(L('V01') + .1, 'impact', .9); cue(T('V02', '1962,'), 'tick', .6); cue(T('V03', 'Kamel'), 'stamp', .7); cue(T('V05', 'headlines.'), 'scribble', .6); cue(T('V06', 'almost'), 'impact', .9); cue(L('V07') + 1.8, 'tick', .8);
+  cue(L('V01') + .1, 'impact', .9); cue(T('V02', '1962,'), 'tick', .6); cue(T('V03', 'Kamel'), 'stamp', .7); cue(T('V05', 'headlines.'), 'scribble', .6); cue(T('V06', 'almost'), 'impact', .9); cue(L('V07') + .9, 'impact', .7);
 }
