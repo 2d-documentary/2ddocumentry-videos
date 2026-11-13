@@ -1,0 +1,111 @@
+{
+ "title": "Diwali night: the missing data (English subtitles)",
+ "voices": {
+  "NARRATOR": {
+   "engine": "edge",
+   "voice": "en-US-AndrewMultilingualNeural",
+   "rate": "+5%",
+   "pitch": "+0Hz"
+  }
+ },
+ "tail": 2.8,
+ "lines": [
+  {
+   "id": "V01",
+   "speaker": "NARRATOR",
+   "text": "8 November, Diwali night.",
+   "say": "आठ नवंबर, दिवाली की रात।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "V02",
+   "speaker": "NARRATOR",
+   "text": "Delhi's air was turning to poison.",
+   "say": "दिल्ली की हवा ज़हर बन रही थी।"
+  },
+  {
+   "id": "V03",
+   "speaker": "NARRATOR",
+   "text": "And right then, the government meters went silent.",
+   "say": "और ठीक उसी वक़्त, सरकारी मीटर चुप हो गए।"
+  },
+  {
+   "id": "V04",
+   "speaker": "NARRATOR",
+   "text": "2 AM. At 25 Delhi stations, PM2.5 readings vanished.",
+   "say": "रात दो बजे। दिल्ली के पच्चीस स्टेशन्स पे, पी एम टू पॉइंट फ़ाइव की रीडिंग ग़ायब।",
+   "gap_before": 0.4
+  },
+  {
+   "id": "V05",
+   "speaker": "NARRATOR",
+   "text": "Next day, Delhi's own pollution body, DPCC, released that data.",
+   "say": "अगले दिन, दिल्ली की अपनी पॉल्यूशन बॉडी डी पी सी सी ने वो डेटा जारी किया।"
+  },
+  {
+   "id": "V06",
+   "speaker": "NARRATOR",
+   "text": "Mundka. 2 AM. 3,744.",
+   "say": "मुंडका। रात दो बजे। सैंतीस सौ चवालीस।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "V07",
+   "speaker": "NARRATOR",
+   "text": "60 times India's national standard.",
+   "say": "इंडिया के नेशनल स्टैंडर्ड से साठ गुना ज़्यादा।"
+  },
+  {
+   "id": "V08",
+   "speaker": "NARRATOR",
+   "text": "JNU, 3,023. NSUT, 3,008. And 11 stations above 2,000.",
+   "say": "जे एन यू, तीन हज़ार तेईस। एन एस यू टी, तीन हज़ार आठ। और ग्यारह स्टेशन्स दो हज़ार के पार।"
+  },
+  {
+   "id": "V09",
+   "speaker": "NARRATOR",
+   "text": "So where did the data go?",
+   "say": "तो डेटा गया कहाँ?",
+   "gap_before": 0.4
+  },
+  {
+   "id": "V10",
+   "speaker": "NARRATOR",
+   "text": "CPCB's answer: its 2015 system simply ignores readings above 999.",
+   "say": "सी पी सी बी का जवाब। उनका दो हज़ार पंद्रह वाला सिस्टम, नौ सौ निन्यानवे से ऊपर की रीडिंग मानता ही नहीं।"
+  },
+  {
+   "id": "V11",
+   "speaker": "NARRATOR",
+   "text": "It marks them out of range and drops them.",
+   "say": "उसे आउट ऑफ़ रेंज मान के हटा देता है।"
+  },
+  {
+   "id": "V12",
+   "speaker": "NARRATOR",
+   "text": "So the more toxic the air, the more it vanishes from the record.",
+   "say": "मतलब हवा जितनी ज़हरीली, रिकॉर्ड में उतनी ही ग़ायब।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "V13",
+   "speaker": "NARRATOR",
+   "text": "One analysis says the real Diwali pollution may be 49 percent higher.",
+   "say": "एक एनालिसिस कहता है, असली दिवाली पॉल्यूशन उनचास परसेंट ज़्यादा हो सकता है।"
+  },
+  {
+   "id": "V14",
+   "speaker": "NARRATOR",
+   "text": "If the meter itself stops breathing, how does Delhi breathe?",
+   "say": "जब मीटर ही साँस लेना बंद कर दे, तो दिल्ली कैसे साँस ले?",
+   "gap_before": 0.4
+  },
+  {
+   "id": "V15",
+   "speaker": "NARRATOR",
+   "text": "For more truths like this, follow Veritrix.",
+   "say": "ऐसे और सच के लिए, फ़ॉलो करिए वेरिट्रिक्स।",
+   "gap_before": 0.4
+  }
+ ]
+}
