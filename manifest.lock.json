@@ -489,8 +489,9 @@
       "license": "Public domain",
       "attribution": "NASA Kennedy Space Center",
       "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_Mission_Control_Center_-_Film_Rolls_(KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1).webm",
+      "rev": 2,
       "status": "failed",
-      "error": "file not found on Commons"
+      "error": "file too large (150 MB)"
     },
     {
       "id": "sc_eagle",
@@ -502,8 +503,9 @@
       "license": "Public domain",
       "attribution": "US National Archives",
       "page": "https://commons.wikimedia.org/wiki/File:The_Eagle_Has_Landed,_The_Flight_of_Apollo_11,_1969.webm",
+      "rev": 2,
       "status": "failed",
-      "error": "file not found on Commons"
+      "error": "file too large (118 MB)"
     },
     {
       "id": "sc_launch",
@@ -515,8 +517,11 @@
       "license": "Public domain",
       "attribution": "NASA/Kennedy Space Center",
       "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_launch,_video_of_engines_at_500_fps_(camera_E-8).ogv",
-      "status": "failed",
-      "error": "file not found on Commons"
+      "rev": 2,
+      "file": "archives/footage/sc_launch_apollo-11-launch-video-of-engines-at-500.webm",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/61/Apollo_11_launch%2C_video_of_engines_at_500_fps_%28camera_E-8%29.ogv/Apollo_11_launch%2C_video_of_engines_at_500_fps_%28camera_E-8%29.ogv.480p.vp9.webm",
+      "bytes": 27270512,
+      "status": "downloaded"
     },
     {
       "id": "sc_land",
@@ -528,8 +533,11 @@
       "license": "Public domain",
       "attribution": "NASA",
       "page": "https://commons.wikimedia.org/wiki/File:Historic_Apollo_11_Moon_Landing_Footage.webm",
-      "status": "failed",
-      "error": "file not found on Commons"
+      "rev": 2,
+      "file": "archives/footage/sc_land_historic-apollo-11-moon-landing-footage-.webm",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3e/Historic_Apollo_11_Moon_Landing_Footage.webm/Historic_Apollo_11_Moon_Landing_Footage.webm.480p.vp9.webm",
+      "bytes": 89789319,
+      "status": "downloaded"
     },
     {
       "id": "sc_walk",
@@ -541,8 +549,9 @@
       "license": "Public domain",
       "attribution": "NASA",
       "page": "https://commons.wikimedia.org/wiki/File:Restored_Apollo_11_Moonwalk_-_Original_NASA_EVA_Mission_Video_-_Walking_on_the_Moon.webm",
+      "rev": 2,
       "status": "failed",
-      "error": "file not found on Commons"
+      "error": "file too large (310 MB)"
     },
     {
       "id": "sc_intro",
@@ -554,8 +563,11 @@
       "license": "Public domain",
       "attribution": "NASA",
       "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_Intro_720p.ogv",
-      "status": "failed",
-      "error": "file not found on Commons"
+      "rev": 2,
+      "file": "archives/footage/sc_intro_apollo-11-intro-720p-ogv.webm",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/46/Apollo_11_Intro_720p.ogv/Apollo_11_Intro_720p.ogv.480p.vp9.webm",
+      "bytes": 15836515,
+      "status": "downloaded"
     }
   ]
 }
