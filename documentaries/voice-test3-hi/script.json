@@ -1,0 +1,71 @@
+{
+ "title": "Voice test 3 (Indic Parler)",
+ "lenient": true,
+ "voices": {
+  "V7": {
+   "engine": "parler",
+   "description": "Rohit speaks in a natural, conversational and expressive storytelling tone, like a popular YouTuber, at a moderately fast pace. The recording is very clear and close-up, with no background noise.",
+   "desc": "Indic Parler-TTS, Rohit (male)"
+  },
+  "V8": {
+   "engine": "parler",
+   "description": "Divya speaks in a natural, conversational and expressive storytelling tone, like a popular YouTuber, at a moderately fast pace. The recording is very clear and close-up, with no background noise.",
+   "desc": "Indic Parler-TTS, Divya (female)"
+  }
+ },
+ "tail": 1.5,
+ "lines": [
+  {
+   "id": "V701",
+   "speaker": "V7",
+   "text": "April 1992. Mumbai ke ek stockbroker ke paas State Bank of India se ek call aata hai.",
+   "say": "अप्रैल उन्नीस सौ बानवे। मुंबई के एक स्टॉकब्रोकर के पास, स्टेट बैंक ऑफ़ इंडिया से एक कॉल आता है।",
+   "gap_before": 1.2
+  },
+  {
+   "id": "V702",
+   "speaker": "V7",
+   "text": "Sawaal sirf ek hai. Hamare 500 crore rupaye kahan hain?",
+   "say": "सवाल सिर्फ़ एक है। हमारे पाँच सौ करोड़ रुपये कहाँ हैं?"
+  },
+  {
+   "id": "V703",
+   "speaker": "V7",
+   "text": "Log Lexus dekhne aate the. Harshad ko nahi, car ko.",
+   "say": "लोग लेक्सस देखने आते थे। हर्षद को नहीं, कार को।",
+   "gap_before": 0.5
+  },
+  {
+   "id": "V704",
+   "speaker": "V7",
+   "text": "Matlab khaali tiffin. Upar likha paneer, andar kuch nahi.",
+   "say": "मतलब ख़ाली टिफ़िन। ऊपर लिखा पनीर, अंदर कुछ नहीं।"
+  },
+  {
+   "id": "V801",
+   "speaker": "V8",
+   "text": "April 1992. Mumbai ke ek stockbroker ke paas State Bank of India se ek call aata hai.",
+   "say": "अप्रैल उन्नीस सौ बानवे। मुंबई के एक स्टॉकब्रोकर के पास, स्टेट बैंक ऑफ़ इंडिया से एक कॉल आता है।",
+   "gap_before": 1.2
+  },
+  {
+   "id": "V802",
+   "speaker": "V8",
+   "text": "Sawaal sirf ek hai. Hamare 500 crore rupaye kahan hain?",
+   "say": "सवाल सिर्फ़ एक है। हमारे पाँच सौ करोड़ रुपये कहाँ हैं?"
+  },
+  {
+   "id": "V803",
+   "speaker": "V8",
+   "text": "Log Lexus dekhne aate the. Harshad ko nahi, car ko.",
+   "say": "लोग लेक्सस देखने आते थे। हर्षद को नहीं, कार को।",
+   "gap_before": 0.5
+  },
+  {
+   "id": "V804",
+   "speaker": "V8",
+   "text": "Matlab khaali tiffin. Upar likha paneer, andar kuch nahi.",
+   "say": "मतलब ख़ाली टिफ़िन। ऊपर लिखा पनीर, अंदर कुछ नहीं।"
+  }
+ ]
+}

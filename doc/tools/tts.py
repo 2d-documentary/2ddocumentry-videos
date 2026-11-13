@@ -133,10 +133,12 @@ voice.append(np.zeros(int(SR * t), dtype=np.float32))
 for i, line in enumerate(script["lines"]):
     gap = line.get("gap_before", .12)
     voice.append(np.zeros(int(SR * gap), dtype=np.float32)); t += gap
+    err = None
     try: a, toks = synth(line)
     except Exception as e:
         if not script.get("lenient"): raise
-        print("FAILED", line["id"], e, flush=True); a, toks = np.zeros(int(SR * 1.0), dtype=np.float32), []
+        import traceback; err = (type(e).__name__ + ": " + str(e))[-600:]; traceback.print_exc()
+        print("FAILED", line["id"], err, flush=True); a, toks = np.zeros(int(SR * 1.0), dtype=np.float32), []
     a = a.astype(np.float32)
     # trim leading/trailing silence a little so pauses are controlled by gap_before
     nz = np.where(np.abs(a) > 0.01)[0]; lead = max(0, nz[0] - int(.03 * SR)) if len(nz) else 0; tail = min(len(a), nz[-1] + int(.08 * SR)) if len(nz) else len(a)
@@ -147,7 +149,7 @@ for i, line in enumerate(script["lines"]):
     else:
         toks = [(x, s - shift, e - shift) for x, s, e in toks]; al = align(line["text"].split(), toks, dur)
     words = [{"w": w["w"], "s": round(t + max(0, w["s"]), 3), "e": round(t + min(dur, max(w["e"], w["s"] + .05)), 3)} for w in al]
-    lines.append({"id": line["id"], "speaker": line["speaker"], "start": round(t, 3), "end": round(t + dur, 3), "words": words})
+    lines.append({"id": line["id"], "speaker": line["speaker"], "start": round(t, 3), "end": round(t + dur, 3), "words": words, **({"err": err} if err else {})})
     voice.append(a); t += dur
     if i % 10 == 0: print(f"{line['id']} {t:7.1f}s  {line['speaker']}", flush=True)
 TAIL = float(script.get("tail", 1.2)); voice.append(np.zeros(int(SR * TAIL), dtype=np.float32)); t += TAIL
