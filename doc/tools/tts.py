@@ -71,11 +71,35 @@ def speakable(text):
         out.append(SPOKEN.get(core, core) + punct)
     return " ".join(out)
 
+# ---------- optional engine: AI4Bharat Indic Parler-TTS (open weights, Apache-2.0). No word timestamps -> proportional timing.
+# voice config: {"engine": "parler", "model": "ai4bharat/indic-parler-tts", "description": "Rohit speaks in a natural, expressive tone ..."}
+PARLER = {}
+def parler_synth(text, v):
+    if "m" not in PARLER:
+        try: import parler_tts  # noqa
+        except ImportError:
+            subprocess.run([sys.executable, "-m", "pip", "install", "-q", "git+https://github.com/huggingface/parler-tts.git"], check=True)
+        import torch; from parler_tts import ParlerTTSForConditionalGeneration; from transformers import AutoTokenizer
+        name = v.get("model", "ai4bharat/indic-parler-tts"); torch.set_num_threads(os.cpu_count() or 4)
+        m = ParlerTTSForConditionalGeneration.from_pretrained(name); PARLER.update(m=m, tok=AutoTokenizer.from_pretrained(name), dtok=AutoTokenizer.from_pretrained(m.config.text_encoder._name_or_path), torch=torch)
+    m, tok, dtok, torch = PARLER["m"], PARLER["tok"], PARLER["dtok"], PARLER["torch"]
+    d = dtok(v["description"], return_tensors="pt"); pr = tok(text, return_tensors="pt")
+    with torch.no_grad():
+        g = m.generate(input_ids=d.input_ids, attention_mask=d.attention_mask, prompt_input_ids=pr.input_ids, prompt_attention_mask=pr.attention_mask)
+    a = g.cpu().numpy().squeeze().astype(np.float32); sr = m.config.sampling_rate
+    if sr != SR:
+        from scipy.signal import resample_poly; from math import gcd; k = gcd(sr, SR); a = resample_poly(a, SR // k, sr // k).astype(np.float32)
+    return a
+
 def synth(line):
     v = script["voices"][line["speaker"]]
+    # "read": "text" makes the voice read the Roman caption text (e.g. Indian-English voices reading Hinglish)
+    spoken = speakable(line["text"]) if v.get("read") == "text" or not line.get("say") else line["say"]
     if v.get("engine") == "edge":
-        a, bounds = edge_synth(line["say"] if line.get("say") else speakable(line["text"]), v)
+        a, bounds = edge_synth(spoken, v)
         return a, ("edge", bounds)
+    if v.get("engine") == "parler":
+        return parler_synth(spoken, v), []
     audio, toks, off = [], [], 0.0
     # optional "say": what the voice actually speaks (e.g. Devanagari Hindi), while "text" stays the on-screen/caption words
     # (Roman-script Hindi). Timings then fall back to proportional word spacing over "text".
@@ -109,7 +133,11 @@ voice.append(np.zeros(int(SR * t), dtype=np.float32))
 for i, line in enumerate(script["lines"]):
     gap = line.get("gap_before", .12)
     voice.append(np.zeros(int(SR * gap), dtype=np.float32)); t += gap
-    a, toks = synth(line); a = a.astype(np.float32)
+    try: a, toks = synth(line)
+    except Exception as e:
+        if not script.get("lenient"): raise
+        print("FAILED", line["id"], e, flush=True); a, toks = np.zeros(int(SR * 1.0), dtype=np.float32), []
+    a = a.astype(np.float32)
     # trim leading/trailing silence a little so pauses are controlled by gap_before
     nz = np.where(np.abs(a) > 0.01)[0]; lead = max(0, nz[0] - int(.03 * SR)) if len(nz) else 0; tail = min(len(a), nz[-1] + int(.08 * SR)) if len(nz) else len(a)
     a = a[lead:tail]; shift = lead / SR; dur = len(a) / SR
