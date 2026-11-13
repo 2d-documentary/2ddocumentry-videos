@@ -253,7 +253,8 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8e/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm.480p.vp9.webm",
    "license": "Public domain",
    "attribution": "NASA Kennedy Space Center",
-   "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_Mission_Control_Center_-_Film_Rolls_(KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1).webm"
+   "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_Mission_Control_Center_-_Film_Rolls_(KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1).webm",
+   "rev": 2
   },
   {
    "id": "sc_eagle",
@@ -264,7 +265,8 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4a/The_Eagle_Has_Landed%2C_The_Flight_of_Apollo_11%2C_1969.webm/The_Eagle_Has_Landed%2C_The_Flight_of_Apollo_11%2C_1969.webm.480p.vp9.webm",
    "license": "Public domain",
    "attribution": "US National Archives",
-   "page": "https://commons.wikimedia.org/wiki/File:The_Eagle_Has_Landed,_The_Flight_of_Apollo_11,_1969.webm"
+   "page": "https://commons.wikimedia.org/wiki/File:The_Eagle_Has_Landed,_The_Flight_of_Apollo_11,_1969.webm",
+   "rev": 2
   },
   {
    "id": "sc_launch",
@@ -275,7 +277,8 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/61/Apollo_11_launch%2C_video_of_engines_at_500_fps_%28camera_E-8%29.ogv/Apollo_11_launch%2C_video_of_engines_at_500_fps_%28camera_E-8%29.ogv.480p.vp9.webm",
    "license": "Public domain",
    "attribution": "NASA/Kennedy Space Center",
-   "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_launch,_video_of_engines_at_500_fps_(camera_E-8).ogv"
+   "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_launch,_video_of_engines_at_500_fps_(camera_E-8).ogv",
+   "rev": 2
   },
   {
    "id": "sc_land",
@@ -286,7 +289,8 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3e/Historic_Apollo_11_Moon_Landing_Footage.webm/Historic_Apollo_11_Moon_Landing_Footage.webm.480p.vp9.webm",
    "license": "Public domain",
    "attribution": "NASA",
-   "page": "https://commons.wikimedia.org/wiki/File:Historic_Apollo_11_Moon_Landing_Footage.webm"
+   "page": "https://commons.wikimedia.org/wiki/File:Historic_Apollo_11_Moon_Landing_Footage.webm",
+   "rev": 2
   },
   {
    "id": "sc_walk",
@@ -297,7 +301,8 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/Restored_Apollo_11_Moonwalk_-_Original_NASA_EVA_Mission_Video_-_Walking_on_the_Moon.webm/Restored_Apollo_11_Moonwalk_-_Original_NASA_EVA_Mission_Video_-_Walking_on_the_Moon.webm.480p.vp9.webm",
    "license": "Public domain",
    "attribution": "NASA",
-   "page": "https://commons.wikimedia.org/wiki/File:Restored_Apollo_11_Moonwalk_-_Original_NASA_EVA_Mission_Video_-_Walking_on_the_Moon.webm"
+   "page": "https://commons.wikimedia.org/wiki/File:Restored_Apollo_11_Moonwalk_-_Original_NASA_EVA_Mission_Video_-_Walking_on_the_Moon.webm",
+   "rev": 2
   },
   {
    "id": "sc_intro",
@@ -308,7 +313,8 @@
    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/46/Apollo_11_Intro_720p.ogv/Apollo_11_Intro_720p.ogv.480p.vp9.webm",
    "license": "Public domain",
    "attribution": "NASA",
-   "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_Intro_720p.ogv"
+   "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_Intro_720p.ogv",
+   "rev": 2
   }
  ]
 }

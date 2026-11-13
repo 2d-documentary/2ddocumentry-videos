@@ -124,7 +124,10 @@ def strip_tags(s):
 
 def resolve_commons(page):
     p = urllib.parse.urlsplit(page)
-    if p.hostname == "upload.wikimedia.org":
+    direct = None
+    if p.hostname == "upload.wikimedia.org" and "/transcoded/" in p.path:   # a Commons video transcode (e.g. .480p.vp9.webm)
+        title = "File:" + urllib.parse.unquote(p.path.rsplit("/", 2)[-2]); direct = page.split("?")[0]
+    elif p.hostname == "upload.wikimedia.org":
         title = "File:" + urllib.parse.unquote(p.path.rsplit("/", 1)[-1])
     else:
         m = re.search(r"/wiki/(File:[^?#]+)", p.path) or re.search(r"title=(File:[^&#]+)", p.query)
@@ -142,6 +145,14 @@ def resolve_commons(page):
     meta = ii.get("extmetadata", {})
     val = lambda k: strip_tags(meta.get(k, {}).get("value", ""))
     url = ii["url"] if ii.get("size", 0) <= CONVERT_OVER else ii.get("thumburl", ii["url"])
+    if (ii.get("mime", "").startswith("video/") or ii.get("mime") == "application/ogg"):
+        if direct:
+            url = direct
+        elif ii.get("size", 0) > MAX_BYTES:   # too big: use Commons' 480p transcode instead of the poster thumbnail
+            name = ii["url"].rsplit("/", 1)[-1]
+            url = ii["url"].replace("/wikipedia/commons/", "/wikipedia/commons/transcoded/", 1) + "/" + name + ".480p.vp9.webm"
+        else:
+            url = ii["url"]
     return {
         "url": url,
         "license": val("LicenseShortName") or None,
