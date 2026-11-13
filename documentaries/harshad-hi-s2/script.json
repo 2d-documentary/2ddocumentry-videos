@@ -3,10 +3,10 @@
  "voices": {
   "NARRATOR": {
    "engine": "edge",
-   "voice": "hi-IN-MadhurNeural",
-   "rate": "+8%",
+   "voice": "en-US-AndrewMultilingualNeural",
+   "rate": "+5%",
    "pitch": "+0Hz",
-   "desc": "Microsoft Edge neural Hindi male (free), natural Hinglish"
+   "desc": "Microsoft Edge Andrew Multilingual (free), reads Devanagari say lines"
   }
  },
  "tail": 2.4,
