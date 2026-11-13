@@ -59,7 +59,7 @@ function kfinish() {
   const _d = SHOTS.map(s => s.draw);
   SHOTS.forEach((s, i) => { s.draw = (ctx, t, lt, sh) => { _d[i](ctx, t, lt, sh); kcaps(ctx, t, sh); if (typeof brand === 'function' && EP.brandOn !== false) kbrand(ctx); }; });
 }
-function kbrand(ctx) { text(ctx, EP.brand || 'UNFILED FILMS', W / 2, VERT ? 96 : 60, { font: F.play, size: VERT ? 26 : 22, color: 'rgba(255,255,255,.55)', align: 'center', weight: 700, ls: 6 }); }
+function kbrand(ctx) { text(ctx, EP.brand || 'DAGAR UNFILTERED', W / 2, VERT ? 96 : 60, { font: F.play, size: VERT ? 26 : 22, color: 'rgba(255,255,255,.55)', align: 'center', weight: 700, ls: 6 }); }
 
 function kcapsAlt(ctx, t, g, parts, mode, y, base, dark) { // other subtitle looks from the references
   ctx.save(); ctx.textBaseline = 'alphabetic';
@@ -158,7 +158,7 @@ function yString(ctx, a, b, p, col = '#E6F23C') { // yellow evidence string with
 }
 function headline(ctx, lt, lines, o = {}) { // paper headline card; o.hl = [lineIndex, 'phrase'] gets a black box
   ctx.fillStyle = '#F4F2EE'; ctx.fillRect(0, 0, W, H);
-  const z = (VERT ? 1.02 : 1.2) + lt * .05; ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(z, z); ctx.rotate(o.rot ?? -.025); ctx.translate(-W / 2, -H / 2);
+  const z = (VERT ? 1.02 : 1.0) + lt * .04; ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(z, z); ctx.rotate(o.rot ?? -.025); ctx.translate(-W / 2, -H / 2);
   const size = o.size || (VERT ? 72 : 80), x0 = o.x ?? W * .08; let y = H * (o.y ?? .42);
   lines.forEach((ln, i) => {
     ctx.font = `${i === 0 && o.kicker ? 30 : size}px ${o.font || F.play}`; ctx.fillStyle = '#141414'; ctx.textBaseline = 'alphabetic';
@@ -174,7 +174,7 @@ function headline(ctx, lt, lines, o = {}) { // paper headline card; o.hl = [line
 }
 function calendarPage(ctx, lt, month, day, o = {}) { // fisheye calendar with the day circled
   ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H);
-  const r = VERT ? W * .47 : H * .62; const z = 1.04 + lt * .06;
+  const r = VERT ? W * .47 : H * .4; const z = 1.04 + lt * .06;
   ctx.save(); ctx.translate(W / 2, H / 2); ctx.scale(z, z); ctx.rotate(Math.sin(lt * .8) * .02 - .04);
   ctx.fillStyle = '#F3EEE4'; ctx.fillRect(-r, -r, 2 * r, 2 * r);
   text(ctx, month, -r * .82, -r * .55, { font: F.osw, size: r * (month.length > 7 ? .22 : .28), color: '#D7261E', weight: 700 });

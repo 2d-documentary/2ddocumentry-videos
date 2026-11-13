@@ -1,0 +1,478 @@
+{
+ "title": "Elon Musk: every hand he played (Dagar Unfiltered)",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Conversational narrator"
+  }
+ },
+ "spoken": {
+  "1971": "nineteen seventy-one",
+  "1995": "nineteen ninety-five",
+  "1999": "nineteen ninety-nine",
+  "2000": "two thousand",
+  "2002": "two thousand two",
+  "2006": "two thousand six",
+  "2007": "two thousand seven",
+  "2008": "two thousand eight",
+  "28th": "twenty-eighth",
+  "1": "one",
+  "1.6": "one point six",
+  "1.5": "one point five",
+  "1.1": "one point one",
+  "2012": "twenty twelve",
+  "2015": "twenty fifteen",
+  "2018": "twenty eighteen",
+  "2022": "twenty twenty-two",
+  "2023": "twenty twenty-three",
+  "2024": "twenty twenty-four",
+  "2025": "twenty twenty-five",
+  "2026": "twenty twenty-six",
+  "307": "three hundred and seven",
+  "22": "twenty-two",
+  "180": "a hundred and eighty",
+  "20": "twenty",
+  "44": "forty-four",
+  "75": "seventy-five",
+  "F1": "F one",
+  "PhD": "P H D",
+  "CEO": "C E O",
+  "YMCA": "Y M C A",
+  "US": "U S",
+  "Zip2": "Zip two",
+  "DOGE": "doge",
+  "X.com": "X dot com",
+  "9": "nine"
+ },
+ "tail": 3.0,
+ "lines": [
+  {
+   "id": "L001",
+   "speaker": "NARRATOR",
+   "text": "Elon Musk has gone all in more times than any sane person should.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L002",
+   "speaker": "NARRATOR",
+   "text": "And somehow, the house still hasn't figured out how to stop him.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L003",
+   "speaker": "NARRATOR",
+   "text": "Every big moment in his life is basically the same move. Put everything on the table. Hope the cards are good.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L004",
+   "speaker": "NARRATOR",
+   "text": "So let's look at every hand he's played.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L005",
+   "speaker": "NARRATOR",
+   "text": "Hand number one. Pretoria, South Africa, 1971.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L006",
+   "speaker": "NARRATOR",
+   "text": "Elon is the kid who reads everything. When he runs out of books, he reads the encyclopedia. For fun.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L007",
+   "speaker": "NARRATOR",
+   "text": "At school he's small, nerdy, and badly bullied. So he hides in computers.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L008",
+   "speaker": "NARRATOR",
+   "text": "At twelve, he writes a space shooter game called Blastar, and sells it to a magazine for five hundred dollars.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L009",
+   "speaker": "NARRATOR",
+   "text": "Twelve years old, and already selling space stuff. Some things never change.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L010",
+   "speaker": "NARRATOR",
+   "text": "At seventeen, he leaves for Canada with almost nothing. Then the US. Physics, economics.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L011",
+   "speaker": "NARRATOR",
+   "text": "In 1995, he starts a PhD at Stanford. He lasts two days.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L012",
+   "speaker": "NARRATOR",
+   "text": "Two days. Some people take longer to return a pair of shoes.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L013",
+   "speaker": "NARRATOR",
+   "text": "Because the internet is exploding, and Elon wants in.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L014",
+   "speaker": "NARRATOR",
+   "text": "With his brother Kimbal, he starts Zip2, online city guides for newspapers.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L015",
+   "speaker": "NARRATOR",
+   "text": "Money is so tight, he sleeps in the office and showers at the YMCA.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L016",
+   "speaker": "NARRATOR",
+   "text": "Then in 1999, Compaq buys Zip2 for 307 million dollars. Elon's cut is 22 million. He's twenty seven.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L017",
+   "speaker": "NARRATOR",
+   "text": "So naturally, he buys a million dollar McLaren F1. A few months later, he crashes it. No insurance.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L018",
+   "speaker": "NARRATOR",
+   "text": "First hand, won. Barely kept the car.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L019",
+   "speaker": "NARRATOR",
+   "text": "Hand number two. He goes all in again, on an online bank called X.com.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L020",
+   "speaker": "NARRATOR",
+   "text": "It merges with a rival and becomes a little thing called PayPal.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L021",
+   "speaker": "NARRATOR",
+   "text": "In 2000, while he's on a plane, the board fires him as CEO.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L022",
+   "speaker": "NARRATOR",
+   "text": "Fired from your own company while you're in the air. That's cold.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L023",
+   "speaker": "NARRATOR",
+   "text": "But in 2002, eBay buys PayPal for 1.5 billion dollars, and Elon walks away with around 180 million.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L024",
+   "speaker": "NARRATOR",
+   "text": "Any normal person retires to a beach here.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L025",
+   "speaker": "NARRATOR",
+   "text": "Elon looks at that money and thinks, rockets.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L026",
+   "speaker": "NARRATOR",
+   "text": "Hand number three. The big one.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L027",
+   "speaker": "NARRATOR",
+   "text": "He wants humans on Mars. So he flies to Russia to buy old missiles.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L028",
+   "speaker": "NARRATOR",
+   "text": "It goes badly. Turns out, can I get a discount on your missiles, is not a great opening line.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L029",
+   "speaker": "NARRATOR",
+   "text": "On the flight home, he decides to build his own. SpaceX. 2002.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L030",
+   "speaker": "NARRATOR",
+   "text": "Then he puts millions into a tiny electric car startup called Tesla.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L031",
+   "speaker": "NARRATOR",
+   "text": "Two of the hardest businesses on the planet. At the same time.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L032",
+   "speaker": "NARRATOR",
+   "text": "Falcon 1, flight one. 2006. It crashes.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L033",
+   "speaker": "NARRATOR",
+   "text": "Flight two. 2007. It fails.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L034",
+   "speaker": "NARRATOR",
+   "text": "Flight three. August 2008. It fails again.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L035",
+   "speaker": "NARRATOR",
+   "text": "Tesla's Roadster costs way more to build than anyone planned. Then the financial crisis hits.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L036",
+   "speaker": "NARRATOR",
+   "text": "His marriage ends. He's borrowing money from friends to pay rent.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L037",
+   "speaker": "NARRATOR",
+   "text": "He later called 2008 the worst year of his life.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L038",
+   "speaker": "NARRATOR",
+   "text": "And here's the move. He takes almost everything he has left, and splits it between both companies.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L039",
+   "speaker": "NARRATOR",
+   "text": "Enough for one more launch.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L040",
+   "speaker": "NARRATOR",
+   "text": "September 28th, 2008. Falcon 1, flight four.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L041",
+   "speaker": "NARRATOR",
+   "text": "And holy shit. It reaches orbit.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L042",
+   "speaker": "NARRATOR",
+   "text": "Days before Christmas, NASA hands SpaceX a 1.6 billion dollar contract.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L043",
+   "speaker": "NARRATOR",
+   "text": "And on Christmas Eve, at the last possible moment, Tesla's funding comes through.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L044",
+   "speaker": "NARRATOR",
+   "text": "Two companies, saved in the same week. Santa was clearly a fan.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L045",
+   "speaker": "NARRATOR",
+   "text": "Hand number four. Now he's got chips, and he plays fast.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L046",
+   "speaker": "NARRATOR",
+   "text": "2012. SpaceX's Dragon becomes the first commercial spacecraft to visit the space station.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L047",
+   "speaker": "NARRATOR",
+   "text": "Tesla's Model S shows up, and suddenly electric cars are cool.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L048",
+   "speaker": "NARRATOR",
+   "text": "2015. A Falcon 9 booster flies to space, comes back, and lands standing up. A rocket that parks itself.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L049",
+   "speaker": "NARRATOR",
+   "text": "2018. Falcon Heavy launches with his own cherry red Tesla on top, and a dummy in a spacesuit behind the wheel.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L050",
+   "speaker": "NARRATOR",
+   "text": "It's still out there, looping around the Sun. The most expensive way ever to avoid traffic.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L051",
+   "speaker": "NARRATOR",
+   "text": "But not every bet is a rocket. Some are tweets.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L052",
+   "speaker": "NARRATOR",
+   "text": "In 2018, he tweets that he might take Tesla private. Funding secured.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L053",
+   "speaker": "NARRATOR",
+   "text": "It wasn't. Regulators fined him and Tesla 20 million dollars each.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L054",
+   "speaker": "NARRATOR",
+   "text": "Then the Cybertruck reveal. Unbreakable glass. His designer throws a metal ball at it. It breaks. On stage. Twice.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L055",
+   "speaker": "NARRATOR",
+   "text": "Hand number five. The most expensive impulse buy in history.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L056",
+   "speaker": "NARRATOR",
+   "text": "In 2022, he offers 44 billion dollars for Twitter. Then tries to back out. Then buys it anyway.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L057",
+   "speaker": "NARRATOR",
+   "text": "He walks into headquarters carrying a sink. Let that sink in.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L058",
+   "speaker": "NARRATOR",
+   "text": "He fires most of the staff, sells the blue checks, and renames the whole thing X.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L059",
+   "speaker": "NARRATOR",
+   "text": "Then in 2025, he goes to Washington to run a cost cutting team called DOGE. Hero to some. Villain to others. A few months later, he's out.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L060",
+   "speaker": "NARRATOR",
+   "text": "Meanwhile in Texas, SpaceX is building the biggest rocket ever made. Starship.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L061",
+   "speaker": "NARRATOR",
+   "text": "The first one, in 2023, blows up. SpaceX calls it a rapid unscheduled disassembly.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L062",
+   "speaker": "NARRATOR",
+   "text": "Which is engineer for, it blew the fuck up.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L063",
+   "speaker": "NARRATOR",
+   "text": "But in October 2024, the booster flies back to the tower, and the tower catches it with two giant metal arms.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L064",
+   "speaker": "NARRATOR",
+   "text": "Hand number six. 2026.",
+   "gap_before": 0.6
+  },
+  {
+   "id": "L065",
+   "speaker": "NARRATOR",
+   "text": "In June, SpaceX goes public. It raises 75 billion dollars. The biggest stock market debut ever.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L066",
+   "speaker": "NARRATOR",
+   "text": "By the end of day one, Forbes says Elon is worth about 1.1 trillion dollars. The first trillionaire in history.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L067",
+   "speaker": "NARRATOR",
+   "text": "The guy with three crashed rockets and borrowed rent money.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L068",
+   "speaker": "NARRATOR",
+   "text": "So, genius or lucky?",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L069",
+   "speaker": "NARRATOR",
+   "text": "Honestly, maybe the real answer is simpler.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L070",
+   "speaker": "NARRATOR",
+   "text": "Most people who go all in, lose everything. And you never hear about them.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L071",
+   "speaker": "NARRATOR",
+   "text": "Elon went all in six times. And he's still sitting at the table.",
+   "gap_before": 0.15
+  }
+ ]
+}
