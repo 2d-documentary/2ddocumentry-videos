@@ -44,7 +44,11 @@
   "Zip2": "Zip two",
   "DOGE": "doge",
   "X.com": "X dot com",
-  "9": "nine"
+  "9": "nine",
+  "2028": "twenty twenty-eight",
+  "250": "two hundred and fifty",
+  "850": "eight hundred and fifty",
+  "xAI": "X A I"
  },
  "tail": 3.0,
  "lines": [
@@ -435,41 +439,113 @@
   {
    "id": "L065",
    "speaker": "NARRATOR",
-   "text": "In June, SpaceX goes public. It raises 75 billion dollars. The biggest stock market debut ever.",
+   "text": "In February, SpaceX swallows his AI company, xAI.",
    "gap_before": 0.15
   },
   {
    "id": "L066",
    "speaker": "NARRATOR",
-   "text": "By the end of day one, Forbes says Elon is worth about 1.1 trillion dollars. The first trillionaire in history.",
+   "text": "In June, SpaceX goes public. It raises 75 billion dollars. The biggest stock market debut ever.",
    "gap_before": 0.15
   },
   {
    "id": "L067",
    "speaker": "NARRATOR",
-   "text": "The guy with three crashed rockets and borrowed rent money.",
+   "text": "By the end of day one, Forbes says he's worth about 1.1 trillion dollars. The first trillionaire in history.",
    "gap_before": 0.15
   },
   {
    "id": "L068",
    "speaker": "NARRATOR",
-   "text": "So, genius or lucky?",
+   "text": "The guy with three crashed rockets and borrowed rent money.",
    "gap_before": 0.15
   },
   {
    "id": "L069",
    "speaker": "NARRATOR",
-   "text": "Honestly, maybe the real answer is simpler.",
+   "text": "Tesla starts building the Cybercab. A car with no steering wheel and no pedals.",
    "gap_before": 0.15
   },
   {
    "id": "L070",
    "speaker": "NARRATOR",
-   "text": "Most people who go all in, lose everything. And you never hear about them.",
+   "text": "By September, people in Austin are paying to ride in one.",
    "gap_before": 0.15
   },
   {
    "id": "L071",
+   "speaker": "NARRATOR",
+   "text": "And on September 28th, exactly eighteen years after Falcon 1, Starship finally reaches orbit.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L072",
+   "speaker": "NARRATOR",
+   "text": "Then in October, he shows off the new Roadster. Almost ten years late.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L073",
+   "speaker": "NARRATOR",
+   "text": "Zero to sixty in under a second. And it uses SpaceX thrusters to jump over other cars.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L074",
+   "speaker": "NARRATOR",
+   "text": "His words? Turns out the future does have flying cars.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L075",
+   "speaker": "NARRATOR",
+   "text": "Production starts in 2028. Reserving the top version costs 250 thousand dollars. Just to reserve it.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L076",
+   "speaker": "NARRATOR",
+   "text": "And the bets keep coming. Remember the Cybertruck with the unbreakable glass? Tesla is now winding down its production in Texas.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L077",
+   "speaker": "NARRATOR",
+   "text": "SpaceX and Tesla are reportedly in talks to merge into one giant company.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L078",
+   "speaker": "NARRATOR",
+   "text": "And his fortune has already slipped back under a trillion. Forbes now puts it around 850 billion dollars.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L079",
+   "speaker": "NARRATOR",
+   "text": "Which, let's be honest, is still a lot of rent money.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L080",
+   "speaker": "NARRATOR",
+   "text": "So, genius or lucky?",
+   "gap_before": 0.5
+  },
+  {
+   "id": "L081",
+   "speaker": "NARRATOR",
+   "text": "Honestly, maybe the real answer is simpler.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L082",
+   "speaker": "NARRATOR",
+   "text": "Most people who go all in, lose everything. And you never hear about them.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "L083",
    "speaker": "NARRATOR",
    "text": "Elon went all in six times. And he's still sitting at the table.",
    "gap_before": 0.15

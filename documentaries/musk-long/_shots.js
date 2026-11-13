@@ -4,7 +4,7 @@ function scenes() {
   const ILL = 'Illustrative · Starship test footage, NASA', ILL2 = 'Illustrative · SpaceX launch 2024, CC BY 3.0';
   const TR = ['zoom', 'flash', 'blur', 'bar', 'zoom', 'pix', 'blur', 'glitch'];
   const wallA = ['p_2006', 'p_2008', 'p_2008b', 'p_2015', 'f1_omelek', 'p_roadster08', 'p_griffin', 'falconheavy', 'p_twitter', 'cybertruck', 'starship_ift5', 'p_doge'];
-  const wallB = ['dragon_iss', 'modelS', 'f9_arc', 'roadster_space', 'demo2', 'p_model3', 'starlink_train', 'p_laugh', 'nasdaq26', 'p_starship', 'boring_tunnel', 'x_hq'];
+  const wallB = ['dragon_iss', 'modelS', 'f9_arc', 'roadster_space', 'demo2', 'p_model3', 'p_laugh', 'nasdaq26', 'p_starship', 'boring_tunnel', 'x_hq'];
   const SPOT = { p_griffin: [.89, .15, 'Elon Musk'], p_bolden: [.62, .3, 'Elon Musk'], p_obama: [.52, .4, 'Elon Musk'], p_franz: [.57, .35, 'Elon Musk'], p_twitter: [.77, .36, 'Elon Musk'] };
   const chips = (ctx, t, s0, n = 8, k = 1) => { for (let i = 0; i < n; i++) { const p = E.inOut(prog(t, s0 + i * .06, s0 + .45 + i * .06)), a = i / n * 6.28;
     chipStack(ctx, lerp(i % 2 ? W + 120 : -120, CX + Math.cos(a) * 190 * k, p), lerp(H + 100, H * .62 + Math.sin(a) * 80 * k, p), 100 * k, 7 + (i % 4), ['#C8322A', '#1F4FA8', '#111', '#E8B12E'][i % 4]); } };
@@ -13,13 +13,13 @@ function scenes() {
   const DRAW = {
     ph: (ctx, t, lt, sh, a, o) => { if (o.shake) { const k = (hash(Math.floor(t * 30)) - .5) * o.shake; ctx.save(); ctx.translate(k, k * .6); } kPhoto(ctx, a, lt, { z0: o.z0 ?? 1.14 * (lt > .9 ? 1.08 : 1), zs: o.zs, grade: o.grade || 'mood', fx: o.fx, fy: o.fy, shade: o.shade, pull: o.pull }); if (o.shake) ctx.restore();
       if (o.snow) snow(ctx, t, 100); if (o.leak) lightLeak(ctx, t, .3); if (o.embers) embers(ctx, t, .6); if (o.cracks) cracks(ctx, CX, H * .45, prog(t, T(...o.cracks), T(...o.cracks) + .4));
-      if (o.stamp) stamp(ctx, o.stamp[0], CX, H * .4, t, T(o.stamp[1], o.stamp[2]), { size: 130, color: '#D7261E' }); kGrade(ctx, t); tag(ctx, a); },
+      if (o.stamp) stamp(ctx, o.stamp[0], CX, H * .4, t, T(o.stamp[1], o.stamp[2]), { size: 130, color: '#D7261E' }); kGrade(ctx, t); if (o.note) sourceTag(ctx, o.note + ' · ' + (credit(a) || '').slice(0, 60)); else tag(ctx, a); },
     spot: (ctx, t, lt, sh, a, o) => { const s = SPOT[a], op = { zoom: o.zoom || 1.15, fx: lerp(o.fx0 ?? .3, s[0], E.inOut(prog(lt, 0, .7))), fy: s[1], grade: 'mood' }; photo(ctx, a, op);
       const [x, y] = photoPt(a, op, s[0], s[1]); spotlight(ctx, x, y, o.r || 170, (o.r || 170) * 1.2, prog(lt, .6, 1), { name: s[2] }); kGrade(ctx, t); tag(ctx, a); },
     wall: (ctx, t, lt, sh, a) => { photoWall(ctx, t, a === 'B' ? wallB : wallA, { pan: 1.4 }); kGrade(ctx, t, { bloom: .35 }); },
     big: (ctx, t, lt, sh, a, o) => { bigWord(ctx, a, lt, { italic: o.italic !== false }); },
     chap: (ctx, t, lt, sh, a) => { bgGrad(ctx, '#0B0D14', '#000', 'r'); const p = E.out(prog(lt, 0, .5)); ctx.fillStyle = '#E6F23C'; ctx.fillRect(CX - 60 * p, H * .36, 120 * p, 4); bigWord(ctx, a, lt, { italic: true, keepBG: true, size: 190 }); },
-    num: (ctx, t, lt, sh, a, o) => { glowNum(ctx, 0, a, lt, { pre: '$', y: .42, dur: 1.2, sub: o.sub }); if (o.rain) moneyRain(ctx, t, sh.start + .5, 'bill100', EP.billCrop, 40, { spread: 1.2 }); },
+    num: (ctx, t, lt, sh, a, o) => { glowNum(ctx, o.from || 0, a, lt, { pre: '$', y: .42, dur: 1.2, sub: o.sub }); if (o.rain) moneyRain(ctx, t, sh.start + .5, 'bill100', EP.billCrop, 40, { spread: 1.2 }); },
     head: (ctx, t, lt, sh, a, o) => { headline(ctx, lt, a, { kicker: true, hl: o.hl, y: .3, size: 110, x: 160 }); },
     cal: (ctx, t, lt, sh, a, o) => { calendarPage(ctx, lt, a[0], a[1], { year: a[2], start: a[3] ?? 1, len: a[4] }); if (o.snow) snow(ctx, t, 90); },
     clip: (ctx, t, lt, sh, a, o) => { clipFrame(ctx, a[0], a[1], lt, { from: o.from || 0, z0: o.z0 || 1.15, fx: o.fx, fy: o.fy, grade: o.grade || 'cine', shake: o.shake }); if (o.boom) boom(ctx, CX, H * .5, t, sh.start + .1, 1100); kGrade(ctx, t, { bloom: .45 }); sourceTag(ctx, a[0].startsWith('boom') || a[0] === 'up' ? ILL : ILL2); },
@@ -37,6 +37,10 @@ function scenes() {
     split: (ctx, t, lt, sh, a) => { const p = E.inOut(prog(lt, 0, .5)); photo(ctx, a[0], { x: 0, y: 0, w: W / 2 - 4, h: H, zoom: 1.1 + lt * .03, grade: 'mood' }); photo(ctx, a[1], { x: W / 2 + 4, y: H * (1 - p), w: W / 2 - 4, h: H, zoom: 1.1 + lt * .03, grade: 'mood' }); ctx.fillStyle = '#000'; ctx.fillRect(W / 2 - 4, 0, 8, H); kGrade(ctx, t); },
     stack: (ctx, t, lt, sh, a) => { desk(ctx, t, { a: '#1C1610' }); cashStack(ctx, CX, H * .62, 1.3, Math.max(1, 6 - Math.floor(lt * 5))); kGrade(ctx, t); },
     tweet: (ctx, t, lt, sh, a) => { bgGrad(ctx, '#0B1220', '#000', 'r'); postCard(ctx, CX, H * .45, 1000, a, t, sh.start, { name: 'Elon Musk', handle: '@elonmusk', date: 'Aug 7, 2018', h: 330 }); kGrade(ctx, t); },
+    jump: (ctx, t, lt, sh, a, o) => { const k = T(...o.at), p = E.out(prog(t, k - .1, k + .5)), q = E.in(prog(t, k + .6, k + 1.1)), up = p * (1 - q);
+      ctx.save(); const sk = up > .02 ? (hash(Math.floor(t * 30)) - .5) * 16 : 0; ctx.translate(sk, sk * .5); photo(ctx, a, { zoom: 1.12 + lt * .03, fx: .5, fy: .5 + up * .35, grade: 'cine' }); ctx.restore();
+      if (up > .02) { speedLines(ctx, t); const g = ctx.createRadialGradient(CX, H, 0, CX, H, H * .6); g.addColorStop(0, `rgba(255,220,160,${.75 * up})`); g.addColorStop(.4, `rgba(255,120,40,${.45 * up})`); g.addColorStop(1, 'rgba(255,80,20,0)'); ctx.save(); ctx.globalCompositeOperation = 'screen'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.restore(); }
+      kGrade(ctx, t, { bloom: .4 }); sourceTag(ctx, 'Roadster prototype (2017 reveal) · ' + (credit(a) || '').slice(0, 60)); },
     dark: (ctx, t, lt) => { bgGrad(ctx, '#0E1018', '#000', 'r'); fog(ctx, t, .2); kGrade(ctx, t); },
     roadorbit: (ctx, t, lt) => { bgGrad(ctx, '#05070D', '#000', 'r'); stars(ctx, t, 160, 3); const sx = CX, sy = H / 2; const g = ctx.createRadialGradient(sx, sy, 0, sx, sy, 120); g.addColorStop(0, '#FFF6D8'); g.addColorStop(.3, '#FFC34D'); g.addColorStop(1, 'rgba(255,150,40,0)'); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(sx, sy, 120, 0, 7); ctx.fill();
       ctx.strokeStyle = 'rgba(120,180,255,.6)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(sx, sy, 230, 0, 7); ctx.stroke(); ctx.strokeStyle = 'rgba(232,33,39,.85)'; ctx.lineWidth = 4; ctx.beginPath(); ctx.ellipse(sx + 40, sy, 420, 330, 0, 0, 7); ctx.stroke();
@@ -108,13 +112,25 @@ function scenes() {
     ['L062', 'Which', 'clip', ['ign', 35], { from: 8, z0: 2.6, fy: .7, grade: 'fire', shake: 26, boom: true, tr: 'glitch', capMode: 'stack' }],
     ['L063', 'But', 'ph', 'starship_ift5', { grade: 'cine' }], ['L063', 'tower', 'clip', ['tower', 44], { z0: 2.4, fx: .62, fy: .55 }], ['L063', 'catches', 'clip', ['tower', 44], { from: 20, z0: 3, fx: .64, fy: .55 }],
     ['L064', 'Hand', 'chap', 'hand six.', { cap: false, name: 'ch6' }],
-    ['L065', 'In', 'ph', 'nasdaq26', { grade: 'cine' }], ['L065', 'raises', 'num', 75000000000, { capY: .62 }], ['L065', 'biggest', 'ph', 'nasdaq', { grade: 'cine' }],
-    ['L066', 'By', 'num', 1100000000000, { rain: true, capY: .62 }], ['L066', 'first', 'ph', 'p_royal', { grade: 'cine', fy: .3 }],
-    ['L067', 'The', 'rockets', 0, { capY: .3 }], ['L067', 'borrowed', 'desk', 'RENT\nDUE', { capMode: 'box' }],
-    ['L068', 'So', 'ph', 'p_laugh', { grade: 'mood', fy: .3 }], ['L068', 'lucky', 'ph', 'p_royal', { grade: 'ink', fy: .3 }],
-    ['L069', 'Honestly', 'ph', 'p_2015', { grade: 'ink', fy: .3, pull: true }],
-    ['L070', 'Most', 'felt', 'sweep', { capY: .3 }], ['L070', 'you', 'dark', 0, {}],
-    ['L071', 'Elon', 'ph', 'p_royal', { grade: 'cine', fy: .3 }], ['L071', 'still', 'felt', 'glow', { capY: .3 }],
+    ['L065', 'In', 'crt', 0, { txt: 'xAI', capY: .9 }], ['L065', 'xAI', 'big', 'xAI.', { cap: false, italic: false }],
+    ['L066', 'In', 'ph', 'nasdaq26', { grade: 'cine' }], ['L066', 'raises', 'num', 75000000000, { capY: .62 }], ['L066', 'biggest', 'ph', 'nasdaq', { grade: 'cine' }],
+    ['L067', 'By', 'num', 1100000000000, { rain: true, capY: .62 }], ['L067', 'first', 'ph', 'p_royal', { grade: 'cine', fy: .3 }],
+    ['L068', 'The', 'rockets', 0, { capY: .3 }], ['L068', 'borrowed', 'desk', 'RENT\nDUE', { capMode: 'box' }],
+    ['L069', 'Tesla', 'ph', 'cybercab1', { grade: 'cine' }], ['L069', 'steering', 'ph', 'cybercab1', { grade: 'cine', z0: 1.6, fx: .42, fy: .5, capMode: 'caps' }],
+    ['L070', 'By', 'crt', 'cybercab2', { capY: .9 }],
+    ['L071', 'And', 'cal', ['SEPTEMBER', 28, '2026', 2, 30], { capY: .92 }], ['L071', 'eighteen', 'split', ['f1_flight4', 'starship_11'], {}], ['L071', 'Starship', 'ph', 'starship_iss', { grade: 'cine' }],
+    ['L072', 'Then', 'cal', ['OCTOBER', 15, '2026', 4], { capY: .92 }], ['L072', 'Roadster', 'ph', 'roadster2b', { grade: 'cine', note: 'Roadster prototype (2017 reveal)' }], ['L072', 'Almost', 'big', 'ten years late.', { cap: false }],
+    ['L073', 'Zero', 'big', '0–60 in < 1 s', { cap: false, italic: false }], ['L073', 'SpaceX', 'jump', 'roadster2b', { at: ['L073', 'jump'] }],
+    ['L074', 'His', 'ph', 'p_laugh', { grade: 'mood', fy: .3 }], ['L074', 'Turns', 'dark', 0, { capMode: 'stack' }],
+    ['L075', 'Production', 'big', '2028.', { cap: false, italic: false }], ['L075', 'Reserving', 'num', 250000, { capY: .62 }],
+    ['L076', 'And', 'felt', 'chips', { capY: .25 }], ['L076', 'Remember', 'ph', 'cybertruck', { grade: 'cine' }], ['L076', 'Tesla', 'ph', 'cybertruck', { grade: 'ink', shade: .4, stamp: ['WINDING DOWN', 'L076', 'winding'] }],
+    ['L077', 'SpaceX', 'split', ['f9_lz1', 'modelS'], {}], ['L077', 'merge', 'big', 'one company.', { cap: false }],
+    ['L078', 'And', 'num', 850000000000, { from: 1100000000000, capY: .62 }], ['L078', 'Forbes', 'ph', 'p_2015', { grade: 'ink', fy: .3 }],
+    ['L079', 'Which', 'desk', 'RENT\nDUE', { capMode: 'box' }],
+    ['L080', 'So', 'ph', 'p_laugh', { grade: 'mood', fy: .3 }], ['L080', 'lucky', 'ph', 'p_royal', { grade: 'ink', fy: .3 }],
+    ['L081', 'Honestly', 'ph', 'p_2015', { grade: 'ink', fy: .3, pull: true }],
+    ['L082', 'Most', 'felt', 'sweep', { capY: .3 }], ['L082', 'you', 'dark', 0, {}],
+    ['L083', 'Elon', 'ph', 'p_royal', { grade: 'cine', fy: .3 }], ['L083', 'still', 'felt', 'glow', { capY: .3 }],
   ];
   P.forEach(([id, w, type, a, o = {}], i) => {
     const tr = o.tr || TR[i % TR.length];
@@ -123,10 +139,10 @@ function scenes() {
   // story SFX only (no sounds on cuts)
   cue(T('L032', 'crashes'), 'impact', .7); cue(T('L033', 'fails'), 'impact', .6); cue(T('L034', 'fails'), 'impact', .6); cue(T('L061', 'blows'), 'impact', .8);
   cue(T('L017', 'crashes'), 'thud', .7); cue(T('L021', 'fires'), 'stamp', .7); cue(T('L053', 'It'), 'stamp', .7); cue(T('L017', 'No'), 'stamp', .7);
-  cue(T('L023', 'Elon') + .5, 'cash', .5); cue(T('L066', 'By') + .5, 'cash', .5); cue(T('L054', 'breaks'), 'impact', .5);
+  cue(T('L023', 'Elon') + .5, 'cash', .5); cue(T('L067', 'By') + .5, 'cash', .5); cue(T('L076', 'winding'), 'stamp', .7); cue(T('L054', 'breaks'), 'impact', .5);
   cue(T('L041', 'shit') - .02, 'beep', 1, T('L041', 'shit', 'e') - T('L041', 'shit') + .06); cue(T('L062', 'fuck') - .02, 'beep', 1, T('L062', 'fuck', 'e') - T('L062', 'fuck') + .06);
   // silent end card
-  shot(LINE['L071'].end + .6, (ctx, t, lt) => { bgGrad(ctx, '#0A0C14', '#000', 'r'); stars(ctx, t, 120, 2, .5); ctx.save(); ctx.globalAlpha = E.out(prog(lt, 0, .6));
+  shot(LINE['L083'].end + .6, (ctx, t, lt) => { bgGrad(ctx, '#0A0C14', '#000', 'r'); stars(ctx, t, 120, 2, .5); ctx.save(); ctx.globalAlpha = E.out(prog(lt, 0, .6));
     glowText(ctx, 'Dagar Unfiltered', CX, H * .52, { font: F.play, size: 120, color: '#fff', align: 'center', glow: 'rgba(255,255,255,.8)', blur: 50 }); ctx.restore(); kIn(ctx, lt, 'blur'); fadeOut(ctx, t, TL.duration, .6); }, { cap: false, brandOff: true });
   kfinish();
 }
