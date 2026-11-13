@@ -2,10 +2,11 @@
  "title": "Khaali Rasid",
  "voices": {
   "NARRATOR": {
-   "voice": "hm_omega",
-   "speed": 1.05,
-   "lang": "h",
-   "desc": "Hindi male narrator, natural Hinglish"
+   "engine": "edge",
+   "voice": "hi-IN-MadhurNeural",
+   "rate": "+8%",
+   "pitch": "+0Hz",
+   "desc": "Microsoft Edge neural Hindi male (free), natural Hinglish"
   }
  },
  "tail": 2.4,

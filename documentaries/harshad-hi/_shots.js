@@ -3,12 +3,12 @@ function scenes() {
   shot(['H001', 'April'], (ctx, t, lt) => { pBG(ctx, 'sbi_mumbai', lt, { grade: 'night', tint: 'navy', tintAmt: .5, shade: .25 }); rain(ctx, t, .6);
     timeStamp(ctx, 'APRIL 1992', 120, 200, t, T('H001', 'April'), { size: 96 }); lowerTag(ctx, 'STATE BANK OF INDIA', 'Mumbai main branch', t, T('H001', 'State'));
     phoneRing(ctx, 1500, 640, .9, t); fadeIn(ctx, t, 0, .6); cred(ctx, 'sbi_mumbai'); }, { lead: .3, name: 'o-sbi' });
-  cue(T('H001', 'April'), 'riser', .6); cue(T('H001', 'bulawa'), 'ding', .5);
+  cue(T('H001', 'April'), 'riser', .6); cue(T('H001', 'call'), 'ding', .5);
   shot(['H002', 'Sawaal'], (ctx, t, lt) => { darkBG(ctx, t, '#2A0A0A', '#000'); glitch(ctx, t, .25, 3);
     text(ctx, 'SAWAAL SIRF EK', W / 2, 260, { font: F.osw, size: 44, color: 'rgba(246,240,228,.75)', align: 'center', weight: 600, ls: 10 });
     rsCount(ctx, t, T('H002', '500'), 0, 500, W / 2, 560, { size: 210, dur: .8 }); punch(ctx, 'KAHAN HAIN?', W / 2, 800, t, T('H002', 'kahan'), { font: F.bebas, size: 170, color: HM.blood }); }, { name: 'o-500' });
   cue(T('H002', '500'), 'cash', .9); cue(T('H002', 'kahan'), 'hit', .8);
-  shot(['H003', 'Ye'], (ctx, t, lt) => { pBG(ctx, 'bull_bse', lt, { grade: 'warm', shade: .35, fy: .45 }); lightLeak(ctx, t, .4, 2);
+  shot(['H003', 'Aur'], (ctx, t, lt) => { pBG(ctx, 'bull_bse', lt, { grade: 'warm', shade: .35, fy: .45 }); lightLeak(ctx, t, .4, 2);
     punch(ctx, 'THE BIG BULL', W / 2, 860, t, T('H003', 'Big'), { font: F.bebas, size: 200, color: HM.gold, shadow: 30 }); cred(ctx, 'bull_bse'); }, { name: 'o-bull' });
   cue(T('H003', 'Big'), 'impact', .8);
   shot(['H004', 'Lexus'], (ctx, t, lt) => { darkBG(ctx, t); const ks = [['lexus', 'LEXUS', 'Lexus'], ['worli_sea', 'SEA-FACE PENTHOUSE', 'samundar'], ['dalal_sign', 'DALAL STREET', 'Dalal']];
@@ -207,8 +207,8 @@ function scenes() {
     if (t > T('H055', 'securities')) { text(ctx, 'SECURITIES', 1400, 420, { font: F.bebas, size: 160, color: '#fff', align: 'center' }); bigX(ctx, 1400, 580, 60, prog(t, T('H055', 'gayab'), T('H055', 'gayab') + .5)); }
     if (t > T('H055', '500')) rsText(ctx, '500 CRORE  →  HARSHAD', W / 2, 860, { size: 110, glow: 'rgba(255,190,60,.6)' }); }, { name: 'c4-gap' });
   cue(T('H055', 'gayab'), 'hit', .7); cue(T('H055', '500'), 'cash', .7);
-  shot(['H056', 'Yahi'], (ctx, t, lt) => { pBG(ctx, 'sbi_mumbai', lt, { grade: 'night', tint: 'navy', tintAmt: .5, shade: .3 }); phoneRing(ctx, W / 2, 560, 1.2, t); text(ctx, 'WAHI BULAWA', W / 2, 880, { font: F.bebas, size: 120, color: HM.gold, align: 'center', alpha: prog(t, T('H056', 'bulawa'), T('H056', 'bulawa') + .3) }); cred(ctx, 'sbi_mumbai'); }, { name: 'c4-call' });
-  cue(T('H056', 'bulawa'), 'ding', .6);
+  shot(['H056', 'Yaad'], (ctx, t, lt) => { pBG(ctx, 'sbi_mumbai', lt, { grade: 'night', tint: 'navy', tintAmt: .5, shade: .3 }); phoneRing(ctx, W / 2, 560, 1.2, t); text(ctx, 'WAHI BULAWA', W / 2, 880, { font: F.bebas, size: 120, color: HM.gold, align: 'center', alpha: prog(t, T('H056', 'call'), T('H056', 'call') + .3) }); cred(ctx, 'sbi_mumbai'); }, { name: 'c4-call' });
+  cue(T('H056', 'call'), 'ding', .6);
   shot(['H057', 'Ye'], (ctx, t, lt) => { darkBG(ctx, t, '#101A2A', '#03050A'); if (t > T('H057', 'journalist')) frame(ctx, 'sucheta', 1060, 160, 620, 520, { grade: 'color', fy: .4 });
     kicker(ctx, 'JOURNALIST', 140, 360, t, T('H057', 'journalist'), { color: HM.gold }); bigTitle(ctx, 'SUCHETA DALAL', 140, 520, t, T('H057', 'Sucheta'), { size: 150, bar: HM.gold });
     text(ctx, 'THE TIMES OF INDIA (1992)', 150, 600, { font: F.osw, size: 40, color: 'rgba(255,255,255,.75)', weight: 600, ls: 5, alpha: prog(t, T('H057', 'Times'), T('H057', 'Times') + .3) }); text(ctx, 'Photo: 2019', 1680, 750, { font: F.mono, size: 22, color: 'rgba(255,255,255,.6)', align: 'right' }); cred(ctx, 'sucheta'); }, { name: 'c4-sucheta' });

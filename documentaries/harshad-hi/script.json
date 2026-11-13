@@ -2,10 +2,11 @@
  "title": "Harshad Mehta: Big Bull ka sach",
  "voices": {
   "NARRATOR": {
-   "voice": "hm_omega",
-   "speed": 1.05,
-   "lang": "h",
-   "desc": "Hindi male narrator, natural Hinglish"
+   "engine": "edge",
+   "voice": "hi-IN-MadhurNeural",
+   "rate": "+8%",
+   "pitch": "+0Hz",
+   "desc": "Microsoft Edge neural Hindi male (free), natural Hinglish"
   }
  },
  "tail": 3.0,
@@ -13,21 +14,21 @@
   {
    "id": "H001",
    "speaker": "NARRATOR",
-   "text": "April 1992. Mumbai mein ek stockbroker ko State Bank of India ka bulawa aaya.",
-   "say": "अप्रैल उन्नीस सौ बानवे। मुंबई में एक स्टॉकब्रोकर को स्टेट बैंक ऑफ़ इंडिया का बुलावा आया।",
+   "text": "April 1992. Mumbai ke ek stockbroker ke paas State Bank of India se ek call aata hai.",
+   "say": "अप्रैल उन्नीस सौ बानवे। मुंबई के एक स्टॉकब्रोकर के पास, स्टेट बैंक ऑफ़ इंडिया से एक कॉल आता है।",
    "gap_before": 0.3
   },
   {
    "id": "H002",
    "speaker": "NARRATOR",
-   "text": "Sawaal sirf ek tha. Hamare 500 crore rupaye kahan hain?",
-   "say": "सवाल सिर्फ़ एक था। हमारे पाँच सौ करोड़ रुपये कहाँ हैं?"
+   "text": "Sawaal sirf ek hai. Hamare 500 crore rupaye kahan hain?",
+   "say": "सवाल सिर्फ़ एक है। हमारे पाँच सौ करोड़ रुपये कहाँ हैं?"
   },
   {
    "id": "H003",
    "speaker": "NARRATOR",
-   "text": "Ye wahi aadmi tha jise poora desh Big Bull kehta tha.",
-   "say": "ये वही आदमी था जिसे पूरा देश बिग बुल कहता था।"
+   "text": "Aur ye koi aam broker nahi tha. Ye wahi aadmi tha jise poora desh Big Bull kehta tha.",
+   "say": "और ये कोई आम ब्रोकर नहीं था। ये वही आदमी था, जिसे पूरा देश बिग बुल कहता था।"
   },
   {
    "id": "H004",
@@ -51,8 +52,8 @@
   {
    "id": "H007",
    "speaker": "NARRATOR",
-   "text": "Chapter ek. Hosiery se Dalal Street tak.",
-   "say": "चैप्टर एक। होज़री से दलाल स्ट्रीट तक।",
+   "text": "Chapter one. Hosiery se Dalal Street tak.",
+   "say": "चैप्टर वन। होज़री से दलाल स्ट्रीट तक।",
    "gap_before": 0.6
   },
   {
@@ -131,8 +132,8 @@
   {
    "id": "H020",
    "speaker": "NARRATOR",
-   "text": "Chapter do. Big Bull.",
-   "say": "चैप्टर दो। बिग बुल।",
+   "text": "Chapter two. Big Bull.",
+   "say": "चैप्टर टू। बिग बुल।",
    "gap_before": 0.6
   },
   {
@@ -224,8 +225,8 @@
   {
    "id": "H035",
    "speaker": "NARRATOR",
-   "text": "Chapter teen. Khaali rasid ka khel.",
-   "say": "चैप्टर तीन। ख़ाली रसीद का खेल।",
+   "text": "Chapter three. Khaali rasid ka khel.",
+   "say": "चैप्टर थ्री। ख़ाली रसीद का खेल।",
    "gap_before": 0.6
   },
   {
@@ -335,8 +336,8 @@
   {
    "id": "H053",
    "speaker": "NARRATOR",
-   "text": "Chapter chaar. Bhanda phoota.",
-   "say": "चैप्टर चार। भांडा फूटा।",
+   "text": "Chapter four. Bhanda phoota.",
+   "say": "चैप्टर फ़ोर। भांडा फूटा।",
    "gap_before": 0.6
   },
   {
@@ -354,8 +355,8 @@
   {
    "id": "H056",
    "speaker": "NARRATOR",
-   "text": "Yahi wo bulawa tha, jisse humne kahani shuru ki thi.",
-   "say": "यही वो बुलावा था, जिससे हमने कहानी शुरू की थी।"
+   "text": "Yaad hai wo call, jisse humne kahani shuru ki thi? Wo yahi tha.",
+   "say": "याद है वो कॉल, जिससे हमने कहानी शुरू की थी? वो यही था।"
   },
   {
    "id": "H057",
@@ -435,8 +436,8 @@
   {
    "id": "H069",
    "speaker": "NARRATOR",
-   "text": "Chapter paanch. Arrest aur ek suitcase.",
-   "say": "चैप्टर पाँच। अरेस्ट और एक सूटकेस।",
+   "text": "Chapter five. Arrest aur ek suitcase.",
+   "say": "चैप्टर फ़ाइव। अरेस्ट और एक सूटकेस।",
    "gap_before": 0.6
   },
   {
@@ -509,8 +510,8 @@
   {
    "id": "H081",
    "speaker": "NARRATOR",
-   "text": "Chapter chhah. Big Bull ka ant.",
-   "say": "चैप्टर छह। बिग बुल का अंत।",
+   "text": "Chapter six. Big Bull ka ant.",
+   "say": "चैप्टर सिक्स। बिग बुल का अंत।",
    "gap_before": 0.6
   },
   {
@@ -565,8 +566,8 @@
   {
    "id": "H090",
    "speaker": "NARRATOR",
-   "text": "Chapter saat. Wo scam jisne bazaar badal diya.",
-   "say": "चैप्टर सात। वो स्कैम जिसने बाज़ार बदल दिया।",
+   "text": "Chapter seven. Wo scam jisne bazaar badal diya.",
+   "say": "चैप्टर सेवन। वो स्कैम जिसने बाज़ार बदल दिया।",
    "gap_before": 0.6
   },
   {

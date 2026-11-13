@@ -1,11 +1,10 @@
-"""Narration with Kokoro-82M (free, Apache-2.0 open weights). One wav for the whole episode plus a word-level timeline.
+"""Narration with Kokoro-82M (free, Apache-2.0 open weights), or Microsoft Edge neural voices when a voice sets "engine": "edge". One wav for the whole episode plus a word-level timeline.
 usage: python doc/tools/tts.py documentaries/<ep> build/<ep> [part]   ->  build/<ep>/voice.wav, build/<ep>/timeline.json
 Each script line is synthesised with its speaker's voice/speed; word times come from Kokoro's token timestamps and are
 mapped back onto the script's own words (so scene cues like ['L034', 'Great'] resolve exactly)."""
-import json, os, re, sys
+import json, os, re, sys, asyncio, subprocess, tempfile, time
 import numpy as np
 from scipy.io import wavfile
-from kokoro import KPipeline
 
 SR = 24000
 ep, out = sys.argv[1], sys.argv[2]
@@ -15,8 +14,53 @@ PART = sys.argv[3] if len(sys.argv) > 3 else None
 if PART: script["lines"] = [l for l in script["lines"] if PART in l.get("parts", ["full"])]
 pipes = {}
 def pipe(lang):
-    if lang not in pipes: pipes[lang] = KPipeline(lang_code=lang)
+    if lang not in pipes:
+        from kokoro import KPipeline   # imported lazily so "engine": "edge" episodes don't need it
+        pipes[lang] = KPipeline(lang_code=lang)
     return pipes[lang]
+
+# ---------- optional engine: Microsoft Edge neural voices (free, e.g. hi-IN-MadhurNeural) via the edge-tts package.
+# voice config: {"engine": "edge", "voice": "hi-IN-MadhurNeural", "rate": "+8%", "pitch": "+0Hz"}
+def edge_synth(text, v):
+    import edge_tts
+    async def run():
+        com = edge_tts.Communicate(text, v["voice"], rate=v.get("rate", "+0%"), pitch=v.get("pitch", "+0Hz"), volume=v.get("volume", "+0%"), boundary="WordBoundary")
+        mp3, bounds = bytearray(), []
+        async for ch in com.stream():
+            if ch["type"] == "audio": mp3.extend(ch["data"])
+            elif ch["type"] == "WordBoundary": bounds.append((ch["text"], ch["offset"] / 1e7, (ch["offset"] + ch["duration"]) / 1e7))
+        return bytes(mp3), bounds
+    for attempt in range(5):
+        try:
+            mp3, bounds = asyncio.run(run())
+            if mp3: break
+        except Exception as e:
+            print("edge-tts retry", attempt, e, flush=True); time.sleep(3 + attempt * 4)
+    else: raise RuntimeError("edge-tts failed for: " + text[:60])
+    with tempfile.TemporaryDirectory() as d:
+        open(os.path.join(d, "a.mp3"), "wb").write(mp3)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", os.path.join(d, "a.mp3"), "-ac", "1", "-ar", str(SR), os.path.join(d, "a.wav")], check=True)
+        sr, a = wavfile.read(os.path.join(d, "a.wav"))
+    a = a.astype(np.float32) / (32768.0 if a.dtype == np.int16 else 1.0)
+    return a, bounds
+
+def weight(w):  # rough spoken length of a caption word (digits are spoken as long number words)
+    core = re.sub(r"[^\w]", "", w); dg = sum(c.isdigit() for c in core)
+    return max(1, len(core) - dg + dg * 4)
+
+def map_bounds(words, bounds, dur):
+    """Map caption words (Roman) onto the spoken word boundaries (Devanagari) by matching relative position along the line."""
+    if not bounds: return None
+    bw = [max(1, len(b[0])) for b in bounds]; btot = sum(bw); cum = np.cumsum([0] + bw) / btot
+    def time_at(f):
+        f = min(max(f, 0), 1); i = min(int(np.searchsorted(cum, f, side="right") - 1), len(bounds) - 1)
+        s, e = bounds[i][1], bounds[i][2]; lo, hi = cum[i], cum[i + 1]
+        return s + (e - s) * ((f - lo) / (hi - lo) if hi > lo else 0)
+    ws = [weight(w) for w in words]; tot = sum(ws); acc, res = 0, []
+    for w, k in zip(words, ws):
+        s = time_at(acc / tot); acc += k; e = time_at(acc / tot - 1e-6)
+        res.append({"w": w, "s": float(round(s, 3)), "e": float(round(max(e, s + .05), 3))})
+    return res
 norm = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())
 # Kokoro reads digits; make dates and numbers speakable the way a narrator would say them
 SPOKEN = script.get("spoken", {})
@@ -29,6 +73,9 @@ def speakable(text):
 
 def synth(line):
     v = script["voices"][line["speaker"]]
+    if v.get("engine") == "edge":
+        a, bounds = edge_synth(line["say"] if line.get("say") else speakable(line["text"]), v)
+        return a, ("edge", bounds)
     audio, toks, off = [], [], 0.0
     # optional "say": what the voice actually speaks (e.g. Devanagari Hindi), while "text" stays the on-screen/caption words
     # (Roman-script Hindi). Timings then fall back to proportional word spacing over "text".
@@ -65,9 +112,13 @@ for i, line in enumerate(script["lines"]):
     a, toks = synth(line); a = a.astype(np.float32)
     # trim leading/trailing silence a little so pauses are controlled by gap_before
     nz = np.where(np.abs(a) > 0.01)[0]; lead = max(0, nz[0] - int(.03 * SR)) if len(nz) else 0; tail = min(len(a), nz[-1] + int(.08 * SR)) if len(nz) else len(a)
-    a = a[lead:tail]; shift = lead / SR; toks = [(x, s - shift, e - shift) for x, s, e in toks]
-    dur = len(a) / SR
-    words = [{"w": w["w"], "s": round(t + max(0, w["s"]), 3), "e": round(t + min(dur, max(w["e"], w["s"] + .05)), 3)} for w in align(line["text"].split(), toks, dur)]
+    a = a[lead:tail]; shift = lead / SR; dur = len(a) / SR
+    if isinstance(toks, tuple):   # edge engine: (tag, word boundaries)
+        bounds = [(x, s - shift, e - shift) for x, s, e in toks[1]]
+        al = map_bounds(line["text"].split(), bounds, dur) or align(line["text"].split(), [], dur)
+    else:
+        toks = [(x, s - shift, e - shift) for x, s, e in toks]; al = align(line["text"].split(), toks, dur)
+    words = [{"w": w["w"], "s": round(t + max(0, w["s"]), 3), "e": round(t + min(dur, max(w["e"], w["s"] + .05)), 3)} for w in al]
     lines.append({"id": line["id"], "speaker": line["speaker"], "start": round(t, 3), "end": round(t + dur, 3), "words": words})
     voice.append(a); t += dur
     if i % 10 == 0: print(f"{line['id']} {t:7.1f}s  {line['speaker']}", flush=True)
