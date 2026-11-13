@@ -65,20 +65,36 @@ function vxEnd(ctx, t, t0) { if (t < t0) return; const p = E.back(prog(t, t0, t0
 // clip player: uses however many frames actually loaded (<key>_f0 .. _fN)
 const _clipN = {};
 function clipCount(key, max = 400) { if (_clipN[key] === undefined) { let n = 0; while (n < max && IMG[key + '_f' + n]) n++; _clipN[key] = Math.max(1, n); } return _clipN[key]; }
-// iPhone-style liquid-glass SUBSCRIBE button: blurred see-through pill; a tap turns it glassy red.
-function glassSubscribe(ctx, x, y, t, t0, o = {}) { if (t < t0) return; const s = (o.scale || 1) * E.back(prog(t, t0, t0 + .45)); const tap = t0 + (o.tapAfter ?? 1.0);
-  const press = t > tap && t < tap + .18 ? .94 : 1, on = clamp((t - tap - .05) / .25); const w = 520 * s * press, h = 128 * s * press, r = h / 2, x0 = x - w / 2, y0 = y - h / 2;
-  ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.45)'; ctx.shadowBlur = 40; ctx.shadowOffsetY = 12; ctx.fillStyle = 'rgba(0,0,0,.01)'; ctx.beginPath(); ctx.roundRect(x0, y0, w, h, r); ctx.fill(); ctx.restore();
-  ctx.save(); ctx.beginPath(); ctx.roundRect(x0, y0, w, h, r); ctx.clip();
-  try { ctx.filter = 'blur(14px) saturate(1.4)'; ctx.drawImage(ctx.canvas, x0 - 20, y0 - 20, w + 40, h + 40, x0 - 20, y0 - 20, w + 40, h + 40); } catch (e) {} ctx.filter = 'none';
-  ctx.fillStyle = `rgba(255,255,255,${.16 - .06 * on})`; ctx.fillRect(x0, y0, w, h);
-  if (on > 0) { ctx.fillStyle = `rgba(232,40,30,${.55 * on})`; ctx.fillRect(x0, y0, w, h); }
-  const hl = ctx.createLinearGradient(0, y0, 0, y0 + h); hl.addColorStop(0, 'rgba(255,255,255,.55)'); hl.addColorStop(.45, 'rgba(255,255,255,.06)'); hl.addColorStop(1, 'rgba(255,255,255,.14)');
-  ctx.fillStyle = hl; ctx.beginPath(); ctx.ellipse(x, y0 + h * .2, w * .44, h * .32, 0, 0, 7); ctx.globalAlpha = .55; ctx.fill(); ctx.globalAlpha = 1; ctx.restore();
-  ctx.save(); ctx.lineWidth = 2.5; const rim = ctx.createLinearGradient(x0, y0, x0 + w, y0 + h); rim.addColorStop(0, 'rgba(255,255,255,.85)'); rim.addColorStop(.5, 'rgba(255,255,255,.18)'); rim.addColorStop(1, 'rgba(255,255,255,.6)');
-  ctx.strokeStyle = rim; ctx.beginPath(); ctx.roundRect(x0 + 1, y0 + 1, w - 2, h - 2, r); ctx.stroke(); ctx.restore();
-  const label = on > .5 ? 'SUBSCRIBED' : 'SUBSCRIBE'; ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.35)'; ctx.shadowBlur = 8; text(ctx, label, x + (on > .5 ? 22 * s : 0), y + 22 * s, { font: F.osw, size: 58 * s * press, color: '#fff', align: 'center', weight: 600, ls: 3 });
-  if (on > .5) { ctx.strokeStyle = '#fff'; ctx.lineWidth = 7 * s; ctx.lineCap = 'round'; ctx.beginPath(); const cx = x - 175 * s, cy = y; ctx.moveTo(cx - 18 * s, cy); ctx.lineTo(cx - 4 * s, cy + 14 * s); ctx.lineTo(cx + 20 * s, cy - 14 * s); ctx.stroke(); } ctx.restore();
-  if (t > tap - .35 && t < tap + .6) { const k = (t - tap + .35) / .95, tx = x + 120 * s, ty = y + 18 * s; ctx.save(); ctx.globalAlpha = Math.sin(Math.PI * clamp(k)) * .85; ctx.fillStyle = 'rgba(255,255,255,.55)'; ctx.strokeStyle = 'rgba(255,255,255,.9)'; ctx.lineWidth = 3;
-    ctx.beginPath(); ctx.arc(tx, ty, 34 * (t > tap ? 1 + (t - tap) * 1.2 : 1), 0, 7); ctx.fill(); ctx.stroke(); ctx.restore(); } }
+// iOS liquid-glass button: refracted + blurred backdrop, white tint, inner glow, specular rim. A tap turns it glassy red.
+function glassButton(ctx, x, y, t, t0, o = {}) { if (t < t0) return; const app = E.back(prog(t, t0, t0 + .5)); const tap = t0 + (o.tapAfter ?? 1.0);
+  const press = t > tap && t < tap + .2 ? .95 : 1, on = clamp((t - tap - .05) / .3), s = (o.scale || 1) * app * press;
+  const w = (o.w || 440) * s, h = (o.h || 124) * s, r = Math.min(h / 2, (o.radius ?? h / 2)), x0 = x - w / 2, y0 = y - h / 2; if (w < 4) return;
+  const pad = 40, snap = document.createElement('canvas'); snap.width = Math.ceil(w + 2 * pad); snap.height = Math.ceil(h + 2 * pad);
+  snap.getContext('2d').drawImage(ctx.canvas, x0 - pad, y0 - pad, snap.width, snap.height, 0, 0, snap.width, snap.height);
+  const path = () => { ctx.beginPath(); ctx.roundRect(x0, y0, w, h, r); };
+  ctx.save(); ctx.filter = 'blur(22px)'; ctx.fillStyle = 'rgba(0,0,0,.5)'; ctx.beginPath(); ctx.roundRect(x0 + 10, y0 + 22, w - 20, h - 6, r); ctx.fill(); ctx.restore();
+  ctx.save(); path(); ctx.clip();
+  const lens = (k, blur, bright) => { const dw = snap.width * k, dh = snap.height * k; ctx.filter = `blur(${blur}px) brightness(${bright}) saturate(1.6)`; ctx.drawImage(snap, x - dw / 2, y - dh / 2, dw, dh); };
+  lens(1.18, 9, 1.25);
+  ctx.save(); ctx.beginPath(); ctx.roundRect(x0, y0, w, h, r); ctx.roundRect(x0 + 14 * s, y0 + 14 * s, w - 28 * s, h - 28 * s, Math.max(1, r - 14 * s)); ctx.clip('evenodd'); lens(1.45, 3, 1.35); ctx.restore();
+  ctx.filter = 'none'; ctx.fillStyle = `rgba(255,255,255,${.12 - .05 * on})`; ctx.fillRect(x0, y0, w, h);
+  if (on > 0) { const rg = ctx.createLinearGradient(0, y0, 0, y0 + h); rg.addColorStop(0, `rgba(255,70,60,${.46 * on})`); rg.addColorStop(1, `rgba(200,20,20,${.36 * on})`); ctx.fillStyle = rg; ctx.fillRect(x0, y0, w, h); }
+  const sh = ctx.createLinearGradient(0, y0, 0, y0 + h * .55); sh.addColorStop(0, 'rgba(255,255,255,.34)'); sh.addColorStop(1, 'rgba(255,255,255,0)'); ctx.fillStyle = sh; ctx.fillRect(x0, y0, w, h * .55);
+  ctx.shadowColor = 'rgba(255,255,255,.55)'; ctx.shadowBlur = 18 * s; ctx.lineWidth = 30; ctx.strokeStyle = '#000'; ctx.beginPath(); ctx.roundRect(x0 - 15, y0 - 15, w + 30, h + 30, r + 15); ctx.stroke(); ctx.shadowBlur = 0;
+  ctx.restore();
+  ctx.save(); const rim = ctx.createLinearGradient(x0, y0, x0 + w * .6, y0 + h * 1.4); rim.addColorStop(0, 'rgba(255,255,255,.95)'); rim.addColorStop(.35, 'rgba(255,255,255,.12)'); rim.addColorStop(.7, 'rgba(255,255,255,.08)'); rim.addColorStop(1, 'rgba(255,255,255,.7)');
+  ctx.strokeStyle = rim; ctx.lineWidth = 2.2 * Math.max(.6, s); ctx.beginPath(); ctx.roundRect(x0 + 1, y0 + 1, w - 2, h - 2, r); ctx.stroke();
+  ctx.strokeStyle = 'rgba(0,0,0,.18)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.roundRect(x0 - .5, y0 - .5, w + 1, h + 1, r); ctx.stroke(); ctx.restore();
+  const lab = on > .5 ? (o.after || o.label) : o.label, fs = (o.fs || 52) * s; ctx.save(); ctx.font = `700 ${fs}px "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.shadowColor = 'rgba(0,0,0,.35)'; ctx.shadowBlur = 6; ctx.fillStyle = '#fff'; const tw = ctx.measureText(lab).width, chk = on > .5 && o.check !== false;
+  ctx.fillText(lab, x + (chk ? 22 * s : 0), y + 2 * s);
+  if (chk) { ctx.strokeStyle = '#fff'; ctx.lineWidth = 6.5 * s; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; const cx = x - tw / 2 - 12 * s; ctx.beginPath(); ctx.moveTo(cx - 20 * s, y + 2 * s); ctx.lineTo(cx - 8 * s, y + 14 * s); ctx.lineTo(cx + 12 * s, y - 12 * s); ctx.stroke(); }
+  ctx.restore();
+  if (t > tap - .4 && t < tap + .7) { const k = clamp((t - tap + .4) / 1.1), tx = x + w * .22, ty = y + h * .12; ctx.save(); ctx.globalAlpha = Math.sin(Math.PI * k) * .9;
+    const g = ctx.createRadialGradient(tx, ty, 0, tx, ty, 46 * s); g.addColorStop(0, 'rgba(255,255,255,.75)'); g.addColorStop(1, 'rgba(255,255,255,.15)'); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(tx, ty, 40 * s * (t > tap ? 1 + (t - tap) * .8 : 1), 0, 7); ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,.9)'; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore(); } }
+// Instagram: Follow -> Following.  YouTube: Subscribe -> Subscribed.
+function glassFollow(ctx, x, y, t, t0, o = {}) { glassButton(ctx, x, y, t, t0, Object.assign({ label: 'Follow', after: 'Following', w: 420, h: 118, fs: 54 }, o)); }
+function glassSubscribe(ctx, x, y, t, t0, o = {}) { glassButton(ctx, x, y, t, t0, Object.assign({ label: 'Subscribe', after: 'Subscribed', w: 480, h: 118, fs: 54 }, o)); }
+
 function cred(ctx, key, extra) { const c = credit(key, extra); if (c) sourceTag(ctx, c); }

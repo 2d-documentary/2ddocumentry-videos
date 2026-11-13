@@ -22,7 +22,7 @@ function dualChart(ctx, x, y, w, h, t, t0) { const p = prog(t, t0, t0 + 1.6); ct
   const pts = [[0, 180], [.15, 300], [.3, 700], [.42, 1500], [.52, 3744], [.62, 3000], [.75, 2100], [.88, 1100], [1, 600]].map(([u, v]) => [x + u * w, y + h - h * v / 3800]);
   const draw = (col, rec) => { ctx.strokeStyle = col; ctx.lineWidth = 7; ctx.beginPath(); let pen = false; pts.forEach((q, i) => { if (i / (pts.length - 1) > p) return; const v = 3800 * (y + h - q[1]) / h; if (rec && v > 999) { pen = false; return; } pen ? ctx.lineTo(...q) : ctx.moveTo(...q); pen = true; }); ctx.stroke(); };
   ctx.shadowColor = VX.red; ctx.shadowBlur = 20; draw(VX.red, false); ctx.shadowBlur = 0; draw('#fff', true);
-  text(ctx, 'ASLI HAWA', x, y + h + 56, { font: F.type, size: 32, color: VX.red }); text(ctx, 'RECORD MEIN', x + w, y + h + 56, { font: F.type, size: 32, color: '#fff', align: 'right' });
+  text(ctx, 'REAL AIR', x, y + h + 56, { font: F.type, size: 32, color: VX.red }); text(ctx, 'ON RECORD', x + w, y + h + 56, { font: F.type, size: 32, color: '#fff', align: 'right' });
   text(ctx, 'ILLUSTRATIVE', x + w, y + h + 100, { font: F.osw, size: 20, color: VX.dim, align: 'right', weight: 600, ls: 2 }); ctx.restore(); }
 function wordKeys(id, g = .16) { const L = LINE[id]; if (!L) return; L.words.forEach((w, i) => cue(w.s, 'key', g)); }
 
@@ -30,28 +30,28 @@ function scenes() {
   const X = 64, TY = 320, TS = 62, TW = 950;
   // 1. date + poison air, over Diwali footage/photo
   shot(['V01'], (ctx, t, lt) => { vxBackdrop(ctx, BG_OPEN, lt, { clip: BG_OPEN_CLIP, fps: 12, n: CLIP_N, dark: .5 });
-    vxType(ctx, t, [{ id: 'V01', color: VX.red }, { id: 'V02', red: ['zeher'] }], X, TY, { size: TS, w: TW });
-    vxFrame(ctx, 'station', X, 860, TW, 600, t, T('V02', 'zeher'), lt, { tag: 'DELHI · SMOG · ARCHIVE PHOTO', fy: .45 });
-    if (t < T('V02', 'zeher')) sourceTag(ctx, credit('fw2', 'Archive footage: firecrackers, Bengaluru 2024')); fadeIn(ctx, t, 0, .4); }, { lead: .3, name: 'open' });
+    vxType(ctx, t, [{ id: 'V01', color: VX.red }, { id: 'V02', red: ['poison'] }], X, TY, { size: TS, w: TW });
+    vxFrame(ctx, 'station', X, 860, TW, 600, t, T('V02', 'poison'), lt, { tag: 'DELHI · SMOG · ARCHIVE PHOTO', fy: .45 });
+    if (t < T('V02', 'poison')) sourceTag(ctx, credit('fw2', 'Archive footage: firecrackers, Bengaluru 2024')); fadeIn(ctx, t, 0, .4); }, { lead: .3, name: 'open' });
   // 2. meters go silent
-  shot(['V03'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V03', red: ['chup'] }], X, TY, { size: TS, w: TW });
-    const off = T('V03', 'chup'); aqiMeter(ctx, 140, 820, 800, 520, t, lerp(420, 980, clamp((t - LINE.V03.start) / Math.max(.5, off - LINE.V03.start))), t > off); }, { name: 'meter' });
-  cue(T('V03', 'chup'), 'hit', .7);
+  shot(['V03'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V03', red: ['silent'] }], X, TY, { size: TS, w: TW });
+    const off = T('V03', 'silent'); aqiMeter(ctx, 140, 820, 800, 520, t, lerp(420, 980, clamp((t - LINE.V03.start) / Math.max(.5, off - LINE.V03.start))), t > off); }, { name: 'meter' });
+  cue(T('V03', 'silent'), 'hit', .7);
   // 3. 25 stations blank
-  shot(['V04'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V04', red: ['25', 'gayab'] }], X, TY, { size: TS, w: TW });
-    stationGrid(ctx, 150, 860, t, T('V04', 'gayab')); vxNote(ctx, '[25] of 39 stations: no PM2.5 between 2 and 3 AM, 8-9 Nov (CPCB data)', X, 1520, t, T('V04', 'gayab') + .3, { size: 32, w: TW, redParts: true }); }, { name: 'grid' });
-  cue(T('V04', 'gayab'), 'hit', .6);
+  shot(['V04'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V04', red: ['25', 'vanished'] }], X, TY, { size: TS, w: TW });
+    stationGrid(ctx, 150, 860, t, T('V04', 'vanished')); vxNote(ctx, '[25] of 39 stations: no PM2.5 between 2 and 3 AM, 8-9 Nov (CPCB data)', X, 1520, t, T('V04', 'vanished') + .3, { size: 32, w: TW, redParts: true }); }, { name: 'grid' });
+  cue(T('V04', 'vanished'), 'hit', .6);
   // 4. DPCC released it
   shot(['V05'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V05', red: ['dpcc'] }], X, TY, { size: TS, w: TW });
     vxCard(ctx, X, 900, TW, 380, t, T('V05', 'DPCC'), 'DPCC · DELAYED HOURLY DATA · 9 NOV, ~8 PM', [['125', 'STATION-HOURS MISSING ON CPCB', true], ['1,000+', 'EVERY ONE OF THEM', false]]);
-    vxNote(ctx, 'Provisional data, not yet quality-assured.', X, 1360, t, T('V05', 'jaari'), { size: 30, w: TW, color: VX.dim }); }, { name: 'dpcc' });
+    vxNote(ctx, 'Provisional data, not yet quality-assured.', X, 1360, t, T('V05', 'released'), { size: 30, w: TW, color: VX.dim }); }, { name: 'dpcc' });
   cue(T('V05', 'DPCC'), 'paper', .6);
   // 5. Mundka 3,744
   shot(['V06'], (ctx, t, lt) => { vxBackdrop(ctx, BG_SMOG, lt, { dark: .65 }); vxType(ctx, t, [{ id: 'V06', red: ['3744'] }], X, TY, { size: TS, w: TW });
     vxNum(ctx, t, T('V06', '3,744'), 3744, W / 2, 1060, { size: 300, label: 'MUNDKA · 2 AM · PM2.5 (UG/M3)', lsize: 36, dur: 1.1 }); cred(ctx, BG_SMOG); }, { name: 'mundka' });
   cue(T('V06', '3,744'), 'impact', .8);
   // 6. 60x
-  shot(['V07'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V07', red: ['60', 'guna'] }], X, TY, { size: TS, w: TW }); barPair(ctx, X, 900, TW, t, T('V07', 'India'));
+  shot(['V07'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V07', red: ['60', 'times'] }], X, TY, { size: TS, w: TW }); barPair(ctx, X, 900, TW, t, T('V07', 'India'));
     vxNum(ctx, t, T('V07', '60'), 60, W / 2, 1520, { size: 200, suf: 'X', fixed: true }); }, { name: 'bars' });
   cue(T('V07', '60'), 'stamp', .7);
   // 7. other stations
@@ -59,7 +59,7 @@ function scenes() {
     vxCard(ctx, X, 940, TW, 380, t, T('V08', 'JNU'), 'DPCC · PM2.5 (UG/M3) · 9 NOV', [['3,023', 'JNU · 4 AM', true], ['3,008', 'NSUT WEST · 5 AM', true], ['11', 'STATIONS > 2,000', false]]); }, { name: 'stations' });
   cue(T('V08', 'JNU'), 'tick', .5); cue(T('V08', 'NSUT'), 'tick', .5); cue(T('V08', '11'), 'tick', .5);
   // 8. question
-  shot(['V09'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V09', red: ['kahan'] }], X, 760, { size: 92, w: TW }); }, { name: 'q' });
+  shot(['V09'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V09', red: ['where'] }], X, 760, { size: 92, w: TW }); }, { name: 'q' });
   // 9-10. CPCB answer: 999 cut-off
   shot(['V10'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V10', red: ['2015', '999'] }], X, TY, { size: TS, w: TW });
     rangeGauge(ctx, W / 2, 1300, 340, E.inOut(prog(t, T('V10', '999'), T('V10', '999') + 1.2)), t, false);
@@ -67,17 +67,17 @@ function scenes() {
   cue(T('V10', '999'), 'riser', .5);
   shot(['V11'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V11', red: ['out', 'of', 'range'] }], X, TY, { size: TS, w: TW }); rangeGauge(ctx, W / 2, 1100, 340, 1, t, true);
     if (t > T('V11', 'range')) stamp(ctx, 'OUT OF RANGE', W / 2, 1320, t, T('V11', 'range'), { size: 120, color: VX.red, rot: -.08 });
-    if (t > T('V11', 'hata')) vxNote(ctx, '3,744  ->  [NO DATA]', X + 120, 1600, t, T('V11', 'hata'), { size: 54, w: 900, redParts: true }); }, { name: 'oor' });
+    if (t > T('V11', 'drops')) vxNote(ctx, '3,744  ->  [NO DATA]', X + 120, 1600, t, T('V11', 'drops'), { size: 54, w: 900, redParts: true }); }, { name: 'oor' });
   cue(T('V11', 'range'), 'stamp', .9);
   // 11. the irony
-  shot(['V12'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V12', red: ['zehreeli', 'gayab'] }], X, TY, { size: TS, w: TW }); dualChart(ctx, X, 860, TW, 520, t, LINE.V12.start); }, { name: 'chart' });
+  shot(['V12'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V12', red: ['toxic', 'vanishes'] }], X, TY, { size: TS, w: TW }); dualChart(ctx, X, 860, TW, 520, t, LINE.V12.start); }, { name: 'chart' });
   // 12. 49%
   shot(['V13'], (ctx, t, lt) => { vxBG(ctx, t); vxType(ctx, t, [{ id: 'V13', red: ['49', 'percent'] }], X, TY, { size: TS, w: TW });
     vxNum(ctx, t, T('V13', '49'), 49, W / 2, 1180, { size: 330, pre: '+', suf: '%', label: 'CREA ANALYSIS · ESTIMATE', lsize: 36 }); }, { name: '49' });
   cue(T('V13', '49'), 'impact', .7); cue(LINE.V15.start + 1.6, 'tick', .8);
   // 13. closing question over smog
-  shot(['V14'], (ctx, t, lt) => { vxBackdrop(ctx, BG_END, lt, { dark: .55 }); vxType(ctx, t, [{ id: 'V14', red: ['saans'] }], X, TY, { size: 62, w: TW }); cred(ctx, BG_END); }, { name: 'close' });
+  shot(['V14'], (ctx, t, lt) => { vxBackdrop(ctx, BG_END, lt, { dark: .55 }); vxType(ctx, t, [{ id: 'V14', red: ['breathing', 'breathe'] }], X, TY, { size: 62, w: TW }); cred(ctx, BG_END); }, { name: 'close' });
   // 14. badge
-  shot(['V15'], (ctx, t, lt) => { vxBackdrop(ctx, BG_END, lt + 6, { dark: .75 }); vxType(ctx, t, [{ id: 'V15', red: ['veritrix'] }], X, TY, { size: TS, w: TW }); vxEnd(ctx, t, LINE.V15.start + .2); glassSubscribe(ctx, W / 2, 1180, t, LINE.V15.start + .5, { tapAfter: 1.1 }); fadeOut(ctx, t, TL.duration, .8); }, { name: 'end' });
+  shot(['V15'], (ctx, t, lt) => { vxBackdrop(ctx, BG_END, lt + 6, { dark: .75 }); vxType(ctx, t, [{ id: 'V15', red: ['veritrix'] }], X, TY, { size: TS, w: TW }); vxEnd(ctx, t, LINE.V15.start + .2); glassFollow(ctx, W / 2, 1200, t, LINE.V15.start + .5, { tapAfter: 1.2 }); fadeOut(ctx, t, TL.duration, .8); }, { name: 'end' });
   ['V01', 'V02', 'V03', 'V04', 'V05', 'V06', 'V07', 'V08', 'V09', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15'].forEach(id => wordKeys(id));
 }

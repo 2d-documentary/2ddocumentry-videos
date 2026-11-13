@@ -78,6 +78,6 @@ function scenes() {
   // 13. closing question over smog
   shot(['V14'], (ctx, t, lt) => { vxBackdrop(ctx, BG_END, lt, { dark: .55 }); vxType(ctx, t, [{ id: 'V14', red: ['breathing', 'breathe'] }], X, TY, { size: 62, w: TW }); cred(ctx, BG_END); }, { name: 'close' });
   // 14. badge
-  shot(['V15'], (ctx, t, lt) => { vxBackdrop(ctx, BG_END, lt + 6, { dark: .75 }); vxType(ctx, t, [{ id: 'V15', red: ['veritrix'] }], X, TY, { size: TS, w: TW }); vxEnd(ctx, t, LINE.V15.start + .2); glassSubscribe(ctx, W / 2, 1180, t, LINE.V15.start + .5, { tapAfter: 1.1 }); fadeOut(ctx, t, TL.duration, .8); }, { name: 'end' });
+  shot(['V15'], (ctx, t, lt) => { vxBackdrop(ctx, BG_END, lt + 6, { dark: .75 }); vxType(ctx, t, [{ id: 'V15', red: ['veritrix'] }], X, TY, { size: TS, w: TW }); vxEnd(ctx, t, LINE.V15.start + .2); glassFollow(ctx, W / 2, 1200, t, LINE.V15.start + .5, { tapAfter: 1.2 }); fadeOut(ctx, t, TL.duration, .8); }, { name: 'end' });
   ['V01', 'V02', 'V03', 'V04', 'V05', 'V06', 'V07', 'V08', 'V09', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15'].forEach(id => wordKeys(id));
 }
