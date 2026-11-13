@@ -47,7 +47,7 @@ function loadImages(map) {
 
 // ---------- SFX cues collected while scenes are declared
 const CUES = [];
-function cue(t, type, gain = 1) { CUES.push({ t: +t.toFixed(3), type, gain }); }
+function cue(t, type, gain = 1, d) { const c = { t: +t.toFixed(3), type, gain }; if (d) c.d = +d.toFixed(3); CUES.push(c); } // d: duration (beep)
 
 // ---------- offscreen caches
 const CACHE = {};

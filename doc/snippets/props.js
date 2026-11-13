@@ -95,3 +95,24 @@ function shopMock(ctx, x, y, w, h, t, t0, o = {}) { // generic anonymous marketp
 function star(ctx, x, y, r) { ctx.beginPath(); for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * .45 : r; ctx.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr); } ctx.closePath(); ctx.fill(); }
 function cashStack(ctx, x, y, s, n = 5) { for (let i = 0; i < n; i++) { if (!IMG.bill100) { ctx.fillStyle = '#7BA05B'; ctx.fillRect(x - 140 * s, y - i * 14 * s, 280 * s, 120 * s); continue; }
   const im = IMG.bill100, c = EP.billCrop; ctx.save(); ctx.translate(x + (hash(i) - .5) * 20 * s, y - i * 14 * s); ctx.rotate((hash(i * 3) - .5) * .08); ctx.drawImage(im, c[0], c[1], c[2], c[3], -150 * s, -64 * s, 300 * s, 128 * s); ctx.restore(); } }
+// ---- poker props (drawn): felt table, chips, playing cards (suits drawn as paths, no glyph fonts needed)
+function feltTable(ctx, t) { bgGrad(ctx, '#0F4A2C', '#03140B', 'r'); ctx.save(); ctx.globalAlpha = .08; for (let i = 0; i < 600; i++) { ctx.fillStyle = hash(i) > .5 ? '#fff' : '#000'; ctx.fillRect(hash(i * 3) * W, hash(i * 7) * H, 2, 2); } ctx.restore();
+  const g = ctx.createRadialGradient(W / 2, H * .45, 0, W / 2, H * .45, W * .8); g.addColorStop(0, 'rgba(255,240,200,.18)'); g.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); }
+function chip(ctx, x, y, r, col = '#C8322A') { ctx.save(); ctx.translate(x, y); ctx.scale(1, .42); ctx.fillStyle = 'rgba(0,0,0,.35)'; ctx.beginPath(); ctx.arc(0, r * .25, r, 0, 7); ctx.fill();
+  ctx.fillStyle = col; ctx.beginPath(); ctx.arc(0, 0, r, 0, 7); ctx.fill(); ctx.strokeStyle = '#F4F1EA'; ctx.lineWidth = r * .18; ctx.setLineDash([r * .32, r * .32]); ctx.beginPath(); ctx.arc(0, 0, r * .86, 0, 7); ctx.stroke(); ctx.setLineDash([]);
+  ctx.fillStyle = 'rgba(255,255,255,.85)'; ctx.beginPath(); ctx.arc(0, 0, r * .5, 0, 7); ctx.fill(); ctx.fillStyle = col; ctx.beginPath(); ctx.arc(0, 0, r * .4, 0, 7); ctx.fill(); ctx.restore(); }
+function chipStack(ctx, x, y, r, n, col) { for (let i = 0; i < n; i++) chip(ctx, x + (hash(i * 3 + x) - .5) * r * .08, y - i * r * .16, r, col); }
+function suitPath(ctx, s, x, y, k) { ctx.beginPath();
+  if (s === 'h') { ctx.moveTo(x, y + k * .35); ctx.bezierCurveTo(x - k * .9, y - k * .2, x - k * .45, y - k * .85, x, y - k * .35); ctx.bezierCurveTo(x + k * .45, y - k * .85, x + k * .9, y - k * .2, x, y + k * .35); }
+  else if (s === 'd') { ctx.moveTo(x, y - k * .5); ctx.lineTo(x + k * .38, y); ctx.lineTo(x, y + k * .5); ctx.lineTo(x - k * .38, y); }
+  else if (s === 's') { ctx.moveTo(x, y - k * .5); ctx.bezierCurveTo(x + k * .9, y + k * .05, x + k * .4, y + k * .55, x, y + k * .15); ctx.bezierCurveTo(x - k * .4, y + k * .55, x - k * .9, y + k * .05, x, y - k * .5); ctx.moveTo(x, y + k * .1); ctx.lineTo(x + k * .18, y + k * .5); ctx.lineTo(x - k * .18, y + k * .5); }
+  else { [[0, -.25], [-.25, .08], [.25, .08]].forEach(([a, b]) => { ctx.moveTo(x + a * k + k * .22, y + b * k); ctx.arc(x + a * k, y + b * k, k * .22, 0, 7); }); ctx.moveTo(x, y); ctx.lineTo(x + k * .16, y + k * .5); ctx.lineTo(x - k * .16, y + k * .5); }
+  ctx.closePath(); ctx.fill(); }
+function playingCard(ctx, x, y, w, rank, suit, rot = 0, flip = 1) { // flip: 1 = face up, 0 = back (animate 0..1)
+  const h = w * 1.4; ctx.save(); ctx.translate(x, y); ctx.rotate(rot); ctx.scale(Math.max(.02, Math.abs(Math.cos((1 - flip) * Math.PI))), 1);
+  ctx.shadowColor = 'rgba(0,0,0,.6)'; ctx.shadowBlur = 30; ctx.shadowOffsetY = 12; ctx.fillStyle = '#FBFAF6'; ctx.beginPath(); ctx.roundRect(-w / 2, -h / 2, w, h, w * .07); ctx.fill(); ctx.shadowColor = 'transparent';
+  if (flip < .5) { ctx.fillStyle = '#9B1C1C'; ctx.beginPath(); ctx.roundRect(-w / 2 + w * .07, -h / 2 + w * .07, w * .86, h - w * .14, w * .05); ctx.fill(); ctx.strokeStyle = 'rgba(255,255,255,.35)'; ctx.lineWidth = 3; for (let i = -8; i < 8; i++) { ctx.beginPath(); ctx.moveTo(-w / 2, i * w * .14); ctx.lineTo(w / 2, i * w * .14 + w * .5); ctx.stroke(); } }
+  else { const red = suit === 'h' || suit === 'd'; ctx.fillStyle = red ? '#C8221C' : '#141414';
+    text(ctx, rank, -w * .36, -h * .3, { font: F.play, size: w * .26, color: ctx.fillStyle, weight: 700 }); suitPath(ctx, suit, -w * .29, -h * .2, w * .16);
+    suitPath(ctx, suit, 0, h * .05, w * .5); }
+  ctx.restore(); }

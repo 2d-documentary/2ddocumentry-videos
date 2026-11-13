@@ -7,6 +7,7 @@
 // { capY: 0.3 } moves them, { capDark: true } = dark text for white shots, { capMode: 'spread'|'stack'|'line' }.
 GRADES.mood = 'grayscale(.45) saturate(.8) contrast(1.18) brightness(.82)';
 GRADES.ink = 'grayscale(1) contrast(1.35) brightness(.9)';
+GRADES.fire = 'contrast(1.6) saturate(1.5) brightness(.75) sepia(.25)';
 GRADES.cine = 'saturate(.9) contrast(1.15) brightness(.85) sepia(.08)';
 
 // ---------------------------------------------------------------- subtitles
@@ -31,7 +32,10 @@ function kcaps(ctx, t, sh) {
   const emph = new Set((EP.kEmph || []).map(s => s.toLowerCase()));
   const y = H * (sh && sh.capY != null ? sh.capY : (VERT ? .5 : .52)), base = VERT ? 58 : 52;
   const dark = sh && sh.capDark;
-  const parts = g.words.map(w => ({ w, s: w.w.replace(/[",]/g, '').replace(/\.$/, g.words.length === 1 ? '.' : ''), big: emph.has(kClean(w.w)) }));
+  const bleep = new Set((EP.kBleep || []).map(s => s.toLowerCase()));
+  const mask = (s) => bleep.has(kClean(s)) ? s.replace(/^(\W*\w)(\w*)/, (m, a, b) => a + '*'.repeat(Math.max(2, b.length))) : s;
+  const parts = g.words.map(w => ({ w, s: mask(w.w.replace(/[",]/g, '').replace(/\.$/, g.words.length === 1 ? '.' : '')), big: emph.has(kClean(w.w)) }));
+  const m0 = (sh && sh.capMode) || ''; if (m0 === 'caps' || m0 === 'box' || m0 === 'stack') { kcapsAlt(ctx, t, g, parts, m0, y, base, dark); return; }
   const mode = (sh && sh.capMode) || (g.words.length === 2 && hash(g.s * 7) > .55 ? 'spread' : 'line');
   ctx.save(); ctx.textBaseline = 'alphabetic';
   const fontOf = (p) => `${p.big ? 'italic ' : ''}${p.big ? base * 2.1 : base}px ${p.big ? F.playI : F.play}`;
@@ -57,6 +61,25 @@ function kfinish() {
 }
 function kbrand(ctx) { text(ctx, EP.brand || 'UNFILED FILMS', W / 2, VERT ? 96 : 60, { font: F.play, size: VERT ? 26 : 22, color: 'rgba(255,255,255,.55)', align: 'center', weight: 700, ls: 6 }); }
 
+function kcapsAlt(ctx, t, g, parts, mode, y, base, dark) { // other subtitle looks from the references
+  ctx.save(); ctx.textBaseline = 'alphabetic';
+  if (mode === 'caps') { // bold condensed caps with cold glow (tech/AI look)
+    const size = base * 1.25; ctx.font = `600 ${size}px ${F.osw}`; ctx.letterSpacing = '3px';
+    const ws = parts.map(p => ctx.measureText(p.s.toUpperCase()).width), gap = size * .3, tot = ws.reduce((a, b) => a + b, 0) + gap * (ws.length - 1); let x = W / 2 - tot / 2;
+    parts.forEach((p, i) => { const a = E.out(prog(t, p.w.s - .02, p.w.s + .12)); if (a > 0) { ctx.globalAlpha = a; ctx.shadowColor = 'rgba(90,150,255,.95)'; ctx.shadowBlur = 30; ctx.fillStyle = '#DCE8FF'; ctx.fillText(p.s.toUpperCase(), x, y); ctx.shadowBlur = 8; ctx.fillText(p.s.toUpperCase(), x, y); } x += ws[i] + gap; });
+  } else if (mode === 'box') { // yellow marker boxes, black serif text
+    const size = base * .95; ctx.font = `${size}px ${F.play}`;
+    const ws = parts.map(p => ctx.measureText(p.s).width), gap = size * .22, tot = ws.reduce((a, b) => a + b, 0) + gap * (ws.length - 1); let x = W / 2 - tot / 2;
+    parts.forEach((p, i) => { const a = E.out(prog(t, p.w.s - .02, p.w.s + .1)); if (a > 0) { ctx.globalAlpha = 1; ctx.fillStyle = '#F2E33A'; ctx.fillRect(x - 10, y - size * .82, (ws[i] + 20) * a, size * 1.08); if (a > .6) { ctx.fillStyle = '#111'; ctx.fillText(p.s, x, y); } } x += ws[i] + gap; });
+  } else { // stack: one word per line, staggered, mixed sizes
+    let yy = y - parts.length * base * .55;
+    parts.forEach((p, i) => { const a = E.out(prog(t, p.w.s - .02, p.w.s + .14)); const size = p.big ? base * 2 : base * 1.15; yy += size * .95; if (a <= 0) return;
+      ctx.font = `${p.big ? 'italic ' : ''}${size}px ${p.big ? F.playI : F.play}`; ctx.globalAlpha = a; ctx.fillStyle = dark ? '#111' : '#fff'; ctx.shadowColor = dark ? 'rgba(255,255,255,.5)' : 'rgba(255,255,255,.7)'; ctx.shadowBlur = 22;
+      ctx.fillText(p.s, W * .2 + i * base * .5, yy); });
+  }
+  ctx.restore();
+}
+
 // ---------------------------------------------------------------- transitions (call at the END of a shot's draw)
 function kIn(ctx, lt, type = 'flash', d) {
   if (type === 'flash') { const p = prog(lt, 0, d || .14); if (p < 1) { ctx.save(); ctx.globalAlpha = 1 - p; ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, W, H); ctx.restore(); } }
@@ -67,6 +90,7 @@ function kIn(ctx, lt, type = 'flash', d) {
     ctx.globalAlpha = .9 * (1 - p); ctx.fillStyle = hash(i) > .5 ? '#fff' : '#cfd6e6'; ctx.fillRect(Math.floor(hash(i * 5) * 9) * s, Math.floor(hash(i * 7) * (H / s)) * s, s * (1 + (hash(i * 9) > .7)), s); } ctx.restore(); } }
   else if (type === 'blur') { const p = prog(lt, 0, d || .22); if (p < 1) { ctx.save(); ctx.filter = `blur(${(1 - p) * 26}px)`; ctx.globalAlpha = 1 - E.in(p); ctx.drawImage(ctx.canvas, 0, 0); ctx.restore(); } }
   else if (type === 'glitch') { const p = prog(lt, 0, d || .2); if (p < 1) glitch(ctx, lt * 3, 1.6 * (1 - p), 3); }
+  else if (type === 'zoom') { const p = prog(lt, 0, d || .28); if (p < 1) { const z = lerp(1.32, 1, E.out(p)); ctx.save(); ctx.filter = `blur(${(1 - p) * 6}px)`; ctx.drawImage(ctx.canvas, W / 2 - W * z / 2, H / 2 - H * z / 2, W * z, H * z); ctx.restore(); } }
   else if (type === 'black') { const p = prog(lt, 0, d || .2); if (p < 1) { ctx.save(); ctx.globalAlpha = 1 - p; ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, H); ctx.restore(); } }
 }
 // bloom: soft glow of the bright parts (cheap)
@@ -179,4 +203,24 @@ function orbitRing(ctx, t, lt) { // Earth limb + glowing orbit path with a tiny 
   const p = E.inOut(prog(lt, .1, 1.8)); ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,.85)'; ctx.lineWidth = 4; ctx.shadowColor = '#fff'; ctx.shadowBlur = 20; ctx.setLineDash([2, 14]);
   ctx.beginPath(); ctx.ellipse(cx, cy, R * 1.18, R * 1.18, 0, Math.PI * 1.25, Math.PI * (1.25 + .5 * p)); ctx.stroke(); ctx.setLineDash([]);
   const a = Math.PI * (1.25 + .5 * p); ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(cx + Math.cos(a) * R * 1.18, cy + Math.sin(a) * R * 1.18, 9, 0, 7); ctx.fill(); ctx.restore();
+}
+
+// ---------------------------------------------------------------- group photos: spotlight the main person
+// photoPt(key, o, u, v): canvas point of image point (u, v in 0..1) for a photo() drawn with the same options o.
+function photoPt(key, o, u, v) {
+  const im = IMG[key]; if (!im) return [W / 2, H / 2];
+  const bx = o.x ?? 0, by = o.y ?? 0, bw = o.w ?? W, bh = o.h ?? H, z = o.zoom ?? 1, fx = o.fx ?? .5, fy = o.fy ?? .5;
+  const s = Math.max(bw / im.width, bh / im.height) * z, dw = im.width * s, dh = im.height * s;
+  const dx = clamp(bx + bw / 2 - fx * dw, bx + bw - dw, bx), dy = clamp(by + bh / 2 - fy * dh, by + bh - dh, by);
+  return [dx + u * dw, dy + v * dh];
+}
+// spotlight(ctx, x, y, rx, ry, p): everyone else goes dark, the main person stays lit (+ optional yellow frame / name)
+function spotlight(ctx, x, y, rx, ry, p = 1, o = {}) {
+  if (p <= 0) return; const a = (o.dark ?? .82) * E.out(clamp(p));
+  ctx.save(); const g = ctx.createRadialGradient(0, 0, 0, 0, 0, 1); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(.72, 'rgba(0,0,0,0)'); g.addColorStop(1, `rgba(0,0,0,${a})`);
+  ctx.fillStyle = `rgba(0,0,0,${a})`; ctx.beginPath(); ctx.rect(0, 0, W, H); ctx.moveTo(x + rx * 1.35, y); ctx.ellipse(x, y, rx * 1.35, ry * 1.35, 0, 0, Math.PI * 2); ctx.closePath(); ctx.fill('evenodd');
+  ctx.translate(x, y); ctx.scale(rx * 1.35, ry * 1.35); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, 1, 0, 7); ctx.fill(); ctx.restore();
+  if (o.frame !== false) { const q = E.out(prog(p, .3, 1)); if (q > 0) { ctx.save(); ctx.strokeStyle = o.color || '#E6F23C'; ctx.lineWidth = 6; ctx.shadowColor = o.color || '#E6F23C'; ctx.shadowBlur = 16;
+    const w = rx * 2 * q, h = ry * 2; ctx.strokeRect(x - w / 2, y - h / 2, w, h); ctx.restore(); } }
+  if (o.name) { const q = E.out(prog(p, .5, 1)); text(ctx, o.name, x, y + ry + 70, { font: F.playI, size: 54, color: '#fff', align: 'center', alpha: q, shadow: 20 }); }
 }

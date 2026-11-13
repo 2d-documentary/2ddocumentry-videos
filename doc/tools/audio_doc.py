@@ -14,6 +14,12 @@ tl = json.load(open(os.path.join(out, "timeline.json")))
 cues = json.load(open(os.path.join(out, "cues.json"))) if os.path.exists(os.path.join(out, "cues.json")) else []
 sr, voice = wavfile.read(os.path.join(out, "voice.wav")); voice = voice.astype(np.float64); assert sr == SR
 N = len(voice); T = N / SR
+# censor beeps: cue {"type": "beep", "t": start, "d": seconds} mutes the narration there and plays a 1 kHz tone
+BEEPS = [c for c in cues if c["type"] == "beep"]; cues = [c for c in cues if c["type"] != "beep"]
+_vref0 = np.sqrt(np.mean(voice ** 2) + 1e-12)
+for c in BEEPS:
+    a, b = int(c["t"] * SR), min(N, int((c["t"] + c.get("d", .3)) * SR)); n = b - a; r = max(1, min(int(.006 * SR), n // 4))
+    g = np.zeros(n); g[:r] = np.linspace(1, 0, r); g[-r:] = np.linspace(0, 1, r); voice[a:b] *= g
 rng = np.random.default_rng(11)
 MUSIC_LEVEL = float(os.environ.get("MUSIC_LEVEL", "0.20"))
 
@@ -132,7 +138,11 @@ for c in cues:
 if missing: print("unknown sfx types:", missing)
 sfx *= .55 * VREF / max(rms(sfx), 1e-9) if rms(sfx) > VREF * .55 else 1.0
 
-mix = voice + music + sfx
+beep = np.zeros(N)
+for c in BEEPS:
+    a, b = int(c["t"] * SR), min(N, int((c["t"] + c.get("d", .3)) * SR)); n = b - a; tt = np.arange(n) / SR
+    env = np.minimum(1, np.minimum(np.arange(n), n - np.arange(n)) / (.006 * SR)); beep[a:b] += np.sin(2 * np.pi * 1000 * tt) * env * _vref0 * 1.5
+mix = voice + music + sfx + beep
 peak = np.max(np.abs(mix)); mix = mix / peak * .89 if peak > .89 else mix
 for name, x in (("music", music), ("sfx", sfx), ("mix_raw", mix)):
     wavfile.write(os.path.join(out, name + ".wav"), SR, x.astype(np.float32))

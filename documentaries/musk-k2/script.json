@@ -1,0 +1,110 @@
+{
+ "title": "Elon Musk: the craziest hand of poker (kinetic Short v2)",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Conversational narrator"
+  }
+ },
+ "spoken": {
+  "2008": "two thousand eight",
+  "28th": "twenty-eighth",
+  "1.6": "one point six",
+  "1": "one"
+ },
+ "tail": 2.6,
+ "lines": [
+  {
+   "id": "P01",
+   "speaker": "NARRATOR",
+   "text": "In 2008, Elon Musk played the craziest hand of poker in business history.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "P02",
+   "speaker": "NARRATOR",
+   "text": "And he was holding absolute garbage.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "P03",
+   "speaker": "NARRATOR",
+   "text": "SpaceX had launched three rockets. All three failed. One didn't even last a minute.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "P04",
+   "speaker": "NARRATOR",
+   "text": "Tesla was burning cash so fast, it was basically on fire too.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "P05",
+   "speaker": "NARRATOR",
+   "text": "The whole economy was collapsing. And the guy who wants to put humans on Mars was borrowing money from friends to pay rent.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "P06",
+   "speaker": "NARRATOR",
+   "text": "Any normal person folds here.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "P07",
+   "speaker": "NARRATOR",
+   "text": "Elon basically said, fuck it, and pushed everything he had left into the middle of the table.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "P08",
+   "speaker": "NARRATOR",
+   "text": "Enough money for one more launch. That's it.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "P09",
+   "speaker": "NARRATOR",
+   "text": "September 28th. Falcon 1 lifts off.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "P10",
+   "speaker": "NARRATOR",
+   "text": "And holy shit. It actually reaches orbit.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "P11",
+   "speaker": "NARRATOR",
+   "text": "Three months later, NASA calls with a 1.6 billion dollar contract.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "P12",
+   "speaker": "NARRATOR",
+   "text": "The next day, Christmas Eve, Tesla closes a funding round, days before it would've gone bankrupt.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "P13",
+   "speaker": "NARRATOR",
+   "text": "Merry Christmas, Elon.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "P14",
+   "speaker": "NARRATOR",
+   "text": "Most people who go all in lose everything.",
+   "gap_before": 0.35
+  },
+  {
+   "id": "P15",
+   "speaker": "NARRATOR",
+   "text": "Elon went all in, and became the first trillionaire in history.",
+   "gap_before": 0.2
+  }
+ ]
+}
