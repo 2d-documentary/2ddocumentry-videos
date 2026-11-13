@@ -42,7 +42,10 @@ Archival material used in this video:
 - AP11 FINAL APPROACH.ogv | René and Jonathan Cantin / Apollo Lunar Surface Journal | Public domain | https://commons.wikimedia.org/wiki/File:AP11_FINAL_APPROACH.ogv
 - The Eagle Has Landed, The Flight of Apollo 11, 1969.webm | US National Archives | Public domain | https://commons.wikimedia.org/wiki/File:The_Eagle_Has_Landed,_The_Flight_of_Apollo_11,_1969.webm
 - Apollo 11 Intro 720p.ogv | NASA | Public domain | https://commons.wikimedia.org/wiki/File:Apollo_11_Intro_720p.ogv
+- The Eagle Has Landed, The Flight of Apollo 11, 1969.webm | US National Archives | Public domain | https://commons.wikimedia.org/wiki/File:The_Eagle_Has_Landed,_The_Flight_of_Apollo_11,_1969.webm
+- The Eagle Has Landed, The Flight of Apollo 11, 1969.webm | US National Archives | Public domain | https://commons.wikimedia.org/wiki/File:The_Eagle_Has_Landed,_The_Flight_of_Apollo_11,_1969.webm
 - Historic Apollo 11 Moon Landing Footage.webm | NASA | Public domain | https://commons.wikimedia.org/wiki/File:Historic_Apollo_11_Moon_Landing_Footage.webm
 - Apollo 11 Intro 720p.ogv | NASA | Public domain | https://commons.wikimedia.org/wiki/File:Apollo_11_Intro_720p.ogv
+- The Eagle Has Landed, The Flight of Apollo 11, 1969.webm | US National Archives | Public domain | https://commons.wikimedia.org/wiki/File:The_Eagle_Has_Landed,_The_Flight_of_Apollo_11,_1969.webm
 - Agc verb-noun-list.jpg | Brandrodungswanderfeldhackbau, Own work | Public domain | https://commons.wikimedia.org/wiki/File:Agc_verb-noun-list.jpg
 - Apollo 11 descent West crater.jpg | NASA, 16 mm film onboard of Apollo 11 Lunar Module. Screen capture from YouTube: Apollo 11 Full landing HD | Public domain | https://commons.wikimedia.org/wiki/File:Apollo_11_descent_West_crater.jpg

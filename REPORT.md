@@ -1,14 +1,6 @@
 # Asset report: Apollo 11 1202
 
-**44 downloaded, 1 need attention** (of 45)
-
-## Download these by hand
-
-Open each link, download the highest-resolution version, and send it back with its ID.
-
-| ID | Scene | What | Link | Why it failed |
-|---|---|---|---|---|
-| v_mcc_s |  | Apollo 11 Mission Control Center - Film Rolls (KSC-19690716-MH-NAS01-0001-Apollo 11 Mission Con | https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8e/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm.360p.vp9.webm | file too large (96 MB) |
+**47 downloaded, 0 need attention** (of 47)
 
 ## In the store
 
@@ -57,4 +49,7 @@ Open each link, download the highest-resolution version, and send it back with i
 | v_crater |  | `archives/footage/v_crater_apollo-11-intro-720p-ogv.webm` | Public domain | authentic |
 | v_walk |  | `archives/footage/v_walk_apollo-11-intro-720p-ogv.webm` | Public domain | authentic |
 | v_timer |  | `archives/footage/v_timer_historic-apollo-11-moon-landing-footage-.webm` | Public domain | authentic |
-| v_eagle_s |  | `archives/footage/v_eagle_s_the-eagle-has-landed-the-flight-of-apoll.webm` | Public domain | authentic |
+| v_mccmen |  | `archives/footage/v_mccmen_the-eagle-has-landed-the-flight-of-apoll.webm` | Public domain | authentic |
+| v_window |  | `archives/footage/v_window_the-eagle-has-landed-the-flight-of-apoll.webm` | Public domain | authentic |
+| v_ladder |  | `archives/footage/v_ladder_the-eagle-has-landed-the-flight-of-apoll.webm` | Public domain | authentic |
+| v_lmorbit |  | `archives/footage/v_lmorbit_the-eagle-has-landed-the-flight-of-apoll.webm` | Public domain | authentic |
