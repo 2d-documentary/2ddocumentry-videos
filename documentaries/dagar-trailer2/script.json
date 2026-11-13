@@ -1,0 +1,19 @@
+{
+ "title": "Dagar Unfiltered: channel trailer (beat cut, for trending audio)",
+ "voices": {
+  "NARRATOR": {
+   "engine": "prerecorded"
+  }
+ },
+ "prerecorded": {
+  "audio": "voice/voice.m4a",
+  "timeline": "voice/timeline.json"
+ },
+ "lines": [
+  {
+   "id": "S01",
+   "speaker": "NARRATOR",
+   "text": "."
+  }
+ ]
+}
