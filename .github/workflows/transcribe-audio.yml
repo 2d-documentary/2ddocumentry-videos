@@ -1,0 +1,30 @@
+name: transcribe-audio
+# Transcribes narration recordings (word timestamps) listed in documentaries/<p>/voice/transcribe.json.
+# Output goes to the branch transcribe-<project>.
+on:
+  push:
+    branches: [main]
+    paths: ['documentaries/*/voice/transcribe.json']
+permissions:
+  contents: write
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install -q "faster-whisper>=1.1"
+      - name: Transcribe
+        env: { PYTHONUNBUFFERED: '1' }
+        run: |
+          git config --global user.name "asset-bot"; git config --global user.email "asset-bot@users.noreply.github.com"
+          REMOTE="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+          for P in $(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -E '^documentaries/[^/]+/voice/transcribe\.json$' | cut -d/ -f2 | sort -u); do
+            O=/tmp/tr-$P; rm -rf $O; mkdir -p $O
+            python tools/transcribe.py documentaries/$P/voice $O
+            cd $O && git init -q -b transcribe-$P && git add -A && git commit -qm "transcribe: $P (run ${{ github.run_id }})"
+            git push -qf "$REMOTE" HEAD:transcribe-$P; cd - >/dev/null
+          done
