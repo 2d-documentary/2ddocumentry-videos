@@ -1,0 +1,105 @@
+{
+ "title": "Voice test (Hindi)",
+ "voices": {
+  "V1": {
+   "engine": "edge",
+   "voice": "hi-IN-MadhurNeural",
+   "rate": "+8%",
+   "desc": "Madhur male, thoda fast"
+  },
+  "V2": {
+   "engine": "edge",
+   "voice": "hi-IN-SwaraNeural",
+   "rate": "+8%",
+   "desc": "Swara female"
+  },
+  "V3": {
+   "engine": "edge",
+   "voice": "hi-IN-MadhurNeural",
+   "rate": "-2%",
+   "pitch": "-4Hz",
+   "desc": "Madhur male, calm and deep"
+  }
+ },
+ "tail": 1.5,
+ "lines": [
+  {
+   "id": "V101",
+   "speaker": "V1",
+   "text": "April 1992. Mumbai ke ek stockbroker ke paas State Bank of India se ek call aata hai.",
+   "say": "अप्रैल उन्नीस सौ बानवे। मुंबई के एक स्टॉकब्रोकर के पास, स्टेट बैंक ऑफ़ इंडिया से एक कॉल आता है।",
+   "gap_before": 1.2
+  },
+  {
+   "id": "V102",
+   "speaker": "V1",
+   "text": "Sawaal sirf ek hai. Hamare 500 crore rupaye kahan hain?",
+   "say": "सवाल सिर्फ़ एक है। हमारे पाँच सौ करोड़ रुपये कहाँ हैं?"
+  },
+  {
+   "id": "V103",
+   "speaker": "V1",
+   "text": "Log Lexus dekhne aate the. Harshad ko nahi, car ko.",
+   "say": "लोग लेक्सस देखने आते थे। हर्षद को नहीं, कार को।",
+   "gap_before": 0.5
+  },
+  {
+   "id": "V104",
+   "speaker": "V1",
+   "text": "Matlab khaali tiffin. Upar likha paneer, andar kuch nahi.",
+   "say": "मतलब ख़ाली टिफ़िन। ऊपर लिखा पनीर, अंदर कुछ नहीं।"
+  },
+  {
+   "id": "V201",
+   "speaker": "V2",
+   "text": "April 1992. Mumbai ke ek stockbroker ke paas State Bank of India se ek call aata hai.",
+   "say": "अप्रैल उन्नीस सौ बानवे। मुंबई के एक स्टॉकब्रोकर के पास, स्टेट बैंक ऑफ़ इंडिया से एक कॉल आता है।",
+   "gap_before": 1.2
+  },
+  {
+   "id": "V202",
+   "speaker": "V2",
+   "text": "Sawaal sirf ek hai. Hamare 500 crore rupaye kahan hain?",
+   "say": "सवाल सिर्फ़ एक है। हमारे पाँच सौ करोड़ रुपये कहाँ हैं?"
+  },
+  {
+   "id": "V203",
+   "speaker": "V2",
+   "text": "Log Lexus dekhne aate the. Harshad ko nahi, car ko.",
+   "say": "लोग लेक्सस देखने आते थे। हर्षद को नहीं, कार को।",
+   "gap_before": 0.5
+  },
+  {
+   "id": "V204",
+   "speaker": "V2",
+   "text": "Matlab khaali tiffin. Upar likha paneer, andar kuch nahi.",
+   "say": "मतलब ख़ाली टिफ़िन। ऊपर लिखा पनीर, अंदर कुछ नहीं।"
+  },
+  {
+   "id": "V301",
+   "speaker": "V3",
+   "text": "April 1992. Mumbai ke ek stockbroker ke paas State Bank of India se ek call aata hai.",
+   "say": "अप्रैल उन्नीस सौ बानवे। मुंबई के एक स्टॉकब्रोकर के पास, स्टेट बैंक ऑफ़ इंडिया से एक कॉल आता है।",
+   "gap_before": 1.2
+  },
+  {
+   "id": "V302",
+   "speaker": "V3",
+   "text": "Sawaal sirf ek hai. Hamare 500 crore rupaye kahan hain?",
+   "say": "सवाल सिर्फ़ एक है। हमारे पाँच सौ करोड़ रुपये कहाँ हैं?"
+  },
+  {
+   "id": "V303",
+   "speaker": "V3",
+   "text": "Log Lexus dekhne aate the. Harshad ko nahi, car ko.",
+   "say": "लोग लेक्सस देखने आते थे। हर्षद को नहीं, कार को।",
+   "gap_before": 0.5
+  },
+  {
+   "id": "V304",
+   "speaker": "V3",
+   "text": "Matlab khaali tiffin. Upar likha paneer, andar kuch nahi.",
+   "say": "मतलब ख़ाली टिफ़िन। ऊपर लिखा पनीर, अंदर कुछ नहीं।"
+  }
+ ]
+}
