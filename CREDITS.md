@@ -1,0 +1,79 @@
+# Credits: Elon Musk (kinetic long)
+
+Archival material used in this video:
+
+- US 100 dollar bill obverse | Bureau of Engraving and Printing, http://www.newmoney.gov/newmoney/files/100_Materials/100_GlossyFront_EN_WEB031210.pdf | Public domain | https://commons.wikimedia.org/wiki/File:Obverse_of_the_series_2009_$100_Federal_Reserve_Note.jpg
+- Blastar source code, 1984 | Elon Musk, Ashlee Vance: Elon Musk – How the Billionaire CEO of SpaceX and Tesla is Shaping our Future (2015), page 368. / PC and Office Technology, December 1984. | Public domain | https://commons.wikimedia.org/wiki/File:Blastar_source_code.png
+- Boring Company tunnel | Steve Jurvetson from Menlo Park, USA, tunnel of love | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Tunnel_of_love_(32489303638).jpg
+- SpaceX Starship integrated flight test -5 - launch and catch - 13 October 2 | Anne Toal, YouTube : https://www.youtube.com/watch?v=jawCFgILjP4 – View/save archived versions on archive.org | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:SpaceX_Starship_integrated_flight_test_-5_-_launch_and_catch_-_13_October_2024.webm
+- Compaq computer 1990s | Demache at English Wikipedia, Transferred from en.wikipedia to Commons by Liftarn using CommonsHelper . | Public domain | https://commons.wikimedia.org/wiki/File:Compaq_Deskpro_6333(crop).jpg
+- Production Tesla Cybertruck, Denver 2023 | N2e, Own work | CC0 | https://commons.wikimedia.org/wiki/File:2023_production-level_Tesla_Cybertruck_on_display_in_Denver,_Colorado.jpg
+- SpaceX Demo-2 launch, May 2020 | Joel Kowsky, https://www.flickr.com/photos/nasahqphoto/49957445607/in/photostream/ | Public domain | https://commons.wikimedia.org/wiki/File:SpaceX_Demo-2_Launch_(NHQ202005300110).jpg
+- SpaceX Demo-2 launch | Joel Kowsky, https://www.flickr.com/photos/nasahqphoto/49956662033/in/photostream/ | Public domain | https://commons.wikimedia.org/wiki/File:SpaceX_Demo-2_Launch_(NHQ202005300109).jpg
+- Dnepr rocket launch | ISC Kosmotras, Source: ISC Kosmotras ( approbation of use ) | CC BY 2.5 | https://commons.wikimedia.org/wiki/File:Dnepr_rocket_lift-off_1.jpg
+- Dragon capsule at the ISS, 2012 | NASA, http://www.nasa.gov/multimedia/nasatv/index.html | Public domain | https://commons.wikimedia.org/wiki/File:Dragon_Capsule_ISS_Docking.png
+- Post-flight Dragon capsule 2012 | Bill Ingalls, https://www.flickr.com/photos/nasahqphoto/7369205774/ | Public domain | https://commons.wikimedia.org/wiki/File:Post-flight_Dragon_capsule.jpg
+- Falcon 1 launch, Omelek | SpaceX, http://www.spacex.com/media-gallery/detail/149376/8966 | CC0 | https://commons.wikimedia.org/wiki/File:2009_Falcon_1_launches_from_Omelek_Island_(cropped).jpg
+- Falcon 1 Flight 4 launch, 28 Sep 2008 | SpaceX, http://www.spacex.com/media-gallery/detail/149371/8956 | CC0 | https://commons.wikimedia.org/wiki/File:Falcon_1_Flight_4_launch.jpg
+- Falcon 1 over Omelek Island | U.S. Army Kwajalein Atoll (USAKA), http://www.spacex.com/launch_updates.php ( direct link ) | Public domain | https://commons.wikimedia.org/wiki/File:Falcon_1_Flight_5_rises_over_Omelek_Island.jpg
+- Falcon 9 launch and landing long exposure, Dec 2015 | U.S. Space Force image by Derwin Oviedo, This image was released by the United States Air Force with the ID 151222-F-YX390-001 (next) . This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing . العربية ∙ বাংলা ∙ Bahasa Indonesia ∙ Bahaso Jambi ∙ Deutsch ∙ Deutsch (Sie-Form) ∙ English ∙ español ∙ euskara ∙ فارسی ∙ français ∙ italiano ∙ 日本語 ∙ 한국어 ∙ македонски ∙ മലയാളം ∙ Plattdüütsch ∙ Nederlands ∙ polski ∙ پښتو ∙ português ∙ русский ∙ slovenščina ∙ svenska ∙ Türkçe ∙ українська ∙ 简体中文 ∙ 繁體中文 ∙ +/− | Public domain | https://commons.wikimedia.org/wiki/File:45th_Space_Wing_successfully_launches_ORBCOMM,_historically_lands_first_stage_booster_(2343201).jpeg
+- Falcon 9 first stage at LZ-1, Dec 2015 | SpaceX Photos, Falcon 9 First stage at Landing Zone 1 | CC0 | https://commons.wikimedia.org/wiki/File:Falcon_9_first_stage_at_LZ-1(two).jpg
+- Falcon 9 first stage after landing, 21 Dec 2015 | SpaceX Photos, https://www.flickr.com/photos/spacexphotos/23273082823/ | CC0 | https://commons.wikimedia.org/wiki/File:Falcon_9_Flight_20_OG2_first_stage_post-landing_(23273082823).jpg
+- ORBCOMM-2 launch and landing, long exposure | SpaceX Photos, ORBCOMM-2 | CC0 | https://commons.wikimedia.org/wiki/File:ORBCOMM-2_(23660653516).jpg
+- Falcon Heavy Demo Mission launch | SpaceX, Falcon Heavy Demo Mission | CC0 | https://commons.wikimedia.org/wiki/File:Falcon_Heavy_Demo_Mission_(40126461851).jpg
+- Falcon Heavy side boosters landing | SpaceX, Falcon Heavy Demo Mission | CC0 | https://commons.wikimedia.org/wiki/File:Falcon_Heavy_Side_Boosters_landing_on_LZ1_and_LZ2_-_2018_(25254688767).jpg
+- Starship IFT-1, NASA WB-57 camera | NASA, YouTube : [RAW] SpaceX Starship IFT-1 NASA WB-57 Cam 0 – View/save archived versions on archive.org | Public domain | https://commons.wikimedia.org/wiki/File:SpaceX_Starship_IFT-1_NASA_WB-57_Cam_0.webm
+- Kingston Ontario Queen's University | Unknown photographer, Queen's University Journal, 21 December 1899, https://archive.org/details/queensjournal27/page/n105/mode/1up | Public domain | https://commons.wikimedia.org/wiki/File:Photograph_of_Queen%27s_University_-_1899_-_Queen%27s_University_Journal.jpg
+- Lehman Brothers headquarters 2008 | David Shankbone, Own work | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Lehman_Brothers_Times_Square_by_David_Shankbone.jpg
+- Mars, accurate colour | Sturm 1, Own work - NASA | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Mars_accurate_colour.png
+- 1995 McLaren F1 | Edvvc from London, UK, 1995 McLaren F1 | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:1995_McLaren_F1_(19638003335).jpg
+- Tesla Model S red 2013 | Steve Jurvetson, https://www.flickr.com/photos/jurvetson/8471770251/in/set-72157594207153221 | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Red,_White_and_Blue_(Tesla_Model_S).jpg
+- Nasdaq MarketSite, Times Square | Luca Marfè at Italia all'ONU, Minister of Environment Galletti visiting New York | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:NASDAQ_Market_Site_201506.jpg
+- Nasdaq tower, May 2026 | Nielsoncaetanosalmeron, Own work | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Nasdaq_Tower_May_2026.jpg
+- Elon Musk net worth 2019-2026 chart | Bloomberg (Daten), ChatGPT und PM3 (Grafik), bloomberg.com | Public domain | https://commons.wikimedia.org/wiki/File:Elon_Musks_Verm%C3%B6gen_2019%E2%80%932026.svg
+- Elon Musk at MSC 2006 | FlyingSinger, https://www.flickr.com/photos/flyingsinger/206206248 | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_at_MSC_2006.jpg
+- Elon Musk 2008 | Brian Solis, originally posted to Flickr as Tesla Grand Opening in Menlo Park - Tesla Chairman, Elon Musk | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk.jpg
+- Elon Musk laughing, 2008 | JD Lasica from Pleasanton, CA, US, Elon Musk | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_(3018710552).jpg
+- Elon Musk, 2008 Web 2.0 Summit | JD Lasica from Pleasanton, CA, US, Elon Musk | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_(3017880199).jpg
+- Elon Musk 2015 | Steve Jurvetson, https://www.flickr.com/photos/jurvetson/18659265152/ | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_2015.jpg
+- Elon Musk at Tesla Battery Day 2020 | Steve Jurvetson, https://www.flickr.com/photos/jurvetson/50376740888/ | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_at_the_Tesla_ASM_and_Battery_Day.jpg
+- Charles Bolden congratulates Elon Musk after Dragon, 2012 | Bill Ingalls, http://spaceflight.nasa.gov/gallery/images/station/crew-31/html/201206130003hq.html | Public domain | https://commons.wikimedia.org/wiki/File:Charles_Bolden_congratulates_SpaceX_CEO_and_Chief_Designer_Elon_Musk_in_front_of_the_historic_Dragon_capsule.jpg
+- Elon Musk in the Boring tunnel 2018 | Steve Jurvetson from Menlo Park, USA, Elon Musk Accelerates the Boring | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_Accelerates_the_Boring_(45716125474).jpg
+- Elon Musk in DOGE cap, Oval Office 2025 | The White House, https://www.flickr.com/photos/202101414@N05/54562031537/ | Public domain | https://commons.wikimedia.org/wiki/File:P20250530MR-1015_President_Donald_Trump_participates_in_a_press_conference_with_departing_DOGE_adviser_Elon_Musk_(cropped).jpg
+- Dragon V2 unveiling, Elon Musk 2014 | NASA/Dimitri Gerondidakis, https://mediaarchive.ksc.nasa.gov/#/Detail/19524 | Public domain | https://commons.wikimedia.org/wiki/File:Dragon_V2_unveiling,_Elon_Musk_(KSC-2014-2727).jpg
+- Elon Musk overlooking the remains of F9R | Steve Jurvetson from Menlo Park, USA, Elon Musk overlooking the remains of F9R | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_overlooking_the_remains_of_F9R_(36411051713).jpg
+- Elon Musk at SpaceX press conference | Kim Shiflett, KSC-20160408-PH_KLS0003_0027 | Public domain | https://commons.wikimedia.org/wiki/File:Elon_Musk_and_Hans_Koenigsmann_at_the_SpaceX_CRS-8_post-launch_press_conference_(26223624532)_(cropped).jpg
+- Franz von Holzhausen and Elon Musk | Steve Jurvetson / Steve Jurvetson, https://www.flickr.com/photos/jurvetson/2944375891/ | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Franz_von_Holzhausen_and_Elon_Musk.jpg
+- NASA Administrator Michael Griffin meets Elon Musk, 2005 | Renee Bouchard, https://archive.org/details/200504200001HQ | Public domain | https://commons.wikimedia.org/wiki/File:Michael_Griffin_Meets_with_Elon_Musk.jpg
+- Elon Musk laughing 2023 | UK Government, UK Government hosts AI Summit at Bletchley Park | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:UK_Government_hosts_AI_Summit_at_Bletchley_Park_(53302927869).jpg
+- Elon Musk presenting the first Model 3 cars | Steve Jurvetson, https://www.flickr.com/photos/jurvetson/36083811822/ | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_Presenting_the_First_Tesla_Model_3_Cars.jpg
+- Elon Musk unveiling Neuralink 2019 | Steve Jurvetson, Elon Musk unveiling Neuralink | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_unveiling_Neuralink.jpg
+- Elon Musk gives tour for President Obama, 2010 | Bill Ingalls, http://www.nasa.gov/multimedia/imagegallery/obama_tour.html | Public domain | https://commons.wikimedia.org/wiki/File:Elon_Musk_gives_tour_for_President_Barack_Obama.jpg
+- First production Tesla Roadster, 2008 | Steve Jurvetson from Los Altos, USA, the Tesla has landed | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:The_Tesla_has_landed_-_Flickr_-_jurvetson.jpg
+- Elon Musk, Royal Society portrait 2018 | Duncan.Hull, Debbie Rowe, Photographer | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_Royal_Society.jpg
+- Elon and the Starship, 2020 | Steve Jurvetson from Los Altos, USA, Elon & The Starship | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_%26_The_Starship_(50710186528).jpg
+- Elon and Starship SN9 | Steve Jurvetson, https://www.flickr.com/photos/jurvetson/50712415292/ | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_%26_Starship_SN9.jpg
+- Elon Musk at TED 2017 | Steve Jurvetson from Menlo Park, USA, Elon Musk at TED 2017 | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_at_TED_2017.jpeg
+- Elon Musk at SpaceX factory | Steve Jurvetson from Menlo Park, USA, Elon Musk%u2019s Smile | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Elon_Musk_4670874048_7c12d5503a_o.jpg
+- Elon Musk on stage, 2022 | Steve Jurvetson from Los Altos, USA, Meet the new boss... Same as the News boss... The Elon Musk Twitter Interview at TED 2022 | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Meet_the_new_boss..._Same_as_the_News_boss..._The_Elon_Musk_Twitter_Interview_at_TED_2022_(52004185747).jpg
+- eBay / PayPal headquarters San Jose | Leon7, Own work | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Ebay-PayPal_San_Jose.jpg
+- Union Buildings Pretoria | Davinci77, Originally created and uploaded to the Afrikaans Wikipedia by Davinci77 , using the same filename. | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Uniegebou.jpg
+- Red Square Moscow winter | Vyacheslav Argenberg, Own work | CC BY 4.0 | https://commons.wikimedia.org/wiki/File:Red_Square,_winter,_Moscow,_Russia.jpg
+- Tesla Roadster orbit diagram | Philip Terry Graham, Own work ; graphics created in GIMP 2.8.20 | Public domain | https://commons.wikimedia.org/wiki/File:Tesla_Roadster_orbit.png
+- Elon Musk's Tesla Roadster with Earth | SpaceX, Falcon Heavy Demo Mission | CC0 | https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40143096241).jpg
+- Starman in the Roadster | SpaceX, Falcon Heavy Demo Mission | CC0 | https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40110298232).jpg
+- Ship 39 in Megabay 2, Starbase | Petty Officer 1st Class Alexander Kubitza, https://www.dvidshub.net/image/9482948/sw-arsenal-freedom-tour-texas | Public domain | https://commons.wikimedia.org/wiki/File:Ship_39_in_Megabay_2,_Boca_Chica_TX.jpg
+- kitchen sink stainless steel | Havensmetal, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Custom_Stainless_Steel_Sink_by_Havens.jpg
+- Stanford University Main Quad arch | Filetime, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:SE_Arch_Stanford_University_Main_Quad.jpg
+- Starlink satellites train sky | Dktue, Own work | CC0 | https://commons.wikimedia.org/wiki/File:Starlink_%C3%BCber_dem_Rathaus_in_T%C3%BCbingen.jpg
+- Starship flight test 11 liftoff | Shujianyang, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Starship_lifted_off_from_Starbase_during_flight_test_11.jpg
+- Starship IFT-2 ascent | Osunpokeh, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Starship-IFT2-ascent.jpg
+- Starship during IFT-5, Oct 2024 | Steve Jurvetson, Flickr | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:SpaceX_Starship_during_IFT-5.jpg
+- Starship 6 launch seen from the ISS | NASA, [1] | Public domain | https://commons.wikimedia.org/wiki/File:Launch_of_SpaceX_Starship_6_rocket_seen_from_the_International_Space_Station_(iss072e220161,_cropped).jpg
+- Starship before IFT-5 | Steve Jurvetson, Flickr | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:SpaceX_Starship_before_IFT-5.jpg
+- Twitter headquarters, San Francisco | Runner1928, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Twitter_headquarters_building.JPG
+- Twitter headquarters 2022 | osunpokeh, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:TwitterHeadquarters2022.jpg
+- University of Pennsylvania College Hall | Smallbones, Own work | Public domain | https://commons.wikimedia.org/wiki/File:College_Hall_U_Penn.JPG
+- R-36 missile | Unknown author Unknown author, http://www.dodmedia.osd.mil/DVIC_View/Still_Search.cfm | Public domain | https://commons.wikimedia.org/wiki/File:SS-9_Scarp_R36.jpg
+- X headquarters, debadged, 2024 | 9yz, Own work | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:X_(Twitter)_Headquarters,_San_Francisco_-_Debadged.jpg
+- YMCA building sign | Cbaile19, Own work | CC0 | https://commons.wikimedia.org/wiki/File:YMCA_ghost_sign,_East_Liberty,_2025-05-20.jpg
