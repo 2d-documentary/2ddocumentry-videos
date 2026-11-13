@@ -1,0 +1,87 @@
+{
+ "title": "Dagar Unfiltered: channel trailer",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.15,
+   "lang": "a",
+   "desc": "Conversational narrator"
+  }
+ },
+ "tail": 3.0,
+ "spoken": {},
+ "lines": [
+  {
+   "id": "T01",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "Every famous story has an official version."
+  },
+  {
+   "id": "T02",
+   "speaker": "NARRATOR",
+   "gap_before": 0.12,
+   "text": "We open the files."
+  },
+  {
+   "id": "T03",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "A spy who was almost the president of Syria."
+  },
+  {
+   "id": "T04",
+   "speaker": "NARRATOR",
+   "gap_before": 0.12,
+   "text": "Or was he?"
+  },
+  {
+   "id": "T05",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "A man who jumped out of a plane with two hundred thousand dollars."
+  },
+  {
+   "id": "T06",
+   "speaker": "NARRATOR",
+   "gap_before": 0.12,
+   "text": "And was never seen again."
+  },
+  {
+   "id": "T07",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "A moon landing, one computer alarm away from an abort."
+  },
+  {
+   "id": "T08",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "A rocket company, one launch away from going broke."
+  },
+  {
+   "id": "T09",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "A killer London never caught."
+  },
+  {
+   "id": "T10",
+   "speaker": "NARRATOR",
+   "gap_before": 0.4,
+   "text": "Real archives. Real footage. Maps, timelines, and receipts."
+  },
+  {
+   "id": "T11",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "Both sides of the story. No filters."
+  },
+  {
+   "id": "T12",
+   "speaker": "NARRATOR",
+   "gap_before": 0.4,
+   "text": "This is Dagar Unfiltered."
+  }
+ ]
+}
