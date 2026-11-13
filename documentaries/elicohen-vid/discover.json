@@ -1,0 +1,26 @@
+{
+  "depth": 1,
+  "max_per_query": 20,
+  "commons_categories": ["Videos of Damascus", "Videos of Syria", "Videos of the Golan Heights", "Videos of the Six-Day War", "Carmel Newsreels", "Videos of Morse code"],
+  "commons_search": [
+    "Damascus filetype:video",
+    "Six-Day War filetype:video",
+    "Golan filetype:video",
+    "Syria 1960s filetype:video",
+    "Israel 1967 filetype:video",
+    "newsreel Israel 1960s filetype:video",
+    "Carmel newsreel filetype:video",
+    "Morse code filetype:video",
+    "telegraph key filetype:video",
+    "radio transmitter filetype:video",
+    "Buenos Aires filetype:video",
+    "Alexandria Egypt filetype:video",
+    "Umayyad Mosque filetype:video",
+    "Hamidiyeh souq filetype:video",
+    "typewriter filetype:video",
+    "Golan Heights Syrian bunker",
+    "eucalyptus Golan",
+    "Quneitra"
+  ],
+  "pages": []
+}
