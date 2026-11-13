@@ -18,8 +18,9 @@ function scenes() {
     [wi('M005', 14), null, 'head', 'AND AGAIN.', '', { bg: 'p_fh_press', tr: 'punch' }],
     [wi('M005', 16), null, 'head', 'AND AGAIN.', '', { bg: 'p_doge', tr: 'invert' }],
     // ---------------- childhood
-    ['M006', null, 'full', 'pretoria'],
-    ['M006', '1971', 'head', '1971', 'Pretoria, South Africa', { bg: 'pretoria' }],
+    [LINE.M006.start - 1.5, null, 'chap', 1, 'THE KID FROM PRETORIA', { tr: 'invert', cap: 0 }],
+    mapRow('M006', null, { views: [[LINE.M006.start - .2, { lon: 15, lat: 8, k: 5.2 }], [LINE.M006.start + 1.3, { lon: 27, lat: -25, k: 34 }]], pins: [[28.19, -25.75, 'PRETORIA, SOUTH AFRICA', T('M006', 'Pretoria,') + .7]] }),
+    ['M006', '1971', 'full', 'pretoria', { tr: 'cut' }],
     ['M007', null, 'capboard'],
     ['M007', 'encyclopedia', 'head', 'THE ENCYCLOPEDIA', '', GREY],
     ['M007', 'fun.', 'head', 'FOR FUN.', ''],
@@ -31,13 +32,17 @@ function scenes() {
     ['M009', 'five', 'num', '$500', 'age twelve'],
     ['M010', null, 'clipx', 'f_first'],
     ['M010', 'never', 'head', 'NEVER CHANGE', '', { bg: 'starship_11' }],
-    ['M011', null, 'full', 'kingston'],
-    ['M011', 'US.', 'full', 'upenn'],
+    mapRow('M011', null, { views: [[LINE.M011.start, { lon: 27, lat: -25, k: 30 }], [T('M011', 'leaves') + 1.3, { lon: -28, lat: 10, k: 6 }], [T('M011', 'US.') - .15, { lon: -28, lat: 10, k: 6 }], [T('M011', 'US.') + .55, { lon: -76, lat: 42, k: 42 }]],
+      routes: [[[28.19, -25.75], [-76.48, 44.23], T('M011', 'leaves'), 1.3], [[-76.48, 44.23], [-75.19, 39.95], T('M011', 'US.') + .3, .4]],
+      pins: [[28.19, -25.75, 'PRETORIA', -1], [-76.48, 44.23, 'KINGSTON, CANADA', T('M011', 'leaves') + 1.0], [-75.19, 39.95, 'PHILADELPHIA', T('M011', 'US.') + .5, 1]] }),
     ['M011', 'Physics.', 'head', 'PHYSICS', 'economics', GREY],
-    ['M012', null, 'full', 'stanford'],
+    mapRow('M012', null, { views: [[LINE.M012.start, { lon: -76, lat: 42, k: 42 }], [LINE.M012.start + 1.1, { lon: -99, lat: 39, k: 13 }]], routes: [[[-75.19, 39.95], [-122.17, 37.43], LINE.M012.start + .1, 1]],
+      pins: [[-75.19, 39.95, 'PHILADELPHIA', -1], [-122.17, 37.43, 'STANFORD', T('M012', 'Stanford.') + .05]] }),
+    ['M012', 'lasts', 'full', 'stanford'],
     ['M012', 'two', 'num', '2 DAYS', 'at Stanford'],
     ['M013', null, 'capblack'],
     // ---------------- Zip2, PayPal
+    [LINE.M014.start - 1.5, null, 'chap', 2, 'FIRST MILLIONS', { tr: 'invert', cap: 0 }],
     ['M014', null, 'term', 'www.internet.1995 >_'],
     ['M014', 'Elon', 'card', 'p_2006'],
     ['M015', null, 'head', 'ZIP2', 'online city guides', GREY],
@@ -62,8 +67,10 @@ function scenes() {
     ['M025', null, 'card', 'p_2006'],
     ['M025', 'rockets.', 'clipx', 'f_first', { off: 2 }],
     // ---------------- SpaceX + Tesla
+    [LINE.M026.start - 1.5, null, 'chap', 3, 'ROCKETS AND CARS', { tr: 'invert', cap: 0 }],
     ['M026', null, 'full', 'mars'],
-    ['M026', 'Russia', 'full', 'redsquare'],
+    mapRow('M026', 'flies', { views: [[T('M026', 'flies'), { lon: -40, lat: 42, k: 6.5 }], [T('M026', 'flies') + 1.3, { lon: 15, lat: 50, k: 8 }]], routes: [[[-118.24, 34.05], [37.62, 55.75], T('M026', 'flies'), 1.1]],
+      pins: [[-118.24, 34.05, 'LOS ANGELES', -1], [37.62, 55.75, 'MOSCOW', T('M026', 'Russia') + .15]] }),
     ['M026', 'missiles.', 'full', 'ussr_missile'],
     ['M027', null, 'full', 'dnepr'],
     ['M027', 'discount', 'head', '"DISCOUNT?"', '', GREY],
@@ -73,6 +80,7 @@ function scenes() {
     ['M029', 'Tesla.', 'head', 'TESLA', '', { bg: 'p_roadster08' }],
     ['M030', null, 'board', 'TWO BETS', 'at the same time', ['f1_omelek', 'p_roadster08']],
     // ---------------- 2008
+    [LINE.M031.start - 1.5, null, 'chap', 4, 'THE WORST YEAR', { tr: 'invert', cap: 0 }],
     ['M031', null, 'full', 'f1_omelek'],
     ['M031', 'crashes.', 'head', 'CRASH', 'flight one · 2006', RED],
     ['M032', null, 'full', 'f1_2009', { dark: .2 }],
@@ -88,8 +96,8 @@ function scenes() {
     ['M037', null, 'capblack'],
     ['M037', 'splits', 'board', 'ALL IN', 'both companies', ['f1_omelek', 'p_roadster08']],
     ['M038', null, 'head', 'ONE MORE', 'launch'],
-    ['M039', null, 'full', 'f1_flight4', { z0: 1.3, z1: 1.4 }],
-    ['M039', 'Falcon', 'head', 'FLIGHT FOUR', '28 September 2008', { bg: 'f1_flight4' }],
+    mapRow('M039', null, { views: [[LINE.M039.start, { lon: 150, lat: 12, k: 7 }], [LINE.M039.start + 1.3, { lon: 167.7, lat: 9.6, k: 70 }]], pins: [[167.74, 9.05, 'KWAJALEIN ATOLL', LINE.M039.start + 1.0]] }),
+    ['M039', 'flight', 'head', 'FLIGHT FOUR', '28 September 2008', { bg: 'f1_flight4' }],
     ['M040', null, 'full', 'f1_flight4', { z0: 1.05, z1: 1.25 }],
     ['M040', 'orbit.', 'head', 'ORBIT', '', { bg: 'f1_flight4', tr: 'punch' }],
     ['M041', null, 'full', 'p_griffin'],
@@ -98,6 +106,7 @@ function scenes() {
     ['M042', "Tesla's", 'full', 'p_roadster08'],
     ['M043', null, 'board', 'SAVED', 'in the same week', ['f1_flight4', 'p_roadster08']],
     // ---------------- the climb
+    [LINE.M044.start - 1.5, null, 'chap', 5, 'THE COMEBACK', { tr: 'invert', cap: 0 }],
     ['M044', null, 'head', 'FAST', '', { bg: 'p_2015' }],
     ['M045', null, 'clipx', 'f_cots'],
     ['M045', 'Dragon', 'clipx', 'f_drag'],
@@ -120,6 +129,7 @@ function scenes() {
     ['M049c', null, 'full', 'starlink_train'],
     ['M049c', 'beaming', 'clipx', 'f_f926'],
     // ---------------- tweets, flamethrowers, Rogan
+    [LINE.M050.start - 1.5, null, 'chap', 6, 'TWEETS AND FLAMETHROWERS', { tr: 'invert', cap: 0 }],
     ['M050', null, 'capblack'],
     ['M050', 'tweets.', 'head', 'TWEETS', ''],
     ['M051', null, 'post', 'Am considering taking Tesla private at $420. Funding secured.', '7 Aug 2018', { avatar: 'p_royal' }],
@@ -149,6 +159,7 @@ function scenes() {
     ['M053', 'breaks.', 'head', 'IT BREAKS', '', RED],
     ['M053', 'Twice.', 'head', 'TWICE.', ''],
     // ---------------- Twitter
+    [LINE.M054.start - 1.5, null, 'chap', 7, 'THE BIRD AND THE ROCKET', { tr: 'invert', cap: 0 }],
     ['M054', null, 'capblack'],
     ['M054', 'impulse', 'head', 'IMPULSE BUY', 'the most expensive ever'],
     ['M055', null, 'full', 'twitter_hq'],
@@ -161,8 +172,8 @@ function scenes() {
     ['M057', 'blue', 'head', '$8', 'blue checks'],
     ['M057', 'X.', 'full', 'x_hq'],
     // ---------------- Starship
-    ['M058', null, 'full', 'ship39'],
-    ['M058', 'biggest', 'full', 'starship_pad'],
+    mapRow('M058', null, { views: [[LINE.M058.start, { lon: -98, lat: 38, k: 11 }], [LINE.M058.start + 1.2, { lon: -97.4, lat: 27.5, k: 55 }]], pins: [[-97.15, 25.99, 'STARBASE, TEXAS', LINE.M058.start + .9]] }),
+    ['M058', 'biggest', 'full', 'ship39'],
     ['M058', 'Starship.', 'head', 'STARSHIP', '', { bg: 'starship_pad' }],
     ['M059', null, 'clipx', 'i_up', { fps: 15 }],
     ['M059', 'blows', 'clipx', 'i_boom', { fps: 15 }],
@@ -175,13 +186,17 @@ function scenes() {
     ['M061', 'catches', 'clipx', 'c_tower', { fps: 15 }],
     ['M061', 'arms.', 'head', 'CAUGHT', 'by the tower', { bg: 'c_tower', clip: 1 }],
     // ---------------- Washington
-    ['M062', null, 'full', 'p_doge'],
+    [LINE.M062.start - 1.5, null, 'chap', 8, 'WASHINGTON', { tr: 'invert', cap: 0 }],
+    mapRow('M062', null, { views: [[LINE.M062.start, { lon: -97, lat: 30, k: 12 }], [LINE.M062.start + 1.2, { lon: -80, lat: 38.5, k: 30 }]], routes: [[[-97.15, 25.99], [-77.04, 38.9], LINE.M062.start + .1, 1]],
+      pins: [[-97.15, 25.99, 'STARBASE', -1], [-77.04, 38.9, 'WASHINGTON, D.C.', T('M062', 'Washington') + .1]] }),
+    ['M062', 'cost', 'full', 'p_doge'],
     ['M062', 'DOGE.', 'head', 'DOGE', 'cost cutting', { bg: 'p_doge' }],
     ['M063', null, 'head', 'HERO', 'to some'],
     ['M063', 'Villain', 'head', 'VILLAIN', 'to others', RED],
     ['M063', 'months', 'dof', 'p_doge', 'Elon Musk', { fx: .5, fy: .4, cx: .5, cy: .42, r: .28 }],
     ['M063', 'fighting', 'head', 'PUBLIC FEUD', 'with the President', GREY],
     // ---------------- 2026
+    [LINE.M064.start - 1.5, null, 'chap', 9, '2026', { tr: 'invert', cap: 0 }],
     ['M064', null, 'head', '2026', 'the craziest year yet'],
     ['M065', null, 'term', 'SPACEX + XAI  =  ONE COMPANY'],
     ['M065', 'biggest', 'head', 'BIGGEST MERGER', 'ever', GREY],
@@ -212,6 +227,7 @@ function scenes() {
     ['M073', null, 'head', 'PRODUCTION', '2028', { bg: 'roadster2a' }],
     ['M073', '250', 'num', '$250,000', 'just to reserve it'],
     // ---------------- midterms
+    [LINE.M074.start - 1.5, null, 'chap', 10, 'THE BILL', { tr: 'invert', cap: 0 }],
     ['M074', null, 'capblack'],
     ['M075', null, 'full', 'p_twitter', { dark: .2 }],
     ['M075', '445', 'num', '$445M+', 'midterm spending'],
@@ -226,6 +242,7 @@ function scenes() {
     ['M080', 'Catching', 'clipx', 'c_tower', { fps: 15 }],
     ['M080', 'ship,', 'full', 'starship_iss'],
     // ---------------- ending
+    [LINE.M081.start - 1.5, null, 'chap', 11, 'GENIUS OR LUCKY?', { tr: 'invert', cap: 0 }],
     ['M081', null, 'head', 'GENIUS', 'or lucky?'],
     ['M082', null, 'wall', ['p_royal', 'f1_omelek', 'p_2008', 'modelS', 'falconheavy', 'p_twitter', 'starship_pad', 'p_doge', 'nasdaq26', 'cybertruck', 'p_neuralink', 'mars', 'p_bolden', 'roadster_space', 'p_laugh', 'x_hq', 'f9_arc', 'p_2006', 'ship39', 'p_ted']],
     ['M082', 'never', 'capblack'],
@@ -234,6 +251,10 @@ function scenes() {
     [after('M083', .5), null, 'end', { tr: 'invert', cap: 0 }],
   ];
   BEAT_KINDS.end = { cap: 0, draw: (ctx, t, lt, t0) => endCard(ctx, t, t0, false) };
+  const CH = ['M006', 'M014', 'M026', 'M031', 'M044', 'M050', 'M054', 'M062', 'M064', 'M074', 'M081'];
+  const YEARS = [['M006', 1971], ['M008', 1980], ['M009', 1984], ['M011', 1989], ['M012', 1995], ['M017', 1999], ['M021', 2000], ['M023', 2002], ['M029', 2004], ['M031', 2006], ['M032', 2007], ['M033', 2008],
+    ['M045', 2012], ['M047', 2015], ['M048', 2018], ['M053', 2019], ['M055', 2022], ['M059', 2023], ['M061', 2024], ['M062', 2025], ['M064', 2026]].map(([id, y]) => [LINE[id].start - (CH.includes(id) ? 1.5 : 0), y]);
+  const tapeFrom = LINE.M006.start - 1.5, tapeTo = LINE.M083.end + .4;
   const B = buildBeats(rows);
   const ALL = TL.lines.map(l => l.id).concat(BITE_IDS);
   const capStyle = t => { let i = B.length - 1; while (i > 0 && t < B[i].t0) i--; return B[i].cap; };
@@ -242,7 +263,9 @@ function scenes() {
     if (c === 'bite') cap(ctx, t, BITE_IDS, { y: H * .82, size: MN() * .036, hold: .1 });
     else if (c) cap(ctx, t, ALL, c === 'dark' ? { color: '#111', shadow: false } : {});
     filmFinish(ctx, t, { grain: .1, vig: .4 });
+    if (t > tapeFrom && t < tapeTo && c !== 'bite') yearTape(ctx, yearAt(YEARS, t), clamp((t - tapeFrom) / .4) * clamp((tapeTo - t) / .3));
   }, { name: 'docx', lead: 0 });
+  CH.forEach(id => cue(LINE[id].start - 1.45, 'thud', .35));
   // censor beeps (voice muted + 1 kHz tone)
   [['M040', 'shit'], ['M060', 'fuck']].forEach(([id, w]) => { const s = T(id, w), e = T(id, w, 'e'); cue(s - .02, 'beep', 1, e - s + .06); });
   // real sound from the Roadster demo under the thruster jump
