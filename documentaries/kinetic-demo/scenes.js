@@ -442,6 +442,6 @@ function scenes() {
         glassFollow(ctx, W / 2, 1160, t, L('V07') + .5, { tapAfter: 1.3 }); fadeOut(ctx, t, TL.duration, 1); } },
   ];
   shot(0, (ctx, t, lt) => { seq(ctx, t, S); kCaption(ctx, t, ['V01', 'V02', 'V03', 'V04', 'V05', 'V06', 'V07'], { y: 1560, size: 50 }); }, { name: 'kinetic', lead: 0 });
-  seqCues(S, .7);
+  // no whooshes on transitions (user preference); SFX only on story beats
   cue(L('V01') + .1, 'impact', .9); cue(T('V02', '1962,'), 'tick', .6); cue(T('V03', 'Kamel'), 'stamp', .7); cue(T('V05', 'headlines.'), 'scribble', .6); cue(T('V06', 'almost'), 'impact', .9); cue(L('V07') + 1.8, 'tick', .8);
 }

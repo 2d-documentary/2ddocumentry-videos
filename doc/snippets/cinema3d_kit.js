@@ -1,5 +1,5 @@
 // ============================================================================
-// KINETIC KIT: "After Effects in canvas" for cinematic 2.5D documentary edits
+// CINEMA3D KIT: "After Effects in canvas" for cinematic 2.5D documentary edits
 // (3D cards/paper with perspective + curl, camera moves, whip/zoom/flash/glitch
 //  transitions with motion blur, grunge titles, pill tags, floating serif words,
 //  word-chunk captions, procedural sets: wood desk, newspaper, wall + spotlight,
