@@ -153,7 +153,7 @@ if AUD:
         x = np.frombuffer(raw, np.float32).astype(np.float64); n = len(x)
         if not n: print("empty soundbite", c); continue
         act = x[np.abs(x) > .02 * np.max(np.abs(x))]
-        x *= c.get("gain", 1) * _vref0 * 1.05 / max(rms(act if len(act) > SR // 4 else x), 1e-9)
+        x *= c.get("gain", 1) * _vref0 * 1.55 / max(rms(act if len(act) > SR // 4 else x), 1e-9)
         f = min(int(.03 * SR), n // 4); x[:f] *= np.linspace(0, 1, f); x[-f:] *= np.linspace(1, 0, f)
         a = int(c["t"] * SR); b = min(N, a + n); bites[a:b] += x[:b - a]
         d = np.ones(N); f2 = int(.25 * SR); a0, b0 = max(0, a - f2), min(N, b + f2)
