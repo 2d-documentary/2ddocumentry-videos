@@ -556,6 +556,48 @@
    "description": "Falcon 9 launch and landing long exposure, Dec 2015",
    "source_page": "https://commons.wikimedia.org/wiki/File:45th_Space_Wing_successfully_launches_ORBCOMM,_historically_lands_first_stage_booster_(2343201).jpeg",
    "authenticity": "authentic"
+  },
+  {
+   "id": "cybercab1",
+   "category": "historical-photos",
+   "description": "Tesla Cybercab",
+   "commons_search": "Tesla Cybercab",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cybercab2",
+   "category": "historical-photos",
+   "description": "Cybercab robotaxi Tesla",
+   "commons_search": "Cybercab robotaxi Tesla",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "roadster2a",
+   "category": "historical-photos",
+   "description": "Tesla Roadster second generation",
+   "commons_search": "Tesla Roadster second generation",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "roadster2b",
+   "category": "historical-photos",
+   "description": "Tesla Roadster 2017 prototype",
+   "commons_search": "Tesla Roadster 2017 prototype",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "semi",
+   "category": "historical-photos",
+   "description": "Tesla Semi truck",
+   "commons_search": "Tesla Semi truck",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cybercab3",
+   "category": "historical-photos",
+   "description": "Tesla Cybercab We Robot",
+   "commons_search": "Tesla Cybercab We Robot",
+   "authenticity": "authentic"
   }
  ]
 }
