@@ -1,0 +1,111 @@
+{
+ "title": "Diwali raat ka gayab data",
+ "voices": {
+  "NARRATOR": {
+   "engine": "edge",
+   "voice": "en-US-AndrewMultilingualNeural",
+   "rate": "+5%",
+   "pitch": "+0Hz"
+  }
+ },
+ "tail": 2.8,
+ "lines": [
+  {
+   "id": "V01",
+   "speaker": "NARRATOR",
+   "text": "8 November, Diwali ki raat.",
+   "say": "आठ नवंबर, दिवाली की रात।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "V02",
+   "speaker": "NARRATOR",
+   "text": "Delhi ki hawa zeher ban rahi thi.",
+   "say": "दिल्ली की हवा ज़हर बन रही थी।"
+  },
+  {
+   "id": "V03",
+   "speaker": "NARRATOR",
+   "text": "Aur theek usi waqt, sarkari meter chup ho gaye.",
+   "say": "और ठीक उसी वक़्त, सरकारी मीटर चुप हो गए।"
+  },
+  {
+   "id": "V04",
+   "speaker": "NARRATOR",
+   "text": "Raat 2 baje. Delhi ke 25 stations pe, PM2.5 ki reading gayab.",
+   "say": "रात दो बजे। दिल्ली के पच्चीस स्टेशन्स पे, पी एम टू पॉइंट फ़ाइव की रीडिंग ग़ायब।",
+   "gap_before": 0.4
+  },
+  {
+   "id": "V05",
+   "speaker": "NARRATOR",
+   "text": "Agle din, Delhi ki apni pollution body DPCC ne wo data jaari kiya.",
+   "say": "अगले दिन, दिल्ली की अपनी पॉल्यूशन बॉडी डी पी सी सी ने वो डेटा जारी किया।"
+  },
+  {
+   "id": "V06",
+   "speaker": "NARRATOR",
+   "text": "Mundka. Raat 2 baje. 3,744.",
+   "say": "मुंडका। रात दो बजे। सैंतीस सौ चवालीस।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "V07",
+   "speaker": "NARRATOR",
+   "text": "India ke national standard se 60 guna zyada.",
+   "say": "इंडिया के नेशनल स्टैंडर्ड से साठ गुना ज़्यादा।"
+  },
+  {
+   "id": "V08",
+   "speaker": "NARRATOR",
+   "text": "JNU, 3,023. NSUT, 3,008. Aur 11 stations 2,000 ke paar.",
+   "say": "जे एन यू, तीन हज़ार तेईस। एन एस यू टी, तीन हज़ार आठ। और ग्यारह स्टेशन्स दो हज़ार के पार।"
+  },
+  {
+   "id": "V09",
+   "speaker": "NARRATOR",
+   "text": "Toh data gaya kahan?",
+   "say": "तो डेटा गया कहाँ?",
+   "gap_before": 0.4
+  },
+  {
+   "id": "V10",
+   "speaker": "NARRATOR",
+   "text": "CPCB ka jawab. Unka 2015 wala system, 999 se upar ki reading maanta hi nahi.",
+   "say": "सी पी सी बी का जवाब। उनका दो हज़ार पंद्रह वाला सिस्टम, नौ सौ निन्यानवे से ऊपर की रीडिंग मानता ही नहीं।"
+  },
+  {
+   "id": "V11",
+   "speaker": "NARRATOR",
+   "text": "Use out of range maan ke hata deta hai.",
+   "say": "उसे आउट ऑफ़ रेंज मान के हटा देता है।"
+  },
+  {
+   "id": "V12",
+   "speaker": "NARRATOR",
+   "text": "Matlab hawa jitni zehreeli, record mein utni hi gayab.",
+   "say": "मतलब हवा जितनी ज़हरीली, रिकॉर्ड में उतनी ही ग़ायब।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "V13",
+   "speaker": "NARRATOR",
+   "text": "Ek analysis kehta hai, asli Diwali pollution 49 percent zyada ho sakta hai.",
+   "say": "एक एनालिसिस कहता है, असली दिवाली पॉल्यूशन उनचास परसेंट ज़्यादा हो सकता है।"
+  },
+  {
+   "id": "V14",
+   "speaker": "NARRATOR",
+   "text": "Jab meter hi saans lena band kar de, toh Delhi kaise saans le?",
+   "say": "जब मीटर ही साँस लेना बंद कर दे, तो दिल्ली कैसे साँस ले?",
+   "gap_before": 0.4
+  },
+  {
+   "id": "V15",
+   "speaker": "NARRATOR",
+   "text": "Aise aur sach ke liye, follow kariye Veritrix.",
+   "say": "ऐसे और सच के लिए, फ़ॉलो करिए वेरिट्रिक्स।",
+   "gap_before": 0.4
+  }
+ ]
+}
