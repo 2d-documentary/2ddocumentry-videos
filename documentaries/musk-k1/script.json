@@ -1,0 +1,110 @@
+{
+ "title": "Elon Musk: one last rocket (kinetic Short)",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.12,
+   "lang": "a",
+   "desc": "Documentary narrator: brisk, witty, engaging"
+  }
+ },
+ "spoken": {
+  "2008": "two thousand eight",
+  "28th": "twenty-eighth",
+  "1.6": "one point six",
+  "1": "one"
+ },
+ "tail": 2.4,
+ "lines": [
+  {
+   "id": "K01",
+   "speaker": "NARRATOR",
+   "text": "Elon Musk is about to lose everything.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "K02",
+   "speaker": "NARRATOR",
+   "text": "It's 2008.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "K03",
+   "speaker": "NARRATOR",
+   "text": "His rocket company has tried to reach orbit three times.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "K04",
+   "speaker": "NARRATOR",
+   "text": "Boom. Boom. Boom.",
+   "gap_before": 0.1
+  },
+  {
+   "id": "K05",
+   "speaker": "NARRATOR",
+   "text": "Tesla is bleeding cash. The economy is collapsing.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "K06",
+   "speaker": "NARRATOR",
+   "text": "And the man who wants to put humans on Mars is borrowing money from friends to pay rent.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "K07",
+   "speaker": "NARRATOR",
+   "text": "He has money for one more launch. Just one.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "K08",
+   "speaker": "NARRATOR",
+   "text": "September 28th. Falcon 1 lifts off.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "K09",
+   "speaker": "NARRATOR",
+   "text": "And this time, it reaches orbit.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "K10",
+   "speaker": "NARRATOR",
+   "text": "Three months later, NASA calls. A 1.6 billion dollar contract.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "K11",
+   "speaker": "NARRATOR",
+   "text": "The next day, on Christmas Eve, Tesla closes its funding round, days before it would have gone bankrupt.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "K12",
+   "speaker": "NARRATOR",
+   "text": "Merry Christmas, Elon.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "K13",
+   "speaker": "NARRATOR",
+   "text": "Today, the guy who almost lost it all is the first trillionaire in history.",
+   "gap_before": 0.35
+  },
+  {
+   "id": "K14",
+   "speaker": "NARRATOR",
+   "text": "All because of one last rocket.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "K15",
+   "speaker": "NARRATOR",
+   "text": "The full story is on Unfiled Films.",
+   "gap_before": 0.35
+  }
+ ]
+}
