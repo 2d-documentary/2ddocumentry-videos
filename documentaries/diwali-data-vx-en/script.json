@@ -2,13 +2,14 @@
  "title": "Diwali night: the missing data (English subtitles)",
  "voices": {
   "NARRATOR": {
-   "engine": "edge",
-   "voice": "en-US-AndrewMultilingualNeural",
-   "rate": "+5%",
-   "pitch": "+0Hz"
+   "engine": "silent",
+   "cps": 24,
+   "hold": 1.0,
+   "per_word": 0.22,
+   "desc": "no voiceover: text typed on screen"
   }
  },
- "tail": 2.8,
+ "tail": 3.2,
  "lines": [
   {
    "id": "V01",

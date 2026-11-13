@@ -80,7 +80,8 @@ env = env / (env.max() + 1e-9)
 duck = 1 - .45 * np.clip(env * 4, 0, 1)
 duck = np.convolve(duck, np.ones(int(.25 * SR)) / int(.25 * SR), mode='same')
 music *= duck
-music *= MUSIC_LEVEL * rms(voice) / rms(music)
+VREF = rms(voice) if rms(voice) > 1e-4 else 0.06   # silent (text-only) episodes: music carries the track
+music *= MUSIC_LEVEL * VREF / rms(music)
 
 # ------------------------------------------------------------------ SFX
 sfx = np.zeros(N)
@@ -129,7 +130,7 @@ for c in cues:
     if not f: missing.add(c["type"]); continue
     add(sfx, f(), c["t"], LEVEL[c["type"]] * c.get("gain", 1))
 if missing: print("unknown sfx types:", missing)
-sfx *= .55 * rms(voice) / max(rms(sfx), 1e-9) if rms(sfx) > rms(voice) * .55 else 1.0
+sfx *= .55 * VREF / max(rms(sfx), 1e-9) if rms(sfx) > VREF * .55 else 1.0
 
 mix = voice + music + sfx
 peak = np.max(np.abs(mix)); mix = mix / peak * .89 if peak > .89 else mix

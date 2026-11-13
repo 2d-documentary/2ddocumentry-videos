@@ -91,8 +91,17 @@ def parler_synth(text, v):
         from scipy.signal import resample_poly; from math import gcd; k = gcd(sr, SR); a = resample_poly(a, SR // k, sr // k).astype(np.float32)
     return a
 
+def silent_synth(line, v):
+    """Text-only episodes (no voiceover): the line is 'typed' on screen at cps characters/second, then held for reading."""
+    words = line["text"].split(); cps = v.get("cps", 26); t, res = 0.0, []
+    for w in words:
+        d = max(.08, len(w) / cps); res.append({"w": w, "s": round(t, 3), "e": round(t + d, 3)}); t += d + .5 / cps
+    hold = v.get("hold", .9) + v.get("per_word", .2) * len(words)
+    return np.zeros(int(SR * (t + hold)), dtype=np.float32), ("direct", res)
+
 def synth(line):
     v = script["voices"][line["speaker"]]
+    if v.get("engine") == "silent": return silent_synth(line, v)
     # "read": "text" makes the voice read the Roman caption text (e.g. Indian-English voices reading Hinglish)
     spoken = speakable(line["text"]) if v.get("read") == "text" or not line.get("say") else line["say"]
     if v.get("engine") == "edge":
@@ -153,8 +162,12 @@ for i, line in enumerate(script["lines"]):
     a = a.astype(np.float32)
     # trim leading/trailing silence a little so pauses are controlled by gap_before
     nz = np.where(np.abs(a) > 0.01)[0]; lead = max(0, nz[0] - int(.03 * SR)) if len(nz) else 0; tail = min(len(a), nz[-1] + int(.08 * SR)) if len(nz) else len(a)
-    a = a[lead:tail]; shift = lead / SR; dur = len(a) / SR
-    if isinstance(toks, tuple):   # edge engine: (tag, word boundaries)
+    if not (isinstance(toks, tuple) and toks[0] == "direct"): a = a[lead:tail]
+    else: lead = 0
+    shift = lead / SR; dur = len(a) / SR
+    if isinstance(toks, tuple) and toks[0] == "direct":   # silent engine: word times already on the caption words
+        al = toks[1]
+    elif isinstance(toks, tuple):   # edge engine: (tag, word boundaries)
         bounds = [(x, s - shift, e - shift) for x, s, e in toks[1]]
         al = map_bounds(line["text"].split(), bounds, dur) or align(line["text"].split(), [], dur)
     else:
