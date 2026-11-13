@@ -1,6 +1,6 @@
 # Asset report: Apollo 11 1202
 
-**37 downloaded, 3 need attention** (of 40)
+**44 downloaded, 1 need attention** (of 45)
 
 ## Download these by hand
 
@@ -8,9 +8,7 @@ Open each link, download the highest-resolution version, and send it back with i
 
 | ID | Scene | What | Link | Why it failed |
 |---|---|---|---|---|
-| sc_mcc |  | Apollo 11 Mission Control Center - Film Rolls (KSC-19690716-MH-NAS01-0001-Apollo 11 Mission Con | https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8e/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm.480p.vp9.webm | file too large (150 MB) |
-| sc_eagle |  | The Eagle Has Landed, The Flight of Apollo 11, 1969.webm | https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4a/The_Eagle_Has_Landed%2C_The_Flight_of_Apollo_11%2C_1969.webm/The_Eagle_Has_Landed%2C_The_Flight_of_Apollo_11%2C_1969.webm.480p.vp9.webm | file too large (118 MB) |
-| sc_walk |  | Restored Apollo 11 Moonwalk - Original NASA EVA Mission Video - Walking on the Moon.webm | https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/Restored_Apollo_11_Moonwalk_-_Original_NASA_EVA_Mission_Video_-_Walking_on_the_Moon.webm/Restored_Apollo_11_Moonwalk_-_Original_NASA_EVA_Mission_Video_-_Walking_on_the_Moon.webm.480p.vp9.webm | file too large (310 MB) |
+| v_mcc_s |  | Apollo 11 Mission Control Center - Film Rolls (KSC-19690716-MH-NAS01-0001-Apollo 11 Mission Con | https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8e/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm/Apollo_11_Mission_Control_Center_-_Film_Rolls_%28KSC-19690716-MH-NAS01-0001-Apollo_11_Mission_Control_Center_Film_Rolls1%29.webm.360p.vp9.webm | file too large (96 MB) |
 
 ## In the store
 
@@ -49,7 +47,14 @@ Open each link, download the highest-resolution version, and send it back with i
 | celeb2 |  | `archives/historical-photos/celeb2_inflight-apollo-xi-mission-control-cente.jpg` | Public domain | authentic |
 | pano |  | `archives/historical-photos/pano_apollo-11-tranquility-base-panoramic-jsc.jpg` | Public domain | authentic |
 | tvbuzz |  | `archives/historical-photos/tvbuzz_apollo-tv-transmission-07-18-1969-s69-39.jpg` | Public domain | authentic |
-| sc_final |  | `archives/footage/sc_final_ap11-final-approach-ogv.ogv` | Public domain | authentic |
-| sc_launch |  | `archives/footage/sc_launch_apollo-11-launch-video-of-engines-at-500.webm` | Public domain | authentic |
-| sc_land |  | `archives/footage/sc_land_historic-apollo-11-moon-landing-footage-.webm` | Public domain | authentic |
-| sc_intro |  | `archives/footage/sc_intro_apollo-11-intro-720p-ogv.webm` | Public domain | authentic |
+| v_desc1 |  | `archives/footage/v_desc1_ap11-final-approach-ogv.ogv` | Public domain | authentic |
+| v_desc2 |  | `archives/footage/v_desc2_ap11-final-approach-ogv.ogv` | Public domain | authentic |
+| v_dust0 |  | `archives/footage/v_dust0_ap11-final-approach-ogv.ogv` | Public domain | authentic |
+| v_launch |  | `archives/footage/v_launch_apollo-11-intro-720p-ogv.webm` | Public domain | authentic |
+| v_desc3 |  | `archives/footage/v_desc3_apollo-11-intro-720p-ogv.webm` | Public domain | authentic |
+| v_dust |  | `archives/footage/v_dust_apollo-11-intro-720p-ogv.webm` | Public domain | authentic |
+| v_ctrl |  | `archives/footage/v_ctrl_apollo-11-intro-720p-ogv.webm` | Public domain | authentic |
+| v_crater |  | `archives/footage/v_crater_apollo-11-intro-720p-ogv.webm` | Public domain | authentic |
+| v_walk |  | `archives/footage/v_walk_apollo-11-intro-720p-ogv.webm` | Public domain | authentic |
+| v_timer |  | `archives/footage/v_timer_historic-apollo-11-moon-landing-footage-.webm` | Public domain | authentic |
+| v_eagle_s |  | `archives/footage/v_eagle_s_the-eagle-has-landed-the-flight-of-apoll.webm` | Public domain | authentic |
