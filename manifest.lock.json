@@ -270,6 +270,166 @@
    "page": "https://commons.wikimedia.org/wiki/File:Glen_Park_Branch_Library_(27459485380).jpg",
    "description": "Glen Park Branch Library (27459485380).jpg",
    "category": "historical-photos"
+  },
+  {
+   "id": "golani67",
+   "status": "downloaded",
+   "file": "archives/historical-photos/golani67_six-day-war-golani-brigade-ahead-of-the-.jpg",
+   "attribution": "\u05d9\u05d5\u05e1\u05e3 \u05dc\u05d5\u05d9\u05d8\u05d4 / Bamahane photographer",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Six-Day_War._Golani_Brigade_ahead_of_the_break-in_to_the_Golan_Heights.jpg",
+   "description": "Six-Day War. Golani Brigade ahead of the break-in to the Golan Heights.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "hafpar",
+   "status": "downloaded",
+   "file": "archives/historical-photos/hafpar_president-amin-al-hafiz-before-a-militar.jpg",
+   "attribution": "Unknown author Unknown author",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:President_Amin_al-Hafiz_before_a_military_parade_to_mark_Syria%27s_Independence_Day,_1965_(cropped_X2).jpg",
+   "description": "President Amin al-Hafiz before a military parade to mark Syria's Independence Day, 1965 (c",
+   "category": "historical-photos"
+  },
+  {
+   "id": "dpan",
+   "status": "downloaded",
+   "file": "archives/historical-photos/dpan_damascus-syria-panoramic-view-of-damascu.jpg",
+   "attribution": "Vyacheslav Argenberg",
+   "license": "CC BY 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Damascus,_Syria,_Panoramic_view_of_Damascus.jpg",
+   "description": "Damascus, Syria, Panoramic view of Damascus.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "marjeh_t",
+   "status": "downloaded",
+   "file": "archives/historical-photos/marjeh_t_marjeh-square-and-the-telegraph-monument.jpg",
+   "attribution": "Mr.TAMER.Shlash",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Marjeh_Square_(and_the_Telegraph_Monument).jpg",
+   "description": "Marjeh Square (and the Telegraph Monument).jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "bse_tower",
+   "status": "downloaded",
+   "file": "archives/historical-photos/bse_tower_bse-bombay-stock-exchange-building-jpg.jpg",
+   "attribution": "Niyantha Shekhar, https://www.flickr.com/photos/niyantha/2134853158/in/photostream/",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:BSE_-_Bombay_Stock_Exchange_Building.jpg",
+   "description": "BSE - Bombay Stock Exchange Building.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "notes_fan",
+   "status": "downloaded",
+   "file": "archives/historical-photos/notes_fan_stack-of-indian-rupee-jpg.jpg",
+   "attribution": "Vinoth offl, Own work",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Stack_of_indian_rupee.jpg",
+   "description": "Stack of indian rupee.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "bull_bse",
+   "status": "downloaded",
+   "file": "archives/historical-photos/bull_bse_statue-of-bull-in-front-of-bse-mumbai-jp.jpg",
+   "attribution": "Pradeep717, Own work",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Statue_of_Bull_in_front_of_BSE_Mumbai.jpg",
+   "description": "Statue of Bull in front of BSE Mumbai.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "armstrong",
+   "status": "downloaded",
+   "file": "archives/historical-photos/armstrong_neil-armstrong-pose-cropped-jpg.jpg",
+   "attribution": "Unknown author Unknown author, NASA Photo ID: S69-31741 - Program: Apolo XI",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_pose_(cropped).jpg",
+   "description": "Neil Armstrong pose (cropped).jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "eagle2",
+   "status": "downloaded",
+   "file": "archives/historical-photos/eagle2_apollo-11-lunar-module-jpg.jpg",
+   "attribution": "Michael Collins, NASA ( hi-res )",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Apollo_11_lunar_module.jpg",
+   "description": "Apollo 11 lunar module.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "ross",
+   "status": "downloaded",
+   "file": "archives/historical-photos/ross_ross-ulbricht-by-gage-skidmore-jpg.jpg",
+   "attribution": "Gage Skidmore, Own work",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Ross_Ulbricht_by_Gage_Skidmore.jpg",
+   "description": "Ross Ulbricht by Gage Skidmore.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "server",
+   "status": "downloaded",
+   "file": "archives/historical-photos/server_silk-road-backup-server-jpg.jpg",
+   "attribution": "U.S. Government, Federal Bureau of Investigation, http://antilop.cc/sr/exhibits/GX-602.pdf",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Silk_Road_backup_server.jpg",
+   "description": "Silk Road backup server.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "casascius",
+   "status": "downloaded",
+   "file": "archives/historical-photos/casascius_25-btc-gold-casascius-coin-2011-by-gage-.jpg",
+   "attribution": "Gage Skidmore, Own work",
+   "license": "CC BY-SA 3.0",
+   "page": "https://commons.wikimedia.org/wiki/File:25_BTC_Gold_Casascius_coin_2011_by_Gage_Skidmore.jpg",
+   "description": "25 BTC Gold Casascius coin 2011 by Gage Skidmore.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "starship_pad",
+   "status": "downloaded",
+   "file": "archives/historical-photos/starship_pad_starship-before-ift-5.jpg",
+   "attribution": "Steve Jurvetson, Flickr",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_before_IFT-5.jpg",
+   "description": "Starship before IFT-5",
+   "category": "historical-photos"
+  },
+  {
+   "id": "mars",
+   "status": "downloaded",
+   "file": "archives/historical-photos/mars_mars-accurate-colour.png",
+   "attribution": "Sturm 1, Own work - NASA",
+   "license": "CC BY 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Mars_accurate_colour.png",
+   "description": "Mars, accurate colour",
+   "category": "historical-photos"
+  },
+  {
+   "id": "starship_iss",
+   "status": "downloaded",
+   "file": "archives/historical-photos/starship_iss_starship-6-launch-seen-from-the-iss.jpg",
+   "attribution": "NASA, [1]",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Launch_of_SpaceX_Starship_6_rocket_seen_from_the_International_Space_Station_(iss072e220161,_cropped).jpg",
+   "description": "Starship 6 launch seen from the ISS",
+   "category": "historical-photos"
+  },
+  {
+   "id": "p_royal",
+   "status": "downloaded",
+   "file": "archives/historical-photos/p_royal_elon-musk-royal-society-portrait-2018.jpg",
+   "attribution": "Duncan.Hull, Debbie Rowe, Photographer",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_Royal_Society.jpg",
+   "description": "Elon Musk, Royal Society portrait 2018",
+   "category": "historical-photos"
   }
  ]
 }
