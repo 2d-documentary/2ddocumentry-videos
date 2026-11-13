@@ -1,0 +1,159 @@
+{
+ "title": "How Apollo 11 almost aborted (Dagar Unfiltered style demo)",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.18,
+   "lang": "a",
+   "desc": "Conversational narrator"
+  }
+ },
+ "tail": 2.5,
+ "spoken": {
+  "1969": "nineteen sixty-nine",
+  "20th": "twentieth",
+  "1202": "twelve oh two",
+  "26-year-old": "twenty-six-year-old",
+  "24-year-old": "twenty-four-year-old"
+ },
+ "lines": [
+  {
+   "id": "A01",
+   "speaker": "NARRATOR",
+   "text": "This is one of the most famous photos of all time.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "A02",
+   "speaker": "NARRATOR",
+   "text": "But it almost never happened.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A03",
+   "speaker": "NARRATOR",
+   "text": "July 20th, 1969.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "A04",
+   "speaker": "NARRATOR",
+   "text": "Two men are dropping toward the Moon in a fragile little lander called Eagle.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A05",
+   "speaker": "NARRATOR",
+   "text": "Then the computer throws an alarm.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A06",
+   "speaker": "NARRATOR",
+   "text": "1202.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "A07",
+   "speaker": "NARRATOR",
+   "text": "Nobody in the cockpit knows what it means.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A08",
+   "speaker": "NARRATOR",
+   "text": "Down in Houston, the call falls on a 26-year-old named Steve Bales.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A09",
+   "speaker": "NARRATOR",
+   "text": "Abort, or keep going?",
+   "gap_before": 0.2
+  },
+  {
+   "id": "A10",
+   "speaker": "NARRATOR",
+   "text": "Next to him sits a 24-year-old engineer, Jack Garman, with a handwritten list of every alarm the computer can throw.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A11",
+   "speaker": "NARRATOR",
+   "text": "His answer? It's an overload. If it doesn't keep happening, we're fine.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A12",
+   "speaker": "NARRATOR",
+   "text": "Go.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "A13",
+   "speaker": "NARRATOR",
+   "text": "Then it happens again.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "A14",
+   "speaker": "NARRATOR",
+   "text": "And again.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "A15",
+   "speaker": "NARRATOR",
+   "text": "Five alarms in total.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A16",
+   "speaker": "NARRATOR",
+   "text": "Meanwhile Armstrong looks out the window and sees the computer is flying them straight into a field of boulders.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A17",
+   "speaker": "NARRATOR",
+   "text": "So he takes over.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "A18",
+   "speaker": "NARRATOR",
+   "text": "Houston starts calling out the fuel.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "A19",
+   "speaker": "NARRATOR",
+   "text": "Sixty seconds.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "A20",
+   "speaker": "NARRATOR",
+   "text": "Thirty seconds.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "A21",
+   "speaker": "NARRATOR",
+   "text": "Then, contact light.",
+   "gap_before": 0.35
+  },
+  {
+   "id": "A22",
+   "speaker": "NARRATOR",
+   "text": "The Eagle has landed.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "A23",
+   "speaker": "NARRATOR",
+   "text": "The most famous moment of the century came down to a young engineer and a list he wrote by hand.",
+   "gap_before": 0.45
+  }
+ ]
+}
