@@ -1,0 +1,123 @@
+{
+ "title": "From rent money to trillionaire (Short)",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.18,
+   "lang": "a",
+   "desc": "Conversational narrator"
+  }
+ },
+ "tail": 3.2,
+ "spoken": {
+  "2026": "twenty twenty-six",
+  "1971": "nineteen seventy-one",
+  "1995": "nineteen ninety-five",
+  "1999": "nineteen ninety-nine",
+  "2000": "two thousand",
+  "2002": "two thousand two",
+  "2006": "two thousand six",
+  "2007": "two thousand seven",
+  "2008": "two thousand eight",
+  "2012": "twenty twelve",
+  "2015": "twenty fifteen",
+  "2018": "twenty eighteen",
+  "2022": "twenty twenty-two",
+  "2023": "twenty twenty-three",
+  "2024": "twenty twenty-four",
+  "2025": "twenty twenty-five",
+  "2028": "twenty twenty-eight",
+  "28th": "twenty-eighth",
+  "307": "three hundred and seven",
+  "22": "twenty-two",
+  "180": "a hundred and eighty",
+  "20": "twenty",
+  "44": "forty-four",
+  "75": "seventy-five",
+  "1.1": "one point one",
+  "1.5": "one point five",
+  "1.6": "one point six",
+  "250": "two hundred and fifty",
+  "445": "four hundred and forty-five",
+  "868": "eight hundred and sixty-eight",
+  "1": "one",
+  "9": "nine",
+  "F1": "F one",
+  "PhD": "P H D",
+  "CEO": "C E O",
+  "YMCA": "Y M C A",
+  "US": "U S",
+  "Zip2": "Zip two",
+  "DOGE": "doge",
+  "X.com": "X dot com",
+  "xAI": "X A I"
+ },
+ "lines": [
+  {
+   "id": "R01",
+   "speaker": "NARRATOR",
+   "text": "In 2008, this man was borrowing money to pay his rent.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "R02",
+   "speaker": "NARRATOR",
+   "text": "Three rockets had blown up. His car company was dying. His marriage was over.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "R03",
+   "speaker": "NARRATOR",
+   "text": "He had enough money for one last launch.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "R04",
+   "speaker": "NARRATOR",
+   "text": "September 28th, 2008. Falcon 1. Flight four.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "R05",
+   "speaker": "NARRATOR",
+   "text": "And holy shit. It reached orbit.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "R06",
+   "speaker": "NARRATOR",
+   "text": "Days later, NASA signs a 1.6 billion dollar contract. On Christmas Eve, Tesla is saved.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "R07",
+   "speaker": "NARRATOR",
+   "text": "Now jump to June 2026.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "R08",
+   "speaker": "NARRATOR",
+   "text": "SpaceX goes public. The biggest stock market debut in history.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "R09",
+   "speaker": "NARRATOR",
+   "text": "And Elon Musk becomes the first trillionaire. Ever.",
+   "gap_before": 0.12
+  },
+  {
+   "id": "R10",
+   "speaker": "NARRATOR",
+   "text": "Three months later, on September 28th, exactly eighteen years after Falcon 1, Starship reaches orbit.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "R11",
+   "speaker": "NARRATOR",
+   "text": "Same date. Same guy. Very different rocket.",
+   "gap_before": 0.12
+  }
+ ]
+}

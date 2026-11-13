@@ -16,6 +16,8 @@ sr, voice = wavfile.read(os.path.join(out, "voice.wav")); voice = voice.astype(n
 N = len(voice); T = N / SR
 # censor beeps: cue {"type": "beep", "t": start, "d": seconds} mutes the narration there and plays a 1 kHz tone
 BEEPS = [c for c in cues if c["type"] == "beep"]; cues = [c for c in cues if c["type"] != "beep"]
+# real soundbites: cue {"type": "audio", "t": start, "src": path (repo-relative), "off": seconds into src, "d": seconds, "gain": 1}
+AUD = [c for c in cues if c["type"] == "audio"]; cues = [c for c in cues if c["type"] != "audio"]
 _vref0 = np.sqrt(np.mean(voice ** 2) + 1e-12)
 for c in BEEPS:
     a, b = int(c["t"] * SR), min(N, int((c["t"] + c.get("d", .3)) * SR)); n = b - a; r = max(1, min(int(.006 * SR), n // 4))
@@ -142,7 +144,23 @@ beep = np.zeros(N)
 for c in BEEPS:
     a, b = int(c["t"] * SR), min(N, int((c["t"] + c.get("d", .3)) * SR)); n = b - a; tt = np.arange(n) / SR
     env = np.minimum(1, np.minimum(np.arange(n), n - np.arange(n)) / (.006 * SR)); beep[a:b] += np.sin(2 * np.pi * 1000 * tt) * env * _vref0 * 1.5
-mix = voice + music + sfx + beep
+bites = np.zeros(N)
+if AUD:
+    import subprocess
+    for c in AUD:
+        raw = subprocess.run(["ffmpeg", "-v", "error", "-ss", str(c.get("off", 0)), "-i", c["src"], "-t", str(c["d"]), "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"],
+                             capture_output=True, check=True).stdout
+        x = np.frombuffer(raw, np.float32).astype(np.float64); n = len(x)
+        if not n: print("empty soundbite", c); continue
+        act = x[np.abs(x) > .02 * np.max(np.abs(x))]
+        x *= c.get("gain", 1) * _vref0 * 1.05 / max(rms(act if len(act) > SR // 4 else x), 1e-9)
+        f = min(int(.03 * SR), n // 4); x[:f] *= np.linspace(0, 1, f); x[-f:] *= np.linspace(1, 0, f)
+        a = int(c["t"] * SR); b = min(N, a + n); bites[a:b] += x[:b - a]
+        d = np.ones(N); f2 = int(.25 * SR); a0, b0 = max(0, a - f2), min(N, b + f2)
+        d[a:b] = c.get("duck", .3); d[a0:a] = np.linspace(1, c.get("duck", .3), a - a0); d[b:b0] = np.linspace(c.get("duck", .3), 1, b0 - b)
+        music *= d; sfx *= d
+    print(f"soundbites {len(AUD)}")
+mix = voice + music + sfx + beep + bites
 peak = np.max(np.abs(mix)); mix = mix / peak * .89 if peak > .89 else mix
 for name, x in (("music", music), ("sfx", sfx), ("mix_raw", mix)):
     wavfile.write(os.path.join(out, name + ".wav"), SR, x.astype(np.float32))

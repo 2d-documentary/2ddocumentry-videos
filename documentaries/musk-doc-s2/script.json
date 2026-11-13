@@ -1,0 +1,53 @@
+{
+ "title": "Elon sold 20,000 flamethrowers (Short)",
+ "voices": {
+  "NARRATOR": {
+   "voice": "am_michael",
+   "speed": 1.18,
+   "lang": "a",
+   "desc": "Conversational narrator"
+  }
+ },
+ "tail": 3.4,
+ "spoken": {
+  "2018": "twenty eighteen"
+ },
+ "lines": [
+  {
+   "id": "F01",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "In 2018, Elon Musk sold twenty thousand flamethrowers."
+  },
+  {
+   "id": "F02",
+   "speaker": "NARRATOR",
+   "gap_before": 0.12,
+   "text": "Five hundred dollars each. Gone in four days."
+  },
+  {
+   "id": "F03",
+   "speaker": "NARRATOR",
+   "gap_before": 0.3,
+   "text": "So Joe Rogan asked him: isn't that a terrible idea?"
+  },
+  {
+   "id": "F04",
+   "speaker": "NARRATOR",
+   "gap_before": 7.55,
+   "text": "Okay. But is it even a real flamethrower?"
+  },
+  {
+   "id": "F05",
+   "speaker": "NARRATOR",
+   "gap_before": 6.9,
+   "text": "Then why call it that?"
+  },
+  {
+   "id": "F06",
+   "speaker": "NARRATOR",
+   "gap_before": 5.8,
+   "text": "Twenty thousand sold. By telling everyone not to buy one."
+  }
+ ]
+}
