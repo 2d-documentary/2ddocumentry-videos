@@ -50,6 +50,7 @@ jobs:
             else
               mkdir -p "$S" && git -C "$S" init -q -b "$BR" && git -C "$S" remote add origin "$REMOTE"
             fi
+            grep -q '"cutout"' "documentaries/$P/manifest.json" && pip install -q "rembg[cpu]" || true
             python tools/fetch_assets.py "documentaries/$P" "$S"
             cat "$S/REPORT.md" >> "$GITHUB_STEP_SUMMARY"
             cd "$S"

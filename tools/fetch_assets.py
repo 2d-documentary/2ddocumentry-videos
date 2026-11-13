@@ -429,6 +429,8 @@ def fetch_one(asset, store):
                                 os.path.join(store, folder, f"{asset['id']}_p{pg}")], check=False)
     if asset.get("frames") and ext in (".webm", ".mp4", ".ogv"):
         extract_frames(os.path.join(store, rel), asset["frames"], os.path.join(store, folder), asset["id"])
+    if asset.get("cutout") and (ctype.startswith("image/") or ext in (".jpg", ".jpeg", ".png")):
+        make_cutout(os.path.join(store, rel), os.path.join(store, "archives", "cutouts"), asset["id"])
     if asset.get("clips") and ext in (".webm", ".mp4", ".ogv"):
         extract_clips(os.path.join(store, rel), asset["clips"], asset.get("clip_fps", 15), os.path.join(store, folder), asset["id"])
     if ctype.startswith("image/") or ext in (".jpg", ".png"):
@@ -462,6 +464,22 @@ def extract_frames(video, frames, folder, aid):
     for i, t in enumerate(frames):
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(t), "-i", video, "-frames:v", "1", "-q:v", "2",
                         os.path.join(folder, f"{aid}_f{i}.jpg")], check=False)
+
+
+def make_cutout(path, folder, aid):
+    """Subject cut-out with a transparent background (rembg, free, MIT): archives/cutouts/<aid>.png,
+    same aspect ratio as the original so it lines up with photo() in the engine (parallax / 2.5D)."""
+    try:
+        from rembg import remove, new_session
+        from PIL import Image
+        global _REMBG
+        if "_REMBG" not in globals():
+            _REMBG = new_session("isnet-general-use")
+        os.makedirs(folder, exist_ok=True)
+        im = Image.open(path).convert("RGB"); im.thumbnail((1800, 1800))
+        remove(im, session=_REMBG, post_process_mask=True).save(os.path.join(folder, f"{aid}.png"))
+    except Exception as e:  # cut-outs are optional; never fail the fetch
+        print("cutout failed", aid, e)
 
 
 def extract_clips(video, clips, fps, folder, aid):

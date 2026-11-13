@@ -1,0 +1,110 @@
+{
+ "project": "musk-ae",
+ "assets": [
+  {
+   "id": "falconheavy",
+   "category": "historical-photos",
+   "description": "Falcon Heavy Demo Mission launch",
+   "commons_search": "Falcon Heavy Demo Mission launch",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "fh_boosters",
+   "category": "historical-photos",
+   "description": "Falcon Heavy side boosters landing",
+   "commons_search": "Falcon Heavy side boosters landing",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "p_fh_press",
+   "category": "historical-photos",
+   "description": "Elon Musk at SpaceX press conference",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_and_Hans_Koenigsmann_at_the_SpaceX_CRS-8_post-launch_press_conference_(26223624532)_(cropped).jpg",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "roadster_space",
+   "category": "historical-photos",
+   "description": "Elon Musk's Tesla Roadster with Earth",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40143096241).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "roadster_space2",
+   "category": "historical-photos",
+   "description": "Starman in the Roadster",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40110298232).jpg",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "roadster_orbit",
+   "category": "historical-photos",
+   "description": "Tesla Roadster orbit diagram",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Tesla_Roadster_orbit.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_dragon2",
+   "category": "historical-photos",
+   "description": "Dragon V2 unveiling, Elon Musk 2014",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Dragon_V2_unveiling,_Elon_Musk_(KSC-2014-2727).jpg",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "mars",
+   "category": "historical-photos",
+   "description": "Mars, accurate colour",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Mars_accurate_colour.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "f9_lz1",
+   "category": "historical-photos",
+   "description": "Falcon 9 first stage at LZ-1, Dec 2015",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Falcon_9_first_stage_at_LZ-1(two).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "p_laugh",
+   "category": "historical-photos",
+   "description": "Elon Musk laughing 2023",
+   "source_page": "https://commons.wikimedia.org/wiki/File:UK_Government_hosts_AI_Summit_at_Bletchley_Park_(53302927869).jpg",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "p_royal",
+   "category": "historical-photos",
+   "description": "Elon Musk, Royal Society portrait 2018",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Elon_Musk_Royal_Society.jpg",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "p_roadster08",
+   "category": "historical-photos",
+   "description": "First production Tesla Roadster, 2008",
+   "source_page": "https://commons.wikimedia.org/wiki/File:The_Tesla_has_landed_-_Flickr_-_jurvetson.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "modelS",
+   "category": "historical-photos",
+   "description": "Tesla Model S red 2013",
+   "commons_search": "Tesla Model S red 2013",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "starship_ift5",
+   "category": "historical-photos",
+   "description": "Starship during IFT-5, Oct 2024",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SpaceX_Starship_during_IFT-5.jpg",
+   "authenticity": "authentic"
+  }
+ ]
+}
