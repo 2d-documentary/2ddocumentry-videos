@@ -1,0 +1,275 @@
+{
+ "project": "dagar-trailer",
+ "assets": [
+  {
+   "id": "p_2008",
+   "status": "downloaded",
+   "file": "archives/historical-photos/p_2008_elon-musk-2008.jpg",
+   "attribution": "Brian Solis, originally posted to Flickr as Tesla Grand Opening in Menlo Park - Tesla Chairman, Elon Musk",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Elon_Musk.jpg",
+   "description": "Elon Musk 2008",
+   "category": "historical-photos"
+  },
+  {
+   "id": "f1_flight4",
+   "status": "downloaded",
+   "file": "archives/historical-photos/f1_flight4_falcon-1-flight-4-launch-28-sep-2008.jpg",
+   "attribution": "SpaceX, http://www.spacex.com/media-gallery/detail/149371/8956",
+   "license": "CC0",
+   "page": "https://commons.wikimedia.org/wiki/File:Falcon_1_Flight_4_launch.jpg",
+   "description": "Falcon 1 Flight 4 launch, 28 Sep 2008",
+   "category": "historical-photos"
+  },
+  {
+   "id": "p_laugh",
+   "status": "downloaded",
+   "file": "archives/historical-photos/p_laugh_elon-musk-laughing-2023.jpg",
+   "attribution": "UK Government, UK Government hosts AI Summit at Bletchley Park",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:UK_Government_hosts_AI_Summit_at_Bletchley_Park_(53302927869).jpg",
+   "description": "Elon Musk laughing 2023",
+   "category": "historical-photos"
+  },
+  {
+   "id": "networth",
+   "status": "downloaded",
+   "file": "archives/documents/networth_elon-musk-net-worth-2019-2026-chart.svg",
+   "attribution": "Bloomberg (Daten), ChatGPT und PM3 (Grafik), bloomberg.com",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Elon_Musks_Verm%C3%B6gen_2019%E2%80%932026.svg",
+   "description": "Elon Musk net worth 2019-2026 chart",
+   "category": "historical-photos"
+  },
+  {
+   "id": "roadster_space",
+   "status": "downloaded",
+   "file": "archives/historical-photos/roadster_space_elon-musk-s-tesla-roadster-with-earth.jpg",
+   "attribution": "SpaceX, Falcon Heavy Demo Mission",
+   "license": "CC0",
+   "page": "https://commons.wikimedia.org/wiki/File:Elon_Musk%27s_Tesla_Roadster_(40143096241).jpg",
+   "description": "Elon Musk's Tesla Roadster with Earth",
+   "category": "historical-photos"
+  },
+  {
+   "id": "eli",
+   "status": "downloaded",
+   "file": "archives/historical-photos/eli_eli-cohen-1959-portrait-3x4-cropped-jpg.jpg",
+   "attribution": "Unknown author Unknown author, The State of Israel",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Eli_Cohen_1959_Portrait_(3x4_cropped).jpg",
+   "description": "Eli Cohen 1959 Portrait (3x4 cropped).jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "eli_home",
+   "status": "downloaded",
+   "file": "archives/historical-photos/eli_home_elie-cohen-at-his-damascus-residence-in-.jpg",
+   "attribution": "Unknown author Unknown author, http://www.elicohen.org.il/photos/albums/sirya/mashkif.jpg",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Elie_Cohen_at_his_Damascus_residence_in_1963.jpg",
+   "description": "Elie Cohen at his Damascus residence in 1963.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "dock",
+   "status": "downloaded",
+   "file": "archives/historical-photos/dock_mossad-spy-eli-cohen-in-the-dock-at-the-.jpg",
+   "attribution": "Unknown author Unknown author, https://bornindamascus.blogspot.com/2016/04/blog-post_41.html?m=1",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Mossad_spy_Eli_Cohen_in_the_dock_at_the_military_court,_first_from_the_left.jpg",
+   "description": "Mossad spy Eli Cohen in the dock at the military court, first from the left.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "paper65",
+   "status": "downloaded",
+   "file": "archives/historical-photos/paper65_newspaper-announces-postponement-of-eli-.jpg",
+   "attribution": "Unknown author Unknown author, https://syrmh.com/2019/07/08/%D8%B5%D8%AD%D9%8A%D9%81%D8%A9-%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-1965-%D8%AA%D8%A3%D8%AC%D9%8A%D9%84-%D9%85%D8%AD%D8%A7%D9%83%D9%85%D8%A9-%D8%A7%D9%84%D8%AC%D8%A7%D8%B3%D9%88%D8%B3-%D9%83%D9%88/",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Newspaper_announces_postponement_of_Eli_Cohen_trial_due_to_March_8_Revolution_anniversary_celebrations.jpg",
+   "description": "Newspaper announces postponement of Eli Cohen trial due to March 8 Revolution anniversary celeb",
+   "category": "historical-photos"
+  },
+  {
+   "id": "damst",
+   "status": "downloaded",
+   "file": "archives/historical-photos/damst_damascus-streets-syria-1965-jpg.jpg",
+   "attribution": "Unknown author Unknown author, https://m.facebook.com/AntikaSyria/",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Damascus_streets,_Syria,_1965.jpg",
+   "description": "Damascus streets, Syria, 1965.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "flag",
+   "status": "downloaded",
+   "file": "archives/historical-photos/flag_as11-40-5874-apollo-11-apollo-11-mission.jpg",
+   "attribution": "Unknown author Unknown author or not provided, U.S. National Archives and Records Administration",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:AS11-40-5874_-_Apollo_11_-_Apollo_11_Mission_image_-_Astronaut_Edwin_Aldrin_poses_beside_the_U.S._flag_that_has_been_placed_on_the_moon_-_NARA_-_16685049.jpg",
+   "description": "AS11-40-5874 - Apollo 11 - Apollo 11 Mission image - Astronaut Edwin Aldrin poses beside the U.",
+   "category": "historical-photos"
+  },
+  {
+   "id": "dsky",
+   "status": "downloaded",
+   "file": "archives/historical-photos/dsky_agc-dsky-jpg.jpg",
+   "attribution": "The original uploader was Grabert at German Wikipedia ., Transferred from de.wikipedia to Commons by henristosch .",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Agc_dsky.jpg",
+   "description": "Agc dsky.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "mcc1",
+   "status": "downloaded",
+   "file": "archives/historical-photos/mcc1_view-of-mission-control-during-lunar-sur.jpg",
+   "attribution": "NASA Johnson Space Center / NA, This image or video was catalogued by Lyndon B. Johnson Space Center of the United States National Aeronautics and Space Administration (NASA) under Photo ID: S69-39593 .",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:View_of_Mission_Control_during_lunar_surface_Apollo_11_EVA_(S69-39593).jpg",
+   "description": "View of Mission Control during lunar surface Apollo 11 EVA (S69-39593).jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "aldrin",
+   "status": "downloaded",
+   "file": "archives/historical-photos/aldrin_aldrin-apollo-11-jpg.jpg",
+   "attribution": "Neil A. Armstrong, https://images.nasa.gov/details/as11-40-5903 http://grin.hq.nasa.gov/ABSTRACTS/GPN-2001-000013.html on the Wayback Machine at the Wayback Machine",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Aldrin_Apollo_11.jpg",
+   "description": "Aldrin Apollo 11.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "wanted",
+   "status": "downloaded",
+   "file": "archives/documents/wanted_fbi-wanted-poster.jpg",
+   "attribution": "U.S. Federal Government, U.S. Federal Government",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:DB_Cooper_Wanted_Poster.jpg",
+   "description": "FBI wanted poster",
+   "category": "historical-photos"
+  },
+  {
+   "id": "money",
+   "status": "downloaded",
+   "file": "archives/historical-photos/money_ransom-20-bills-found-at-tena-bar-in-198.jpg",
+   "attribution": "Federal Bureau of Investigation",
+   "license": "Public domain (FBI)",
+   "page": "https://www.fbi.gov/image-repository/cooper-money.jpg/@@images/image/high",
+   "description": "Ransom $20 bills found at Tena Bar in 1980 (FBI)",
+   "category": "historical-photos"
+  },
+  {
+   "id": "n467us",
+   "status": "downloaded",
+   "file": "archives/historical-photos/n467us_n467us-the-hijacked-aircraft-in-1972.jpg",
+   "attribution": "Clint Groves, https://www.airlinefan.com/airline-photos/Northwest-Airlines/Boeing/727-100/N467US/2025281/",
+   "license": "GFDL 1.2",
+   "page": "https://commons.wikimedia.org/wiki/File:Northwest_Airlines_Boeing_727-51_N467US.jpg",
+   "description": "N467US, the hijacked aircraft, in 1972",
+   "category": "historical-photos"
+  },
+  {
+   "id": "forest",
+   "status": "downloaded",
+   "file": "archives/historical-photos/forest_pacific-northwest-forest-in-fog.jpg",
+   "attribution": "U.S. Forest Service- Pacific Northwest Region, Toutle River in Fog-Gifford Pinchot",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Toutle_River_in_Fog-Gifford_Pinchot_(24841374740).jpg",
+   "description": "Pacific Northwest forest in fog",
+   "category": "historical-photos"
+  },
+  {
+   "id": "sketch_a",
+   "status": "downloaded",
+   "file": "archives/historical-photos/sketch_a_fbi-composite-sketch-a-nov-1971.jpg",
+   "attribution": "Federal Bureau of Investigation, FBI.Gov",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:D.B._Cooper_FBI_Composite_A.jpg",
+   "description": "FBI composite sketch A (Nov 1971)",
+   "category": "historical-photos"
+  },
+  {
+   "id": "fbidocs",
+   "status": "downloaded",
+   "file": "archives/documents/fbidocs_excerpts-from-the-fbi-cooper-file-foia.jpg",
+   "attribution": "ElusiveCooper1, Own work",
+   "license": "CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:GrudgeCombo2.jpg",
+   "description": "Excerpts from the FBI Cooper file (FOIA)",
+   "category": "historical-photos"
+  },
+  {
+   "id": "plane",
+   "status": "downloaded",
+   "file": "archives/historical-photos/plane_northwest-orient-boeing-727-washington-n.jpg",
+   "attribution": "clipperarctic, Northwest Orient 727",
+   "license": "CC BY-SA 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Northwest_Orient_727_(6961699414).jpg",
+   "description": "Northwest Orient Boeing 727, Washington National, 1970",
+   "category": "historical-photos"
+  },
+  {
+   "id": "fromhell",
+   "status": "downloaded",
+   "file": "archives/documents/fromhell_fromhellletter-jpg.jpg",
+   "attribution": "Unknown author Unknown author (credited to Jack the Ripper ), Original in the Records of Metropolitan Police Service, National Archives, MEPO 3/142; this facsimile from http://www.casebook.org/ripper_letters/",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:FromHellLetter.jpg",
+   "description": "FromHellLetter.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "iln_suspect",
+   "status": "downloaded",
+   "file": "archives/newspapers/iln_suspect_jacktheripper1888-jpg.jpg",
+   "attribution": "R. Taylor (R. & E. Taylor (Firm)), \"Illustrated London News\" [1]",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:JacktheRipper1888.jpg",
+   "description": "JacktheRipper1888.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "ipn_oct20",
+   "status": "downloaded",
+   "file": "archives/newspapers/ipn_oct20_the-illustrated-police-news-20-october-1.jpg",
+   "attribution": "Unknown author Unknown author, [1]",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Illustrated_Police_News_-_20_October_1888_-_Jack_the_Ripper.jpg",
+   "description": "The Illustrated Police News - 20 October 1888 - Jack the Ripper.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "dearboss1",
+   "status": "downloaded",
+   "file": "archives/documents/dearboss1_dearbossletterjacktheripper-jpg.jpg",
+   "attribution": "Jack the Ripper, National Archives MEPO 3/142",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:DearBossletterJacktheRipper.jpg",
+   "description": "DearBossletterJacktheRipper.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "seized",
+   "status": "downloaded",
+   "file": "archives/historical-photos/seized_silk-road-seized-jpg.jpg",
+   "attribution": "Federal Bureau of Investigation, https://silkroadvb5piz3r.tor2web.org/",
+   "license": "Public domain",
+   "page": "https://commons.wikimedia.org/wiki/File:Silk_Road_Seized.jpg",
+   "description": "Silk Road Seized.jpg",
+   "category": "historical-photos"
+  },
+  {
+   "id": "glenpark",
+   "status": "downloaded",
+   "file": "archives/historical-photos/glenpark_glen-park-branch-library-27459485380-jpg.jpg",
+   "attribution": "Eric E Castro from San Francisco, Glen Park Branch Library",
+   "license": "CC BY 2.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Glen_Park_Branch_Library_(27459485380).jpg",
+   "description": "Glen Park Branch Library (27459485380).jpg",
+   "category": "historical-photos"
+  }
+ ]
+}
