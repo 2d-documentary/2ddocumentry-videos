@@ -122,7 +122,7 @@ function scenes() {
     // ---------------- tweets, flamethrowers, Rogan
     ['M050', null, 'capblack'],
     ['M050', 'tweets.', 'head', 'TWEETS', ''],
-    ['M051', null, 'post', 'Am considering taking Tesla private at $420. Funding secured.', '7 Aug 2018'],
+    ['M051', null, 'post', 'Am considering taking Tesla private at $420. Funding secured.', '7 Aug 2018', { avatar: 'p_royal' }],
     ['M051', 'Funding', 'head', 'FUNDING SECURED', '', GREY],
     ['M052', null, 'head', "IT WASN'T", ''],
     ['M052', '20', 'num', '$20M', 'fine · each', { color: DX.red }],
@@ -218,7 +218,7 @@ function scenes() {
     ['M075', 'donor', 'head', 'BIGGEST DONOR', 'in history', GREY],
     ['M076', null, 'full', 'starship_11'],
     ['M076', 'lose.', 'head', 'THEY LOSE', '', RED],
-    ['M077', null, 'post', "Guess my election-interfering space lasers didn't work this time", 'Nov 2026'],
+    ['M077', null, 'post', "Guess my election-interfering space lasers didn't work this time", 'Nov 2026', { avatar: 'p_royal' }],
     ['M078', null, 'full', 'networth'],
     ['M078', '868', 'num', '$868B', 'Forbes · Nov 2026'],
     ['M079', null, 'card', 'p_laugh'],

@@ -409,7 +409,7 @@ function dtrans(ctx, t, A, B, p) { p = clamp(p); const ty = B.tr; if (['whip', '
   else ctx.drawImage(img, 0, 0); }
 
 // recreated post card (label it RECREATION): name, handle, text, date
-function postCard(ctx, t, t0, o) { if (t < t0) return; const p = E.out(clamp((t - t0) / .35)), w = Math.min(W * .62, 1100), h = w * .42, x = W / 2 - w / 2, y = H / 2 - h / 2 + (1 - p) * 40;
+function dxPost(ctx, t, t0, o) { if (t < t0) return; const p = E.out(clamp((t - t0) / .35)), w = Math.min(W * .62, 1100), h = w * .42, x = W / 2 - w / 2, y = H / 2 - h / 2 + (1 - p) * 40;
   ctx.save(); ctx.globalAlpha = p; ctx.shadowColor = 'rgba(0,0,0,.55)'; ctx.shadowBlur = 50; ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.roundRect(x, y, w, h, 24); ctx.fill(); ctx.shadowColor = 'transparent';
   const a = imgOf(o.avatar); ctx.save(); ctx.beginPath(); ctx.arc(x + 70, y + 72, 38, 0, 7); ctx.clip(); if (a) cover(ctx, o.avatar, x + 32, y + 34, 76, 76, { bw: false }); else { ctx.fillStyle = '#ccc'; ctx.fill(); } ctx.restore();
   ctx.fillStyle = '#111'; ctx.font = `700 ${w * .034}px ${F.inter}`; ctx.fillText(o.name || 'Elon Musk', x + 124, y + 66); ctx.fillStyle = '#666'; ctx.font = `400 ${w * .028}px ${F.inter}`; ctx.fillText(o.handle || '@elonmusk', x + 124, y + 102);
@@ -440,7 +440,7 @@ const BEAT_KINDS = {
   wall: { cap: 1, draw: (ctx, t, lt, t0, a, o) => mosaic(ctx, a[0], lt, { cols: W > H ? 5 : 3, rows: W > H ? 4 : 6, z0: 2, z1: 1, dur: 2, ...o }) },
   burst: { cap: 1, draw: (ctx, t, lt, t0, a, o) => burst(ctx, a[0], lt, { rate: o.rate || 4 }) },
   term: { cap: 0, draw: (ctx, t, lt, t0, a) => terminal3D(ctx, a[0], t, t0) },
-  post: { cap: 0, draw: (ctx, t, lt, t0, a, o) => { greyBoard(ctx, t, true); postCard(ctx, t, t0 + .05, { avatar: o.avatar, text: a[0], date: a[1] }); } },
+  post: { cap: 0, draw: (ctx, t, lt, t0, a, o) => { greyBoard(ctx, t, true); dxPost(ctx, t, t0 + .05, { avatar: o.avatar, text: a[0], date: a[1] }); } },
 };
 
 
