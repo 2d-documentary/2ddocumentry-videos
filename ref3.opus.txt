@@ -1,0 +1,16 @@
+  0.00   4.40 The interesting thing about Dario Amede isn't that he wants the AI industry to slow down.
+  4.40   7.84 It's what his company keeps doing while he's the face of the slowdown.
+  7.84  13.44 On September 12th, he published an essay arguing the lab should slow the pace at which AI improves.
+ 13.44  20.40 Ten days later, Anthropic launched Opus 5.5 and it took first place on the independent artificial analysis.
+ 20.40  25.52 The situation is easier to understand if you picture an F1 team principal on the pit wall,
+ 25.52  29.76 asking the sport for a speed limit while spending a fortune on a faster car.
+ 29.76  33.36 He may want a safer race, but he definitely wants the trophy.
+ 33.36  36.32 Ironically, F1 already have an answer for this.
+ 36.32  42.00 Back in 2014, teams like Red Bull and Ferrari were spending over 200 million pounds a year
+ 42.00  46.40 developing the fastest cars, four times more than their smaller competitors.
+ 46.40  52.40 So, in October 2014, those smaller teams went into administration, demanding for a spending limit.
+ 52.40  55.52 It took seven years for every team to agree.
+ 55.52  59.68 Now, an auditor checks the books, allowing fair and safer matches.
+ 59.68  61.68 But here's the problem with AI.
+ 61.68  63.68 When trillions of dollars depend on winning,
+ 63.68  67.68 who actually has the incentive to slow down?
