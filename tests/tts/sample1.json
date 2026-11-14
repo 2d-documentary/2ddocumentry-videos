@@ -1,0 +1,4 @@
+{"name": "sample1",
+ "text": "Okay, so here's a fun one. [chuckle] A guy borrows money just to pay his rent. Eighteen years later, he's worth more than a trillion dollars. [gasp] Wait, what? A trillion? [laugh] Yeah. That actually happened. But here's the part nobody tells you.",
+ "ref_text": "This is a calm reference recording. It gives the cloning model the tone, the pace and the color of the narrator's voice, so every sample sounds like the same person.",
+ "kokoro_voice": "am_michael", "kokoro_speed": 1.1, "exaggeration": 0.75}
