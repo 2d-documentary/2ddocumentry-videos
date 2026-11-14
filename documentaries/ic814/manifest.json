@@ -259,6 +259,222 @@
    "source_page": "https://commons.wikimedia.org/wiki/File:Aeroplane_Taking_Off_Towards_Sardar_Bazaar_Area_-_Indira_Gandhi_International_Airport_-_New_Delhi_2016-08-04_5800.webm",
    "authenticity": "authentic",
    "frames": 12
+  },
+  {
+   "id": "gren",
+   "category": "historical-photos",
+   "description": "F3 Grenade.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:F3_Grenade.jpg",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "gren2",
+   "category": "historical-photos",
+   "description": "F1 grenade.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:F1_grenade.jpg",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "cockpit",
+   "category": "historical-photos",
+   "description": "Iran Air's Airbus A300B4-203 cockpit.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Iran_Air%27s_Airbus_A300B4-203_cockpit.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cockpit2",
+   "category": "historical-photos",
+   "description": "Blik in de cockpit, Bestanddeelnr 926-8098.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Blik_in_de_cockpit,_Bestanddeelnr_926-8098.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "gauges",
+   "category": "historical-photos",
+   "description": "OYCNA cockpit.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:OYCNA_cockpit.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cabin",
+   "category": "historical-photos",
+   "description": "KoreaAir-A300Interior.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:KoreaAir-A300Interior.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cabin2",
+   "category": "historical-photos",
+   "description": "Airbus-A300-B-Interior-Design.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Airbus-A300-B-Interior-Design.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "refuel",
+   "category": "historical-photos",
+   "description": "COMMERCIAL JET AIRCRAFT BEING REFUELED AT CLEVELAND HOPKINS INTERNATIONAL AIRPORT CLE",
+   "source_page": "https://commons.wikimedia.org/wiki/File:COMMERCIAL_JET_AIRCRAFT_BEING_REFUELED_AT_CLEVELAND_HOPKINS_INTERNATIONAL_AIRPORT_CLEVELAND_OHIO_-_NARA_-_17499254.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "tanker",
+   "category": "historical-photos",
+   "description": "Airport Refueler Unit Leeuwarden Airbase.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Airport_Refueler_Unit_Leeuwarden_Airbase.jpg",
+   "authenticity": "authentic",
+   "cutout": true
+  },
+  {
+   "id": "refuel2",
+   "category": "historical-photos",
+   "description": "Aircraft Refueling at Gatwork Airport.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Aircraft_Refueling_at_Gatwork_Airport.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "nsg",
+   "category": "historical-photos",
+   "description": "Sushil Kumar Shinde with the Black Cat Commandos, at the 28th NSG Raising Day Functio",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Sushil_Kumar_Shinde_with_the_Black_Cat_Commandos,_at_the_28th_NSG_Raising_Day_Function,_at_Manesar,_Gurgaon,_Haryana_on_October_16,_2012._The_Director_General,_National_Security_Guard,_Shri_Subhash_Joshi_is_also_seen_(1).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "nsg2",
+   "category": "historical-photos",
+   "description": "Sushil Kumar Shinde with the Black Cat Commandos, at the 28th NSG Raising Day Functio",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Sushil_Kumar_Shinde_with_the_Black_Cat_Commandos,_at_the_28th_NSG_Raising_Day_Function,_at_Manesar,_Gurgaon,_Haryana_on_October_16,_2012._The_Director_General,_National_Security_Guard,_Shri_Subhash_Joshi_is_also_seen.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cash",
+   "category": "historical-photos",
+   "description": "Stack of 100 dollar bills.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Stack_of_100_dollar_bills.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cash2",
+   "category": "historical-photos",
+   "description": "Over $1,000,000 dollars in USD $100 bill stacks.png",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Over_$1,000,000_dollars_in_USD_$100_bill_stacks.png",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "cash_hand",
+   "category": "historical-photos",
+   "description": "American Cash.JPG",
+   "source_page": "https://commons.wikimedia.org/wiki/File:American_Cash.JPG",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "parl_bld",
+   "category": "historical-photos",
+   "description": "Sansad Bhavan, Delhi, BNK.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Sansad_Bhavan,_Delhi,_BNK.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "parl_bld2",
+   "category": "historical-photos",
+   "description": "SansadBhavan.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:SansadBhavan.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "pk_sc",
+   "category": "historical-photos",
+   "description": "Supreme Court of Pakistan, Islamabad by Usman Ghani.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Supreme_Court_of_Pakistan,_Islamabad_by_Usman_Ghani.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "pk_sc2",
+   "category": "historical-photos",
+   "description": "Supreme Court of Pakistan illuminated on 14 August 2018.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Supreme_Court_of_Pakistan_illuminated_on_14_August_2018.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "unsc",
+   "category": "historical-photos",
+   "description": "Inside the UN Security Council (5881618621).jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Inside_the_UN_Security_Council_(5881618621).jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sindoor",
+   "category": "historical-photos",
+   "description": "Colonel Sofiya Qureshi addressing the media on \u2018Operation Sindoor\u2019 at National Media ",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Colonel_Sofiya_Qureshi_addressing_the_media_on_%E2%80%98Operation_Sindoor%E2%80%99_at_National_Media_Centre.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sindoor2",
+   "category": "historical-photos",
+   "description": "Director General Air Operations (DGAO) Sh. A.K. Bharti briefing the media on \u2018Operati",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Director_General_Air_Operations_(DGAO)_Sh._A.K._Bharti_briefing_the_media_on_%E2%80%98Operation_Sindoor%E2%80%99_showing_attack_on_Nur_Khan_Airbase.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "karachi",
+   "category": "historical-photos",
+   "description": "Karachi iicr skyline.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Karachi_iicr_skyline.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "bwp",
+   "category": "historical-photos",
+   "description": "Derawar Fort, Bahawalpur I.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Derawar_Fort,_Bahawalpur_I.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "candle",
+   "category": "historical-photos",
+   "description": "Candle Light March organised in Mehsana Gujarat in wake of 2019 Pulwama Attack.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Candle_Light_March_organised_in_Mehsana_Gujarat_in_wake_of_2019_Pulwama_Attack.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "candle2",
+   "category": "historical-photos",
+   "description": "Candle light march organised in Mehsana, Gujarat, India in wake of 2019 Pulwama Attac",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Candle_light_march_organised_in_Mehsana,_Gujarat,_India_in_wake_of_2019_Pulwama_Attack.ogv",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "fw2000",
+   "category": "historical-photos",
+   "description": "Sydney, Millenium Fireworks in the year 2000 - panoramio.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Sydney,_Millenium_Fireworks_in_the_year_2000_-_panoramio.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "v_nsg",
+   "category": "footage",
+   "description": "National Security Guards - The Eliminators.webm",
+   "source_page": "https://commons.wikimedia.org/wiki/File:National_Security_Guards_-_The_Eliminators.webm",
+   "authenticity": "authentic",
+   "frames": 12
+  },
+  {
+   "id": "v_brahmos",
+   "category": "footage",
+   "description": "Brahmos ER.webm",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Brahmos_ER.webm",
+   "authenticity": "authentic",
+   "frames": 12
+  },
+  {
+   "id": "v_brahmos2",
+   "category": "footage",
+   "description": "INS Visakhapatnam firing Brahmos Supersonic missile.webm",
+   "source_page": "https://commons.wikimedia.org/wiki/File:INS_Visakhapatnam_firing_Brahmos_Supersonic_missile.webm",
+   "authenticity": "authentic",
+   "frames": 12
   }
  ]
 }
