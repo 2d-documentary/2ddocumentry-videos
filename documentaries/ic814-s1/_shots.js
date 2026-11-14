@@ -7,7 +7,7 @@ function scenes() {
   const rows = [
     ['S01', null, 'clipx', 'c_wing', { off: .5 }],
     ['S01', 'December', 'head', '24 DEC 1999', 'IC 814', { bg: 'a300_b', size: MN() * .12 }],
-    ['S01', 'Indian', 'full', 'a300_a'],
+    ['S01', 'Indian', 'full', 'a300_a', { z0: 1.3, z1: 1.38, fy: .62 }],
     ['S01', 'hijack', 'fall', 'cabin', 'gren2', { text: 'HIJACK', size: MN() * .16, s: .26, y: .44 }],
     ['S02', null, 'num', '7 DIN', '', { bg: 'kdh_term', size: MN() * .2 }],
     mapRow('S02', 'India', { views: [[T('S02', 'India') - .2, { lon: 71, lat: 29, k: 7 }]], routes: [[KTM, ATQ, T('S02', 'India'), .4], [ATQ, LHE, T('S02', 'India') + .35, .25], [LHE, DXB, T('S02', 'India') + .55, .4], [DXB, KDH, T('S02', 'India') + .9, .4]],

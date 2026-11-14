@@ -786,7 +786,7 @@ function scenes() {
     ['L005', 'plane', 'full', 'kdh_term', { dark: .25 }],
     ['L006', null, 'board', 'TEEN NAAM', 'ek ko poori duniya ne suna', ['tal_herat', 'kdh_road', 'pearl']],
     ['L006', 'End', 'head', 'END TAK RUKNA', '', { bg: 'kdh_term' }],
-    ['D01', null, 'full', 'a300_a', { dark: .45, z0: 1.15, z1: 1.25 }],
+    ['D01', null, 'full', 'a300_a', { dark: .45, z0: 1.3, z1: 1.38, fy: .62 }],
     // ---------------- 1. the flight
     chap('L007', 1, 'FLIGHT IC 814'),
     mapRow('L007', null, { views: [[LINE.L007.start - .2, WORLD], [LINE.L007.start + 1.2, { lon: 82, lat: 28, k: 16 }]],
@@ -881,7 +881,7 @@ function scenes() {
     ['L046', null, 'head', 'MUSHTAQ ZARGAR', '#3', { size: MN() * .1, bg: 'tal_arms', dark: .7 }],
     ['L047', null, 'head', '31 DECEMBER 1999', 'saal ka aakhri din', { bg: 'kdh_term' }],
     ['L048', null, 'dof', 'jaswant', 'Jaswant Singh', { fx: .5, fy: .35, cx: .5, cy: .4, r: .3 }],
-    ['L048', 'teeno', 'full', 'a300_a'],
+    ['L048', 'teeno', 'full', 'a300_a', { z0: 1.3, z1: 1.38, fy: .62 }],
     ['L049', null, 'full', 'kdh_term', { z0: 1.3, z1: 1.45 }],
     ['L049', 'Hijackers', 'full', 'kdh_road'],
     ['L050', null, 'num', '7 DIN', 'baad', { bg: 'a300_c' }],
