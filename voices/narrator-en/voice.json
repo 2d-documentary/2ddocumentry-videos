@@ -1,0 +1,4 @@
+{
+ "about": "Dagar Unfiltered English narrator (default voice from Nov 2026). Chatterbox Turbo cloned from this fixed reference (originally Kokoro am_michael at speed 1.1). Expressions go inline in each line's 'say': [chuckle] [laugh] [sigh] [gasp] [surprised] [sarcastic] [whispering] [dramatic] [angry] [fear] [happy] [crying] [clear throat] [groan] [sniff]. Copy 'voice' into script.json voices.NARRATOR.",
+ "voice": {"engine": "chatterbox", "ref": "../../voices/narrator-en/ref.wav", "desc": "Dagar English narrator (Chatterbox Turbo, fixed ref)"}
+}
