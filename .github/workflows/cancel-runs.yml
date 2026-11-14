@@ -1,0 +1,18 @@
+name: cancel-runs
+# Push ops/cancel.json = {"runs": [123, 456]} to cancel those workflow runs (e.g. a long render that is no longer needed).
+on:
+  push:
+    paths: ['ops/cancel.json']
+permissions:
+  actions: write
+  contents: read
+jobs:
+  cancel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+        run: |
+          for id in $(python3 -c "import json;print(' '.join(str(x) for x in json.load(open('ops/cancel.json'))['runs']))"); do
+            echo "cancel $id"; gh run cancel "$id" -R "$GITHUB_REPOSITORY" || true
+          done
