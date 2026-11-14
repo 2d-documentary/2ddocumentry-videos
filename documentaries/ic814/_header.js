@@ -630,4 +630,18 @@ function dateWindows(ids, o = {}) { const out = []; let lastY = o.y0 || null;
 function dateTape(ctx, t, DW) { for (const w of DW) if (t > w.a && t < w.b) {
   const yr = lerp(w.from, w.y, E.inOut(clamp((t - w.a - .2) / 1.0)));
   yearTape(ctx, yr, clamp((t - w.a) / .3) * clamp((w.b - t) / .3)); return; } }
+// ---------- a person's photo shown whole (never cropped to a face): card over its own blurred copy + serif name.
+// ['L046', 'Ajit', 'person', key, 'Name', { cx, fx, fy }]   16:9 -> card left, name right; 9:16 -> card centre, name above
+function personCard(ctx, k, lt, cx, cy, maxW, maxH, o = {}) { const im = imgOf(k); if (!im) return; const iw = im.naturalWidth || im.width, ih = im.naturalHeight || im.height;
+  let h = maxH, w = h * iw / ih; if (w > maxW) { w = maxW; h = w * ih / iw; }
+  const p = E.out(clamp(lt / .5)), s = lerp(.94, 1, p) * (1 + lt * .01);
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(s, s); ctx.shadowColor = 'rgba(0,0,0,.75)'; ctx.shadowBlur = 50; ctx.fillStyle = '#000'; ctx.fillRect(-w / 2, -h / 2, w, h); ctx.shadowColor = 'transparent';
+  cover(ctx, k, -w / 2, -h / 2, w, h, { z: 1.0, fx: o.fx, fy: o.fy }); ctx.strokeStyle = 'rgba(255,255,255,.85)'; ctx.lineWidth = Math.max(2, MN() * .004); ctx.strokeRect(-w / 2, -h / 2, w, h); ctx.restore(); }
+function brollPerson() {
+  BEAT_KINDS.person = { cap: 1, draw: (ctx, t, lt, t0, a, o) => {
+    cover(ctx, a[0], 0, 0, W, H, { z: 1.3 + lt * .02, blur: 24, bright: .4 }); const land = W > H;
+    if (land) { personCard(ctx, a[0], lt, W * (o.cx ?? .3), H * .46, W * .4, H * .78, o); if (a[1]) serifName(ctx, a[1], W * .7, H * .4, t, t0 + .15, { size: MN() * .085 }); }
+    else { personCard(ctx, a[0], lt, W / 2, H * .38, W * .8, H * .42, o); if (a[1]) serifName(ctx, a[1], W / 2, H * .12, t, t0 + .15, {}); }
+  } };
+}
 

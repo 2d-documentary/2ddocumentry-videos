@@ -614,6 +614,36 @@ function brollKinds() {
     if (on || lt < .3) headline(ctx, a[1], W / 2, H * .46, t, t0, { colors: [DX.red], size: o.size || MN() * .13, sub: a[2] });
   } };
 }
+// ---------- year ruler only where a year/date is spoken: windows from the caption words (19xx/20xx, month names).
+// A date without a year (e.g. "25 December") keeps the last year. Usage in shot(): dateTape(ctx, t, DW) with DW = dateWindows(ids).
+const MONTH_RE = /^(january|february|march|april|may|june|july|august|september|october|november|december)$/i;
+function dateWindows(ids, o = {}) { const out = []; let lastY = o.y0 || null;
+  ids.forEach(id => { const l = LINE[id]; if (!l || !l.words) return; let yr = null, at = null;
+    l.words.forEach((w, i) => { const s = w.w.replace(/[^0-9a-z]/gi, '');
+      const isY = /^(19|20)\d\d$/.test(s), isM = MONTH_RE.test(s);
+      if ((isY || isM) && at === null) { const p = i > 0 ? l.words[i - 1].w.replace(/[^0-9]/g, '') : ''; at = (p && p.length <= 2 && isM) ? l.words[i - 1].s : w.s; }
+      if (isY && yr === null) yr = +s; });
+    if (at === null) return; if (yr === null) yr = lastY || o.y0 || 1999;
+    out.push({ a: at - .35, b: Math.max(at + 2.8, Math.min(l.end + .25, at + 4.5)), y: yr, from: lastY ?? yr }); lastY = yr; });
+  for (let i = 1; i < out.length; i++) if (out[i].a < out[i - 1].b + .6) { out[i - 1].b = Math.max(out[i - 1].b, out[i].a); }
+  return out; }
+function dateTape(ctx, t, DW) { for (const w of DW) if (t > w.a && t < w.b) {
+  const yr = lerp(w.from, w.y, E.inOut(clamp((t - w.a - .2) / 1.0)));
+  yearTape(ctx, yr, clamp((t - w.a) / .3) * clamp((w.b - t) / .3)); return; } }
+// ---------- a person's photo shown whole (never cropped to a face): card over its own blurred copy + serif name.
+// ['L046', 'Ajit', 'person', key, 'Name', { cx, fx, fy }]   16:9 -> card left, name right; 9:16 -> card centre, name above
+function personCard(ctx, k, lt, cx, cy, maxW, maxH, o = {}) { const im = imgOf(k); if (!im) return; const iw = im.naturalWidth || im.width, ih = im.naturalHeight || im.height;
+  let h = maxH, w = h * iw / ih; if (w > maxW) { w = maxW; h = w * ih / iw; }
+  const p = E.out(clamp(lt / .5)), s = lerp(.94, 1, p) * (1 + lt * .01);
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(s, s); ctx.shadowColor = 'rgba(0,0,0,.75)'; ctx.shadowBlur = 50; ctx.fillStyle = '#000'; ctx.fillRect(-w / 2, -h / 2, w, h); ctx.shadowColor = 'transparent';
+  cover(ctx, k, -w / 2, -h / 2, w, h, { z: 1.0, fx: o.fx, fy: o.fy }); ctx.strokeStyle = 'rgba(255,255,255,.85)'; ctx.lineWidth = Math.max(2, MN() * .004); ctx.strokeRect(-w / 2, -h / 2, w, h); ctx.restore(); }
+function brollPerson() {
+  BEAT_KINDS.person = { cap: 1, draw: (ctx, t, lt, t0, a, o) => {
+    cover(ctx, a[0], 0, 0, W, H, { z: 1.3 + lt * .02, blur: 24, bright: .4 }); const land = W > H;
+    if (land) { personCard(ctx, a[0], lt, W * (o.cx ?? .3), H * .46, W * .4, H * .78, o); if (a[1]) serifName(ctx, a[1], W * .7, H * .4, t, t0 + .15, { size: MN() * .085 }); }
+    else { personCard(ctx, a[0], lt, W / 2, H * .38, W * .8, H * .42, o); if (a[1]) serifName(ctx, a[1], W / 2, H * .12, t, t0 + .15, {}); }
+  } };
+}
 
 
 // Shared editorial helpers (from the Musk / Silk Road episodes). Paste into an episode's scenes.js AFTER the header,
@@ -752,7 +782,7 @@ function bowl(ctx, x, y, s, t) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s
 
 brollCuts(['gren', 'gren2', 'tanker']);
 function scenes() {
-  brollKinds();
+  brollKinds(); brollPerson();
   const GREY = { grey: 1 }, RED = { colors: [DX.red] };
   const after = (id, d = .25) => LINE[id].end + d;
   const KTM = [85.36, 27.70], KDH = [65.85, 31.51], ATQ = [74.80, 31.71], LHE = [74.40, 31.52], DXB = [55.37, 25.03];
@@ -773,7 +803,7 @@ function scenes() {
     ['S05', 'Pathankot', 'head', 'PATHANKOT', '2016', { bg: 'nsg2', dark: .6 }],
     ['S05', 'Pulwama', 'head', 'PULWAMA', '2019', { colors: [DX.red], bg: 'candle' }],
     ['S06', null, 'head', '#2', 'Omar Sheikh', { size: MN() * .2, colors: [DX.red], bg: 'kdh_road', dark: .7 }],
-    ['S06', 'Daniel', 'dof', 'pearl', 'Daniel Pearl', { fx: .5, fy: .4, cx: .5, cy: .42, r: .35 }],
+    ['S06', 'Daniel', 'person', 'pearl', 'Daniel Pearl', {}],
     ['S07', null, 'full', 'pk_sc'],
     ['S07', 'bari', 'head', 'ACQUITTED', '2021', { colors: [DX.red], size: MN() * .12, bg: 'pk_sc2' }],
     ['S08', null, 'head', '#3', 'Mushtaq Zargar', { size: MN() * .2, colors: [DX.red], bg: 'tal_arms', dark: .7 }],

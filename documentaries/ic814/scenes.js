@@ -630,6 +630,20 @@ function dateWindows(ids, o = {}) { const out = []; let lastY = o.y0 || null;
 function dateTape(ctx, t, DW) { for (const w of DW) if (t > w.a && t < w.b) {
   const yr = lerp(w.from, w.y, E.inOut(clamp((t - w.a - .2) / 1.0)));
   yearTape(ctx, yr, clamp((t - w.a) / .3) * clamp((w.b - t) / .3)); return; } }
+// ---------- a person's photo shown whole (never cropped to a face): card over its own blurred copy + serif name.
+// ['L046', 'Ajit', 'person', key, 'Name', { cx, fx, fy }]   16:9 -> card left, name right; 9:16 -> card centre, name above
+function personCard(ctx, k, lt, cx, cy, maxW, maxH, o = {}) { const im = imgOf(k); if (!im) return; const iw = im.naturalWidth || im.width, ih = im.naturalHeight || im.height;
+  let h = maxH, w = h * iw / ih; if (w > maxW) { w = maxW; h = w * ih / iw; }
+  const p = E.out(clamp(lt / .5)), s = lerp(.94, 1, p) * (1 + lt * .01);
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(s, s); ctx.shadowColor = 'rgba(0,0,0,.75)'; ctx.shadowBlur = 50; ctx.fillStyle = '#000'; ctx.fillRect(-w / 2, -h / 2, w, h); ctx.shadowColor = 'transparent';
+  cover(ctx, k, -w / 2, -h / 2, w, h, { z: 1.0, fx: o.fx, fy: o.fy }); ctx.strokeStyle = 'rgba(255,255,255,.85)'; ctx.lineWidth = Math.max(2, MN() * .004); ctx.strokeRect(-w / 2, -h / 2, w, h); ctx.restore(); }
+function brollPerson() {
+  BEAT_KINDS.person = { cap: 1, draw: (ctx, t, lt, t0, a, o) => {
+    cover(ctx, a[0], 0, 0, W, H, { z: 1.3 + lt * .02, blur: 24, bright: .4 }); const land = W > H;
+    if (land) { personCard(ctx, a[0], lt, W * (o.cx ?? .3), H * .46, W * .4, H * .78, o); if (a[1]) serifName(ctx, a[1], W * .7, H * .4, t, t0 + .15, { size: MN() * .085 }); }
+    else { personCard(ctx, a[0], lt, W / 2, H * .38, W * .8, H * .42, o); if (a[1]) serifName(ctx, a[1], W / 2, H * .12, t, t0 + .15, {}); }
+  } };
+}
 
 
 // Shared editorial helpers (from the Musk / Silk Road episodes). Paste into an episode's scenes.js AFTER the header,
@@ -768,7 +782,7 @@ function bowl(ctx, x, y, s, t) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s
 
 brollCuts(['gren', 'gren2', 'tanker']);
 function scenes() {
-  brollKinds();
+  brollKinds(); brollPerson();
   const GREY = { grey: 1 }, RED = { colors: [DX.red] };
   const after = (id, d = .25) => LINE[id].end + d;
   const chap = (id, n, title) => [LINE[id].start - 1.6, null, 'chap', n, title, { tr: 'invert', cap: 0 }];
@@ -778,10 +792,11 @@ function scenes() {
   const REGION = { lon: 72, lat: 29, k: 9 }, WORLD = { lon: 60, lat: 20, k: 4.2 };
   // split screen: both sides of the story
   BEAT_KINDS.vs = { cap: 1, draw: (ctx, t, lt, t0, a, o) => {
-    black(ctx); [[0, a[0], a[1]], [1, a[2], a[3]]].forEach(([s, k, tag]) => {
-      ctx.save(); ctx.beginPath(); ctx.rect(s * W / 2, 0, W / 2, H); ctx.clip(); ctx.translate((s ? 1 : -1) * W / 4, 0);
-      full(ctx, k, lt, { dark: .45, z0: 1.05, z1: 1.12 }); ctx.restore();
-      headline(ctx, tag, W / 4 + s * W / 2, H * .2, t, t0 + .05 + s * .35, { size: MN() * .06, colors: s ? [DX.red] : undefined }); });
+    black(ctx); [[0, a[0], a[1]], [1, a[2], a[3]]].forEach(([sd, k, tag]) => {
+      ctx.save(); ctx.beginPath(); ctx.rect(sd * W / 2, 0, W / 2, H); ctx.clip();
+      cover(ctx, k, sd * W / 2, 0, W / 2, H, { z: 1.25, blur: 20, bright: .4 });
+      personCard(ctx, k, lt, W / 4 + sd * W / 2, H * .55, W * .4, H * .6); ctx.restore();
+      headline(ctx, tag, W / 4 + sd * W / 2, H * .13, t, t0 + .05 + sd * .35, { size: MN() * .06, colors: sd ? [DX.red] : undefined }); });
     ctx.fillStyle = DX.red; ctx.fillRect(W / 2 - 3, 0, 6, H * clamp((t - t0) / .4)); } };
   const rows = [
     // ---------------- cold open
@@ -835,7 +850,7 @@ function scenes() {
     chap('L018', 2, 'DELHI KI GHADI'),
     ['L018', null, 'full', 'del_tower', { z0: 1.1, z1: 1.25 }],
     ['L019', null, 'num', '4:40 PM', 'ATC ko khabar', { bg: 'del_tower' }],
-    ['L020', null, 'full', 'vajpayee2', { fy: .35 }],
+    ['L020', null, 'person', 'vajpayee2', 'Atal Bihari Vajpayee', {}],
     ['L020', 'plane', 'clipx', 'c_del_land', { off: 1 }],
     ['L021', null, 'head', 'CRISIS MANAGEMENT GROUP', '~6 PM', { bg: 'parl_bld', size: MN() * .08 }],
     ['L022', null, 'full', 'atr_b', { dark: .3 }],
@@ -892,9 +907,9 @@ function scenes() {
     ['L045', null, 'full', 'tal_arms'],
     ['L045', 'Commando', 'head', 'COMMANDO OPERATION', 'khatam', { bg: 'nsg', dark: .65 }],
     ['L046', null, 'head', 'MEDIATOR?', 'Taliban', { bg: 'tal_herat', dark: .6 }],
-    ['L046', 'Ajit', 'dof', 'doval', 'Ajit Doval', { fx: .5, fy: .35, cx: .5, cy: .4, r: .3 }],
+    ['L046', 'Ajit', 'person', 'doval', 'Ajit Doval', {}],
     ['L046', 'ISI', 'head', 'ISI', '2 officers · Doval ke mutabik', { colors: [DX.red], bg: 'kdh_term', dark: .65 }],
-    ['L047', null, 'dof', 'doval2', 'Ajit Doval', { fx: .5, fy: .35, cx: .5, cy: .4, r: .3 }],
+    ['L047', null, 'person', 'doval2', 'Ajit Doval', {}],
     ['L048', null, 'head', 'DEMANDS', '', { bg: 'kdh_term' }],
     ['L048', '36', 'num', '36', 'aatankiyon ki rihaai', { color: DX.red, bg: 'tal_herat' }],
     ['L048', '200', 'num', '$200 MILLION', 'cash', { color: DX.red, bg: 'cash' }],
@@ -911,7 +926,7 @@ function scenes() {
     ['L054', 'jhadap', 'head', 'JHADAP', 'PM ke ghar ke bahar', { bg: 'candle', colors: [DX.red], dark: .45, z0: 1.3 }],
     ['L055', null, 'head', 'PRESSURE', 'roz TV pe', { bg: 'parl_bld2', colors: [DX.red] }],
     ['L056', null, 'head', 'NEGOTIATING TEAM', 'Kandahar', { bg: 'kdh_term' }],
-    ['L056', 'Ajit', 'dof', 'doval', 'Ajit Doval', { fx: .5, fy: .35, cx: .5, cy: .4, r: .3 }],
+    ['L056', 'Ajit', 'person', 'doval', 'Ajit Doval', {}],
     // ---------------- 6. the deal
     chap('L057', 6, 'THE DEAL'),
     ['L057', null, 'full', 'kdh_term', { dark: .3 }],
@@ -929,7 +944,7 @@ function scenes() {
     ['L064', null, 'head', '"YE GALTI HAI"', 'Dulat ke mutabik', { colors: [DX.red], bg: 'parl_bld2', dark: .65 }],
     ['L065', null, 'full', 'parl_bld', { dark: .3 }],
     ['L066', null, 'head', '31 DECEMBER 1999', 'saal ka aakhri din', { bg: 'kdh_term' }],
-    ['L067', null, 'dof', 'jaswant', 'Jaswant Singh', { fx: .5, fy: .35, cx: .5, cy: .4, r: .3 }],
+    ['L067', null, 'person', 'jaswant', 'Jaswant Singh', {}],
     ['L067', 'teeno', 'full', 'a300_a', { z0: 1.3, z1: 1.38, fy: .62 }],
     ['L068', null, 'full', 'kdh_term', { z0: 1.3, z1: 1.45 }],
     ['L068', 'Hijackers', 'full', 'kdh_road'],
@@ -952,7 +967,7 @@ function scenes() {
     ['L077', null, 'full', 'unsc'],
     ['L077', 'global', 'head', 'GLOBAL TERRORIST', 'UN list · 2019', { colors: [DX.red], bg: 'unsc' }],
     ['L078', null, 'head', 'OMAR SHEIKH', '', { bg: 'kdh_road', dark: .65 }],
-    ['L078', 'Daniel', 'dof', 'pearl', 'Daniel Pearl', { fx: .5, fy: .4, cx: .5, cy: .42, r: .3 }],
+    ['L078', 'Daniel', 'person', 'pearl', 'Daniel Pearl', {}],
     ['L079', null, 'pol', 'pearl'],
     ['L080', null, 'full', 'pk_sc'],
     ['L080', 'bari', 'head', 'ACQUITTED', 'Pakistan Supreme Court · 2021', { colors: [DX.red], bg: 'pk_sc2' }],

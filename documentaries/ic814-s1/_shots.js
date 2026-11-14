@@ -1,6 +1,6 @@
 brollCuts(['gren', 'gren2', 'tanker']);
 function scenes() {
-  brollKinds();
+  brollKinds(); brollPerson();
   const GREY = { grey: 1 }, RED = { colors: [DX.red] };
   const after = (id, d = .25) => LINE[id].end + d;
   const KTM = [85.36, 27.70], KDH = [65.85, 31.51], ATQ = [74.80, 31.71], LHE = [74.40, 31.52], DXB = [55.37, 25.03];
@@ -21,7 +21,7 @@ function scenes() {
     ['S05', 'Pathankot', 'head', 'PATHANKOT', '2016', { bg: 'nsg2', dark: .6 }],
     ['S05', 'Pulwama', 'head', 'PULWAMA', '2019', { colors: [DX.red], bg: 'candle' }],
     ['S06', null, 'head', '#2', 'Omar Sheikh', { size: MN() * .2, colors: [DX.red], bg: 'kdh_road', dark: .7 }],
-    ['S06', 'Daniel', 'dof', 'pearl', 'Daniel Pearl', { fx: .5, fy: .4, cx: .5, cy: .42, r: .35 }],
+    ['S06', 'Daniel', 'person', 'pearl', 'Daniel Pearl', {}],
     ['S07', null, 'full', 'pk_sc'],
     ['S07', 'bari', 'head', 'ACQUITTED', '2021', { colors: [DX.red], size: MN() * .12, bg: 'pk_sc2' }],
     ['S08', null, 'head', '#3', 'Mushtaq Zargar', { size: MN() * .2, colors: [DX.red], bg: 'tal_arms', dark: .7 }],
