@@ -2,8 +2,8 @@
 const EP = { brand: 'DAGAR UNFILTERED', images: {}, credit: {}, scenes, bleep: ['shit', 'fuck'], capScale: .046, assetsProject: 'ic814' };
 const C = {};
 const credit = (k, extra) => { const c = cr(k); return c ? (extra ? extra + ' · ' : '') + c : (extra || ''); };
-const CLIPN = {"v_takeoff2": 12, "v_del_land": 12, "v_land2": 12, "v_del_wing": 12, "v_land": 12, "v_takeoff": 12, "c_take": 96, "c_land": 108, "c_wing": 120, "c_del_land": 108, "c_land2": 84};
-const CLIPDIR = {"c_take": "user", "c_land": "user", "c_wing": "user", "c_del_land": "user", "c_land2": "user", "v_takeoff2": "footage", "v_del_land": "footage", "v_land2": "footage", "v_del_wing": "footage", "v_land": "footage", "v_takeoff": "footage"};
+const CLIPN = {"v_takeoff2": 12, "v_del_land": 12, "v_brahmos2": 12, "v_land2": 12, "v_brahmos": 12, "v_del_wing": 12, "v_land": 12, "v_takeoff": 12, "c_missile": 77, "c_take": 96, "c_missile2": 98, "c_land": 108, "c_wing": 120, "c_del_land": 108, "c_land2": 84};
+const CLIPDIR = {"c_missile": "user", "c_take": "user", "c_missile2": "user", "c_land": "user", "c_wing": "user", "c_del_land": "user", "c_land2": "user", "v_takeoff2": "footage", "v_del_land": "footage", "v_brahmos2": "footage", "v_land2": "footage", "v_brahmos": "footage", "v_del_wing": "footage", "v_land": "footage", "v_takeoff": "footage"};
 for (const k in CLIPN) for (let i = 0; i < CLIPN[k]; i++) EP.images[k + '_f' + i] = 'archives/' + CLIPDIR[k] + '/' + k + '_f' + i + '.jpg';
 const CLIPV = {};
 for (const k in CLIPV) { CLIPN[k] = CLIPV[k][1]; for (let i = 0; i < CLIPV[k][1]; i++) EP.images[k + '_f' + i] = 'archives/footage/' + CLIPV[k][0] + '_' + i + '.jpg'; }
@@ -574,6 +574,47 @@ function yearTape(ctx, yr, alpha = 1) { const m = MN(), cy = H * .935, sp = m * 
   ctx.fillStyle = DX.red; ctx.beginPath(); ctx.moveTo(cx - m * .012, cy - m * .045); ctx.lineTo(cx + m * .012, cy - m * .045); ctx.lineTo(cx, cy - m * .026); ctx.fill();
   ctx.font = `700 ${m * .036}px ${F.cond}`; ctx.fillStyle = '#fff'; ctx.shadowColor = 'rgba(0,0,0,.8)'; ctx.shadowBlur = 10; ctx.fillText(String(Math.round(yr)), cx, cy - m * .055); ctx.restore(); }
 
+// ---------- B-roll motion kinds (Dagar): a cut-out prop that falls into frame, or drives in. Cut-outs come from
+// fetch-assets "cutout": true -> archives/cutouts/<id>.png; map them with brollCuts(['gren', ...]) at the top of _shots.js.
+function brollCuts(ids) { ids.forEach(k => EP.images[k + '_cut'] = 'archives/cutouts/' + k + '.png'); }
+function propImg(k) { const im = imgOf(k + '_cut') || imgOf(k); if (!im) return null; return [im, im.naturalWidth || im.width, im.naturalHeight || im.height]; }
+function brollKinds() {
+  // ['L011', null, 'fall', bgKey, propKey, { text, x, y, s, dark }] : prop drops in, lands with a bounce + screen shake
+  BEAT_KINDS.fall = { cap: 1, draw: (ctx, t, lt, t0, a, o) => {
+    const D = o.d ?? .5, u = clamp(lt / D), land = lt >= D, b = lt - D;
+    const sh = land ? Math.exp(-b * 9) * Math.sin(b * 70) * MN() * .014 : 0;
+    ctx.save(); ctx.translate(sh, sh * .6);
+    full(ctx, a[0], lt, { dark: o.dark ?? .45, z0: 1.08, z1: 1.18 });
+    const p = propImg(a[1]);
+    if (p) { const [im, iw, ih] = p, h = H * (o.s ?? .42), w = h * iw / ih, yEnd = H * (o.y ?? .6), x = W * (o.x ?? .5);
+      let y = lerp(-h, yEnd, E.in(u)), rot = lerp(-1.8, .22, u);
+      if (land) { y = yEnd - Math.abs(Math.sin(b * 9)) * Math.exp(-b * 5) * H * .06; rot = .22 + Math.sin(b * 7) * Math.exp(-b * 4) * .12; }
+      ctx.fillStyle = `rgba(0,0,0,${.55 * u})`; ctx.beginPath(); ctx.ellipse(x, yEnd + h * .47, w * .5 * (.3 + .7 * u), h * .06, 0, 0, Math.PI * 2); ctx.fill();
+      ctx.translate(x, y); ctx.rotate(rot); ctx.filter = 'grayscale(1) contrast(1.15)';
+      if (!land) { ctx.globalAlpha = .22; ctx.drawImage(im, -w / 2, -h * .8, w, h); ctx.globalAlpha = 1; }
+      ctx.drawImage(im, -w / 2, -h / 2, w, h); }
+    ctx.restore();
+    if (o.text) headline(ctx, o.text, W / 2, H * (o.ty ?? .2), t, t0 + D, { colors: o.colors || [DX.red], size: o.size || MN() * .12, sub: o.sub });
+  } };
+  // ['L021', 'tanker', 'drive', bgKey, propKey, { text, from: 'r'|'l', x, y, s }] : prop slides in fast and brakes
+  BEAT_KINDS.drive = { cap: 1, draw: (ctx, t, lt, t0, a, o) => {
+    full(ctx, a[0], lt, { dark: o.dark ?? .35, z0: 1.05, z1: 1.1 });
+    const p = propImg(a[1]); if (p) { const [im, iw, ih] = p, h = H * (o.s ?? .42), w = h * iw / ih, D = o.d ?? 1.0, u = E.out(clamp(lt / D)), dir = o.from === 'l' ? -1 : 1;
+      const xEnd = W * (o.x ?? .5), x = lerp(W / 2 + dir * (W / 2 + w * .6), xEnd, u), y = H * (o.y ?? .6), v = 1 - u;
+      ctx.save(); ctx.filter = 'grayscale(1) contrast(1.1)';
+      ctx.fillStyle = 'rgba(0,0,0,.45)'; ctx.beginPath(); ctx.ellipse(x, y + h * .46, w * .48, h * .05, 0, 0, Math.PI * 2); ctx.fill();
+      for (let k = 4; k >= 1; k--) { ctx.globalAlpha = .14 * v; ctx.drawImage(im, x - w / 2 + dir * k * w * .07 * v, y - h / 2, w, h); }
+      ctx.globalAlpha = 1; ctx.drawImage(im, x - w / 2, y - h / 2, w, h); ctx.restore(); }
+    if (o.text) headline(ctx, o.text, W / 2, H * (o.ty ?? .18), t, t0 + .3, { colors: o.colors, size: o.size || MN() * .1, sub: o.sub });
+  } };
+  // ['L013', 'fuel', 'alarm', bgKey, TEXT, sub] : photo with a blinking red warning (gauges, cockpit)
+  BEAT_KINDS.alarm = { cap: 0, draw: (ctx, t, lt, t0, a, o) => {
+    full(ctx, a[0], lt, { dark: o.dark ?? .4, z0: 1.15, z1: 1.3, fx: o.fx, fy: o.fy });
+    const on = Math.floor(lt * 4) % 2 === 0; ctx.fillStyle = `rgba(224,38,43,${on ? .22 : .06})`; ctx.fillRect(0, 0, W, H);
+    if (on || lt < .3) headline(ctx, a[1], W / 2, H * .46, t, t0, { colors: [DX.red], size: o.size || MN() * .13, sub: a[2] });
+  } };
+}
+
 
 // Shared editorial helpers (from the Musk / Silk Road episodes). Paste into an episode's scenes.js AFTER the header,
 // which must define: EP, C (palette), credit(k, extra), and (for worldMap pins) PLACES. See doc/snippets/README.md.
@@ -709,7 +750,9 @@ function bowl(ctx, x, y, s, t) { ctx.save(); ctx.translate(x, y); ctx.scale(s, s
   ctx.strokeStyle = '#8B5A2B'; ctx.lineWidth = 12; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(40, -260); ctx.lineTo(-20, -110); ctx.stroke(); ctx.beginPath(); ctx.moveTo(90, -250); ctx.lineTo(10, -100); ctx.stroke(); ctx.restore(); }
 
 
+brollCuts(['gren', 'gren2', 'tanker']);
 function scenes() {
+  brollKinds();
   const GREY = { grey: 1 }, RED = { colors: [DX.red] };
   const after = (id, d = .25) => LINE[id].end + d;
   const KTM = [85.36, 27.70], KDH = [65.85, 31.51], ATQ = [74.80, 31.71], LHE = [74.40, 31.52], DXB = [55.37, 25.03];
@@ -717,24 +760,25 @@ function scenes() {
     ['S01', null, 'clipx', 'c_wing', { off: .5 }],
     ['S01', 'December', 'head', '24 DEC 1999', 'IC 814', { bg: 'a300_b', size: MN() * .12 }],
     ['S01', 'Indian', 'full', 'a300_a'],
-    ['S01', 'hijack', 'head', 'HIJACK', '', { colors: [DX.red], tr: 'punch', size: MN() * .16, bg: 'a300_d', dark: .6 }],
+    ['S01', 'hijack', 'fall', 'cabin', 'gren2', { text: 'HIJACK', size: MN() * .16, s: .26, y: .44 }],
     ['S02', null, 'num', '7 DIN', '', { bg: 'kdh_term', size: MN() * .2 }],
     mapRow('S02', 'India', { views: [[T('S02', 'India') - .2, { lon: 71, lat: 29, k: 7 }]], routes: [[KTM, ATQ, T('S02', 'India'), .4], [ATQ, LHE, T('S02', 'India') + .35, .25], [LHE, DXB, T('S02', 'India') + .55, .4], [DXB, KDH, T('S02', 'India') + .9, .4]],
       pins: [[...KDH, 'KANDAHAR', T('S02', 'India') + 1.2]] }),
     ['S02', 'teen', 'num', '3', 'aatanki · azaad', { color: DX.red, bg: 'kdh_term', size: MN() * .32 }],
     ['S03', null, 'full', 'kdh_term', { dark: .35, z0: 1.2, z1: 1.35 }],
-    ['S03', 'khatam', 'head', 'KHATAM NAHI', '', RED],
+    ['S03', 'khatam', 'head', 'KHATAM NAHI', '', { colors: [DX.red], bg: 'kdh_road' }],
     ['S04', null, 'head', '#1', 'Masood Azhar', { size: MN() * .2, colors: [DX.red], bg: 'tal_herat', dark: .7 }],
-    ['S04', 'Jaish', 'head', 'JAISH E MOHAMMED', '2000', { size: MN() * .08 }],
-    ['S05', null, 'full', 'parl_a'],
-    ['S05', 'Pathankot', 'head', 'PATHANKOT', '2016', GREY],
-    ['S05', 'Pulwama', 'head', 'PULWAMA', '2019', { colors: [DX.red], bg: 'parl_b' }],
+    ['S04', 'Jaish', 'head', 'JAISH E MOHAMMED', '2000', { size: MN() * .08, bg: 'tal_arms', dark: .6 }],
+    ['S05', null, 'full', 'parl_bld'],
+    ['S05', 'Pathankot', 'head', 'PATHANKOT', '2016', { bg: 'nsg2', dark: .6 }],
+    ['S05', 'Pulwama', 'head', 'PULWAMA', '2019', { colors: [DX.red], bg: 'candle' }],
     ['S06', null, 'head', '#2', 'Omar Sheikh', { size: MN() * .2, colors: [DX.red], bg: 'kdh_road', dark: .7 }],
     ['S06', 'Daniel', 'dof', 'pearl', 'Daniel Pearl', { fx: .5, fy: .4, cx: .5, cy: .42, r: .35 }],
-    ['S07', null, 'head', 'ACQUITTED', '2021', { colors: [DX.red], size: MN() * .12, bg: 'kdh_road', dark: .7 }],
+    ['S07', null, 'full', 'pk_sc'],
+    ['S07', 'bari', 'head', 'ACQUITTED', '2021', { colors: [DX.red], size: MN() * .12, bg: 'pk_sc2' }],
     ['S08', null, 'head', '#3', 'Mushtaq Zargar', { size: MN() * .2, colors: [DX.red], bg: 'tal_arms', dark: .7 }],
-    ['S08', 'terrorist', 'head', 'TERRORIST', 'declared · 2022', GREY],
-    ['S09', null, 'num', '100+', 'zindagiyan bachi', { bg: 'a300_c', size: MN() * .22 }],
+    ['S08', 'terrorist', 'head', 'TERRORIST', 'declared · 2022', { bg: 'parl_bld2', dark: .6 }],
+    ['S09', null, 'num', '100+', 'zindagiyan bachi', { bg: 'cabin', size: MN() * .22 }],
     ['S09', 'Doosri', 'board', 'TEEN NAAM', '', ['tal_herat', 'parl_a', 'pearl']],
     ['D01', null, 'full', 'a300_b', { dark: .5 }],
     [after('D01', .3), null, 'end', { tr: 'invert', cap: 0 }],

@@ -30,7 +30,7 @@ h = ["'use strict';",
      f"const CLIPV = {json.dumps(cv)};",
      "for (const k in CLIPV) { CLIPN[k] = CLIPV[k][1]; for (let i = 0; i < CLIPV[k][1]; i++) EP.images[k + '_f' + i] = 'archives/footage/' + CLIPV[k][0] + '_' + i + '.jpg'; }",
      f"const BITES = {json.dumps(bites)};"]
-kits = ['veritrix_kit.js', 'cinema3d_kit.js', 'docx_kit.js'] + ([] if a.no_mascot else ['mascot_kit.js']) + ['dagar_extras.js']
+kits = ['veritrix_kit.js', 'cinema3d_kit.js', 'docx_kit.js'] + ([] if a.no_mascot else ['mascot_kit.js']) + ['dagar_extras.js', 'broll_kit.js']
 body = ''.join(open(f'{R}/doc/snippets/{k}').read() + '\n' for k in kits)
 open(f'{P}/_header.js', 'w').write('\n'.join(h) + '\n' + body)
 print('wrote', f'{P}/_header.js', '| clips:', len(allc) + len(cv), '| bites:', len(bites))

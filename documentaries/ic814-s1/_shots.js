@@ -1,4 +1,6 @@
+brollCuts(['gren', 'gren2', 'tanker']);
 function scenes() {
+  brollKinds();
   const GREY = { grey: 1 }, RED = { colors: [DX.red] };
   const after = (id, d = .25) => LINE[id].end + d;
   const KTM = [85.36, 27.70], KDH = [65.85, 31.51], ATQ = [74.80, 31.71], LHE = [74.40, 31.52], DXB = [55.37, 25.03];
@@ -6,24 +8,25 @@ function scenes() {
     ['S01', null, 'clipx', 'c_wing', { off: .5 }],
     ['S01', 'December', 'head', '24 DEC 1999', 'IC 814', { bg: 'a300_b', size: MN() * .12 }],
     ['S01', 'Indian', 'full', 'a300_a'],
-    ['S01', 'hijack', 'head', 'HIJACK', '', { colors: [DX.red], tr: 'punch', size: MN() * .16, bg: 'a300_d', dark: .6 }],
+    ['S01', 'hijack', 'fall', 'cabin', 'gren2', { text: 'HIJACK', size: MN() * .16, s: .26, y: .44 }],
     ['S02', null, 'num', '7 DIN', '', { bg: 'kdh_term', size: MN() * .2 }],
     mapRow('S02', 'India', { views: [[T('S02', 'India') - .2, { lon: 71, lat: 29, k: 7 }]], routes: [[KTM, ATQ, T('S02', 'India'), .4], [ATQ, LHE, T('S02', 'India') + .35, .25], [LHE, DXB, T('S02', 'India') + .55, .4], [DXB, KDH, T('S02', 'India') + .9, .4]],
       pins: [[...KDH, 'KANDAHAR', T('S02', 'India') + 1.2]] }),
     ['S02', 'teen', 'num', '3', 'aatanki · azaad', { color: DX.red, bg: 'kdh_term', size: MN() * .32 }],
     ['S03', null, 'full', 'kdh_term', { dark: .35, z0: 1.2, z1: 1.35 }],
-    ['S03', 'khatam', 'head', 'KHATAM NAHI', '', RED],
+    ['S03', 'khatam', 'head', 'KHATAM NAHI', '', { colors: [DX.red], bg: 'kdh_road' }],
     ['S04', null, 'head', '#1', 'Masood Azhar', { size: MN() * .2, colors: [DX.red], bg: 'tal_herat', dark: .7 }],
-    ['S04', 'Jaish', 'head', 'JAISH E MOHAMMED', '2000', { size: MN() * .08 }],
-    ['S05', null, 'full', 'parl_a'],
-    ['S05', 'Pathankot', 'head', 'PATHANKOT', '2016', GREY],
-    ['S05', 'Pulwama', 'head', 'PULWAMA', '2019', { colors: [DX.red], bg: 'parl_b' }],
+    ['S04', 'Jaish', 'head', 'JAISH E MOHAMMED', '2000', { size: MN() * .08, bg: 'tal_arms', dark: .6 }],
+    ['S05', null, 'full', 'parl_bld'],
+    ['S05', 'Pathankot', 'head', 'PATHANKOT', '2016', { bg: 'nsg2', dark: .6 }],
+    ['S05', 'Pulwama', 'head', 'PULWAMA', '2019', { colors: [DX.red], bg: 'candle' }],
     ['S06', null, 'head', '#2', 'Omar Sheikh', { size: MN() * .2, colors: [DX.red], bg: 'kdh_road', dark: .7 }],
     ['S06', 'Daniel', 'dof', 'pearl', 'Daniel Pearl', { fx: .5, fy: .4, cx: .5, cy: .42, r: .35 }],
-    ['S07', null, 'head', 'ACQUITTED', '2021', { colors: [DX.red], size: MN() * .12, bg: 'kdh_road', dark: .7 }],
+    ['S07', null, 'full', 'pk_sc'],
+    ['S07', 'bari', 'head', 'ACQUITTED', '2021', { colors: [DX.red], size: MN() * .12, bg: 'pk_sc2' }],
     ['S08', null, 'head', '#3', 'Mushtaq Zargar', { size: MN() * .2, colors: [DX.red], bg: 'tal_arms', dark: .7 }],
-    ['S08', 'terrorist', 'head', 'TERRORIST', 'declared · 2022', GREY],
-    ['S09', null, 'num', '100+', 'zindagiyan bachi', { bg: 'a300_c', size: MN() * .22 }],
+    ['S08', 'terrorist', 'head', 'TERRORIST', 'declared · 2022', { bg: 'parl_bld2', dark: .6 }],
+    ['S09', null, 'num', '100+', 'zindagiyan bachi', { bg: 'cabin', size: MN() * .22 }],
     ['S09', 'Doosri', 'board', 'TEEN NAAM', '', ['tal_herat', 'parl_a', 'pearl']],
     ['D01', null, 'full', 'a300_b', { dark: .5 }],
     [after('D01', .3), null, 'end', { tr: 'invert', cap: 0 }],
