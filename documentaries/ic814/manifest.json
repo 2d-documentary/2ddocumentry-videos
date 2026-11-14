@@ -35,7 +35,8 @@
    "category": "historical-photos",
    "description": "Airbus A300B2-101, Indian Airlines AN0133884.jpg",
    "source_page": "https://commons.wikimedia.org/wiki/File:Airbus_A300B2-101,_Indian_Airlines_AN0133884.jpg",
-   "authenticity": "authentic"
+   "authenticity": "authentic",
+   "cutout": true
   },
   {
    "id": "a300_f",
@@ -63,28 +64,32 @@
    "category": "historical-photos",
    "description": "Jaswant Singh in 2001.jpg",
    "source_page": "https://commons.wikimedia.org/wiki/File:Jaswant_Singh_in_2001.jpg",
-   "authenticity": "authentic"
+   "authenticity": "authentic",
+   "cutout": true
   },
   {
    "id": "vajpayee",
    "category": "historical-photos",
    "description": "Atal Bihari Vajpayee 2002-06-12.jpg",
    "source_page": "https://commons.wikimedia.org/wiki/File:Atal_Bihari_Vajpayee_2002-06-12.jpg",
-   "authenticity": "authentic"
+   "authenticity": "authentic",
+   "cutout": true
   },
   {
    "id": "vajpayee2",
    "category": "historical-photos",
    "description": "Prime Minister Shri Atal Bihari Vajpayee speaking before Parliament (cropped).jpg",
    "source_page": "https://commons.wikimedia.org/wiki/File:Prime_Minister_Shri_Atal_Bihari_Vajpayee_speaking_before_Parliament_(cropped).jpg",
-   "authenticity": "authentic"
+   "authenticity": "authentic",
+   "cutout": true
   },
   {
    "id": "doval",
    "category": "historical-photos",
    "description": "Ajit Doval 2014.jpg",
    "source_page": "https://commons.wikimedia.org/wiki/File:Ajit_Doval_2014.jpg",
-   "authenticity": "authentic"
+   "authenticity": "authentic",
+   "cutout": true
   },
   {
    "id": "doval2",
