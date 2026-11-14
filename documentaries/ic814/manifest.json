@@ -517,6 +517,20 @@
    "description": "Flag_of_Nepal.svg",
    "source_page": "https://commons.wikimedia.org/wiki/File:Flag_of_Nepal.svg",
    "authenticity": "authentic"
+  },
+  {
+   "id": "sat_world",
+   "category": "maps",
+   "description": "Whole_world_-_land_and_oceans_12000.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans_12000.jpg",
+   "authenticity": "authentic"
+  },
+  {
+   "id": "sat_world2",
+   "category": "maps",
+   "description": "Land_shallow_topo_2048.jpg",
+   "source_page": "https://commons.wikimedia.org/wiki/File:Land_shallow_topo_2048.jpg",
+   "authenticity": "authentic"
   }
  ]
 }
