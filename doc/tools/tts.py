@@ -109,9 +109,69 @@ def silent_synth(line, v):
     hold = v.get("hold", .9) + v.get("per_word", .2) * len(words)
     return np.zeros(int(SR * (t + hold)), dtype=np.float32), ("direct", res)
 
+# ---------- optional engine: Chatterbox Turbo (Resemble AI, MIT, runs on CPU). Expressive: inline tags in "say" such as
+# [laugh] [chuckle] [sigh] [gasp] [surprised] [sarcastic] [whispering]. The voice is cloned from a short reference clip:
+# voice config {"engine": "chatterbox", "ref_kokoro": "am_michael", "ref_speed": 1.1}  (reference made with Kokoro)  or {"ref": "voice/ref.wav"}.
+# "{BEEP}" in "say" leaves a silent slot (the censored word is never synthesised); the caption word there gets the slot's time.
+CB = {}
+def cb_model():
+    if "m" not in CB:
+        import torch; torch.set_num_threads(os.cpu_count() or 4)
+        from chatterbox.tts_turbo import ChatterboxTurboTTS
+        CB["m"] = ChatterboxTurboTTS.from_pretrained(device="cpu")
+    return CB["m"]
+REF_TEXT = "This is a calm reference recording. It gives the cloning model the tone, the pace and the color of the narrator's voice, so every line sounds like the same person."
+def cb_ref(v):
+    key = v.get("ref") or ("kokoro:" + v["ref_kokoro"] + ":" + str(v.get("ref_speed", 1.0)))
+    if key not in CB:
+        if v.get("ref"): CB[key] = os.path.join(ep, v["ref"])
+        else:
+            a = np.concatenate([(r.audio.detach().cpu().numpy() if hasattr(r.audio, "detach") else np.asarray(r.audio)) for r in pipe("a")(v.get("ref_text", REF_TEXT), voice=v["ref_kokoro"], speed=v.get("ref_speed", 1.0))])
+            path = os.path.join(out, "ref_" + re.sub(r"\W", "_", key) + ".wav"); wavfile.write(path, SR, a.astype(np.float32)); CB[key] = path
+    return CB[key]
+def cb_trim(a, thr=.012):
+    nz = np.where(np.abs(a) > thr)[0]
+    return a[max(0, nz[0] - int(.02 * SR)): nz[-1] + int(.06 * SR)] if len(nz) else a[:int(.1 * SR)]
+def cb_spread(words, a, t0):
+    """caption words spread over the speech-active frames of one audio piece (weighted by spoken length)"""
+    if not words: return []
+    hop = int(.01 * SR); fr = np.sqrt(np.mean(a[:len(a) // hop * hop].reshape(-1, hop) ** 2, axis=1)) if len(a) >= hop else np.ones(1)
+    act = np.where(fr > max(1e-4, fr.max() * .08))[0]
+    if len(act) < 3: act = np.arange(len(fr))
+    ws = [weight(w) for w in words]; tot = sum(ws); acc, res = 0, []
+    for w, k in zip(words, ws):
+        i0 = act[min(len(act) - 1, int(acc / tot * len(act)))]; acc += k; i1 = act[min(len(act) - 1, max(0, int(acc / tot * len(act)) - 1))]
+        res.append({"w": w, "s": round(t0 + i0 * hop / SR, 3), "e": round(t0 + (i1 + 1) * hop / SR, 3)})
+    return res
+def chatterbox_synth(line, v):
+    m = cb_model(); ref = cb_ref(v)
+    say = line.get("say") or line["text"]; parts = say.split("{BEEP}")
+    words = line["text"].split(); bleep = set(script.get("bleep", ["shit", "fuck"]))
+    # split the caption words at the censored words, one group per spoken part
+    groups, cur, cens = [], [], []
+    for w in words:
+        if len(parts) > 1 and norm(w) in bleep and len(groups) < len(parts) - 1: groups.append(cur); cens.append(w); cur = []
+        else: cur.append(w)
+    groups.append(cur)
+    while len(groups) < len(parts): groups.append([])
+    audio, res, t = [], [], 0.0
+    for k, part in enumerate(parts):
+        txt = speakable(part.strip())
+        if re.sub(r"\[[^\]]*\]|\W", "", txt):
+            w = m.generate(txt, audio_prompt_path=ref, **v.get("gen", {}))
+            a = w.squeeze().detach().cpu().numpy().astype(np.float32)
+            if m.sr != SR:
+                from scipy.signal import resample_poly; from math import gcd; g = gcd(m.sr, SR); a = resample_poly(a, SR // g, m.sr // g).astype(np.float32)
+            a = cb_trim(a); res += cb_spread(groups[k], a, t); audio.append(a); t += len(a) / SR
+        if k < len(parts) - 1:   # the beep slot
+            slot = v.get("beep_slot", .42); res.append({"w": cens[k] if k < len(cens) else "****", "s": round(t + .04, 3), "e": round(t + slot - .04, 3)})
+            audio.append(np.zeros(int(SR * slot), np.float32)); t += slot
+    return (np.concatenate(audio) if audio else np.zeros(int(SR * .3), np.float32)), ("direct", res)
+
 def synth(line):
     v = script["voices"][line["speaker"]]
     if v.get("engine") == "silent": return silent_synth(line, v)
+    if v.get("engine") == "chatterbox": return chatterbox_synth(line, v)
     # "read": "text" makes the voice read the Roman caption text (e.g. Indian-English voices reading Hinglish)
     spoken = speakable(line["text"]) if v.get("read") == "text" or not line.get("say") else line["say"]
     if v.get("engine") == "edge":
@@ -183,7 +243,7 @@ for i, line in enumerate(script["lines"]):
     else:
         toks = [(x, s - shift, e - shift) for x, s, e in toks]; al = align(line["text"].split(), toks, dur)
     words = [{"w": w["w"], "s": round(t + max(0, w["s"]), 3), "e": round(t + min(dur, max(w["e"], w["s"] + .05)), 3)} for w in al]
-    lines.append({"id": line["id"], "speaker": line["speaker"], "start": round(t, 3), "end": round(t + dur, 3), "words": words, **({"err": err} if err else {})})
+    lines.append({"id": line["id"], "speaker": line["speaker"], "start": round(t, 3), "end": round(t + dur, 3), "words": words, **({"pose": line["pose"]} if line.get("pose") else {}), **({"err": err} if err else {})})
     voice.append(a); t += dur
     if i % 10 == 0: print(f"{line['id']} {t:7.1f}s  {line['speaker']}", flush=True)
 TAIL = float(script.get("tail", 1.2)); voice.append(np.zeros(int(SR * TAIL), dtype=np.float32)); t += TAIL

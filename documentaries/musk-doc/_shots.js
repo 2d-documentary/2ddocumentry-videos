@@ -21,10 +21,10 @@ function scenes() {
     [LINE.M006.start - 1.5, null, 'chap', 1, 'THE KID FROM PRETORIA', { tr: 'invert', cap: 0 }],
     mapRow('M006', null, { views: [[LINE.M006.start - .2, { lon: 15, lat: 8, k: 5.2 }], [LINE.M006.start + 1.3, { lon: 27, lat: -25, k: 34 }]], pins: [[28.19, -25.75, 'PRETORIA, SOUTH AFRICA', T('M006', 'Pretoria,') + .7]] }),
     ['M006', '1971', 'full', 'pretoria', { tr: 'cut' }],
-    ['M007', null, 'capboard'],
+    ['M007', null, 'full', 'pretoria', { dark: .25, z0: 1.3, z1: 1.4 }],
     ['M007', 'encyclopedia', 'head', 'THE ENCYCLOPEDIA', '', GREY],
     ['M007', 'fun.', 'head', 'FOR FUN.', ''],
-    ['M008', null, 'capblack'],
+    ['M008', null, 'full', 'blastar', { dark: .2 }],
     ['M008', 'bullied.', 'head', 'BULLIED', ''],
     ['M008', 'computers.', 'full', 'compaq'],
     ['M009', null, 'full', 'blastar'],
@@ -40,14 +40,14 @@ function scenes() {
       pins: [[-75.19, 39.95, 'PHILADELPHIA', -1], [-122.17, 37.43, 'STANFORD', T('M012', 'Stanford.') + .05]] }),
     ['M012', 'lasts', 'full', 'stanford'],
     ['M012', 'two', 'num', '2 DAYS', 'at Stanford'],
-    ['M013', null, 'capblack'],
+    ['M013', null, 'full', 'stanford', { z0: 1.35, z1: 1.45, fx: .3 }],
     // ---------------- Zip2, PayPal
     [LINE.M014.start - 1.5, null, 'chap', 2, 'FIRST MILLIONS', { tr: 'invert', cap: 0 }],
     ['M014', null, 'term', 'www.internet.1995 >_'],
     ['M014', 'Elon', 'card', 'p_2006'],
     ['M015', null, 'head', 'ZIP2', 'online city guides', GREY],
-    ['M015', 'Online', 'capboard'],
-    ['M016', null, 'capblack'],
+    ['M015', 'Online', 'term', 'zip2.com / city guides >_'],
+    ['M016', null, 'full', 'compaq', { dark: .3, z0: 1.3, z1: 1.35 }],
     ['M016', 'YMCA.', 'full', 'ymca'],
     ['M017', null, 'full', 'compaq'],
     ['M017', '307', 'num', '$307M', 'Compaq buys Zip2'],
@@ -55,15 +55,15 @@ function scenes() {
     ['M018', null, 'full', 'mclaren'],
     ['M018', 'crashes', 'head', 'CRASHED', 'no insurance', { bg: 'mclaren' }],
     ['M019', null, 'head', 'X.COM', 'an online bank'],
-    ['M020', null, 'capboard'],
+    ['M020', null, 'card', 'p_2006'],
     ['M020', 'PayPal.', 'full', 'paypal_hq'],
-    ['M021', null, 'capblack'],
+    ['M021', null, 'dof', 'p_2008b', '', { fx: .5, fy: .4, cx: .5, cy: .4, r: .28 }],
     ['M021', 'fires', 'head', 'FIRED', 'mid-flight', RED],
     ['M022', null, 'card', 'p_2008b'],
     ['M023', null, 'full', 'paypal_hq'],
     ['M023', '1.5', 'num', '$1.5B', 'eBay buys PayPal'],
     ['M023', '180', 'num', '$180M', 'his share', { color: DX.red }],
-    ['M024', null, 'capblack'],
+    ['M024', null, 'full', 'f1_omelek', { z0: 1.1, z1: 1.2 }],
     ['M025', null, 'card', 'p_2006'],
     ['M025', 'rockets.', 'clipx', 'f_first', { off: 2 }],
     // ---------------- SpaceX + Tesla
@@ -74,7 +74,7 @@ function scenes() {
     ['M026', 'missiles.', 'full', 'ussr_missile'],
     ['M027', null, 'full', 'dnepr'],
     ['M027', 'discount', 'head', '"DISCOUNT?"', '', GREY],
-    ['M028', null, 'capblack'],
+    ['M028', null, 'full', 'redsquare', { dark: .3 }],
     ['M028', 'SpaceX.', 'head', 'SPACEX', '2002', { bg: 'p_tesla07' }],
     ['M029', null, 'full', 'p_roadster08'],
     ['M029', 'Tesla.', 'head', 'TESLA', '', { bg: 'p_roadster08' }],
@@ -85,7 +85,7 @@ function scenes() {
     ['M031', 'crashes.', 'head', 'CRASH', 'flight one · 2006', RED],
     ['M032', null, 'full', 'f1_2009', { dark: .2 }],
     ['M032', 'fails.', 'head', 'FAIL', 'flight two · 2007', RED],
-    ['M033', null, 'capblack'],
+    ['M033', null, 'full', 'f1_2009', { dark: .3, z0: 1.3, z1: 1.4 }],
     ['M033', 'fails', 'head', 'FAIL AGAIN', 'flight three · 2008', RED],
     ['M034', null, 'full', 'p_roadster08'],
     ['M034', 'financial', 'full', 'lehman'],
@@ -93,7 +93,7 @@ function scenes() {
     ['M035', 'borrowing', 'head', 'BORROWED RENT', '', GREY],
     ['M036', null, 'dof', 'p_2008c', '', { fx: .5, fy: .4, cx: .5, cy: .4, r: .25 }],
     ['M036', 'worst', 'head', 'THE WORST YEAR', 'of his life'],
-    ['M037', null, 'capblack'],
+    ['M037', null, 'pol', 'p_2008'],
     ['M037', 'splits', 'board', 'ALL IN', 'both companies', ['f1_omelek', 'p_roadster08']],
     ['M038', null, 'head', 'ONE MORE', 'launch'],
     mapRow('M039', null, { views: [[LINE.M039.start, { lon: 150, lat: 12, k: 7 }], [LINE.M039.start + 1.3, { lon: 167.7, lat: 9.6, k: 70 }]], pins: [[167.74, 9.05, 'KWAJALEIN ATOLL', LINE.M039.start + 1.0]] }),
@@ -102,7 +102,7 @@ function scenes() {
     ['M040', 'orbit.', 'head', 'ORBIT', '', { bg: 'f1_flight4', tr: 'punch' }],
     ['M041', null, 'full', 'p_griffin'],
     ['M041', '1.6', 'num', '$1.6B', 'NASA contract'],
-    ['M042', null, 'capblack'],
+    ['M042', null, 'full', 'p_tesla07'],
     ['M042', "Tesla's", 'full', 'p_roadster08'],
     ['M043', null, 'board', 'SAVED', 'in the same week', ['f1_flight4', 'p_roadster08']],
     // ---------------- the climb
@@ -130,7 +130,7 @@ function scenes() {
     ['M049c', 'beaming', 'clipx', 'f_f926'],
     // ---------------- tweets, flamethrowers, Rogan
     [LINE.M050.start - 1.5, null, 'chap', 6, 'TWEETS AND FLAMETHROWERS', { tr: 'invert', cap: 0 }],
-    ['M050', null, 'capblack'],
+    ['M050', null, 'full', 'p_twitter', { dark: .2 }],
     ['M050', 'tweets.', 'head', 'TWEETS', ''],
     ['M051', null, 'post', 'Am considering taking Tesla private at $420. Funding secured.', '7 Aug 2018', { avatar: 'p_royal' }],
     ['M051', 'Funding', 'head', 'FUNDING SECURED', '', GREY],
@@ -142,11 +142,11 @@ function scenes() {
     ['M052b', null, 'full', 'b_fire_f70'],
     ['M052b', "Rogan's", 'head', 'JOE ROGAN', 'podcast · 2018', { bg: 'b_fire_f70' }],
     bite(after('M052b'), 'b_fire'),
-    ['M052c', null, 'capblack'],
+    ['M052c', null, 'full', 'b_fire_f40'],
     bite(after('M052c'), 'b_terr'),
-    ['M052d', null, 'capboard'],
+    ['M052d', null, 'full', 'boring_tunnel', { dark: .2 }],
     bite(after('M052d'), 'b_torch'),
-    ['M052e', null, 'capblack'],
+    ['M052e', null, 'full', 'b_fire_f85'],
     bite(after('M052e'), 'b_label'),
     ['M052f', null, 'full', 'b_terr_f0', { dark: .2 }],
     ['M052f', 'puff', 'head', 'ONE PUFF', 'on camera', { bg: 'b_torch_f60' }],
@@ -160,7 +160,7 @@ function scenes() {
     ['M053', 'Twice.', 'head', 'TWICE.', ''],
     // ---------------- Twitter
     [LINE.M054.start - 1.5, null, 'chap', 7, 'THE BIRD AND THE ROCKET', { tr: 'invert', cap: 0 }],
-    ['M054', null, 'capblack'],
+    ['M054', null, 'full', 'twitter_hq', { z0: 1.3, z1: 1.4 }],
     ['M054', 'impulse', 'head', 'IMPULSE BUY', 'the most expensive ever'],
     ['M055', null, 'full', 'twitter_hq'],
     ['M055', '44', 'num', '$44B', 'for Twitter'],
@@ -168,7 +168,7 @@ function scenes() {
     ['M055', 'buys', 'full', 'twitter_hq2'],
     ['M056', null, 'clipx', 'u_sink', { bw: false }],
     ['M056', 'Let', 'clipx', 'u_sink', { off: 5.2, bw: false }],
-    ['M057', null, 'capblack'],
+    ['M057', null, 'full', 'x_hq', { z0: 1.3, z1: 1.35 }],
     ['M057', 'blue', 'head', '$8', 'blue checks'],
     ['M057', 'X.', 'full', 'x_hq'],
     // ---------------- Starship
@@ -178,7 +178,7 @@ function scenes() {
     ['M059', null, 'clipx', 'i_up', { fps: 15 }],
     ['M059', 'blows', 'clipx', 'i_boom', { fps: 15 }],
     ['M059', 'rapid', 'head', 'RAPID UNSCHEDULED', 'disassembly', GREY],
-    ['M060', null, 'capboard'],
+    ['M060', null, 'clipx', 'i_boom', { fps: 15 }],
     ['M060', 'blew', 'clipx', 'i_boom2', { fps: 15 }],
     ['M061', null, 'clipx', 'c_ign', { fps: 15 }],
     ['M061', 'booster', 'clipx', 'c_rise', { fps: 15 }],
@@ -228,7 +228,7 @@ function scenes() {
     ['M073', '250', 'num', '$250,000', 'just to reserve it'],
     // ---------------- midterms
     [LINE.M074.start - 1.5, null, 'chap', 10, 'THE BILL', { tr: 'invert', cap: 0 }],
-    ['M074', null, 'capblack'],
+    ['M074', null, 'full', 'nasdaq', { dark: .35 }],
     ['M075', null, 'full', 'p_twitter', { dark: .2 }],
     ['M075', '445', 'num', '$445M+', 'midterm spending'],
     ['M075', 'donor', 'head', 'BIGGEST DONOR', 'in history', GREY],
@@ -245,24 +245,25 @@ function scenes() {
     [LINE.M081.start - 1.5, null, 'chap', 11, 'GENIUS OR LUCKY?', { tr: 'invert', cap: 0 }],
     ['M081', null, 'head', 'GENIUS', 'or lucky?'],
     ['M082', null, 'wall', ['p_royal', 'f1_omelek', 'p_2008', 'modelS', 'falconheavy', 'p_twitter', 'starship_pad', 'p_doge', 'nasdaq26', 'cybertruck', 'p_neuralink', 'mars', 'p_bolden', 'roadster_space', 'p_laugh', 'x_hq', 'f9_arc', 'p_2006', 'ship39', 'p_ted']],
-    ['M082', 'never', 'capblack'],
+    ['M082', 'never', 'full', 'f1_omelek', { dark: .5, z0: 1.4, z1: 1.5 }],
     ['M083', null, 'burst', ['p_2006', 'p_2008b', 'p_fh_press', 'p_ted', 'p_twitter', 'p_doge', 'p_laugh', 'p_2015']],
     ['M083', 'still', 'dof', 'p_royal', 'Elon Musk', { fx: .5, fy: .35, cx: .5, cy: .4, r: .25 }],
-    [after('M083', .5), null, 'end', { tr: 'invert', cap: 0 }],
+    [after('D13', .4), null, 'end', { tr: 'invert', cap: 0 }],
   ];
   BEAT_KINDS.end = { cap: 0, draw: (ctx, t, lt, t0) => endCard(ctx, t, t0, false) };
   const CH = ['M006', 'M014', 'M026', 'M031', 'M044', 'M050', 'M054', 'M062', 'M064', 'M074', 'M081'];
   const YEARS = [['M006', 1971], ['M008', 1980], ['M009', 1984], ['M011', 1989], ['M012', 1995], ['M017', 1999], ['M021', 2000], ['M023', 2002], ['M029', 2004], ['M031', 2006], ['M032', 2007], ['M033', 2008],
     ['M045', 2012], ['M047', 2015], ['M048', 2018], ['M053', 2019], ['M055', 2022], ['M059', 2023], ['M061', 2024], ['M062', 2025], ['M064', 2026]].map(([id, y]) => [LINE[id].start - (CH.includes(id) ? 1.5 : 0), y]);
-  const tapeFrom = LINE.M006.start - 1.5, tapeTo = LINE.M083.end + .4;
+  const tapeFrom = LINE.M006.start - 1.5, tapeTo = LINE.D13.end + .4;
   const B = buildBeats(rows);
-  const ALL = TL.lines.map(l => l.id).concat(BITE_IDS);
+  const ALL = TL.lines.filter(l => l.speaker !== 'DAGU').map(l => l.id).concat(BITE_IDS);
   const capStyle = t => { let i = B.length - 1; while (i > 0 && t < B[i].t0) i--; return B[i].cap; };
   shot(0, (ctx, t, lt) => {
     dseq(ctx, t, B); const c = capStyle(t);
     if (c === 'bite') cap(ctx, t, BITE_IDS, { y: H * .82, size: MN() * .036, hold: .1 });
     else if (c) cap(ctx, t, ALL, c === 'dark' ? { color: '#111', shadow: false } : {});
     filmFinish(ctx, t, { grain: .1, vig: .4 });
+    daguLayer(ctx, t);
     if (t > tapeFrom && t < tapeTo && c !== 'bite') yearTape(ctx, yearAt(YEARS, t), clamp((t - tapeFrom) / .4) * clamp((tapeTo - t) / .3));
   }, { name: 'docx', lead: 0 });
   CH.forEach(id => cue(LINE[id].start - 1.45, 'thud', .35));

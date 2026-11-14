@@ -2,10 +2,16 @@
  "title": "Elon Musk: All In (Dagar Unfiltered)",
  "voices": {
   "NARRATOR": {
-   "voice": "am_michael",
-   "speed": 1.18,
-   "lang": "a",
-   "desc": "Conversational narrator"
+   "engine": "chatterbox",
+   "ref_kokoro": "am_michael",
+   "ref_speed": 1.1,
+   "desc": "Chatterbox Turbo, voice cloned from Kokoro am_michael"
+  },
+  "DAGU": {
+   "engine": "chatterbox",
+   "ref_kokoro": "am_puck",
+   "ref_speed": 1.2,
+   "desc": "Dagu the stickman: Chatterbox Turbo cloned from Kokoro am_puck"
   }
  },
  "tail": 3.0,
@@ -84,6 +90,14 @@
    "gap_before": 0.12
   },
   {
+   "id": "D01",
+   "speaker": "DAGU",
+   "pose": "wave",
+   "gap_before": 0.35,
+   "say": "Hi! I'm Dagu. I live inside these videos. [laugh] Don't mind me, I just show up when things get weird. And trust me, they get weird.",
+   "text": "Hi! I'm Dagu. I live inside these videos. Don't mind me, I just show up when things get weird. And trust me, they get weird."
+  },
+  {
    "id": "M006",
    "speaker": "NARRATOR",
    "text": "Pretoria, South Africa. 1971.",
@@ -129,7 +143,16 @@
    "id": "M013",
    "speaker": "NARRATOR",
    "text": "Two days. Some people take longer to return a pair of shoes.",
-   "gap_before": 0.12
+   "gap_before": 0.12,
+   "say": "Two days. [chuckle] Some people take longer to return a pair of shoes."
+  },
+  {
+   "id": "D02",
+   "speaker": "DAGU",
+   "pose": "shock",
+   "gap_before": 0.35,
+   "say": "Two days?! [surprised] I've had leftovers in my fridge longer than that.",
+   "text": "Two days?! I've had leftovers in my fridge longer than that."
   },
   {
    "id": "M014",
@@ -162,10 +185,18 @@
    "gap_before": 0.12
   },
   {
+   "id": "D03",
+   "speaker": "DAGU",
+   "pose": "facepalm",
+   "gap_before": 0.35,
+   "say": "A million dollar car. No insurance. [laugh] Bro.",
+   "text": "A million dollar car. No insurance. Bro."
+  },
+  {
    "id": "M019",
    "speaker": "NARRATOR",
    "text": "Next bet. An online bank called X.com.",
-   "gap_before": 0.12
+   "gap_before": 0.35
   },
   {
    "id": "M020",
@@ -183,7 +214,8 @@
    "id": "M022",
    "speaker": "NARRATOR",
    "text": "Fired from your own company while you're in the air. That's cold.",
-   "gap_before": 0.12
+   "gap_before": 0.12,
+   "say": "Fired from your own company while you're in the air. [sarcastic] That's cold."
   },
   {
    "id": "M023",
@@ -213,13 +245,22 @@
    "id": "M027",
    "speaker": "NARRATOR",
    "text": "It goes badly. Turns out, can I get a discount on your missiles, is not a great opening line.",
-   "gap_before": 0.12
+   "gap_before": 0.12,
+   "say": "It goes badly. [chuckle] Turns out, can I get a discount on your missiles, is not a great opening line."
+  },
+  {
+   "id": "D04",
+   "speaker": "DAGU",
+   "pose": "shrug",
+   "gap_before": 0.35,
+   "say": "Imagine asking Russia for a coupon code. [sarcastic] Bold move.",
+   "text": "Imagine asking Russia for a coupon code. Bold move."
   },
   {
    "id": "M028",
    "speaker": "NARRATOR",
    "text": "On the flight home, he decides to build his own. SpaceX. 2002.",
-   "gap_before": 0.12
+   "gap_before": 0.35
   },
   {
    "id": "M029",
@@ -291,13 +332,22 @@
    "id": "M040",
    "speaker": "NARRATOR",
    "text": "And holy shit. It reaches orbit.",
-   "gap_before": 0.12
+   "gap_before": 0.12,
+   "say": "And holy {BEEP}. [surprised] It reaches orbit."
+  },
+  {
+   "id": "D05",
+   "speaker": "DAGU",
+   "pose": "point",
+   "gap_before": 0.35,
+   "say": "Yep, we beeped that. [chuckle] Keep it clean, kids.",
+   "text": "Yep, we beeped that. Keep it clean, kids."
   },
   {
    "id": "M041",
    "speaker": "NARRATOR",
    "text": "Days before Christmas, NASA hands SpaceX a 1.6 billion dollar contract.",
-   "gap_before": 0.12
+   "gap_before": 0.35
   },
   {
    "id": "M042",
@@ -345,7 +395,16 @@
    "id": "M049",
    "speaker": "NARRATOR",
    "text": "It's still out there, looping around the Sun. The most expensive way ever to avoid traffic.",
-   "gap_before": 0.12
+   "gap_before": 0.12,
+   "say": "It's still out there, looping around the Sun. [chuckle] The most expensive way ever to avoid traffic."
+  },
+  {
+   "id": "D06",
+   "speaker": "DAGU",
+   "pose": "think",
+   "gap_before": 0.35,
+   "say": "That dummy has the best seat in the solar system. No traffic. No speed cameras.",
+   "text": "That dummy has the best seat in the solar system. No traffic. No speed cameras."
   },
   {
    "id": "M049a",
@@ -382,6 +441,14 @@
    "speaker": "NARRATOR",
    "text": "It wasn't. Regulators fined him and Tesla 20 million dollars each.",
    "gap_before": 0.12
+  },
+  {
+   "id": "D07",
+   "speaker": "DAGU",
+   "pose": "facepalm",
+   "gap_before": 0.35,
+   "say": "Twenty million dollars. For one tweet. [sigh] Read your tweets twice, people.",
+   "text": "Twenty million dollars. For one tweet. Read your tweets twice, people."
   },
   {
    "id": "M052a",
@@ -426,10 +493,26 @@
    "text": "The next day, Tesla stock drops. Worth it? Probably not."
   },
   {
+   "id": "D08",
+   "speaker": "DAGU",
+   "pose": "point",
+   "gap_before": 0.35,
+   "say": "Was it worth it? Comment below. I'll wait. [chuckle]",
+   "text": "Was it worth it? Comment below. I'll wait."
+  },
+  {
    "id": "M053",
    "speaker": "NARRATOR",
    "text": "Then the Cybertruck reveal. Unbreakable glass. His designer throws a metal ball at it. It breaks. On stage. Twice.",
-   "gap_before": 0.12
+   "gap_before": 0.35
+  },
+  {
+   "id": "D09",
+   "speaker": "DAGU",
+   "pose": "laugh",
+   "gap_before": 0.35,
+   "say": "Unbreakable glass, they said. [laugh]",
+   "text": "Unbreakable glass, they said."
   },
   {
    "id": "M054",
@@ -471,13 +554,22 @@
    "id": "M060",
    "speaker": "NARRATOR",
    "text": "Which is engineer for: it blew the fuck up.",
-   "gap_before": 0.12
+   "gap_before": 0.12,
+   "say": "Which is engineer for: it blew the {BEEP} up."
+  },
+  {
+   "id": "D10",
+   "speaker": "DAGU",
+   "pose": "laugh",
+   "gap_before": 0.35,
+   "say": "Rapid unscheduled disassembly. [chuckle] I'm saying that the next time I break a plate.",
+   "text": "Rapid unscheduled disassembly. I'm saying that the next time I break a plate."
   },
   {
    "id": "M061",
    "speaker": "NARRATOR",
    "text": "But in October 2024, the booster flies back to the tower, and the tower catches it. With two giant metal arms.",
-   "gap_before": 0.12
+   "gap_before": 0.35
   },
   {
    "id": "M062",
@@ -513,13 +605,22 @@
    "id": "M067",
    "speaker": "NARRATOR",
    "text": "By the end of day one, Forbes puts him at around 1.1 trillion dollars. The first trillionaire. Ever.",
-   "gap_before": 0.12
+   "gap_before": 0.12,
+   "say": "By the end of day one, Forbes puts him at around 1.1 trillion dollars. [surprised] The first trillionaire. Ever."
+  },
+  {
+   "id": "D11",
+   "speaker": "DAGU",
+   "pose": "shock",
+   "gap_before": 0.35,
+   "say": "A trillion. With a T. [surprised] I tried counting to a trillion once. I got bored at forty.",
+   "text": "A trillion. With a T. I tried counting to a trillion once. I got bored at forty."
   },
   {
    "id": "M068",
    "speaker": "NARRATOR",
    "text": "The guy with three crashed rockets and borrowed rent money.",
-   "gap_before": 0.12
+   "gap_before": 0.35
   },
   {
    "id": "M069",
@@ -576,16 +677,25 @@
    "gap_before": 0.12
   },
   {
+   "id": "D12",
+   "speaker": "DAGU",
+   "pose": "shrug",
+   "gap_before": 0.35,
+   "say": "Space lasers. [whispering] I'm not touching that one. Moving on.",
+   "text": "Space lasers. I'm not touching that one. Moving on."
+  },
+  {
    "id": "M078",
    "speaker": "NARRATOR",
    "text": "And his fortune has already slipped back under a trillion. Around 868 billion dollars.",
-   "gap_before": 0.12
+   "gap_before": 0.35
   },
   {
    "id": "M079",
    "speaker": "NARRATOR",
    "text": "Which, let's be honest, is still a lot of rent money.",
-   "gap_before": 0.12
+   "gap_before": 0.12,
+   "say": "[chuckle] Which, let's be honest, is still a lot of rent money."
   },
   {
    "id": "M080",
@@ -610,6 +720,18 @@
    "speaker": "NARRATOR",
    "text": "Elon went all in again and again. And he's still sitting at the table.",
    "gap_before": 0.12
+  },
+  {
+   "id": "D13",
+   "speaker": "DAGU",
+   "pose": "wave",
+   "gap_before": 0.35,
+   "say": "So, genius or lucky? Tell me in the comments. And follow, I'll be in the next one too. Bye!",
+   "text": "So, genius or lucky? Tell me in the comments. And follow, I'll be in the next one too. Bye!"
   }
+ ],
+ "bleep": [
+  "shit",
+  "fuck"
  ]
 }

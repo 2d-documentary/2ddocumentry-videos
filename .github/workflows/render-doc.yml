@@ -38,7 +38,7 @@ jobs:
   audio:
     needs: setup
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 150
     env: { P: "${{ needs.setup.outputs.project }}", PART: "${{ needs.setup.outputs.part }}", SIZE: "${{ needs.setup.outputs.size }}", AP: "${{ needs.setup.outputs.assets }}", PYTHONUNBUFFERED: '1' }
     steps:
       - uses: actions/checkout@v4
@@ -52,6 +52,7 @@ jobs:
           pip install -q "kokoro>=0.9.4" "edge-tts>=7.0" soundfile scipy numpy playwright
           pip install -q torch --index-url https://download.pytorch.org/whl/cpu
           test -x /usr/bin/google-chrome || (python -m playwright install --with-deps chromium && sudo ln -sf $(ls -d ~/.cache/ms-playwright/chromium-*/chrome-linux/chrome | head -1) /usr/bin/google-chrome)
+          if grep -q '"chatterbox"' documentaries/$P/script.json; then pip install -q torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts; fi
       - name: Narration (Michael)
         run: python doc/tools/tts.py documentaries/$P build/$P $PART
       - name: SFX cues + score + mix
