@@ -1,0 +1,4 @@
+kokoro michael 17.02 s
+turbo added tokens: ['[advertisement]', '[angry]', '[chuckle]', '[clear throat]', '[cough]', '[crying]', '[dramatic]', '[fear]', '[gasp]', '[groan]', '[happy]', '[laugh]', '[narration]', '[sarcastic]', '[shush]', '[sigh]', '[sniff]', '[surprised]', '[whispering]']
+turbo 21.44 s
+chatterbox 13.08 s
