@@ -12,6 +12,7 @@ on:
       project: { description: 'documentaries/<project>', required: true }
 permissions:
   contents: write
+  actions: read
 env:
   CHUNKS: 12
 jobs:
@@ -44,6 +45,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Assets
         run: git clone -q --depth 1 -b assets-$AP https://github.com/${{ github.repository }} documentaries/$AP/assets || echo "no assets branch yet"
+      - id: ar
+        name: Reuse audio from an earlier run? (render.json "audio_run")
+        run: echo "run=$(python3 -c "import json;print(json.load(open('documentaries/$P/render.json')).get('audio_run',''))")" >> $GITHUB_OUTPUT
+      - if: steps.ar.outputs.run != ''
+        uses: actions/download-artifact@v4
+        with: { name: audio, path: "build/${{ needs.setup.outputs.project }}", run-id: "${{ steps.ar.outputs.run }}", github-token: "${{ secrets.GITHUB_TOKEN }}" }
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - name: Install Kokoro-82M (free TTS), Playwright, ffmpeg
@@ -52,18 +59,21 @@ jobs:
           pip install -q "kokoro>=0.9.4" "edge-tts>=7.0" soundfile scipy numpy playwright
           pip install -q torch --index-url https://download.pytorch.org/whl/cpu
           test -x /usr/bin/google-chrome || (python -m playwright install --with-deps chromium && sudo ln -sf $(ls -d ~/.cache/ms-playwright/chromium-*/chrome-linux/chrome | head -1) /usr/bin/google-chrome)
-          if grep -q '"mtl"' documentaries/$P/script.json; then pip install -q torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q "git+https://github.com/resemble-ai/chatterbox.git" faster-whisper;
+          if [ -n "${{ steps.ar.outputs.run }}" ]; then echo "reusing narration";
+          elif grep -q '"mtl"' documentaries/$P/script.json; then pip install -q torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q "git+https://github.com/resemble-ai/chatterbox.git" faster-whisper;
           elif grep -q '"chatterbox"' documentaries/$P/script.json; then pip install -q torchaudio --index-url https://download.pytorch.org/whl/cpu && pip install -q chatterbox-tts; fi
-      - name: Narration (Michael)
+      - name: Narration
+        if: steps.ar.outputs.run == ''
         run: python doc/tools/tts.py documentaries/$P build/$P $PART
       - name: SFX cues + score + mix
         run: |
+          if [ -n "${{ steps.ar.outputs.run }}" ] && [ ! -f build/$P/voice.wav ]; then echo "old run has no voice.wav: keeping its mix"; exit 0; fi
           python doc/tools/render.py documentaries/$P build/$P/timeline.json build/$P/x.mp4 --cues-only --size $SIZE --assets $AP
           export MUSIC_LEVEL=$(python3 -c "import json;print(json.load(open('documentaries/$P/render.json')).get('music_level',0.2))")
           python doc/tools/audio_doc.py documentaries/$P build/$P
           ffmpeg -y -v error -i build/$P/mix_raw.wav -af loudnorm=I=-15:TP=-1.5:LRA=11 -ar 48000 -c:a aac -b:a 192k build/$P/mix.m4a
       - uses: actions/upload-artifact@v4
-        with: { name: audio, path: "build/${{ needs.setup.outputs.project }}/timeline.json\nbuild/${{ needs.setup.outputs.project }}/mix.m4a\nbuild/${{ needs.setup.outputs.project }}/cues.json" }
+        with: { name: audio, path: "build/${{ needs.setup.outputs.project }}/timeline.json\nbuild/${{ needs.setup.outputs.project }}/mix.m4a\nbuild/${{ needs.setup.outputs.project }}/cues.json\nbuild/${{ needs.setup.outputs.project }}/voice.wav" }
   frames:
     needs: [setup, audio]
     runs-on: ubuntu-latest
