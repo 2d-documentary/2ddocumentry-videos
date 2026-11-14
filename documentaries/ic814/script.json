@@ -1,0 +1,618 @@
+{
+ "title": "IC 814: The Kandahar Hijack (Dagar Unfiltered, Hinglish)",
+ "voices": {
+  "NARRATOR": {
+   "engine": "chatterbox",
+   "model": "mtl",
+   "lang": "hi",
+   "ref": "../../voices/chintu/ref_a.wav",
+   "takes": 2,
+   "gap": 0.08,
+   "gen": {
+    "exaggeration": 0.55,
+    "cfg_weight": 0.45,
+    "temperature": 0.6,
+    "repetition_penalty": 1.3
+   },
+   "desc": "Chintu's voice clone (Chatterbox Multilingual V3)"
+  },
+  "DAGU": {
+   "engine": "chatterbox",
+   "model": "mtl",
+   "lang": "hi",
+   "ref": "../../voices/chintu/ref_a.wav",
+   "takes": 2,
+   "gap": 0.08,
+   "gen": {
+    "exaggeration": 0.55,
+    "cfg_weight": 0.45,
+    "temperature": 0.6,
+    "repetition_penalty": 1.3
+   },
+   "desc": "Chintu's voice clone (Chatterbox Multilingual V3)"
+  }
+ },
+ "tail": 3.2,
+ "lines": [
+  {
+   "id": "L001",
+   "speaker": "NARRATOR",
+   "text": "24 December 1999. Kathmandu se Delhi ki ek normal flight.",
+   "say": "ट्वेंटी फ़ोर्थ दिसंबर, नाइनटीन नाइनटी नाइन। काठमांडू से दिल्ली की एक नॉर्मल फ़्लाइट।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "L002",
+   "speaker": "NARRATOR",
+   "text": "176 passengers, 15 crew, aur paanch log jo ticket leke nahi, hathiyaar leke chadhe the.",
+   "say": "एक सौ छिहत्तर पैसेंजर्स, पंद्रह क्रू, और पाँच लोग जो टिकट लेके नहीं, हथियार लेके चढ़े थे।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L003",
+   "speaker": "NARRATOR",
+   "text": "Agle saat din, ye plane chaar desh ghooma.",
+   "say": "अगले सात दिन, ये प्लेन चार देश घूमा।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L004",
+   "speaker": "NARRATOR",
+   "text": "Aur end mein, India ko woh karna pada jo koi desh kabhi nahi karna chahta.",
+   "say": "और एंड में, इंडिया को वो करना पड़ा जो कोई देश कभी नहीं करना चाहता।",
+   "gap_before": 0.12,
+   "gen": {
+    "exaggeration": 0.85,
+    "cfg_weight": 0.3,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "L005",
+   "speaker": "NARRATOR",
+   "text": "Teen aatankiyon ko khud plane mein bitha ke, unhe azaad karna pada.",
+   "say": "तीन आतंकियों को खुद प्लेन में बिठा के, उन्हें आज़ाद करना पड़ा।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L006",
+   "speaker": "NARRATOR",
+   "text": "Aur un teen mein se ek ka naam, aage chal ke poori duniya ne suna. End tak rukna.",
+   "say": "और उन तीन में से एक का नाम, आगे चल के पूरी दुनिया ने सुना। एंड तक रुकना।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "D01",
+   "speaker": "DAGU",
+   "pose": "wave",
+   "gap_before": 0.35,
+   "text": "Hi, main Dagu. Aaj ki file thodi heavy hai. Seat belt baandh lo.",
+   "say": "[chuckle] हाय, मैं डागू। आज की फ़ाइल थोड़ी हेवी है। सीट बेल्ट बाँध लो।",
+   "gen": {
+    "exaggeration": 0.7,
+    "cfg_weight": 0.4,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "L007",
+   "speaker": "NARRATOR",
+   "text": "Shaam ke kareeb paanch baje, Indian Airlines ki flight IC 814 Kathmandu se udti hai.",
+   "say": "शाम के करीब पाँच बजे, इंडियन एयरलाइंस की फ़्लाइट आई सी एट वन फ़ोर काठमांडू से उड़ती है।",
+   "gap_before": 1.7
+  },
+  {
+   "id": "L008",
+   "speaker": "NARRATOR",
+   "text": "Ek Airbus A300. Christmas Eve hai, log chhuttiyon se ghar laut rahe hain.",
+   "say": "एक एयरबस ए थ्री हंड्रेड। क्रिसमस ईव है, लोग छुट्टियों से घर लौट रहे हैं।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L009",
+   "speaker": "NARRATOR",
+   "text": "Kuch honeymoon couples bhi hain. Sab khush.",
+   "say": "कुछ हनीमून कपल्स भी हैं। सब खुश।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L010",
+   "speaker": "NARRATOR",
+   "text": "Takeoff ke kareeb chaalis minute baad, Indian airspace mein, ek naqaabposh aadmi khada hota hai.",
+   "say": "टेकऑफ़ के करीब चालीस मिनट बाद, इंडियन एयरस्पेस में, एक नक़ाबपोश आदमी खड़ा होता है।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L011",
+   "speaker": "NARRATOR",
+   "text": "Haath mein grenade. Aur uske peeche chaar aur.",
+   "say": "[gasp] हाथ में ग्रेनेड। और उसके पीछे चार और।",
+   "gap_before": 0.12,
+   "gen": {
+    "exaggeration": 0.85,
+    "cfg_weight": 0.3,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "L012",
+   "speaker": "NARRATOR",
+   "text": "Cockpit mein Captain Devi Sharan ko order milta hai. Plane Lahore le chalo.",
+   "say": "कॉकपिट में कैप्टन देवी शरण को ऑर्डर मिलता है। प्लेन लाहौर ले चलो।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L013",
+   "speaker": "NARRATOR",
+   "text": "Problem ye thi ki fuel kam tha. Lahore ne landing ki permission bhi nahi di.",
+   "say": "प्रॉब्लम ये थी कि फ़्यूल कम था। लाहौर ने लैंडिंग की परमिशन भी नहीं दी।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L014",
+   "speaker": "NARRATOR",
+   "text": "Toh captain hijackers ko samjhata hai. Fuel chahiye, toh Amritsar utarna padega.",
+   "say": "तो कैप्टन हाइजैकर्स को समझाता है। फ़्यूल चाहिए, तो अमृतसर उतरना पड़ेगा।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L015",
+   "speaker": "NARRATOR",
+   "text": "Aur yahin India ko mila, poore hijack ka sabse bada mauka.",
+   "say": "और यहीं इंडिया को मिला, पूरे हाइजैक का सबसे बड़ा मौका।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L016",
+   "speaker": "NARRATOR",
+   "text": "Shaam saat baj ke ek minute. IC 814 Amritsar mein land karta hai.",
+   "say": "शाम सात बज के एक मिनट। आई सी एट वन फ़ोर अमृतसर में लैंड करता है।",
+   "gap_before": 1.7
+  },
+  {
+   "id": "L017",
+   "speaker": "NARRATOR",
+   "text": "Ab plane Indian zameen pe hai. Bas use rokna tha.",
+   "say": "अब प्लेन इंडियन ज़मीन पे है। बस उसे रोकना था।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L018",
+   "speaker": "NARRATOR",
+   "text": "Delhi mein Crisis Management Group ki meeting hoti hai. Lekin faisla? Woh aata hi nahi.",
+   "say": "दिल्ली में क्राइसिस मैनेजमेंट ग्रुप की मीटिंग होती है। लेकिन फ़ैसला? वो आता ही नहीं।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L019",
+   "speaker": "NARRATOR",
+   "text": "NSG commandos Delhi ke paas the. Lekin unka plane der se nikla, aur raaste mein hi reh gaya.",
+   "say": "एन एस जी कमांडोज़ दिल्ली के पास थे। लेकिन उनका प्लेन देर से निकला, और रास्ते में ही रह गया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L020",
+   "speaker": "NARRATOR",
+   "text": "Aur Amritsar mein ghadi chal rahi thi.",
+   "say": "और अमृतसर में घड़ी चल रही थी।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L021",
+   "speaker": "NARRATOR",
+   "text": "Plan bana, ek fuel tanker plane ke aage khada kar do, taaki woh hil hi na sake.",
+   "say": "प्लान बना, एक फ़्यूल टैंकर प्लेन के आगे खड़ा कर दो, ताकि वो हिल ही न सके।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L022",
+   "speaker": "NARRATOR",
+   "text": "Lekin tanker itni tezi se aaya ki hijackers ko shak ho gaya.",
+   "say": "लेकिन टैंकर इतनी तेज़ी से आया कि हाइजैकर्स को शक हो गया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L023",
+   "speaker": "NARRATOR",
+   "text": "Andar se dhamki aati hai. Passengers ko maarna shuru karenge.",
+   "say": "अंदर से धमकी आती है। पैसेंजर्स को मारना शुरू करेंगे।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L024",
+   "speaker": "NARRATOR",
+   "text": "Aur bina poora fuel liye, plane wapas ud jaata hai. Kareeb pantaalis minute ke baad.",
+   "say": "[sigh] और बिना पूरा फ़्यूल लिए, प्लेन वापस उड़ जाता है। करीब पैंतालीस मिनट के बाद।",
+   "gap_before": 0.12,
+   "gen": {
+    "exaggeration": 0.3,
+    "cfg_weight": 0.6,
+    "temperature": 0.5
+   }
+  },
+  {
+   "id": "L025",
+   "speaker": "NARRATOR",
+   "text": "Sarkaar ka kehna tha, plane pe goli chalti toh andar dhamaka ho sakta tha.",
+   "say": "सरकार का कहना था, प्लेन पे गोली चलती तो अंदर धमाका हो सकता था।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L026",
+   "speaker": "NARRATOR",
+   "text": "Critics kehte hain, ye poore hijack ki sabse badi galti thi.",
+   "say": "क्रिटिक्स कहते हैं, ये पूरे हाइजैक की सबसे बड़ी गलती थी।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "D02",
+   "speaker": "DAGU",
+   "pose": "facepalm",
+   "gap_before": 0.35,
+   "text": "Pantaalis minute. Itne mein toh meeting ka agenda bhi print nahi hota.",
+   "say": "पैंतालीस मिनट। इतने में तो मीटिंग का एजेंडा भी प्रिंट नहीं होता। [sigh]",
+   "gen": {
+    "exaggeration": 0.7,
+    "cfg_weight": 0.4,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "L027",
+   "speaker": "NARRATOR",
+   "text": "Plane Lahore pahunchta hai. Wahan runway ki lights tak band thi.",
+   "say": "प्लेन लाहौर पहुँचता है। वहाँ रनवे की लाइट्स तक बंद थी।",
+   "gap_before": 1.7
+  },
+  {
+   "id": "L028",
+   "speaker": "NARRATOR",
+   "text": "Fuel almost khatam. Aakhir mein Pakistan ne utarne diya, aur plane mein fuel bhara gaya.",
+   "say": "फ़्यूल ऑलमोस्ट खत्म। आखिर में पाकिस्तान ने उतरने दिया, और प्लेन में फ़्यूल भरा गया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L029",
+   "speaker": "NARRATOR",
+   "text": "Fir plane udta hai Dubai ki taraf, aur ek military airbase pe land karta hai.",
+   "say": "फिर प्लेन उड़ता है दुबई की तरफ़, और एक मिलिट्री एयरबेस पे लैंड करता है।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L030",
+   "speaker": "NARRATOR",
+   "text": "Wahan 27 passengers ko chhoda jaata hai. Zyadatar auratein aur bachche.",
+   "say": "वहाँ सत्ताईस पैसेंजर्स को छोड़ा जाता है। ज़्यादातर औरतें और बच्चे।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L031",
+   "speaker": "NARRATOR",
+   "text": "Aur ek naujawan ki body bhi utaari jaati hai. Rupin Katyal. Jinhe hijackers ne chaaku maara tha.",
+   "say": "और एक नौजवान की बॉडी भी उतारी जाती है। रुपिन कत्याल। जिन्हें हाइजैकर्स ने चाकू मारा था।",
+   "gap_before": 0.12,
+   "gen": {
+    "exaggeration": 0.3,
+    "cfg_weight": 0.6,
+    "temperature": 0.5
+   }
+  },
+  {
+   "id": "L032",
+   "speaker": "NARRATOR",
+   "text": "Woh apni shaadi ke baad, honeymoon se laut rahe the.",
+   "say": "वो अपनी शादी के बाद, हनीमून से लौट रहे थे।",
+   "gap_before": 0.12,
+   "gen": {
+    "exaggeration": 0.3,
+    "cfg_weight": 0.6,
+    "temperature": 0.5
+   }
+  },
+  {
+   "id": "L033",
+   "speaker": "NARRATOR",
+   "text": "25 December ki subah, saade aath baje, plane ek aakhri jagah utarta hai. Kandahar.",
+   "say": "ट्वेंटी फ़िफ़्थ दिसंबर की सुबह, साढ़े आठ बजे, प्लेन एक आखिरी जगह उतरता है। कंधार।",
+   "gap_before": 1.7
+  },
+  {
+   "id": "L034",
+   "speaker": "NARRATOR",
+   "text": "Afghanistan, jahan us waqt Taliban ka raaj tha. Aur India ka koi embassy tak nahi.",
+   "say": "अफ़ग़ानिस्तान, जहाँ उस वक़्त तालिबान का राज था। और इंडिया का कोई एम्बेसी तक नहीं।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L035",
+   "speaker": "NARRATOR",
+   "text": "Taliban ke hathiyaarband ladke plane ko gher lete hain. Commando operation ka sawaal hi khatam.",
+   "say": "तालिबान के हथियारबंद लड़के प्लेन को घेर लेते हैं। कमांडो ऑपरेशन का सवाल ही खत्म।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L036",
+   "speaker": "NARRATOR",
+   "text": "Ab demands aati hain. 36 aatankiyon ki rihaai. 200 million dollar cash.",
+   "say": "अब डिमांड्स आती हैं। छत्तीस आतंकियों की रिहाई। टू हंड्रेड मिलियन डॉलर कैश।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L037",
+   "speaker": "NARRATOR",
+   "text": "Aur ek mare hue aatanki ki body bhi.",
+   "say": "और एक मरे हुए आतंकी की बॉडी भी।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L038",
+   "speaker": "NARRATOR",
+   "text": "Plane ke andar, passengers din raat apni seat se bandhe baithe the. AC band, toilets bhar chuke.",
+   "say": "प्लेन के अंदर, पैसेंजर्स दिन रात अपनी सीट से बंधे बैठे थे। ए सी बंद, टॉयलेट्स भर चुके।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L039",
+   "speaker": "NARRATOR",
+   "text": "Aur hijackers ne ek doosre ke code names rakhe the. Chief, Doctor, Burger, Bhola aur Shankar.",
+   "say": "और हाइजैकर्स ने एक दूसरे के कोड नेम्स रखे थे। चीफ़, डॉक्टर, बर्गर, भोला और शंकर।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "D03",
+   "speaker": "DAGU",
+   "pose": "shrug",
+   "gap_before": 0.35,
+   "text": "Burger. Hijacker ka code name Burger. Main kya hi bolu.",
+   "say": "[chuckle] बर्गर। हाइजैकर का कोड नेम बर्गर। मैं क्या ही बोलूँ।",
+   "gen": {
+    "exaggeration": 0.7,
+    "cfg_weight": 0.4,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "L040",
+   "speaker": "NARRATOR",
+   "text": "Delhi mein, hostages ke ghar wale sadkon pe utar aaye. Sarkaar pe pressure badhta gaya.",
+   "say": "दिल्ली में, होस्टेजेस के घर वाले सड़कों पे उतर आए। सरकार पे प्रेशर बढ़ता गया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L041",
+   "speaker": "NARRATOR",
+   "text": "27 December ko India ki negotiating team Kandahar pahunchti hai. Usme ek naam tha, Ajit Doval.",
+   "say": "ट्वेंटी सेवेंथ दिसंबर को इंडिया की नेगोशिएटिंग टीम कंधार पहुँचती है। उसमें एक नाम था, अजीत डोवाल।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L042",
+   "speaker": "NARRATOR",
+   "text": "Din guzarte gaye, aur demands chhoti hoti gayi.",
+   "say": "दिन गुज़रते गए, और डिमांड्स छोटी होती गईं।",
+   "gap_before": 1.7
+  },
+  {
+   "id": "L043",
+   "speaker": "NARRATOR",
+   "text": "Paise ki demand gayi. Body ki demand gayi. 36 se baat aakar teen naamo pe ruki.",
+   "say": "पैसे की डिमांड गई। बॉडी की डिमांड गई। छत्तीस से बात आकर तीन नामों पे रुकी।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L044",
+   "speaker": "NARRATOR",
+   "text": "Pehla, Maulana Masood Azhar.",
+   "say": "पहला, मौलाना मसूद अज़हर।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L045",
+   "speaker": "NARRATOR",
+   "text": "Doosra, Ahmed Omar Saeed Sheikh. London mein pala badha.",
+   "say": "दूसरा, अहमद उमर सईद शेख। लंदन में पला बढ़ा।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L046",
+   "speaker": "NARRATOR",
+   "text": "Teesra, Mushtaq Ahmed Zargar.",
+   "say": "तीसरा, मुश्ताक अहमद ज़रगर।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L047",
+   "speaker": "NARRATOR",
+   "text": "31 December 1999. Saal ka aakhri din.",
+   "say": "थर्टी फ़र्स्ट दिसंबर, नाइनटीन नाइनटी नाइन। साल का आखिरी दिन।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L048",
+   "speaker": "NARRATOR",
+   "text": "Videsh mantri Jaswant Singh khud un teeno ke saath ek plane mein Kandahar jaate hain.",
+   "say": "विदेश मंत्री जसवंत सिंह खुद उन तीनों के साथ एक प्लेन में कंधार जाते हैं।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L049",
+   "speaker": "NARRATOR",
+   "text": "Teen aatanki utarte hain. Hijackers unke saath gaadi mein baith ke nikal jaate hain.",
+   "say": "तीन आतंकी उतरते हैं। हाइजैकर्स उनके साथ गाड़ी में बैठ के निकल जाते हैं।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L050",
+   "speaker": "NARRATOR",
+   "text": "Aur saat din baad, passengers aakhirkar ghar laut-te hain. Nayi saal ki raat.",
+   "say": "और सात दिन बाद, पैसेंजर्स आखिरकार घर लौटते हैं। नई साल की रात।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L051",
+   "speaker": "NARRATOR",
+   "text": "Sarkaar ka kehna tha, sau se zyada zindagiyan bachaana sabse zaroori tha.",
+   "say": "सरकार का कहना था, सौ से ज़्यादा ज़िंदगियाँ बचाना सबसे ज़रूरी था।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L052",
+   "speaker": "NARRATOR",
+   "text": "Critics ka kehna tha, aatankiyon ke aage jhukne ki keemat bahut bhaari padegi.",
+   "say": "क्रिटिक्स का कहना था, आतंकियों के आगे झुकने की कीमत बहुत भारी पड़ेगी।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "D04",
+   "speaker": "DAGU",
+   "pose": "think",
+   "gap_before": 0.35,
+   "text": "Tum hote toh kya karte? Sach mein soch ke comment karna. Easy sawaal nahi hai.",
+   "say": "तुम होते तो क्या करते? सच में सोच के कमेंट करना। ईज़ी सवाल नहीं है।",
+   "gen": {
+    "exaggeration": 0.7,
+    "cfg_weight": 0.4,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "L053",
+   "speaker": "NARRATOR",
+   "text": "Aur keemat sach mein bhaari padi.",
+   "say": "और कीमत सच में भारी पड़ी।",
+   "gap_before": 1.7
+  },
+  {
+   "id": "L054",
+   "speaker": "NARRATOR",
+   "text": "Rihaai ke kuch hafton baad, Masood Azhar ne ek naya group banaya. Jaish e Mohammed.",
+   "say": "रिहाई के कुछ हफ़्तों बाद, मसूद अज़हर ने एक नया ग्रुप बनाया। जैश ए मोहम्मद।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L055",
+   "speaker": "NARRATOR",
+   "text": "India ne is group ko 2001 ke Parliament attack ke liye zimmedaar thehraya.",
+   "say": "इंडिया ने इस ग्रुप को टू थाउज़ेंड वन के पार्लियामेंट अटैक के लिए ज़िम्मेदार ठहराया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L056",
+   "speaker": "NARRATOR",
+   "text": "Fir Pathankot, 2016. Aur Pulwama, 2019. Dono ke peeche bhi Jaish ka naam aaya.",
+   "say": "फिर पठानकोट, ट्वेंटी सिक्सटीन। और पुलवामा, ट्वेंटी नाइनटीन। दोनों के पीछे भी जैश का नाम आया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L057",
+   "speaker": "NARRATOR",
+   "text": "2019 mein UN ne Masood Azhar ko global terrorist list mein daala.",
+   "say": "ट्वेंटी नाइनटीन में यू एन ने मसूद अज़हर को ग्लोबल टेररिस्ट लिस्ट में डाला।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L058",
+   "speaker": "NARRATOR",
+   "text": "Aur Omar Sheikh? 2002 mein, American journalist Daniel Pearl ke kidnapping aur murder mein convict hua.",
+   "say": "और उमर शेख? टू थाउज़ेंड टू में, अमेरिकन जर्नलिस्ट डेनियल पर्ल के किडनैपिंग और मर्डर में कन्विक्ट हुआ।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L059",
+   "speaker": "NARRATOR",
+   "text": "Ye woh naam tha jo poori duniya ne suna.",
+   "say": "ये वो नाम था जो पूरी दुनिया ने सुना।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L060",
+   "speaker": "NARRATOR",
+   "text": "Aur 2021 mein, Pakistan ki Supreme Court ne usse bari kar diya.",
+   "say": "और ट्वेंटी ट्वेंटी वन में, पाकिस्तान की सुप्रीम कोर्ट ने उसे बरी कर दिया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L061",
+   "speaker": "NARRATOR",
+   "text": "Ab hijackers ka kya hua?",
+   "say": "अब हाइजैकर्स का क्या हुआ?",
+   "gap_before": 1.7
+  },
+  {
+   "id": "L062",
+   "speaker": "NARRATOR",
+   "text": "March 2022. Karachi mein ek businessman ko goli maari jaati hai. Naam, Zahid Akhund.",
+   "say": "मार्च ट्वेंटी ट्वेंटी टू। कराची में एक बिज़नेसमैन को गोली मारी जाती है। नाम, ज़ाहिद अखुंद।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L063",
+   "speaker": "NARRATOR",
+   "text": "Indian officials ke mutabik, woh asal mein Zahoor Mistry tha. IC 814 ka hijacker.",
+   "say": "इंडियन ऑफ़िशियल्स के मुताबिक़, वो असल में ज़हूर मिस्त्री था। आई सी एट वन फ़ोर का हाइजैकर।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L064",
+   "speaker": "NARRATOR",
+   "text": "2024 mein Netflix ne is hijack pe series banayi. Aur hijackers ke code names pe itna bawaal hua ki sarkaar ne Netflix ko bula liya.",
+   "say": "ट्वेंटी ट्वेंटी फ़ोर में नेटफ़्लिक्स ने इस हाइजैक पे सीरीज़ बनाई। और हाइजैकर्स के कोड नेम्स पे इतना बवाल हुआ कि सरकार ने नेटफ़्लिक्स को बुला लिया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L065",
+   "speaker": "NARRATOR",
+   "text": "Aur 7 May 2025. Operation Sindoor. Indian missiles Bahawalpur mein Jaish ke headquarters pe girti hain.",
+   "say": "और सेवेंथ मे, ट्वेंटी ट्वेंटी फ़ाइव। ऑपरेशन सिंदूर। इंडियन मिसाइल्स बहावलपुर में जैश के हेडक्वार्टर्स पे गिरती हैं।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L066",
+   "speaker": "NARRATOR",
+   "text": "Indian officials ke mutabik, marne walon mein Yusuf Azhar bhi tha. IC 814 hijack case mein wanted.",
+   "say": "इंडियन ऑफ़िशियल्स के मुताबिक़, मरने वालों में यूसुफ़ अज़हर भी था। आई सी एट वन फ़ोर हाइजैक केस में वांटेड।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L067",
+   "speaker": "NARRATOR",
+   "text": "Chhabbees saal baad, ye file abhi bhi band nahi hui.",
+   "say": "छब्बीस साल बाद, ये फ़ाइल अभी भी बंद नहीं हुई।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L068",
+   "speaker": "NARRATOR",
+   "text": "Ek taraf, sau se zyada log jo ghar laut aaye.",
+   "say": "एक तरफ़, सौ से ज़्यादा लोग जो घर लौट आए।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L069",
+   "speaker": "NARRATOR",
+   "text": "Doosri taraf, teen aadmi jinke naam aage chal ke saalon tak headlines mein rahe.",
+   "say": "दूसरी तरफ़, तीन आदमी जिनके नाम आगे चल के सालों तक हेडलाइंस में रहे।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "L070",
+   "speaker": "NARRATOR",
+   "text": "Toh sawaal ye hai. Kya India ne us din sahi kiya?",
+   "say": "तो सवाल ये है। क्या इंडिया ने उस दिन सही किया?",
+   "gap_before": 0.12
+  },
+  {
+   "id": "D05",
+   "speaker": "DAGU",
+   "pose": "wave",
+   "gap_before": 0.35,
+   "text": "Comment mein batao, main padhunga. Aur follow karna, agli file aur bhi ajeeb hai. Bye!",
+   "say": "कमेंट में बताओ, मैं पढ़ूँगा। और फ़ॉलो करना, अगली फ़ाइल और भी अजीब है। बाय!",
+   "gen": {
+    "exaggeration": 0.7,
+    "cfg_weight": 0.4,
+    "temperature": 0.65
+   }
+  }
+ ]
+}

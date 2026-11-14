@@ -1,0 +1,124 @@
+{
+ "title": "IC 814 Short: the three names",
+ "voices": {
+  "NARRATOR": {
+   "engine": "chatterbox",
+   "model": "mtl",
+   "lang": "hi",
+   "ref": "../../voices/chintu/ref_a.wav",
+   "takes": 2,
+   "gap": 0.08,
+   "gen": {
+    "exaggeration": 0.55,
+    "cfg_weight": 0.45,
+    "temperature": 0.6,
+    "repetition_penalty": 1.3
+   },
+   "desc": "Chintu's voice clone (Chatterbox Multilingual V3)"
+  },
+  "DAGU": {
+   "engine": "chatterbox",
+   "model": "mtl",
+   "lang": "hi",
+   "ref": "../../voices/chintu/ref_a.wav",
+   "takes": 2,
+   "gap": 0.08,
+   "gen": {
+    "exaggeration": 0.55,
+    "cfg_weight": 0.45,
+    "temperature": 0.6,
+    "repetition_penalty": 1.3
+   },
+   "desc": "Chintu's voice clone (Chatterbox Multilingual V3)"
+  }
+ },
+ "tail": 3.4,
+ "lines": [
+  {
+   "id": "S01",
+   "speaker": "NARRATOR",
+   "text": "24 December 1999. Ek Indian plane hijack hota hai.",
+   "say": "ट्वेंटी फ़ोर्थ दिसंबर, नाइनटीन नाइनटी नाइन। एक इंडियन प्लेन हाइजैक होता है।",
+   "gap_before": 0.25
+  },
+  {
+   "id": "S02",
+   "speaker": "NARRATOR",
+   "text": "Saat din baad, India ko teen aatanki khud chhodne padte hain.",
+   "say": "सात दिन बाद, इंडिया को तीन आतंकी खुद छोड़ने पड़ते हैं।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "S03",
+   "speaker": "NARRATOR",
+   "text": "Aur un teeno ki kahani wahin khatam nahi hui.",
+   "say": "और उन तीनों की कहानी वहीं खत्म नहीं हुई।",
+   "gap_before": 0.12,
+   "gen": {
+    "exaggeration": 0.85,
+    "cfg_weight": 0.3,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "S04",
+   "speaker": "NARRATOR",
+   "text": "Pehla, Masood Azhar. Kuch hafton mein usne Jaish e Mohammed banaya.",
+   "say": "पहला, मसूद अज़हर। कुछ हफ़्तों में उसने जैश ए मोहम्मद बनाया।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "S05",
+   "speaker": "NARRATOR",
+   "text": "India ne Parliament attack, Pathankot aur Pulwama ke liye isi group ko zimmedaar thehraya.",
+   "say": "इंडिया ने पार्लियामेंट अटैक, पठानकोट और पुलवामा के लिए इसी ग्रुप को ज़िम्मेदार ठहराया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "S06",
+   "speaker": "NARRATOR",
+   "text": "Doosra, Omar Sheikh. 2002 mein journalist Daniel Pearl ke murder case mein convict hua.",
+   "say": "दूसरा, उमर शेख। टू थाउज़ेंड टू में जर्नलिस्ट डेनियल पर्ल के मर्डर केस में कन्विक्ट हुआ।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "S07",
+   "speaker": "NARRATOR",
+   "text": "Aur 2021 mein Pakistan ki Supreme Court ne usse bari kar diya.",
+   "say": "और ट्वेंटी ट्वेंटी वन में पाकिस्तान की सुप्रीम कोर्ट ने उसे बरी कर दिया।",
+   "gap_before": 0.12
+  },
+  {
+   "id": "S08",
+   "speaker": "NARRATOR",
+   "text": "Teesra, Mushtaq Zargar. 2022 mein India ne usse officially terrorist declare kiya. Woh Pakistan mein hai.",
+   "say": "तीसरा, मुश्ताक़ ज़रगर। ट्वेंटी ट्वेंटी टू में इंडिया ने उसे ऑफ़िशियली टेररिस्ट डिक्लेयर किया। वो पाकिस्तान में है।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "S09",
+   "speaker": "NARRATOR",
+   "text": "Ek taraf, sau se zyada zindagiyan bachi. Doosri taraf, ye teen naam.",
+   "say": "एक तरफ़, सौ से ज़्यादा ज़िंदगियाँ बचीं। दूसरी तरफ़, ये तीन नाम।",
+   "gap_before": 0.3,
+   "gen": {
+    "exaggeration": 0.3,
+    "cfg_weight": 0.6,
+    "temperature": 0.5
+   }
+  },
+  {
+   "id": "D01",
+   "speaker": "DAGU",
+   "pose": "think",
+   "gap_before": 0.35,
+   "text": "Tum hote toh kya karte? Comment mein batao. Bye!",
+   "say": "तुम होते तो क्या करते? कमेंट में बताओ। बाय!",
+   "gen": {
+    "exaggeration": 0.7,
+    "cfg_weight": 0.4,
+    "temperature": 0.65
+   }
+  }
+ ]
+}

@@ -38,7 +38,7 @@ jobs:
   audio:
     needs: setup
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 345
     env: { P: "${{ needs.setup.outputs.project }}", PART: "${{ needs.setup.outputs.part }}", SIZE: "${{ needs.setup.outputs.size }}", AP: "${{ needs.setup.outputs.assets }}", PYTHONUNBUFFERED: '1' }
     steps:
       - uses: actions/checkout@v4
