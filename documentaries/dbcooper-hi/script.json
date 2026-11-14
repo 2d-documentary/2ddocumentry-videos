@@ -1,0 +1,141 @@
+{
+ "title": "D.B. Cooper (Hindi, Chintu's cloned voice, emotions test)",
+ "voices": {
+  "NARRATOR": {
+   "engine": "chatterbox",
+   "model": "mtl",
+   "lang": "hi",
+   "ref": "../../voices/chintu/ref_a.wav",
+   "takes": 2,
+   "gap": 0.08,
+   "gen": {
+    "exaggeration": 0.55,
+    "cfg_weight": 0.45,
+    "temperature": 0.6,
+    "repetition_penalty": 1.3
+   },
+   "desc": "Chintu's voice clone (Chatterbox Multilingual V3) + Turbo non-verbal sounds"
+  }
+ },
+ "tail": 3.2,
+ "lines": [
+  {
+   "id": "H01",
+   "speaker": "NARRATOR",
+   "text": "24 November 1971. Ek banda suit pehen ke airport aata hai, aur cash mein ticket leta hai.",
+   "say": "चौबीस नवंबर, उन्नीस सौ इकहत्तर। एक बंदा सूट पहन के एयरपोर्ट आता है, और कैश में टिकट लेता है।",
+   "gap_before": 0.25
+  },
+  {
+   "id": "H02",
+   "speaker": "NARRATOR",
+   "text": "Naam likhwata hai, Dan Cooper.",
+   "say": "नाम लिखवाता है, डैन कूपर।",
+   "gap_before": 0.15
+  },
+  {
+   "id": "H03",
+   "speaker": "NARRATOR",
+   "text": "Plane mein baith ke bourbon mangwata hai, cigarette jalata hai, aur air hostess ko ek chit pakda deta hai.",
+   "say": "प्लेन में बैठ के बर्बन मंगवाता है, सिगरेट जलाता है, और एयर होस्टेस को एक चिट पकड़ा देता है।",
+   "gap_before": 0.15
+  },
+  {
+   "id": "H04",
+   "speaker": "NARRATOR",
+   "text": "Chit pe likha tha, Miss, mere paas bomb hai.",
+   "say": "चिट पे लिखा था, मिस, मेरे पास बम है।",
+   "gap_before": 0.2
+  },
+  {
+   "id": "H05",
+   "speaker": "NARRATOR",
+   "text": "Bhai, itni tameez se toh log chai bhi nahi maangte.",
+   "say": "[chuckle] भाई, इतनी तमीज़ से तो लोग चाय भी नहीं माँगते।",
+   "gap_before": 0.1,
+   "gen": {
+    "exaggeration": 0.7,
+    "cfg_weight": 0.4,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "H06",
+   "speaker": "NARRATOR",
+   "text": "Uski demand? Do lakh dollar cash, aur chaar parachute.",
+   "say": "उसकी डिमांड? दो लाख डॉलर कैश, और चार पैराशूट।",
+   "gap_before": 0.2
+  },
+  {
+   "id": "H07",
+   "speaker": "NARRATOR",
+   "text": "Seattle mein use sab mil jaata hai. Aur woh saare passengers ko jaane deta hai.",
+   "say": "सिएटल में उसे सब मिल जाता है। और वो सारे पैसेंजर्स को जाने देता है।",
+   "gap_before": 0.15
+  },
+  {
+   "id": "H08",
+   "speaker": "NARRATOR",
+   "text": "Plane fir udta hai. Aur Washington ke jungle ke upar, woh peeche ka darwaza kholta hai,",
+   "say": "प्लेन फिर उड़ता है। और वॉशिंगटन के जंगल के ऊपर, वो पीछे का दरवाज़ा खोलता है,",
+   "gap_before": 0.15
+  },
+  {
+   "id": "H09",
+   "speaker": "NARRATOR",
+   "text": "aur kood jaata hai! Raat mein, baarish mein, suit pehen ke!",
+   "say": "[gasp] और कूद जाता है! रात में, बारिश में, सूट पहन के!",
+   "gap_before": 0.05,
+   "gen": {
+    "exaggeration": 0.85,
+    "cfg_weight": 0.3,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "H10",
+   "speaker": "NARRATOR",
+   "text": "FBI ne 45 saal tak dhoondha. 800 se zyada suspects. Arrest? Ek bhi nahi.",
+   "say": "एफ़ बी आई ने पैंतालीस साल तक ढूँढा। आठ सौ से ज़्यादा सस्पेक्ट्स। अरेस्ट? एक भी नहीं।",
+   "gap_before": 0.3
+  },
+  {
+   "id": "H11",
+   "speaker": "NARRATOR",
+   "text": "Fir 1980 mein, ek aath saal ka bachcha nadi ke kinare khudaai kar raha tha, aur use mile 5,800 dollar. Wahi ransom wale!",
+   "say": "फिर उन्नीस सौ अस्सी में, एक आठ साल का बच्चा नदी के किनारे खुदाई कर रहा था, और उसे मिले अट्ठावन सौ डॉलर। वही रैनसम वाले!",
+   "gap_before": 0.25
+  },
+  {
+   "id": "H12",
+   "speaker": "NARRATOR",
+   "text": "Baaki paisa? Kabhi nahi mila. Aur Cooper? Woh bhi nahi.",
+   "say": "[sigh] बाकी पैसा? कभी नहीं मिला। और कूपर? वो भी नहीं।",
+   "gap_before": 0.3,
+   "gen": {
+    "exaggeration": 0.3,
+    "cfg_weight": 0.6,
+    "temperature": 0.5
+   }
+  },
+  {
+   "id": "H13",
+   "speaker": "NARRATOR",
+   "text": "Aur sabse mazedaar baat? Uska naam bhi galat tha. D.B. Cooper toh ek reporter ki galti thi.",
+   "say": "और सबसे मज़ेदार बात? उसका नाम भी गलत था। डी बी कूपर तो एक रिपोर्टर की गलती थी। [chuckle]",
+   "gap_before": 0.25,
+   "gen": {
+    "exaggeration": 0.7,
+    "cfg_weight": 0.4,
+    "temperature": 0.65
+   }
+  },
+  {
+   "id": "H14",
+   "speaker": "NARRATOR",
+   "text": "Toh batao, woh jungle mein mar gaya, ya duniya ki sabse perfect chori karke nikal gaya?",
+   "say": "तो बताओ, वो जंगल में मर गया, या दुनिया की सबसे परफ़ेक्ट चोरी करके निकल गया?",
+   "gap_before": 0.3
+  }
+ ]
+}

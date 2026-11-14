@@ -120,6 +120,52 @@ def cb_model():
         from chatterbox.tts_turbo import ChatterboxTurboTTS
         CB["m"] = ChatterboxTurboTTS.from_pretrained(device="cpu")
     return CB["m"]
+def cb_mtl():   # Chatterbox Multilingual V3 (Hindi and 22 more languages, zero-shot clone)
+    if "mtl" not in CB:
+        import torch; torch.set_num_threads(os.cpu_count() or 4)
+        from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+        CB["mtl"] = ChatterboxMultilingualTTS.from_pretrained(device="cpu", t3_model="v3")
+    return CB["mtl"]
+def cb_asr():
+    if "asr" not in CB:
+        from faster_whisper import WhisperModel
+        CB["asr"] = WhisperModel("large-v3-turbo", device="cpu", compute_type="int8")
+    return CB["asr"]
+def cb_cer(heard, want):
+    import unicodedata
+    f = lambda x: re.sub(r"[\W_]+", "", unicodedata.normalize("NFC", x).lower().replace("\u093c", "").replace("\u0901", "\u0902"))
+    a, b = f(heard), f(want)
+    if not b: return 1.0
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1): cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1] / len(b)
+def cb_to_sr(a, sr):
+    if sr == SR: return a
+    from scipy.signal import resample_poly; from math import gcd; g = gcd(sr, SR); return resample_poly(a, SR // g, sr // g).astype(np.float32)
+NV = ("laugh", "chuckle", "sigh", "gasp", "cough")
+def mtl_part(txt, ref, v, gen):
+    """one spoken piece in the cloned voice: best of N takes, each checked by Whisper against the intended text"""
+    m = cb_mtl(); best = None; takes = max(1, v.get("takes", 1))
+    for k in range(takes):
+        import torch; torch.manual_seed(hash(txt) % 100000 + k * 7)
+        w = m.generate(txt, language_id=v.get("lang", "hi"), audio_prompt_path=ref, **gen)
+        a = cb_trim(cb_to_sr(w.squeeze().detach().cpu().numpy().astype(np.float32), m.sr))
+        if takes == 1: return a
+        from scipy.signal import resample_poly
+        seg, _ = cb_asr().transcribe(resample_poly(a, 2, 3).astype(np.float32), language=v.get("lang", "hi"), beam_size=1)
+        e = cb_cer(" ".join(x.text for x in seg), txt); exp = .075 * len(re.sub(r"\W", "", txt)) + .3; d = len(a) / SR
+        score = e + max(0, d / exp - 1.7) + max(0, .5 - d / exp)
+        print("  take", k, round(e, 3), round(d, 2), flush=True)
+        if best is None or score < best[0]: best = (score, a)
+        if e < .08 and score == e: break
+    return best[1]
+def nv_part(tag, ref, v):
+    """a non-verbal sound (chuckle, sigh, gasp...) in the same cloned voice, made with Chatterbox Turbo's tags"""
+    m = cb_model(); w = m.generate(v.get("nv_text", {}).get(tag, f"[{tag}]"), audio_prompt_path=ref)
+    a = cb_trim(cb_to_sr(w.squeeze().detach().cpu().numpy().astype(np.float32), m.sr)); return a[:int(SR * v.get("nv_max", 1.3))]
 REF_TEXT = "This is a calm reference recording. It gives the cloning model the tone, the pace and the color of the narrator's voice, so every line sounds like the same person."
 def cb_ref(v):
     key = v.get("ref") or ("kokoro:" + v["ref_kokoro"] + ":" + str(v.get("ref_speed", 1.0)))
@@ -144,7 +190,7 @@ def cb_spread(words, a, t0):
         res.append({"w": w, "s": round(t0 + i0 * hop / SR, 3), "e": round(t0 + (i1 + 1) * hop / SR, 3)})
     return res
 def chatterbox_synth(line, v):
-    m = cb_model(); ref = cb_ref(v)
+    m = cb_model() if v.get("model") != "mtl" else None; ref = cb_ref(v)
     say = line.get("say") or line["text"]; parts = say.split("{BEEP}")
     words = line["text"].split(); bleep = set(script.get("bleep", ["shit", "fuck"]))
     # split the caption words at the censored words, one group per spoken part
@@ -158,11 +204,19 @@ def chatterbox_synth(line, v):
     for k, part in enumerate(parts):
         txt = speakable(part.strip())
         if re.sub(r"\[[^\]]*\]|\W", "", txt):
-            w = m.generate(txt, audio_prompt_path=ref, **v.get("gen", {}))
-            a = w.squeeze().detach().cpu().numpy().astype(np.float32)
-            if m.sr != SR:
-                from scipy.signal import resample_poly; from math import gcd; g = gcd(m.sr, SR); a = resample_poly(a, SR // g, m.sr // g).astype(np.float32)
-            a = cb_trim(a); res += cb_spread(groups[k], a, t); audio.append(a); t += len(a) / SR
+            if v.get("model") == "mtl":   # Hindi etc.: speech pieces with the multilingual model, [tags] as separate non-verbal sounds
+                gen = {**v.get("gen", {}), **line.get("gen", {})}; bits = [b for b in re.split(r"(\[(?:%s)\])" % "|".join(NV), txt) if b.strip()]
+                sp = [b for b in bits if not b.startswith("[")]; tot = sum(len(b) for b in sp) or 1; wl = groups[k]; wi = 0; acc = 0
+                for b in bits:
+                    if b.startswith("["): a = nv_part(b[1:-1], ref, v); pause = np.zeros(int(SR * .08), np.float32); audio += [a, pause]; t += (len(a) + len(pause)) / SR; continue
+                    a = mtl_part(b.strip(), ref, v, gen); acc += len(b); wj = len(wl) if acc >= tot else round(len(wl) * acc / tot)
+                    res += cb_spread(wl[wi:wj], a, t); wi = wj; gap = np.zeros(int(SR * v.get("gap", .1)), np.float32); audio += [a, gap]; t += (len(a) + len(gap)) / SR
+            else:
+                w = m.generate(txt, audio_prompt_path=ref, **v.get("gen", {}))
+                a = w.squeeze().detach().cpu().numpy().astype(np.float32)
+                if m.sr != SR:
+                    from scipy.signal import resample_poly; from math import gcd; g = gcd(m.sr, SR); a = resample_poly(a, SR // g, m.sr // g).astype(np.float32)
+                a = cb_trim(a); res += cb_spread(groups[k], a, t); audio.append(a); t += len(a) / SR
         if k < len(parts) - 1:   # the beep slot
             slot = v.get("beep_slot", .42); res.append({"w": cens[k] if k < len(cens) else "****", "s": round(t + .04, 3), "e": round(t + slot - .04, 3)})
             audio.append(np.zeros(int(SR * slot), np.float32)); t += slot
