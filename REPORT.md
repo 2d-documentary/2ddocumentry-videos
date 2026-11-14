@@ -1,6 +1,6 @@
 # Asset report: IC 814: The Kandahar Hijack
 
-**65 downloaded, 1 need attention** (of 66)
+**71 downloaded, 1 need attention** (of 72)
 
 ## Download these by hand
 
@@ -79,3 +79,9 @@ Open each link, download the highest-resolution version, and send it back with i
 | fw2000 |  | `archives/historical-photos/fw2000_sydney-millenium-fireworks-in-the-year-2.jpg` | CC BY 3.0 | authentic |
 | v_brahmos |  | `archives/footage/v_brahmos_brahmos-er-webm.webm` | GODL-India | authentic |
 | v_brahmos2 |  | `archives/footage/v_brahmos2_ins-visakhapatnam-firing-brahmos-superso.webm` | GODL-India | authentic |
+| logo_netflix |  | `archives/misc/logo_netflix_netflix-2015-logo-svg.svg` | Public domain | authentic |
+| flag_pk |  | `archives/misc/flag_pk_flag-of-pakistan-svg.svg` | Public domain | authentic |
+| flag_uae |  | `archives/misc/flag_uae_flag-of-the-united-arab-emirates-svg.svg` | Public domain | authentic |
+| flag_tal |  | `archives/misc/flag_tal_flag-of-the-taliban-svg.svg` | Public domain | authentic |
+| flag_in |  | `archives/misc/flag_in_flag-of-india-svg.svg` | Public domain | authentic |
+| flag_np |  | `archives/misc/flag_np_flag-of-nepal-svg.svg` | Public domain | authentic |
