@@ -115,7 +115,8 @@ jobs:
         env: { GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
         run: |
           TAG=$P-$PART-$(date +%Y%m%d-%H%M)
-          gh release create "$TAG" build/$P-$PART.mp4 --title "$P ($PART) $TAG" --notes "INK AND ANTIQUITY render, run ${{ github.run_id }}, commit ${{ github.sha }}." --target ${{ github.sha }}
+          ls -la build/ || true
+          for i in 1 2 3; do gh release create "$TAG" build/$P-$PART.mp4 --title "$P ($PART) $TAG" --notes "Render, run ${{ github.run_id }}, commit ${{ github.sha }}." --target ${{ github.sha }} && break; echo "release retry $i"; gh release delete "$TAG" -y --cleanup-tag || true; sleep 20; done
           mkdir -p /tmp/r && cd /tmp/r && git init -q -b render-$P
           SZ=$(stat -c %s $GITHUB_WORKSPACE/build/$P-$PART.mp4); [ $SZ -lt 95000000 ] && cp $GITHUB_WORKSPACE/build/$P-$PART.mp4 . || true
           echo "https://github.com/${{ github.repository }}/releases/download/$TAG/$P-$PART.mp4" > LATEST.txt
