@@ -1,0 +1,33 @@
+{
+  "depth": 1,
+  "max_per_query": 25,
+  "commons_categories": ["Indian Airlines Flight 814", "Kandahar International Airport", "Indian Airlines Airbus A300", "Tribhuvan International Airport", "Sri Guru Ram Dass Jee International Airport", "Allama Iqbal International Airport", "Jaswant Singh", "Atal Bihari Vajpayee in 1999", "Indira Gandhi International Airport", "Taliban", "Masood Azhar"],
+  "commons_search": [
+    "Indian Airlines Flight 814",
+    "IC 814 hijack",
+    "Kandahar airport 2001",
+    "Kandahar airport terminal",
+    "Indian Airlines Airbus A300 VT-EDW",
+    "Indian Airlines A300 1999",
+    "Tribhuvan airport Kathmandu 1990s",
+    "Amritsar airport",
+    "Lahore airport",
+    "Al Minhad Air Base",
+    "Dubai airport 1999",
+    "Jaswant Singh minister",
+    "Atal Bihari Vajpayee",
+    "Ajit Doval",
+    "Masood Azhar",
+    "Omar Sheikh",
+    "Daniel Pearl",
+    "Kandahar 2001 filetype:video",
+    "Airbus A300 takeoff filetype:video",
+    "Airbus A300 landing filetype:video",
+    "Kandahar airport filetype:video",
+    "Taliban 1990s Kandahar",
+    "Mullah Omar",
+    "Parliament of India attack 2001",
+    "Indian Airlines aircraft"
+  ],
+  "pages": []
+}
