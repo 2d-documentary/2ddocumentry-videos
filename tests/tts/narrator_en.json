@@ -1,0 +1,4 @@
+{"name": "narrator_en",
+ "text": "So here's the thing nobody tells you. [chuckle] On the night of the hijack, the most important call in the country came from a TV news channel. [gasp] Yeah, seriously. [sigh] And the people who paid for that mistake? They were sitting in seat thirty-two C. [laugh] Okay, okay, let's start from the beginning.",
+ "ref_text": "This is a calm reference recording. It gives the cloning model the tone, the pace and the color of the narrator's voice, so every line sounds like the same person.",
+ "kokoro_voice": "am_michael", "kokoro_speed": 1.1, "exaggeration": 0.75}
