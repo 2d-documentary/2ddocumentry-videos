@@ -1,0 +1,90 @@
+{
+ "title": "IC 814 in one minute (English style test)",
+ "voices": {
+  "NARRATOR": {
+   "engine": "chatterbox",
+   "ref": "../../voices/narrator-en/ref.wav",
+   "desc": "Dagar English narrator (Chatterbox Turbo, fixed ref)"
+  }
+ },
+ "tail": 3.0,
+ "lines": [
+  {
+   "id": "E01",
+   "speaker": "NARRATOR",
+   "text": "December 24, 1999. An Indian Airlines flight leaves Kathmandu for Delhi.",
+   "say": "December twenty-fourth, nineteen ninety-nine. An Indian Airlines flight leaves Kathmandu for Delhi.",
+   "gap_before": 0.3
+  },
+  {
+   "id": "E02",
+   "speaker": "NARRATOR",
+   "text": "Around 190 people are on board. And five of them carried weapons, not tickets.",
+   "say": "Around one hundred and ninety people are on board. And five of them carried weapons, not tickets.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "E03",
+   "speaker": "NARRATOR",
+   "text": "Forty minutes in, a masked man stands up with a grenade. The plane is hijacked.",
+   "say": "Forty minutes in, a masked man stands up with a grenade. [gasp] The plane is hijacked.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "E04",
+   "speaker": "NARRATOR",
+   "text": "It lands in Amritsar for fuel. India has forty-five minutes to stop it. It doesn't.",
+   "say": "It lands in Amritsar for fuel. India has forty-five minutes to stop it. [sigh] It doesn't.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "E05",
+   "speaker": "NARRATOR",
+   "text": "The plane flies on. Lahore. Dubai. And finally Kandahar, in Taliban-ruled Afghanistan.",
+   "say": "The plane flies on. Lahore. Dubai. And finally Kandahar, in Taliban-ruled Afghanistan.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "E06",
+   "speaker": "NARRATOR",
+   "text": "The hijackers demand 36 jailed militants. After seven days, India agrees to three.",
+   "say": "The hijackers demand thirty-six jailed militants. After seven days, India agrees to three.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "E07",
+   "speaker": "NARRATOR",
+   "text": "Foreign Minister Jaswant Singh flies them to Kandahar himself. The hostages come home on New Year's Eve.",
+   "say": "Foreign Minister Jaswant Singh flies them to Kandahar himself. The hostages come home on New Year's Eve.",
+   "gap_before": 0.2
+  },
+  {
+   "id": "E08",
+   "speaker": "NARRATOR",
+   "text": "But one of the three, Masood Azhar, starts a new group within weeks. Jaish-e-Mohammed.",
+   "say": "But one of the three, Masood Azhar, starts a new group within weeks. Jaish-e-Mohammed.",
+   "gap_before": 0.25
+  },
+  {
+   "id": "E09",
+   "speaker": "NARRATOR",
+   "text": "India blames it for the 2001 Parliament attack, and for Pulwama in 2019.",
+   "say": "India blames it for the two thousand one Parliament attack, and for Pulwama in twenty nineteen.",
+   "gap_before": 0.15
+  },
+  {
+   "id": "E10",
+   "speaker": "NARRATOR",
+   "text": "So here's the question. Did India save lives that week, or pay for it for 26 years?",
+   "say": "So here's the question. Did India save lives that week, or pay for it for twenty-six years?",
+   "gap_before": 0.3
+  },
+  {
+   "id": "E11",
+   "speaker": "NARRATOR",
+   "text": "Tell me in the comments. And follow for the next file.",
+   "say": "Tell me in the comments. And follow for the next file.",
+   "gap_before": 0.2
+  }
+ ]
+}
