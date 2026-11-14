@@ -227,7 +227,7 @@ function scenes() {
   BEAT_KINDS.end = { cap: 0, draw: (ctx, t, lt, t0) => endCard(ctx, t, t0, false) };
   const CH = ['L008', 'L018', 'L023', 'L034', 'L043', 'L057', 'L073', 'L083'];
   const B = buildBeats(rows);
-  const ALL = TL.lines.filter(l => l.speaker !== 'DAGU').map(l => l.id).concat(BITE_IDS);
+  const ALL = TL.lines.map(l => l.id).concat(BITE_IDS);
   const DW = dateWindows(ALL, { y0: 1999 });
   const HIDE = CH.map(id => [LINE[id].start - 1.7, LINE[id].start]).concat([[after('D07', .3), 1e9]]);   // year ruler only where a year/date is spoken
   const capStyle = t => { let i = B.length - 1; while (i > 0 && t < B[i].t0) i--; return B[i].cap; };
@@ -236,7 +236,6 @@ function scenes() {
     if (c === 'bite') cap(ctx, t, BITE_IDS, { y: H * .82, size: MN() * .036, hold: .1 });
     else if (c) cap(ctx, t, ALL, c === 'dark' ? { color: '#111', shadow: false } : {});
     filmFinish(ctx, t, { grain: .1, vig: .4 });
-    daguLayer(ctx, t);
     if (c !== 'bite' && !HIDE.some(([a, b]) => t > a && t < b)) dateTape(ctx, t, DW);
   }, { name: 'docx', lead: 0 });
   CH.forEach(id => cue(LINE[id].start - 1.55, 'thud', .35));

@@ -15,21 +15,6 @@
     "repetition_penalty": 1.3
    },
    "desc": "Chintu's voice clone (Chatterbox Multilingual V3)"
-  },
-  "DAGU": {
-   "engine": "chatterbox",
-   "model": "mtl",
-   "lang": "hi",
-   "ref": "../../voices/chintu/ref_a.wav",
-   "takes": 2,
-   "gap": 0.08,
-   "gen": {
-    "exaggeration": 0.55,
-    "cfg_weight": 0.45,
-    "temperature": 0.6,
-    "repetition_penalty": 1.3
-   },
-   "desc": "Chintu's voice clone (Chatterbox Multilingual V3)"
   }
  },
  "tail": 3.4,
@@ -109,8 +94,7 @@
   },
   {
    "id": "D01",
-   "speaker": "DAGU",
-   "pose": "think",
+   "speaker": "NARRATOR",
    "gap_before": 0.35,
    "text": "Tum hote toh kya karte? Comment mein batao. Bye!",
    "say": "तुम होते तो क्या करते? कमेंट में बताओ। बाय!",

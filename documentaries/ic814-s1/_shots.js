@@ -34,10 +34,10 @@ function scenes() {
     [after('D01', .3), null, 'end', { tr: 'invert', cap: 0 }],
   ];
   BEAT_KINDS.end = { cap: 0, draw: (ctx, t, lt, t0) => endCard(ctx, t, t0, true) };
-  const B = buildBeats(rows), ALL = TL.lines.filter(l => l.speaker !== 'DAGU').map(l => l.id);
+  const B = buildBeats(rows), ALL = TL.lines.map(l => l.id);
   const capStyle = t => { let i = B.length - 1; while (i > 0 && t < B[i].t0) i--; return B[i].cap; };
   shot(0, (ctx, t) => { dseq(ctx, t, B); const c = capStyle(t);
     if (c) cap(ctx, t, ALL, c === 'dark' ? { color: '#111', shadow: false, y: H * .64 } : { y: H * .64 });
-    filmFinish(ctx, t, { grain: .1, vig: .4 }); daguLayer(ctx, t); }, { name: 'docx', lead: 0 });
+    filmFinish(ctx, t, { grain: .1, vig: .4 }); }, { name: 'docx', lead: 0 });
   cue(T('S01', 'hijack'), 'impact', .7); cue(T('S07', 'bari'), 'stamp', .6); cue(T('S08', 'terrorist'), 'stamp', .5);
 }

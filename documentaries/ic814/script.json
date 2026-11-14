@@ -1,22 +1,7 @@
 {
- "title": "IC 814: The Kandahar Hijack, unfiltered (Dagar Unfiltered, Hinglish)",
+ "title": "IC 814: The Kandahar Hijack, unfiltered (Dagar Unfiltered, Hinglish, no mascot)",
  "voices": {
   "NARRATOR": {
-   "engine": "chatterbox",
-   "model": "mtl",
-   "lang": "hi",
-   "ref": "../../voices/chintu/ref_a.wav",
-   "takes": 2,
-   "gap": 0.08,
-   "gen": {
-    "exaggeration": 0.55,
-    "cfg_weight": 0.45,
-    "temperature": 0.6,
-    "repetition_penalty": 1.3
-   },
-   "desc": "Chintu's voice clone (Chatterbox Multilingual V3)"
-  },
-  "DAGU": {
    "engine": "chatterbox",
    "model": "mtl",
    "lang": "hi",
@@ -37,8 +22,8 @@
   {
    "id": "L001",
    "speaker": "NARRATOR",
-   "text": "24 December 1999. Kathmandu se Delhi ki ek normal flight.",
-   "say": "ट्वेंटी फ़ोर्थ दिसंबर, नाइनटीन नाइनटी नाइन। काठमांडू से दिल्ली की एक नॉर्मल फ़्लाइट।",
+   "text": "Toh doston, 24 December 1999. Kathmandu se Delhi ki ek bilkul normal flight.",
+   "say": "तो दोस्तों, ट्वेंटी फ़ोर्थ दिसंबर, नाइनटीन नाइनटी नाइन। काठमांडू से दिल्ली की एक बिल्कुल नॉर्मल फ़्लाइट।",
    "gap_before": 0.3
   },
   {
@@ -51,8 +36,8 @@
   {
    "id": "L003",
    "speaker": "NARRATOR",
-   "text": "Agle saat din, ye plane chaar desh ghooma.",
-   "say": "अगले सात दिन, ये प्लेन चार देश घूमा।",
+   "text": "Aur agle saat din, ye plane chaar desh ghooma.",
+   "say": "और अगले सात दिन, ये प्लेन चार देश घूमा।",
    "gap_before": 0.12
   },
   {
@@ -77,8 +62,8 @@
   {
    "id": "L006",
    "speaker": "NARRATOR",
-   "text": "Aaj hum ye file poori kholenge. Kisne kya galti ki, kaun kya chhupa raha tha, aur us faisle ki keemat kisne chukayi.",
-   "say": "आज हम ये फ़ाइल पूरी खोलेंगे। किसने क्या गलती की, कौन क्या छुपा रहा था, और उस फ़ैसले की कीमत किसने चुकाई।",
+   "text": "Toh aaj hum ye poori file kholenge. Kisne galti ki, kaun kya chhupa raha tha, aur keemat kisne chukayi.",
+   "say": "तो आज हम ये पूरी फ़ाइल खोलेंगे। किसने गलती की, कौन क्या छुपा रहा था, और कीमत किसने चुकाई।",
    "gap_before": 0.12
   },
   {
@@ -90,22 +75,16 @@
   },
   {
    "id": "D01",
-   "speaker": "DAGU",
-   "pose": "wave",
-   "gap_before": 0.35,
-   "text": "Hi, main Dagar. Aaj ki file thodi heavy hai. Seat belt baandh lo.",
-   "say": "[chuckle] हाय, मैं डागर। आज की फ़ाइल थोड़ी हेवी है। सीट बेल्ट बाँध लो।",
-   "gen": {
-    "exaggeration": 0.7,
-    "cfg_weight": 0.4,
-    "temperature": 0.65
-   }
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "Aur haan, aaj ki file thodi heavy hai. Toh seat belt baandh lo.",
+   "say": "[chuckle] और हाँ, आज की फ़ाइल थोड़ी हेवी है। तो सीट बेल्ट बाँध लो।"
   },
   {
    "id": "L008",
    "speaker": "NARRATOR",
-   "text": "Shaam ke kareeb chaar baje, Indian Airlines ki flight IC 814 Kathmandu se udti hai.",
-   "say": "शाम के करीब चार बजे, इंडियन एयरलाइंस की फ़्लाइट आई सी एट वन फ़ोर काठमांडू से उड़ती है।",
+   "text": "Toh shuru karte hain. Shaam ke kareeb chaar baje, Indian Airlines ki flight IC 814 Kathmandu se udti hai.",
+   "say": "तो शुरू करते हैं। शाम के करीब चार बजे, इंडियन एयरलाइंस की फ़्लाइट आई सी एट वन फ़ोर काठमांडू से उड़ती है।",
    "gap_before": 1.7
   },
   {
@@ -125,8 +104,8 @@
   {
    "id": "L011",
    "speaker": "NARRATOR",
-   "text": "Takeoff ke kareeb chaalis minute baad, Indian airspace mein, ek naqaabposh aadmi khada hota hai.",
-   "say": "टेकऑफ़ के करीब चालीस मिनट बाद, इंडियन एयरस्पेस में, एक नक़ाबपोश आदमी खड़ा होता है।",
+   "text": "Aur fir, takeoff ke kareeb chaalis minute baad, Indian airspace mein, ek naqaabposh aadmi khada hota hai.",
+   "say": "और फिर, टेकऑफ़ के करीब चालीस मिनट बाद, इंडियन एयरस्पेस में, एक नक़ाबपोश आदमी खड़ा होता है।",
    "gap_before": 0.12
   },
   {
@@ -158,8 +137,8 @@
   {
    "id": "L015",
    "speaker": "NARRATOR",
-   "text": "Problem ye thi ki fuel kam tha. Aur Lahore ne landing ki permission nahi di.",
-   "say": "प्रॉब्लम ये थी कि फ़्यूल कम था। और लाहौर ने लैंडिंग की परमिशन नहीं दी।",
+   "text": "Ab problem ye thi ki fuel kam tha. Aur Lahore ne landing ki permission hi nahi di.",
+   "say": "अब प्रॉब्लम ये थी कि फ़्यूल कम था। और लाहौर ने लैंडिंग की परमिशन ही नहीं दी।",
    "gap_before": 0.12
   },
   {
@@ -172,15 +151,15 @@
   {
    "id": "L017",
    "speaker": "NARRATOR",
-   "text": "Aur yahin India ko mila, poore hijack ka sabse bada mauka.",
-   "say": "और यहीं इंडिया को मिला, पूरे हाइजैक का सबसे बड़ा मौका।",
+   "text": "Aur dhyaan dena, yahin India ko mila poore hijack ka sabse bada mauka.",
+   "say": "और ध्यान देना, यहीं इंडिया को मिला पूरे हाइजैक का सबसे बड़ा मौका।",
    "gap_before": 0.12
   },
   {
    "id": "L018",
    "speaker": "NARRATOR",
-   "text": "Ab Delhi chalte hain. Kyunki asli kahani wahan ki ghadi mein chhupi hai.",
-   "say": "अब दिल्ली चलते हैं। क्योंकि असली कहानी वहाँ की घड़ी में छुपी है।",
+   "text": "Ab ek minute Delhi chalte hain. Kyunki asli kahani wahan ki ghadi mein chhupi hai.",
+   "say": "अब एक मिनट दिल्ली चलते हैं। क्योंकि असली कहानी वहाँ की घड़ी में छुपी है।",
    "gap_before": 1.7
   },
   {
@@ -213,11 +192,10 @@
   },
   {
    "id": "D02",
-   "speaker": "DAGU",
-   "pose": "facepalm",
-   "gap_before": 0.35,
-   "text": "TV se. Desh ka sabse bada hijack, aur police ko breaking news se pata chal raha hai.",
-   "say": "टी वी से। देश का सबसे बड़ा हाइजैक, और पुलिस को ब्रेकिंग न्यूज़ से पता चल रहा है। [sigh]",
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "Haan, TV se. Desh ka sabse bada hijack, aur police ko breaking news se pata chal raha hai.",
+   "say": "हाँ, टी वी से। देश का सबसे बड़ा हाइजैक, और पुलिस को ब्रेकिंग न्यूज़ से पता चल रहा है। [sigh]",
    "gen": {
     "exaggeration": 0.7,
     "cfg_weight": 0.4,
@@ -234,8 +212,8 @@
   {
    "id": "L024",
    "speaker": "NARRATOR",
-   "text": "Ab plane Indian zameen pe hai. Order bilkul clear hona chahiye tha. Plane ko udne mat do.",
-   "say": "अब प्लेन इंडियन ज़मीन पे है। ऑर्डर बिल्कुल क्लियर होना चाहिए था। प्लेन को उड़ने मत दो।",
+   "text": "Ab socho. Plane Indian zameen pe hai. Order bilkul clear hona chahiye tha. Plane ko udne mat do.",
+   "say": "अब सोचो। प्लेन इंडियन ज़मीन पे है। ऑर्डर बिल्कुल क्लियर होना चाहिए था। प्लेन को उड़ने मत दो।",
    "gap_before": 0.12
   },
   {
@@ -308,11 +286,10 @@
   },
   {
    "id": "D03",
-   "speaker": "DAGU",
-   "pose": "shrug",
-   "gap_before": 0.35,
-   "text": "Pantaalis minute. Itne mein toh meeting ka agenda bhi print nahi hota.",
-   "say": "पैंतालीस मिनट। इतने में तो मीटिंग का एजेंडा भी प्रिंट नहीं होता।",
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "Pantaalis minute yaar. Itne mein toh meeting ka agenda bhi print nahi hota.",
+   "say": "पैंतालीस मिनट यार। इतने में तो मीटिंग का एजेंडा भी प्रिंट नहीं होता।",
    "gen": {
     "exaggeration": 0.7,
     "cfg_weight": 0.4,
@@ -336,8 +313,8 @@
   {
    "id": "L036",
    "speaker": "NARRATOR",
-   "text": "Neeche aate hain toh pata chalta hai, woh runway nahi, highway hai.",
-   "say": "[gasp] नीचे आते हैं तो पता चलता है, वो रनवे नहीं, हाईवे है।",
+   "text": "Aur neeche aate hain toh pata chalta hai, woh runway nahi, highway hai.",
+   "say": "[gasp] और नीचे आते हैं तो पता चलता है, वो रनवे नहीं, हाईवे है।",
    "gap_before": 0.12,
    "gen": {
     "exaggeration": 0.85,
@@ -449,8 +426,8 @@
   {
    "id": "L050",
    "speaker": "NARRATOR",
-   "text": "Plane ke andar, passengers din raat apni seat pe. Thand, darr, aur toilets kaam karna band kar chuke the.",
-   "say": "प्लेन के अंदर, पैसेंजर्स दिन रात अपनी सीट पे। ठंड, डर, और टॉयलेट्स काम करना बंद कर चुके थे।",
+   "text": "Ab zara plane ke andar ka socho. Passengers din raat apni seat pe. Thand, darr, aur toilets kaam karna band kar chuke the.",
+   "say": "अब ज़रा प्लेन के अंदर का सोचो। पैसेंजर्स दिन रात अपनी सीट पे। ठंड, डर, और टॉयलेट्स काम करना बंद कर चुके थे।",
    "gap_before": 0.12
   },
   {
@@ -470,8 +447,8 @@
   {
    "id": "L053",
    "speaker": "NARRATOR",
-   "text": "Aur Chief, Ibrahim Athar? Woh Masood Azhar ka sagaa bhai tha.",
-   "say": "और चीफ़, इब्राहिम अतहर? वो मसूद अज़हर का सगा भाई था।",
+   "text": "Aur twist suno. Chief, yaani Ibrahim Athar, Masood Azhar ka sagaa bhai tha.",
+   "say": "और ट्विस्ट सुनो। चीफ़, यानी इब्राहिम अतहर, मसूद अज़हर का सगा भाई था।",
    "gap_before": 0.12,
    "gen": {
     "exaggeration": 0.85,
@@ -481,11 +458,10 @@
   },
   {
    "id": "D04",
-   "speaker": "DAGU",
-   "pose": "shrug",
-   "gap_before": 0.35,
-   "text": "Burger. Hijacker ka code name Burger. Main kya hi bolu.",
-   "say": "[chuckle] बर्गर। हाइजैकर का कोड नेम बर्गर। मैं क्या ही बोलूँ।",
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "Aur haan, ek hijacker ka code name Burger tha. Main kya hi bolu.",
+   "say": "[chuckle] और हाँ, एक हाइजैकर का कोड नेम बर्गर था। मैं क्या ही बोलूँ।",
    "gen": {
     "exaggeration": 0.7,
     "cfg_weight": 0.4,
@@ -627,22 +603,16 @@
   },
   {
    "id": "D05",
-   "speaker": "DAGU",
-   "pose": "think",
-   "gap_before": 0.35,
-   "text": "Tum hote toh kya karte? Sach mein soch ke comment karna. Easy sawaal nahi hai.",
-   "say": "तुम होते तो क्या करते? सच में सोच के कमेंट करना। ईज़ी सवाल नहीं है।",
-   "gen": {
-    "exaggeration": 0.7,
-    "cfg_weight": 0.4,
-    "temperature": 0.65
-   }
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "Ab ek second ruk ke socho. Tum hote toh kya karte? Sach mein soch ke comment karna. Easy sawaal nahi hai.",
+   "say": "अब एक सेकंड रुक के सोचो। तुम होते तो क्या करते? सच में सोच के कमेंट करना। ईज़ी सवाल नहीं है।"
   },
   {
    "id": "L073",
    "speaker": "NARRATOR",
-   "text": "Aur keemat sach mein bhaari padi.",
-   "say": "और कीमत सच में भारी पड़ी।",
+   "text": "Aur doston, keemat sach mein bhaari padi.",
+   "say": "और दोस्तों, कीमत सच में भारी पड़ी।",
    "gap_before": 1.7
   },
   {
@@ -711,8 +681,8 @@
   {
    "id": "L083",
    "speaker": "NARRATOR",
-   "text": "Ab hijackers ka kya hua?",
-   "say": "अब हाइजैकर्स का क्या हुआ?",
+   "text": "Ab aate hain hijackers pe. Unka kya hua?",
+   "say": "अब आते हैं हाइजैकर्स पे। उनका क्या हुआ?",
    "gap_before": 1.7
   },
   {
@@ -766,16 +736,10 @@
   },
   {
    "id": "D06",
-   "speaker": "DAGU",
-   "pose": "point",
-   "gap_before": 0.35,
-   "text": "Matlab chhabbees saal baad bhi, is file pe log lad rahe the.",
-   "say": "मतलब छब्बीस साल बाद भी, इस फ़ाइल पे लोग लड़ रहे थे।",
-   "gen": {
-    "exaggeration": 0.7,
-    "cfg_weight": 0.4,
-    "temperature": 0.65
-   }
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "Matlab socho, chhabbees saal baad bhi, is file pe log lad rahe the.",
+   "say": "मतलब सोचो, छब्बीस साल बाद भी, इस फ़ाइल पे लोग लड़ रहे थे।"
   },
   {
    "id": "L091",
@@ -842,16 +806,10 @@
   },
   {
    "id": "D07",
-   "speaker": "DAGU",
-   "pose": "wave",
-   "gap_before": 0.35,
-   "text": "Comment mein batao, main padhunga. Aur follow karna, agli file aur bhi ajeeb hai. Bye!",
-   "say": "कमेंट में बताओ, मैं पढ़ूँगा। और फ़ॉलो करना, अगली फ़ाइल और भी अजीब है। बाय!",
-   "gen": {
-    "exaggeration": 0.7,
-    "cfg_weight": 0.4,
-    "temperature": 0.65
-   }
+   "speaker": "NARRATOR",
+   "gap_before": 0.25,
+   "text": "Comment mein batao, main padhunga. Aur follow kar lena, agli file aur bhi ajeeb hai. Milte hain.",
+   "say": "कमेंट में बताओ, मैं पढ़ूँगा। और फ़ॉलो कर लेना, अगली फ़ाइल और भी अजीब है। मिलते हैं।"
   }
  ]
 }
