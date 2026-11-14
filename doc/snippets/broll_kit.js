@@ -38,3 +38,19 @@ function brollKinds() {
     if (on || lt < .3) headline(ctx, a[1], W / 2, H * .46, t, t0, { colors: [DX.red], size: o.size || MN() * .13, sub: a[2] });
   } };
 }
+// ---------- year ruler only where a year/date is spoken: windows from the caption words (19xx/20xx, month names).
+// A date without a year (e.g. "25 December") keeps the last year. Usage in shot(): dateTape(ctx, t, DW) with DW = dateWindows(ids).
+const MONTH_RE = /^(january|february|march|april|may|june|july|august|september|october|november|december)$/i;
+function dateWindows(ids, o = {}) { const out = []; let lastY = o.y0 || null;
+  ids.forEach(id => { const l = LINE[id]; if (!l || !l.words) return; let yr = null, at = null;
+    l.words.forEach((w, i) => { const s = w.w.replace(/[^0-9a-z]/gi, '');
+      const isY = /^(19|20)\d\d$/.test(s), isM = MONTH_RE.test(s);
+      if ((isY || isM) && at === null) { const p = i > 0 ? l.words[i - 1].w.replace(/[^0-9]/g, '') : ''; at = (p && p.length <= 2 && isM) ? l.words[i - 1].s : w.s; }
+      if (isY && yr === null) yr = +s; });
+    if (at === null) return; if (yr === null) yr = lastY || o.y0 || 1999;
+    out.push({ a: at - .35, b: Math.max(at + 2.8, Math.min(l.end + .25, at + 4.5)), y: yr, from: lastY ?? yr }); lastY = yr; });
+  for (let i = 1; i < out.length; i++) if (out[i].a < out[i - 1].b + .6) { out[i - 1].b = Math.max(out[i - 1].b, out[i].a); }
+  return out; }
+function dateTape(ctx, t, DW) { for (const w of DW) if (t > w.a && t < w.b) {
+  const yr = lerp(w.from, w.y, E.inOut(clamp((t - w.a - .2) / 1.0)));
+  yearTape(ctx, yr, clamp((t - w.a) / .3) * clamp((w.b - t) / .3)); return; } }
