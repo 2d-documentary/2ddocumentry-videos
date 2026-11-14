@@ -68,3 +68,44 @@ function brollPerson() {
     else { personCard(ctx, a[0], lt, W / 2, H * .38, W * .8, H * .42, o); if (a[1]) serifName(ctx, a[1], W / 2, H * .12, t, t0 + .15, {}); }
   } };
 }
+// ---------- clock, logo, waving flag, satellite map (Dagar B-roll)
+function brollExtras() {
+  // ['L019', null, 'clock', '4:40', 'PM · ATC ko khabar', { bg }]: analog clock that winds to the time + digital label
+  BEAT_KINDS.clock = { cap: 0, draw: (ctx, t, lt, t0, a, o) => {
+    if (o.bg) full(ctx, o.bg, lt, { dark: o.dark ?? .7, z0: 1.15, z1: 1.25 }); else black(ctx);
+    const [hh, mm] = a[0].split(':').map(Number), m = MN(), R = m * (W > H ? .22 : .3), cx = W / 2, cy = H * (W > H ? .42 : .38);
+    const p = E.out(clamp(lt / .7)), tot = (hh % 12) * 60 + mm, cur = tot - (1 - p) * 90 + Math.max(0, lt - .7) * 1.5;
+    ctx.save(); ctx.translate(cx, cy); ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = 40;
+    ctx.fillStyle = 'rgba(244,241,234,.95)'; ctx.beginPath(); ctx.arc(0, 0, R, 0, 7); ctx.fill(); ctx.shadowBlur = 0;
+    ctx.strokeStyle = '#111'; for (let i = 0; i < 60; i++) { const big = i % 5 === 0; ctx.lineWidth = big ? R * .035 : R * .012; const an = i / 60 * Math.PI * 2; ctx.beginPath(); ctx.moveTo(Math.sin(an) * R * (big ? .8 : .88), -Math.cos(an) * R * (big ? .8 : .88)); ctx.lineTo(Math.sin(an) * R * .94, -Math.cos(an) * R * .94); ctx.stroke(); }
+    const hand = (an, len, wdt, col) => { ctx.strokeStyle = col; ctx.lineWidth = wdt; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-Math.sin(an) * len * .15, Math.cos(an) * len * .15); ctx.lineTo(Math.sin(an) * len, -Math.cos(an) * len); ctx.stroke(); };
+    hand(cur / 720 * Math.PI * 2, R * .5, R * .07, '#111'); hand((cur % 60) / 60 * Math.PI * 2, R * .78, R * .045, '#111'); hand(lt * Math.PI * 2 / 2, R * .85, R * .015, DX.red);
+    ctx.fillStyle = DX.red; ctx.beginPath(); ctx.arc(0, 0, R * .05, 0, 7); ctx.fill(); ctx.restore();
+    headline(ctx, a[0] + (o.ampm ? ' ' + o.ampm : ''), cx, cy + R + m * .11, t, t0 + .2, { size: m * .1, sub: a[1], colors: o.colors });
+  } };
+  // ['L089', null, 'logo', key, 'sub line', { bg }]: a brand logo in its own colours on black, for factual reference
+  BEAT_KINDS.logo = { cap: 0, draw: (ctx, t, lt, t0, a, o) => {
+    if (o.bg) full(ctx, o.bg, lt, { dark: .85 }); else black(ctx); const im = imgOf(a[0]); if (!im) return;
+    const iw = im.naturalWidth || im.width, ih = im.naturalHeight || im.height, w = Math.min(W * .5, H * .9 * iw / ih) * (o.s ?? 1), h = w * ih / iw, p = E.out(clamp(lt / .5));
+    ctx.save(); ctx.globalAlpha = p; ctx.translate(W / 2, H * .4); ctx.scale(lerp(.85, 1, p) * (1 + lt * .015), lerp(.85, 1, p) * (1 + lt * .015)); ctx.drawImage(im, -w / 2, -h / 2, w, h); ctx.restore();
+    if (a[1]) headline(ctx, '', W / 2, H * .4 + h / 2 + MN() * .06, t, t0 + .35, { size: MN() * .05, sub: a[1], subSize: MN() * .04 });
+  } };
+  // ['L052', 'Pakistan', 'flag', key, 'TEXT', 'sub', { colors }]: waving flag, full frame, darkened
+  BEAT_KINDS.flag = { cap: 0, draw: (ctx, t, lt, t0, a, o) => {
+    black(ctx); const im = imgOf(a[0]); if (im) { const iw = im.naturalWidth || im.width, ih = im.naturalHeight || im.height, s = Math.max(W / iw, H / ih) * 1.15, dw = iw * s, dh = ih * s, x0 = (W - dw) / 2, y0 = (H - dh) / 2, N = 60;
+      ctx.save(); ctx.filter = o.bw ? 'grayscale(1)' : 'saturate(.8)';
+      for (let i = 0; i < N; i++) { const sx = iw * i / N, sw = iw / N + .5, dx = x0 + dw * i / N, ph = i / N * 7 - lt * 4, dy = Math.sin(ph) * MN() * .02 * (i / N + .2);
+        ctx.drawImage(im, sx, 0, sw, ih, dx, y0 + dy, dw / N + 1, dh); ctx.fillStyle = `rgba(0,0,0,${.18 + .14 * Math.sin(ph + 1.2)})`; ctx.fillRect(dx, y0 + dy, dw / N + 1, dh); }
+      ctx.restore(); ctx.fillStyle = `rgba(0,0,0,${o.dark ?? .45})`; ctx.fillRect(0, 0, W, H); }
+    headline(ctx, a[1], W / 2, H * .46, t, t0 + .05, { sub: a[2], colors: o.colors, size: o.size });
+  } };
+}
+// satellite base under the dart-pin map (NASA Blue Marble, public domain). EP.sat = { world: key, region: [key, lonW, latN, lonE, latS] }
+function brollSatMap() { if (typeof monoMap !== 'function') return; const vec = monoMap;
+  monoMap = (ctx, v) => { const S = EP.sat || {}, wi = imgOf(S.world); if (!wi) return vec(ctx, v); const pr = geoProj(v);
+    ctx.fillStyle = '#050506'; ctx.fillRect(0, 0, W, H); ctx.save(); ctx.filter = 'grayscale(.85) brightness(.85) contrast(1.2)';
+    const [x0, y0] = pr(-180, 90), [x1, y1] = pr(180, -90); ctx.drawImage(wi, x0, y0, x1 - x0, y1 - y0);
+    if (S.region) { const ri = imgOf(S.region[0]); if (ri) { const [a0, b0] = pr(S.region[1], S.region[2]), [a1, b1] = pr(S.region[3], S.region[4]); ctx.drawImage(ri, a0, b0, a1 - a0, b1 - b0); } }
+    ctx.restore(); ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,.28)'; ctx.lineWidth = 1.2; GEO_WORLD.land.forEach(r => { geoPath(ctx, r, pr, true); ctx.stroke(); });
+    const g = ctx.createRadialGradient(W / 2, H / 2, MN() * .3, W / 2, H / 2, Math.max(W, H) * .75); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(1, 'rgba(0,0,0,.7)'); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.restore(); return pr; };
+}

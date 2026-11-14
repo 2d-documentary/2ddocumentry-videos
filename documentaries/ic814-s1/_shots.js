@@ -1,6 +1,8 @@
+['logo_netflix', 'flag_pk', 'flag_uae', 'flag_tal', 'flag_in', 'flag_np'].forEach(k => EP.images[k] = 'archives/user/' + k + '.png');
+EP.images.sat_region = 'archives/user/sat_region.jpg'; EP.images.sat_world = 'archives/user/sat_w4k.jpg'; EP.sat = { world: 'sat_world', region: ['sat_region', 40, 45, 95, 15] };
 brollCuts(['gren', 'gren2', 'tanker']);
 function scenes() {
-  brollKinds(); brollPerson();
+  brollKinds(); brollPerson(); brollExtras(); brollSatMap();
   const GREY = { grey: 1 }, RED = { colors: [DX.red] };
   const after = (id, d = .25) => LINE[id].end + d;
   const KTM = [85.36, 27.70], KDH = [65.85, 31.51], ATQ = [74.80, 31.71], LHE = [74.40, 31.52], DXB = [55.37, 25.03];

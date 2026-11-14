@@ -1,6 +1,8 @@
+['logo_netflix', 'flag_pk', 'flag_uae', 'flag_tal', 'flag_in', 'flag_np'].forEach(k => EP.images[k] = 'archives/user/' + k + '.png');
+EP.images.sat_region = 'archives/user/sat_region.jpg'; EP.images.sat_world = 'archives/user/sat_w4k.jpg'; EP.sat = { world: 'sat_world', region: ['sat_region', 40, 45, 95, 15] };
 brollCuts(['gren', 'gren2', 'tanker']);
 function scenes() {
-  brollKinds(); brollPerson();
+  brollKinds(); brollPerson(); brollExtras(); brollSatMap();
   const GREY = { grey: 1 }, RED = { colors: [DX.red] };
   const after = (id, d = .25) => LINE[id].end + d;
   const chap = (id, n, title) => [LINE[id].start - 1.6, null, 'chap', n, title, { tr: 'invert', cap: 0 }];
@@ -41,7 +43,7 @@ function scenes() {
     ['D01', null, 'full', 'a300_a', { dark: .45, z0: 1.3, z1: 1.38, fy: .62 }],
     // ---------------- 1. the flight
     chap('L008', 1, 'FLIGHT IC 814'),
-    mapRow('L008', null, { views: [[LINE.L008.start - .2, WORLD], [LINE.L008.start + 1.2, { lon: 82, lat: 28, k: 16 }]],
+    mapRow('L008', null, { views: [[LINE.L008.start - .2, WORLD], [LINE.L008.start + 1.2, { lon: 82, lat: 28, k: 32 }]],
       pins: [[...KTM, 'KATHMANDU, NEPAL', T('L008', 'Kathmandu') + .3]], routes: [[KTM, DEL, T('L008', 'udti'), 1.2]] }),
     ['L008', 'Indian', 'clipx', 'c_take', { off: 4 }],
     ['L009', null, 'full', 'a300_f'],
@@ -59,25 +61,25 @@ function scenes() {
     ['L013', 'patti', 'head', 'AANKHON PE PATTI', '', { bg: 'cabin', dark: .75 }],
     ['L014', null, 'full', 'cockpit', { z0: 1.05, z1: 1.2 }],
     ['L014', 'Lahore', 'head', 'LAHORE LE CHALO', '', { bg: 'cockpit2', colors: [DX.red] }],
-    mapRow('L015', null, { views: [[LINE.L015.start - .2, { lon: 76, lat: 30.5, k: 30 }]], pins: [[...LHE, 'LAHORE: NO', T('L015', 'Lahore') + .2]] }),
+    mapRow('L015', null, { views: [[LINE.L015.start - .2, { lon: 76, lat: 30.5, k: 60 }]], pins: [[...LHE, 'LAHORE: NO', T('L015', 'Lahore') + .2]] }),
     ['L015', 'fuel', 'alarm', 'gauges', 'FUEL LOW', ''],
     ['L016', null, 'full', 'cockpit', { dark: .2, fx: .3 }],
-    mapRow('L016', 'Amritsar', { views: [[T('L016', 'Amritsar') - .2, { lon: 75.5, lat: 31, k: 40 }]], pins: [[...ATQ, 'AMRITSAR, INDIA', T('L016', 'Amritsar') + .3]] }),
+    mapRow('L016', 'Amritsar', { views: [[T('L016', 'Amritsar') - .2, { lon: 75.5, lat: 31, k: 60 }]], pins: [[...ATQ, 'AMRITSAR, INDIA', T('L016', 'Amritsar') + .3]] }),
     ['L017', null, 'head', 'SABSE BADA', 'mauka', { bg: 'atr_term' }],
     // ---------------- 2. delhi's clock
     chap('L018', 2, 'DELHI KI GHADI'),
     ['L018', null, 'full', 'del_tower', { z0: 1.1, z1: 1.25 }],
-    ['L019', null, 'num', '4:40 PM', 'ATC ko khabar', { bg: 'del_tower' }],
+    ['L019', null, 'clock', '4:40', 'ATC ko khabar', { bg: 'del_tower', ampm: 'PM' }],
     ['L020', null, 'person', 'vajpayee2', 'Atal Bihari Vajpayee', {}],
     ['L020', 'plane', 'clipx', 'c_del_land', { off: 1 }],
-    ['L021', null, 'head', 'CRISIS MANAGEMENT GROUP', '~6 PM', { bg: 'parl_bld', size: MN() * .08 }],
+    ['L021', null, 'clock', '6:00', 'Crisis Management Group ki meeting', { bg: 'parl_bld', ampm: 'PM' }],
     ['L022', null, 'full', 'atr_b', { dark: .3 }],
     ['L022', 'TV', 'head', 'TV NEWS SE', 'DGP Punjab ke mutabik', { bg: 'atr_term', colors: [DX.red], dark: .6 }],
     ['D02', null, 'full', 'del_tower', { dark: .5 }],
     // ---------------- 3. amritsar
     chap('L023', 3, '45 MINUTES IN AMRITSAR'),
     ['L023', null, 'clipx', 'c_land', { off: 0 }],
-    ['L023', 'saat', 'head', '7:01 PM', 'Amritsar', { bg: 'atr_term' }],
+    ['L023', 'saat', 'clock', '7:01', 'Amritsar mein landing', { bg: 'atr_term', ampm: 'PM' }],
     ['L024', null, 'full', 'atr_b'],
     ['L024', 'Order', 'head', 'UDNE MAT DO', '', { bg: 'a300_e', colors: [DX.red] }],
     ['L025', null, 'full', 'nsg', { z0: 1.1, z1: 1.25 }],
@@ -99,7 +101,7 @@ function scenes() {
     ['D03', null, 'full', 'atr_term', { dark: .5, z0: 1.2, z1: 1.3 }],
     // ---------------- 4. lahore, dubai
     chap('L034', 4, 'LAHORE: LIGHTS OFF'),
-    mapRow('L034', null, { views: [[LINE.L034.start - .2, { lon: 75, lat: 31.4, k: 40 }]], routes: [[ATQ, LHE, LINE.L034.start, .8]], pins: [[...ATQ, 'AMRITSAR', -1], [...LHE, 'LAHORE, PAKISTAN', LINE.L034.start + .6]] }),
+    mapRow('L034', null, { views: [[LINE.L034.start - .2, { lon: 75, lat: 31.4, k: 60 }]], routes: [[ATQ, LHE, LINE.L034.start, .8]], pins: [[...ATQ, 'AMRITSAR', -1], [...LHE, 'LAHORE, PAKISTAN', LINE.L034.start + .6]] }),
     ['L034', 'runway', 'full', 'lhr_a', { dark: .7 }],
     ['L035', null, 'alarm', 'gauges', 'FUEL ~0', ''],
     ['L035', 'Andhere', 'clipx', 'c_land', { off: 2, dark: .55 }],
@@ -110,13 +112,13 @@ function scenes() {
     ['L038', 'fuel', 'full', 'refuel', { z0: 1.1, z1: 1.2 }],
     mapRow('L039', null, { views: [[LINE.L039.start - .2, { lon: 70, lat: 29, k: 10 }], [LINE.L039.start + 1.4, { lon: 60, lat: 27, k: 12 }]],
       routes: [[LHE, DXB, LINE.L039.start + .2, 1.4]], pins: [[...LHE, 'LAHORE', -1], [...DXB, 'AL MINHAD AIRBASE, UAE', T('L039', 'military') + .2]] }),
-    ['L040', null, 'num', '27', 'passengers chhode gaye', { bg: 'cabin' }],
+    ['L040', null, 'flag', 'flag_uae', '27', 'passengers chhode gaye', { size: MN() * .2 }],
     ['L040', 'auratein', 'head', 'AURATEIN', 'aur bachche', { bg: 'cabin2' }],
     ['L041', null, 'head', 'RUPIN KATYAL', '', { dark: .85, bg: 'a300_e' }],
     ['L042', null, 'head', 'RUPIN KATYAL', 'honeymoon se laut rahe the', { dark: .85, bg: 'a300_e' }],
     // ---------------- 5. kandahar
     chap('L043', 5, 'KANDAHAR'),
-    mapRow('L043', null, { views: [[LINE.L043.start - .2, { lon: 58, lat: 27, k: 12 }], [LINE.L043.start + 1.6, { lon: 65.5, lat: 31.3, k: 30 }]],
+    mapRow('L043', null, { views: [[LINE.L043.start - .2, { lon: 58, lat: 27, k: 12 }], [LINE.L043.start + 1.6, { lon: 65.5, lat: 31.3, k: 60 }]],
       routes: [[DXB, KDH, LINE.L043.start + .2, 1.4]], pins: [[...DXB, 'DUBAI', -1], [...KDH, 'KANDAHAR, AFGHANISTAN', T('L043', 'Kandahar') + .2]] }),
     ['L043', 'Kandahar', 'full', 'kdh_term', { tr: 'cut' }],
     ['L044', null, 'full', 'afg_map'],
@@ -137,7 +139,7 @@ function scenes() {
     ['L051', null, 'head', 'CODE NAMES', '', { bg: 'cabin', dark: .7 }],
     ['L051', 'Chief,', 'board', 'CHIEF · DOCTOR · BURGER', 'Bhola · Shankar', ['cabin', 'cockpit', 'a300_d', 'kdh_term']],
     ['L052', null, 'board', 'ASLI NAAM', 'Athar · Sayed · Qazi · Mistry · Shakir', ['tal_herat', 'kdh_road', 'karachi', 'tal_arms']],
-    ['L052', 'Pakistan', 'head', 'SAB PAKISTAN SE', '', { bg: 'karachi', colors: [DX.red] }],
+    ['L052', 'Pakistan', 'flag', 'flag_pk', 'SAB PAKISTAN SE', '', { dark: .5 }],
     ['L053', null, 'head', '"CHIEF" = IBRAHIM ATHAR', 'Masood Azhar ka bhai', { bg: 'bwp', size: MN() * .08, colors: [DX.red] }],
     ['D04', null, 'head', 'BURGER', 'code name', { size: MN() * .16, bg: 'cabin2', dark: .6 }],
     ['L054', null, 'full', 'candle', { z0: 1.1, z1: 1.25 }],
@@ -156,7 +158,7 @@ function scenes() {
     ['L060', null, 'head', 'OMAR SAEED SHEIKH', '#2', { size: MN() * .09, bg: 'kdh_road', dark: .7 }],
     mapRow('L060', 'London', { views: [[T('L060', 'London') - .2, { lon: 10, lat: 45, k: 6 }]], pins: [[...LON, 'LONDON, UK', T('L060', 'London') + .2]] }),
     ['L061', null, 'head', 'MUSHTAQ ZARGAR', '#3', { size: MN() * .1, bg: 'tal_arms', dark: .7 }],
-    mapRow('L062', null, { views: [[LINE.L062.start - .2, { lon: 75, lat: 33.5, k: 30 }]], pins: [[74.86, 32.73, 'JAMMU', LINE.L062.start + .4]] }),
+    mapRow('L062', null, { views: [[LINE.L062.start - .2, { lon: 75, lat: 33.5, k: 60 }]], pins: [[74.86, 32.73, 'JAMMU', LINE.L062.start + .4]] }),
     ['L062', 'Chief', 'head', 'FAROOQ ABDULLAH', 'CM, Jammu Kashmir', { bg: 'parl_bld2', size: MN() * .09 }],
     ['L063', null, 'head', 'RAW CHIEF', 'A S Dulat', { bg: 'parl_bld', dark: .6 }],
     ['L064', null, 'head', '"YE GALTI HAI"', 'Dulat ke mutabik', { colors: [DX.red], bg: 'parl_bld2', dark: .65 }],
@@ -199,16 +201,16 @@ function scenes() {
     ['L085', null, 'head', 'UMAR QAID', '3 · Patiala court · 2008', { bg: 'parl_bld2' }],
     ['L085', 'High', 'head', 'BARI', '2 · High Court', { colors: [DX.red], bg: 'parl_bld', dark: .6 }],
     ['L086', null, 'head', '5 HIJACKERS', 'kabhi court nahi aaye', { colors: [DX.red], bg: 'cabin2', dark: .7 }],
-    mapRow('L087', null, { views: [[LINE.L087.start - .2, { lon: 67, lat: 26, k: 18 }]], pins: [[...KHI, 'KARACHI, PAKISTAN', T('L087', 'Karachi') + .2]] }),
+    mapRow('L087', null, { views: [[LINE.L087.start - .2, { lon: 67, lat: 26, k: 36 }]], pins: [[...KHI, 'KARACHI, PAKISTAN', T('L087', 'Karachi') + .2]] }),
     ['L087', 'Zahid', 'head', 'ZAHID AKHUND', 'March 2022', { bg: 'karachi' }],
     ['L088', null, 'head', 'ZAHOOR MISTRY', '"Bhola" · Indian officials ke mutabik', { colors: [DX.red], bg: 'karachi', dark: .7 }],
-    ['L089', null, 'head', 'NETFLIX SERIES', 'IC 814: The Kandahar Hijack · 2024', { bg: 'cabin2' }],
+    ['L089', null, 'logo', 'logo_netflix', 'IC 814: The Kandahar Hijack · 2024'],
     ['L089', 'bawaal', 'head', 'BAWAAL', 'sarkaar ne Netflix ko bulaya', { bg: 'parl_bld2' }],
-    ['L090', null, 'head', 'ASLI NAAM', 'disclaimer mein jode gaye', { bg: 'cabin', dark: .6 }],
+    ['L090', null, 'logo', 'logo_netflix', 'asli naam disclaimer mein jode gaye', { s: .8 }],
     ['D06', null, 'full', 'parl_bld2', { dark: .5 }],
     ['L091', null, 'head', '7 MAY 2025', 'Operation Sindoor', { colors: [DX.red], bg: 'sindoor' }],
     ['L091', 'Indian', 'clipx', 'c_missile', { off: 0, z0: 1.35, z1: 1.4, fx: .6, fy: .65 }],
-    mapRow('L091', 'Bahawalpur', { views: [[T('L091', 'Bahawalpur') - .3, { lon: 72, lat: 29.5, k: 24 }]], pins: [[...BWP, 'BAHAWALPUR, PAKISTAN', T('L091', 'Bahawalpur') + .2]] }),
+    mapRow('L091', 'Bahawalpur', { views: [[T('L091', 'Bahawalpur') - .3, { lon: 72, lat: 29.5, k: 48 }]], pins: [[...BWP, 'BAHAWALPUR, PAKISTAN', T('L091', 'Bahawalpur') + .2]] }),
     ['L091', 'girti', 'clipx', 'c_missile2', { off: 0 }],
     ['L092', null, 'full', 'sindoor2'],
     ['L092', 'das', 'num', '10', 'parivaar ke log · Jaish statement', { color: DX.red, bg: 'bwp' }],
