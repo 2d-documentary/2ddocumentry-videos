@@ -1016,6 +1016,34 @@
       "attribution": "Drawn by Pumbaa80 , Achim1999, Constitution of The Kingdom of Nepal, Article 5, Schedule 1 [1]",
       "page": "https://commons.wikimedia.org/wiki/File:Flag_of_Nepal.svg",
       "status": "downloaded"
+    },
+    {
+      "id": "sat_world",
+      "category": "maps",
+      "description": "Whole_world_-_land_and_oceans_12000.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans_12000.jpg",
+      "authenticity": "authentic",
+      "file": "archives/maps/sat_world_whole-world-land-and-oceans-12000-jpg.jpg",
+      "resolved_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Whole_world_-_land_and_oceans_12000.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "bytes": 20037009,
+      "license": "Public domain",
+      "attribution": "NASA/Goddard Space Flight Center, NASA - Visible Earth, images combined and scaled down by HighInBC (20 megabyte upload limit) Blue Marble: Land Surface, Shallow Water, and Shaded Topography http://visibleearth.nasa.gov/images/2433/land_shallow_topo_east.tif http://visibleearth.nasa.gov/images/2433/land_shallow_topo_west.tif",
+      "page": "https://commons.wikimedia.org/wiki/File:Whole_world_-_land_and_oceans_12000.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "sat_world2",
+      "category": "maps",
+      "description": "Land_shallow_topo_2048.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Land_shallow_topo_2048.jpg",
+      "authenticity": "authentic",
+      "file": "archives/maps/sat_world2_land-shallow-topo-2048-jpg.jpg",
+      "resolved_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Land_shallow_topo_2048.jpg/3840px-Land_shallow_topo_2048.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "bytes": 1105175,
+      "license": "Public domain",
+      "attribution": "Reto Stöckli/NASA GSFC (land surface, shallow water, clouds); Robert Simmon (ocean color, compositing, 3D globes, animation); MODIS Land Group; MODIS Science Data Support Team; MODIS Atmosphere Group; MODIS Ocean Group; USGS EROS Data Center (topography); USGS Terrestrial Remote Sensing Flagstaff Field Center (Antarctica); Defense Meteorological Satellite Program (city lights)., https://visibleearth.nasa.gov/view.php?id=57752 ( image link )",
+      "page": "https://commons.wikimedia.org/wiki/File:Land_shallow_topo_2048.jpg",
+      "status": "downloaded"
     }
   ]
 }

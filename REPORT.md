@@ -1,6 +1,6 @@
 # Asset report: IC 814: The Kandahar Hijack
 
-**71 downloaded, 1 need attention** (of 72)
+**73 downloaded, 1 need attention** (of 74)
 
 ## Download these by hand
 
@@ -85,3 +85,5 @@ Open each link, download the highest-resolution version, and send it back with i
 | flag_tal |  | `archives/misc/flag_tal_flag-of-the-taliban-svg.svg` | Public domain | authentic |
 | flag_in |  | `archives/misc/flag_in_flag-of-india-svg.svg` | Public domain | authentic |
 | flag_np |  | `archives/misc/flag_np_flag-of-nepal-svg.svg` | Public domain | authentic |
+| sat_world |  | `archives/maps/sat_world_whole-world-land-and-oceans-12000-jpg.jpg` | Public domain | authentic |
+| sat_world2 |  | `archives/maps/sat_world2_land-shallow-topo-2048-jpg.jpg` | Public domain | authentic |
